@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   }
   document.querySelectorAll('footer').forEach((footer) => {
+    const copyright = footer.querySelector('span:last-child');
+    if (copyright) copyright.textContent = '© چادردوزی جزیره J.A.T © 2026، کلیه حقوق این وب‌سایت محفوظ است';
     const footerSocial = document.createElement('div');
     footerSocial.className = 'footer-social';
     footerSocial.innerHTML = '<a href="https://chadortent.ir" target="_blank" rel="noreferrer">CHADORTENT.IR</a><a href="https://instagram.com/chadoor_" target="_blank" rel="noreferrer">Instagram</a><a href="https://t.me/GATTENT" target="_blank" rel="noreferrer">Telegram</a>';
