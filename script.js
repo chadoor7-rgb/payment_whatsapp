@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) lucide.createIcons();
 
-  const form = document.querySelector('.signup-form');
-  const message = document.querySelector('.form-message');
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const phone = form.querySelector('input').value.trim();
-    if (!phone) return;
-    message.textContent = 'شماره ثبت شد؛ لینک شروع به‌زودی برایتان ارسال می‌شود.';
-    message.classList.add('success');
-    form.querySelector('input').value = '';
+  document.querySelectorAll('.signup-form, .contact-form').forEach((form) => {
+    const message = form.querySelector('.form-message');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      message.textContent = form.classList.contains('contact-form')
+        ? 'درخواست شما ثبت شد؛ به‌زودی با شما تماس می‌گیریم.'
+        : 'شماره ثبت شد؛ به‌زودی با شما تماس می‌گیریم.';
+      message.classList.add('success');
+      form.reset();
+    });
   });
 
   const menuButton = document.querySelector('.menu-toggle');
