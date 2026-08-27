@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     footerSocial.innerHTML = '<a href="https://chadortent.ir" target="_blank" rel="noreferrer">CHADORTENT.IR</a><a href="https://instagram.com/chadoor_" target="_blank" rel="noreferrer">Instagram</a><a href="https://t.me/GATTENT" target="_blank" rel="noreferrer">Telegram</a>';
     footer.insertBefore(footerSocial, footer.querySelector('p'));
   });
+  document.querySelectorAll('.location-line').forEach((location) => {
+    location.innerHTML = '<i data-lucide="map-pin"></i><span>ایران، مازندران، آمل، روبه‌روی پلیس‌راه، فروشگاه و کارگاه تولید چادر مسافرتی چادردوزی جزیره</span><a class="map-link" href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noreferrer"><i data-lucide="map"></i>مشاهده روی نقشه</a>';
+    if (window.lucide) lucide.createIcons();
+  });
   menuButton.addEventListener('click', () => {
     nav.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', nav.classList.contains('is-open'));
