@@ -42,6 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
     projects.innerHTML = '<div class="section-heading"><p class="eyebrow"><span></span> نمونه‌کارها</p><h2>از ایده تا اجرای<br><em>تمیز و ماندگار.</em></h2></div><div class="project-grid"><article><div class="before-after"><img src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=700&q=85" alt="پروژه سفارشی چادر در طبیعت"><span>پروژه سفارشی</span></div><h3>چادر سفارشی کمپ</h3><p>طراحی‌شده برای فضای خواب بیشتر، با انتخاب پارچه و ابعاد متناسب با خودرو.</p></article><article><div class="before-after"><img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=700&q=85" alt="بازسازی و تعمیر چادر کمپینگ"><span>بعد از تعمیر</span></div><h3>تعمیر و بازسازی</h3><p>تقویت نقاط آسیب‌دیده و ترمیم دوخت برای بازگشت چادر به مسیر سفر.</p></article></div>';
     serviceList.after(projects);
   }
+  const articleGrid = document.querySelector('.article-grid');
+  if (articleGrid) {
+    const repairArticle = document.createElement('article');
+    repairArticle.className = 'article-card';
+    repairArticle.innerHTML = '<span>تعمیر و بازسازی</span><h2>تعمیر چادر مسافرتی: راهنمای کامل تشخیص آسیب و ترمیم اصولی</h2><p>از پارگی پارچه و خرابی زیپ تا نفوذ آب و شکستگی میله؛ در این راهنما روش تشخیص آسیب، زمان مناسب تعمیر و نکات پیشگیری را می‌خوانید.</p><a class="text-link" href="repair-tent.html">مطالعه راهنمای کامل <i data-lucide="arrow-left"></i></a>';
+    articleGrid.appendChild(repairArticle);
+    const springArticle = document.createElement('article');
+    springArticle.className = 'article-card';
+    springArticle.innerHTML = '<span>تعمیر فنر</span><h2>راهنمای کامل تعمیر فنر چادر مسافرتی</h2><p>علائم خرابی فنر، ابزارهای لازم، روش اصلاح خم‌شدگی و تقویت شکستگی را در این راهنمای کاربردی بخوانید.</p><a class="text-link" href="spring-tent-repair.html">خواندن مقاله <i data-lucide="arrow-left"></i></a>';
+    articleGrid.appendChild(springArticle);
+    if (window.lucide) lucide.createIcons();
+  }
   const values = document.querySelector('.values');
   if (values) {
     const experience = document.createElement('section');
