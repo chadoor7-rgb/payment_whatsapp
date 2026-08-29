@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JAT logo">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#255f5c"/>
+      <stop offset="100%" stop-color="#5ca89e"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#f5f1e8"/>
+  <path d="M17 44 V22 L32 12 L47 22 V44" fill="none" stroke="url(#g1)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 40 L32 27 L44 40" fill="none" stroke="#1d3d3b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 32 H39" stroke="#1d3d3b" stroke-width="3" stroke-linecap="round"/>
+  <text x="32" y="46" text-anchor="middle" font-size="19" font-weight="700" font-family="Tahoma, Arial, sans-serif" fill="#1d3d3b">J</text>
+</svg>

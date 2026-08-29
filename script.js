@@ -5,9 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = form.querySelector('.form-message');
     form.addEventListener('submit', (event) => {
       event.preventDefault();
+
+      let text = 'سلام، در مورد سفارش و مشاوره می‌خواهم صحبت کنم.';
+      if (form.classList.contains('contact-form')) {
+        const name = form.querySelector('#name')?.value?.trim();
+        const phone = form.querySelector('#phone')?.value?.trim();
+        const service = form.querySelector('#service')?.value || 'سفارش عمومی';
+        const request = form.querySelector('#request')?.value?.trim();
+        text = `سلام، نام من ${name || 'کاربر'} است.\nشماره تماس: ${phone || 'ثبت نشده'}\nنوع خدمت: ${service}\nتوضیح: ${request || 'بدون توضیح'}`;
+      } else {
+        const phone = form.querySelector('input[type="tel"]')?.value?.trim();
+        text = `سلام، می‌خواهم در مورد سفارش چادر با شما تماس بگیریم.\nشماره تماس: ${phone || 'ثبت نشده'}`;
+      }
+
+      const whatsappUrl = `https://wa.me/989158017134?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank', 'noopener');
       message.textContent = form.classList.contains('contact-form')
-        ? 'درخواست شما ثبت شد؛ به‌زودی با شما تماس می‌گیریم.'
-        : 'شماره ثبت شد؛ به‌زودی با شما تماس می‌گیریم.';
+        ? 'درخواست شما به واتساپ ارسال شد؛ به‌زودی پاسخ می‌گیریم.'
+        : 'شماره شما به واتساپ ارسال شد؛ به‌زودی با شما تماس می‌گیریم.';
       message.classList.add('success');
       form.reset();
     });

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>صفحه پیدا نشد | چادردوزی جزیره</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { background: #f4f3ef; }
+    .not-found {
+      min-height: 100vh; display: grid; place-items: center; padding: 32px;
+    }
+    .not-found-card {
+      max-width: 620px; background: #fff; border-radius: 22px; box-shadow: 0 16px 44px rgba(16,32,27,.08);
+      border: 1px solid rgba(15,34,29,.08); padding: 36px 28px; text-align: center;
+    }
+    .not-found-card h1 { font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 0 0 16px; }
+    .not-found-card p { color: #53625d; line-height: 1.9; margin: 0 0 22px; }
+    .not-found-card .button { margin-inline: auto; }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <div class="not-found-card">
+      <p class="eyebrow"><span></span> خطای ۴۰۴</p>
+      <h1>صفحه‌ای که جستجو می‌کردید پیدا نشد.</h1>
+      <p>ممکن است آدرس تغییر کرده باشد یا صفحه‌ای که می‌خواهید حذف شده باشد. برای ادامه، به صفحه اصلی یا محصولات بازگردید.</p>
+      <a class="button button-primary" href="/index.html">بازگشت به صفحه اصلی <i data-lucide="arrow-left"></i></a>
+    </div>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>
