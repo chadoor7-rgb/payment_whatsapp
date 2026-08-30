@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -7,8 +6,11 @@
 
   <title>فروشگاه چادر مسافرتی و برزنتی | چادردوزی جزیره</title>
 
-  <meta name="description" content="فروش چادر برزنتی، چادر مسافرتی و پشه‌بند چادردوزی جزیره. ثبت سفارش از طریق واتساپ.">
-  <meta name="keywords" content="چادر برزنتی, چادر مسافرتی, پشه بند, چادردوزی جزیره, چادر 6 نفره, چادر 8 نفره, چادر 10 نفره, چادر 12 نفره">
+  <meta name="description" content="فروش چادر برزنتی ۶، ۸، ۱۰ و ۱۲ نفره و پشه‌بند در چادردوزی جزیره. ثبت سفارش و هماهنگی از طریق واتساپ.">
+
+  <meta name="keywords" content="چادر برزنتی, چادر مسافرتی, پشه بند, پشه‌بند, چادردوزی جزیره, چادر ۶ نفره, چادر ۸ نفره, چادر ۱۰ نفره, چادر ۱۲ نفره">
+
+  <meta name="robots" content="index, follow">
 
   <style>
     * {
@@ -20,8 +22,9 @@
 
     body {
       background: #f5f5f5;
-      padding: 20px;
       color: #222;
+      padding: 20px;
+      line-height: 1.7;
     }
 
     .header {
@@ -32,7 +35,7 @@
 
     .header h1 {
       font-size: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #222;
     }
 
@@ -41,7 +44,7 @@
       font-size: 15px;
     }
 
-    /* فیلترها */
+    /* فیلترها و جستجو */
     .filters {
       max-width: 1100px;
       margin: 0 auto 25px;
@@ -63,7 +66,7 @@
     }
 
     .filters input:focus {
-      border-color: #0a7;
+      border-color: #008866;
     }
 
     .filter-btn {
@@ -74,11 +77,12 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
+      transition: 0.2s;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #0a7;
+      background: #008866;
       color: white;
     }
 
@@ -95,13 +99,13 @@
       background: white;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .product:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
     }
 
     .product img {
@@ -118,7 +122,8 @@
 
     .product-info h3 {
       font-size: 18px;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
+      color: #222;
     }
 
     .category {
@@ -128,7 +133,7 @@
     }
 
     .price {
-      color: #0a7;
+      color: #008866;
       font-weight: bold;
       font-size: 17px;
       margin-bottom: 12px;
@@ -141,17 +146,18 @@
     }
 
     button {
-      background: #0a7;
+      background: #008866;
       color: white;
       border: none;
       padding: 10px 16px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 15px;
+      transition: 0.2s;
     }
 
     button:hover {
-      background: #086;
+      background: #006f55;
     }
 
     .add-btn {
@@ -160,16 +166,17 @@
 
     /* سبد خرید */
     .cart {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 40px;
       background: white;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     .cart h2 {
       margin-bottom: 15px;
+      font-size: 22px;
     }
 
     .cart-item {
@@ -239,6 +246,7 @@
       font-size: 18px;
       font-weight: bold;
       text-align: left;
+      color: #222;
     }
 
     .checkout {
@@ -246,6 +254,8 @@
       width: 100%;
       background: #25D366;
       padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
     }
 
     .checkout:hover {
@@ -263,6 +273,8 @@
       color: #888;
       padding: 40px;
       grid-column: 1 / -1;
+      background: white;
+      border-radius: 12px;
     }
 
     .footer-note {
@@ -272,7 +284,9 @@
       margin-bottom: 20px;
     }
 
+    /* موبایل */
     @media (max-width: 600px) {
+
       body {
         padding: 12px;
       }
@@ -281,8 +295,13 @@
         font-size: 24px;
       }
 
+      .header p {
+        font-size: 14px;
+      }
+
       .products {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
 
       .product img {
@@ -293,83 +312,130 @@
         flex-wrap: wrap;
       }
 
+      .filters {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .filters input {
+        width: 100%;
+      }
+
+      .filter-btn {
         width: 100%;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-  <div class="header">
+  <!-- عنوان فروشگاه -->
+  <header class="header">
     <h1>فروشگاه چادرهای جزیره</h1>
-    <p>چادر برزنتی، چادر مسافرتی و تجهیزات سفر</p>
-  </div>
+    <p>
+      چادر برزنتی، چادر مسافرتی و پشه‌بند
+    </p>
+  </header>
 
-  <!-- فیلترها -->
 
+  <!-- جستجو و فیلتر -->
   <div class="filters">
 
-```
-<input
-  type="text"
-  id="searchInput"
-  placeholder="جستجوی نام محصول..."
-  oninput="applyFilters()"
->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="جستجوی نام محصول..."
+      oninput="applyFilters()"
+      aria-label="جستجوی محصول"
+    >
 
-<button class="filter-btn active" onclick="setCategory('all', this)">
-  همه
-</button>
+    <button
+      class="filter-btn active"
+      onclick="setCategory('all', this)"
+    >
+      همه
+    </button>
 
-<button class="filter-btn" onclick="setCategory('برزنتی', this)">
-  برزنتی
-</button>
+    <button
+      class="filter-btn"
+      onclick="setCategory('برزنتی', this)"
+    >
+      برزنتی
+    </button>
 
-<button class="filter-btn" onclick="setCategory('پشه‌بند', this)">
-  پشه‌بند
-</button>
+    <button
+      class="filter-btn"
+      onclick="setCategory('پشه‌بند', this)"
+    >
+      پشه‌بند
+    </button>
 
-<button class="filter-btn" onclick="setCategory('مسافرتی', this)">
-  مسافرتی
-</button>
+    <button
+      class="filter-btn"
+      onclick="setCategory('مسافرتی', this)"
+    >
+      مسافرتی
+    </button>
 
-<button class="filter-btn" onclick="setCategory('خدمات', this)">
-  خدمات
-</button>
-```
+    <button
+      class="filter-btn"
+      onclick="setCategory('خدمات', this)"
+    >
+      خدمات
+    </button>
 
   </div>
 
-  <div class="products" id="products"></div>
+
+  <!-- محصولات -->
+  <main>
+
+    <div
+      class="products"
+      id="products"
+    ></div>
+
+  </main>
+
 
   <!-- سبد خرید -->
+  <section class="cart">
 
-  <div class="cart">
+    <h2>🛒 سبد خرید</h2>
 
-```
-<h2>🛒 سبد خرید</h2>
+    <div id="cart-items"></div>
 
-<div id="cart-items"></div>
+    <div
+      class="total"
+      id="total"
+    >
+      جمع کل: ۰ تومان
+    </div>
 
-<div class="total" id="total">
-  جمع کل: ۰ تومان
-</div>
+    <button
+      class="checkout"
+      onclick="checkout()"
+    >
+      📱 ثبت سفارش در واتساپ
+    </button>
 
-<button class="checkout" onclick="checkout()">
-  📱 ثبت سفارش در واتساپ
-</button>
-```
+  </section>
 
-  </div>
 
-  <div class="footer-note">
-    چادردوزی جزیره — ثبت سفارش و هماهنگی از طریق واتساپ
-  </div>
+  <footer class="footer-note">
+    چادردوزی جزیره — تولید، فروش و تعمیر چادر
+  </footer>
+
 
   <script>
+
+    /* =====================================================
+       شماره واتساپ فروشگاه
+       ===================================================== */
+
+    const WHATSAPP_PHONE = "989118031241";
+
 
     /* =====================================================
        محصولات فروشگاه
@@ -406,7 +472,7 @@
         name: "چادر برزنتی ۱۲ نفره",
         price: 5500000,
         category: "برزنتی",
-        image: "12nbereznte.webp"
+        image: "برزنتی.jpg"
       },
 
       {
@@ -486,7 +552,7 @@
         name: "چادر برزنتی",
         price: null,
         category: "برزنتی",
-        image: "12nbereznte.webp"
+        image: "برزنتی.jpg"
       },
 
       {
@@ -501,14 +567,40 @@
 
 
     /* =====================================================
-       تنظیمات
+       وضعیت فروشگاه
        ===================================================== */
 
     let currentCategory = "all";
 
-    let cart = JSON.parse(
-      localStorage.getItem("cart")
-    ) || [];
+    let cart = [];
+
+    try {
+
+      cart =
+        JSON.parse(
+          localStorage.getItem("chadoor_cart")
+        ) || [];
+
+    } catch (error) {
+
+      cart = [];
+
+    }
+
+
+    /* =====================================================
+       تبدیل عدد به تومان فارسی
+       ===================================================== */
+
+    function formatPrice(price) {
+
+      if (!price) {
+        return "۰ تومان";
+      }
+
+      return price.toLocaleString("fa-IR") + " تومان";
+
+    }
 
 
     /* =====================================================
@@ -521,13 +613,16 @@
 
       document
         .querySelectorAll(".filter-btn")
-        .forEach(btn => {
+        .forEach(function(btn) {
+
           btn.classList.remove("active");
+
         });
 
       clickedButton.classList.add("active");
 
       applyFilters();
+
     }
 
 
@@ -537,28 +632,32 @@
 
     function applyFilters() {
 
+      const searchInput =
+        document.getElementById("searchInput");
+
       const searchText =
-        document
-          .getElementById("searchInput")
-          .value
+        searchInput.value
           .trim()
           .toLowerCase();
 
-      const filtered = products.filter(product => {
+      const filtered =
+        products.filter(function(product) {
 
-        const matchCategory =
-          currentCategory === "all" ||
-          product.category === currentCategory;
+          const matchCategory =
+            currentCategory === "all" ||
+            product.category === currentCategory;
 
-        const matchSearch =
-          product.name
-            .toLowerCase()
-            .includes(searchText);
+          const matchSearch =
+            product.name
+              .toLowerCase()
+              .includes(searchText);
 
-        return matchCategory && matchSearch;
-      });
+          return matchCategory && matchSearch;
+
+        });
 
       renderProducts(filtered);
+
     }
 
 
@@ -573,103 +672,158 @@
 
       if (list.length === 0) {
 
-        container.innerHTML =
-          `<div class="no-result">
-            محصولی یافت نشد.
-          </div>`;
-
-        return;
-      }
-
-      container.innerHTML = list.map(product => {
-
-        const priceHTML =
-          product.price
-            ? `<div class="price">
-                 ${product.price.toLocaleString("fa-IR")} تومان
-               </div>`
-            : `<div class="no-price">
-                 قیمت: تماس بگیرید
-               </div>`;
-
-        const buttonHTML =
-          product.price
-            ? `<button
-                 class="add-btn"
-                 onclick="addToCart(${product.id})">
-                 افزودن به سبد خرید
-               </button>`
-            : `<button
-                 class="add-btn"
-                 onclick="orderProduct(${product.id})">
-                 📱 استعلام قیمت در واتساپ
-               </button>`;
-
-        return `
-
-          <div class="product">
-
-            <img
-              src="${product.image}"
-              alt="${product.name}"
-              loading="lazy"
-              onerror="this.src='https://via.placeholder.com/600x450?text=Chadoor'"
-            >
-
-            <div class="product-info">
-
-              <h3>
-                ${product.name}
-              </h3>
-
-              <div class="category">
-                ${product.category}
-              </div>
-
-              ${priceHTML}
-
-              ${buttonHTML}
-
-            </div>
-
+        container.innerHTML = `
+          <div class="no-result">
+            محصولی با این مشخصات یافت نشد.
           </div>
-
         `;
 
-      }).join("");
+        return;
+
+      }
+
+
+      container.innerHTML =
+        list.map(function(product) {
+
+          let priceHTML = "";
+
+          let buttonHTML = "";
+
+
+          /* محصول دارای قیمت */
+
+          if (product.price) {
+
+            priceHTML = `
+              <div class="price">
+                ${formatPrice(product.price)}
+              </div>
+            `;
+
+            buttonHTML = `
+              <button
+                class="add-btn"
+                onclick="addToCart(${product.id})"
+              >
+                🛒 افزودن به سبد خرید
+              </button>
+            `;
+
+          }
+
+
+          /* محصول بدون قیمت */
+
+          else {
+
+            priceHTML = `
+              <div class="no-price">
+                قیمت: تماس بگیرید
+              </div>
+            `;
+
+            buttonHTML = `
+              <button
+                class="add-btn"
+                onclick="orderProduct(${product.id})"
+              >
+                📱 استعلام قیمت در واتساپ
+              </button>
+            `;
+
+          }
+
+
+          return `
+
+            <article class="product">
+
+              <img
+                src="${product.image}"
+                alt="${product.name} - چادردوزی جزیره"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              >
+
+              <div class="product-info">
+
+                <h3>
+                  ${product.name}
+                </h3>
+
+                <div class="category">
+                  دسته‌بندی: ${product.category}
+                </div>
+
+                ${priceHTML}
+
+                ${buttonHTML}
+
+              </div>
+
+            </article>
+
+          `;
+
+        }).join("");
+
     }
 
 
     /* =====================================================
-       افزودن محصول به سبد
+       افزودن محصول به سبد خرید
        ===================================================== */
 
     function addToCart(id) {
 
       const product =
-        products.find(p => p.id === id);
+        products.find(function(p) {
+
+          return p.id === id;
+
+        });
+
 
       if (!product || !product.price) {
+
         return;
+
       }
 
+
       const existing =
-        cart.find(item => item.id === id);
+        cart.find(function(item) {
+
+          return item.id === id;
+
+        });
+
 
       if (existing) {
 
         existing.quantity += 1;
 
-      } else {
+      }
+
+      else {
 
         cart.push({
-          ...product,
+
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          category: product.category,
+          image: product.image,
           quantity: 1
+
         });
 
       }
 
+
       saveCart();
+
       renderCart();
 
     }
@@ -682,16 +836,26 @@
     function increaseQty(id) {
 
       const item =
-        cart.find(item => item.id === id);
+        cart.find(function(item) {
 
-      if (item) {
+          return item.id === id;
 
-        item.quantity += 1;
+        });
 
-        saveCart();
-        renderCart();
+
+      if (!item) {
+
+        return;
 
       }
+
+
+      item.quantity += 1;
+
+      saveCart();
+
+      renderCart();
+
     }
 
 
@@ -702,20 +866,37 @@
     function decreaseQty(id) {
 
       const item =
-        cart.find(item => item.id === id);
+        cart.find(function(item) {
 
-      if (!item) return;
+          return item.id === id;
+
+        });
+
+
+      if (!item) {
+
+        return;
+
+      }
+
 
       item.quantity -= 1;
+
 
       if (item.quantity <= 0) {
 
         cart =
-          cart.filter(i => i.id !== id);
+          cart.filter(function(i) {
+
+            return i.id !== id;
+
+          });
 
       }
 
+
       saveCart();
+
       renderCart();
 
     }
@@ -728,24 +909,41 @@
     function removeFromCart(id) {
 
       cart =
-        cart.filter(item => item.id !== id);
+        cart.filter(function(item) {
+
+          return item.id !== id;
+
+        });
+
 
       saveCart();
+
       renderCart();
 
     }
 
 
     /* =====================================================
-       ذخیره سبد
+       ذخیره سبد خرید
        ===================================================== */
 
     function saveCart() {
 
-      localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-      );
+      try {
+
+        localStorage.setItem(
+          "chadoor_cart",
+          JSON.stringify(cart)
+        );
+
+      } catch (error) {
+
+        console.error(
+          "خطا در ذخیره سبد خرید:",
+          error
+        );
+
+      }
 
     }
 
@@ -762,103 +960,139 @@
       const totalEl =
         document.getElementById("total");
 
+
       if (cart.length === 0) {
 
-        container.innerHTML =
-          `<div class="empty">
-             سبد خرید خالی است
-           </div>`;
+        container.innerHTML = `
+          <div class="empty">
+            سبد خرید خالی است.
+          </div>
+        `;
 
         totalEl.innerText =
           "جمع کل: ۰ تومان";
 
         return;
+
       }
 
 
       container.innerHTML =
-        cart.map(item => `
+        cart.map(function(item) {
 
-          <div class="cart-item">
+          const itemTotal =
+            item.price * item.quantity;
 
-            <div class="item-info">
 
-              <strong>
-                ${item.name}
-              </strong>
+          return `
 
-              <div class="item-price">
-                ${item.price.toLocaleString("fa-IR")} تومان
+            <div class="cart-item">
+
+              <div class="item-info">
+
+                <strong>
+                  ${item.name}
+                </strong>
+
+                <div class="item-price">
+                  ${formatPrice(item.price)}
+                  ×
+                  ${item.quantity.toLocaleString("fa-IR")}
+                  =
+                  ${formatPrice(itemTotal)}
+                </div>
+
               </div>
 
-            </div>
 
+              <div class="qty-controls">
 
-            <div class="qty-controls">
+                <button
+                  class="qty-btn"
+                  onclick="decreaseQty(${item.id})"
+                  aria-label="کاهش تعداد"
+                >
+                  −
+                </button>
+
+                <span class="qty-number">
+                  ${item.quantity.toLocaleString("fa-IR")}
+                </span>
+
+                <button
+                  class="qty-btn"
+                  onclick="increaseQty(${item.id})"
+                  aria-label="افزایش تعداد"
+                >
+                  +
+                </button>
+
+              </div>
+
 
               <button
-                class="qty-btn"
-                onclick="decreaseQty(${item.id})">
-                −
-              </button>
-
-              <span class="qty-number">
-                ${item.quantity}
-              </span>
-
-              <button
-                class="qty-btn"
-                onclick="increaseQty(${item.id})">
-                +
+                class="remove-btn"
+                onclick="removeFromCart(${item.id})"
+              >
+                حذف
               </button>
 
             </div>
 
+          `;
 
-            <button
-              class="remove-btn"
-              onclick="removeFromCart(${item.id})">
-              حذف
-            </button>
-
-          </div>
-
-        `).join("");
+        }).join("");
 
 
       const total =
-        cart.reduce(
-          (sum, item) =>
-            sum + (item.price * item.quantity),
-          0
-        );
+        cart.reduce(function(sum, item) {
+
+          return sum +
+            (item.price * item.quantity);
+
+        }, 0);
 
 
       totalEl.innerText =
-        `جمع کل: ${total.toLocaleString("fa-IR")} تومان`;
+        "جمع کل: " +
+        formatPrice(total);
 
     }
 
 
     /* =====================================================
-       استعلام قیمت محصول بدون قیمت
+       استعلام قیمت محصول
        ===================================================== */
 
     function orderProduct(id) {
 
       const product =
-        products.find(p => p.id === id);
+        products.find(function(p) {
 
-      if (!product) return;
+          return p.id === id;
+
+        });
+
+
+      if (!product) {
+
+        return;
+
+      }
+
 
       const message =
-        `سلام، درباره «${product.name}» از فروشگاه چادردوزی جزیره استعلام قیمت دارم.`;
+        "سلام، درباره «" +
+        product.name +
+        "» از فروشگاه چادردوزی جزیره استعلام قیمت دارم.";
 
-      const phone =
-        "989118031241";
 
       const url =
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        "https://wa.me/" +
+        WHATSAPP_PHONE +
+        "?text=" +
+        encodeURIComponent(message);
+
 
       window.open(url, "_blank");
 
@@ -873,54 +1107,69 @@
 
       if (cart.length === 0) {
 
-        alert("سبد خرید خالی است!");
+        alert(
+          "سبد خرید خالی است!"
+        );
 
         return;
+
       }
 
 
       let message =
-        "سلام، می‌خواهم این سفارش را از فروشگاه چادردوزی جزیره ثبت کنم:\n\n";
+        "سلام، می‌خواهم سفارش زیر را از فروشگاه چادردوزی جزیره ثبت کنم:\n\n";
 
 
-      cart.forEach(item => {
-
-        message +=
-          `• ${item.name}\n`;
+      cart.forEach(function(item) {
 
         message +=
-          `تعداد: ${item.quantity}\n`;
+          "• " +
+          item.name +
+          "\n";
 
         message +=
-          `قیمت: ${item.price.toLocaleString("fa-IR")} تومان\n`;
+          "تعداد: " +
+          item.quantity.toLocaleString("fa-IR") +
+          "\n";
 
         message +=
-          `مبلغ: ${(item.price * item.quantity).toLocaleString("fa-IR")} تومان\n\n`;
+          "قیمت واحد: " +
+          formatPrice(item.price) +
+          "\n";
+
+        message +=
+          "مبلغ: " +
+          formatPrice(
+            item.price * item.quantity
+          ) +
+          "\n\n";
 
       });
 
 
       const total =
-        cart.reduce(
-          (sum, item) =>
-            sum + (item.price * item.quantity),
-          0
-        );
+        cart.reduce(function(sum, item) {
+
+          return sum +
+            (item.price * item.quantity);
+
+        }, 0);
 
 
       message +=
-        `جمع کل: ${total.toLocaleString("fa-IR")} تومان\n\n`;
+        "جمع کل: " +
+        formatPrice(total) +
+        "\n\n";
 
       message +=
         "لطفاً برای هماهنگی سفارش با من تماس بگیرید.";
 
 
-      const phone =
-        "989118031241";
-
-
       const url =
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        "https://wa.me/" +
+        WHATSAPP_PHONE +
+        "?text=" +
+        encodeURIComponent(message);
 
 
       window.open(url, "_blank");
@@ -929,10 +1178,11 @@
 
 
     /* =====================================================
-       اجرای اولیه
+       اجرای اولیه فروشگاه
        ===================================================== */
 
     renderProducts();
+
     renderCart();
 
   </script>
