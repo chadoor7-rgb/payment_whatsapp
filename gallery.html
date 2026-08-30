@@ -1,0 +1,503 @@
+<!doctype html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta name="description"
+ content="گالری تصاویر محصولات، چادرهای مسافرتی، تعمیر چادر و نمونه کارهای چادردوزی جزیره J.A.T در آمل." />
+
+  <title>گالری تصاویر | چادردوزی جزیره J.A.T</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+
+    .gallery-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .gallery-hero {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 55px;
+    }
+
+    .gallery-hero h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 18px;
+    }
+
+    .gallery-hero p {
+      line-height: 2;
+      opacity: 0.8;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      min-height: 280px;
+      cursor: pointer;
+    }
+
+    .gallery-item.large {
+      grid-column: span 2;
+      grid-row: span 2;
+      min-height: 580px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      padding: 45px 25px 22px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      color: white;
+    }
+
+    .gallery-caption h2 {
+      font-size: 1.2rem;
+      margin: 0 0 6px;
+    }
+
+    .gallery-caption p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      z-index: 9999;
+    }
+
+    .gallery-lightbox.active {
+      display: flex;
+    }
+
+    .gallery-lightbox img {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 12px;
+    }
+
+    .close-gallery {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      background: white;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 850px) {
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item.large {
+        grid-column: span 2;
+        grid-row: span 1;
+        min-height: 420px;
+      }
+
+    }
+
+    @media (max-width: 550px) {
+
+      .gallery-page {
+        padding: 45px 16px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item.large {
+        grid-column: span 1;
+        min-height: 300px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <a class="brand" href="index.html">
+
+```
+<span class="brand-mark">
+  <i data-lucide="tent-tree"></i>
+  <b>J</b>
+</span>
+
+<span>چادردوزی جزیره</span>
+```
+
+  </a>
+
+  <nav class="main-nav" aria-label="ناوبری اصلی">
+
+```
+<a href="products.html">محصولات</a>
+
+<a href="shop.html">🛒 فروشگاه</a>
+
+<a href="gallery.html">🖼️ گالری</a>
+
+<a href="services.html">خدمات ما</a>
+
+<a href="about.html">درباره J.A.T</a>
+```
+
+  </nav>
+
+  <a class="header-action" href="contact.html">
+
+```
+ثبت سفارش
+
+<i data-lucide="arrow-left"></i>
+```
+
+  </a>
+
+  <button class="menu-toggle" aria-label="باز کردن منو">
+
+```
+<i data-lucide="menu"></i>
+```
+
+  </button>
+
+</header>
+
+<main class="gallery-page">
+
+  <section class="gallery-hero">
+
+```
+<p class="eyebrow">
+  <span></span>
+  نمونه کارهای چادردوزی جزیره
+</p>
+
+<h1>
+  گالری <em>محصولات و نمونه کارها</em>
+</h1>
+
+<p>
+  مجموعه‌ای از تصاویر چادرهای مسافرتی، چادرهای سفارشی،
+  تعمیرات تخصصی و نمونه کارهای تولید شده در چادردوزی جزیره J.A.T.
+</p>
+```
+
+  </section>
+
+  <section class="gallery-grid">
+
+```
+<div class="gallery-item large">
+
+  <img src="tent-repair-chadooor.jpg"
+       alt="تعمیر تخصصی چادر مسافرتی" />
+
+  <div class="gallery-caption">
+
+    <h2>تعمیر تخصصی چادر</h2>
+
+    <p>
+      تعمیر و بازسازی چادرهای مسافرتی
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="travel-tent-after-repair-side.jpg"
+       alt="چادر پس از تعمیر" />
+
+  <div class="gallery-caption">
+
+    <h2>چادر پس از تعمیر</h2>
+
+    <p>
+      بازسازی و آماده‌سازی برای سفر
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="travel-tent-during-repair.webp"
+       alt="فرآیند تعمیر چادر" />
+
+  <div class="gallery-caption">
+
+    <h2>فرآیند تعمیر</h2>
+
+    <p>
+      تعمیر تخصصی و تعویض قطعات
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="skeleton-tent-8-custom-production.jpg"
+       alt="تولید سفارشی چادر" />
+
+  <div class="gallery-caption">
+
+    <h2>تولید سفارشی</h2>
+
+    <p>
+      ساخت چادر بر اساس نیاز مشتری
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="travel-tent-chatr.webp"
+       alt="چادر مسافرتی" />
+
+  <div class="gallery-caption">
+
+    <h2>چادر مسافرتی</h2>
+
+    <p>
+      مناسب سفر و کمپینگ
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="tent-after-repair-1.jpg"
+       alt="نمونه تعمیر چادر" />
+
+  <div class="gallery-caption">
+
+    <h2>نمونه تعمیر</h2>
+
+    <p>
+      بازسازی حرفه‌ای چادر
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="tent-after-repair-2.jpg"
+       alt="نمونه کار چادردوزی" />
+
+  <div class="gallery-caption">
+
+    <h2>نمونه کار</h2>
+
+    <p>
+      دوخت و تعمیر تخصصی
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="gallery-item">
+
+  <img src="tent-after-repair-3.jpg"
+       alt="بازسازی چادر مسافرتی" />
+
+  <div class="gallery-caption">
+
+    <h2>بازسازی چادر</h2>
+
+    <p>
+      آماده برای استفاده دوباره
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+</main>
+
+<div class="gallery-lightbox" id="galleryLightbox">
+
+  <button class="close-gallery" aria-label="بستن گالری">
+    ×
+  </button>
+
+  <img id="lightboxImage" src="" alt="نمایش بزرگ تصویر" />
+
+</div>
+
+<footer>
+
+  <a class="brand" href="index.html">
+
+```
+<span class="brand-mark">
+
+  <i data-lucide="tent-tree"></i>
+
+  <b>J</b>
+
+</span>
+
+<span>چادردوزی جزیره</span>
+```
+
+  </a>
+
+  <p>
+    برای هر مسیر، یک پناه مطمئن.
+  </p>
+
+  <span>
+    © ۱۴۰۳ J.A.T
+  </span>
+
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script src="script.js"></script>
+
+<script>
+
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  const lightbox =
+    document.getElementById('galleryLightbox');
+
+  const lightboxImage =
+    document.getElementById('lightboxImage');
+
+  const closeGallery =
+    document.querySelector('.close-gallery');
+
+
+  galleryItems.forEach(item => {
+
+    item.addEventListener('click', () => {
+
+      const image =
+        item.querySelector('img');
+
+      lightboxImage.src =
+        image.src;
+
+      lightbox.classList.add('active');
+
+    });
+
+  });
+
+
+  closeGallery.addEventListener('click', () => {
+
+    lightbox.classList.remove('active');
+
+  });
+
+
+  lightbox.addEventListener('click', (event) => {
+
+    if (event.target === lightbox) {
+
+      lightbox.classList.remove('active');
+
+    }
+
+  });
+
+
+  lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>
