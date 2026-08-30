@@ -1,245 +1,288 @@
+```html
 <!DOCTYPE html>
-
 <html lang="fa" dir="rtl">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="description"
-content="فروشگاه چادردوزی جزیره J.A.T؛ چادر مسافرتی، چادر برزنتی و پشه‌بند سفارشی در آمل."
+  <title>فروشگاه چادردوزی جزیره | چادر مسافرتی و برزنتی</title>
 
->
-
-<meta
-name="keywords"
-content="فروشگاه چادر آمل, چادر مسافرتی, چادر برزنتی, پشه بند, چادردوزی جزیره"
-
->
-
-  <link
-    rel="canonical"
-    href="https://chadooor.ir/shop.html"
-  >
-
-  <title>فروشگاه | چادردوزی جزیره J.A.T</title>
-
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="favicon.svg"
-  >
-
-  <link
-    rel="stylesheet"
-    href="styles.css"
-  >
+  <meta name="description"
+        content="فروشگاه چادردوزی جزیره؛ انواع چادر مسافرتی، چادر برزنتی، پشه‌بند و محصولات سفارشی. سفارش و استعلام قیمت از طریق واتساپ.">
 
   <style>
 
     * {
-      box-sizing: border-box;
-    }
-
-    body {
       margin: 0;
-      background: #f5f5f5;
-      color: #222;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Tahoma, Arial, sans-serif;
     }
 
-    .shop-container {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 35px 20px 60px;
+    body {
+      background: #f5f5f5;
+      color: #222;
+      padding: 20px;
+      line-height: 1.8;
     }
 
-    .shop-header {
+    /* ================= هدر ================= */
+
+    .header {
+      max-width: 1100px;
+      margin: 0 auto 25px;
+      background: white;
+      padding: 25px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
       text-align: center;
-      margin-bottom: 30px;
     }
 
-    .shop-header h1 {
-      margin-bottom: 12px;
-      font-size: 34px;
+    .header h1 {
+      color: #222;
+      font-size: 28px;
+      margin-bottom: 8px;
     }
 
-    .shop-header p {
-      color: #666;
-      line-height: 2;
-      max-width: 700px;
-      margin: auto;
+    .header p {
+      color: #777;
+      font-size: 15px;
     }
 
-    /* فیلترها */
+    .brand {
+      color: #008866;
+      font-weight: bold;
+    }
+
+    /* ================= فیلترها ================= */
 
     .filters {
       max-width: 1100px;
-      margin: 0 auto 30px;
+      margin: 0 auto 25px;
+
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+
       align-items: center;
       justify-content: center;
     }
 
     .filters input {
-      padding: 12px 15px;
+      padding: 11px 14px;
       border: 1px solid #ddd;
       border-radius: 9px;
       font-size: 14px;
       width: 250px;
+      outline: none;
       background: white;
+    }
+
+    .filters input:focus {
+      border-color: #008866;
     }
 
     .filter-btn {
       background: #eee;
       color: #333;
       border: none;
-      padding: 10px 17px;
-      border-radius: 9px;
+
+      padding: 9px 16px;
+      border-radius: 8px;
+
       cursor: pointer;
       font-size: 14px;
+      transition: 0.2s;
     }
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: #087f5b;
+      background: #008866;
       color: white;
     }
 
-    /* محصولات */
+    /* ================= تعداد محصولات ================= */
+
+    .products-count {
+      max-width: 1100px;
+      margin: 0 auto 15px;
+      color: #777;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    /* ================= محصولات ================= */
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin-bottom: 45px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+
+      max-width: 1100px;
+      margin: 0 auto 40px;
     }
 
     .product {
       background: white;
-      border-radius: 15px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,.08);
-      transition: transform .2s, box-shadow .2s;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
 
     .product-image {
+      position: relative;
       width: 100%;
-      height: 230px;
+      height: 220px;
+      background: #eee;
+      overflow: hidden;
+    }
+
+    .product img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
-      background: #eee;
+      transition: transform 0.3s;
     }
+
+    .product:hover img {
+      transform: scale(1.04);
+    }
+
+    /* برچسب */
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      background: #008866;
+      color: white;
+
+      padding: 4px 9px;
+      border-radius: 7px;
+
+      font-size: 12px;
+      z-index: 2;
+    }
+
+    .badge.custom {
+      background: #555;
+    }
+
+    /* اطلاعات */
 
     .product-info {
-      padding: 18px;
+      padding: 16px;
     }
 
-    .product-info h2 {
-      font-size: 20px;
-      margin: 0 0 8px;
+    .product-info h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #222;
     }
 
     .category {
-      display: inline-block;
       font-size: 13px;
-      color: #087f5b;
-      background: #eaf8f3;
-      padding: 5px 9px;
-      border-radius: 6px;
-      margin-bottom: 10px;
+      color: #888;
+      margin-bottom: 8px;
     }
 
-    .product-description {
+    .description {
+      font-size: 13px;
       color: #666;
-      line-height: 1.9;
-      font-size: 14px;
-      min-height: 55px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      min-height: 45px;
     }
 
     .price {
-      color: #087f5b;
+      color: #008866;
       font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 14px;
+      font-size: 17px;
+      margin-bottom: 12px;
     }
 
-    .price-note {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 14px;
+    .price.inquiry {
+      color: #d68910;
+      font-size: 15px;
     }
 
-    .product-actions {
+    /* دکمه ها */
+
+    .product-buttons {
       display: flex;
       gap: 8px;
-      flex-direction: column;
     }
 
-    .add-btn,
-    .details-btn {
-      width: 100%;
+    button {
       border: none;
-      padding: 11px;
-      border-radius: 9px;
       cursor: pointer;
+      border-radius: 8px;
       font-size: 14px;
-      text-align: center;
-      text-decoration: none;
+      transition: 0.2s;
     }
 
     .add-btn {
-      background: #087f5b;
+      flex: 1;
+
+      background: #008866;
       color: white;
+
+      padding: 10px 12px;
     }
 
     .add-btn:hover {
-      background: #066b4c;
+      background: #006f55;
     }
 
     .details-btn {
-      background: #f0f0f0;
+      background: #eee;
       color: #333;
+
+      padding: 10px 12px;
     }
 
     .details-btn:hover {
-      background: #e4e4e4;
+      background: #ddd;
     }
 
-    /* سبد خرید */
+    /* ================= سبد خرید ================= */
 
     .cart {
       max-width: 650px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
+
       background: white;
-      border-radius: 15px;
-      padding: 24px;
-      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+      border-radius: 14px;
+
+      padding: 22px;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .cart h2 {
-      margin: 0 0 18px;
-      font-size: 24px;
+      margin-bottom: 15px;
+      font-size: 22px;
     }
 
     .cart-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
+
+      padding: 13px 0;
+
       border-bottom: 1px solid #eee;
-      gap: 12px;
+
+      gap: 10px;
     }
 
     .item-info {
@@ -248,7 +291,7 @@ content="فروشگاه چادر آمل, چادر مسافرتی, چادر بر�
 
     .item-info strong {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
 
     .item-price {
@@ -265,13 +308,15 @@ content="فروشگاه چادر آمل, چادر مسافرتی, چادر بر�
     .qty-btn {
       width: 32px;
       height: 32px;
-      padding: 0;
-      border: none;
+
       background: #eee;
       color: #333;
-      border-radius: 6px;
-      cursor: pointer;
+
       font-size: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .qty-btn:hover {
@@ -285,12 +330,10 @@ content="فروشگاه چادر آمل, چادر مسافرتی, چادر بر�
     }
 
     .remove-btn {
-      border: none;
       background: #e74c3c;
       color: white;
-      padding: 7px 10px;
-      border-radius: 6px;
-      cursor: pointer;
+
+      padding: 6px 10px;
       font-size: 12px;
     }
 
@@ -299,23 +342,25 @@ content="فروشگاه چادر آمل, چادر مسافرتی, چادر بر�
     }
 
     .total {
-      margin-top: 20px;
-      font-size: 20px;
+      margin-top: 18px;
+
+      font-size: 18px;
       font-weight: bold;
+
       text-align: left;
     }
 
     .checkout {
+      margin-top: 15px;
+
       width: 100%;
-      margin-top: 18px;
-      border: none;
+
       background: #25D366;
       color: white;
-      padding: 14px;
-      border-radius: 9px;
-      cursor: pointer;
+
+      padding: 13px;
+
       font-size: 16px;
-      font-weight: bold;
     }
 
     .checkout:hover {
@@ -331,534 +376,707 @@ content="فروشگاه چادر آمل, چادر مسافرتی, چادر بر�
     .no-result {
       text-align: center;
       color: #888;
-      padding: 40px;
+      padding: 50px;
+
       grid-column: 1 / -1;
+
+      background: white;
+      border-radius: 12px;
     }
 
-    /* موبایل */
+    /* ================= پیام ================= */
+
+    .toast {
+      position: fixed;
+
+      bottom: 20px;
+      right: 20px;
+
+      background: #222;
+      color: white;
+
+      padding: 12px 18px;
+
+      border-radius: 8px;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: 0.3s;
+
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ================= موبایل ================= */
 
     @media (max-width: 600px) {
 
-      .shop-header h1 {
-        font-size: 27px;
+      body {
+        padding: 10px;
+      }
+
+      .header h1 {
+        font-size: 22px;
       }
 
       .filters input {
         width: 100%;
       }
 
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 230px;
+      }
+
       .cart-item {
         flex-wrap: wrap;
       }
 
-      .total {
-        text-align: center;
+      .item-info {
+        min-width: 100%;
       }
 
     }
 
   </style>
-
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- ================= هدر ================= -->
 
-<header class="site-header">
+  <header class="header">
 
-<a
-class="brand"
-href="index.html"
-aria-label="صفحه اصلی چادردوزی جزیره"
+    <h1>
+      فروشگاه <span class="brand">چادردوزی جزیره</span>
+    </h1>
 
->
+    <p>
+      چادر مسافرتی، چادر برزنتی، پشه‌بند و محصولات سفارشی
+    </p>
 
-```
-<span class="brand-mark">
+  </header>
 
-  <i data-lucide="tent-tree"></i>
 
-  <b>J</b>
-
-</span>
-
-<span>
-  چادردوزی جزیره
-</span>
-```
-
-  </a>
-
-  <nav
-    class="main-nav"
-    aria-label="ناوبری اصلی"
-  >
-
-```
-<a href="products.html">
-  محصولات
-</a>
-
-<a href="shop.html">
-  فروشگاه
-</a>
-
-<a href="services.html">
-  خدمات ما
-</a>
-
-<a href="gallery.html">
-  گالری
-</a>
-
-<a href="about.html">
-  درباره J.A.T
-</a>
-```
-
-  </nav>
-
-<a
-class="header-action"
-href="contact.html"
-
->
-
-```
-ثبت سفارش
-
-<i data-lucide="arrow-left"></i>
-```
-
-  </a>
-
-<button
-class="menu-toggle"
-aria-label="باز کردن منو"
-type="button"
-
->
-
-```
-<i data-lucide="menu"></i>
-```
-
-  </button>
-
-</header>
-
-<!-- ================= SHOP ================= -->
-
-<main class="shop-container">
-
-  <section class="shop-header">
-
-```
-<h1>
-  فروشگاه چادردوزی جزیره
-</h1>
-
-<p>
-  محصولات چادردوزی جزیره J.A.T برای سفر،
-  کمپینگ و استفاده‌های حرفه‌ای.
-  محصول موردنظر خود را انتخاب کنید و
-  سفارش را مستقیماً از طریق واتساپ ثبت کنید.
-</p>
-```
-
-  </section>
-
-  <!-- فیلتر -->
+  <!-- ================= فیلترها ================= -->
 
   <div class="filters">
 
-```
-<input
-  type="text"
-  id="searchInput"
-  placeholder="جستجوی نام محصول..."
-  oninput="applyFilters()"
->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="جستجوی نام محصول..."
+      oninput="applyFilters()"
+    >
 
-<button
-  class="filter-btn active"
-  onclick="setCategory('all', this)"
->
-  همه
-</button>
+    <button
+      class="filter-btn active"
+      onclick="setCategory('all', this)"
+    >
+      همه
+    </button>
 
-<button
-  class="filter-btn"
-  onclick="setCategory('چادر مسافرتی', this)"
->
-  چادر مسافرتی
-</button>
+    <button
+      class="filter-btn"
+      onclick="setCategory('چادر مسافرتی', this)"
+    >
+      چادر مسافرتی
+    </button>
 
-<button
-  class="filter-btn"
-  onclick="setCategory('چادر برزنتی', this)"
->
-  چادر برزنتی
-</button>
+    <button
+      class="filter-btn"
+      onclick="setCategory('چادر برزنتی', this)"
+    >
+      چادر برزنتی
+    </button>
 
-<button
-  class="filter-btn"
-  onclick="setCategory('پشه‌بند', this)"
->
-  پشه‌بند
-</button>
-```
+    <button
+      class="filter-btn"
+      onclick="setCategory('پشه‌بند', this)"
+    >
+      پشه‌بند
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setCategory('سایر', this)"
+    >
+      سایر
+    </button>
 
   </div>
 
-  <!-- محصولات -->
 
-  <section
+  <!-- تعداد محصولات -->
+
+  <div
+    class="products-count"
+    id="productsCount"
+  ></div>
+
+
+  <!-- ================= محصولات ================= -->
+
+  <div
     class="products"
     id="products"
-    aria-label="محصولات فروشگاه"
-  ></section>
-
-  <!-- سبد خرید -->
-
-  <section class="cart">
-
-```
-<h2>
-  🛒 سبد خرید
-</h2>
-
-<div id="cart-items"></div>
-
-<div
-  class="total"
-  id="total"
->
-  جمع کل: ۰ تومان
-</div>
-
-<button
-  class="checkout"
-  onclick="checkout()"
->
-
-  ثبت سفارش در واتساپ
-
-</button>
-```
-
-  </section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<a
-class="brand"
-href="index.html"
-
->
-
-```
-<span class="brand-mark">
-
-  <i data-lucide="tent-tree"></i>
-
-  <b>J</b>
-
-</span>
-
-<span>
-  چادردوزی جزیره
-</span>
-```
-
-  </a>
-
-  <p>
-    برای هر مسیر، یک پناه مطمئن.
-  </p>
-
-  <span>
-    © ۱۴۰۳ J.A.T
-  </span>
-
-</footer>
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<script>
-
-  /* ================= محصولات واقعی ================= */
-
-  const products = [
-
-    {
-      id: 1,
-
-      name: "چادر مسافرتی",
-
-      price: 0,
-
-      category: "چادر مسافرتی",
-
-      description:
-        "چادر مسافرتی مناسب سفر، کمپینگ و استفاده در فضای باز.",
-
-      image:
-        "travel-tent-chatr.webp",
-
-      link:
-        "travel-tent.html"
-    },
+  ></div>
 
 
-    {
-      id: 2,
+  <!-- ================= سبد خرید ================= -->
 
-      name: "چادر برزنتی",
+  <div class="cart">
 
-      price: 0,
+    <h2>
+      🛒 سبد خرید
+    </h2>
 
-      category: "چادر برزنتی",
+    <div id="cart-items"></div>
 
-      description:
-        "چادر برزنتی مقاوم برای سایه‌بان، پروژه‌ها و استفاده‌های طولانی‌مدت.",
+    <div
+      class="total"
+      id="total"
+    >
+      جمع کل: ۰ تومان
+    </div>
 
-      image:
-        "KHIME.jpg",
+    <button
+      class="checkout"
+      onclick="checkout()"
+    >
+      📱 ثبت سفارش در واتساپ
+    </button>
 
-      link:
-        "tarpaulin.html"
-    },
+  </div>
 
 
-    {
-      id: 3,
+  <!-- پیام -->
 
-      name: "پشه‌بند",
+  <div
+    class="toast"
+    id="toast"
+  ></div>
 
-      price: 0,
 
-      category: "پشه‌بند",
+  <script>
 
-      description:
-        "پشه‌بند سفارشی با دوخت تمیز و اندازه‌های متنوع برای فضای باز.",
+    /* =====================================================
+       محصولات فروشگاه
+       ===================================================== */
 
-      image:
-        "pasheband.jpg",
+    const products = [
 
-      link:
-        "mosquito-net.html"
+      {
+        id: 1,
+
+        name: "چادر برزنتی",
+
+        price: null,
+
+        category: "چادر برزنتی",
+
+        description:
+          "چادر برزنتی مقاوم و قابل سفارش در اندازه‌های مختلف.",
+
+        image:
+          "KHIME.jpg",
+
+        badge:
+          "استعلام قیمت"
+      },
+
+
+      {
+        id: 2,
+
+        name: "چادر برزنتی ۶ نفره",
+
+        price: null,
+
+        category: "چادر برزنتی",
+
+        description:
+          "چادر برزنتی مناسب استفاده خانوادگی و فضای باز.",
+
+        image:
+          "6n brezent.webp",
+
+        badge:
+          "سفارشی"
+      },
+
+
+      {
+        id: 3,
+
+        name: "چادر برزنتی ۱۰ نفره",
+
+        price: null,
+
+        category: "چادر برزنتی",
+
+        description:
+          "چادر برزنتی بزرگ و مقاوم برای استفاده در فضای باز.",
+
+        image:
+          "10n bereznte.webp",
+
+        badge:
+          "استعلام قیمت"
+      },
+
+
+      {
+        id: 4,
+
+        name: "چادر برزنتی ۱۲ نفره",
+
+        price: null,
+
+        category: "چادر برزنتی",
+
+        description:
+          "چادر بزرگ برزنتی مناسب سفارش‌های اختصاصی.",
+
+        image:
+          "12nbereznte.webp",
+
+        badge:
+          "سفارشی"
+      },
+
+
+      {
+        id: 5,
+
+        name: "چادر مسافرتی",
+
+        price: null,
+
+        category: "چادر مسافرتی",
+
+        description:
+          "چادر مسافرتی مناسب سفر، طبیعت‌گردی و کمپینگ.",
+
+        image:
+          "travel-tent-chatr.webp",
+
+        badge:
+          "استعلام قیمت"
+      },
+
+
+      {
+        id: 6,
+
+        name: "چادر سفر جزیره – مدل جدید",
+
+        price: null,
+
+        category: "چادر مسافرتی",
+
+        description:
+          "مدل جدید چادر سفر جزیره؛ در حال تولید.",
+
+        image:
+          "چادر سفر جزیره – مدل جدید (به زودی).jpg",
+
+        badge:
+          "به‌زودی"
+      },
+
+
+      {
+        id: 7,
+
+        name: "چادر J.A.T",
+
+        price: null,
+
+        category: "چادر مسافرتی",
+
+        description:
+          "محصول تولیدی چادردوزی جزیره J.A.T.",
+
+        image:
+          "۸ JAT.webp",
+
+        badge:
+          "استعلام قیمت"
+      },
+
+
+      {
+        id: 8,
+
+        name: "پشه‌بند",
+
+        price: null,
+
+        category: "پشه‌بند",
+
+        description:
+          "پشه‌بند سفارشی با امکان تولید در اندازه‌های مختلف.",
+
+        image:
+          "pasheband.jpg",
+
+        badge:
+          "استعلام قیمت"
+      },
+
+
+      {
+        id: 9,
+
+        name: "پشه‌بند – مدل دیگر",
+
+        price: null,
+
+        category: "پشه‌بند",
+
+        description:
+          "پشه‌بند مناسب سفر و استفاده در فضای باز.",
+
+        image:
+          "پاشه band range.jpg",
+
+        badge:
+          "سفارشی"
+      },
+
+
+      {
+        id: 10,
+
+        name: "چادر سفری",
+
+        price: null,
+
+        category: "چادر مسافرتی",
+
+        description:
+          "چادر سفری مناسب طبیعت‌گردی و سفر.",
+
+        image:
+          "tent5.webp",
+
+        badge:
+          "استعلام قیمت"
+      },
+
+
+      {
+        id: 11,
+
+        name: "چادر سفری مدل دیگر",
+
+        price: null,
+
+        category: "چادر مسافرتی",
+
+        description:
+          "مدل دیگر از چادرهای تولیدی جزیره.",
+
+        image:
+          "tent8.webp",
+
+        badge:
+          "سفارشی"
+      },
+
+
+      {
+        id: 12,
+
+        name: "سایبان",
+
+        price: null,
+
+        category: "سایر",
+
+        description:
+          "سایبان سفارشی برای استفاده در فضای باز.",
+
+        image:
+          "SAIBANg.jpg",
+
+        badge:
+          "استعلام قیمت"
+      }
+
+    ];
+
+
+    /* =====================================================
+       تنظیمات
+       ===================================================== */
+
+    const WHATSAPP_NUMBER = "989118031241";
+
+    let currentCategory = "all";
+
+    let cart =
+      JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+
+
+    /* =====================================================
+       فرمت قیمت
+       ===================================================== */
+
+    function formatPrice(price) {
+
+      if (price === null || price === undefined) {
+
+        return "استعلام قیمت";
+
+      }
+
+      return price.toLocaleString("fa-IR") + " تومان";
+
     }
 
-  ];
 
+    /* =====================================================
+       فیلتر دسته‌بندی
+       ===================================================== */
 
-  /* ================= تنظیمات ================= */
+    function setCategory(category, button) {
 
-  let currentCategory = "all";
+      currentCategory = category;
 
-  let cart =
-    JSON.parse(
-      localStorage.getItem("chadooor_cart")
-    ) || [];
-
-
-  /* ================= فیلتر ================= */
-
-  function setCategory(category, button) {
-
-    currentCategory = category;
-
-    document
-      .querySelectorAll(".filter-btn")
-      .forEach(btn => {
-
-        btn.classList.remove("active");
-
-      });
-
-    button.classList.add("active");
-
-    applyFilters();
-
-  }
-
-
-  function applyFilters() {
-
-    const searchText =
       document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toLowerCase();
+        .querySelectorAll(".filter-btn")
+        .forEach(btn => {
+
+          btn.classList.remove("active");
+
+        });
+
+      button.classList.add("active");
+
+      applyFilters();
+
+    }
 
 
-    const filtered =
-      products.filter(product => {
+    /* =====================================================
+       جستجو و فیلتر
+       ===================================================== */
 
-        const matchCategory =
-          currentCategory === "all" ||
-          product.category === currentCategory;
+    function applyFilters() {
 
-
-        const matchSearch =
-          product.name
-            .toLowerCase()
-            .includes(searchText);
-
-
-        return matchCategory && matchSearch;
-
-      });
+      const searchText =
+        document
+          .getElementById("searchInput")
+          .value
+          .trim()
+          .toLowerCase();
 
 
-    renderProducts(filtered);
+      const filtered =
+        products.filter(product => {
 
-  }
-
-
-  /* ================= نمایش محصولات ================= */
-
-  function renderProducts(list = products) {
-
-    const container =
-      document.getElementById("products");
+          const categoryMatch =
+            currentCategory === "all" ||
+            product.category === currentCategory;
 
 
-    if (list.length === 0) {
+          const searchMatch =
+            product.name
+              .toLowerCase()
+              .includes(searchText);
+
+
+          return categoryMatch && searchMatch;
+
+        });
+
+
+      renderProducts(filtered);
+
+    }
+
+
+    /* =====================================================
+       نمایش محصولات
+       ===================================================== */
+
+    function renderProducts(list) {
+
+      const container =
+        document.getElementById("products");
+
+
+      const count =
+        document.getElementById("productsCount");
+
+
+      count.innerText =
+        `${list.length} محصول`;
+
+
+      if (list.length === 0) {
+
+        container.innerHTML = `
+          <div class="no-result">
+            محصولی با این مشخصات پیدا نشد.
+          </div>
+        `;
+
+        return;
+
+      }
+
 
       container.innerHTML =
-        '<div class="no-result">محصولی یافت نشد.</div>';
+        list.map(product => `
 
-      return;
+          <div class="product">
 
-    }
+            <div class="product-image">
 
+              <span
+                class="badge ${product.price === null ? "custom" : ""}"
+              >
+                ${product.badge}
+              </span>
 
-    container.innerHTML =
-      list.map(product => `
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+                onerror="this.src='https://via.placeholder.com/600x450?text=Chadoor'"
+              >
 
-        <article class="product">
-
-          <img
-            class="product-image"
-            src="${product.image}"
-            alt="${product.name} چادردوزی جزیره J.A.T"
-            loading="lazy"
-          >
-
-          <div class="product-info">
-
-            <span class="category">
-              ${product.category}
-            </span>
-
-            <h2>
-              ${product.name}
-            </h2>
-
-            <p class="product-description">
-              ${product.description}
-            </p>
-
-            <div class="price-note">
-              قیمت پس از انتخاب مشخصات و اندازه اعلام می‌شود.
             </div>
 
-            <div class="product-actions">
 
-              <button
-                class="add-btn"
-                onclick="addToCart(${product.id})"
-              >
-                افزودن به سبد
-              </button>
+            <div class="product-info">
 
-              <a
-                class="details-btn"
-                href="${product.link}"
+              <h3>
+                ${product.name}
+              </h3>
+
+              <div class="category">
+                ${product.category}
+              </div>
+
+              <div class="description">
+                ${product.description}
+              </div>
+
+
+              <div
+                class="price ${product.price === null ? "inquiry" : ""}"
               >
-                مشاهده مشخصات
-              </a>
+
+                ${
+                  product.price === null
+                    ? "برای قیمت تماس بگیرید"
+                    : formatPrice(product.price)
+                }
+
+              </div>
+
+
+              <div class="product-buttons">
+
+                <button
+                  class="add-btn"
+                  onclick="addToCart(${product.id})"
+                >
+
+                  ${
+                    product.price === null
+                      ? "استعلام / سفارش"
+                      : "افزودن به سبد"
+                  }
+
+                </button>
+
+              </div>
 
             </div>
 
           </div>
 
-        </article>
-
-      `).join("");
-
-  }
-
-
-  /* ================= افزودن به سبد ================= */
-
-  function addToCart(id) {
-
-    const product =
-      products.find(
-        product => product.id === id
-      );
-
-
-    if (!product) return;
-
-
-    const existing =
-      cart.find(
-        item => item.id === id
-      );
-
-
-    if (existing) {
-
-      existing.quantity += 1;
-
-    } else {
-
-      cart.push({
-
-        ...product,
-
-        quantity: 1
-
-      });
+        `).join("");
 
     }
 
 
-    saveCart();
+    /* =====================================================
+       افزودن محصول به سبد
+       ===================================================== */
 
-    renderCart();
+    function addToCart(id) {
 
-
-    alert(
-      `${product.name} به سبد خرید اضافه شد.`
-    );
-
-  }
+      const product =
+        products.find(p => p.id === id);
 
 
-  /* ================= افزایش ================= */
+      if (!product) return;
 
-  function increaseQty(id) {
 
-    const item =
-      cart.find(
-        item => item.id === id
+      const existing =
+        cart.find(item => item.id === id);
+
+
+      if (existing) {
+
+        existing.quantity += 1;
+
+      } else {
+
+        cart.push({
+
+          id: product.id,
+
+          name: product.name,
+
+          price: product.price,
+
+          category: product.category,
+
+          quantity: 1
+
+        });
+
+      }
+
+
+      saveCart();
+
+      renderCart();
+
+      showToast(
+        `"${product.name}" به سبد اضافه شد`
       );
 
+    }
 
-    if (item) {
+
+    /* =====================================================
+       افزایش
+       ===================================================== */
+
+    function increaseQty(id) {
+
+      const item =
+        cart.find(item => item.id === id);
+
+
+      if (!item) return;
+
 
       item.quantity += 1;
 
@@ -868,223 +1086,314 @@ href="index.html"
 
     }
 
-  }
+
+    /* =====================================================
+       کاهش
+       ===================================================== */
+
+    function decreaseQty(id) {
+
+      const item =
+        cart.find(item => item.id === id);
 
 
-  /* ================= کاهش ================= */
-
-  function decreaseQty(id) {
-
-    const item =
-      cart.find(
-        item => item.id === id
-      );
+      if (!item) return;
 
 
-    if (!item) return;
+      item.quantity -= 1;
 
 
-    item.quantity -= 1;
+      if (item.quantity <= 0) {
+
+        cart =
+          cart.filter(i => i.id !== id);
+
+      }
 
 
-    if (item.quantity <= 0) {
+      saveCart();
+
+      renderCart();
+
+    }
+
+
+    /* =====================================================
+       حذف
+       ===================================================== */
+
+    function removeFromCart(id) {
 
       cart =
-        cart.filter(
-          item => item.id !== id
-        );
+        cart.filter(item => item.id !== id);
+
+      saveCart();
+
+      renderCart();
 
     }
 
 
-    saveCart();
+    /* =====================================================
+       ذخیره سبد
+       ===================================================== */
 
-    renderCart();
+    function saveCart() {
 
-  }
-
-
-  /* ================= حذف ================= */
-
-  function removeFromCart(id) {
-
-    cart =
-      cart.filter(
-        item => item.id !== id
+      localStorage.setItem(
+        "chadoor_cart",
+        JSON.stringify(cart)
       );
 
-
-    saveCart();
-
-    renderCart();
-
-  }
+    }
 
 
-  /* ================= ذخیره ================= */
+    /* =====================================================
+       نمایش سبد
+       ===================================================== */
 
-  function saveCart() {
+    function renderCart() {
 
-    localStorage.setItem(
-      "chadooor_cart",
-      JSON.stringify(cart)
-    );
-
-  }
+      const container =
+        document.getElementById("cart-items");
 
 
-  /* ================= نمایش سبد ================= */
-
-  function renderCart() {
-
-    const container =
-      document.getElementById("cart-items");
+      const totalEl =
+        document.getElementById("total");
 
 
-    const totalEl =
-      document.getElementById("total");
+      if (cart.length === 0) {
 
+        container.innerHTML =
+          `<div class="empty">
+             سبد خرید خالی است
+           </div>`;
 
-    if (cart.length === 0) {
+        totalEl.innerText =
+          "جمع کل: ۰ تومان";
+
+        return;
+
+      }
+
 
       container.innerHTML =
-        '<div class="empty">سبد خرید خالی است.</div>';
+        cart.map(item => `
 
-      totalEl.innerText =
-        "جمع کل: ۰ تومان";
+          <div class="cart-item">
 
-      return;
+            <div class="item-info">
+
+              <strong>
+                ${item.name}
+              </strong>
+
+              <span class="item-price">
+
+                ${
+                  item.price === null
+                    ? "استعلام قیمت"
+                    : formatPrice(item.price)
+                }
+
+              </span>
+
+            </div>
+
+
+            <div class="qty-controls">
+
+              <button
+                class="qty-btn"
+                onclick="decreaseQty(${item.id})"
+              >
+                −
+              </button>
+
+              <span class="qty-number">
+                ${item.quantity}
+              </span>
+
+              <button
+                class="qty-btn"
+                onclick="increaseQty(${item.id})"
+              >
+                +
+              </button>
+
+            </div>
+
+
+            <button
+              class="remove-btn"
+              onclick="removeFromCart(${item.id})"
+            >
+              حذف
+            </button>
+
+          </div>
+
+        `).join("");
+
+
+      const hasUnknownPrice =
+        cart.some(item => item.price === null);
+
+
+      const total =
+        cart.reduce(
+          (sum, item) => {
+
+            if (item.price === null) {
+
+              return sum;
+
+            }
+
+            return sum +
+              (item.price * item.quantity);
+
+          },
+          0
+        );
+
+
+      if (hasUnknownPrice) {
+
+        totalEl.innerText =
+          `جمع محصولات دارای قیمت: ${total.toLocaleString("fa-IR")} تومان`;
+
+      } else {
+
+        totalEl.innerText =
+          `جمع کل: ${total.toLocaleString("fa-IR")} تومان`;
+
+      }
 
     }
 
 
-    container.innerHTML =
-      cart.map(item => `
+    /* =====================================================
+       ثبت سفارش واتساپ
+       ===================================================== */
 
-        <div class="cart-item">
+    function checkout() {
 
-          <div class="item-info">
+      if (cart.length === 0) {
 
-            <strong>
-              ${item.name}
-            </strong>
+        alert(
+          "سبد خرید خالی است!"
+        );
 
-            <span class="item-price">
-              استعلام قیمت
-            </span>
+        return;
 
-          </div>
-
-
-          <div class="qty-controls">
-
-            <button
-              class="qty-btn"
-              onclick="decreaseQty(${item.id})"
-            >
-              −
-            </button>
-
-            <span class="qty-number">
-              ${item.quantity}
-            </span>
-
-            <button
-              class="qty-btn"
-              onclick="increaseQty(${item.id})"
-            >
-              +
-            </button>
-
-          </div>
+      }
 
 
-          <button
-            class="remove-btn"
-            onclick="removeFromCart(${item.id})"
-          >
-            حذف
-          </button>
-
-        </div>
-
-      `).join("");
+      let message =
+        "سلام، از فروشگاه چادردوزی جزیره می‌خواهم سفارش ثبت کنم:\n\n";
 
 
-    totalEl.innerText =
-      "قیمت نهایی پس از هماهنگی اعلام می‌شود.";
+      cart.forEach(item => {
 
-  }
+        message +=
+          `• ${item.name}\n`;
 
-
-  /* ================= واتساپ ================= */
-
-  function checkout() {
-
-    if (cart.length === 0) {
-
-      alert(
-        "سبد خرید خالی است!"
-      );
-
-      return;
-
-    }
+        message +=
+          `  تعداد: ${item.quantity}\n`;
 
 
-    let message =
-      "سلام، از سایت چادردوزی جزیره می‌خواهم سفارش ثبت کنم.%0A%0A";
+        if (item.price === null) {
+
+          message +=
+            `  قیمت: استعلام قیمت\n\n`;
+
+        } else {
+
+          const itemTotal =
+            item.price * item.quantity;
+
+          message +=
+            `  قیمت: ${itemTotal.toLocaleString("fa-IR")} تومان\n\n`;
+
+        }
+
+      });
 
 
-    cart.forEach(item => {
+      const total =
+        cart.reduce(
+          (sum, item) => {
+
+            if (item.price === null) {
+
+              return sum;
+
+            }
+
+            return sum +
+              (item.price * item.quantity);
+
+          },
+          0
+        );
+
 
       message +=
-        `• ${item.name} — تعداد: ${item.quantity}%0A`;
+        `جمع محصولات دارای قیمت: ${total.toLocaleString("fa-IR")} تومان\n\n`;
 
-    });
-
-
-    message +=
-      "%0Aلطفاً قیمت و شرایط سفارش را اعلام کنید.%0A";
+      message +=
+        "لطفاً موجودی و قیمت نهایی محصولات را اعلام فرمایید.";
 
 
-    message +=
-      "%0Aآدرس سایت: https://chadooor.ir/shop.html";
+      const whatsappUrl =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 
-    /* شماره واتساپ چادردوزی جزیره */
+      window.open(
+        whatsappUrl,
+        "_blank"
+      );
 
-    const phone =
-      "989118031241";
-
-
-    window.open(
-      `https://wa.me/${phone}?text=${message}`,
-      "_blank"
-    );
-
-  }
+    }
 
 
-  /* ================= اجرای اولیه ================= */
+    /* =====================================================
+       پیام کوچک
+       ===================================================== */
 
-  renderProducts();
+    function showToast(message) {
 
-  renderCart();
+      const toast =
+        document.getElementById("toast");
 
 
-  /* ================= آیکون‌ها ================= */
+      toast.innerText =
+        message;
 
-  if (
-    typeof lucide !== "undefined"
-  ) {
 
-    lucide.createIcons();
+      toast.classList.add("show");
 
-  }
 
-</script>
+      setTimeout(() => {
+
+        toast.classList.remove("show");
+
+      }, 2500);
+
+    }
+
+
+    /* =====================================================
+       شروع فروشگاه
+       ===================================================== */
+
+    applyFilters();
+
+    renderCart();
+
+  </script>
 
 </body>
-
 </html>
+```
