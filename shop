@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه چادر سفارشی</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Tahoma, sans-serif; }
+    body { background: #f5f5f5; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 25px; color: #222; }
+
+    /* فیلترها */
+    .filters {
+      max-width: 1100px;
+      margin: 0 auto 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+    .filters input {
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 220px;
+    }
+    .filter-btn {
+      background: #eee;
+      color: #333;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #0a7;
+      color: white;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+    }
+    
+    .product {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .product:hover { transform: translateY(-4px); }
+    
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .product-info { padding: 16px; }
+    .product-info h3 { font-size: 18px; margin-bottom: 6px; }
+    .category {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .price { color: #0a7; font-weight: bold; font-size: 17px; margin-bottom: 12px; }
+    
+    button {
+      background: #0a7;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    button:hover { background: #086; }
+    .add-btn { width: 100%; }
+    
+    /* سبد خرید */
+    .cart {
+      max-width: 520px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .cart h2 { margin-bottom: 15px; }
+    
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      gap: 10px;
+    }
+    
+    .item-info { flex: 1; }
+    .item-info strong { display: block; margin-bottom: 4px; }
+    
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eee;
+      color: #333;
+      border-radius: 6px;
+    }
+    .qty-btn:hover { background: #ddd; }
+    
+    .qty-number {
+      min-width: 24px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .remove-btn {
+      background: #e74c3c;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+    .remove-btn:hover { background: #c0392b; }
+    
+    .total {
+      margin-top: 18px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+    }
+    
+    .checkout {
+      margin-top: 15px;
+      width: 100%;
+      background: #25D366;
+      padding: 12px;
+    }
+    .checkout:hover { background: #1da851; }
+    
+    .empty { color: #888; text-align: center; padding: 20px; }
+    .no-result { text-align: center; color: #888; padding: 40px; grid-column: 1 / -1; }
+  </style>
+</head>
+<body>
+
+  <h1>چادرهای سفارشی</h1>
+
+  <!-- فیلترها -->
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="جستجوی نام محصول..." oninput="applyFilters()">
+    
+    <button class="filter-btn active" onclick="setCategory('all')">همه</button>
+    <button class="filter-btn" onclick="setCategory('کمپ')">کمپ</button>
+    <button class="filter-btn" onclick="setCategory('کوهنوردی')">کوهنوردی</button>
+    <button class="filter-btn" onclick="setCategory('خانوادگی')">خانوادگی</button>
+  </div>
+
+  <div class="products" id="products"></div>
+
+  <div class="cart">
+    <h2>سبد خرید</h2>
+    <div id="cart-items"></div>
+    <div class="total" id="total">جمع کل: ۰ تومان</div>
+    <button class="checkout" onclick="checkout()">ثبت سفارش در واتساپ</button>
+  </div>
+
+  <script>
+    // ====================== محصولات ======================
+    const products = [
+      {
+        id: 1,
+        name: "چادر سفارشی کمپ",
+        price: 2850000,
+        category: "کمپ",
+        image: "https://via.placeholder.com/400x300?text=چادر+کمپ"
+      },
+      {
+        id: 2,
+        name: "چادر دوپوش کوهنوردی",
+        price: 4200000,
+        category: "کوهنوردی",
+        image: "https://via.placeholder.com/400x300?text=چادر+کوهنوردی"
+      },
+      {
+        id: 3,
+        name: "چادر خانوادگی ۴ نفره",
+        price: 3750000,
+        category: "خانوادگی",
+        image: "https://via.placeholder.com/400x300?text=چادر+خانوادگی"
+      },
+      {
+        id: 4,
+        name: "چادر کمپ سبک",
+        price: 1950000,
+        category: "کمپ",
+        image: "https://via.placeholder.com/400x300?text=چادر+کمپ+سبک"
+      },
+      {
+        id: 5,
+        name: "چادر کوهنوردی زمستانی",
+        price: 5800000,
+        category: "کوهنوردی",
+        image: "https://via.placeholder.com/400x300?text=چادر+زمستانی"
+      }
+    ];
+
+    let currentCategory = "all";
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // ====================== فیلتر ======================
+    function setCategory(category) {
+      currentCategory = category;
+      
+      // فعال کردن دکمه انتخاب‌شده
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      event.target.classList.add("active");
+      
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+      
+      let filtered = products.filter(p => {
+        const matchCategory = currentCategory === "all" || p.category === currentCategory;
+        const matchSearch = p.name.toLowerCase().includes(searchText);
+        return matchCategory && matchSearch;
+      });
+
+      renderProducts(filtered);
+    }
+
+    // نمایش محصولات
+    function renderProducts(list = products) {
+      const container = document.getElementById("products");
+      
+      if (list.length === 0) {
+        container.innerHTML = `<div class="no-result">محصولی یافت نشد</div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(p => `
+        <div class="product">
+          <img src="${p.image}" alt="${p.name}">
+          <div class="product-info">
+            <h3>${p.name}</h3>
+            <div class="category">${p.category}</div>
+            <div class="price">${p.price.toLocaleString()} تومان</div>
+            <button class="add-btn" onclick="addToCart(${p.id})">افزودن به سبد</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // افزودن به سبد
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      const existing = cart.find(item => item.id === id);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      saveCart();
+      renderCart();
+    }
+
+    // افزایش تعداد
+    function increaseQty(id) {
+      const item = cart.find(item => item.id === id);
+      if (item) {
+        item.quantity += 1;
+        saveCart();
+        renderCart();
+      }
+    }
+
+    // کاهش تعداد
+    function decreaseQty(id) {
+      const item = cart.find(item => item.id === id);
+      if (item) {
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+        saveCart();
+        renderCart();
+      }
+    }
+
+    // حذف کامل
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      saveCart();
+      renderCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    // نمایش سبد خرید
+    function renderCart() {
+      const container = document.getElementById("cart-items");
+      const totalEl = document.getElementById("total");
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div class="empty">سبد خرید خالی است</div>`;
+        totalEl.innerText = "جمع کل: ۰ تومان";
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="item-info">
+            <strong>${item.name}</strong>
+            ${item.price.toLocaleString()} تومان
+          </div>
+          
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="decreaseQty(${item.id})">−</button>
+            <span class="qty-number">${item.quantity}</span>
+            <button class="qty-btn" onclick="increaseQty(${item.id})">+</button>
+          </div>
+          
+          <button class="remove-btn" onclick="removeFromCart(${item.id})">حذف</button>
+        </div>
+      `).join("");
+
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      totalEl.innerText = `جمع کل: ${total.toLocaleString()} تومان`;
+    }
+
+    // ثبت سفارش واتساپ
+    function checkout() {
+      if (cart.length === 0) {
+        alert("سبد خرید خالی است!");
+        return;
+      }
+
+      let message = "سلام، می‌خواهم این سفارش را ثبت کنم:%0A%0A";
+      cart.forEach(item => {
+        message += `• ${item.name} (${item.quantity} عدد) - ${(item.price * item.quantity).toLocaleString()} تومان%0A`;
+      });
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      message += `%0Aجمع کل: ${total.toLocaleString()} تومان`;
+
+      const phone = "989123456789"; // شماره خودتان را بگذارید
+      window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    }
+
+    // اجرای اولیه
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
