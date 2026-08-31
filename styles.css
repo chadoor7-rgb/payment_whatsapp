@@ -87,7 +87,6 @@ footer .social-links svg {
   line-height: 1.8;
   color: var(--muted);
 }
-/* حذف استایل‌های اضافی که از JS می‌آمد */
 .footer-social {
   display: none !important;
 }
