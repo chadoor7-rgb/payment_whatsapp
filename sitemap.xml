@@ -2,33 +2,43 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- صفحه اصلی -->
+
   <url>
     <loc>https://chadooor.ir/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- محصولات -->
+
   <url>
     <loc>https://chadooor.ir/products.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- فروشگاه -->
 
   <url>
     <loc>https://chadooor.ir/shop.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- گالری -->
+
   <url>
     <loc>https://chadooor.ir/gallery.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- محصول: چادر مسافرتی -->
 
   <url>
     <loc>https://chadooor.ir/travel-tent.html</loc>
@@ -37,12 +47,16 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- محصول: برزنت -->
+
   <url>
     <loc>https://chadooor.ir/tarpaulin.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- محصول: پشه‌بند -->
 
   <url>
     <loc>https://chadooor.ir/mosquito-net.html</loc>
@@ -51,46 +65,130 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- خدمات -->
+
   <url>
     <loc>https://chadooor.ir/services.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://chadooor.ir/blog.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://chadooor.ir/repair-tent.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://chadooor.ir/spring-tent-repair.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- درباره ما -->
 
   <url>
     <loc>https://chadooor.ir/about.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
+  <!-- تماس -->
+
   <url>
     <loc>https://chadooor.ir/contact.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== مجله سفر ==================== -->
+
+  <url>
+    <loc>https://chadooor.ir/blog.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 1 -->
+
+  <url>
+    <loc>https://chadooor.ir/repair-tent.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 2 -->
+
+  <url>
+    <loc>https://chadooor.ir/spring-tent-repair.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 3 -->
+
+  <url>
+    <loc>https://chadooor.ir/travel-tent-buying-guide.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 4 -->
+
+  <url>
+    <loc>https://chadooor.ir/canvas-tent-maintenance.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 5 -->
+
+  <url>
+    <loc>https://chadooor.ir/tent-tear-repair.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 6 -->
+
+  <url>
+    <loc>https://chadooor.ir/tent-zipper-repair.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 7 -->
+
+  <url>
+    <loc>https://chadooor.ir/waterproof-tent.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 8 -->
+
+  <url>
+    <loc>https://chadooor.ir/folding-storing-travel-tent.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 9 -->
+
+  <url>
+    <loc>https://chadooor.ir/tent-for-north-iran.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- مقاله 10 -->
+
+  <url>
+    <loc>https://chadooor.ir/tent-repair-amol.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
