@@ -721,24 +721,7 @@
   </footer>
 
   <!-- ================= SCRIPTS ================= -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.lucide) {
-        lucide.createIcons();
-      }
-
-      const menuButton = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".main-nav");
-
-      if (menuButton && nav) {
-        menuButton.addEventListener("click", function () {
-          const isOpen = nav.classList.toggle("open");
-          menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-      }
-    });
-  </script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="script.js"></script>
 </body>
 </html>
