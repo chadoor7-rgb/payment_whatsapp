@@ -1,13 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JAT logo">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#255f5c"/>
-      <stop offset="100%" stop-color="#5ca89e"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#f5f1e8"/>
-  <path d="M17 44 V22 L32 12 L47 22 V44" fill="none" stroke="url(#g1)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M20 40 L32 27 L44 40" fill="none" stroke="#1d3d3b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M25 32 H39" stroke="#1d3d3b" stroke-width="3" stroke-linecap="round"/>
-  <text x="32" y="46" text-anchor="middle" font-size="19" font-weight="700" font-family="Tahoma, Arial, sans-serif" fill="#1d3d3b">J</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 580" width="500" height="580">
+ <!-- Outer shape / shield base -->
+ <path d="M50 140 Q50 100 100 80 L400 80 Q450 100 450 140 L450 420 Q450 480 400 500 L250 560 L100 500 Q50 480 50 420 Z" fill="none" stroke="#000" stroke-width="8"/>
+ 
+ <!-- Crown -->
+ <path d="M140 95 L160 40 L180 95 L200 30 L220 95 L250 20 L280 95 L300 30 L320 95 L340 40 L360 95 L360 110 L140 110 Z" fill="#000"/>
+ <circle cx="160" cy="40" r="8" fill="#000"/>
+ <circle cx="200" cy="30" r="8" fill="#000"/>
+ <circle cx="250" cy="20" r="10" fill="#000"/>
+ <circle cx="300" cy="30" r="8" fill="#000"/>
+ <circle cx="340" cy="40" r="8" fill="#000"/> 
+ 
+ <!-- Main circular badge -->
+ <circle cx="250" cy="280" r="180" fill="none" stroke="#000" stroke-width="12"/>
+ <circle cx="250" cy="280" r="165" fill="none" stroke="#000" stroke-width="4"/>
+ <circle cx="250" cy="280" r="150" fill="none" stroke="#000" stroke-width="3"/>
+ 
+ <!-- Inner decorative arcs (left) -->
+ <path d="M100 280 A150 150 0 0 1 130 180" fill="none" stroke="#000" stroke-width="3"/>
+ <path d="M110 280 A140 140 0 0 1 140 190" fill="none" stroke="#000" stroke-width="2"/>
+ <path d="M120 280 A130 130 0 0 1 150 200" fill="none" stroke="#000" stroke-width="2"/>
+ 
+ <!-- Inner decorative arcs (right) -->
+ <path d="M400 280 A150 150 0 0 0 370 180" fill="none" stroke="#000" stroke-width="3"/>
+ <path d="M390 280 A140 140 0 0 0 360 190" fill="none" stroke="#000" stroke-width="2"/>
+ <path d="M380 280 A130 130 0 0 0 350 200" fill="none" stroke="#000" stroke-width="2"/>
+ 
+ <!-- Stars -->
+ <polygon points="95,280 100,265 115,265 103,255 108,240 95,250 82,240 87,255 75,265 90,265" fill="#000"/>
+ <polygon points="405,280 410,265 425,265 413,255 418,240 405,250 392,240 397,255 385,265 400,265" fill="#000"/>
+ 
+ <!-- Tent icon -->
+ <g transform="translate(250,260)">
+ <!-- Tent body -->
+ <path d="M-70 50 L0 -60 L70 50 L40 50 L40 80 L-40 80 L-40 50 Z" fill="none" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+ <!-- Tent opening -->
+ <path d="M-25 50 L0 10 L25 50" fill="none" stroke="#000" stroke-width="5"/>
+ <!-- Flag pole -->
+ <line x1="0" y1="-60" x2="0" y2="-90" stroke="#000" stroke-width="5"/>
+ <!-- Flag -->
+ <path d="M0 -90 L35 -75 L0 -60 Z" fill="#000"/>
+ </g>
+ 
+ <!-- Top curved text: JAZIRE ARIAIE TENT -->
+ <defs>
+ <path id="topCurve" d="M100 200 A160 160 0 0 1 400 200" fill="none"/>
+ </defs>
+ <text font-family="Arial Black, Arial, sans-serif" font-size="28" font-weight="bold" fill="#000" letter-spacing="3">
+ <textPath href="#topCurve" startOffset="50%" text-anchor="middle">JAZIRE ARIAIE TENT</textPath>
+ </text>
+ 
+ <!-- J.A.T text -->
+ <text x="250" y="380" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#000">J.A.T</text>
+ 
+ <!-- Bottom ribbon -->
+ <path d="M80 430 Q60 450 80 470 L420 470 Q440 450 420 430 Z" fill="#000"/>
+ <path d="M70 450 Q50 470 70 490 L90 470 Q80 460 90 450 Z" fill="#000"/>
+ <path d="M430 450 Q450 470 430 490 L410 470 Q420 460 410 450 Z" fill="#000"/>
+ 
+ <!-- Phone number on ribbon -->
+ <text x="250" y="460" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#fff">09118031241</text>
+ 
+ <!-- Persian text on lower ribbon part -->
+ <path d="M100 490 Q80 510 100 530 L400 530 Q420 510 400 490 Z" fill="#000"/>
+ <text x="250" y="520" font-family="Tahoma, Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#fff" direction="rtl">چادردوزی جزیره</text>
+ 
+ <!-- Bottom pointed tip -->
+ <path d="M200 530 L250 570 L300 530" fill="#000"/>
 </svg>
