@@ -1751,13 +1751,12 @@ footer .social-links svg{
  background:var(--paper);
 
 }
-
-
-
-
 /* ===============================
-}
+   CTA
+================================ */
 
 .cta{
-    background:#d5f263;
+    background:var(--lime);
 }
+
+
