@@ -1178,14 +1178,50 @@
 
 
     /* =====================================================
-       اجرای اولیه فروشگاه
-       ===================================================== */
+   Product Schema خودکار برای گوگل
+   ===================================================== */
 
-    renderProducts();
+const productSchema = products
+  .filter(product => product.price)
+  .map(product => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
 
-    renderCart();
+    "name": product.name,
 
-  </script>
+    "image": "https://chadooor.ir/" + product.image,
 
-</body>
-</html>
+    "brand": {
+      "@type": "Brand",
+      "name": "چادردوزی جزیره J.A.T"
+    },
+
+    "sku": "JAT-" + product.id,
+
+    "offers": {
+      "@type": "Offer",
+      "url": "https://chadooor.ir/shop.html",
+      "priceCurrency": "IRR",
+      "price": product.price,
+      "availability": "https://schema.org/InStock"
+    }
+  }));
+
+
+const schemaScript = document.createElement("script");
+
+schemaScript.type = "application/ld+json";
+
+schemaScript.textContent = JSON.stringify(productSchema);
+
+document.head.appendChild(schemaScript);
+
+
+
+/* =====================================================
+   اجرای اولیه فروشگاه
+   ===================================================== */
+
+renderProducts();
+
+renderCart();
