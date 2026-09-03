@@ -1902,3 +1902,24 @@ footer{
 .cta{
   background:var(--lime);
 }
+/* FIX INDEX THEME */
+body{
+    background:#f5f3ed !important;
+    color:#182622;
+}
+
+.hero{
+    background:#f5f3ed;
+}
+
+.hero-visual img{
+    display:block;
+}
+
+.tools{
+    background:#235d56;
+}
+
+.cta{
+    background:#d5f263;
+}
