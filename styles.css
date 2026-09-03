@@ -116,12 +116,9 @@ input{
 }
 
 
-
 /* ================= HERO ================= */
 
-
 .hero{
-
   max-width:1240px;
   margin:auto;
   padding:72px 28px 104px;
@@ -131,7 +128,10 @@ input{
   gap:90px;
 
   align-items:center;
+}
 
+.hero-visual img{
+  display:block;
 }
 
 
