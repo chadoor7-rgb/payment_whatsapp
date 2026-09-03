@@ -133,8 +133,21 @@ input{
 .hero-visual img{
   display:block;
 }
+.hero-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+@media(max-width:768px){
 
+  .hero{
+    grid-template-columns:1fr;
+    gap:40px;
+    padding:50px 20px;
+  }
 
+}
 .eyebrow{
 
   display:flex;
