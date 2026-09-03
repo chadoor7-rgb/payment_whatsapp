@@ -1831,3 +1831,30 @@ footer{
 
 
 }
+/* اصلاح اندازه لوگوی هدر */
+.brand-mark{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+}
+
+.brand-mark img{
+  width:32px;
+  height:32px;
+}
+
+
+/* موبایل */
+@media(max-width:800px){
+
+  .brand-mark{
+    width:34px;
+    height:34px;
+  }
+
+  .brand-mark img{
+    width:30px;
+    height:30px;
+  }
+
+}
