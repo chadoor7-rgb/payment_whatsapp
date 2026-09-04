@@ -1848,12 +1848,11 @@ a::after{
 
 /* ================= FOOTER LOGO ================= */
 
-
 footer .brand-logo{
 
-    width:50px;
+    width:38px;
 
-    height:50px;
+    height:38px;
 
 }
 
@@ -1895,34 +1894,21 @@ a svg{
 
 }
 
-
-
 @media(max-width:600px){
-
-
-.blog-grid{
-
-    grid-template-columns:1fr;
-
-    padding:20px;
-
-}
-
-
-
-.blog-card img{
-
-    height:200px;
-
-}
-
-
 
 .article-callout{
 
     margin:20px;
-
     padding:25px;
+
+}
+
+.faq-section{
+
+    padding:0 20px;
+
+}
+
 
 }
 
