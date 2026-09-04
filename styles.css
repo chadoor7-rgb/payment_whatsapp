@@ -1,173 +1,283 @@
 /* ==================================================
    CHADOOOR J.A.T
    FINAL OPTIMIZED STYLES
-   Part 1/4
+   PART 1 / 4
 ================================================== */
 
 
 /* ================= ROOT ================= */
 
 :root{
+
   --ink:#182622;
   --muted:#6d7975;
+
   --cream:#f5f3ed;
   --paper:#fffdf8;
+
   --lime:#d5f263;
   --coral:#f68165;
-  --line:#dfe2da;
   --teal:#235d56;
+
+  --line:#dfe2da;
+
 }
+
 
 
 /* ================= RESET ================= */
 
+
 *,
 *::before,
 *::after{
+
   box-sizing:border-box;
+
 }
 
 
 html{
+
   scroll-behavior:smooth;
+
 }
 
 
 body{
+
   margin:0;
+
   background:var(--cream);
+
   color:var(--ink);
-  font-family:Estedad, Tahoma, sans-serif;
+
+  font-family:Estedad,Tahoma,sans-serif;
+
   font-size:15px;
+
   line-height:1.8;
+
+  overflow-x:hidden;
+
 }
+
 
 
 img{
+
   max-width:100%;
+
   display:block;
+
+  height:auto;
+
 }
+
 
 
 a{
+
   color:inherit;
+
   text-decoration:none;
+
 }
+
 
 
 button,
 input,
 textarea{
+
   font-family:inherit;
+
 }
+
 
 
 /* ================= HEADER ================= */
 
+
 .site-header{
 
+
   width:100%;
+
   max-width:1240px;
+
+
   height:84px;
 
+
   margin:auto;
+
+
   padding:0 28px;
 
+
   display:flex;
+
+
   align-items:center;
+
+
   justify-content:space-between;
 
+
+  position:relative;
+
+
 }
+
 
 
 .brand{
 
+
   display:flex;
+
+
   align-items:center;
+
+
   gap:10px;
 
+
   font-size:22px;
+
+
   font-weight:800;
 
+
 }
+
 
 
 .brand-mark{
 
+
   width:50px;
+
+
   height:50px;
 
+
   display:flex;
-  align-items:center;
+
+
   justify-content:center;
+
+
+  align-items:center;
+
 
   overflow:hidden;
 
+
 }
+
 
 
 .brand-mark img{
 
+
   width:45px;
+
+
   height:45px;
+
 
   object-fit:contain;
 
+
 }
 
+
+
+/* ================= NAV ================= */
 
 
 .main-nav{
 
+
   display:flex;
+
+
+  align-items:center;
+
 
   gap:38px;
 
+
   color:#65716d;
+
 
   font-size:14px;
 
+
 }
+
 
 
 .main-nav a{
 
+
   transition:.2s ease;
 
+
 }
+
 
 
 .main-nav a:hover{
 
+
   color:var(--teal);
 
+
 }
+
 
 
 
 .header-action{
 
+
   display:flex;
+
+
   align-items:center;
+
 
   gap:8px;
 
-  padding-bottom:3px;
 
   border-bottom:1px solid var(--ink);
+
+
+  padding-bottom:3px;
+
 
 }
 
 
+
+
 .menu-toggle{
+
 
   display:none;
 
-  background:none;
 
   border:0;
 
+
+  background:none;
+
+
   cursor:pointer;
+
 
 }
 
@@ -178,42 +288,53 @@ textarea{
 
 .hero{
 
+
   max-width:1240px;
+
 
   margin:auto;
 
-  padding:72px 28px 104px;
+
+  padding:72px 28px 110px;
 
 
   display:grid;
 
-  grid-template-columns:
 
-  1fr 1.04fr;
+  grid-template-columns:1fr 1.04fr;
 
 
   gap:90px;
 
+
   align-items:center;
+
 
 }
 
 
 
+
 .eyebrow{
+
 
   display:flex;
 
+
   align-items:center;
+
 
   gap:10px;
 
 
-  margin-bottom:20px;
-
   color:#697771;
 
+
   font-size:12px;
+
+
+  margin-bottom:20px;
+
 
 }
 
@@ -221,13 +342,18 @@ textarea{
 
 .eyebrow span{
 
+
   width:8px;
+
+
   height:8px;
 
 
   background:var(--coral);
 
+
   border-radius:50%;
+
 
 }
 
@@ -236,14 +362,18 @@ textarea{
 
 h1{
 
+
   margin:0 0 24px;
 
 
   font-size:clamp(52px,6vw,90px);
 
+
   line-height:1.2;
 
+
   font-weight:800;
+
 
 }
 
@@ -252,15 +382,20 @@ h1{
 h1 em,
 h2 em{
 
+
   color:var(--teal);
 
+
   font-style:normal;
+
 
 }
 
 
 
+
 .hero-text{
+
 
   max-width:470px;
 
@@ -270,33 +405,50 @@ h2 em{
 
   color:#68746f;
 
+
   font-size:17px;
+
 
   line-height:2;
 
+
 }
+
 
 
 
 .hero-actions{
 
+
   display:flex;
+
 
   align-items:center;
 
+
   gap:27px;
+
 
 }
 
 
 
+
+
+/* ================= BUTTON ================= */
+
+
 .button{
+
 
   display:inline-flex;
 
+
   align-items:center;
 
+
   justify-content:center;
+
 
   gap:12px;
 
@@ -306,10 +458,12 @@ h2 em{
 
   border:0;
 
+
   cursor:pointer;
 
 
   font-weight:700;
+
 
 }
 
@@ -317,9 +471,12 @@ h2 em{
 
 .button-primary{
 
+
   background:var(--ink);
 
+
   color:white;
+
 
 }
 
@@ -327,27 +484,34 @@ h2 em{
 
 .button-primary:hover{
 
+
   background:var(--teal);
+
 
 }
 
 
 
+
 .text-link{
+
 
   display:flex;
 
+
   align-items:center;
+
 
   gap:8px;
 
 
   color:var(--teal);
 
+
   font-size:13px;
 
-}
 
+}
 
 
 
@@ -356,7 +520,9 @@ h2 em{
 
 .hero-visual{
 
+
   position:relative;
+
 
 }
 
@@ -364,7 +530,9 @@ h2 em{
 
 .hero-visual > img{
 
+
   width:100%;
+
 
   aspect-ratio:4/5;
 
@@ -374,6 +542,61 @@ h2 em{
 
   border-radius:18px;
 
+
+}
+
+
+
+
+.visual-note{
+
+
+  position:absolute;
+
+
+  top:25px;
+
+
+  right:25px;
+
+
+  background:var(--paper);
+
+
+  padding:10px 15px;
+
+
+  font-size:12px;
+
+
+  display:flex;
+
+
+  align-items:center;
+
+
+  gap:8px;
+
+
+}
+
+
+
+.status-dot{
+
+
+  width:8px;
+
+
+  height:8px;
+
+
+  background:#28a745;
+
+
+  border-radius:50%;
+
+
 }
 
 
@@ -381,10 +604,12 @@ h2 em{
 
 .chat-card{
 
+
   position:absolute;
 
 
   bottom:-45px;
+
 
   left:-48px;
 
@@ -398,21 +623,76 @@ h2 em{
   background:var(--paper);
 
 
-  box-shadow:
-
-  0 20px 50px #18262224;
+  box-shadow:0 20px 50px #18262224;
 
 
-  font-size:11px;
+  display:flex;
+
+
+  align-items:center;
+
+
+  gap:15px;
+
 
 }
 
 
-/* END PART 1 */
+
+
+.chat-avatar{
+
+
+  width:45px;
+
+
+  height:45px;
+
+
+  border-radius:50%;
+
+
+  background:var(--ink);
+
+
+  color:white;
+
+
+  display:flex;
+
+
+  justify-content:center;
+
+
+  align-items:center;
+
+
+  font-weight:800;
+
+
+}
+
+
+
+
+.chat-card small{
+
+
+  display:block;
+
+
+  color:var(--muted);
+
+
+}
+
+
+
+/* پایان Part 1/4 */
 /* ==================================================
    CHADOOOR J.A.T
    FINAL OPTIMIZED STYLES
-   Part 2/4
+   PART 2 / 4
 ================================================== */
 
 
@@ -426,7 +706,6 @@ h2 em{
   margin:auto;
 
   padding:0 28px 120px;
-
 
   display:grid;
 
@@ -444,9 +723,7 @@ h2 em{
 
   padding:34px;
 
-
   background:var(--paper);
-
 
   border-top:2px solid var(--ink);
 
@@ -456,18 +733,13 @@ h2 em{
 
 .product-card-featured{
 
-
   grid-column:span 2;
-
 
   display:grid;
 
-
   grid-template-columns:1fr 1fr;
 
-
   gap:34px;
-
 
   padding:0;
 
@@ -477,15 +749,11 @@ h2 em{
 
 .product-card-featured img{
 
-
   width:100%;
-
 
   height:360px;
 
-
   object-fit:cover;
-
 
 }
 
@@ -493,9 +761,7 @@ h2 em{
 
 .product-card-featured > div{
 
-
   padding:45px 30px;
-
 
 }
 
@@ -504,11 +770,9 @@ h2 em{
 .product-card span,
 .product-card-featured span{
 
-
   color:var(--coral);
 
   font-size:12px;
-
 
 }
 
@@ -516,12 +780,9 @@ h2 em{
 
 .product-card h2{
 
-
   margin:16px 0 8px;
 
-
   font-size:25px;
-
 
 }
 
@@ -529,12 +790,9 @@ h2 em{
 
 .product-card p{
 
-
   color:var(--muted);
 
-
   font-size:13px;
-
 
 }
 
@@ -542,12 +800,9 @@ h2 em{
 
 .product-icon{
 
-
   margin-bottom:30px;
 
-
   color:var(--teal);
-
 
 }
 
@@ -555,11 +810,9 @@ h2 em{
 
 .product-icon svg{
 
-
   width:34px;
 
   height:34px;
-
 
 }
 
@@ -571,15 +824,11 @@ h2 em{
 
 .service-list{
 
-
   max-width:1185px;
-
 
   margin:auto;
 
-
   padding:0 28px 120px;
-
 
 }
 
@@ -587,24 +836,17 @@ h2 em{
 
 .service-list article{
 
-
   display:grid;
-
 
   grid-template-columns:55px 45px 1fr;
 
-
   gap:22px;
-
 
   align-items:start;
 
-
   padding:30px 0;
 
-
   border-top:1px solid var(--line);
-
 
 }
 
@@ -612,12 +854,9 @@ h2 em{
 
 .service-list article > span{
 
-
   color:var(--coral);
 
-
   font-size:12px;
-
 
 }
 
@@ -625,12 +864,9 @@ h2 em{
 
 .service-list svg{
 
-
   width:25px;
 
-
   color:var(--teal);
-
 
 }
 
@@ -638,12 +874,9 @@ h2 em{
 
 .service-list h2{
 
-
   margin:0 0 5px;
 
-
   font-size:22px;
-
 
 }
 
@@ -651,29 +884,24 @@ h2 em{
 
 .service-list p{
 
-
   margin:0;
-
 
   color:var(--muted);
 
-
   font-size:14px;
 
-
 }
+
+
 
 
 
 /* ================= INNER PAGES ================= */
 
 
-
 .inner-page{
 
-
   min-height:calc(100vh - 170px);
-
 
 }
 
@@ -682,15 +910,11 @@ h2 em{
 
 .page-hero{
 
-
   max-width:1185px;
-
 
   margin:auto;
 
-
   padding:105px 28px 75px;
-
 
 }
 
@@ -698,12 +922,9 @@ h2 em{
 
 .page-hero h1{
 
-
   margin-bottom:22px;
 
-
   font-size:clamp(48px,6vw,78px);
-
 
 }
 
@@ -711,18 +932,13 @@ h2 em{
 
 .page-hero > p:last-of-type{
 
-
   max-width:480px;
-
 
   color:var(--muted);
 
-
   font-size:16px;
 
-
   line-height:2;
-
 
 }
 
@@ -731,21 +947,15 @@ h2 em{
 
 .page-hero-dark{
 
-
   max-width:none;
-
 
   padding-right:max(28px,calc((100% - 1185px)/2));
 
-
   padding-left:max(28px,calc((100% - 1185px)/2));
-
 
   background:var(--teal);
 
-
   color:white;
-
 
 }
 
@@ -753,88 +963,66 @@ h2 em{
 
 .page-hero-dark h1 em{
 
-
   color:var(--lime);
-
 
 }
 
 
 
-/* ================= ABOUT / CONTACT ================= */
+
+
+/* ================= ABOUT ================= */
 
 
 .about-layout,
 .contact-layout{
 
-
   max-width:1185px;
-
 
   margin:auto;
 
-
   padding:40px 28px 110px;
-
 
   display:grid;
 
-
   grid-template-columns:1fr 1fr;
-
 
   gap:80px;
 
-
   align-items:center;
 
-
 }
-
 
 
 
 .about-image img{
 
-
   width:100%;
-
 
   height:530px;
 
-
   object-fit:cover;
-
 
   border-radius:18px;
 
-
 }
-
 
 
 
 
 .values{
 
-
   max-width:1185px;
-
 
   margin:auto;
 
-
   padding:0 28px 120px;
-
 
   display:grid;
 
-
   grid-template-columns:repeat(3,1fr);
 
-
   gap:30px;
-
 
 }
 
@@ -842,12 +1030,9 @@ h2 em{
 
 .values > div{
 
-
   padding-top:18px;
 
-
   border-top:1px solid var(--ink);
-
 
 }
 
@@ -855,12 +1040,9 @@ h2 em{
 
 .values svg{
 
-
   width:25px;
 
-
   color:var(--teal);
-
 
 }
 
@@ -868,12 +1050,9 @@ h2 em{
 
 .values h2{
 
-
   margin:28px 0 8px;
 
-
   font-size:18px;
-
 
 }
 
@@ -881,14 +1060,13 @@ h2 em{
 
 .values p{
 
-
   color:var(--muted);
-
 
   font-size:13px;
 
-
 }
+
+
 
 
 
@@ -897,12 +1075,9 @@ h2 em{
 
 .contact-form{
 
-
   padding:32px;
 
-
   background:var(--paper);
-
 
 }
 
@@ -910,15 +1085,11 @@ h2 em{
 
 .contact-form label{
 
-
   display:block;
-
 
   margin-bottom:6px;
 
-
   font-size:12px;
-
 
 }
 
@@ -927,21 +1098,15 @@ h2 em{
 .contact-form input,
 .contact-form textarea{
 
-
   width:100%;
-
 
   padding:11px;
 
-
   margin-bottom:18px;
-
 
   border:1px solid var(--line);
 
-
   background:transparent;
-
 
 }
 
@@ -949,22 +1114,362 @@ h2 em{
 
 .contact-form textarea{
 
-
   resize:vertical;
-
 
 }
 
 
-/* END PART 2 */
+
+.contact-form button{
+
+  width:100%;
+
+}
+
+
+/* ================= COMMON SECTION ================= */
+
+
+.section{
+
+  max-width:1185px;
+
+  margin:auto;
+
+  padding:90px 28px;
+
+}
+
+
+
+.section-heading{
+
+  max-width:650px;
+
+  margin-bottom:55px;
+
+}
+
+
+
+.section-heading h2{
+
+  margin:0 0 20px;
+
+  font-size:clamp(38px,5vw,64px);
+
+  line-height:1.4;
+
+}
+
+
+
+.section-heading p{
+
+  color:var(--muted);
+
+  font-size:16px;
+
+}
+
+
+
+/* پایان Part 2/4 */
 /* ==================================================
    CHADOOOR J.A.T
    FINAL OPTIMIZED STYLES
-   Part 3/4
+   PART 3 / 4
 ================================================== */
 
 
-/* ================= BLOG ARTICLE ================= */
+/* ================= STEPS ================= */
+
+
+.steps{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+
+}
+
+
+
+.step{
+
+  background:var(--paper);
+
+  padding:35px;
+
+  border-top:2px solid var(--ink);
+
+}
+
+
+
+.step-number{
+
+  display:block;
+
+  color:var(--coral);
+
+  font-size:12px;
+
+  margin-bottom:20px;
+
+}
+
+
+
+.step svg{
+
+  width:32px;
+
+  height:32px;
+
+  color:var(--teal);
+
+  margin-bottom:20px;
+
+}
+
+
+
+.step h3{
+
+  margin:0 0 10px;
+
+  font-size:22px;
+
+}
+
+
+
+.step p{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+}
+
+
+
+
+/* ================= TOOLS ================= */
+
+
+.tools{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+
+  align-items:center;
+
+}
+
+
+
+.tools-image img{
+
+  width:100%;
+
+  height:520px;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
+}
+
+
+
+.tools-copy{
+
+  max-width:520px;
+
+}
+
+
+
+.feature-list > div{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:18px;
+
+  margin-bottom:30px;
+
+}
+
+
+
+.feature-list svg{
+
+  width:28px;
+
+  height:28px;
+
+  color:var(--teal);
+
+  flex-shrink:0;
+
+}
+
+
+
+.feature-list p{
+
+  margin:0;
+
+  color:var(--muted);
+
+}
+
+
+
+.feature-list strong{
+
+  color:var(--ink);
+
+}
+
+
+
+/* ================= QUOTE ================= */
+
+
+.quote{
+
+  background:var(--paper);
+
+  border-radius:20px;
+
+  text-align:center;
+
+}
+
+
+
+.quote-mark{
+
+  font-size:80px;
+
+  color:var(--coral);
+
+  line-height:1;
+
+}
+
+
+
+.quote blockquote{
+
+  max-width:750px;
+
+  margin:20px auto 35px;
+
+  font-size:28px;
+
+  line-height:1.8;
+
+}
+
+
+
+.quote-author{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:15px;
+
+}
+
+
+
+.author-avatar{
+
+  width:48px;
+
+  height:48px;
+
+  border-radius:50%;
+
+  background:var(--ink);
+
+  color:white;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-weight:800;
+
+}
+
+
+
+
+/* ================= TESTIMONIAL ================= */
+
+
+.testimonials{
+
+  padding-top:40px;
+
+}
+
+
+
+.testimonial-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+
+}
+
+
+
+.testimonial-grid article{
+
+  background:var(--paper);
+
+  padding:30px;
+
+  border-top:2px solid var(--ink);
+
+}
+
+
+
+.testimonial-grid p{
+
+  color:var(--muted);
+
+  line-height:2;
+
+}
+
+
+
+
+/* ================= BLOG ================= */
 
 
 .blog-article{
@@ -1076,6 +1581,7 @@ h2 em{
 
 
 
+
 /* ================= FAQ ================= */
 
 
@@ -1131,6 +1637,7 @@ h2 em{
 
 
 
+
 /* ================= LOCATION ================= */
 
 
@@ -1142,13 +1649,11 @@ h2 em{
 
   padding:22px 28px 75px;
 
-
   display:flex;
 
   align-items:center;
 
   gap:10px;
-
 
   border-top:1px solid var(--line);
 
@@ -1190,7 +1695,8 @@ h2 em{
 
 
 
-/* ================= FLOATING WHATSAPP ================= */
+
+/* ================= WHATSAPP ================= */
 
 
 .floating-whatsapp{
@@ -1198,7 +1704,6 @@ h2 em{
   position:fixed;
 
   z-index:20;
-
 
   left:22px;
 
@@ -1223,18 +1728,12 @@ h2 em{
   border-radius:30px;
 
 
-  box-shadow:
-
-  0 8px 24px #0d553b4d;
+  box-shadow:0 8px 24px #0d553b4d;
 
 
   font-size:12px;
 
   font-weight:700;
-
-
-  direction:rtl;
-
 
 }
 
@@ -1258,9 +1757,9 @@ h2 em{
 
   flex-wrap:wrap;
 
-  gap:9px;
+  justify-content:center;
 
-  margin-top:25px;
+  gap:9px;
 
 }
 
@@ -1268,39 +1767,27 @@ h2 em{
 
 .social-links a{
 
-
   display:flex;
 
   align-items:center;
 
-
   gap:7px;
 
-
-  padding:8px 11px;
-
+  padding:8px 12px;
 
   border:1px solid var(--line);
 
-
   color:var(--teal);
 
-
-  font-size:11px;
-
-
-  direction:ltr;
-
+  font-size:12px;
 
 }
 
 
 
-.social-links a:hover{
+.social-links svg{
 
-  border-color:var(--teal);
-
-  background:var(--paper);
+  width:16px;
 
 }
 
@@ -1311,21 +1798,16 @@ h2 em{
 
 footer{
 
-
   max-width:1240px;
 
-
   margin:40px auto 0;
-
 
   padding:40px 28px 50px;
 
 
   display:flex;
 
-
   flex-direction:column;
-
 
   align-items:center;
 
@@ -1338,32 +1820,23 @@ footer{
 
   color:var(--muted);
 
-
-  font-size:12px;
-
-
   text-align:center;
 
+  font-size:12px;
 
 }
 
 
 
-
 footer .footer-top{
-
 
   display:flex;
 
-
   flex-direction:column;
-
 
   align-items:center;
 
-
   gap:12px;
-
 
 }
 
@@ -1371,15 +1844,9 @@ footer .footer-top{
 
 footer .brand{
 
-
   color:var(--ink);
 
-
   font-size:20px;
-
-
-  font-weight:800;
-
 
 }
 
@@ -1387,15 +1854,7 @@ footer .brand{
 
 .footer-slogan{
 
-
   margin:0;
-
-
-  color:var(--muted);
-
-
-  font-size:13px;
-
 
 }
 
@@ -1403,18 +1862,13 @@ footer .brand{
 
 .footer-menu{
 
-
   display:flex;
-
 
   flex-wrap:wrap;
 
-
   justify-content:center;
 
-
   gap:18px;
-
 
 }
 
@@ -1422,12 +1876,7 @@ footer .brand{
 
 .footer-menu a{
 
-
-  color:var(--ink);
-
-
   font-weight:600;
-
 
 }
 
@@ -1435,45 +1884,7 @@ footer .brand{
 
 .footer-menu a:hover{
 
-
   color:var(--teal);
-
-
-}
-
-
-
-footer .social-links{
-
-
-  justify-content:center;
-
-
-  margin:0;
-
-
-}
-
-
-
-footer .social-links a{
-
-
-  padding:8px 14px;
-
-
-  font-size:12px;
-
-
-}
-
-
-
-footer .social-links svg{
-
-
-  width:16px;
-
 
 }
 
@@ -1481,78 +1892,7 @@ footer .social-links svg{
 
 .copyright{
 
-
-  margin:0;
-
-
-  color:var(--muted);
-
-
   font-size:11px;
-
-
-  line-height:1.8;
-
-
-}
-
-
-
-/* ================= CONTACT NUMBERS ================= */
-
-
-.contact-numbers{
-
-
-  display:flex;
-
-
-  flex-wrap:wrap;
-
-
-  gap:10px;
-
-
-  margin-top:28px;
-
-
-}
-
-
-
-.contact-numbers a{
-
-
-  display:inline-flex;
-
-
-  align-items:center;
-
-
-  gap:8px;
-
-
-  padding:8px 13px;
-
-
-  border:1px solid #18262255;
-
-
-  font-size:13px;
-
-
-  direction:ltr;
-
-
-}
-
-
-
-.contact-numbers a:hover{
-
-
-  background:var(--paper);
-
 
 }
 
@@ -1563,364 +1903,386 @@ footer .social-links svg{
 
 .cta{
 
-
-  padding:50px 28px;
-
-
   background:var(--lime);
-
 
   border-radius:20px;
 
+  padding:50px 28px;
 
 }
 
 
-/* END PART 3 */
+
+.contact-numbers{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:28px;
+
+}
+
+
+
+.contact-numbers a{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:8px 13px;
+
+  border:1px solid #18262255;
+
+  font-size:13px;
+
+}
+
+
+
+/* پایان Part 3/4 */
 /* ==================================================
    CHADOOOR J.A.T
    FINAL OPTIMIZED STYLES
-   Part 4/4
+   PART 4 / 4
 ================================================== */
 
 
-/* ================= MOBILE MENU + RESPONSIVE ================= */
+/* ================= TABLET + MOBILE ================= */
 
 
 @media(max-width:800px){
 
 
-  /* Header */
+/* ---------- HEADER ---------- */
 
-  .site-header{
 
-    height:84px;
+.site-header{
 
-    padding:0 20px;
+  height:84px;
 
-  }
+  padding:0 20px;
 
+}
 
-  .main-nav,
-  .header-action{
 
-    display:none;
 
-  }
+.brand{
 
+  font-size:18px;
 
-  .menu-toggle{
+}
 
-    display:block;
 
-  }
 
+.brand-mark{
 
+  width:42px;
 
-  .main-nav.open{
+  height:42px;
 
+}
 
-    position:absolute;
 
 
-    z-index:9999;
+.brand-mark img{
 
+  width:38px;
 
-    top:84px;
+  height:38px;
 
+}
 
-    right:20px;
 
 
-    left:20px;
+.main-nav,
+.header-action{
 
+  display:none;
 
+}
 
-    display:flex;
 
 
-    flex-direction:column;
+.menu-toggle{
 
+  display:block;
 
-    gap:0;
+}
 
 
-    padding:10px 20px;
 
 
 
-    background:var(--paper);
+.main-nav.open{
 
 
-    box-shadow:
+  position:absolute;
 
-    0 12px 30px #1826221a;
 
+  z-index:9999;
 
-  }
 
+  top:84px;
 
 
-  .main-nav.open a{
+  right:20px;
 
 
-    padding:12px 0;
+  left:20px;
 
 
-    border-bottom:1px solid var(--line);
 
+  display:flex;
 
-  }
 
+  flex-direction:column;
 
 
-  .main-nav.open a:last-child{
+  gap:0;
 
 
-    border-bottom:0;
 
+  padding:10px 20px;
 
-  }
 
+  background:var(--paper);
 
 
+  box-shadow:0 12px 30px #1826221a;
 
-  /* Hero */
 
+}
 
-  .hero{
 
 
-    display:flex;
 
+.main-nav.open a{
 
-    flex-direction:column;
 
+  padding:12px 0;
 
-    gap:55px;
 
+  border-bottom:1px solid var(--line);
 
-    padding:45px 20px 80px;
 
+}
 
-  }
 
 
+.main-nav.open a:last-child{
 
-  h1{
+  border-bottom:0;
 
+}
 
-    font-size:42px;
 
 
-  }
+/* ---------- HERO ---------- */
 
 
+.hero{
 
-  .hero-text{
 
+  display:flex;
 
-    font-size:15px;
 
+  flex-direction:column;
 
-  }
 
+  gap:55px;
 
 
-  .hero-actions{
+  padding:45px 20px 80px;
 
 
-    flex-wrap:wrap;
+}
 
 
-  }
 
+h1{
 
 
+  font-size:42px;
 
-  .hero-visual > img{
 
+}
 
-    aspect-ratio:4/5;
 
 
-    height:auto;
+.hero-text{
 
 
-  }
+  font-size:15px;
 
 
+}
 
-  .chat-card{
 
 
-    left:-15px;
+.hero-actions{
 
 
-    bottom:-35px;
+  flex-wrap:wrap;
 
 
-    width:90%;
+}
 
 
-  }
 
+.hero-visual > img{
 
 
+  aspect-ratio:4/5;
 
 
-  /* Products */
+  height:auto;
 
 
-  .product-grid{
+}
 
 
-    grid-template-columns:1fr;
 
+.chat-card{
 
-    padding-bottom:80px;
 
+  left:-15px;
 
-  }
 
+  bottom:-35px;
 
 
-  .product-card-featured{
+  width:90%;
 
 
-    grid-column:auto;
+}
 
 
-    grid-template-columns:1fr;
 
 
-  }
+.visual-note{
 
 
+  top:15px;
 
-  .product-card-featured img{
 
+  right:15px;
 
-    height:280px;
 
+}
 
-  }
 
 
+/* ---------- SECTIONS ---------- */
 
 
+.section{
 
-  /* Services */
 
+  padding:70px 20px;
 
-  .service-list article{
+}
 
 
-    grid-template-columns:35px 35px 1fr;
 
+.section-heading h2{
 
-    gap:10px;
 
+  font-size:38px;
 
-  }
 
+}
 
 
 
-  /* About / Contact */
+/* ---------- STEPS ---------- */
 
 
-  .about-layout,
-  .contact-layout{
+.steps,
+.tools,
+.testimonial-grid{
 
 
-    display:block;
+  grid-template-columns:1fr;
 
 
-    padding:30px 20px 80px;
+}
 
 
-  }
 
+.step{
 
 
+  padding:28px;
 
-  .about-image img{
+}
 
 
-    height:360px;
 
+/* ---------- PRODUCTS ---------- */
 
-  }
 
+.product-grid{
 
 
+  grid-template-columns:1fr;
 
-  .values{
 
+  padding:0 20px 80px;
 
-    grid-template-columns:1fr;
 
+}
 
-  }
 
 
+.product-card-featured{
 
 
-  /* Blog */
+  grid-column:auto;
 
 
-  .article-cover{
+  grid-template-columns:1fr;
 
 
-    height:270px;
+}
 
 
-  }
 
+.product-card-featured img{
 
 
-  .article-meta{
+  height:280px;
 
 
-    flex-direction:column;
+}
 
 
-    gap:8px;
 
+/* ---------- SERVICES ---------- */
 
-  }
 
+.service-list{
 
 
+  padding:0 20px 80px;
 
-  /* FAQ */
 
+}
 
-  .faq{
 
 
-    display:block;
+.service-list article{
 
 
-  }
+  grid-template-columns:35px 35px 1fr;
 
 
-
-
-  /* WhatsApp */
-
-
-  .floating-whatsapp{
-
-
-    left:14px;
-
-
-    bottom:14px;
-
-
-  }
+  gap:10px;
 
 
 }
@@ -1929,107 +2291,375 @@ footer .social-links svg{
 
 
 
-/* ================= SMALL MOBILE ================= */
+/* ---------- ABOUT + CONTACT ---------- */
+
+
+.about-layout,
+.contact-layout{
+
+
+  display:block;
+
+
+  padding:30px 20px 80px;
+
+
+}
+
+
+
+.about-image{
+
+
+  margin-bottom:35px;
+
+
+}
+
+
+
+.about-image img{
+
+
+  height:360px;
+
+
+}
+
+
+
+
+.values{
+
+
+  grid-template-columns:1fr;
+
+
+  padding:0 20px 80px;
+
+
+}
+
+
+
+/* ---------- TOOLS ---------- */
+
+
+.tools{
+
+
+  gap:40px;
+
+
+}
+
+
+
+.tools-image img{
+
+
+  height:350px;
+
+
+}
+
+
+
+
+/* ---------- QUOTE ---------- */
+
+
+.quote blockquote{
+
+
+  font-size:22px;
+
+
+}
+
+
+
+
+/* ---------- BLOG ---------- */
+
+
+.blog-article{
+
+
+  padding:60px 20px 90px;
+
+
+}
+
+
+
+.article-cover{
+
+
+  height:270px;
+
+
+}
+
+
+
+.article-meta{
+
+
+  flex-direction:column;
+
+
+  gap:8px;
+
+
+}
+
+
+
+
+/* ---------- FAQ ---------- */
+
+
+.faq{
+
+
+  display:block;
+
+
+}
+
+
+
+.faq-list{
+
+
+  margin-top:35px;
+
+
+}
+
+
+
+
+/* ---------- CONTACT ---------- */
+
+
+.contact-numbers{
+
+
+  flex-direction:column;
+
+
+}
+
+
+
+.contact-numbers a{
+
+
+  justify-content:center;
+
+
+}
+
+
+
+/* ---------- FOOTER ---------- */
+
+
+.footer-menu{
+
+
+  flex-direction:column;
+
+
+  gap:12px;
+
+
+}
+
+
+
+footer{
+
+
+  padding:35px 20px;
+
+
+}
+
+
+
+
+
+/* ---------- WHATSAPP ---------- */
+
+
+.floating-whatsapp{
+
+
+  left:14px;
+
+
+  bottom:14px;
+
+
+}
+
+
+
+}
+
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
 
 
 @media(max-width:500px){
 
 
-  .brand{
 
+body{
 
-    font-size:18px;
+  font-size:14px;
 
+}
 
-  }
 
 
+h1{
 
-  .brand-mark{
 
+  font-size:36px;
 
-    width:42px;
 
+}
 
-    height:42px;
 
 
-  }
+.section-heading h2{
 
 
+  font-size:32px;
 
-  .brand-mark img{
 
+}
 
-    width:38px;
 
 
-    height:38px;
+.button{
 
 
-  }
+  width:100%;
 
 
+}
 
-  h1{
 
 
-    font-size:36px;
+.hero-actions{
 
 
-  }
+  flex-direction:column;
 
 
+  align-items:stretch;
 
-  .button{
 
+}
 
-    width:100%;
 
 
-  }
+.text-link{
 
 
+  justify-content:center;
 
-  .hero-actions{
 
+}
 
-    flex-direction:column;
 
 
-    align-items:stretch;
+.chat-card{
 
 
-  }
+  position:relative;
 
 
+  left:auto;
 
-  .floating-whatsapp span{
 
+  bottom:auto;
 
-    display:none;
 
+  margin-top:20px;
 
-  }
 
+  width:100%;
 
 
-  .floating-whatsapp{
+}
 
 
-    width:52px;
 
+.hero-visual{
 
-    height:52px;
 
+  width:100%;
 
-    padding:0;
 
+}
 
-    justify-content:center;
 
 
-  }
+.quote blockquote{
+
+
+  font-size:20px;
+
+
+}
+
+
+
+.floating-whatsapp span{
+
+
+  display:none;
+
+
+}
+
+
+
+.floating-whatsapp{
+
+
+  width:52px;
+
+
+  height:52px;
+
+
+  padding:0;
+
+
+  justify-content:center;
+
+
+}
+
+
+
+.contact-form{
+
+
+  padding:22px;
+
+
+}
 
 
 
@@ -2037,14 +2667,13 @@ footer .social-links svg{
 
 
 
-/* ================= PERFORMANCE FIXES ================= */
+/* ==================================================
+   PERFORMANCE FIXES
+================================================== */
 
-
-/* جلوگیری از پرش تصویر هنگام لود */
 
 
 img{
-
 
   height:auto;
 
@@ -2052,15 +2681,18 @@ img{
 
 
 
-/* لینک‌ها نرم‌تر */
-
-
 a,
 button{
 
-
   transition:.2s ease;
 
+}
+
+
+
+svg{
+
+  flex-shrink:0;
 
 }
 
@@ -2068,15 +2700,13 @@ button{
 
 /* جلوگیری از بیرون زدن محتوا */
 
-
+html,
 body{
 
-
   overflow-x:hidden;
-
 
 }
 
 
 
-/* پایان فایل */
+/* پایان فایل نهایی */
