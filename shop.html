@@ -317,117 +317,18 @@ const WHATSAPP_PHONE = "989118031241";
    محصولات فروشگاه
 ================================ */
 
+let products = [];
 
-const products = [
+let currentCategory = "all";
 
-{
-id:1,
-name:"چادر برزنتی ۶ نفره",
-price:4000000,
-category:"برزنتی",
-image:"6n brezent.webp"
-},
-
-
-{
-id:2,
-name:"چادر برزنتی ۸ نفره",
-price:4500000,
-category:"برزنتی",
-image:"8 JAT.webp"
-},
-
-
-{
-id:3,
-name:"چادر برزنتی ۱۰ نفره",
-price:5000000,
-category:"برزنتی",
-image:"10n bereznte.webp"
-},
-
-
-{
-id:4,
-name:"چادر برزنتی ۱۲ نفره",
-price:5500000,
-category:"برزنتی",
-image:"برزنتی.jpg"
-},
-
-
-{
-id:5,
-name:"پشه‌بند سفارشی",
-price:2000000,
-category:"پشه‌بند",
-image:"pasheband.jpg"
-},
-
-
-{
-id:6,
-name:"چادر سفر جزیره مدل جدید",
-price:null,
-category:"مسافرتی",
-image:"island-travel-tent-coming-soon.jpg"
-},
-
-
-{
-id:7,
-name:"چادر مسافرتی",
-price:null,
-category:"مسافرتی",
-image:"tent5.webp"
-},
-
-
-{
-id:8,
-name:"چادر مسافرتی",
-price:null,
-category:"مسافرتی",
-image:"tent8.webp"
-},
-
-
-{
-id:9,
-name:"تعمیر چادر مسافرتی",
-price:null,
-category:"خدمات",
-image:"tent-repair-chadooor.jpg"
-},
-
-
-{
-id:10,
-name:"چادر پس از تعمیر",
-price:null,
-category:"خدمات",
-image:"tent-after-repair-1.jpg"
-}
-
-
-];
-
-
-
-
-let currentCategory="all";
-
-
-let cart=[];
-
+let cart = [];
 
 try{
 
-cart=
+cart =
 JSON.parse(localStorage.getItem("chadoor_cart")) || [];
 
 }
-
 catch{
 
 cart=[];
@@ -435,26 +336,20 @@ cart=[];
 }
 
 
+fetch("products.json")
+.then(response => response.json())
+.then(data => {
 
+    products = data;
 
-/* ===============================
-   قیمت
-================================ */
+    renderProducts(products);
 
+})
+.catch(error => {
 
-function formatPrice(price){
+    console.error("خطا در خواندن محصولات:", error);
 
-if(!price){
-
-return "تماس بگیرید";
-
-}
-
-
-return price.toLocaleString("fa-IR")+" تومان";
-
-}
-
+});
 
 
 
@@ -625,7 +520,6 @@ ${formatPrice(product.price)}
 </div>
 
 
-
 ${button}
 
 
@@ -699,7 +593,15 @@ saveCart();
 }
 
 
+function formatPrice(price){
 
+if(!price){
+return "تماس بگیرید";
+}
+
+return price.toLocaleString("fa-IR") + " تومان";
+
+}
 
 
 /* ===============================
