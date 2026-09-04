@@ -1,1227 +1,1068 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>فروشگاه چادر مسافرتی و برزنتی | چادردوزی جزیره</title>
+<meta charset="UTF-8">
 
-  <meta name="description" content="فروش چادر برزنتی ۶، ۸، ۱۰ و ۱۲ نفره و پشه‌بند در چادردوزی جزیره. ثبت سفارش و هماهنگی از طریق واتساپ.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="keywords" content="چادر برزنتی, چادر مسافرتی, پشه بند, پشه‌بند, چادردوزی جزیره, چادر ۶ نفره, چادر ۸ نفره, چادر ۱۰ نفره, چادر ۱۲ نفره">
 
-  <meta name="robots" content="index, follow">
+<title>
+فروشگاه چادر مسافرتی و برزنتی | چادردوزی جزیره J.A.T
+</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Tahoma, Arial, sans-serif;
-    }
 
-    body {
-      background: #f5f5f5;
-      color: #222;
-      padding: 20px;
-      line-height: 1.7;
-    }
+<meta name="description"
+content="فروش چادر مسافرتی، چادر برزنتی ۶، ۸، ۱۰ و ۱۲ نفره و پشه‌بند سفارشی در چادردوزی جزیره آمل. ثبت سفارش از طریق واتساپ.">
 
-    .header {
-      max-width: 1100px;
-      margin: 0 auto 25px;
-      text-align: center;
-    }
 
-    .header h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-      color: #222;
-    }
+<meta name="keywords"
+content="چادر مسافرتی آمل, چادر برزنتی آمل, پشه‌بند, چادردوزی جزیره, خرید چادر">
 
-    .header p {
-      color: #666;
-      font-size: 15px;
-    }
 
-    /* فیلترها و جستجو */
-    .filters {
-      max-width: 1100px;
-      margin: 0 auto 25px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-    }
+<meta name="robots" content="index, follow">
 
-    .filters input {
-      padding: 11px 14px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 14px;
-      width: 250px;
-      outline: none;
-      background: white;
-    }
 
-    .filters input:focus {
-      border-color: #008866;
-    }
+<link rel="canonical"
+href="https://chadooor.ir/shop.html">
 
-    .filter-btn {
-      background: #eee;
-      color: #333;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.2s;
-    }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: #008866;
-      color: white;
-    }
+<link rel="icon"
+type="image/svg+xml"
+href="favicon.svg">
 
-    /* محصولات */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto 40px;
-    }
 
-    .product {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+<link rel="apple-touch-icon"
+href="favicon.svg">
 
-    .product:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
 
-    .product img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-      background: #eee;
-    }
+<link rel="stylesheet"
+href="styles.css">
 
-    .product-info {
-      padding: 16px;
-    }
 
-    .product-info h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-      color: #222;
-    }
+<link
+href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-    .category {
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 8px;
-    }
 
-    .price {
-      color: #008866;
-      font-weight: bold;
-      font-size: 17px;
-      margin-bottom: 12px;
-    }
 
-    .no-price {
-      color: #e67e22;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+<!-- Product Schema پایه -->
 
-    button {
-      background: #008866;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 15px;
-      transition: 0.2s;
-    }
+<script type="application/ld+json">
 
-    button:hover {
-      background: #006f55;
-    }
+{
+ "@context":"https://schema.org",
+ "@type":"Store",
 
-    .add-btn {
-      width: 100%;
-    }
+ "name":"چادردوزی جزیره J.A.T",
 
-    /* سبد خرید */
-    .cart {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
+ "url":"https://chadooor.ir/shop.html",
 
-    .cart h2 {
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
+ "description":"فروش چادر مسافرتی، چادر برزنتی و پشه‌بند سفارشی",
 
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-      gap: 10px;
-    }
+ "brand":{
+   "@type":"Brand",
+   "name":"چادردوزی جزیره J.A.T"
+ }
+}
 
-    .item-info {
-      flex: 1;
-    }
+</script>
 
-    .item-info strong {
-      display: block;
-      margin-bottom: 5px;
-    }
 
-    .item-price {
-      color: #666;
-      font-size: 13px;
-    }
-
-    .qty-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .qty-btn {
-      width: 32px;
-      height: 32px;
-      padding: 0;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #eee;
-      color: #333;
-      border-radius: 6px;
-    }
-
-    .qty-btn:hover {
-      background: #ddd;
-    }
-
-    .qty-number {
-      min-width: 24px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .remove-btn {
-      background: #e74c3c;
-      padding: 6px 10px;
-      font-size: 13px;
-    }
-
-    .remove-btn:hover {
-      background: #c0392b;
-    }
-
-    .total {
-      margin-top: 18px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: left;
-      color: #222;
-    }
-
-    .checkout {
-      margin-top: 15px;
-      width: 100%;
-      background: #25D366;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .checkout:hover {
-      background: #1da851;
-    }
-
-    .empty {
-      color: #888;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .no-result {
-      text-align: center;
-      color: #888;
-      padding: 40px;
-      grid-column: 1 / -1;
-      background: white;
-      border-radius: 12px;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    /* موبایل */
-    @media (max-width: 600px) {
-
-      body {
-        padding: 12px;
-      }
-
-      .header h1 {
-        font-size: 24px;
-      }
-
-      .header p {
-        font-size: 14px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .product img {
-        height: 230px;
-      }
-
-      .cart-item {
-        flex-wrap: wrap;
-      }
-
-      .filters {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .filters input {
-        width: 100%;
-      }
-
-      .filter-btn {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
+
+
 
 <body>
 
-  <!-- عنوان فروشگاه -->
-  <header class="header">
-    <h1>فروشگاه چادرهای جزیره</h1>
-    <p>
-      چادر برزنتی، چادر مسافرتی و پشه‌بند
-    </p>
-  </header>
 
 
-  <!-- جستجو و فیلتر -->
-  <div class="filters">
-
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="جستجوی نام محصول..."
-      oninput="applyFilters()"
-      aria-label="جستجوی محصول"
-    >
-
-    <button
-      class="filter-btn active"
-      onclick="setCategory('all', this)"
-    >
-      همه
-    </button>
-
-    <button
-      class="filter-btn"
-      onclick="setCategory('برزنتی', this)"
-    >
-      برزنتی
-    </button>
-
-    <button
-      class="filter-btn"
-      onclick="setCategory('پشه‌بند', this)"
-    >
-      پشه‌بند
-    </button>
-
-    <button
-      class="filter-btn"
-      onclick="setCategory('مسافرتی', this)"
-    >
-      مسافرتی
-    </button>
-
-    <button
-      class="filter-btn"
-      onclick="setCategory('خدمات', this)"
-    >
-      خدمات
-    </button>
-
-  </div>
+<!-- ================= HEADER ================= -->
 
 
-  <!-- محصولات -->
-  <main>
-
-    <div
-      class="products"
-      id="products"
-    ></div>
-
-  </main>
+<header class="site-header">
 
 
-  <!-- سبد خرید -->
-  <section class="cart">
-
-    <h2>🛒 سبد خرید</h2>
-
-    <div id="cart-items"></div>
-
-    <div
-      class="total"
-      id="total"
-    >
-      جمع کل: ۰ تومان
-    </div>
-
-    <button
-      class="checkout"
-      onclick="checkout()"
-    >
-      📱 ثبت سفارش در واتساپ
-    </button>
-
-  </section>
+<a class="brand"
+href="index.html"
+aria-label="چادردوزی جزیره J.A.T">
 
 
-  <footer class="footer-note">
-    چادردوزی جزیره — تولید، فروش و تعمیر چادر
-  </footer>
+<span class="brand-mark">
 
 
-  <script>
-
-    /* =====================================================
-       شماره واتساپ فروشگاه
-       ===================================================== */
-
-    const WHATSAPP_PHONE = "989118031241";
+<img src="favicon.svg"
+alt="لوگو چادردوزی جزیره J.A.T"
+width="45"
+height="45">
 
 
-    /* =====================================================
-       محصولات فروشگاه
-       ===================================================== */
+</span>
 
-    const products = [
 
-      {
-        id: 1,
-        name: "چادر برزنتی ۶ نفره",
-        price: 4000000,
-        category: "برزنتی",
-        image: "6n brezent.webp"
-      },
+<span>
+چادردوزی جزیره J.A.T
+</span>
 
-      {
-        id: 2,
-        name: "چادر برزنتی ۸ نفره",
-        price: 4500000,
-        category: "برزنتی",
-        image: "8 JAT.webp"
-      },
 
-      {
-        id: 3,
-        name: "چادر برزنتی ۱۰ نفره",
-        price: 5000000,
-        category: "برزنتی",
-        image: "10n bereznte.webp"
-      },
+</a>
 
-      {
-        id: 4,
-        name: "چادر برزنتی ۱۲ نفره",
-        price: 5500000,
-        category: "برزنتی",
-        image: "برزنتی.jpg"
-      },
 
-      {
-        id: 5,
-        name: "پشه‌بند",
-        price: 2000000,
-        category: "پشه‌بند",
-        image: "pasheband.jpg"
-      },
+
+
+
+<nav class="main-nav"
+aria-label="منوی اصلی">
+
+
+<a href="products.html">
+محصولات
+</a>
+
+
+<a href="shop.html">
+🛒 فروشگاه
+</a>
+
+
+<a href="services.html">
+خدمات ما
+</a>
+
+
+<a href="gallery.html">
+گالری
+</a>
+
+
+<a href="about.html">
+درباره J.A.T
+</a>
+
+
+<a href="blog.html">
+مجله سفر
+</a>
+
+
+<a href="contact.html">
+ثبت سفارش
+</a>
+
+
+</nav>
+
+
+
+
+
+<a class="header-action"
+href="contact.html">
+
+ثبت سفارش
+
+</a>
+
+
+
+
+
+<button class="menu-toggle"
+type="button"
+aria-label="باز کردن منو"
+aria-expanded="false">
+
+
+<i data-lucide="menu"></i>
+
+
+</button>
+
+
+</header>
+
+
+
+
+
+<!-- ================= SHOP HEADER ================= -->
+
+
+<main class="shop-page">
+
+
+<section class="page-hero">
+
+
+<p class="eyebrow">
+
+<span></span>
+
+فروشگاه J.A.T
+
+</p>
+
+
+
+<h1>
+
+چادر مناسب
+
+<br>
+
+<em>برای هر سفر</em>
+
+</h1>
+
+
+
+<p>
+
+چادر مسافرتی، برزنتی و پشه‌بند
+با دوخت حرفه‌ای چادردوزی جزیره.
+
+</p>
+
+
+</section>
+
+
+
+
+<!-- ================= FILTER ================= -->
+
+
+<section class="shop-filters">
+
+
+<input
+type="text"
+id="searchInput"
+placeholder="جستجوی محصول..."
+oninput="applyFilters()"
+aria-label="جستجوی محصول">
+
+
+<button class="filter-btn active"
+onclick="setCategory('all',this)">
+
+همه
+
+</button>
+
+
+<button class="filter-btn"
+onclick="setCategory('برزنتی',this)">
+
+برزنتی
+
+</button>
+
+
+<button class="filter-btn"
+onclick="setCategory('مسافرتی',this)">
+
+مسافرتی
+
+</button>
+
+
+<button class="filter-btn"
+onclick="setCategory('پشه‌بند',this)">
+
+پشه‌بند
+
+</button>
+
+
+<button class="filter-btn"
+onclick="setCategory('خدمات',this)">
+
+خدمات
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+
+<section class="products"
+id="products"
+aria-label="محصولات فروشگاه">
+
+
+</section>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+
+/* ===============================
+   تنظیمات واتساپ
+================================ */
+
+const WHATSAPP_PHONE = "989118031241";
+
+
+
+/* ===============================
+   محصولات فروشگاه
+================================ */
+
+
+const products = [
+
 {
-  id: 6,
-  name: "چادر سفر جزیره – مدل جدید",
-  price: null,
-  category: "مسافرتی",
-  image: "Island Travel Tent – New Model (Coming Soon).jpg"
+id:1,
+name:"چادر برزنتی ۶ نفره",
+price:4000000,
+category:"برزنتی",
+image:"6n brezent.webp"
 },
 
-      {
-        id: 7,
-        name: "چادر مسافرتی",
-        price: null,
-        category: "مسافرتی",
-        image: "tent5.webp"
-      },
-
-      {
-        id: 8,
-        name: "چادر مسافرتی",
-        price: null,
-        category: "مسافرتی",
-        image: "tent8.webp"
-      },
-
-      {
-        id: 9,
-        name: "چادر تعمیر شده",
-        price: null,
-        category: "خدمات",
-        image: "tent-after-repair-1.jpg"
-      },
-
-      {
-        id: 10,
-        name: "تعمیر چادر مسافرتی",
-        price: null,
-        category: "خدمات",
-        image: "tent-repair-chadooor.jpg"
-      },
 
-      {
-        id: 11,
-        name: "چادر در حال تعمیر",
-        price: null,
-        category: "خدمات",
-        image: "travel-tent-during-repair.webp"
-      },
+{
+id:2,
+name:"چادر برزنتی ۸ نفره",
+price:4500000,
+category:"برزنتی",
+image:"8 JAT.webp"
+},
 
-      {
-        id: 12,
-        name: "چادر پس از تعمیر",
-        price: null,
-        category: "خدمات",
-        image: "travel-tent-after-repair-side.jpg"
-      },
 
-      {
-        id: 13,
-        name: "چادر برزنتی",
-        price: null,
-        category: "برزنتی",
-        image: "BEREZENT.webp"
-      },
+{
+id:3,
+name:"چادر برزنتی ۱۰ نفره",
+price:5000000,
+category:"برزنتی",
+image:"10n bereznte.webp"
+},
 
-      {
-        id: 14,
-        name: "چادر برزنتی",
-        price: null,
-        category: "برزنتی",
-        image: "برزنتی.jpg"
-      },
 
-      {
-        id: 15,
-        name: "چادر سفری",
-        price: null,
-        category: "مسافرتی",
-        image: "KHIME.jpg"
-      }
+{
+id:4,
+name:"چادر برزنتی ۱۲ نفره",
+price:5500000,
+category:"برزنتی",
+image:"برزنتی.jpg"
+},
 
-    ];
 
+{
+id:5,
+name:"پشه‌بند سفارشی",
+price:2000000,
+category:"پشه‌بند",
+image:"pasheband.jpg"
+},
 
-    /* =====================================================
-       وضعیت فروشگاه
-       ===================================================== */
 
-    let currentCategory = "all";
+{
+id:6,
+name:"چادر سفر جزیره مدل جدید",
+price:null,
+category:"مسافرتی",
+image:"island-travel-tent-coming-soon.jpg"
+},
 
-    let cart = [];
 
-    try {
+{
+id:7,
+name:"چادر مسافرتی",
+price:null,
+category:"مسافرتی",
+image:"tent5.webp"
+},
 
-      cart =
-        JSON.parse(
-          localStorage.getItem("chadoor_cart")
-        ) || [];
 
-    } catch (error) {
+{
+id:8,
+name:"چادر مسافرتی",
+price:null,
+category:"مسافرتی",
+image:"tent8.webp"
+},
 
-      cart = [];
 
-    }
+{
+id:9,
+name:"تعمیر چادر مسافرتی",
+price:null,
+category:"خدمات",
+image:"tent-repair-chadooor.jpg"
+},
 
 
-    /* =====================================================
-       تبدیل عدد به تومان فارسی
-       ===================================================== */
+{
+id:10,
+name:"چادر پس از تعمیر",
+price:null,
+category:"خدمات",
+image:"tent-after-repair-1.jpg"
+}
 
-    function formatPrice(price) {
 
-      if (!price) {
-        return "۰ تومان";
-      }
+];
 
-      return price.toLocaleString("fa-IR") + " تومان";
 
-    }
 
 
-    /* =====================================================
-       انتخاب دسته‌بندی
-       ===================================================== */
+let currentCategory="all";
 
-    function setCategory(category, clickedButton) {
 
-      currentCategory = category;
+let cart=[];
 
-      document
-        .querySelectorAll(".filter-btn")
-        .forEach(function(btn) {
 
-          btn.classList.remove("active");
+try{
 
-        });
+cart=
+JSON.parse(localStorage.getItem("chadoor_cart")) || [];
 
-      clickedButton.classList.add("active");
+}
 
-      applyFilters();
+catch{
 
-    }
+cart=[];
 
+}
 
-    /* =====================================================
-       جستجو و فیلتر
-       ===================================================== */
 
-    function applyFilters() {
 
-      const searchInput =
-        document.getElementById("searchInput");
 
-      const searchText =
-        searchInput.value
-          .trim()
-          .toLowerCase();
+/* ===============================
+   قیمت
+================================ */
 
-      const filtered =
-        products.filter(function(product) {
 
-          const matchCategory =
-            currentCategory === "all" ||
-            product.category === currentCategory;
+function formatPrice(price){
 
-          const matchSearch =
-            product.name
-              .toLowerCase()
-              .includes(searchText);
+if(!price){
 
-          return matchCategory && matchSearch;
+return "تماس بگیرید";
 
-        });
+}
 
-      renderProducts(filtered);
 
-    }
+return price.toLocaleString("fa-IR")+" تومان";
 
+}
 
-    /* =====================================================
-       نمایش محصولات
-       ===================================================== */
 
-    function renderProducts(list = products) {
 
-      const container =
-        document.getElementById("products");
 
-      if (list.length === 0) {
 
-        container.innerHTML = `
-          <div class="no-result">
-            محصولی با این مشخصات یافت نشد.
-          </div>
-        `;
+/* ===============================
+   فیلتر دسته بندی
+================================ */
 
-        return;
 
-      }
+function setCategory(category,button){
 
 
-      container.innerHTML =
-        list.map(function(product) {
+currentCategory=category;
 
-          let priceHTML = "";
 
-          let buttonHTML = "";
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn=>{
 
+btn.classList.remove("active");
 
-          /* محصول دارای قیمت */
+});
 
-          if (product.price) {
 
-            priceHTML = `
-              <div class="price">
-                ${formatPrice(product.price)}
-              </div>
-            `;
+button.classList.add("active");
 
-            buttonHTML = `
-              <button
-                class="add-btn"
-                onclick="addToCart(${product.id})"
-              >
-                🛒 افزودن به سبد خرید
-              </button>
-            `;
 
-          }
+applyFilters();
 
 
-          /* محصول بدون قیمت */
+}
 
-          else {
 
-            priceHTML = `
-              <div class="no-price">
-                قیمت: تماس بگیرید
-              </div>
-            `;
 
-            buttonHTML = `
-              <button
-                class="add-btn"
-                onclick="orderProduct(${product.id})"
-              >
-                📱 استعلام قیمت در واتساپ
-              </button>
-            `;
 
-          }
 
 
-          return `
+/* ===============================
+   جستجو
+================================ */
 
-            <article class="product">
 
-              <img
-                src="${product.image}"
-                alt="${product.name} - چادردوزی جزیره"
-                loading="lazy"
-                onerror="this.style.display='none'"
-              >
+function applyFilters(){
 
-              <div class="product-info">
 
-                <h3>
-                  ${product.name}
-                </h3>
+let text=
+document
+.getElementById("searchInput")
+.value
+.trim()
+.toLowerCase();
 
-                <div class="category">
-                  دسته‌بندی: ${product.category}
-                </div>
 
-                ${priceHTML}
 
-                ${buttonHTML}
+let result=
+products.filter(product=>{
 
-              </div>
 
-            </article>
+let categoryOK=
+currentCategory==="all" ||
+product.category===currentCategory;
 
-          `;
 
-        }).join("");
 
-    }
+let searchOK=
+product.name
+.toLowerCase()
+.includes(text);
 
 
-    /* =====================================================
-       افزودن محصول به سبد خرید
-       ===================================================== */
 
-    function addToCart(id) {
+return categoryOK && searchOK;
 
-      const product =
-        products.find(function(p) {
 
-          return p.id === id;
+});
 
-        });
 
 
-      if (!product || !product.price) {
+renderProducts(result);
 
-        return;
 
-      }
+}
 
 
-      const existing =
-        cart.find(function(item) {
 
-          return item.id === id;
 
-        });
 
 
-      if (existing) {
+/* ===============================
+   نمایش محصولات
+================================ */
 
-        existing.quantity += 1;
 
-      }
+function renderProducts(list=products){
 
-      else {
 
-        cart.push({
+const box=
+document.getElementById("products");
 
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          category: product.category,
-          image: product.image,
-          quantity: 1
 
-        });
 
-      }
+box.innerHTML=
+list.map(product=>{
 
 
-      saveCart();
+let button=
+product.price ?
 
-      renderCart();
 
-    }
+`
+<button class="add-btn"
+onclick="addToCart(${product.id})">
 
+🛒 افزودن به سبد
 
-    /* =====================================================
-       افزایش تعداد
-       ===================================================== */
+</button>
+`
 
-    function increaseQty(id) {
 
-      const item =
-        cart.find(function(item) {
+:
 
-          return item.id === id;
 
-        });
+`
+<button class="add-btn"
+onclick="orderProduct(${product.id})">
 
+📱 استعلام قیمت
 
-      if (!item) {
+</button>
+`;
 
-        return;
 
-      }
 
+return `
 
-      item.quantity += 1;
 
-      saveCart();
+<article class="product-card">
 
-      renderCart();
 
-    }
+<img src="${product.image}"
+alt="${product.name} چادردوزی جزیره"
+loading="lazy">
 
 
-    /* =====================================================
-       کاهش تعداد
-       ===================================================== */
 
-    function decreaseQty(id) {
+<div class="product-info">
 
-      const item =
-        cart.find(function(item) {
 
-          return item.id === id;
+<h3>
 
-        });
+${product.name}
 
+</h3>
 
-      if (!item) {
 
-        return;
+<p>
 
-      }
+دسته:
+${product.category}
 
+</p>
 
-      item.quantity -= 1;
 
+<div class="price">
 
-      if (item.quantity <= 0) {
+${formatPrice(product.price)}
 
-        cart =
-          cart.filter(function(i) {
+</div>
 
-            return i.id !== id;
 
-          });
 
-      }
+${button}
 
 
-      saveCart();
+</div>
 
-      renderCart();
 
-    }
+</article>
 
 
-    /* =====================================================
-       حذف محصول
-       ===================================================== */
+`;
 
-    function removeFromCart(id) {
 
-      cart =
-        cart.filter(function(item) {
+}).join("");
 
-          return item.id !== id;
 
-        });
 
+}
 
-      saveCart();
 
-      renderCart();
 
-    }
 
 
-    /* =====================================================
-       ذخیره سبد خرید
-       ===================================================== */
 
-    function saveCart() {
+/* ===============================
+   افزودن به سبد
+================================ */
 
-      try {
 
-        localStorage.setItem(
-          "chadoor_cart",
-          JSON.stringify(cart)
-        );
+function addToCart(id){
 
-      } catch (error) {
 
-        console.error(
-          "خطا در ذخیره سبد خرید:",
-          error
-        );
+let product=
+products.find(p=>p.id===id);
 
-      }
 
-    }
 
+let item=
+cart.find(p=>p.id===id);
 
-    /* =====================================================
-       نمایش سبد خرید
-       ===================================================== */
 
-    function renderCart() {
 
-      const container =
-        document.getElementById("cart-items");
+if(item){
 
-      const totalEl =
-        document.getElementById("total");
+item.qty++;
 
+}
 
-      if (cart.length === 0) {
+else{
 
-        container.innerHTML = `
-          <div class="empty">
-            سبد خرید خالی است.
-          </div>
-        `;
 
-        totalEl.innerText =
-          "جمع کل: ۰ تومان";
+cart.push({
 
-        return;
+id:product.id,
 
-      }
+name:product.name,
 
+price:product.price,
 
-      container.innerHTML =
-        cart.map(function(item) {
+qty:1
 
-          const itemTotal =
-            item.price * item.quantity;
+});
 
 
-          return `
+}
 
-            <div class="cart-item">
 
-              <div class="item-info">
 
-                <strong>
-                  ${item.name}
-                </strong>
+saveCart();
 
-                <div class="item-price">
-                  ${formatPrice(item.price)}
-                  ×
-                  ${item.quantity.toLocaleString("fa-IR")}
-                  =
-                  ${formatPrice(itemTotal)}
-                </div>
 
-              </div>
+}
 
 
-              <div class="qty-controls">
 
-                <button
-                  class="qty-btn"
-                  onclick="decreaseQty(${item.id})"
-                  aria-label="کاهش تعداد"
-                >
-                  −
-                </button>
 
-                <span class="qty-number">
-                  ${item.quantity.toLocaleString("fa-IR")}
-                </span>
 
-                <button
-                  class="qty-btn"
-                  onclick="increaseQty(${item.id})"
-                  aria-label="افزایش تعداد"
-                >
-                  +
-                </button>
+/* ===============================
+   ذخیره سبد
+================================ */
 
-              </div>
 
+function saveCart(){
 
-              <button
-                class="remove-btn"
-                onclick="removeFromCart(${item.id})"
-              >
-                حذف
-              </button>
 
-            </div>
+localStorage.setItem(
+"chadoor_cart",
+JSON.stringify(cart)
+);
 
-          `;
 
-        }).join("");
+}
 
 
-      const total =
-        cart.reduce(function(sum, item) {
 
-          return sum +
-            (item.price * item.quantity);
 
-        }, 0);
 
 
-      totalEl.innerText =
-        "جمع کل: " +
-        formatPrice(total);
+/* ===============================
+   واتساپ محصول
+================================ */
 
-    }
 
+function orderProduct(id){
 
-    /* =====================================================
-       استعلام قیمت محصول
-       ===================================================== */
 
-    function orderProduct(id) {
+let product=
+products.find(p=>p.id===id);
 
-      const product =
-        products.find(function(p) {
 
-          return p.id === id;
 
-        });
+let text=
+"سلام، درباره "+product.name+
+" از چادردوزی جزیره قیمت می‌خواهم.";
 
 
-      if (!product) {
 
-        return;
+window.open(
 
-      }
+"https://wa.me/"+WHATSAPP_PHONE+
+"?text="+encodeURIComponent(text),
 
+"_blank"
 
-      const message =
-        "سلام، درباره «" +
-        product.name +
-        "» از فروشگاه چادردوزی جزیره استعلام قیمت دارم.";
+);
 
 
-      const url =
-        "https://wa.me/" +
-        WHATSAPP_PHONE +
-        "?text=" +
-        encodeURIComponent(message);
+}
 
 
-      window.open(url, "_blank");
 
-    }
 
 
-    /* =====================================================
-       ثبت سفارش سبد خرید در واتساپ
-       ===================================================== */
 
-    function checkout() {
+/* ===============================
+   Schema محصولات قیمت دار
+================================ */
 
-      if (cart.length === 0) {
 
-        alert(
-          "سبد خرید خالی است!"
-        );
+const schema=
+products
+.filter(p=>p.price)
+.map(p=>({
 
-        return;
 
-      }
+"@context":"https://schema.org",
 
+"@type":"Product",
 
-      let message =
-        "سلام، می‌خواهم سفارش زیر را از فروشگاه چادردوزی جزیره ثبت کنم:\n\n";
+"name":p.name,
 
 
-      cart.forEach(function(item) {
+"image":
+"https://chadooor.ir/"+p.image,
 
-        message +=
-          "• " +
-          item.name +
-          "\n";
 
-        message +=
-          "تعداد: " +
-          item.quantity.toLocaleString("fa-IR") +
-          "\n";
+"brand":{
 
-        message +=
-          "قیمت واحد: " +
-          formatPrice(item.price) +
-          "\n";
+"@type":"Brand",
 
-        message +=
-          "مبلغ: " +
-          formatPrice(
-            item.price * item.quantity
-          ) +
-          "\n\n";
+"name":"چادردوزی جزیره J.A.T"
 
-      });
+},
 
 
-      const total =
-        cart.reduce(function(sum, item) {
+"offers":{
 
-          return sum +
-            (item.price * item.quantity);
+"@type":"Offer",
 
-        }, 0);
+"priceCurrency":"IRR",
 
+"price":p.price,
 
-      message +=
-        "جمع کل: " +
-        formatPrice(total) +
-        "\n\n";
+"availability":
+"https://schema.org/InStock"
 
-      message +=
-        "لطفاً برای هماهنگی سفارش با من تماس بگیرید.";
+}
 
 
-      const url =
-        "https://wa.me/" +
-        WHATSAPP_PHONE +
-        "?text=" +
-        encodeURIComponent(message);
+}));
 
 
-      window.open(url, "_blank");
 
-    }
+const schemaTag=
+document.createElement("script");
 
 
-    /* =====================================================
-   Product Schema خودکار برای گوگل
-   ===================================================== */
+schemaTag.type=
+"application/ld+json";
 
-const productSchema = products
-  .filter(product => product.price)
-  .map(product => ({
-    "@context": "https://schema.org",
-    "@type": "Product",
 
-    "name": product.name,
+schemaTag.textContent=
+JSON.stringify(schema);
 
-    "image": "https://chadooor.ir/" + product.image,
 
-    "brand": {
-      "@type": "Brand",
-      "name": "چادردوزی جزیره J.A.T"
-    },
 
-    "sku": "JAT-" + product.id,
+document.head.appendChild(schemaTag);
 
-    "offers": {
-      "@type": "Offer",
-      "url": "https://chadooor.ir/shop.html",
-      "priceCurrency": "IRR",
-      "price": product.price,
-      "availability": "https://schema.org/InStock"
-    }
-  }));
 
 
-const schemaScript = document.createElement("script");
 
-schemaScript.type = "application/ld+json";
 
-schemaScript.textContent = JSON.stringify(productSchema);
 
-document.head.appendChild(schemaScript);
+/* ===============================
+   اجرا
+================================ */
 
-
-/* =====================================================
-   اجرای اولیه فروشگاه
-   ===================================================== */
 
 renderProducts();
 
-renderCart();
+
+if(window.lucide){
+
+lucide.createIcons();
+
+}
+
 
 </script>
+<!-- ================= FOOTER ================= -->
+
+
+<footer>
+
+
+<div class="footer-top">
+
+
+
+<a class="brand"
+href="index.html"
+aria-label="صفحه اصلی چادردوزی جزیره J.A.T">
+
+
+
+<span class="brand-mark">
+
+
+<img src="favicon.svg"
+alt="لوگو چادردوزی جزیره J.A.T"
+width="45"
+height="45">
+
+
+</span>
+
+
+
+<span>
+چادردوزی جزیره J.A.T
+</span>
+
+
+
+</a>
+
+
+
+
+<p class="footer-slogan">
+
+برای هر مسیر، یک پناه مطمئن.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<nav class="footer-menu"
+aria-label="لینک‌های فوتر">
+
+
+
+<a href="products.html">
+
+محصولات
+
+</a>
+
+
+<span>|</span>
+
+
+
+<a href="shop.html">
+
+فروشگاه
+
+</a>
+
+
+<span>|</span>
+
+
+
+<a href="services.html">
+
+خدمات ما
+
+</a>
+
+
+<span>|</span>
+
+
+
+<a href="gallery.html">
+
+گالری
+
+</a>
+
+
+<span>|</span>
+
+
+
+<a href="about.html">
+
+درباره J.A.T
+
+</a>
+
+
+<span>|</span>
+
+
+
+<a href="blog.html">
+
+مجله سفر
+
+</a>
+
+
+<span>|</span>
+
+
+
+<a href="contact.html">
+
+ثبت سفارش
+
+</a>
+
+
+
+</nav>
+
+
+
+
+
+
+
+<div class="social-links">
+
+
+
+<a href="https://wa.me/989118031241"
+target="_blank"
+rel="noopener noreferrer">
+
+واتساپ
+
+</a>
+
+
+
+
+
+<a href="https://instagram.com/chadoor_"
+target="_blank"
+rel="noopener noreferrer">
+
+اینستاگرام
+
+</a>
+
+
+
+
+
+<a href="https://t.me/GATTENT"
+target="_blank"
+rel="noopener noreferrer">
+
+تلگرام
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="copyright">
+
+
+© 2026 چادردوزی جزیره J.A.T
+
+
+<br>
+
+
+کلیه حقوق این وب‌سایت محفوظ است.
+
+
+</div>
+
+
+
+
+</footer>
+
+
+
+
+
+
+<!-- اسکریپت منوی موبایل -->
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+</html>
