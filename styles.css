@@ -1,779 +1,2082 @@
-[13/06/1405 08:45 AM] Korosh Ariaie: /* CHADOOOR J.A.T - Optimized */
+/* ==================================================
+   CHADOOOR J.A.T
+   FINAL OPTIMIZED STYLES
+   Part 1/4
+================================================== */
 
-:root {
-  --ink: #182622;
-  --muted: #6d7975;
-  --cream: #f5f3ed;
-  --paper: #fffdf8;
-  --lime: #d5f263;
-  --coral: #f68165;
-  --line: #dfe2da;
-  --teal: #235d56;
+
+/* ================= ROOT ================= */
+
+:root{
+  --ink:#182622;
+  --muted:#6d7975;
+  --cream:#f5f3ed;
+  --paper:#fffdf8;
+  --lime:#d5f263;
+  --coral:#f68165;
+  --line:#dfe2da;
+  --teal:#235d56;
 }
+
+
+/* ================= RESET ================= */
 
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
+*::after{
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font: 15px/1.8 Estedad, sans-serif;
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Estedad, Tahoma, sans-serif;
+  font-size:15px;
+  line-height:1.8;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+
+img{
+  max-width:100%;
+  display:block;
 }
+
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
 
 button,
 input,
-textarea {
-  font: inherit;
+textarea{
+  font-family:inherit;
 }
 
-/* ========== Header ========== */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 84px;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 28px;
+
+/* ================= HEADER ================= */
+
+.site-header{
+
+  width:100%;
+  max-width:1240px;
+  height:84px;
+
+  margin:auto;
+  padding:0 28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 22px;
-  font-weight: 800;
+
+.brand{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:22px;
+  font-weight:800;
+
 }
 
-.brand-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
+
+.brand-mark{
+
+  width:50px;
+  height:50px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
 }
 
-.brand-mark img {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
+
+.brand-mark img{
+
+  width:45px;
+  height:45px;
+
+  object-fit:contain;
+
 }
 
-.main-nav {
-  display: flex;
-  gap: 38px;
-  color: #65716d;
-  font-size: 14px;
+
+
+.main-nav{
+
+  display:flex;
+
+  gap:38px;
+
+  color:#65716d;
+
+  font-size:14px;
+
 }
 
-.main-nav a:hover {
-  color: var(--teal);
+
+.main-nav a{
+
+  transition:.2s ease;
+
 }
 
-.header-action {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid var(--ink);
+
+.main-nav a:hover{
+
+  color:var(--teal);
+
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 0;
+
+
+.header-action{
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  padding-bottom:3px;
+
+  border-bottom:1px solid var(--ink);
+
 }
 
-/* ========== Hero ========== */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1.04fr;
-  align-items: center;
-  gap: 90px;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 72px 28px 104px;
+
+.menu-toggle{
+
+  display:none;
+
+  background:none;
+
+  border:0;
+
+  cursor:pointer;
+
 }
 
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  color: #697771;
-  font-size: 12px;
+
+
+/* ================= HERO ================= */
+
+
+.hero{
+
+  max-width:1240px;
+
+  margin:auto;
+
+  padding:72px 28px 104px;
+
+
+  display:grid;
+
+  grid-template-columns:
+
+  1fr 1.04fr;
+
+
+  gap:90px;
+
+  align-items:center;
+
 }
 
-.eyebrow span {
-  width: 8px;
-  height: 8px;
-  background: var(--coral);
-  border-radius: 50%;
+
+
+.eyebrow{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+
+  margin-bottom:20px;
+
+  color:#697771;
+
+  font-size:12px;
+
 }
 
-h1 {
-  margin: 0 0 24px;
-  font-size: clamp(52px, 6vw, 90px);
-  font-weight: 800;
-  line-height: 1.2;
+
+
+.eyebrow span{
+
+  width:8px;
+  height:8px;
+
+
+  background:var(--coral);
+
+  border-radius:50%;
+
 }
+
+
+
+
+h1{
+
+  margin:0 0 24px;
+
+
+  font-size:clamp(52px,6vw,90px);
+
+  line-height:1.2;
+
+  font-weight:800;
+
+}
+
+
 
 h1 em,
-h2 em {
-  color: var(--teal);
-  font-style: normal;
+h2 em{
+
+  color:var(--teal);
+
+  font-style:normal;
+
 }
 
-.hero-text {
-  max-width: 470px;
-  margin-bottom: 30px;
-  color: #68746f;
-  font-size: 17px;
-  line-height: 2;
+
+
+.hero-text{
+
+  max-width:470px;
+
+
+  margin-bottom:30px;
+
+
+  color:#68746f;
+
+  font-size:17px;
+
+  line-height:2;
+
 }
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 27px;
+
+
+.hero-actions{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:27px;
+
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 14px 22px;
-  border: 0;
-  font-weight: 700;
-  cursor: pointer;
+
+
+.button{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+
+  padding:14px 22px;
+
+
+  border:0;
+
+  cursor:pointer;
+
+
+  font-weight:700;
+
 }
 
-.button-primary {
-  background: var(--ink);
-  color: #fff;
+
+
+.button-primary{
+
+  background:var(--ink);
+
+  color:white;
+
 }
 
-.button-primary:hover {
-  background: var(--teal);
+
+
+.button-primary:hover{
+
+  background:var(--teal);
+
 }
 
-.text-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--teal);
-  font-size: 13px;
+
+
+.text-link{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+
+  color:var(--teal);
+
+  font-size:13px;
+
 }
 
-.hero-visual {
-  position: relative;
+
+
+
+/* ================= HERO IMAGE ================= */
+
+
+.hero-visual{
+
+  position:relative;
+
 }
 
-.hero-visual > img {
-  width: 100%;
-  height: 560px;
-  object-fit: cover;
-  border-radius: 18px;
+
+
+.hero-visual > img{
+
+  width:100%;
+
+  aspect-ratio:4/5;
+
+
+  object-fit:cover;
+
+
+  border-radius:18px;
+
 }
 
-.chat-card {
-  position: absolute;
-  bottom: -45px;
-  left: -48px;
-  width: 315px;
-  padding: 21px;
-  background: var(--paper);
-  box-shadow: 0 20px 50px #18262224;
-  font-size: 11px;
+
+
+
+.chat-card{
+
+  position:absolute;
+
+
+  bottom:-45px;
+
+  left:-48px;
+
+
+  width:315px;
+
+
+  padding:21px;
+
+
+  background:var(--paper);
+
+
+  box-shadow:
+
+  0 20px 50px #18262224;
+
+
+  font-size:11px;
+
 }
 
-/* ========== Products ========== */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  max-width: 1185px;
-  margin: 0 auto;
-  padding: 0 28px 120px;
+
+/* END PART 1 */
+/* ==================================================
+   CHADOOOR J.A.T
+   FINAL OPTIMIZED STYLES
+   Part 2/4
+================================================== */
+
+
+/* ================= PRODUCTS ================= */
+
+
+.product-grid{
+
+  max-width:1185px;
+
+  margin:auto;
+
+  padding:0 28px 120px;
+
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:22px;
+
 }
 
-.product-card {
-  min-height: 300px;
-  padding: 34px;
-  background: var(--paper);
-  border-top: 2px solid var(--ink);
+
+
+.product-card{
+
+  min-height:300px;
+
+  padding:34px;
+
+
+  background:var(--paper);
+
+
+  border-top:2px solid var(--ink);
+
 }
 
-.product-card-featured {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column: span 2;
-  gap: 34px;
-  padding: 0;
+
+
+.product-card-featured{
+
+
+  grid-column:span 2;
+
+
+  display:grid;
+
+
+  grid-template-columns:1fr 1fr;
+
+
+  gap:34px;
+
+
+  padding:0;
+
 }
 
-.product-card-featured img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
+
+
+.product-card-featured img{
+
+
+  width:100%;
+
+
+  height:360px;
+
+
+  object-fit:cover;
+
+
 }
 
-.product-card-featured > div {
-  padding: 45px 30px;
+
+
+.product-card-featured > div{
+
+
+  padding:45px 30px;
+
+
 }
+
+
 
 .product-card span,
-.product-card-featured span {
-  color: var(--coral);
-  font-size: 12px;
+.product-card-featured span{
+
+
+  color:var(--coral);
+
+  font-size:12px;
+
+
 }
 
-.product-card h2 {
-  margin: 16px 0 8px;
-  font-size: 25px;
+
+
+.product-card h2{
+
+
+  margin:16px 0 8px;
+
+
+  font-size:25px;
+
+
 }
 
-.product-card p {
-  color: var(--muted);
-  font-size: 13px;
+
+
+.product-card p{
+
+
+  color:var(--muted);
+
+
+  font-size:13px;
+
+
 }
 
-.product-icon {
-  margin-bottom: 30px;
-  color: var(--teal);
+
+
+.product-icon{
+
+
+  margin-bottom:30px;
+
+
+  color:var(--teal);
+
+
 }
 
-.product-icon svg {
-  width: 34px;
-  height: 34px;
+
+
+.product-icon svg{
+
+
+  width:34px;
+
+  height:34px;
+
+
 }
 
-/* ========== Services ========== */
-.service-list {
-  max-width: 1185px;
-  margin: 0 auto;
-  padding: 0 28px 120px;
+
+
+
+/* ================= SERVICES ================= */
+
+
+.service-list{
+
+
+  max-width:1185px;
+
+
+  margin:auto;
+
+
+  padding:0 28px 120px;
+
+
 }
 
-.service-list article {
-  display: grid;
-  grid-template-columns: 55px 45px 1fr;
-  align-items: start;
-  gap: 22px;
-  padding: 30px 0;
-  border-top: 1px solid var(--line);
-}
-[13/06/1405 08:45 AM] Korosh Ariaie: .service-list article > span {
-  color: var(--coral);
-  font-size: 12px;
+
+
+.service-list article{
+
+
+  display:grid;
+
+
+  grid-template-columns:55px 45px 1fr;
+
+
+  gap:22px;
+
+
+  align-items:start;
+
+
+  padding:30px 0;
+
+
+  border-top:1px solid var(--line);
+
+
 }
 
-.service-list svg {
-  width: 25px;
-  color: var(--teal);
+
+
+.service-list article > span{
+
+
+  color:var(--coral);
+
+
+  font-size:12px;
+
+
 }
 
-.service-list h2 {
-  margin: 0 0 5px;
-  font-size: 22px;
+
+
+.service-list svg{
+
+
+  width:25px;
+
+
+  color:var(--teal);
+
+
 }
 
-.service-list p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
+
+
+.service-list h2{
+
+
+  margin:0 0 5px;
+
+
+  font-size:22px;
+
+
 }
 
-/* ========== Inner Page ========== */
-.inner-page {
-  min-height: calc(100vh - 170px);
+
+
+.service-list p{
+
+
+  margin:0;
+
+
+  color:var(--muted);
+
+
+  font-size:14px;
+
+
 }
 
-.page-hero {
-  max-width: 1185px;
-  margin: 0 auto;
-  padding: 105px 28px 75px;
+
+
+/* ================= INNER PAGES ================= */
+
+
+
+.inner-page{
+
+
+  min-height:calc(100vh - 170px);
+
+
 }
 
-.page-hero h1 {
-  margin-bottom: 22px;
-  font-size: clamp(48px, 6vw, 78px);
+
+
+
+.page-hero{
+
+
+  max-width:1185px;
+
+
+  margin:auto;
+
+
+  padding:105px 28px 75px;
+
+
 }
 
-.page-hero > p:last-of-type {
-  max-width: 480px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 2;
+
+
+.page-hero h1{
+
+
+  margin-bottom:22px;
+
+
+  font-size:clamp(48px,6vw,78px);
+
+
 }
 
-.page-hero-dark {
-  max-width: none;
-  padding-right: max(28px, calc((100% - 1185px) / 2));
-  padding-left: max(28px, calc((100% - 1185px) / 2));
-  background: var(--teal);
-  color: #fff;
+
+
+.page-hero > p:last-of-type{
+
+
+  max-width:480px;
+
+
+  color:var(--muted);
+
+
+  font-size:16px;
+
+
+  line-height:2;
+
+
 }
 
-.page-hero-dark h1 em {
-  color: var(--lime);
+
+
+
+.page-hero-dark{
+
+
+  max-width:none;
+
+
+  padding-right:max(28px,calc((100% - 1185px)/2));
+
+
+  padding-left:max(28px,calc((100% - 1185px)/2));
+
+
+  background:var(--teal);
+
+
+  color:white;
+
+
 }
 
-/* ========== About / Contact ========== */
+
+
+.page-hero-dark h1 em{
+
+
+  color:var(--lime);
+
+
+}
+
+
+
+/* ================= ABOUT / CONTACT ================= */
+
+
 .about-layout,
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 80px;
-  max-width: 1185px;
-  margin: 0 auto;
-  padding: 40px 28px 110px;
+.contact-layout{
+
+
+  max-width:1185px;
+
+
+  margin:auto;
+
+
+  padding:40px 28px 110px;
+
+
+  display:grid;
+
+
+  grid-template-columns:1fr 1fr;
+
+
+  gap:80px;
+
+
+  align-items:center;
+
+
 }
 
-.about-image img {
-  width: 100%;
-  height: 530px;
-  object-fit: cover;
-  border-radius: 18px;
+
+
+
+.about-image img{
+
+
+  width:100%;
+
+
+  height:530px;
+
+
+  object-fit:cover;
+
+
+  border-radius:18px;
+
+
 }
 
-.values {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1185px;
-  margin: 0 auto;
-  padding: 0 28px 120px;
+
+
+
+
+.values{
+
+
+  max-width:1185px;
+
+
+  margin:auto;
+
+
+  padding:0 28px 120px;
+
+
+  display:grid;
+
+
+  grid-template-columns:repeat(3,1fr);
+
+
+  gap:30px;
+
+
 }
 
-.values > div {
-  padding-top: 18px;
-  border-top: 1px solid var(--ink);
+
+
+.values > div{
+
+
+  padding-top:18px;
+
+
+  border-top:1px solid var(--ink);
+
+
 }
 
-.values svg {
-  width: 25px;
-  color: var(--teal);
+
+
+.values svg{
+
+
+  width:25px;
+
+
+  color:var(--teal);
+
+
 }
 
-.values h2 {
-  margin: 28px 0 8px;
-  font-size: 18px;
+
+
+.values h2{
+
+
+  margin:28px 0 8px;
+
+
+  font-size:18px;
+
+
 }
 
-.values p {
-  color: var(--muted);
-  font-size: 13px;
+
+
+.values p{
+
+
+  color:var(--muted);
+
+
+  font-size:13px;
+
+
 }
 
-.contact-form {
-  padding: 32px;
-  background: var(--paper);
+
+
+/* ================= CONTACT FORM ================= */
+
+
+.contact-form{
+
+
+  padding:32px;
+
+
+  background:var(--paper);
+
+
 }
 
-.contact-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 12px;
+
+
+.contact-form label{
+
+
+  display:block;
+
+
+  margin-bottom:6px;
+
+
+  font-size:12px;
+
+
 }
+
+
 
 .contact-form input,
-.contact-form textarea {
-  width: 100%;
-  margin-bottom: 18px;
-  padding: 11px;
-  border: 1px solid var(--line);
-  background: transparent;
+.contact-form textarea{
+
+
+  width:100%;
+
+
+  padding:11px;
+
+
+  margin-bottom:18px;
+
+
+  border:1px solid var(--line);
+
+
+  background:transparent;
+
+
 }
 
-.contact-form textarea {
-  resize: vertical;
+
+
+.contact-form textarea{
+
+
+  resize:vertical;
+
+
 }
 
-/* ========== Blog ========== */
-.blog-article {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 80px 28px 130px;
+
+/* END PART 2 */
+/* ==================================================
+   CHADOOOR J.A.T
+   FINAL OPTIMIZED STYLES
+   Part 3/4
+================================================== */
+
+
+/* ================= BLOG ARTICLE ================= */
+
+
+.blog-article{
+
+  max-width:900px;
+
+  margin:auto;
+
+  padding:80px 28px 130px;
+
 }
 
-.article-header h1 {
-  margin-bottom: 22px;
-  font-size: clamp(38px, 5vw, 64px);
-  line-height: 1.45;
+
+
+.article-header h1{
+
+  margin-bottom:22px;
+
+  font-size:clamp(38px,5vw,64px);
+
+  line-height:1.45;
+
 }
 
-.article-lead {
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 2.1;
+
+
+.article-lead{
+
+  color:var(--muted);
+
+  font-size:17px;
+
+  line-height:2.1;
+
 }
 
-.article-meta {
-  display: flex;
-  gap: 22px;
-  margin-top: 25px;
-  color: var(--muted);
-  font-size: 11px;
+
+
+.article-meta{
+
+  display:flex;
+
+  gap:22px;
+
+  margin-top:25px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
 }
 
-.article-cover {
-  width: 100%;
-  height: 430px;
-  margin: 45px 0;
-  object-fit: cover;
-  border-radius: 18px;
+
+
+.article-cover{
+
+  width:100%;
+
+  height:430px;
+
+  margin:45px 0;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
 }
 
-.article-body {
-  font-size: 15px;
-  line-height: 2.2;
+
+
+.article-body{
+
+  font-size:15px;
+
+  line-height:2.2;
+
 }
 
-.article-body h2 {
-  margin: 45px 0 12px;
-  color: var(--teal);
-  font-size: 25px;
+
+
+.article-body h2{
+
+  margin:45px 0 12px;
+
+  color:var(--teal);
+
+  font-size:25px;
+
 }
+
+
 
 .article-body p,
-.article-body li {
-  color: #53625d;
+.article-body li{
+
+  color:#53625d;
+
 }
 
-.article-body a {
-  color: var(--teal);
-  font-weight: 700;
+
+
+.article-body a{
+
+  color:var(--teal);
+
+  font-weight:700;
+
 }
 
-/* ========== FAQ ========== */
-.faq {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 80px;
+
+
+/* ================= FAQ ================= */
+
+
+.faq{
+
+  display:grid;
+
+  grid-template-columns:.8fr 1.2fr;
+
+  gap:80px;
+
 }
 
-.faq-list details {
-  padding: 17px 0;
-  border-top: 1px solid var(--line);
+
+
+.faq-list details{
+
+  padding:17px 0;
+
+  border-top:1px solid var(--line);
+
 }
 
-.faq-list details:last-child {
-  border-bottom: 1px solid var(--line);
+
+
+.faq-list details:last-child{
+
+  border-bottom:1px solid var(--line);
+
 }
 
-.faq-list summary {
-  font-weight: 700;
-  cursor: pointer;
+
+
+.faq-list summary{
+
+  cursor:pointer;
+
+  font-weight:700;
+
 }
 
-.faq-list p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 2;
+
+
+.faq-list p{
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:2;
+
 }
 
-/* ========== Location ========== */
-.location-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  max-width: 1185px;
-  margin: 0 auto;
-  padding: 22px 28px 75px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+
+
+/* ================= LOCATION ================= */
+
+
+.location-line{
+
+  max-width:1185px;
+
+  margin:auto;
+
+  padding:22px 28px 75px;
+
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+
+  border-top:1px solid var(--line);
+
+  color:var(--muted);
+
 }
 
-.location-line svg {
-  width: 18px;
-  color: var(--coral);
+
+
+.location-line svg{
+
+  width:18px;
+
+  color:var(--coral);
+
 }
 
-.map-embed {
-  width: 100%;
-  margin-top: 18px;
+
+
+.map-embed{
+
+  width:100%;
+
+  margin-top:18px;
+
 }
 
-.map-embed iframe {
-  width: 100%;
-  height: 270px;
-  border: 0;
+
+
+.map-embed iframe{
+
+  width:100%;
+
+  height:270px;
+
+  border:0;
+
 }
 
-/* ========== Floating WhatsApp ========== */
-.floating-whatsapp {
-  position: fixed;
-  z-index: 20;
-  left: 22px;
-  bottom: 22px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: #168c62;
-  color: #fff;
-  border-radius: 30px;
-  box-shadow: 0 8px 24px #0d553b4d;
-  font-size: 12px;
-  font-weight: 700;
-  direction: rtl;
+
+
+/* ================= FLOATING WHATSAPP ================= */
+
+
+.floating-whatsapp{
+
+  position:fixed;
+
+  z-index:20;
+
+
+  left:22px;
+
+  bottom:22px;
+
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+
+  padding:12px 16px;
+
+
+  background:#168c62;
+
+  color:white;
+
+
+  border-radius:30px;
+
+
+  box-shadow:
+
+  0 8px 24px #0d553b4d;
+
+
+  font-size:12px;
+
+  font-weight:700;
+
+
+  direction:rtl;
+
+
 }
 
-.floating-whatsapp:hover {
-  background: #0d704e;
-}
-[13/06/1405 08:45 AM] Korosh Ariaie: /* ========== Social ========== */
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 25px;
+
+
+.floating-whatsapp:hover{
+
+  background:#0d704e;
+
 }
 
-.social-links a {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 11px;
-  border: 1px solid var(--line);
-  color: var(--teal);
-  font-size: 11px;
-  direction: ltr;
+
+
+
+/* ================= SOCIAL ================= */
+
+
+.social-links{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:25px;
+
 }
 
-.social-links a:hover {
-  border-color: var(--teal);
-  background: var(--paper);
+
+
+.social-links a{
+
+
+  display:flex;
+
+  align-items:center;
+
+
+  gap:7px;
+
+
+  padding:8px 11px;
+
+
+  border:1px solid var(--line);
+
+
+  color:var(--teal);
+
+
+  font-size:11px;
+
+
+  direction:ltr;
+
+
 }
 
-/* ========== Footer ========== */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  max-width: 1240px;
-  margin: 40px auto 0;
-  padding: 40px 28px 50px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 12px;
-  text-align: center;
+
+
+.social-links a:hover{
+
+  border-color:var(--teal);
+
+  background:var(--paper);
+
 }
 
-footer .footer-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+
+
+/* ================= FOOTER ================= */
+
+
+footer{
+
+
+  max-width:1240px;
+
+
+  margin:40px auto 0;
+
+
+  padding:40px 28px 50px;
+
+
+  display:flex;
+
+
+  flex-direction:column;
+
+
+  align-items:center;
+
+
+  gap:28px;
+
+
+  border-top:1px solid var(--line);
+
+
+  color:var(--muted);
+
+
+  font-size:12px;
+
+
+  text-align:center;
+
+
 }
 
-footer .brand {
-  color: var(--ink);
-  font-size: 20px;
-  font-weight: 800;
+
+
+
+footer .footer-top{
+
+
+  display:flex;
+
+
+  flex-direction:column;
+
+
+  align-items:center;
+
+
+  gap:12px;
+
+
 }
 
-.footer-slogan {
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
+
+
+footer .brand{
+
+
+  color:var(--ink);
+
+
+  font-size:20px;
+
+
+  font-weight:800;
+
+
 }
 
-.footer-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
+
+
+.footer-slogan{
+
+
+  margin:0;
+
+
+  color:var(--muted);
+
+
+  font-size:13px;
+
+
 }
 
-.footer-menu a {
-  color: var(--ink);
-  font-weight: 600;
+
+
+.footer-menu{
+
+
+  display:flex;
+
+
+  flex-wrap:wrap;
+
+
+  justify-content:center;
+
+
+  gap:18px;
+
+
 }
 
-.footer-menu a:hover {
-  color: var(--teal);
+
+
+.footer-menu a{
+
+
+  color:var(--ink);
+
+
+  font-weight:600;
+
+
 }
 
-footer .social-links {
-  justify-content: center;
-  margin: 0;
+
+
+.footer-menu a:hover{
+
+
+  color:var(--teal);
+
+
 }
 
-footer .social-links a {
-  padding: 8px 14px;
-  font-size: 12px;
+
+
+footer .social-links{
+
+
+  justify-content:center;
+
+
+  margin:0;
+
+
 }
 
-footer .social-links svg {
-  width: 16px;
+
+
+footer .social-links a{
+
+
+  padding:8px 14px;
+
+
+  font-size:12px;
+
+
 }
 
-.copyright {
-  margin: 0;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.8;
+
+
+footer .social-links svg{
+
+
+  width:16px;
+
+
 }
 
-/* ========== Contact Numbers ========== */
-.contact-numbers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
+
+
+.copyright{
+
+
+  margin:0;
+
+
+  color:var(--muted);
+
+
+  font-size:11px;
+
+
+  line-height:1.8;
+
+
 }
 
-.contact-numbers a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 13px;
-  border: 1px solid #18262255;
-  font-size: 13px;
-  direction: ltr;
+
+
+/* ================= CONTACT NUMBERS ================= */
+
+
+.contact-numbers{
+
+
+  display:flex;
+
+
+  flex-wrap:wrap;
+
+
+  gap:10px;
+
+
+  margin-top:28px;
+
+
 }
 
-.contact-numbers a:hover {
-  background: var(--paper);
+
+
+.contact-numbers a{
+
+
+  display:inline-flex;
+
+
+  align-items:center;
+
+
+  gap:8px;
+
+
+  padding:8px 13px;
+
+
+  border:1px solid #18262255;
+
+
+  font-size:13px;
+
+
+  direction:ltr;
+
+
 }
 
-/* ========== CTA ========== */
-.cta {
-  padding: 50px 28px;
-  background: var(--lime);
-  border-radius: 20px;
+
+
+.contact-numbers a:hover{
+
+
+  background:var(--paper);
+
+
 }
 
-/* ========== Mobile (Single Media Query) ========== */
-@media (max-width: 800px) {
-  .site-header {
-    padding: 0 20px;
+
+
+/* ================= CTA ================= */
+
+
+.cta{
+
+
+  padding:50px 28px;
+
+
+  background:var(--lime);
+
+
+  border-radius:20px;
+
+
+}
+
+
+/* END PART 3 */
+/* ==================================================
+   CHADOOOR J.A.T
+   FINAL OPTIMIZED STYLES
+   Part 4/4
+================================================== */
+
+
+/* ================= MOBILE MENU + RESPONSIVE ================= */
+
+
+@media(max-width:800px){
+
+
+  /* Header */
+
+  .site-header{
+
+    height:84px;
+
+    padding:0 20px;
+
   }
+
 
   .main-nav,
-  .header-action {
-    display: none;
+  .header-action{
+
+    display:none;
+
   }
 
-  .menu-toggle {
-    display: block;
+
+  .menu-toggle{
+
+    display:block;
+
   }
 
-  .main-nav.open {
-    position: absolute;
-    z-index: 9999;
-    top: 84px;
-    right: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 10px 20px;
-    background: var(--paper);
-    box-shadow: 0 12px 30px #1826221a;
+
+
+  .main-nav.open{
+
+
+    position:absolute;
+
+
+    z-index:9999;
+
+
+    top:84px;
+
+
+    right:20px;
+
+
+    left:20px;
+
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:0;
+
+
+    padding:10px 20px;
+
+
+
+    background:var(--paper);
+
+
+    box-shadow:
+
+    0 12px 30px #1826221a;
+
+
   }
 
-  .main-nav.open a {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
+
+
+  .main-nav.open a{
+
+
+    padding:12px 0;
+
+
+    border-bottom:1px solid var(--line);
+
+
   }
 
-  .main-nav.open a:last-child {
-    border-bottom: 0;
+
+
+  .main-nav.open a:last-child{
+
+
+    border-bottom:0;
+
+
   }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    gap: 55px;
-    padding: 45px 20px 80px;
+
+
+
+  /* Hero */
+
+
+  .hero{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:55px;
+
+
+    padding:45px 20px 80px;
+
+
   }
 
-  h1 {
-    font-size: 53px;
+
+
+  h1{
+
+
+    font-size:42px;
+
+
   }
 
-  .hero-visual > img {
-    height: 420px;
+
+
+  .hero-text{
+
+
+    font-size:15px;
+
+
   }
 
-  .chat-card {
-    left: -20px;
-    width: 90%;
+
+
+  .hero-actions{
+
+
+    flex-wrap:wrap;
+
+
   }
 
-  .product-grid {
-    grid-template-columns: 1fr;
-    padding-bottom: 80px;
+
+
+
+  .hero-visual > img{
+
+
+    aspect-ratio:4/5;
+
+
+    height:auto;
+
+
   }
 
-  .product-card-featured {
-    grid-column: auto;
-    grid-template-columns: 1fr;
+
+
+  .chat-card{
+
+
+    left:-15px;
+
+
+    bottom:-35px;
+
+
+    width:90%;
+
+
   }
 
-  .product-card-featured img {
-    height: 280px;
+
+
+
+
+  /* Products */
+
+
+  .product-grid{
+
+
+    grid-template-columns:1fr;
+
+
+    padding-bottom:80px;
+
+
   }
 
-  .service-list article {
-    grid-template-columns: 35px 35px 1fr;
-    gap: 10px;
+
+
+  .product-card-featured{
+
+
+    grid-column:auto;
+
+
+    grid-template-columns:1fr;
+
+
   }
+
+
+
+  .product-card-featured img{
+
+
+    height:280px;
+
+
+  }
+
+
+
+
+
+  /* Services */
+
+
+  .service-list article{
+
+
+    grid-template-columns:35px 35px 1fr;
+
+
+    gap:10px;
+
+
+  }
+
+
+
+
+  /* About / Contact */
+
 
   .about-layout,
-  .contact-layout {
-    display: block;
-    padding: 30px 20px 80px;
+  .contact-layout{
+
+
+    display:block;
+
+
+    padding:30px 20px 80px;
+
+
   }
 
-  .about-image img {
-    height: 360px;
+
+
+
+  .about-image img{
+
+
+    height:360px;
+
+
   }
 
-  .values {
-    grid-template-columns: 1fr;
+
+
+
+  .values{
+
+
+    grid-template-columns:1fr;
+
+
   }
 
-  .article-cover {
-    height: 270px;
+
+
+
+  /* Blog */
+
+
+  .article-cover{
+
+
+    height:270px;
+
+
   }
 
-  .article-meta {
-    flex-direction: column;
-    gap: 8px;
+
+
+  .article-meta{
+
+
+    flex-direction:column;
+
+
+    gap:8px;
+
+
   }
 
-  .article-grid,
-  .project-grid {
-    grid-template-columns: 1fr;
+
+
+
+  /* FAQ */
+
+
+  .faq{
+
+
+    display:block;
+
+
   }
 
-  .faq {
-    display: block;
+
+
+
+  /* WhatsApp */
+
+
+  .floating-whatsapp{
+
+
+    left:14px;
+
+
+    bottom:14px;
+
+
   }
 
-  .floating-whatsapp {
-    left: 14px;
-    bottom: 14px;
-  }
+
 }
+
+
+
+
+
+/* ================= SMALL MOBILE ================= */
+
+
+@media(max-width:500px){
+
+
+  .brand{
+
+
+    font-size:18px;
+
+
+  }
+
+
+
+  .brand-mark{
+
+
+    width:42px;
+
+
+    height:42px;
+
+
+  }
+
+
+
+  .brand-mark img{
+
+
+    width:38px;
+
+
+    height:38px;
+
+
+  }
+
+
+
+  h1{
+
+
+    font-size:36px;
+
+
+  }
+
+
+
+  .button{
+
+
+    width:100%;
+
+
+  }
+
+
+
+  .hero-actions{
+
+
+    flex-direction:column;
+
+
+    align-items:stretch;
+
+
+  }
+
+
+
+  .floating-whatsapp span{
+
+
+    display:none;
+
+
+  }
+
+
+
+  .floating-whatsapp{
+
+
+    width:52px;
+
+
+    height:52px;
+
+
+    padding:0;
+
+
+    justify-content:center;
+
+
+  }
+
+
+
+}
+
+
+
+/* ================= PERFORMANCE FIXES ================= */
+
+
+/* جلوگیری از پرش تصویر هنگام لود */
+
+
+img{
+
+
+  height:auto;
+
+}
+
+
+
+/* لینک‌ها نرم‌تر */
+
+
+a,
+button{
+
+
+  transition:.2s ease;
+
+
+}
+
+
+
+/* جلوگیری از بیرون زدن محتوا */
+
+
+body{
+
+
+  overflow-x:hidden;
+
+
+}
+
+
+
+/* پایان فایل */
