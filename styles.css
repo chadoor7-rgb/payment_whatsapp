@@ -1,7 +1,7 @@
 /* ==================================================
    CHADOOOR J.A.T
-   FINAL OPTIMIZED STYLES
-   PART 1 / 4
+   BLOG + WEBSITE FINAL CSS
+   PART 1/4
 ================================================== */
 
 
@@ -9,17 +9,17 @@
 
 :root{
 
-  --ink:#182622;
-  --muted:#6d7975;
+--ink:#182622;
+--muted:#66736f;
 
-  --cream:#f5f3ed;
-  --paper:#fffdf8;
+--cream:#f5f3ed;
+--paper:#fffdf8;
 
-  --lime:#d5f263;
-  --coral:#f68165;
-  --teal:#235d56;
+--lime:#d5f263;
+--coral:#f68165;
+--teal:#235d56;
 
-  --line:#dfe2da;
+--line:#dedfd8;
 
 }
 
@@ -32,33 +32,35 @@
 *::before,
 *::after{
 
-  box-sizing:border-box;
+box-sizing:border-box;
 
 }
+
 
 
 html{
 
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 
 }
 
 
+
 body{
 
-  margin:0;
+margin:0;
 
-  background:var(--cream);
+background:var(--cream);
 
-  color:var(--ink);
+color:var(--ink);
 
-  font-family:Estedad,Tahoma,sans-serif;
+font-family:Estedad,Tahoma,Arial,sans-serif;
 
-  font-size:15px;
+font-size:16px;
 
-  line-height:1.8;
+line-height:1.9;
 
-  overflow-x:hidden;
+overflow-x:hidden;
 
 }
 
@@ -66,11 +68,9 @@ body{
 
 img{
 
-  max-width:100%;
+max-width:100%;
 
-  display:block;
-
-  height:auto;
+display:block;
 
 }
 
@@ -78,21 +78,24 @@ img{
 
 a{
 
-  color:inherit;
+text-decoration:none;
 
-  text-decoration:none;
+color:inherit;
+
+}
+
+
+
+svg{
+
+width:18px;
+
+height:18px;
+
+flex-shrink:0;
 
 }
 
-
-
-button,
-input,
-textarea{
-
-  font-family:inherit;
-
-}
 
 
 
@@ -101,32 +104,21 @@ textarea{
 
 .site-header{
 
+max-width:1240px;
 
-  width:100%;
+height:86px;
 
-  max-width:1240px;
+margin:auto;
 
+padding:0 30px;
 
-  height:84px;
+display:flex;
 
+align-items:center;
 
-  margin:auto;
+justify-content:space-between;
 
-
-  padding:0 28px;
-
-
-  display:flex;
-
-
-  align-items:center;
-
-
-  justify-content:space-between;
-
-
-  position:relative;
-
+position:relative;
 
 }
 
@@ -134,87 +126,43 @@ textarea{
 
 .brand{
 
+display:flex;
 
-  display:flex;
+align-items:center;
 
+gap:12px;
 
-  align-items:center;
+font-size:21px;
 
-
-  gap:10px;
-
-
-  font-size:22px;
-
-
-  font-weight:800;
-
+font-weight:800;
 
 }
 
 
 
-.brand-mark{
+.brand-logo{
 
+width:42px;
 
-  width:50px;
+height:42px;
 
-
-  height:50px;
-
-
-  display:flex;
-
-
-  justify-content:center;
-
-
-  align-items:center;
-
-
-  overflow:hidden;
-
+object-fit:contain;
 
 }
 
-
-
-.brand-mark img{
-
-
-  width:45px;
-
-
-  height:45px;
-
-
-  object-fit:contain;
-
-
-}
-
-
-
-/* ================= NAV ================= */
 
 
 .main-nav{
 
+display:flex;
 
-  display:flex;
+align-items:center;
 
+gap:32px;
 
-  align-items:center;
+font-size:14px;
 
-
-  gap:38px;
-
-
-  color:#65716d;
-
-
-  font-size:14px;
-
+color:#596662;
 
 }
 
@@ -222,9 +170,7 @@ textarea{
 
 .main-nav a{
 
-
-  transition:.2s ease;
-
+transition:.2s;
 
 }
 
@@ -232,109 +178,73 @@ textarea{
 
 .main-nav a:hover{
 
-
-  color:var(--teal);
-
+color:var(--teal);
 
 }
-
 
 
 
 .header-action{
 
+display:flex;
 
-  display:flex;
+align-items:center;
 
+gap:8px;
 
-  align-items:center;
+font-weight:700;
 
+font-size:14px;
 
-  gap:8px;
+border-bottom:1px solid var(--ink);
 
-
-  border-bottom:1px solid var(--ink);
-
-
-  padding-bottom:3px;
-
+padding-bottom:4px;
 
 }
-
 
 
 
 .menu-toggle{
 
+display:none;
 
-  display:none;
+background:none;
 
+border:0;
 
-  border:0;
-
-
-  background:none;
-
-
-  cursor:pointer;
-
-
-}
-
-
-
-/* ================= HERO ================= */
-
-
-.hero{
-
-
-  max-width:1240px;
-
-
-  margin:auto;
-
-
-  padding:72px 28px 110px;
-
-
-  display:grid;
-
-
-  grid-template-columns:1fr 1.04fr;
-
-
-  gap:90px;
-
-
-  align-items:center;
-
+cursor:pointer;
 
 }
 
 
 
 
-.eyebrow{
+/* ================= HERO BLOG ================= */
 
 
-  display:flex;
+.page-hero{
+
+max-width:1180px;
+
+margin:auto;
+
+padding:90px 30px 60px;
+
+}
 
 
-  align-items:center;
 
+.blog-hero .eyebrow{
 
-  gap:10px;
+display:flex;
 
+align-items:center;
 
-  color:#697771;
+gap:10px;
 
+font-size:13px;
 
-  font-size:12px;
-
-
-  margin-bottom:20px;
-
+color:var(--muted);
 
 }
 
@@ -342,579 +252,13 @@ textarea{
 
 .eyebrow span{
 
+width:8px;
 
-  width:8px;
+height:8px;
 
+background:var(--coral);
 
-  height:8px;
-
-
-  background:var(--coral);
-
-
-  border-radius:50%;
-
-
-}
-
-
-
-
-h1{
-
-
-  margin:0 0 24px;
-
-
-  font-size:clamp(52px,6vw,90px);
-
-
-  line-height:1.2;
-
-
-  font-weight:800;
-
-
-}
-
-
-
-h1 em,
-h2 em{
-
-
-  color:var(--teal);
-
-
-  font-style:normal;
-
-
-}
-
-
-
-
-.hero-text{
-
-
-  max-width:470px;
-
-
-  margin-bottom:30px;
-
-
-  color:#68746f;
-
-
-  font-size:17px;
-
-
-  line-height:2;
-
-
-}
-
-
-
-
-.hero-actions{
-
-
-  display:flex;
-
-
-  align-items:center;
-
-
-  gap:27px;
-
-
-}
-
-
-
-
-
-/* ================= BUTTON ================= */
-
-
-.button{
-
-
-  display:inline-flex;
-
-
-  align-items:center;
-
-
-  justify-content:center;
-
-
-  gap:12px;
-
-
-  padding:14px 22px;
-
-
-  border:0;
-
-
-  cursor:pointer;
-
-
-  font-weight:700;
-
-
-}
-
-
-
-.button-primary{
-
-
-  background:var(--ink);
-
-
-  color:white;
-
-
-}
-
-
-
-.button-primary:hover{
-
-
-  background:var(--teal);
-
-
-}
-
-
-
-
-.text-link{
-
-
-  display:flex;
-
-
-  align-items:center;
-
-
-  gap:8px;
-
-
-  color:var(--teal);
-
-
-  font-size:13px;
-
-
-}
-
-
-
-/* ================= HERO IMAGE ================= */
-
-
-.hero-visual{
-
-
-  position:relative;
-
-
-}
-
-
-
-.hero-visual > img{
-
-
-  width:100%;
-
-
-  aspect-ratio:4/5;
-
-
-  object-fit:cover;
-
-
-  border-radius:18px;
-
-
-}
-
-
-
-
-.visual-note{
-
-
-  position:absolute;
-
-
-  top:25px;
-
-
-  right:25px;
-
-
-  background:var(--paper);
-
-
-  padding:10px 15px;
-
-
-  font-size:12px;
-
-
-  display:flex;
-
-
-  align-items:center;
-
-
-  gap:8px;
-
-
-}
-
-
-
-.status-dot{
-
-
-  width:8px;
-
-
-  height:8px;
-
-
-  background:#28a745;
-
-
-  border-radius:50%;
-
-
-}
-
-
-
-
-.chat-card{
-
-
-  position:absolute;
-
-
-  bottom:-45px;
-
-
-  left:-48px;
-
-
-  width:315px;
-
-
-  padding:21px;
-
-
-  background:var(--paper);
-
-
-  box-shadow:0 20px 50px #18262224;
-
-
-  display:flex;
-
-
-  align-items:center;
-
-
-  gap:15px;
-
-
-}
-
-
-
-
-.chat-avatar{
-
-
-  width:45px;
-
-
-  height:45px;
-
-
-  border-radius:50%;
-
-
-  background:var(--ink);
-
-
-  color:white;
-
-
-  display:flex;
-
-
-  justify-content:center;
-
-
-  align-items:center;
-
-
-  font-weight:800;
-
-
-}
-
-
-
-
-.chat-card small{
-
-
-  display:block;
-
-
-  color:var(--muted);
-
-
-}
-
-
-
-/* پایان Part 1/4 */
-/* ==================================================
-   CHADOOOR J.A.T
-   FINAL OPTIMIZED STYLES
-   PART 2 / 4
-================================================== */
-
-
-/* ================= PRODUCTS ================= */
-
-
-.product-grid{
-
-  max-width:1185px;
-
-  margin:auto;
-
-  padding:0 28px 120px;
-
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:22px;
-
-}
-
-
-
-.product-card{
-
-  min-height:300px;
-
-  padding:34px;
-
-  background:var(--paper);
-
-  border-top:2px solid var(--ink);
-
-}
-
-
-
-.product-card-featured{
-
-  grid-column:span 2;
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:34px;
-
-  padding:0;
-
-}
-
-
-
-.product-card-featured img{
-
-  width:100%;
-
-  height:360px;
-
-  object-fit:cover;
-
-}
-
-
-
-.product-card-featured > div{
-
-  padding:45px 30px;
-
-}
-
-
-
-.product-card span,
-.product-card-featured span{
-
-  color:var(--coral);
-
-  font-size:12px;
-
-}
-
-
-
-.product-card h2{
-
-  margin:16px 0 8px;
-
-  font-size:25px;
-
-}
-
-
-
-.product-card p{
-
-  color:var(--muted);
-
-  font-size:13px;
-
-}
-
-
-
-.product-icon{
-
-  margin-bottom:30px;
-
-  color:var(--teal);
-
-}
-
-
-
-.product-icon svg{
-
-  width:34px;
-
-  height:34px;
-
-}
-
-
-
-
-/* ================= SERVICES ================= */
-
-
-.service-list{
-
-  max-width:1185px;
-
-  margin:auto;
-
-  padding:0 28px 120px;
-
-}
-
-
-
-.service-list article{
-
-  display:grid;
-
-  grid-template-columns:55px 45px 1fr;
-
-  gap:22px;
-
-  align-items:start;
-
-  padding:30px 0;
-
-  border-top:1px solid var(--line);
-
-}
-
-
-
-.service-list article > span{
-
-  color:var(--coral);
-
-  font-size:12px;
-
-}
-
-
-
-.service-list svg{
-
-  width:25px;
-
-  color:var(--teal);
-
-}
-
-
-
-.service-list h2{
-
-  margin:0 0 5px;
-
-  font-size:22px;
-
-}
-
-
-
-.service-list p{
-
-  margin:0;
-
-  color:var(--muted);
-
-  font-size:14px;
-
-}
-
-
-
-
-
-/* ================= INNER PAGES ================= */
-
-
-.inner-page{
-
-  min-height:calc(100vh - 170px);
-
-}
-
-
-
-
-.page-hero{
-
-  max-width:1185px;
-
-  margin:auto;
-
-  padding:105px 28px 75px;
+border-radius:50%;
 
 }
 
@@ -922,662 +266,456 @@ h2 em{
 
 .page-hero h1{
 
-  margin-bottom:22px;
+font-size:clamp(42px,5vw,72px);
 
-  font-size:clamp(48px,6vw,78px);
+line-height:1.35;
 
-}
+margin:20px 0;
 
-
-
-.page-hero > p:last-of-type{
-
-  max-width:480px;
-
-  color:var(--muted);
-
-  font-size:16px;
-
-  line-height:2;
+font-weight:900;
 
 }
 
 
 
+.page-hero h1 em{
 
-.page-hero-dark{
+font-style:normal;
 
-  max-width:none;
-
-  padding-right:max(28px,calc((100% - 1185px)/2));
-
-  padding-left:max(28px,calc((100% - 1185px)/2));
-
-  background:var(--teal);
-
-  color:white;
+color:var(--teal);
 
 }
 
 
 
-.page-hero-dark h1 em{
+.page-hero p:last-child{
 
-  color:var(--lime);
+max-width:620px;
+
+font-size:18px;
+
+color:var(--muted);
 
 }
 
 
 
 
-
-/* ================= ABOUT ================= */
-
-
-.about-layout,
-.contact-layout{
-
-  max-width:1185px;
-
-  margin:auto;
-
-  padding:40px 28px 110px;
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:80px;
-
-  align-items:center;
-
-}
+/* ================= BLOG GRID ================= */
 
 
+.blog-grid{
 
-.about-image img{
+max-width:1180px;
 
-  width:100%;
+margin:auto;
 
-  height:530px;
+padding:20px 30px 90px;
 
-  object-fit:cover;
+display:grid;
 
-  border-radius:18px;
+grid-template-columns:repeat(3,1fr);
+
+gap:28px;
 
 }
 
 
 
 
-.values{
-
-  max-width:1185px;
-
-  margin:auto;
-
-  padding:0 28px 120px;
-
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:30px;
-
-}
+/* ================= BLOG CARD ================= */
 
 
+.blog-card{
 
-.values > div{
+background:var(--paper);
 
-  padding-top:18px;
+border-radius:18px;
 
-  border-top:1px solid var(--ink);
+overflow:hidden;
+
+border:1px solid #eee;
+
+transition:.25s ease;
 
 }
 
 
 
-.values svg{
+.blog-card:hover{
 
-  width:25px;
+transform:translateY(-6px);
 
-  color:var(--teal);
-
-}
-
-
-
-.values h2{
-
-  margin:28px 0 8px;
-
-  font-size:18px;
+box-shadow:0 20px 40px #18262218;
 
 }
 
 
 
-.values p{
+.blog-card img{
 
-  color:var(--muted);
+width:100%;
 
-  font-size:13px;
+height:230px;
 
-}
-
-
-
-
-
-/* ================= CONTACT FORM ================= */
-
-
-.contact-form{
-
-  padding:32px;
-
-  background:var(--paper);
+object-fit:cover;
 
 }
 
 
 
-.contact-form label{
+.blog-card-body{
 
-  display:block;
-
-  margin-bottom:6px;
-
-  font-size:12px;
+padding:25px;
 
 }
 
 
 
-.contact-form input,
-.contact-form textarea{
+.category{
 
-  width:100%;
+display:inline-block;
 
-  padding:11px;
+font-size:12px;
 
-  margin-bottom:18px;
+color:var(--coral);
 
-  border:1px solid var(--line);
-
-  background:transparent;
+margin-bottom:10px;
 
 }
 
 
 
-.contact-form textarea{
+.blog-card h2{
 
-  resize:vertical;
+font-size:21px;
 
-}
+line-height:1.7;
 
-
-
-.contact-form button{
-
-  width:100%;
-
-}
-
-
-/* ================= COMMON SECTION ================= */
-
-
-.section{
-
-  max-width:1185px;
-
-  margin:auto;
-
-  padding:90px 28px;
+margin:5px 0 12px;
 
 }
 
 
 
-.section-heading{
+.blog-card p{
 
-  max-width:650px;
+font-size:14px;
 
-  margin-bottom:55px;
+color:var(--muted);
 
-}
-
-
-
-.section-heading h2{
-
-  margin:0 0 20px;
-
-  font-size:clamp(38px,5vw,64px);
-
-  line-height:1.4;
+line-height:2;
 
 }
 
 
 
-.section-heading p{
+.blog-card a{
 
-  color:var(--muted);
+display:flex;
 
-  font-size:16px;
+align-items:center;
+
+gap:8px;
+
+margin-top:18px;
+
+color:var(--teal);
+
+font-weight:700;
+
+font-size:14px;
 
 }
-
-
-
-/* پایان Part 2/4 */
 /* ==================================================
    CHADOOOR J.A.T
-   FINAL OPTIMIZED STYLES
-   PART 3 / 4
+   BLOG + INNER PAGES
+   PART 2 / 4
 ================================================== */
 
 
-/* ================= STEPS ================= */
+/* ================= INNER PAGE ================= */
 
 
-.steps{
+.inner-page{
 
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:25px;
+    width:100%;
+    overflow:hidden;
 
 }
 
 
 
-.step{
-
-  background:var(--paper);
-
-  padding:35px;
-
-  border-top:2px solid var(--ink);
-
-}
+/* ================= PAGE HERO ================= */
 
 
+.page-hero,
+.blog-hero{
 
-.step-number{
+    max-width:1180px;
 
-  display:block;
+    margin:auto;
 
-  color:var(--coral);
-
-  font-size:12px;
-
-  margin-bottom:20px;
+    padding:80px 28px 55px;
 
 }
 
 
 
-.step svg{
+.page-hero h1,
+.blog-hero h1{
 
-  width:32px;
+    margin:0 0 20px;
 
-  height:32px;
+    font-size:clamp(42px,5vw,72px);
 
-  color:var(--teal);
+    line-height:1.35;
 
-  margin-bottom:20px;
-
-}
-
-
-
-.step h3{
-
-  margin:0 0 10px;
-
-  font-size:22px;
+    font-weight:800;
 
 }
 
 
 
-.step p{
+.blog-hero h1 em{
 
-  color:var(--muted);
+    color:var(--teal);
 
-  font-size:14px;
+    font-style:normal;
+
+}
+
+
+
+.page-hero p,
+.blog-hero p{
+
+    max-width:620px;
+
+    color:var(--muted);
+
+    font-size:16px;
+
+    line-height:2;
 
 }
 
 
 
 
-/* ================= TOOLS ================= */
+
+/* ================= BLOG GRID ================= */
 
 
-.tools{
+.blog-grid{
 
-  display:grid;
+    max-width:1180px;
 
-  grid-template-columns:1fr 1fr;
+    margin:auto;
 
-  gap:80px;
+    padding:20px 28px 90px;
 
-  align-items:center;
+    display:grid;
 
-}
+    grid-template-columns:repeat(3,1fr);
 
-
-
-.tools-image img{
-
-  width:100%;
-
-  height:520px;
-
-  object-fit:cover;
-
-  border-radius:18px;
+    gap:28px;
 
 }
 
 
 
-.tools-copy{
 
-  max-width:520px;
-
-}
+/* ================= BLOG CARD ================= */
 
 
+.blog-card{
 
-.feature-list > div{
+    background:var(--paper);
 
-  display:flex;
+    border-radius:18px;
 
-  align-items:flex-start;
+    overflow:hidden;
 
-  gap:18px;
+    border:1px solid var(--line);
 
-  margin-bottom:30px;
+    transition:.25s ease;
 
 }
 
 
 
-.feature-list svg{
+.blog-card:hover{
 
-  width:28px;
+    transform:translateY(-5px);
 
-  height:28px;
-
-  color:var(--teal);
-
-  flex-shrink:0;
-
-}
-
-
-
-.feature-list p{
-
-  margin:0;
-
-  color:var(--muted);
-
-}
-
-
-
-.feature-list strong{
-
-  color:var(--ink);
-
-}
-
-
-
-/* ================= QUOTE ================= */
-
-
-.quote{
-
-  background:var(--paper);
-
-  border-radius:20px;
-
-  text-align:center;
-
-}
-
-
-
-.quote-mark{
-
-  font-size:80px;
-
-  color:var(--coral);
-
-  line-height:1;
-
-}
-
-
-
-.quote blockquote{
-
-  max-width:750px;
-
-  margin:20px auto 35px;
-
-  font-size:28px;
-
-  line-height:1.8;
-
-}
-
-
-
-.quote-author{
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  gap:15px;
-
-}
-
-
-
-.author-avatar{
-
-  width:48px;
-
-  height:48px;
-
-  border-radius:50%;
-
-  background:var(--ink);
-
-  color:white;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  font-weight:800;
+    box-shadow:0 20px 45px rgba(24,38,34,.12);
 
 }
 
 
 
 
-/* ================= TESTIMONIAL ================= */
+/* عکس مقاله */
 
+.blog-card img{
 
-.testimonials{
+    width:100%;
 
-  padding-top:40px;
+    height:220px;
 
-}
-
-
-
-.testimonial-grid{
-
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:25px;
-
-}
-
-
-
-.testimonial-grid article{
-
-  background:var(--paper);
-
-  padding:30px;
-
-  border-top:2px solid var(--ink);
-
-}
-
-
-
-.testimonial-grid p{
-
-  color:var(--muted);
-
-  line-height:2;
+    object-fit:cover;
 
 }
 
 
 
 
-/* ================= BLOG ================= */
+.blog-card-body{
 
-
-.blog-article{
-
-  max-width:900px;
-
-  margin:auto;
-
-  padding:80px 28px 130px;
+    padding:24px;
 
 }
 
 
 
-.article-header h1{
+.category{
 
-  margin-bottom:22px;
+    display:inline-block;
 
-  font-size:clamp(38px,5vw,64px);
+    color:var(--coral);
 
-  line-height:1.45;
+    font-size:12px;
 
-}
-
-
-
-.article-lead{
-
-  color:var(--muted);
-
-  font-size:17px;
-
-  line-height:2.1;
+    margin-bottom:12px;
 
 }
 
 
 
-.article-meta{
+.blog-card h2{
 
-  display:flex;
+    margin:0 0 12px;
 
-  gap:22px;
+    font-size:20px;
 
-  margin-top:25px;
-
-  color:var(--muted);
-
-  font-size:11px;
+    line-height:1.7;
 
 }
 
 
 
-.article-cover{
+.blog-card p{
 
-  width:100%;
+    margin:0 0 18px;
 
-  height:430px;
+    color:var(--muted);
 
-  margin:45px 0;
+    font-size:14px;
 
-  object-fit:cover;
-
-  border-radius:18px;
+    line-height:2;
 
 }
 
 
 
-.article-body{
 
-  font-size:15px;
+.blog-card a{
 
-  line-height:2.2;
+    display:inline-flex;
 
-}
+    align-items:center;
 
+    gap:8px;
 
+    color:var(--teal);
 
-.article-body h2{
+    font-size:13px;
 
-  margin:45px 0 12px;
-
-  color:var(--teal);
-
-  font-size:25px;
+    font-weight:700;
 
 }
 
 
 
-.article-body p,
-.article-body li{
+.blog-card a svg{
 
-  color:#53625d;
+    width:16px;
+
+    height:16px;
+
+}
+
+
+
+
+
+/* ================= ARTICLE CTA ================= */
+
+
+.article-callout{
+
+    max-width:1180px;
+
+    margin:0 auto 80px;
+
+    padding:45px 35px;
+
+    background:var(--lime);
+
+    border-radius:22px;
 
 }
 
 
 
-.article-body a{
+.article-callout h2{
 
-  color:var(--teal);
+    margin:0 0 15px;
 
-  font-weight:700;
+    font-size:32px;
 
 }
+
+
+
+.article-callout p{
+
+    max-width:700px;
+
+    margin-bottom:25px;
+
+    line-height:2;
+
+}
+
+
+
+
+
+/* ================= BUTTON FIX ================= */
+
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.button svg{
+
+    width:18px;
+
+    height:18px;
+
+}
+
 
 
 
@@ -1585,39 +723,369 @@ h2 em{
 /* ================= FAQ ================= */
 
 
-.faq{
+.faq-section{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:0 28px 100px;
+
+}
+
+
+
+.faq-section h2{
+
+    font-size:38px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.faq-section h3{
+
+    margin:30px 0 10px;
+
+    font-size:20px;
+
+    color:var(--teal);
+
+}
+
+
+
+.faq-section p{
+
+    color:var(--muted);
+
+    line-height:2;
+
+}
+
+
+
+
+
+/* ================= LOGO FIX ================= */
+
+
+/*
+ جلوگیری از بزرگ شدن favicon
+*/
+
+
+.brand-logo{
+
+    width:42px!important;
+
+    height:42px!important;
+
+    max-width:42px;
+
+    object-fit:contain;
+
+}
+
+
+
+
+.brand span{
+
+    white-space:nowrap;
+
+}
+
+
+
+
+footer .brand-logo{
+
+    width:38px!important;
+
+    height:38px!important;
+
+}
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+
+footer{
+
+    max-width:1180px;
+
+    margin:40px auto 0;
+
+    padding:45px 28px;
+
+    border-top:1px solid var(--line);
+
+    text-align:center;
+
+}
+
+
+
+footer .brand{
+
+    justify-content:center;
+
+}
+
+
+
+footer p{
+
+    color:var(--muted);
+
+}
+
+
+
+.footer-links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:22px;
+
+}
+
+
+
+.footer-links a:hover{
+
+    color:var(--teal);
+
+}
+
+
+
+
+
+/* ================= MOBILE ================= */
+
+
+@media(max-width:900px){
+
+
+.blog-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.page-hero,
+.blog-hero{
+
+    padding:55px 20px 35px;
+
+}
+
+
+
+.blog-grid{
+
+    grid-template-columns:1fr;
+
+    padding:20px;
+
+}
+
+
+
+.blog-card img{
+
+    height:200px;
+
+}
+
+
+
+.blog-card-body{
+
+    padding:20px;
+
+}
+
+
+
+.article-callout{
+
+    margin:0 20px 60px;
+
+    padding:30px 22px;
+
+}
+
+
+
+.article-callout h2{
+
+    font-size:26px;
+
+}
+
+
+
+.faq-section{
+
+    padding:0 20px 70px;
+
+}
+
+
+
+.faq-section h2{
+
+    font-size:30px;
+
+}
+
+
+}
+/* ==================================================
+   CHADOOOR J.A.T
+   FINAL STYLES
+   PART 3 / 4
+================================================== */
+
+
+/* ================= BLOG PAGE ================= */
+
+
+.blog-grid{
+
+  max-width:1185px;
+
+  margin:auto;
+
+  padding:20px 28px 100px;
 
   display:grid;
 
-  grid-template-columns:.8fr 1.2fr;
+  grid-template-columns:repeat(3,1fr);
 
-  gap:80px;
-
-}
-
-
-
-.faq-list details{
-
-  padding:17px 0;
-
-  border-top:1px solid var(--line);
+  gap:28px;
 
 }
 
 
 
-.faq-list details:last-child{
+.blog-card{
 
-  border-bottom:1px solid var(--line);
+  background:var(--paper);
+
+  overflow:hidden;
+
+  border-radius:18px;
+
+  border:1px solid var(--line);
+
+  transition:.25s ease;
 
 }
 
 
 
-.faq-list summary{
+.blog-card:hover{
 
-  cursor:pointer;
+  transform:translateY(-6px);
+
+  box-shadow:0 20px 40px rgba(24,38,34,.08);
+
+}
+
+
+
+.blog-card img{
+
+  width:100%;
+
+  height:230px;
+
+  object-fit:cover;
+
+}
+
+
+
+.blog-card-body{
+
+  padding:25px;
+
+}
+
+
+
+.category{
+
+  display:inline-block;
+
+  color:var(--coral);
+
+  font-size:12px;
+
+  margin-bottom:12px;
+
+}
+
+
+
+.blog-card h2{
+
+  font-size:20px;
+
+  line-height:1.8;
+
+  margin:0 0 14px;
+
+}
+
+
+
+.blog-card p{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:2;
+
+}
+
+
+
+.blog-card a{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  margin-top:20px;
+
+  color:var(--teal);
+
+  font-size:13px;
 
   font-weight:700;
 
@@ -1625,11 +1093,42 @@ h2 em{
 
 
 
-.faq-list p{
 
-  color:var(--muted);
 
-  font-size:13px;
+/* ================= BLOG ARTICLE ================= */
+
+
+.article-callout{
+
+  max-width:1185px;
+
+  margin:50px auto;
+
+  padding:45px;
+
+  background:var(--lime);
+
+  border-radius:20px;
+
+}
+
+
+
+.article-callout h2{
+
+  margin-top:0;
+
+  font-size:32px;
+
+}
+
+
+
+.article-callout p{
+
+  max-width:700px;
+
+  color:#33423e;
 
   line-height:2;
 
@@ -1638,158 +1137,220 @@ h2 em{
 
 
 
-/* ================= LOCATION ================= */
+
+/* ================= FAQ SECTION ================= */
 
 
-.location-line{
+.faq-section{
+
+  max-width:900px;
+
+  margin:0 auto 100px;
+
+  padding:0 28px;
+
+}
+
+
+
+.faq-section h2{
+
+  font-size:36px;
+
+  margin-bottom:40px;
+
+}
+
+
+
+.faq-section h3{
+
+  margin-top:30px;
+
+  font-size:20px;
+
+  color:var(--teal);
+
+}
+
+
+
+.faq-section p{
+
+  color:var(--muted);
+
+  line-height:2;
+
+}
+
+
+
+
+/* ================= PAGE TITLE ================= */
+
+
+.page-title{
 
   max-width:1185px;
 
   margin:auto;
 
-  padding:22px 28px 75px;
+  padding:90px 28px 40px;
 
-  display:flex;
+}
 
-  align-items:center;
 
-  gap:10px;
 
-  border-top:1px solid var(--line);
+.page-title h1{
+
+  font-size:clamp(42px,5vw,70px);
+
+}
+
+
+
+.page-title p{
+
+  max-width:600px;
 
   color:var(--muted);
 
-}
-
-
-
-.location-line svg{
-
-  width:18px;
-
-  color:var(--coral);
+  font-size:17px;
 
 }
 
 
 
-.map-embed{
+
+
+/* ================= GALLERY ================= */
+
+
+.gallery-grid{
+
+  max-width:1185px;
+
+  margin:auto;
+
+  padding:30px 28px 100px;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+
+}
+
+
+
+.gallery-grid img{
 
   width:100%;
 
-  margin-top:18px;
+  height:300px;
 
-}
+  object-fit:cover;
 
-
-
-.map-embed iframe{
-
-  width:100%;
-
-  height:270px;
-
-  border:0;
+  border-radius:18px;
 
 }
 
 
 
 
-/* ================= WHATSAPP ================= */
+
+/* ================= CTA BOX ================= */
 
 
-.floating-whatsapp{
+.cta-box{
 
-  position:fixed;
+  max-width:1185px;
 
-  z-index:20;
+  margin:60px auto;
 
-  left:22px;
+  padding:55px 40px;
 
-  bottom:22px;
-
-
-  display:flex;
-
-  align-items:center;
-
-  gap:8px;
-
-
-  padding:12px 16px;
-
-
-  background:#168c62;
+  background:var(--teal);
 
   color:white;
 
-
-  border-radius:30px;
-
-
-  box-shadow:0 8px 24px #0d553b4d;
-
-
-  font-size:12px;
-
-  font-weight:700;
+  border-radius:22px;
 
 }
 
 
 
-.floating-whatsapp:hover{
+.cta-box h2{
 
-  background:#0d704e;
+  margin:0 0 15px;
+
+  font-size:36px;
+
+}
+
+
+
+.cta-box p{
+
+  max-width:650px;
+
+  line-height:2;
+
+}
+
+
+
+.cta-box .button-primary{
+
+  background:white;
+
+  color:var(--ink);
+
+  margin-top:25px;
+
+}
+
+
+
+.cta-box .button-primary:hover{
+
+  background:var(--lime);
 
 }
 
 
 
 
-/* ================= SOCIAL ================= */
+
+/* ================= CONTACT NUMBERS ================= */
 
 
-.social-links{
+.contact-numbers{
 
   display:flex;
+
+  gap:12px;
 
   flex-wrap:wrap;
 
-  justify-content:center;
-
-  gap:9px;
-
 }
 
 
 
-.social-links a{
+.contact-numbers a{
 
-  display:flex;
-
-  align-items:center;
-
-  gap:7px;
-
-  padding:8px 12px;
+  padding:10px 18px;
 
   border:1px solid var(--line);
 
-  color:var(--teal);
+  background:var(--paper);
 
-  font-size:12px;
-
-}
-
-
-
-.social-links svg{
-
-  width:16px;
+  font-size:14px;
 
 }
+
+
 
 
 
@@ -1800,43 +1361,21 @@ footer{
 
   max-width:1240px;
 
-  margin:40px auto 0;
+  margin:50px auto 0;
 
-  padding:40px 28px 50px;
-
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-
-  gap:28px;
-
+  padding:45px 28px;
 
   border-top:1px solid var(--line);
 
-
-  color:var(--muted);
-
-  text-align:center;
-
-  font-size:12px;
-
-}
-
-
-
-footer .footer-top{
-
   display:flex;
 
   flex-direction:column;
 
   align-items:center;
 
-  gap:12px;
+  text-align:center;
+
+  gap:22px;
 
 }
 
@@ -1844,23 +1383,43 @@ footer .footer-top{
 
 footer .brand{
 
-  color:var(--ink);
+  display:flex;
 
-  font-size:20px;
+  align-items:center;
+
+  gap:12px;
+
+  font-size:21px;
+
+  font-weight:800;
 
 }
 
 
 
-.footer-slogan{
+footer img{
+
+  width:42px;
+
+  height:42px;
+
+  object-fit:contain;
+
+}
+
+
+
+footer p{
 
   margin:0;
 
+  color:var(--muted);
+
 }
 
 
 
-.footer-menu{
+.footer-links{
 
   display:flex;
 
@@ -1868,21 +1427,13 @@ footer .brand{
 
   justify-content:center;
 
-  gap:18px;
+  gap:25px;
 
 }
 
 
 
-.footer-menu a{
-
-  font-weight:600;
-
-}
-
-
-
-.footer-menu a:hover{
+.footer-links a:hover{
 
   color:var(--teal);
 
@@ -1890,128 +1441,58 @@ footer .brand{
 
 
 
-.copyright{
+footer span{
 
-  font-size:11px;
+  font-size:12px;
 
-}
-
-
-
-/* ================= CTA ================= */
-
-
-.cta{
-
-  background:var(--lime);
-
-  border-radius:20px;
-
-  padding:50px 28px;
+  color:var(--muted);
 
 }
 
 
 
-.contact-numbers{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  margin-top:28px;
-
-}
 
 
+/* ================= FLOAT WHATSAPP ================= */
 
-.contact-numbers a{
+
+.floating-whatsapp{
+
+  position:fixed;
+
+  left:25px;
+
+  bottom:25px;
+
+  z-index:100;
+
+  background:#15915f;
+
+  color:white;
+
+  padding:14px 22px;
+
+  border-radius:50px;
 
   display:flex;
 
   align-items:center;
 
-  gap:8px;
-
-  padding:8px 13px;
-
-  border:1px solid #18262255;
+  gap:10px;
 
   font-size:13px;
 
-}
+  font-weight:700;
 
-
-
-/* پایان Part 3/4 */
-/* ==================================================
-   CHADOOOR J.A.T
-   FINAL OPTIMIZED STYLES
-   PART 4 / 4
-================================================== */
-
-
-/* ================= TABLET + MOBILE ================= */
-
-
-@media(max-width:800px){
-
-
-/* ---------- HEADER ---------- */
-
-
-.site-header{
-
-  height:84px;
-
-  padding:0 20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
 
 }
 
 
 
-.brand{
+.floating-whatsapp:hover{
 
-  font-size:18px;
-
-}
-
-
-
-.brand-mark{
-
-  width:42px;
-
-  height:42px;
-
-}
-
-
-
-.brand-mark img{
-
-  width:38px;
-
-  height:38px;
-
-}
-
-
-
-.main-nav,
-.header-action{
-
-  display:none;
-
-}
-
-
-
-.menu-toggle{
-
-  display:block;
+  background:#0d704a;
 
 }
 
@@ -2019,694 +1500,472 @@ footer .brand{
 
 
 
-.main-nav.open{
-
-
-  position:absolute;
-
-
-  z-index:9999;
-
-
-  top:84px;
-
-
-  right:20px;
-
-
-  left:20px;
-
-
-
-  display:flex;
-
-
-  flex-direction:column;
-
-
-  gap:0;
-
-
-
-  padding:10px 20px;
-
-
-  background:var(--paper);
-
-
-  box-shadow:0 12px 30px #1826221a;
-
-
-}
-
-
-
-
-.main-nav.open a{
-
-
-  padding:12px 0;
-
-
-  border-bottom:1px solid var(--line);
-
-
-}
-
-
-
-.main-nav.open a:last-child{
-
-  border-bottom:0;
-
-}
-
-
-
-/* ---------- HERO ---------- */
-
-
-.hero{
-
-
-  display:flex;
-
-
-  flex-direction:column;
-
-
-  gap:55px;
-
-
-  padding:45px 20px 80px;
-
-
-}
-
-
-
-h1{
-
-
-  font-size:42px;
-
-
-}
-
-
-
-.hero-text{
-
-
-  font-size:15px;
-
-
-}
-
-
-
-.hero-actions{
-
-
-  flex-wrap:wrap;
-
-
-}
-
-
-
-.hero-visual > img{
-
-
-  aspect-ratio:4/5;
-
-
-  height:auto;
-
-
-}
-
-
-
-.chat-card{
-
-
-  left:-15px;
-
-
-  bottom:-35px;
-
-
-  width:90%;
-
-
-}
-
-
-
-
-.visual-note{
-
-
-  top:15px;
-
-
-  right:15px;
-
-
-}
-
-
-
-/* ---------- SECTIONS ---------- */
-
-
-.section{
-
-
-  padding:70px 20px;
-
-}
-
-
-
-.section-heading h2{
-
-
-  font-size:38px;
-
-
-}
-
-
-
-/* ---------- STEPS ---------- */
-
-
-.steps,
-.tools,
-.testimonial-grid{
-
-
-  grid-template-columns:1fr;
-
-
-}
-
-
-
-.step{
-
-
-  padding:28px;
-
-}
-
-
-
-/* ---------- PRODUCTS ---------- */
-
-
-.product-grid{
-
-
-  grid-template-columns:1fr;
-
-
-  padding:0 20px 80px;
-
-
-}
-
-
-
-.product-card-featured{
-
-
-  grid-column:auto;
-
-
-  grid-template-columns:1fr;
-
-
-}
-
-
-
-.product-card-featured img{
-
-
-  height:280px;
-
-
-}
-
-
-
-/* ---------- SERVICES ---------- */
-
-
-.service-list{
-
-
-  padding:0 20px 80px;
-
-
-}
-
-
-
-.service-list article{
-
-
-  grid-template-columns:35px 35px 1fr;
-
-
-  gap:10px;
-
-
-}
-
-
-
-
-
-/* ---------- ABOUT + CONTACT ---------- */
-
-
-.about-layout,
-.contact-layout{
-
-
-  display:block;
-
-
-  padding:30px 20px 80px;
-
-
-}
-
-
-
-.about-image{
-
-
-  margin-bottom:35px;
-
-
-}
-
-
-
-.about-image img{
-
-
-  height:360px;
-
-
-}
-
-
-
-
-.values{
-
-
-  grid-template-columns:1fr;
-
-
-  padding:0 20px 80px;
-
-
-}
-
-
-
-/* ---------- TOOLS ---------- */
-
-
-.tools{
-
-
-  gap:40px;
-
-
-}
-
-
-
-.tools-image img{
-
-
-  height:350px;
-
-
-}
-
-
-
-
-/* ---------- QUOTE ---------- */
-
-
-.quote blockquote{
-
-
-  font-size:22px;
-
-
-}
-
-
-
-
-/* ---------- BLOG ---------- */
-
-
-.blog-article{
-
-
-  padding:60px 20px 90px;
-
-
-}
-
-
-
-.article-cover{
-
-
-  height:270px;
-
-
-}
-
-
-
-.article-meta{
-
-
-  flex-direction:column;
-
-
-  gap:8px;
-
-
-}
-
-
-
-
-/* ---------- FAQ ---------- */
-
-
-.faq{
-
-
-  display:block;
-
-
-}
-
-
-
-.faq-list{
-
-
-  margin-top:35px;
-
-
-}
-
-
-
-
-/* ---------- CONTACT ---------- */
-
-
-.contact-numbers{
-
-
-  flex-direction:column;
-
-
-}
-
-
-
-.contact-numbers a{
-
-
-  justify-content:center;
-
-
-}
-
-
-
-/* ---------- FOOTER ---------- */
-
-
-.footer-menu{
-
-
-  flex-direction:column;
-
-
-  gap:12px;
-
-
-}
-
-
-
-footer{
-
-
-  padding:35px 20px;
-
-
-}
-
-
-
-
-
-/* ---------- WHATSAPP ---------- */
-
-
-.floating-whatsapp{
-
-
-  left:14px;
-
-
-  bottom:14px;
-
-
-}
-
-
-
-}
-
-
-
-/* ==================================================
-   SMALL MOBILE
-================================================== */
-
-
-@media(max-width:500px){
-
-
-
-body{
-
-  font-size:14px;
-
-}
-
-
-
-h1{
-
-
-  font-size:36px;
-
-
-}
-
-
-
-.section-heading h2{
-
-
-  font-size:32px;
-
-
-}
-
-
-
-.button{
-
-
-  width:100%;
-
-
-}
-
-
-
-.hero-actions{
-
-
-  flex-direction:column;
-
-
-  align-items:stretch;
-
-
-}
-
-
-
-.text-link{
-
-
-  justify-content:center;
-
-
-}
-
-
-
-.chat-card{
-
-
-  position:relative;
-
-
-  left:auto;
-
-
-  bottom:auto;
-
-
-  margin-top:20px;
-
-
-  width:100%;
-
-
-}
-
-
-
-.hero-visual{
-
-
-  width:100%;
-
-
-}
-
-
-
-.quote blockquote{
-
-
-  font-size:20px;
-
-
-}
-
-
-
-.floating-whatsapp span{
-
-
-  display:none;
-
-
-}
-
-
-
-.floating-whatsapp{
-
-
-  width:52px;
-
-
-  height:52px;
-
-
-  padding:0;
-
-
-  justify-content:center;
-
-
-}
-
-
-
-.contact-form{
-
-
-  padding:22px;
-
-
-}
-
-
-
-}
-
-
-
-/* ==================================================
-   PERFORMANCE FIXES
-================================================== */
-
-
-
-img{
-
-  height:auto;
-
-}
-
-
-
-a,
-button{
-
-  transition:.2s ease;
-
-}
-
+/* ================= ICON FIX ================= */
 
 
 svg{
 
-  flex-shrink:0;
+  width:18px;
+
+  height:18px;
+
+  vertical-align:middle;
 
 }
 
 
 
-/* جلوگیری از بیرون زدن محتوا */
+a svg{
 
-html,
+  margin-right:5px;
+
+}
+
+
+
+/* حذف مشکل svg کنار لینک‌ها */
+
+a::before,
+a::after{
+
+  content:none!important;
+
+}
+
+
+
+/* ================= IMAGE FIX ================= */
+
+
+.blog-card img,
+.gallery-grid img,
+.article-cover{
+
+  image-rendering:auto;
+
+}
+
+
+
+
+
+/* پایان Part 3 / 4 */
+/* ==================================================
+   CHADOOOR J.A.T
+   BLOG FINAL FIX
+   PART 4 / 4
+================================================== */
+
+
+/* ================= LOGO FIX ================= */
+
+
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+
+.brand-logo{
+
+    width:46px;
+    height:46px;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+
+
+.brand span{
+
+    white-space:nowrap;
+
+}
+
+
+
+/* ================= BLOG GRID ================= */
+
+
+.blog-grid{
+
+    max-width:1185px;
+
+    margin:auto;
+
+    padding:20px 28px 100px;
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+
+    gap:28px;
+
+}
+
+
+
+
+
+/* ================= BLOG CARD ================= */
+
+
+.blog-card{
+
+    background:var(--paper);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid var(--line);
+
+    transition:.25s ease;
+
+}
+
+
+
+.blog-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 35px rgba(24,38,34,.12);
+
+}
+
+
+
+
+
+.blog-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.blog-card-body{
+
+    padding:25px;
+
+}
+
+
+
+.category{
+
+    display:inline-block;
+
+    color:var(--coral);
+
+    font-size:12px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.blog-card h2{
+
+    font-size:21px;
+
+    line-height:1.8;
+
+    margin:10px 0;
+
+}
+
+
+
+.blog-card p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:2;
+
+}
+
+
+
+.blog-card a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:20px;
+
+    color:var(--teal);
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+
+
+
+/* ================= BLOG HERO ================= */
+
+
+.blog-hero{
+
+    text-align:right;
+
+}
+
+
+
+.blog-hero h1{
+
+    font-size:
+
+    clamp(42px,5vw,70px);
+
+}
+
+
+
+
+
+.blog-hero em{
+
+    color:var(--teal);
+
+}
+
+
+
+
+
+/* ================= ARTICLE CALLOUT ================= */
+
+
+.article-callout{
+
+    max-width:1185px;
+
+    margin:0 auto 80px;
+
+
+    padding:40px;
+
+    background:var(--lime);
+
+    border-radius:20px;
+
+}
+
+
+
+.article-callout h2{
+
+    margin-top:0;
+
+    font-size:32px;
+
+}
+
+
+
+.article-callout p{
+
+    max-width:700px;
+
+}
+
+
+
+/* ================= FAQ BLOG ================= */
+
+
+.faq-section{
+
+    max-width:900px;
+
+    margin:0 auto 100px;
+
+    padding:0 28px;
+
+}
+
+
+
+.faq-section h2{
+
+    font-size:35px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.faq-section h3{
+
+    font-size:20px;
+
+    color:var(--teal);
+
+    margin-top:30px;
+
+}
+
+
+
+.faq-section p{
+
+    color:var(--muted);
+
+}
+
+
+
+/* ================= FOOTER LOGO ================= */
+
+
+footer .brand-logo{
+
+    width:50px;
+
+    height:50px;
+
+}
+
+
+
+/* ================= REMOVE SVG TEXT ISSUES ================= */
+
+
+/* جلوگیری از نمایش متن svg کنار لینک‌ها */
+
+a svg{
+
+    width:18px;
+
+    height:18px;
+
+    display:inline-block;
+
+    vertical-align:middle;
+
+}
+
+
+
+
+
+/* ================= MOBILE BLOG ================= */
+
+
+@media(max-width:900px){
+
+
+.blog-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.blog-grid{
+
+    grid-template-columns:1fr;
+
+    padding:20px;
+
+}
+
+
+
+.blog-card img{
+
+    height:200px;
+
+}
+
+
+
+.article-callout{
+
+    margin:20px;
+
+    padding:25px;
+
+}
+
+
+
+.faq-section{
+
+    padding:0 20px;
+
+}
+
+
+}
+
+
+
+
+/* ================= FONT FIX ================= */
+
+
 body{
 
-  overflow-x:hidden;
+    font-family:
+    Estedad,
+    Vazirmatn,
+    Tahoma,
+    Arial,
+    sans-serif;
 
 }
 
 
 
-/* پایان فایل نهایی */
+
+/* ================= ICON FIX ================= */
+
+
+i[data-lucide]{
+
+    display:inline-flex;
+
+    align-items:center;
+
+}
+
+
