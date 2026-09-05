@@ -1,759 +1,579 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>ثبت سفارش و تماس با ما | چادردوزی جزیره J.A.T</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ثبت سفارش چادر مسافرتی و برزنتی، تماس با چادردوزی جزیره آمل. تولید و توزیع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق و چادر کامیون.">
+  <meta name="robots" content="index, follow">
 
+  <link rel="canonical" href="https://chadooor.ir/contact.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<meta name="description"
-content="تماس با چادردوزی جزیره J.A.T در آمل برای سفارش چادر مسافرتی، چادر برزنتی، تعمیر چادر و سفارش اختصاصی.">
+  <style>
+    .contact-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
 
+    .page-hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-<meta name="keywords"
-content="تماس چادردوزی جزیره، سفارش چادر آمل، تعمیر چادر آمل، واتساپ چادردوزی">
+    .page-hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
 
+    .page-hero p {
+      color: #64748b;
+      font-size: 1.1rem;
+    }
 
-<meta name="robots"
-content="index, follow">
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
 
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-<link rel="canonical"
-href="https://chadooor.ir/contact.html">
+    /* اطلاعات تماس */
+    .contact-info {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid #e2e8f0;
+    }
 
+    .contact-info h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #0f766e;
+    }
 
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+      align-items: flex-start;
+    }
 
-<title>
-تماس با چادردوزی جزیره | سفارش و مشاوره آمل
-</title>
+    .info-item .icon {
+      font-size: 1.4rem;
+      min-width: 30px;
+    }
 
+    .info-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
 
+    .info-item a {
+      color: #0d9488;
+      text-decoration: none;
+    }
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+    .info-item a:hover {
+      text-decoration: underline;
+    }
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
 
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.9rem;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, opacity 0.2s;
+    }
 
+    .social-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-rel="stylesheet">
+    .btn-whatsapp { background: #25D366; }
+    .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .btn-telegram { background: #0088cc; }
+    .btn-youtube { background: #FF0000; }
+    .btn-linktree { background: #39E09B; color: #000; }
 
+    /* فرم تماس */
+    .contact-form-box {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
 
+    .contact-form-box h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
 
-<link rel="icon"
-type="image/svg+xml"
-href="favicon.svg">
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
 
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
 
-<link rel="apple-touch-icon"
-href="favicon.svg">
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
 
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #0d9488;
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+    }
 
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: #dc2626;
+    }
 
-<link rel="stylesheet"
-href="styles.css">
+    .error-text {
+      color: #dc2626;
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
 
+    .form-group.error .error-text {
+      display: block;
+    }
 
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: #0d9488;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
 
+    .submit-btn:hover {
+      background: #0f766e;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f0fdf4;
+      border-radius: 12px;
+      color: #166534;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    /* نقشه گوگل */
+    .map-section {
+      margin-top: 3.5rem;
+    }
+
+    .map-section h2 {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+    }
+
+    .map-container {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      display: block;
+    }
+
+    .map-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .map-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      background: #0d9488;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .map-actions a:hover {
+      background: #0f766e;
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-
-<!-- ================= HEADER ================= -->
-
-
-<header class="site-header">
-
-
-<a class="brand"
-href="index.html"
-aria-label="چادردوزی جزیره J.A.T">
-
-
-<span class="brand-mark">
-
-<img src="favicon.svg"
-alt="لوگو چادردوزی جزیره J.A.T"
-width="45"
-height="45">
-
-</span>
-
-
-<span>
-چادردوزی جزیره J.A.T
-</span>
-
-
-</a>
-
-
-
-
-
-<nav class="main-nav"
-aria-label="منوی اصلی">
-
-
-<a href="products.html">
-محصولات
-</a>
-
-
-<a href="shop.html">
-🛒 فروشگاه
-</a>
-
-
-<a href="services.html">
-خدمات ما
-</a>
-
-
-<a href="gallery.html">
-گالری
-</a>
-
-
-<a href="about.html">
-درباره J.A.T
-</a>
-
-
-<a href="blog.html">
-مجله سفر
-</a>
-
-
-<a href="contact.html"
-aria-current="page">
-ثبت سفارش
-</a>
-
-
-</nav>
-
-
-
-
-
-<a class="header-action"
-href="contact.html">
-
-ثبت سفارش
-
-</a>
-
-
-
-
-
-<button class="menu-toggle"
-type="button"
-aria-label="باز کردن منو"
-aria-expanded="false">
-
-<i data-lucide="menu"></i>
-
-</button>
-
-
-
-</header>
-
-
-
-
-
-<!-- ================= MAIN ================= -->
-
-
-<main class="inner-page">
-
-
-
-<section class="contact-layout">
-
-
-
-
-
-<div class="page-hero">
-
-
-
-<p class="eyebrow">
-
-<span></span>
-
-ارتباط با ما
-
-</p>
-
-
-
-
-<h1>
-
-برای سفارش بعدی،
-
-<br>
-
-<em>با ما صحبت کنید.</em>
-
-</h1>
-
-
-
-
-
-<p>
-
-برای خرید چادر مسافرتی،
-چادر برزنتی، تعمیر چادر و سفارش اختصاصی
-با چادردوزی جزیره تماس بگیرید.
-
-</p>
-
-
-
-
-
-<div class="contact-numbers">
-
-
-
-<a href="tel:09118031241">
-
-<i data-lucide="phone"></i>
-
-<span>
-۰۹۱۱۸۰۳۱۲۴۱
-</span>
-
-</a>
-
-
-
-
-
-<a href="tel:09158017134">
-
-<i data-lucide="phone"></i>
-
-<span>
-۰۹۱۵۸۰۱۷۱۳۴
-</span>
-
-</a>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-<form class="contact-form"
-id="contactForm">
-
-
-
-<label for="name">
-نام و نام خانوادگی
-</label>
-
-
-<input
-id="name"
-type="text"
-placeholder="نام شما"
-required>
-
-
-
-
-
-<label for="phone">
-شماره تماس
-</label>
-
-
-<input
-id="phone"
-type="tel"
-placeholder="شماره تماس"
-required>
-
-
-
-
-
-<label for="service">
-نوع درخواست
-</label>
-
-
-
-<select id="service">
-
-
-<option>
-چادر مسافرتی
-</option>
-
-
-<option>
-چادر برزنتی
-</option>
-
-
-<option>
-تعمیر چادر
-</option>
-
-
-<option>
-تعمیر فنر چادر
-</option>
-
-
-<option>
-پشه‌بند سفارشی
-</option>
-
-
-</select>
-
-
-
-
-
-<label for="message">
-توضیحات سفارش
-</label>
-
-
-
-
-<textarea
-id="message"
-rows="5"
-placeholder="ابعاد، تعداد نفرات یا توضیح خرابی چادر"
-required></textarea>
-
-
-
-
-
-<button
-class="button button-primary"
-type="submit">
-
-
-ارسال درخواست در واتساپ
-
-
-<i data-lucide="arrow-left"></i>
-
-
-</button>
-
-
-
-
-
-<p class="form-message"
-id="formMessage">
-
-</p>
-
-
-
-
-</form>
-
-
-
-</section>
-<!-- ================= LOCATION ================= -->
-
-
-<section class="location-line">
-
-
-<i data-lucide="map-pin"></i>
-
-
-
-<span>
-
-ایران، مازندران، آمل،
-جاده هراز، روبروی پلیس‌راه محمدآباد
-
-</span>
-
-
-
-
-<a class="map-link"
-
-href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6"
-
-target="_blank"
-
-rel="noopener">
-
-مشاهده روی نقشه
-
-</a>
-
-
-
-</section>
-
-
-
-</main>
-
-
-
-
-
-<!-- ================= FOOTER ================= -->
-
-
-<footer>
-
-
-
-<div class="footer-top">
-
-
-
-<a class="brand"
-
-href="index.html"
-
-aria-label="صفحه اصلی">
-
-
-
-<span class="brand-mark">
-
-
-<img src="favicon.svg"
-
-alt="لوگو چادردوزی جزیره J.A.T"
-
-width="45"
-
-height="45">
-
-
-</span>
-
-
-
-
-<span>
-
-چادردوزی جزیره J.A.T
-
-</span>
-
-
-
-</a>
-
-
-
-
-
-<p class="footer-slogan">
-
-برای هر مسیر، یک پناه مطمئن.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<nav class="footer-menu"
-
-aria-label="لینک‌های فوتر">
-
-
-
-<a href="index.html">
-خانه
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="products.html">
-محصولات
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="shop.html">
-فروشگاه
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="services.html">
-خدمات ما
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="gallery.html">
-گالری
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="about.html">
-درباره J.A.T
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="blog.html">
-مجله سفر
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="contact.html">
-ثبت سفارش
-</a>
-
-
-
-</nav>
-
-
-
-
-
-
-
-<div class="social-links">
-
-
-<a href="https://wa.me/989118031241"
-target="_blank"
-rel="noopener">
-
-واتساپ
-
-</a>
-
-
-
-
-<a href="https://instagram.com/chadoor_"
-target="_blank"
-rel="noopener">
-
-اینستاگرام
-
-</a>
-
-
-
-
-<a href="https://t.me/GATTENT"
-target="_blank"
-rel="noopener">
-
-تلگرام
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="copyright">
-
-
-© 2026 چادردوزی جزیره J.A.T
-
-
-<br>
-
-
-کلیه حقوق این وب‌سایت محفوظ است.
-
-
-</div>
-
-
-
-
-</footer>
-
-
-
-
-
-
-<!-- ================= SCRIPTS ================= -->
-
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-
-<script>
-
-
-lucide.createIcons();
-
-
-
-const form =
-document.getElementById("contactForm");
-
-
-
-form.addEventListener("submit", function(e){
-
-
-e.preventDefault();
-
-
-
-const name =
-document.getElementById("name").value;
-
-
-
-const phone =
-document.getElementById("phone").value;
-
-
-
-const service =
-document.getElementById("service").value;
-
-
-
-const message =
-document.getElementById("message").value;
-
-
-
-
-
-document.getElementById("formMessage").innerHTML =
-
-"در حال انتقال به واتساپ...";
-
-
-
-
-
-
-const whatsappText =
-
-`سلام چادردوزی جزیره J.A.T
-
-نام:
-${name}
-
-شماره تماس:
-${phone}
-
-نوع درخواست:
-${service}
-
-توضیحات:
-${message}`;
-
-
-
-
-const whatsappURL =
-
-"https://wa.me/989118031241?text="
-
-+ encodeURIComponent(whatsappText);
-
-
-
-
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-
-
-});
-
-
-
-</script>
-
-
-
-<script src="script.js"></script>
-
-
-
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="چادردوزی جزیره J.A.T">
+      <span class="brand-mark">
+        <img src="favicon.svg" alt="لوگو چادردوزی جزیره J.A.T" width="45" height="45">
+      </span>
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+
+    <nav class="main-nav" aria-label="منوی اصلی">
+      <a href="products.html">محصولات</a>
+      <a href="shop.html">🛒 فروشگاه</a>
+      <a href="services.html">خدمات ما</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html">درباره J.A.T</a>
+      <a href="blog.html">مجله سفر</a>
+      <a href="contact.html">ثبت سفارش</a>
+    </nav>
+
+    <a class="cart-link" href="cart.html">
+      🛒 سبد خرید
+      <span id="cartCount">0</span>
+    </a>
+
+    <a class="header-action" href="contact.html">ثبت سفارش</a>
+
+    <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <main class="contact-page">
+
+    <section class="page-hero">
+      <h1>ثبت سفارش و تماس با ما</h1>
+      <p>تولید و توزیع انواع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق و چادر کامیون</p>
+    </section>
+
+    <div class="contact-grid">
+
+      <!-- اطلاعات تماس -->
+      <div class="contact-info">
+        <h2>راه‌های ارتباطی</h2>
+
+        <div class="info-item">
+          <div class="icon">📱</div>
+          <div>
+            <strong>واتساپ و تماس</strong>
+            <a href="https://wa.me/989118031241" target="_blank" rel="noopener">۰۹۱۱ ۸۰۳ ۱۲۴۱</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">📍</div>
+          <div>
+            <strong>آدرس کارگاه</strong>
+            <span>مازندران، آمل، جاده هراز، روبروی پلیس‌راه محمدآباد</span>
+            <br>
+            <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener" style="font-size: 0.9rem; margin-top: 4px; display: inline-block;">
+              مشاهده روی نقشه گوگل
+            </a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">🏭</div>
+          <div>
+            <strong>فعالیت ما</strong>
+            <span>تولید و توزیع انواع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق، چادر کامیون و نیسان</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">⏰</div>
+          <div>
+            <strong>ساعات پاسخگویی</strong>
+            <span>همه‌روزه از ۹ صبح تا ۹ شب</span>
+          </div>
+        </div>
+
+        <div class="social-buttons">
+          <a href="https://wa.me/989118031241" target="_blank" rel="noopener" class="social-btn btn-whatsapp">
+            گفتگو در واتساپ
+          </a>
+
+          <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener" class="social-btn btn-instagram">
+            اینستاگرام @chadoor_
+          </a>
+
+          <a href="https://t.me/gattent" target="_blank" rel="noopener" class="social-btn btn-telegram">
+            تلگرام
+          </a>
+
+          <a href="https://youtube.com/@tent7172" target="_blank" rel="noopener" class="social-btn btn-youtube">
+            یوتیوب
+          </a>
+
+          <a href="https://linktr.ee/chadoor" target="_blank" rel="noopener" class="social-btn btn-linktree">
+            لینک‌تری (همه لینک‌ها)
+          </a>
+        </div>
+      </div>
+
+      <!-- فرم تماس -->
+      <div class="contact-form-box">
+        <h2>فرم ثبت سفارش / پیام</h2>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">نام و نام خانوادگی *</label>
+            <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required>
+            <div class="error-text">لطفاً نام خود را وارد کنید (حداقل ۳ حرف)</div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">شماره موبایل *</label>
+            <input type="tel" id="phone" name="phone" placeholder="09123456789" required>
+            <div class="error-text">شماره موبایل معتبر وارد کنید (مثال: 09123456789)</div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">موضوع</label>
+            <select id="subject" name="subject">
+              <option value="سفارش چادر مسافرتی">سفارش چادر مسافرتی</option>
+              <option value="سفارش چادر برزنتی">سفارش چادر برزنتی</option>
+              <option value="استعلام قیمت">استعلام قیمت</option>
+              <option value="تعمیر چادر">تعمیر چادر</option>
+              <option value="پشه‌بند">سفارش پشه‌بند</option>
+              <option value="چادر کامیون / نیسان">چادر کامیون / نیسان</option>
+              <option value="سایر">سایر موارد</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">پیام شما *</label>
+            <textarea id="message" name="message" rows="5" placeholder="توضیحات سفارش یا سوال خود را بنویسید..." required></textarea>
+            <div class="error-text">لطفاً پیام خود را بنویسید (حداقل ۱۰ حرف)</div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            ارسال پیام از طریق واتساپ
+          </button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <h3>پیام شما آماده ارسال است!</h3>
+          <p>در حال انتقال به واتساپ...</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- نقشه گوگل تعاملی -->
+    <section class="map-section">
+      <h2>موقعیت کارگاه روی نقشه</h2>
+
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.833919279709!2d52.357197924653825!3d36.37106137237263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8fbf0008b25807%3A0x6723df08267da926!2z2obYp9iv2LHYr9mI2LLbjCDYrNiy24zYsdmH!5e1!3m2!1sfa!2sus!4v1788615803329!5m2!1sfa!2sus" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="موقعیت چادردوزی جزیره J.A.T">
+        </iframe>
+      </div>
+
+      <div class="map-actions">
+        <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener">
+          📍 باز کردن در گوگل مپ
+        </a>
+        <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener">
+          🧭 مسیریابی
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img src="favicon.svg" alt="لوگو" width="45" height="45">
+        </span>
+        <span>چادردوزی جزیره J.A.T</span>
+      </a>
+      <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+    </div>
+
+    <nav class="footer-menu" aria-label="لینک‌های فوتر">
+      <a href="products.html">محصولات</a>
+      <span>|</span>
+      <a href="shop.html">فروشگاه</a>
+      <span>|</span>
+      <a href="services.html">خدمات ما</a>
+      <span>|</span>
+      <a href="gallery.html">گالری</a>
+      <span>|</span>
+      <a href="about.html">درباره J.A.T</a>
+      <span>|</span>
+      <a href="blog.html">مجله سفر</a>
+      <span>|</span>
+      <a href="contact.html">ثبت سفارش</a>
+    </nav>
+
+    <div class="social-links">
+      <a href="https://wa.me/989118031241" target="_blank" rel="noopener noreferrer">واتساپ</a>
+      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener noreferrer">اینستاگرام</a>
+      <a href="https://t.me/gattent" target="_blank" rel="noopener noreferrer">تلگرام</a>
+      <a href="https://youtube.com/@tent7172" target="_blank" rel="noopener noreferrer">یوتیوب</a>
+      <a href="https://linktr.ee/chadoor" target="_blank" rel="noopener noreferrer">لینک‌تری</a>
+    </div>
+
+    <div class="copyright">
+      © ۲۰۲۶ چادردوزی جزیره J.A.T
+      <br>
+      کلیه حقوق این وب‌سایت محفوظ است.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    // شمارنده سبد خرید
+    let cart = [];
+    try {
+      cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+    } catch (e) {}
+
+    function updateCartCount() {
+      const count = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+      const el = document.getElementById("cartCount");
+      if (el) el.innerText = count;
+    }
+    updateCartCount();
+
+    // اعتبارسنجی و ارسال فرم
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+
+      // نام
+      const name = document.getElementById("name");
+      const nameGroup = name.closest(".form-group");
+      if (name.value.trim().length < 3) {
+        nameGroup.classList.add("error");
+        isValid = false;
+      } else {
+        nameGroup.classList.remove("error");
+      }
+
+      // موبایل
+      const phone = document.getElementById("phone");
+      const phoneGroup = phone.closest(".form-group");
+      const phoneRegex = /^09\d{9}$/;
+      if (!phoneRegex.test(phone.value.trim())) {
+        phoneGroup.classList.add("error");
+        isValid = false;
+      } else {
+        phoneGroup.classList.remove("error");
+      }
+
+      // پیام
+      const message = document.getElementById("message");
+      const messageGroup = message.closest(".form-group");
+      if (message.value.trim().length < 10) {
+        messageGroup.classList.add("error");
+        isValid = false;
+      } else {
+        messageGroup.classList.remove("error");
+      }
+
+      if (!isValid) return;
+
+      // ساخت پیام واتساپ
+      const subject = document.getElementById("subject").value;
+      const text = `سلام، از صفحه تماس سایت پیام دارم:\n\n` +
+                   `👤 نام: ${name.value.trim()}\n` +
+                   `📱 موبایل: ${phone.value.trim()}\n` +
+                   `📋 موضوع: ${subject}\n\n` +
+                   `💬 پیام:\n${message.value.trim()}`;
+
+      // نمایش پیام موفقیت
+      form.style.display = "none";
+      document.getElementById("formSuccess").classList.add("show");
+
+      // باز کردن واتساپ
+      setTimeout(() => {
+        window.open(
+          `https://wa.me/989118031241?text=${encodeURIComponent(text)}`,
+          "_blank"
+        );
+      }, 600);
+    });
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
