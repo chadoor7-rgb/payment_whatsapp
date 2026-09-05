@@ -1,1010 +1,270 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>گالری تصاویر | چادردوزی جزیره آمل</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="گالری تصاویر چادرهای مسافرتی، برزنتی و نمونه‌کارهای چادردوزی جزیره در آمل.">
+  <link rel="canonical" href="https://chadooor.ir/gallery.html">
 
+  <meta property="og:title" content="گالری تصاویر | چادردوزی جزیره آمل">
+  <meta property="og:description" content="نمونه‌کارها و تصاویر محصولات چادردوزی جزیره">
+  <meta property="og:url" content="https://chadooor.ir/gallery.html">
+  <meta property="og:image" content="https://chadooor.ir/hero-chadoor.webp">
 
-<title>
-گالری تصاویر چادر مسافرتی و تعمیرات | چادردوزی جزیره J.A.T
-</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<meta name="description"
-content="گالری تصاویر چادردوزی جزیره J.A.T شامل نمونه کارهای چادر مسافرتی، چادر برزنتی، تعمیر چادر و تولید سفارشی در آمل">
-
-
-<meta name="robots"
-content="index, follow">
-
-
-<link rel="canonical"
-href="https://chadooor.ir/gallery.html">
-
-
-<meta property="og:title"
-content="گالری چادردوزی جزیره J.A.T">
-
-
-<meta property="og:description"
-content="مشاهده نمونه کارهای تولید و تعمیر چادر مسافرتی در آمل">
-
-
-<meta property="og:url"
-content="https://chadooor.ir/gallery.html">
-
-
-<meta property="og:image"
-content="https://chadooor.ir/travel-tent-chatr.webp">
-
-
-<link rel="icon"
-type="image/svg+xml"
-href="favicon.svg">
-
-
-<link rel="apple-touch-icon"
-href="favicon.svg">
-
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-rel="stylesheet">
-
-
-<link rel="stylesheet"
-href="styles.css">
-
-
-
-<!-- Gallery Schema -->
-
-<script type="application/ld+json">
-
-{
-"@context":"https://schema.org",
-"@type":"ImageGallery",
-"name":"گالری چادردوزی جزیره J.A.T",
-"description":"نمونه کارهای چادر مسافرتی، چادر برزنتی و تعمیر چادر در آمل",
-"url":"https://chadooor.ir/gallery.html"
-}
-
-</script>
-
-
-<style>
-
-
-.gallery-page{
-
-max-width:1200px;
-margin:auto;
-padding:80px 24px;
-
-}
-
-
-.gallery-hero{
-
-text-align:center;
-max-width:750px;
-margin:0 auto 60px;
-
-}
-
-
-.gallery-hero h1{
-
-font-size:clamp(2rem,5vw,4rem);
-margin:20px 0;
-
-}
-
-
-.gallery-hero em{
-
-font-style:normal;
-color:#235d56;
-
-}
-
-
-.gallery-hero p{
-
-line-height:2;
-
-}
-
-
-
-.gallery-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-
-}
-
-
-
-.gallery-item{
-
-position:relative;
-overflow:hidden;
-border-radius:22px;
-height:300px;
-cursor:pointer;
-
-}
-
-
-
-.gallery-item.large{
-
-grid-column:span 2;
-height:620px;
-
-}
-
-
-
-.gallery-item img{
-
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.5s;
-
-}
-
-
-
-.gallery-item:hover img{
-
-transform:scale(1.08);
-
-}
-
-
-
-.gallery-caption{
-
-position:absolute;
-bottom:0;
-right:0;
-left:0;
-padding:50px 25px 20px;
-color:white;
-background:linear-gradient(
-transparent,
-rgba(0,0,0,.8)
-);
-
-}
-
-
-
-.gallery-caption h2{
-
-margin:0 0 8px;
-
-}
-
-
-
-.gallery-caption p{
-
-margin:0;
-
-}
-
-
-
-.gallery-lightbox{
-
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:9999;
-
-}
-
-
-
-.gallery-lightbox.active{
-
-display:flex;
-
-}
-
-
-
-.gallery-lightbox img{
-
-max-width:90%;
-max-height:90vh;
-border-radius:15px;
-
-}
-
-
-
-.close-gallery{
-
-position:absolute;
-top:30px;
-left:30px;
-width:45px;
-height:45px;
-border-radius:50%;
-border:none;
-font-size:25px;
-cursor:pointer;
-
-}
-
-
-
-@media(max-width:850px){
-
-.gallery-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-
-.gallery-item.large{
-
-grid-column:span 2;
-
-}
-
-}
-
-
-
-@media(max-width:550px){
-
-.gallery-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.gallery-item.large{
-
-grid-column:span 1;
-height:350px;
-
-}
-
-}
-
-
-</style>
-
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-
 <body>
+
   <!-- ================= HEADER ================= -->
-
-<header class="site-header">
-
-
-<a class="brand"
-href="index.html"
-aria-label="چادردوزی جزیره J.A.T">
-
-
-<span class="brand-mark">
-
-<img src="favicon.svg"
-alt="لوگو چادردوزی جزیره J.A.T"
-width="45"
-height="45">
-
-</span>
-
-
-<span>
-چادردوزی جزیره J.A.T
-</span>
-
-
-</a>
-
-
-
-<nav class="main-nav"
-aria-label="منوی اصلی">
-
-
-<a href="products.html">
-محصولات
-</a>
-
-
-<a href="shop.html">
-🛒 فروشگاه
-</a>
-
-
-<a href="services.html">
-خدمات ما
-</a>
-
-
-<a href="gallery.html"
-aria-current="page">
-گالری
-</a>
-
-
-<a href="about.html">
-درباره J.A.T
-</a>
-
-
-<a href="blog.html">
-مجله سفر
-</a>
-
-
-<a href="contact.html">
-ثبت سفارش
-</a>
-
-
-</nav>
-
-
-
-<a class="header-action"
-href="contact.html">
-
-ثبت سفارش
-
-</a>
-
-
-
-<button class="menu-toggle"
-type="button"
-aria-label="باز کردن منو"
-aria-expanded="false">
-
-<i data-lucide="menu"></i>
-
-</button>
-
-
-</header>
-
-
-
-<!-- ================= MAIN ================= -->
-
-
-<main class="gallery-page">
-
-
-
-<section class="gallery-hero">
-
-
-<p class="eyebrow">
-
-<span></span>
-
-نمونه کارهای J.A.T
-
-</p>
-
-
-
-<h1>
-
-گالری
-
-<em>
-محصولات و تعمیرات
-</em>
-
-</h1>
-
-
-
-<p>
-
-تصاویر واقعی از تولید، تعمیر و بازسازی
-چادرهای مسافرتی، برزنتی و تجهیزات کمپینگ
-در چادردوزی جزیره آمل.
-
-</p>
-
-
-</section>
-
-
-
-
-<section class="gallery-grid">
-
-
-
-<!-- تصویر اصلی -->
-
-
-<div class="gallery-item large">
-
-
-<img
-src="tent-repair-chadooor.jpg"
-alt="تعمیر تخصصی چادر مسافرتی چادردوزی جزیره"
-loading="eager">
-
-
-<div class="gallery-caption">
-
-<h2>
-تعمیر تخصصی چادر
-</h2>
-
-
-<p>
-بازسازی و آماده‌سازی چادرهای مسافرتی
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="travel-tent-after-repair-side.jpg"
-alt="چادر پس از تعمیر"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-چادر پس از تعمیر
-</h2>
-
-
-<p>
-آماده استفاده دوباره
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="travel-tent-during-repair.webp"
-alt="فرآیند تعمیر چادر"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-مراحل تعمیر
-</h2>
-
-
-<p>
-تعویض قطعات و دوخت مجدد
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="skeleton-tent-8-custom-production.jpg"
-alt="تولید سفارشی چادر"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-تولید سفارشی
-</h2>
-
-
-<p>
-ساخت بر اساس نیاز مشتری
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="travel-tent-chatr.webp"
-alt="چادر مسافرتی"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-چادر مسافرتی
-</h2>
-
-
-<p>
-مناسب سفر و کمپینگ
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="tent-after-repair-1.jpg"
-alt="نمونه تعمیر چادر"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-نمونه تعمیر
-</h2>
-
-
-<p>
-بازسازی حرفه‌ای
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="tent-after-repair-2.jpg"
-alt="نمونه کار چادردوزی"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-نمونه کار
-</h2>
-
-
-<p>
-دوخت و تعمیر تخصصی
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="gallery-item">
-
-
-<img
-src="tent-after-repair-3.jpg"
-alt="بازسازی چادر مسافرتی"
-loading="lazy">
-
-
-<div class="gallery-caption">
-
-<h2>
-بازسازی چادر
-</h2>
-
-
-<p>
-آماده برای سفر
-</p>
-
-</div>
-
-
-</div>
-
-
-
-</section>
-
-
-</main>
-<!-- ================= LIGHTBOX ================= -->
-
-
-<div class="gallery-lightbox"
-id="galleryLightbox">
-
-
-<button class="close-gallery"
-aria-label="بستن تصویر">
-
-×
-
-</button>
-
-
-
-<img
-id="lightboxImage"
-src=""
-alt="نمایش بزرگ تصویر">
-
-</div>
-
-
-
-
-<!-- ================= FOOTER ================= -->
-
-
-<footer>
-
-
-<div class="footer-top">
-
-
-
-<a class="brand"
-href="index.html"
-aria-label="صفحه اصلی">
-
-
-<span class="brand-mark">
-
-
-<img src="favicon.svg"
-alt="لوگو چادردوزی جزیره J.A.T"
-width="45"
-height="45">
-
-
-</span>
-
-
-
-<span>
-چادردوزی جزیره J.A.T
-</span>
-
-
-</a>
-
-
-
-
-<p class="footer-slogan">
-
-برای هر مسیر، یک پناه مطمئن.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-<nav class="footer-menu"
-aria-label="لینک‌های فوتر">
-
-
-<a href="products.html">
-محصولات
-</a>
-
-
-<span>|</span>
-
-
-<a href="shop.html">
-فروشگاه
-</a>
-
-
-<span>|</span>
-
-
-<a href="services.html">
-خدمات ما
-</a>
-
-
-<span>|</span>
-
-
-<a href="gallery.html">
-گالری
-</a>
-
-
-<span>|</span>
-
-
-<a href="about.html">
-درباره J.A.T
-</a>
-
-
-<span>|</span>
-
-
-<a href="blog.html">
-مجله سفر
-</a>
-
-
-<span>|</span>
-
-
-<a href="contact.html">
-ثبت سفارش
-</a>
-
-
-</nav>
-
-
-
-
-
-<div class="social-links">
-
-
-<a href="https://wa.me/989118031241"
-target="_blank">
-
-واتساپ
-
-</a>
-
-
-
-<a href="https://instagram.com/chadoor_"
-target="_blank">
-
-اینستاگرام
-
-</a>
-
-
-
-<a href="https://t.me/GATTENT"
-target="_blank">
-
-تلگرام
-
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="copyright">
-
-
-© 2026 چادردوزی جزیره J.A.T
-
-
-<br>
-
-
-کلیه حقوق این وب‌سایت محفوظ است.
-
-
-</div>
-
-
-
-</footer>
-
-
-
-
-
-<!-- ================= SCRIPTS ================= -->
-
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-
-<script src="script.js"></script>
-
-
-
-<script>
-
-
-const galleryItems =
-document.querySelectorAll(".gallery-item");
-
-
-const lightbox =
-document.getElementById("galleryLightbox");
-
-
-const lightboxImage =
-document.getElementById("lightboxImage");
-
-
-const closeGallery =
-document.querySelector(".close-gallery");
-
-
-
-
-galleryItems.forEach(item => {
-
-
-item.addEventListener("click",()=>{
-
-
-const img =
-item.querySelector("img");
-
-
-lightboxImage.src =
-img.src;
-
-
-lightboxImage.alt =
-img.alt;
-
-
-lightbox.classList.add("active");
-
-
-});
-
-
-});
-
-
-
-
-
-closeGallery.addEventListener("click",()=>{
-
-
-lightbox.classList.remove("active");
-
-
-});
-
-
-
-
-
-lightbox.addEventListener("click",(e)=>{
-
-
-if(e.target === lightbox){
-
-
-lightbox.classList.remove("active");
-
-
-}
-
-
-});
-
-
-
-
-
-document.addEventListener("keydown",(e)=>{
-
-
-if(e.key === "Escape"){
-
-
-lightbox.classList.remove("active");
-
-
-}
-
-
-});
-
-
-
-
-
-if(window.lucide){
-
-lucide.createIcons();
-
-}
-
-
-</script>
-
-
+  <header class="site-header sticky-header">
+    <a href="index.html" class="brand">
+      <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+
+    <nav class="main-nav" aria-label="منوی اصلی">
+      <a href="products.html">محصولات</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="services.html">خدمات</a>
+      <a href="gallery.html" class="active">گالری</a>
+      <a href="about.html">درباره ما</a>
+      <a href="blog.html">مجله سفر</a>
+      <a href="contact.html">ثبت سفارش</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+    </div>
+
+    <button class="menu-toggle" aria-label="منو">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">نمونه‌کارها</p>
+        <h1>
+          کارهای انجام‌شده را<br>
+          <span class="text-accent">از نزدیک ببینید</span>
+        </h1>
+        <p class="hero-desc">
+          تصاویر واقعی از چادرهای مسافرتی، برزنتی، 
+          پشه‌بند و نمونه‌کارهای چادردوزی جزیره در آمل.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FILTER ================= -->
+    <section class="gallery-filter-section">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">همه</button>
+          <button class="filter-btn" data-filter="travel">چادر مسافرتی</button>
+          <button class="filter-btn" data-filter="tarpaulin">چادر برزنتی</button>
+          <button class="filter-btn" data-filter="net">پشه‌بند</button>
+          <button class="filter-btn" data-filter="workshop">کارگاه</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY GRID ================= -->
+    <section class="section gallery-section">
+      <div class="container">
+
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- تصاویر نمونه - مسیر تصاویر را با فایل‌های واقعی خودت جایگزین کن -->
+
+          <div class="gallery-item" data-category="travel">
+            <img src="travel-tent-chatr.webp" alt="چادر مسافرتی در طبیعت" loading="lazy">
+            <div class="gallery-overlay">
+              <span>چادر مسافرتی</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="tarpaulin">
+            <img src="KHIME.jpg" alt="چادر برزنتی" loading="lazy">
+            <div class="gallery-overlay">
+              <span>چادر برزنتی</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="net">
+            <img src="pasheband.jpg" alt="پشه‌بند سفارشی" loading="lazy">
+            <div class="gallery-overlay">
+              <span>پشه‌بند</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="travel">
+            <img src="hero-chadoor.webp" alt="چادر مسافرتی" loading="lazy">
+            <div class="gallery-overlay">
+              <span>چادر مسافرتی</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshop">
+            <img src="www.chadortent.ir8.jpg" alt="کارگاه چادردوزی جزیره" loading="lazy">
+            <div class="gallery-overlay">
+              <span>کارگاه</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="tarpaulin">
+            <img src="KHIME.jpg" alt="سایبان برزنتی" loading="lazy">
+            <div class="gallery-overlay">
+              <span>سایبان برزنتی</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="travel">
+            <img src="travel-tent-chatr.webp" alt="چادر کمپینگ" loading="lazy">
+            <div class="gallery-overlay">
+              <span>کمپینگ</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="net">
+            <img src="pasheband.jpg" alt="پشه‌بند" loading="lazy">
+            <div class="gallery-overlay">
+              <span>پشه‌بند</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="workshop">
+            <img src="hero-chadoor.webp" alt="دوخت چادر" loading="lazy">
+            <div class="gallery-overlay">
+              <span>فرآیند تولید</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>از کیفیت کار مطمئن شدی؟</h2>
+        <p>همین حالا سفارش بده یا برای مشاوره رایگان پیام بده</p>
+        <div class="cta-buttons">
+          <a href="shop.html" class="btn btn-primary btn-lg">مشاهده فروشگاه</a>
+          <a href="https://wa.me/989118031241?text=سلام، از گالری سایت پیام می‌دم" 
+             class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            پیام در واتساپ
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <a href="index.html" class="brand">
+        <img src="favicon.svg" alt="لوگو چادردوزی جزیره" width="45" height="45">
+        <span>چادردوزی جزیره J.A.T</span>
+      </a>
+      <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+      <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
+    </div>
+
+    <nav class="footer-menu">
+      <a href="products.html">محصولات</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="services.html">خدمات</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html">درباره ما</a>
+      <a href="contact.html">ثبت سفارش</a>
+    </nav>
+
+    <div class="copyright">
+      © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
+      کلیه حقوق این وب‌سایت محفوظ است.
+    </div>
+  </footer>
+
+  <!-- Lightbox ساده -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img src="" alt="" id="lightboxImage">
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
+
+  <script>
+    // فیلتر گالری
+    const filterBtns = document.querySelectorAll('.gallery-filters .filter-btn');
+    const items = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // لایتن باکس
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
-
 </html>
