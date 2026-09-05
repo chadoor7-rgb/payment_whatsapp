@@ -6,49 +6,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سبد خرید | چادردوزی جزیره J.A.T</title>
   <meta name="robots" content="noindex, follow">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    .cart-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-    .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-    .cart-header h1 { font-size: 1.8rem; margin: 0; }
+    .cart-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
 
-    .cart-items { display: flex; flex-direction: column; gap: 1.2rem; }
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .cart-header h1 {
+      font-size: 1.7rem;
+      margin: 0;
+    }
+
+    .back-link {
+      color: #0d9488;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* سبد خالی */
+    .empty-cart {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: #f8fafc;
+      border-radius: 16px;
+      border: 1px dashed #cbd5e1;
+    }
+
+    .empty-cart h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: #1e293b;
+    }
+
+    .empty-cart p {
+      color: #64748b;
+      margin-bottom: 1.8rem;
+    }
+
+    .empty-cart a {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: #0d9488;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .empty-cart a:hover {
+      background: #0f766e;
+    }
+
+    /* آیتم‌های سبد */
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     .cart-item {
       display: grid;
-      grid-template-columns: 100px 1fr auto;
-      gap: 1.2rem;
+      grid-template-columns: 90px 1fr auto;
+      gap: 1rem;
       align-items: center;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
       padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .cart-item img { width: 100px; height: 80px; object-fit: cover; border-radius: 12px; }
-    .cart-item-info h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
-    .cart-item-info .price { color: #0f766e; font-weight: 600; }
 
-    .qty-control { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.6rem; }
+    .cart-item img {
+      width: 90px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .cart-item-info h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1rem;
+    }
+
+    .cart-item-info .price {
+      color: #0f766e;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
     .qty-control button {
-      width: 32px; height: 32px; border-radius: 8px; border: 1px solid #d1d5db;
-      background: #f9fafb; font-size: 1.1rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      background: #f8fafc;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .qty-control button:hover { background: #e5e7eb; }
-    .qty-control span { min-width: 28px; text-align: center; font-weight: 600; }
 
-    .item-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.8rem; }
-    .item-total { font-weight: 700; font-size: 1.1rem; }
-    .remove-btn { background: none; border: none; color: #dc2626; cursor: pointer; font-size: 0.9rem; }
-    .remove-btn:hover { text-decoration: underline; }
+    .qty-control button:hover {
+      background: #e2e8f0;
+    }
 
-    /* خلاصه + کد تخفیف + فرم */
+    .item-actions {
+      text-align: left;
+    }
+
+    .item-total {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #dc2626;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 0;
+    }
+
+    .remove-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* خلاصه سبد */
     .cart-summary {
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       background: #f8fafc;
       border-radius: 16px;
       padding: 1.5rem;
@@ -61,97 +173,14 @@
       margin-bottom: 0.7rem;
       font-size: 1.05rem;
     }
+
     .summary-row.total {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       border-top: 1px solid #cbd5e1;
       padding-top: 1rem;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       color: #0f766e;
-    }
-    .discount-row { color: #16a34a; }
-
-    /* کد تخفیف */
-    .discount-box {
-      display: flex;
-      gap: 0.6rem;
-      margin: 1.2rem 0;
-    }
-    .discount-box input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    .discount-box button {
-      padding: 0.75rem 1.4rem;
-      background: #0d9488;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .discount-box button:hover { background: #0f766e; }
-    .discount-message {
-      font-size: 0.9rem;
-      margin-top: 0.4rem;
-      min-height: 1.2rem;
-    }
-    .discount-message.success { color: #16a34a; }
-    .discount-message.error { color: #dc2626; }
-
-    /* فرم اطلاعات مشتری */
-    .customer-form {
-      margin-top: 2rem;
-      background: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      border: 1px solid #e2e8f0;
-    }
-    .customer-form h3 {
-      margin: 0 0 1.2rem;
-      font-size: 1.2rem;
-    }
-    .form-group {
-      margin-bottom: 1.1rem;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #0d9488;
-      box-shadow: 0 0 0 3px rgba(13,148,136,0.15);
-    }
-    .form-group.error input,
-    .form-group.error textarea {
-      border-color: #dc2626;
-    }
-    .error-text {
-      color: #dc2626;
-      font-size: 0.85rem;
-      margin-top: 0.3rem;
-      display: none;
-    }
-    .form-group.error .error-text {
-      display: block;
     }
 
     .checkout-btn {
@@ -162,47 +191,27 @@
       color: white;
       border: none;
       border-radius: 12px;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      transition: background 0.2s;
-    }
-    .checkout-btn:hover { background: #0f766e; }
-    .checkout-btn:disabled {
-      background: #94a3b8;
-      cursor: not-allowed;
+      font-family: inherit;
     }
 
-    .empty-cart {
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    .empty-cart a {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.9rem 2rem;
-      background: #0d9488;
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
+    .checkout-btn:hover {
+      background: #0f766e;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 600px) {
       .cart-item {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 70px 1fr;
       }
       .item-actions {
         grid-column: 1 / -1;
-        flex-direction: row;
+        display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-top: 0.5rem;
       }
-      .discount-box { flex-direction: column; }
     }
   </style>
 </head>
@@ -240,16 +249,18 @@
   </header>
 
   <main class="cart-page">
+
     <div class="cart-header">
       <h1>سبد خرید شما</h1>
-      <a href="shop.html" style="color:#0d9488; text-decoration:none; font-weight:500;">← بازگشت به فروشگاه</a>
+      <a href="shop.html" class="back-link">← بازگشت به فروشگاه</a>
     </div>
 
+    <!-- اینجا محتوا نمایش داده می‌شود -->
     <div id="cartContent"></div>
+
   </main>
 
   <footer>
-    <!-- همان فوتر قبلی -->
     <div class="footer-top">
       <a class="brand" href="index.html">
         <span class="brand-mark">
@@ -259,8 +270,9 @@
       </a>
       <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
     </div>
+
     <div class="copyright">
-      © ۱۴۰۵ چادردوزی جزیره J.A.T<br>
+      © 2026 چادردوزی جزیره J.A.T<br>
       کلیه حقوق این وب‌سایت محفوظ است.
     </div>
   </footer>
@@ -269,33 +281,17 @@
 
   <script>
     const WHATSAPP_PHONE = "989118031241";
-    const SAVE_ORDER_URL = "https://chadooor.ir/api/save-order.php"; // آدرس فایل PHP روی سرور
-
-    // ===== کدهای تخفیف =====
-    const discountCodes = {
-      "JAT10": { percent: 10, message: "۱۰٪ تخفیف اعمال شد" },
-      "JAT15": { percent: 15, message: "۱۵٪ تخفیف اعمال شد" },
-      "SUMMER20": { percent: 20, message: "۲۰٪ تخفیف تابستانی اعمال شد" },
-      "WELCOME": { percent: 5, message: "۵٪ تخفیف خوش‌آمدگویی" }
-    };
-
     let cart = [];
-    let appliedDiscount = null; // { code, percent }
 
+    // خواندن سبد از localStorage
     try {
       cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
     } catch (e) {
       cart = [];
     }
 
-    // بازیابی کد تخفیف قبلی (اختیاری)
-    try {
-      const savedDiscount = localStorage.getItem("chadoor_discount");
-      if (savedDiscount) appliedDiscount = JSON.parse(savedDiscount);
-    } catch (e) {}
-
     function formatPrice(price) {
-      return Math.round(price).toLocaleString("fa-IR") + " تومان";
+      return price.toLocaleString("fa-IR") + " تومان";
     }
 
     function saveCart() {
@@ -312,8 +308,11 @@
     function changeQty(id, delta) {
       const item = cart.find(p => p.id === id);
       if (!item) return;
+
       item.qty += delta;
-      if (item.qty <= 0) cart = cart.filter(p => p.id !== id);
+      if (item.qty <= 0) {
+        cart = cart.filter(p => p.id !== id);
+      }
       saveCart();
       renderCart();
     }
@@ -324,111 +323,93 @@
       renderCart();
     }
 
-    function getSubtotal() {
+    function getTotal() {
       return cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
     }
 
-    function getDiscountAmount() {
-      if (!appliedDiscount) return 0;
-      return Math.round(getSubtotal() * (appliedDiscount.percent / 100));
-    }
-
-    function getTotal() {
-      return getSubtotal() - getDiscountAmount();
-    }
-
-    // ===== اعمال کد تخفیف =====
-    function applyDiscount() {
-      const input = document.getElementById("discountCode");
-      const messageEl = document.getElementById("discountMessage");
-      const code = input.value.trim().toUpperCase();
-
-      if (!code) {
-        messageEl.textContent = "لطفاً کد تخفیف را وارد کنید";
-        messageEl.className = "discount-message error";
-        return;
-      }
-
-      if (discountCodes[code]) {
-        appliedDiscount = {
-          code: code,
-          percent: discountCodes[code].percent
-        };
-        localStorage.setItem("chadoor_discount", JSON.stringify(appliedDiscount));
-        messageEl.textContent = discountCodes[code].message;
-        messageEl.className = "discount-message success";
-        renderCart();
-      } else {
-        appliedDiscount = null;
-        localStorage.removeItem("chadoor_discount");
-        messageEl.textContent = "کد تخفیف نامعتبر است";
-        messageEl.className = "discount-message error";
-        renderCart();
-      }
-    }
-
-    // ===== اعتبارسنجی فرم =====
-    function validateForm() {
-      let isValid = true;
-
-      // نام
-      const name = document.getElementById("customerName");
-      const nameGroup = name.closest(".form-group");
-      if (name.value.trim().length < 3) {
-        nameGroup.classList.add("error");
-        isValid = false;
-      } else {
-        nameGroup.classList.remove("error");
-      }
-
-      // شماره موبایل
-      const phone = document.getElementById("customerPhone");
-      const phoneGroup = phone.closest(".form-group");
-      const phoneRegex = /^09\d{9}$/;
-      if (!phoneRegex.test(phone.value.trim())) {
-        phoneGroup.classList.add("error");
-        isValid = false;
-      } else {
-        phoneGroup.classList.remove("error");
-      }
-
-      // آدرس
-      const address = document.getElementById("customerAddress");
-      const addressGroup = address.closest(".form-group");
-      if (address.value.trim().length < 10) {
-        addressGroup.classList.add("error");
-        isValid = false;
-      } else {
-        addressGroup.classList.remove("error");
-      }
-
-      return isValid;
-    }
-
-    // ===== ثبت سفارش =====
-    async function checkout() {
+    function checkout() {
       if (cart.length === 0) return;
 
-      if (!validateForm()) {
-        alert("لطفاً اطلاعات فرم را به درستی تکمیل کنید.");
-        return;
-      }
-
-      const name = document.getElementById("customerName").value.trim();
-      const phone = document.getElementById("customerPhone").value.trim();
-      const address = document.getElementById("customerAddress").value.trim();
-      const note = document.getElementById("customerNote").value.trim();
-
-      // ساخت پیام واتساپ
-      let message = `سلام، سفارش جدید از وب‌سایت:\n\n`;
-      message += `👤 نام: ${name}\n`;
-      message += `📱 موبایل: ${phone}\n`;
-      message += `📍 آدرس: ${address}\n`;
-      if (note) message += `📝 توضیحات: ${note}\n`;
-      message += `\n🛒 محصولات:\n`;
-
+      let message = "سلام، می‌خواهم این محصولات را سفارش دهم:\n\n";
       cart.forEach(item => {
         message += `• ${item.name} × ${item.qty} = ${formatPrice(item.price * item.qty)}\n`;
       });
+      message += `\nجمع کل: ${formatPrice(getTotal())}\n\nلطفاً راهنمایی کنید.`;
 
-      message += `\nجمع جزء...
+      window.open(
+        `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`,
+        "_blank"
+      );
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartContent");
+
+      // ========== سبد خالی ==========
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="empty-cart">
+            <h2>سبد خرید شما خالی است</h2>
+            <p>هنوز هیچ محصولی به سبد اضافه نکرده‌اید.</p>
+            <a href="shop.html">مشاهده محصولات و خرید</a>
+          </div>
+        `;
+        return;
+      }
+
+      // ========== سبد دارای محصول ==========
+      let itemsHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" loading="lazy">
+          
+          <div class="cart-item-info">
+            <h3>${item.name}</h3>
+            <div class="price">${formatPrice(item.price)}</div>
+            <div class="qty-control">
+              <button onclick="changeQty(${item.id}, -1)">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty(${item.id}, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="item-actions">
+            <div class="item-total">${formatPrice(item.price * item.qty)}</div>
+            <button class="remove-btn" onclick="removeItem(${item.id})">حذف</button>
+          </div>
+        </div>
+      `).join("");
+
+      container.innerHTML = `
+        <div class="cart-items">
+          ${itemsHTML}
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>تعداد کل اقلام:</span>
+            <span>${cart.reduce((s, i) => s + i.qty, 0)} عدد</span>
+          </div>
+          <div class="summary-row total">
+            <span>جمع کل قابل پرداخت:</span>
+            <span>${formatPrice(getTotal())}</span>
+          </div>
+
+          <button class="checkout-btn" onclick="checkout()">
+            📱 ثبت سفارش از طریق واتساپ
+          </button>
+        </div>
+      `;
+    }
+
+    // اجرا هنگام لود صفحه
+    renderCart();
+    updateCartCount();
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
