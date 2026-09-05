@@ -5,11 +5,25 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <title>
 سبد خرید | چادردوزی جزیره J.A.T
 </title>
 
+
+<meta name="description"
+content="سبد خرید چادر مسافرتی و برزنتی چادردوزی جزیره J.A.T">
+
+
 <link rel="stylesheet" href="styles.css">
+
+
+<link rel="icon"
+href="favicon.svg"
+type="image/svg+xml">
+
 
 </head>
 
@@ -17,16 +31,74 @@
 <body>
 
 
+
+<!-- ================= HEADER ================= -->
+
 <header class="site-header">
 
-<a class="brand" href="index.html">
 
+<a class="brand"
+href="index.html">
+
+
+<span class="brand-mark">
+
+<img src="favicon.svg"
+width="45"
+height="45"
+alt="لوگو چادردوزی جزیره">
+
+</span>
+
+
+<span>
 چادردوزی جزیره J.A.T
+</span>
+
 
 </a>
 
+
+
+<nav class="main-nav">
+
+
+<a href="products.html">
+محصولات
+</a>
+
+
+<a href="shop.html">
+🛒 فروشگاه
+</a>
+
+
+<a href="services.html">
+خدمات
+</a>
+
+
+<a href="blog.html">
+مجله سفر
+</a>
+
+
+<a href="contact.html">
+ثبت سفارش
+</a>
+
+
+</nav>
+
+
 </header>
 
+
+
+
+
+
+<!-- ================= CART ================= -->
 
 
 <main class="shop-page">
@@ -34,94 +106,133 @@
 
 <section class="page-hero">
 
-<h1>
+
+<p class="eyebrow">
+
 سبد خرید
+
+</p>
+
+
+<h1>
+
+سفارش محصولات J.A.T
+
 </h1>
 
 
+<a href="shop.html"
+class="header-action">
+
+ادامه خرید
+
+</a>
+
+
 </section>
+
+
+
 
 
 
 <section id="cartBox"
 class="products">
 
+
 </section>
 
 
-<div id="cartTotal"></div>
+
+
+<div id="cartTotal"
+class="cart-total">
+
+
+</div>
+
 
 
 </main>
 
 
 
+
+
+
+
 <script>
 
 
+const WHATSAPP_PHONE =
+"989118031241";
+
+
+
 let cart =
-JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+JSON.parse(
+localStorage.getItem("chadoor_cart")
+) || [];
+
+
+
+
+
+function saveCart(){
+
+
+localStorage.setItem(
+
+"chadoor_cart",
+
+JSON.stringify(cart)
+
+);
+
+
+}
+
+
+
+
 
 
 
 function renderCart(){
 
 
-let box =
+const box =
 document.getElementById("cartBox");
 
 
-if(cart.length===0){
 
-box.innerHTML=
-"<h3>سبد خرید خالی است</h3>";
-
-return;
-
-}
+if(cart.length === 0){
 
 
-
-let total=0;
-
-
-
-box.innerHTML =
-cart.map(item=>{
-
-
-total += item.price * item.qty;
-
-
-return `
+box.innerHTML = `
 
 
 <article class="product-card">
-
 
 <div class="product-info">
 
 
 <h3>
-${item.name}
+
+سبد خرید خالی است
+
 </h3>
 
 
-<p>
-تعداد:
-${item.qty}
-</p>
+<a href="shop.html"
+class="header-action">
 
+بازگشت به فروشگاه
 
-<p>
-${(item.price*item.qty).toLocaleString("fa-IR")}
-تومان
-</p>
-
+</a>
 
 
 </div>
-
 
 </article>
 
@@ -129,18 +240,157 @@ ${(item.price*item.qty).toLocaleString("fa-IR")}
 `;
 
 
+
+document.getElementById("cartTotal").innerHTML="";
+
+
+return;
+
+
+}
+
+
+
+
+let total = 0;
+
+
+
+box.innerHTML =
+
+cart.map(item=>{
+
+
+total += item.price * item.qty;
+
+
+
+return `
+
+
+
+<article class="product-card">
+
+
+
+<img src="${item.image || 'favicon.svg'}"
+
+alt="${item.name}"
+
+loading="lazy">
+
+
+
+
+
+<div class="product-info">
+
+
+<h3>
+
+${item.name}
+
+</h3>
+
+
+
+<p>
+
+قیمت:
+
+${item.price.toLocaleString("fa-IR")}
+
+تومان
+
+</p>
+
+
+
+<div>
+
+
+<button onclick="changeQty(${item.id},-1)">
+
+−
+
+</button>
+
+
+
+<strong>
+
+${item.qty}
+
+</strong>
+
+
+
+<button onclick="changeQty(${item.id},1)">
+
++
+
+</button>
+
+
+</div>
+
+
+
+<br>
+
+
+<p>
+
+جمع:
+
+${(item.price * item.qty).toLocaleString("fa-IR")}
+
+تومان
+
+</p>
+
+
+
+
+<button class="add-btn"
+
+onclick="removeItem(${item.id})">
+
+❌ حذف محصول
+
+</button>
+
+
+
+
+</div>
+
+
+
+</article>
+
+
+
+`;
+
+
+
 }).join("");
 
 
 
-document.getElementById("cartTotal")
-.innerHTML=
 
-`
+
+
+document.getElementById("cartTotal")
+
+.innerHTML = `
+
+
 
 <h2>
 
-مجموع:
+مبلغ نهایی:
 
 ${total.toLocaleString("fa-IR")}
 
@@ -149,13 +399,16 @@ ${total.toLocaleString("fa-IR")}
 </h2>
 
 
-<a class="header-action"
 
-href="https://wa.me/989118031241">
+<button class="header-action"
 
-ثبت سفارش واتساپ
+onclick="sendWhatsapp()">
 
-</a>
+📱 ثبت سفارش واتساپ
+
+</button>
+
+
 
 `;
 
@@ -165,10 +418,168 @@ href="https://wa.me/989118031241">
 
 
 
+
+
+
+
+
+
+function changeQty(id,value){
+
+
+let item =
+cart.find(
+p=>p.id===id
+);
+
+
+
+if(!item)
+return;
+
+
+
+item.qty += value;
+
+
+
+if(item.qty <= 0){
+
+
+cart =
+cart.filter(
+p=>p.id!==id
+);
+
+
+}
+
+
+
+saveCart();
+
+
 renderCart();
 
 
+}
+
+
+
+
+
+
+
+
+
+function removeItem(id){
+
+
+
+cart =
+cart.filter(
+p=>p.id!==id
+);
+
+
+
+saveCart();
+
+
+renderCart();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+function sendWhatsapp(){
+
+
+let text =
+"سلام، سفارش جدید از چادردوزی جزیره J.A.T:%0A%0A";
+
+
+
+let total = 0;
+
+
+
+cart.forEach(item=>{
+
+
+let sum =
+item.price * item.qty;
+
+
+total += sum;
+
+
+
+text +=
+
+"• "+item.name+
+
+" | تعداد: "+item.qty+
+
+" | مبلغ: "+
+
+sum.toLocaleString("fa-IR")+
+
+" تومان%0A";
+
+
+
+});
+
+
+
+text +=
+
+"%0Aمجموع: "+
+
+total.toLocaleString("fa-IR")+
+
+" تومان";
+
+
+
+
+window.open(
+
+"https://wa.me/"+
+
+WHATSAPP_PHONE+
+
+"?text="+text,
+
+"_blank"
+
+);
+
+
+
+}
+
+
+
+
+
+
+renderCart();
+
+
+
 </script>
+
+
 
 
 </body>
