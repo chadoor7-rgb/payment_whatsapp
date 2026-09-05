@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+سبد خرید | چادردوزی جزیره J.A.T
+</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+<a class="brand" href="index.html">
+
+چادردوزی جزیره J.A.T
+
+</a>
+
+</header>
+
+
+
+<main class="shop-page">
+
+
+<section class="page-hero">
+
+<h1>
+سبد خرید
+</h1>
+
+
+</section>
+
+
+
+<section id="cartBox"
+class="products">
+
+</section>
+
+
+<div id="cartTotal"></div>
+
+
+</main>
+
+
+
+<script>
+
+
+let cart =
+JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+
+
+
+function renderCart(){
+
+
+let box =
+document.getElementById("cartBox");
+
+
+if(cart.length===0){
+
+box.innerHTML=
+"<h3>سبد خرید خالی است</h3>";
+
+return;
+
+}
+
+
+
+let total=0;
+
+
+
+box.innerHTML =
+cart.map(item=>{
+
+
+total += item.price * item.qty;
+
+
+return `
+
+
+<article class="product-card">
+
+
+<div class="product-info">
+
+
+<h3>
+${item.name}
+</h3>
+
+
+<p>
+تعداد:
+${item.qty}
+</p>
+
+
+<p>
+${(item.price*item.qty).toLocaleString("fa-IR")}
+تومان
+</p>
+
+
+
+</div>
+
+
+</article>
+
+
+`;
+
+
+}).join("");
+
+
+
+document.getElementById("cartTotal")
+.innerHTML=
+
+`
+
+<h2>
+
+مجموع:
+
+${total.toLocaleString("fa-IR")}
+
+تومان
+
+</h2>
+
+
+<a class="header-action"
+
+href="https://wa.me/989118031241">
+
+ثبت سفارش واتساپ
+
+</a>
+
+`;
+
+
+
+}
+
+
+
+renderCart();
+
+
+</script>
+
+
+</body>
+
+</html>
