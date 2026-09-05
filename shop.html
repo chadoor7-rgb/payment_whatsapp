@@ -1036,186 +1036,244 @@ if(window.lucide){
 lucide.createIcons();
 
 }
- <!-- ================= FOOTER ================= -->
+/* ===============================
+   قیمت
+================================ */
 
 
-<footer>
+function formatPrice(price){
+
+if(!price){
+
+return "تماس بگیرید";
+
+}
 
 
-<div class="footer-top">
+return price.toLocaleString("fa-IR")+" تومان";
 
-
-
-<a class="brand"
-href="index.html"
-aria-label="صفحه اصلی چادردوزی جزیره J.A.T">
-
-
-
-<span class="brand-mark">
-
-
-<img src="favicon.svg"
-alt="لوگو چادردوزی جزیره J.A.T"
-width="45"
-height="45">
-
-
-</span>
-
-
-
-<span>
-چادردوزی جزیره J.A.T
-</span>
-
-
-
-</a>
+}
 
 
 
 
-<p class="footer-slogan">
 
-برای هر مسیر، یک پناه مطمئن.
+
+
+/* ===============================
+   فیلتر دسته بندی
+================================ */
+
+
+function setCategory(category,button){
+
+
+currentCategory = category;
+
+
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn=>{
+
+btn.classList.remove("active");
+
+});
+
+
+
+button.classList.add("active");
+
+
+
+applyFilters();
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   جستجو
+================================ */
+
+
+function applyFilters(){
+
+
+let text =
+
+document
+.getElementById("searchInput")
+.value
+.trim()
+.toLowerCase();
+
+
+
+
+let result =
+
+products.filter(product=>{
+
+
+
+let categoryOK =
+
+currentCategory==="all" ||
+
+product.category===currentCategory;
+
+
+
+
+let searchOK =
+
+product.name
+.toLowerCase()
+.includes(text);
+
+
+
+
+return categoryOK && searchOK;
+
+
+
+});
+
+
+
+renderProducts(result);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   نمایش محصولات
+================================ */
+
+
+function renderProducts(list=products){
+
+
+
+const box =
+document.getElementById("products");
+
+
+
+
+box.innerHTML =
+
+list.map(product=>{
+
+
+
+let button =
+
+product.price ?
+
+
+
+`
+
+<button class="add-btn"
+
+onclick="addToCart(${product.id})">
+
+
+🛒 افزودن به سبد
+
+
+</button>
+
+`
+
+
+
+:
+
+
+
+
+`
+
+<button class="add-btn"
+
+onclick="orderProduct(${product.id})">
+
+
+📱 استعلام قیمت
+
+
+</button>
+
+
+`;
+
+
+
+
+
+
+
+return `
+
+
+<article class="product-card">
+
+
+
+<img src="${product.image}"
+
+alt="${product.name} چادردوزی جزیره"
+
+loading="lazy">
+
+
+
+
+
+<div class="product-info">
+
+
+
+<h3>
+
+${product.name}
+
+</h3>
+
+
+
+
+<p>
+
+دسته:
+
+${product.category}
 
 </p>
 
 
 
-</div>
 
+<div class="price">
 
-
-
-
-
-
-<nav class="footer-menu"
-aria-label="لینک‌های فوتر">
-
-
-
-<a href="products.html">
-
-محصولات
-
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="shop.html">
-
-فروشگاه
-
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="services.html">
-
-خدمات ما
-
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="gallery.html">
-
-گالری
-
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="about.html">
-
-درباره J.A.T
-
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="blog.html">
-
-مجله سفر
-
-</a>
-
-
-<span>|</span>
-
-
-
-<a href="contact.html">
-
-ثبت سفارش
-
-</a>
-
-
-
-</nav>
-
-
-
-
-
-
-
-<div class="social-links">
-
-
-
-<a href="https://wa.me/989118031241"
-target="_blank"
-rel="noopener noreferrer">
-
-واتساپ
-
-</a>
-
-
-
-
-
-<a href="https://instagram.com/chadoor_"
-target="_blank"
-rel="noopener noreferrer">
-
-اینستاگرام
-
-</a>
-
-
-
-
-
-<a href="https://t.me/GATTENT"
-target="_blank"
-rel="noopener noreferrer">
-
-تلگرام
-
-</a>
-
-
+${formatPrice(product.price)}
 
 </div>
 
@@ -1223,37 +1281,335 @@ rel="noopener noreferrer">
 
 
 
+${button}
 
 
-<div class="copyright">
 
-
-© 2026 چادردوزی جزیره J.A.T
-
-
-<br>
-
-
-کلیه حقوق این وب‌سایت محفوظ است.
 
 
 </div>
 
 
+</article>
 
 
-</footer>
-
-
-
-
-
-<!-- اسکریپت منوی موبایل -->
-
-<script src="script.js"></script>
+`;
 
 
 
-</body>
+}).join("");
 
-</html>
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   افزودن به سبد خرید
+================================ */
+
+
+function addToCart(id){
+
+
+
+let product =
+
+products.find(p=>p.id===id);
+
+
+
+
+if(!product) return;
+
+
+
+
+
+let item =
+
+cart.find(p=>p.id===id);
+
+
+
+
+
+if(item){
+
+
+item.qty++;
+
+
+}
+
+else{
+
+
+cart.push({
+
+id:product.id,
+
+name:product.name,
+
+price:product.price,
+
+image:product.image,
+
+qty:1
+
+});
+
+
+}
+
+
+
+saveCart();
+
+
+updateCartCount();
+
+
+
+alert("محصول به سبد خرید اضافه شد");
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   ذخیره سبد
+================================ */
+
+
+function saveCart(){
+
+
+localStorage.setItem(
+
+"chadoor_cart",
+
+JSON.stringify(cart)
+
+);
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   شمارنده سبد
+================================ */
+
+
+function updateCartCount(){
+
+
+let count =
+
+cart.reduce(
+
+(sum,item)=>sum + item.qty,
+
+0
+
+);
+
+
+
+
+let box =
+
+document.getElementById("cartCount");
+
+
+
+
+if(box){
+
+
+box.innerText = count;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   سفارش واتساپ
+================================ */
+
+
+function orderProduct(id){
+
+
+
+let product =
+
+products.find(p=>p.id===id);
+
+
+
+
+let text =
+
+"سلام، درباره "+product.name+
+
+" از چادردوزی جزیره قیمت می‌خواهم.";
+
+
+
+
+
+window.open(
+
+
+"https://wa.me/"+WHATSAPP_PHONE+
+
+"?text="+encodeURIComponent(text),
+
+
+"_blank"
+
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   Schema محصول
+================================ */
+
+
+const schema =
+
+products
+
+.filter(p=>p.price)
+
+.map(p=>({
+
+
+"@context":"https://schema.org",
+
+
+"@type":"Product",
+
+
+"name":p.name,
+
+
+
+"image":
+
+"https://chadooor.ir/"+p.image,
+
+
+
+"brand":{
+
+"@type":"Brand",
+
+"name":"چادردوزی جزیره J.A.T"
+
+},
+
+
+
+"offers":{
+
+"@type":"Offer",
+
+"priceCurrency":"IRR",
+
+"price":p.price,
+
+"availability":
+
+"https://schema.org/InStock"
+
+}
+
+
+
+}));
+
+
+
+
+
+const schemaTag =
+
+document.createElement("script");
+
+
+
+schemaTag.type =
+
+"application/ld+json";
+
+
+
+schemaTag.textContent =
+
+JSON.stringify(schema);
+
+
+
+
+document.head.appendChild(schemaTag);
+
+
+
+
+
+/* ===============================
+   اجرا
+================================ */
+
+
+renderProducts();
+
+
+updateCartCount();
+
+
+
+if(window.lucide){
+
+lucide.createIcons();
+
+} 
