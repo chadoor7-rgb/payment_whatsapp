@@ -3,27 +3,31 @@
   "id":1,
   "name":"چادر برزنتی ۶ نفره",
   "category":"برزنتی",
+  "description":"چادر برزنتی مقاوم مناسب سفر، طبیعت‌گردی و استفاده طولانی با دوخت حرفه‌ای چادردوزی جزیره.",
   "price":6500000,
-  "image":"6n brezent.webp"
+  "image":"6n-brezent.webp"
  },
  {
   "id":2,
   "name":"چادر برزنتی ۸ نفره J.A.T",
   "category":"برزنتی",
+  "description":"چادر برزنتی بزرگ و مقاوم مناسب خانواده و سفرهای شمال ایران.",
   "price":8500000,
-  "image":"۸ JAT.webp"
+  "image":"8n-jat.webp"
  },
  {
   "id":3,
   "name":"چادر برزنتی ۱۰ نفره",
   "category":"برزنتی",
+  "description":"چادر برزنتی سفارشی با فضای مناسب برای گروه‌های بزرگ.",
   "price":10500000,
-  "image":"10n bereznte.webp"
+  "image":"10n-brezent.webp"
  },
  {
   "id":4,
   "name":"چادر مسافرتی ۱۲ نفره",
   "category":"مسافرتی",
+  "description":"چادر مسافرتی جادار مناسب کمپینگ و سفرهای خانوادگی.",
   "price":12000000,
   "image":"tent12.jpg"
  },
@@ -31,6 +35,7 @@
   "id":5,
   "name":"چادر مسافرتی ۸ نفره",
   "category":"مسافرتی",
+  "description":"چادر مسافرتی مقاوم برای سفر و طبیعت‌گردی.",
   "price":8000000,
   "image":"tent8.webp"
  },
@@ -38,6 +43,7 @@
   "id":6,
   "name":"پشه‌بند سفارشی",
   "category":"پشه‌بند",
+  "description":"ساخت پشه‌بند سفارشی برای چادر و فضای باز.",
   "price":0,
   "image":"pasheband.jpg"
  },
@@ -45,6 +51,7 @@
   "id":7,
   "name":"تعمیر چادر مسافرتی",
   "category":"خدمات",
+  "description":"تعمیر پارگی، زیپ، فنر و بخش‌های آسیب‌دیده چادر.",
   "price":0,
   "image":"tent-repair-chadooor.jpg"
  }
