@@ -47,8 +47,6 @@ rel="stylesheet">
 
 
 
-<!-- Product Schema پایه -->
-
 <script type="application/ld+json">
 
 {
@@ -73,12 +71,8 @@ rel="stylesheet">
 </head>
 
 
-
 <body>
 
-
-
-<!-- ================= HEADER ================= -->
 
 
 <header class="site-header">
@@ -157,6 +151,21 @@ aria-label="منوی اصلی">
 
 
 
+<a class="cart-link"
+href="cart.html">
+
+🛒 سبد خرید
+
+<span id="cartCount">
+0
+</span>
+
+</a>
+
+
+
+
+
 <a class="header-action"
 href="contact.html">
 
@@ -181,11 +190,6 @@ aria-expanded="false">
 
 
 </header>
-
-
-
-
-
 <!-- ================= SHOP HEADER ================= -->
 
 
@@ -230,6 +234,7 @@ aria-expanded="false">
 
 
 
+
 <!-- ================= FILTER ================= -->
 
 
@@ -244,12 +249,14 @@ oninput="applyFilters()"
 aria-label="جستجوی محصول">
 
 
+
 <button class="filter-btn active"
 onclick="setCategory('all',this)">
 
 همه
 
 </button>
+
 
 
 <button class="filter-btn"
@@ -260,6 +267,7 @@ onclick="setCategory('برزنتی',this)">
 </button>
 
 
+
 <button class="filter-btn"
 onclick="setCategory('مسافرتی',this)">
 
@@ -268,12 +276,14 @@ onclick="setCategory('مسافرتی',this)">
 </button>
 
 
+
 <button class="filter-btn"
 onclick="setCategory('پشه‌بند',this)">
 
 پشه‌بند
 
 </button>
+
 
 
 <button class="filter-btn"
@@ -291,6 +301,8 @@ onclick="setCategory('خدمات',this)">
 
 
 
+
+
 <!-- ================= PRODUCTS ================= -->
 
 
@@ -298,9 +310,13 @@ onclick="setCategory('خدمات',this)">
 id="products"
 aria-label="محصولات فروشگاه">
 
-
 </section>
+
+
+
 <script src="https://unpkg.com/lucide@latest"></script>
+
+
 
 <script>
 
@@ -309,7 +325,10 @@ aria-label="محصولات فروشگاه">
    تنظیمات واتساپ
 ================================ */
 
+
 const WHATSAPP_PHONE = "989118031241";
+
+
 
 
 
@@ -317,47 +336,152 @@ const WHATSAPP_PHONE = "989118031241";
    محصولات فروشگاه
 ================================ */
 
-let products = [];
 
-let currentCategory = "all";
+const products = [
 
-let cart = [];
+
+{
+id:1,
+name:"چادر برزنتی ۶ نفره",
+price:4000000,
+category:"برزنتی",
+image:"6n brezent.webp"
+},
+
+
+{
+id:2,
+name:"چادر برزنتی ۸ نفره",
+price:4500000,
+category:"برزنتی",
+image:"8 JAT.webp"
+},
+
+
+{
+id:3,
+name:"چادر برزنتی ۱۰ نفره",
+price:5000000,
+category:"برزنتی",
+image:"10n bereznte.webp"
+},
+
+
+{
+id:4,
+name:"چادر برزنتی ۱۲ نفره",
+price:5500000,
+category:"برزنتی",
+image:"برزنتی.jpg"
+},
+
+
+{
+id:5,
+name:"پشه‌بند سفارشی",
+price:2000000,
+category:"پشه‌بند",
+image:"pasheband.jpg"
+},
+
+
+{
+id:6,
+name:"چادر سفر جزیره مدل جدید",
+price:null,
+category:"مسافرتی",
+image:"island-travel-tent-coming-soon.jpg"
+},
+
+
+{
+id:7,
+name:"چادر مسافرتی",
+price:null,
+category:"مسافرتی",
+image:"tent5.webp"
+},
+
+
+{
+id:8,
+name:"چادر مسافرتی",
+price:null,
+category:"مسافرتی",
+image:"tent8.webp"
+},
+
+
+{
+id:9,
+name:"تعمیر چادر مسافرتی",
+price:null,
+category:"خدمات",
+image:"tent-repair-chadooor.jpg"
+},
+
+
+{
+id:10,
+name:"چادر پس از تعمیر",
+price:null,
+category:"خدمات",
+image:"tent-after-repair-1.jpg"
+}
+
+
+];
+
+
+
+
+
+let currentCategory="all";
+
+
+
+let cart=[];
+
+
 
 try{
+
 
 cart =
 JSON.parse(localStorage.getItem("chadoor_cart")) || [];
 
+
 }
 catch{
 
+
 cart=[];
 
+
 }
-fetch("products.json")
-.then(response => {
+/* ===============================
+   قیمت
+================================ */
 
-    if(!response.ok){
-        throw new Error("products.json پیدا نشد");
-    }
 
-    return response.json();
+function formatPrice(price){
 
-})
-.then(data => {
+if(!price){
 
-    products = data;
+return "تماس بگیرید";
 
-    renderProducts(products);
+}
 
-    createProductSchema();
 
-})
-.catch(error => {
+return price.toLocaleString("fa-IR")+" تومان";
 
-    console.error(error);
+}
 
-});
+
+
+
+
+
 
 /* ===============================
    فیلتر دسته بندی
@@ -367,7 +491,8 @@ fetch("products.json")
 function setCategory(category,button){
 
 
-currentCategory=category;
+currentCategory = category;
+
 
 
 document
@@ -379,13 +504,16 @@ btn.classList.remove("active");
 });
 
 
+
 button.classList.add("active");
+
 
 
 applyFilters();
 
 
 }
+
 
 
 
@@ -400,7 +528,8 @@ applyFilters();
 function applyFilters(){
 
 
-let text=
+let text =
+
 document
 .getElementById("searchInput")
 .value
@@ -409,24 +538,33 @@ document
 
 
 
-let result=
+
+let result =
+
 products.filter(product=>{
 
 
-let categoryOK=
+
+let categoryOK =
+
 currentCategory==="all" ||
+
 product.category===currentCategory;
 
 
 
-let searchOK=
+
+let searchOK =
+
 product.name
 .toLowerCase()
 .includes(text);
 
 
 
+
 return categoryOK && searchOK;
+
 
 
 });
@@ -443,6 +581,9 @@ renderProducts(result);
 
 
 
+
+
+
 /* ===============================
    نمایش محصولات
 ================================ */
@@ -451,40 +592,64 @@ renderProducts(result);
 function renderProducts(list=products){
 
 
-const box=
+
+const box =
 document.getElementById("products");
 
 
 
-box.innerHTML=
+
+box.innerHTML =
+
 list.map(product=>{
 
 
-let button=
+
+let button =
+
 product.price ?
 
 
+
 `
+
 <button class="add-btn"
+
 onclick="addToCart(${product.id})">
+
 
 🛒 افزودن به سبد
 
+
 </button>
+
 `
+
 
 
 :
 
 
+
+
 `
+
 <button class="add-btn"
+
 onclick="orderProduct(${product.id})">
+
 
 📱 استعلام قیمت
 
+
 </button>
+
+
 `;
+
+
+
+
 
 
 
@@ -494,13 +659,19 @@ return `
 <article class="product-card">
 
 
+
 <img src="${product.image}"
+
 alt="${product.name} چادردوزی جزیره"
+
 loading="lazy">
 
 
 
+
+
 <div class="product-info">
+
 
 
 <h3>
@@ -509,9 +680,19 @@ ${product.name}
 
 </h3>
 
+
+
+
 <p>
-${product.description || ""}
+
+دسته:
+
+${product.category}
+
 </p>
+
+
+
 
 <div class="price">
 
@@ -520,7 +701,13 @@ ${formatPrice(product.price)}
 </div>
 
 
+
+
+
 ${button}
+
+
+
 
 
 </div>
@@ -530,6 +717,7 @@ ${button}
 
 
 `;
+
 
 
 }).join("");
@@ -543,27 +731,44 @@ ${button}
 
 
 
+
+
+
 /* ===============================
-   افزودن به سبد
+   افزودن به سبد خرید
 ================================ */
 
 
 function addToCart(id){
 
 
-let product=
+
+let product =
+
 products.find(p=>p.id===id);
 
 
 
-let item=
+
+if(!product) return;
+
+
+
+
+
+let item =
+
 cart.find(p=>p.id===id);
+
+
 
 
 
 if(item){
 
+
 item.qty++;
+
 
 }
 
@@ -578,6 +783,8 @@ name:product.name,
 
 price:product.price,
 
+image:product.image,
+
 qty:1
 
 });
@@ -590,18 +797,19 @@ qty:1
 saveCart();
 
 
+updateCartCount();
+
+
+
+alert("محصول به سبد خرید اضافه شد");
+
+
 }
 
 
-function formatPrice(price){
 
-if(!price){
-return "تماس بگیرید";
-}
 
-return price.toLocaleString("fa-IR") + " تومان";
 
-}
 
 
 /* ===============================
@@ -613,8 +821,11 @@ function saveCart(){
 
 
 localStorage.setItem(
+
 "chadoor_cart",
+
 JSON.stringify(cart)
+
 );
 
 
@@ -625,33 +836,92 @@ JSON.stringify(cart)
 
 
 
+
 /* ===============================
-   واتساپ محصول
+   شمارنده سبد
+================================ */
+
+
+function updateCartCount(){
+
+
+let count =
+
+cart.reduce(
+
+(sum,item)=>sum + item.qty,
+
+0
+
+);
+
+
+
+
+let box =
+
+document.getElementById("cartCount");
+
+
+
+
+if(box){
+
+
+box.innerText = count;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   سفارش واتساپ
 ================================ */
 
 
 function orderProduct(id){
 
 
-let product=
+
+let product =
+
 products.find(p=>p.id===id);
 
 
 
-let text=
+
+let text =
+
 "سلام، درباره "+product.name+
+
 " از چادردوزی جزیره قیمت می‌خواهم.";
+
+
 
 
 
 window.open(
 
+
 "https://wa.me/"+WHATSAPP_PHONE+
+
 "?text="+encodeURIComponent(text),
+
 
 "_blank"
 
+
 );
+
 
 
 }
@@ -661,32 +931,47 @@ window.open(
 
 
 
+
 /* ===============================
-   Schema محصولات قیمت دار
+   Schema محصول
 ================================ */
 
-function createProductSchema(){
 
 const schema =
+
 products
-.filter(p => p.price > 0)
-.map(p => ({
+
+.filter(p=>p.price)
+
+.map(p=>({
+
 
 "@context":"https://schema.org",
 
+
 "@type":"Product",
+
 
 "name":p.name,
 
-"description":p.description || "",
+
 
 "image":
-"https://chadooor.ir/" + p.image,
+
+"https://chadooor.ir/"+p.image,
+
+
 
 "brand":{
+
 "@type":"Brand",
+
 "name":"چادردوزی جزیره J.A.T"
+
 },
+
+
+
 "offers":{
 
 "@type":"Offer",
@@ -696,35 +981,39 @@ products
 "price":p.price,
 
 "availability":
+
 "https://schema.org/InStock"
 
 }
- 
+
+
 
 }));
 
 
+
+
+
 const schemaTag =
+
 document.createElement("script");
 
+
+
 schemaTag.type =
+
 "application/ld+json";
 
+
+
 schemaTag.textContent =
+
 JSON.stringify(schema);
 
 
+
+
 document.head.appendChild(schemaTag);
-
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -735,6 +1024,11 @@ document.head.appendChild(schemaTag);
 ================================ */
 
 
+renderProducts();
+
+
+updateCartCount();
+
 
 
 if(window.lucide){
@@ -742,11 +1036,7 @@ if(window.lucide){
 lucide.createIcons();
 
 }
-
-
-
-</script>
-<!-- ================= FOOTER ================= -->
+ <!-- ================= FOOTER ================= -->
 
 
 <footer>
@@ -953,7 +1243,6 @@ rel="noopener noreferrer">
 
 
 </footer>
-
 
 
 
