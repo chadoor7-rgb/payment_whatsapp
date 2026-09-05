@@ -334,25 +334,30 @@ catch{
 cart=[];
 
 }
-
-
 fetch("products.json")
-.then(response => response.json())
+.then(response => {
+
+    if(!response.ok){
+        throw new Error("products.json پیدا نشد");
+    }
+
+    return response.json();
+
+})
 .then(data => {
 
     products = data;
 
     renderProducts(products);
 
+    createProductSchema();
+
 })
 .catch(error => {
 
-    console.error("خطا در خواندن محصولات:", error);
+    console.error(error);
 
 });
-
-
-
 
 /* ===============================
    فیلتر دسته بندی
@@ -660,12 +665,12 @@ window.open(
    Schema محصولات قیمت دار
 ================================ */
 
+function createProductSchema(){
 
-const schema=
+const schema =
 products
-.filter(p=>p.price)
-.map(p=>({
-
+.filter(p => p.price > 0)
+.map(p => ({
 
 "@context":"https://schema.org",
 
@@ -673,20 +678,15 @@ products
 
 "name":p.name,
 
+"description":p.description || "",
 
 "image":
-"https://chadooor.ir/"+p.image,
-
+"https://chadooor.ir/" + p.image,
 
 "brand":{
-
 "@type":"Brand",
-
 "name":"چادردوزی جزیره J.A.T"
-
 },
-
-
 "offers":{
 
 "@type":"Offer",
@@ -699,26 +699,31 @@ products
 "https://schema.org/InStock"
 
 }
-
+ 
 
 }));
 
 
-
-const schemaTag=
+const schemaTag =
 document.createElement("script");
 
-
-schemaTag.type=
+schemaTag.type =
 "application/ld+json";
 
-
-schemaTag.textContent=
+schemaTag.textContent =
 JSON.stringify(schema);
 
 
-
 document.head.appendChild(schemaTag);
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -730,7 +735,6 @@ document.head.appendChild(schemaTag);
 ================================ */
 
 
-renderProducts();
 
 
 if(window.lucide){
@@ -738,6 +742,7 @@ if(window.lucide){
 lucide.createIcons();
 
 }
+
 
 
 </script>
