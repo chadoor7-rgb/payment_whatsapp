@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+# صفحات غیرضروری برای ایندکس
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /*.json$
+Disallow: /script.js
+Disallow: /styles.css
+
+# اجازه به تصاویر
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+
+# نقشه سایت
 Sitemap: https://chadooor.ir/sitemap.xml
