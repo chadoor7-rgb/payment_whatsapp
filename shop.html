@@ -545,7 +545,33 @@
       });
     });
 
-    searchInput.addEventListener('input', filterProducts);
+    searchInput.addEventListener('input', filterProducts);// افزودن به سبد خرید
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const id = this.dataset.id;
+    const name = this.dataset.name;
+    // قیمت را هم باید از data-price بگیرید (الان در دکمه‌ها نیست)
+    const price = parseInt(this.dataset.price) || 0;
+
+    let cart = JSON.parse(localStorage.getItem('chadoor_cart')) || [];
+
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id, name, price, qty: 1 });
+    }
+
+    localStorage.setItem('chadoor_cart', JSON.stringify(cart));
+
+    // به‌روزرسانی شمارنده
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    const el = document.getElementById('cartCount');
+    if (el) el.innerText = count;
+
+    alert('محصول به سبد اضافه شد');
+  });
+});
   </script>
 
 </body>
