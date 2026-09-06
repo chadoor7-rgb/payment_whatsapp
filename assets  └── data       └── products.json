@@ -1,9 +1,16 @@
 [
- {
-  "id":1,
-  "name":"چادر برزنتی ۶ نفره J.A.T",
-  "category":"چادر برزنتی",
-  "price":6500000,
-  "image":"6n-brezent.webp"
- }
+  {
+    "id": 1,
+    "name": "چادر برزنتی ۶ نفره J.A.T",
+    "slug": "chador-brezenti-6-nafare",
+    "category": "چادر برزنتی",
+    "brand": "چادردوزی جزیره J.A.T",
+    "description": "چادر برزنتی ۶ نفره تولید چادردوزی جزیره آمل با پارچه مقاوم، دوخت حرفه‌ای و مناسب سفر، کمپینگ و طبیعت‌گردی.",
+    "price": 6500000,
+    "currency": "IRR",
+    "image": "6n-brezent.webp",
+    "stock": true,
+    "rating": 5,
+    "reviews": 0
+  }
 ]
