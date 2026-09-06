@@ -125,6 +125,14 @@
     "category": "مسافرتی",
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح دخترانه محبوب کودکان.",
     "price": 1800000,
-    "image": "tent-kids-
+    "image": "tent-kids-girl-5.jpg"
+  },
   {
-    ]
+    "id": 17,
+    "name": "چادر کودک ساده",
+    "category": "مسافرتی",
+    "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح ساده و کاربردی.",
+    "price": 1800000,
+    "image": "tent-kids-simple.jpg"
+  }
+]
