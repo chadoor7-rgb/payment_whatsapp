@@ -1332,3 +1332,32 @@ button, input, textarea {
     aspect-ratio: 16/10;
   }
 }
+/* اطمینان از دیده شدن دکمه‌های سبد */
+.shop-card {
+  overflow: visible;
+}
+
+.shop-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.shop-actions {
+  display: flex !important;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.shop-actions .btn,
+.shop-actions .add-to-cart {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
