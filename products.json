@@ -139,8 +139,18 @@
     "id": 18,
     "name": "چادر کودک سیندراله",
     "category": "کودک",
-    "description": "چادر کودک با ابعاد ۱2۰×12۰، طرح ساده و کاربردی.",
+    "description": "چادر کودک با ابعاد ۱2۰×12۰، طرح جذاب و کاربردی.",
     "price": 1600000,
-    "image": "tent-kids-sendrla.jpg"
+   "image": "tent-kids-sendrla.jpg"
+  
+  },
+  }
+  
+ "id": 19,
+    "name": "میز و صندلی مسافرتی",
+    "category": "مسافرتی",
+    "description": "میز و صندلی مسافرتی با کیفیت .",
+    "price": 0,
+    "image": "camping-table-chairs-equipment.jpg"
   }
 ]
