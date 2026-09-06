@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -139,7 +139,8 @@
       if (!price || price === 0) return "استعلام قیمت";
       return Number(price).toLocaleString("fa-IR") + " تومان";
     }
-function createCard(p) {
+
+    function createCard(p) {
       var category = mapCategory(p.category);
       var priceText = formatPrice(p.price);
       var waText = "سلام، در مورد " + p.name + " سوال دارم";
@@ -180,7 +181,7 @@ function createCard(p) {
       })
       .then(function (products) {
         if (!products || !products.length) {
- grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;">محصولی ثبت نشده است.</p>';
+          grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;">محصولی ثبت نشده است.</p>';
           return;
         }
         grid.innerHTML = products.map(createCard).join("");
@@ -190,8 +191,7 @@ function createCard(p) {
       .catch(function () {
         grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;color:#c00;">خطا در بارگذاری محصولات.</p>';
       });
-
-    function setupFilters() {
+ function setupFilters() {
       var filterBtns = document.querySelectorAll(".filter-btn");
       var searchInput = document.getElementById("searchInput");
 
