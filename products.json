@@ -29,7 +29,7 @@
     "category": "مسافرتی",
     "description": "چادر مسافرتی جادار مناسب کمپینگ و سفرهای خانوادگی.",
     "price": 12000000,
-    "image": "tent12.jpg"
+    "image": "KHIME.jpg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "category": "مسافرتی",
     "description": "چادر مسافرتی مقاوم برای سفر و طبیعت‌گردی.",
     "price": 8000000,
-    "image": "tent8.webp"
+    "image": "tent.jpg"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "category": "کودک",
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح سگ با رنگ‌بندی متفاوت.",
     "price": 1800000,
-    "image": "tent-kids-sags.jpg"
+    "image": "tent-kids-dog.jpg"
   },
   {
     "id": 10,
@@ -85,7 +85,7 @@
     "category": "کودک",
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح مرد عنکبوتی مخصوص پسران.",
     "price": 1800000,
-    "image": "tent-kids-mardan.jpg"
+    "image": "tent-kids-ankaboti.jpg"
   },
   {
     "id": 12,
@@ -97,19 +97,19 @@
   },
   {
     "id": 13,
-    "name": "چادر کودک دخترانه ۲",
+    "name": "چادر کودک دخترانه السا",
     "category": "کودک",
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح دخترانه با رنگ‌بندی متفاوت.",
     "price": 1800000,
-    "image": "tent-kids-girl-2.jpg"
+    "image": "tent-kids-girl-alsa.jpg"
   },
   {
     "id": 14,
-    "name": "چادر کودک دخترانه ۳",
+    "name": "چادر کودک دخترانه کیتی",
     "category": "کودک",
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح دخترانه شیک و جذاب.",
     "price": 1800000,
-    "image": "tent-kids-girl-3.jpg"
+    "image": "tent-kids-kite.jpg"
   },
   {
     "id": 15,
@@ -133,6 +133,6 @@
     "category": "کودک",
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح ساده و کاربردی.",
     "price": 1800000,
-    "image": "tent-kids-simple.jpg"
+    "image": "tent-kids-sendrla.jpg"
   }
 ]
