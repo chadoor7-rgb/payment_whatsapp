@@ -134,5 +134,13 @@
     "description": "چادر کودک با ابعاد ۱۴۰×۱۴۰، طرح ساده و کاربردی.",
     "price": 1800000,
     "image": "tent-kids-sendrla.jpg"
+ },
+  {
+    "id": 18,
+    "name": "چادر کودک سیندراله",
+    "category": "کودک",
+    "description": "چادر کودک با ابعاد ۱2۰×12۰، طرح ساده و کاربردی.",
+    "price": 1600000,
+    "image": "tent-kids-sendrla.jpg"
   }
 ]
