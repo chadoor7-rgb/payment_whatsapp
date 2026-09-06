@@ -139,18 +139,20 @@
       if (!price || price === 0) return "استعلام قیمت";
       return Number(price).toLocaleString("fa-IR") + " تومان";
     }
-
-    function createCard(p) {
+function createCard(p) {
       var category = mapCategory(p.category);
       var priceText = formatPrice(p.price);
-      var hasPrice = p.price && p.price > 0;
-      var waText = hasPrice
-        ? "درود، در مورد " + p.name + " سوال دارم"
-        : "درود، برای " + p.name + " استعلام قیمت می‌خواهم";
-var actions =
-  '<button class="btn btn-primary add-to-cart" data-id="' + p.id + '" data-name="' + p.name + '" data-price="' + (p.price  0) + '" data-image="' + (p.image  "") + '">افزودن به سبد</button>' +
-  '<a href="https://wa.me/989118031241?text=' + encodeURIComponent(waText) + '" class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>';
-<a href="https://wa.me/989118031241?text=' + encodeURIComponent(waText) + '" class="btn btn-primary" target="_blank" rel="noopener">استعلام قیمت</a>';
+      var waText = "سلام، در مورد " + p.name + " سوال دارم";
+
+      var actions =
+        '<button class="btn btn-primary add-to-cart" ' +
+          'data-id="' + p.id + '" ' +
+          'data-name="' + p.name + '" ' +
+          'data-price="' + (p.price || 0) + '" ' +
+          'data-image="' + (p.image || "") + '">' +
+          'افزودن به سبد</button>' +
+        '<a href="https://wa.me/989118031241?text=' + encodeURIComponent(waText) + '" ' +
+          'class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>';
 
       return (
         '<article class="shop-card" data-category="' + category + '">' +
