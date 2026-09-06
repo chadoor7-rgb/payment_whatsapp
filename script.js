@@ -241,7 +241,7 @@ ${request}`;
 
   /* ================= SHOP PRODUCTS ================= */
 
-  const productGrid = document.querySelector("#product-grid");
+  const productGrid = document.querySelector("#productGrid");
 
   if(productGrid){
 
