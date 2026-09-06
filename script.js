@@ -239,6 +239,78 @@ ${request}`;
 
   loadIcons();
 
+  /* ================= SHOP PRODUCTS ================= */
 
+  const productGrid = document.querySelector("#product-grid");
+
+  if(productGrid){
+
+    fetch("products.json")
+
+    .then(response => response.json())
+
+    .then(products => {
+
+
+      productGrid.innerHTML = products.map(product => `
+
+        <article class="product-card">
+
+          <img 
+          src="${product.image}" 
+          alt="${product.name}"
+          loading="lazy">
+
+
+          <h3>${product.name}</h3>
+
+
+          <p>
+          ${product.description}
+          </p>
+
+
+          <div class="product-price">
+
+          ${
+            product.price > 0
+            ? product.price.toLocaleString("fa-IR") + " تومان"
+            : "تماس برای قیمت"
+          }
+
+          </div>
+
+
+          <a 
+          href="https://wa.me/989118031241?text=${encodeURIComponent(
+          "سلام، درباره " + product.name + " سوال دارم."
+          )}"
+          target="_blank"
+          class="buy-btn">
+
+          سفارش در واتساپ
+
+          </a>
+
+
+        </article>
+
+      `).join("");
+
+
+    })
+
+
+    .catch(error=>{
+
+      productGrid.innerHTML =
+      "خطا در بارگذاری محصولات";
+
+      console.error(error);
+
+    });
+
+
+  }
 
 });
