@@ -1,33 +1,20 @@
  <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>خرید چادر مسافرتی و برزنتی | فروشگاه چادردوزی جزیره آمل</title>
-  <meta name="description" content="خرید آنلاین چادر مسافرتی، چادر برزنتی و پشه‌بند از تولیدکننده در آمل. قیمت مناسب، دوخت سفارشی و ارسال به سراسر ایران | چادردوزی جزیره J.A.T">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="description" content="خرید آنلاین چادر مسافرتی، چادر برزنتی، چادر کودک و پشه‌بند از تولیدکننده در آمل">
   <link rel="canonical" href="https://chadooor.ir/shop.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="فروشگاه چادر مسافرتی و برزنتی | چادردوزی جزیره آمل">
-  <meta property="og:description" content="خرید چادر مسافرتی، برزنتی و پشه‌بند مستقیم از تولیدکننده در آمل با ارسال سراسری">
-  <meta property="og:url" content="https://chadooor.ir/shop.html">
-  <meta property="og:image" content="https://chadooor.ir/hero-chadoor.webp">
-  <meta property="og:locale" content="fa_IR">
-  <meta property="og:site_name" content="چادردوزی جزیره J.A.T">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
   <header class="site-header sticky-header">
     <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="لوگو چادردوزی جزیره آمل" class="brand-logo" width="44" height="44">
+      <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
       <span>چادردوزی جزیره J.A.T</span>
     </a>
     <nav class="main-nav" aria-label="منوی اصلی">
@@ -50,7 +37,7 @@
     <nav class="breadcrumb" aria-label="مسیر صفحه">
       <div class="container">
         <a href="index.html">خانه</a>
-        <span aria-hidden="true">/</span>
+        <span>/</span>
         <span>فروشگاه</span>
       </div>
     </nav>
@@ -59,19 +46,21 @@
       <div class="container">
         <p class="eyebrow">فروشگاه آنلاین چادردوزی جزیره</p>
         <h1>خرید چادر مسافرتی و برزنتی<br><span class="text-accent">مستقیم از تولیدکننده در آمل</span></h1>
-        <p class="hero-desc">در فروشگاه چادردوزی جزیره می‌توانید چادر مسافرتی، چادر برزنتی و پشه‌بند را با کیفیت بالا و قیمت مناسب سفارش دهید. ارسال به سراسر ایران.</p>
+        <p class="hero-desc">چادر مسافرتی، برزنتی، چادر کودک و پشه‌بند با کیفیت بالا و قیمت مناسب. ارسال به سراسر ایران.</p>
       </div>
     </section>
 
     <section class="shop-filters-section">
       <div class="container">
         <div class="shop-filters">
-          <input type="text" id="searchInput" placeholder="جستجوی چادر مسافرتی، برزنتی یا پشه‌بند..." class="search-input" aria-label="جستجوی محصول">
-          <div class="filter-buttons" role="group" aria-label="فیلتر دسته‌بندی">
-            <button class="filter-btn active" data-filter="all">همه محصولات</button>
-            <button class="filter-btn" data-filter="travel">چادر مسافرتی</button>
-            <button class="filter-btn" data-filter="tarpaulin">چادر برزنتی</button>
+          <input type="text" id="searchInput" placeholder="جستجوی محصول..." class="search-input" aria-label="جستجو">
+          <div class="filter-buttons" role="group">
+            <button class="filter-btn active" data-filter="all">همه</button>
+            <button class="filter-btn" data-filter="travel">مسافرتی</button>
+            <button class="filter-btn" data-filter="tarpaulin">برزنتی</button>
+            <button class="filter-btn" data-filter="kids">چادر کودک</button>
             <button class="filter-btn" data-filter="net">پشه‌بند</button>
+            <button class="filter-btn" data-filter="service">خدمات</button>
           </div>
         </div>
       </div>
@@ -79,21 +68,11 @@
 
     <section class="section shop-section">
       <div class="container">
- <div class="shop-grid" id="productGrid">
-          <p id="loadingProducts" style="grid-column:1/-1;text-align:center;padding:2rem;">در حال بارگذاری محصولات...</p>
+        <div class="shop-grid" id="productGrid">
+          <p style="grid-column:1/-1;text-align:center;padding:2rem;">در حال بارگذاری محصولات...</p>
         </div>
-        <div class="no-products" id="noProducts" style="display: none;">
+        <div class="no-products" id="noProducts" style="display:none;">
           <p>محصولی با این مشخصات پیدا نشد.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section seo-text-section">
-      <div class="container">
-        <div class="seo-content">
-          <h2>خرید چادر مسافرتی و برزنتی از چادردوزی جزیره آمل</h2>
-          <p>اگر به دنبال <strong>خرید چادر مسافرتی</strong> با کیفیت و قیمت مناسب هستید، فروشگاه چادردوزی جزیره در آمل گزینه‌ای مطمئن است.</p>
-          <p>تمام محصولات در کارگاه ما در جاده هراز آمل دوخته می‌شوند و امکان <strong>سفارش چادر برزنتی</strong> در ابعاد دلخواه نیز وجود دارد.</p>
         </div>
       </div>
     </section>
@@ -101,19 +80,18 @@
     <section class="cta-final">
       <div class="container">
         <h2>محصول مورد نظرت را پیدا نکردی؟</h2>
-        <p>چادر سفارشی با ابعاد و ویژگی‌های دلخواه شما در آمل دوخته می‌شود</p>
+        <p>چادر سفارشی با ابعاد دلخواه در آمل دوخته می‌شود</p>
         <div class="cta-buttons">
-          <a href="https://wa.me/989118031241?text=سلام، می‌خواهم چادر سفارشی سفارش بدهم" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">سفارش سفارشی از واتساپ</a>
+          <a href="https://wa.me/989118031241?text=سلام، می‌خواهم چادر سفارشی سفارش بدهم" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">سفارش از واتساپ</a>
           <a href="contact.html" class="btn btn-primary btn-lg">فرم ثبت سفارش</a>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
+ <footer class="site-footer">
     <div class="footer-top">
       <a href="index.html" class="brand">
-        <img src="favicon.svg" alt="لوگو چادردوزی جزیره آمل" width="45" height="45">
+        <img src="favicon.svg" alt="لوگو" width="45" height="45">
         <span>چادردوزی جزیره J.A.T</span>
       </a>
       <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
@@ -123,7 +101,7 @@
       <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
       <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
     </div>
-    <nav class="footer-menu" aria-label="لینک‌های فوتر">
+    <nav class="footer-menu">
       <a href="products.html">محصولات</a>
       <a href="shop.html">فروشگاه</a>
       <a href="services.html">خدمات</a>
@@ -131,21 +109,17 @@
       <a href="about.html">درباره ما</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-    <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+    <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T</div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="script.js" defer></script>
-
   <script>
   document.addEventListener("DOMContentLoaded", function () {
 
     function updateCartCount() {
       try {
         var cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
-        var count = cart.reduce(function (sum, item) {
-          return sum + (item.qty || 0);
-        }, 0);
+        var count = cart.reduce(function (s, i) { return s + (i.qty || 0); }, 0);
         var el = document.getElementById("cartCount");
         if (el) el.innerText = count;
       } catch (e) {}
@@ -154,6 +128,7 @@
 
     function mapCategory(cat) {
       if (!cat) return "travel";
+      if (cat.indexOf("کودک") !== -1) return "kids";
       if (cat.indexOf("برزنت") !== -1) return "tarpaulin";
       if (cat.indexOf("پشه") !== -1) return "net";
       if (cat.indexOf("خدمت") !== -1) return "service";
@@ -161,7 +136,7 @@
     }
 
     function formatPrice(price) {
-      if (!price || price === 0) return "قیمت بر اساس ابعاد / استعلام";
+      if (!price || price === 0) return "استعلام قیمت";
       return Number(price).toLocaleString("fa-IR") + " تومان";
     }
 
@@ -174,8 +149,8 @@
         : "سلام، برای " + p.name + " استعلام قیمت می‌خواهم";
 
       var actions = hasPrice
-        ? '<button class="btn btn-primary add-to-cart" data-id="' + p.id + '" data-name="' + p.name + '" data-price="' + p.price + '">افزودن به سبد</button>' +
- '<a href="https://wa.me/989118031241?text=' + encodeURIComponent(waText) + '" class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>'
+        ? '<button class="btn btn-primary add-to-cart" data-id="' + p.id + '" data-name="' + p.name + '" data-price="' + p.price + '" data-image="' + (p.image || "") + '">افزودن به سبد</button>' +
+          '<a href="https://wa.me/989118031241?text=' + encodeURIComponent(waText) + '" class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>'
         : '<a href="https://wa.me/989118031241?text=' + encodeURIComponent(waText) + '" class="btn btn-primary" target="_blank" rel="noopener">استعلام قیمت</a>';
 
       return (
@@ -199,21 +174,20 @@
 
     fetch("products.json")
       .then(function (res) {
-        if (!res.ok) throw new Error("products.json not found");
+        if (!res.ok) throw new Error("not found");
         return res.json();
       })
       .then(function (products) {
         if (!products || !products.length) {
-          grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;">محصولی ثبت نشده است.</p>';
+ grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;">محصولی ثبت نشده است.</p>';
           return;
         }
         grid.innerHTML = products.map(createCard).join("");
         setupFilters();
         setupCartButtons();
       })
-      .catch(function (err) {
-        console.error(err);
-        grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;color:#c00;">خطا در بارگذاری محصولات. فایل products.json را بررسی کنید.</p>';
+      .catch(function () {
+        grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;color:#c00;">خطا در بارگذاری محصولات.</p>';
       });
 
     function setupFilters() {
@@ -242,41 +216,35 @@
           }
         });
 
-        if (noProducts) {
-          noProducts.style.display = visibleCount === 0 ? "block" : "none";
-        }
+        if (noProducts) noProducts.style.display = visibleCount === 0 ? "block" : "none";
       }
 
       filterBtns.forEach(function (btn) {
         btn.addEventListener("click", function () {
-          filterBtns.forEach(function (b) {
-            b.classList.remove("active");
-          });
+          filterBtns.forEach(function (b) { b.classList.remove("active"); });
           btn.classList.add("active");
           filterProducts();
         });
       });
 
-      if (searchInput) {
-        searchInput.addEventListener("input", filterProducts);
-      }
+      if (searchInput) searchInput.addEventListener("input", filterProducts);
     }
 
     function setupCartButtons() {
       document.querySelectorAll(".add-to-cart").forEach(function (btn) {
         btn.addEventListener("click", function () {
-          var id = this.dataset.id;
+          var id = String(this.dataset.id);
           var name = this.dataset.name;
           var price = parseInt(this.dataset.price, 10) || 0;
+          var image = this.dataset.image || "hero-chadoor.webp";
 
           var cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
-          var existing = cart.find(function (item) {
-            return item.id === id;
-          });
- if (existing) {
+          var existing = cart.find(function (item) { return String(item.id) === id; });
+
+          if (existing) {
             existing.qty += 1;
           } else {
-            cart.push({ id: id, name: name, price: price, qty: 1 });
+            cart.push({ id: id, name: name, price: price, image: image, qty: 1 });
           }
 
           localStorage.setItem("chadoor_cart", JSON.stringify(cart));
@@ -285,9 +253,7 @@
         });
       });
     }
-
   });
   </script>
-
 </body>
 </html>
