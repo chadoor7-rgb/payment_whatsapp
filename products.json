@@ -152,5 +152,55 @@
     "description": "میز و صندلی مسافرتی با کیفیت .",
     "price": 0,
     "image": "camping-table-chairs-equipment.jpg"
+
+  },
+  {
+  
+ "id": 20,
+    "name": "برزنت",
+    "category": "برزنتی",
+    "description": "برزنت ضخیم برای چادرهای نیسان و کامیون و... .",
+    "price": 0,
+    "image": "BEREZENT.webp"
+    
+  },
+  {
+  
+ "id": 21,
+    "name": "سایبان",
+    "category": "خدمات",
+    "description": "سایبان بازویی در رنگهای مختلف  .",
+    "price": 0,
+    "image": "SAIBANg.jpg"
+  
+  },
+  {
+  
+ "id": 22,
+    "name": "سرویس بهداشتی مسافرتی",
+    "category": "مسافرتی",
+    "description": "سرویس بهداشتی حمام مسافرتی با کیفیت .",
+    "price": 0,
+    "image": "SRVIS-TENT.jpg"
+  
+  },
+  {
+  
+ "id": 23,
+    "name": "میز و صندلی مسافرتی",
+    "category": "مسافرتی",
+    "description": "میز و صندلی مسافرتی با کیفیت .",
+    "price": 0,
+    "image": "camping-table-chairs-equipment.jpg"
+  
+  },
+  {
+  
+ "id": 24,
+    "name": "8نفره مسافرتی",
+    "category": "مسافرتی",
+    "description": "چادر 8 نفره طرح درختی مسافرتی با کیفیت .",
+    "price": 0,
+    "image": "bereznte-8-drakhte.jpg"
   }
 ]
