@@ -1403,3 +1403,9 @@ button, input, textarea {
     display: inline-flex !important;
   }
 }
+.product-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
