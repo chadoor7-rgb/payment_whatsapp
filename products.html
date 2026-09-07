@@ -81,7 +81,7 @@
     </nav>
 
     <div class="header-actions">
-      <a class="cart-link" href="cart.html">🛒 <span id="cartCount">0</span></a>
+      <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
       <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
     </div>
 
@@ -116,7 +116,9 @@
             <div class="product-image">
               <img src="chatr.webp" 
                    alt="چادر مسافرتی چادردوزی جزیره" 
+                   width="800" height="600"
                    loading="eager"
+                   decoding="async"
                    onerror="this.src='hero-chadoor.webp'">
               <span class="product-badge">محبوب</span>
             </div>
@@ -127,7 +129,7 @@
                 چادرهای کاربردی و مقاوم برای کمپ، سفر جاده‌ای 
                 و دورهمی‌های فضای باز.
               </p>
-              <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+              <div class="product-actions">
                 <a href="travel-tent.html" class="btn btn-primary">مشاهده مشخصات</a>
                 <a href="shop.html" class="btn btn-outline-dark">خرید از فروشگاه</a>
               </div>
@@ -139,7 +141,9 @@
             <div class="product-image">
               <img src="KHIME.jpg" 
                    alt="چادر برزنتی چادردوزی جزیره" 
+                   width="600" height="450"
                    loading="lazy"
+                   decoding="async"
                    onerror="this.src='hero-chadoor.webp'">
             </div>
             <div class="product-content">
@@ -149,7 +153,7 @@
                 راه‌حلی محکم برای پروژه‌ها، سایه‌بان و 
                 استفاده‌های طولانی‌مدت.
               </p>
-              <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+              <div class="product-actions">
                 <a href="tarpaulin.html" class="btn btn-outline-dark">مشاهده مشخصات</a>
                 <a href="shop.html" class="btn btn-primary">خرید از فروشگاه</a>
               </div>
@@ -161,7 +165,9 @@
             <div class="product-image">
               <img src="pasheband.jpg" 
                    alt="پشه‌بند سفارشی چادردوزی جزیره" 
+                   width="600" height="450"
                    loading="lazy"
+                   decoding="async"
                    onerror="this.src='hero-chadoor.webp'">
             </div>
             <div class="product-content">
@@ -171,7 +177,7 @@
                 دوخت تمیز و اندازه‌های متنوع برای 
                 خواب راحت در فضای باز.
               </p>
-              <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+              <div class="product-actions">
                 <a href="mosquito-net.html" class="btn btn-outline-dark">مشاهده مشخصات</a>
                 <a href="shop.html" class="btn btn-primary">خرید از فروشگاه</a>
               </div>
@@ -239,7 +245,6 @@
   <script src="script.js" defer></script>
 
   <script>
-    // به‌روزرسانی تعداد سبد خرید
     document.addEventListener("DOMContentLoaded", function() {
       try {
         const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
