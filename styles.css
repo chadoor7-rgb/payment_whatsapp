@@ -1361,3 +1361,45 @@ button, input, textarea {
   min-width: 120px;
   justify-content: center;
 }
+/* ========== منوی موبایل ========== */
+@media (max-width: 980px) {
+
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 1000;
+    padding: 80px 20px 40px;
+  }
+
+  .main-nav.open {
+    display: flex !important;
+  }
+
+  .main-nav a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .header-actions .btn {
+    display: none;
+  }
+
+  .cart-link {
+    display: inline-flex !important;
+  }
+}
