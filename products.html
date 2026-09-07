@@ -16,7 +16,7 @@
   <meta property="og:title" content="محصولات چادر مسافرتی و برزنتی | چادردوزی جزیره آمل">
   <meta property="og:description" content="چادرهای مسافرتی، برزنتی و پشه‌بند سفارشی برای سفر و کمپینگ در آمل.">
   <meta property="og:url" content="https://chadooor.ir/products.html">
-  <meta property="og:image" content="https://chadooor.ir/travel-tent-chatr.webp">
+  <meta property="og:image" content="https://chadooor.ir/chatr.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -81,6 +81,7 @@
     </nav>
 
     <div class="header-actions">
+      <a class="cart-link" href="cart.html">🛒 <span id="cartCount">0</span></a>
       <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
     </div>
 
@@ -113,9 +114,10 @@
           <!-- چادر مسافرتی -->
           <article class="product-card product-card-large">
             <div class="product-image">
-              <img src="travel-tent-chatr.webp" 
+              <img src="chatr.webp" 
                    alt="چادر مسافرتی چادردوزی جزیره" 
-                   loading="eager">
+                   loading="eager"
+                   onerror="this.src='hero-chadoor.webp'">
               <span class="product-badge">محبوب</span>
             </div>
             <div class="product-content">
@@ -125,9 +127,10 @@
                 چادرهای کاربردی و مقاوم برای کمپ، سفر جاده‌ای 
                 و دورهمی‌های فضای باز.
               </p>
-              <a href="travel-tent.html" class="btn btn-primary">
-                مشاهده مشخصات
-              </a>
+              <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+                <a href="travel-tent.html" class="btn btn-primary">مشاهده مشخصات</a>
+                <a href="shop.html" class="btn btn-outline-dark">خرید از فروشگاه</a>
+              </div>
             </div>
           </article>
 
@@ -136,7 +139,8 @@
             <div class="product-image">
               <img src="KHIME.jpg" 
                    alt="چادر برزنتی چادردوزی جزیره" 
-                   loading="lazy">
+                   loading="lazy"
+                   onerror="this.src='hero-chadoor.webp'">
             </div>
             <div class="product-content">
               <span class="product-tag">مقاوم و کاربردی</span>
@@ -145,9 +149,10 @@
                 راه‌حلی محکم برای پروژه‌ها، سایه‌بان و 
                 استفاده‌های طولانی‌مدت.
               </p>
-              <a href="tarpaulin.html" class="btn btn-outline-dark">
-                مشاهده مشخصات
-              </a>
+              <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+                <a href="tarpaulin.html" class="btn btn-outline-dark">مشاهده مشخصات</a>
+                <a href="shop.html" class="btn btn-primary">خرید از فروشگاه</a>
+              </div>
             </div>
           </article>
 
@@ -156,7 +161,8 @@
             <div class="product-image">
               <img src="pasheband.jpg" 
                    alt="پشه‌بند سفارشی چادردوزی جزیره" 
-                   loading="lazy">
+                   loading="lazy"
+                   onerror="this.src='hero-chadoor.webp'">
             </div>
             <div class="product-content">
               <span class="product-tag">سبک و راحت</span>
@@ -165,9 +171,10 @@
                 دوخت تمیز و اندازه‌های متنوع برای 
                 خواب راحت در فضای باز.
               </p>
-              <a href="mosquito-net.html" class="btn btn-outline-dark">
-                مشاهده مشخصات
-              </a>
+              <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+                <a href="mosquito-net.html" class="btn btn-outline-dark">مشاهده مشخصات</a>
+                <a href="shop.html" class="btn btn-primary">خرید از فروشگاه</a>
+              </div>
             </div>
           </article>
 
@@ -210,7 +217,7 @@
     <div class="social-links">
       <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
       <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-      <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+      <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
     </div>
 
     <nav class="footer-menu">
@@ -230,6 +237,18 @@
 
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="script.js" defer></script>
+
+  <script>
+    // به‌روزرسانی تعداد سبد خرید
+    document.addEventListener("DOMContentLoaded", function() {
+      try {
+        const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+        const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
+        const el = document.getElementById("cartCount");
+        if (el) el.textContent = count;
+      } catch(e) {}
+    });
+  </script>
 
 </body>
 </html>
