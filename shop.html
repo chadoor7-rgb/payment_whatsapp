@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* استایل‌های اختصاصی فروشگاه */
     .shop-toolbar {
       display: flex;
       flex-wrap: wrap;
@@ -91,6 +90,8 @@
       aspect-ratio: 4/3;
       overflow: hidden;
       background: #f5f5f5;
+      display: block;
+      text-decoration: none;
     }
     .shop-image img {
       width: 100%;
@@ -128,6 +129,10 @@
       font-size: 1.15rem;
       margin: 0 0 0.5rem;
       line-height: 1.4;
+    }
+    .shop-content h2 a {
+      color: inherit;
+      text-decoration: none;
     }
     .shop-content p {
       font-size: 0.9rem;
@@ -187,7 +192,7 @@
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
   <header class="site-header sticky-header">
     <a href="index.html" class="brand">
       <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
@@ -234,7 +239,6 @@
     <section class="section shop-section">
       <div class="container">
 
-        <!-- نوار ابزار -->
         <div class="shop-toolbar">
           <div class="search-box">
             <input type="text" id="searchInput" placeholder="جستجوی محصول..." aria-label="جستجو">
@@ -259,7 +263,6 @@
           </div>
         </div>
 
-        <!-- گرید محصولات -->
         <div class="shop-grid" id="productGrid">
           <div class="loading-state">
             <div class="loading-spinner"></div>
@@ -328,7 +331,6 @@
     let currentSort = "default";
     let currentSearch = "";
 
-    // به‌روزرسانی تعداد سبد
     function updateCartCount() {
       try {
         const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
@@ -351,17 +353,17 @@
 
       return `
         <article class="shop-card" data-category="${p.category}" data-price="${p.price || 0}" data-name="${p.name}">
-          <div class="shop-image">
+          <a href="product.html?id=${p.id}" class="shop-image">
             <img src="${p.image || 'hero-chadoor.webp'}" 
                  alt="${p.name}" 
                  width="400" height="300" 
                  loading="lazy"
                  onerror="this.src='hero-chadoor.webp'">
             ${p.category === "کودک" ? '<span class="shop-badge">کودک</span>' : ""}
-          </div>
+          </a>
           <div class="shop-content">
             <span class="shop-category">${p.category || "محصول"}</span>
-            <h2>${p.name}</h2>
+            <h2><a href="product.html?id=${p.id}">${p.name}</a></h2>
             <p>${p.description || ""}</p>
             <div class="shop-price ${isFree ? "free" : ""}">${priceText}</div>
             <div class="shop-actions">
@@ -391,7 +393,6 @@
         return matchCategory && matchSearch;
       });
 
-      // مرتب‌سازی
       if (currentSort === "price-asc") {
         filtered.sort((a, b) => (a.price || 0) - (b.price || 0));
       } else if (currentSort === "price-desc") {
@@ -430,7 +431,6 @@
           localStorage.setItem("chadoor_cart", JSON.stringify(cart));
           updateCartCount();
 
-          // بازخورد سریع
           const original = this.textContent;
           this.textContent = "✓ اضافه شد";
           this.disabled = true;
