@@ -1,41 +1,14 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>چادر مسافرتی و برزنتی آمل | تولید و تعمیر چادر | چادردوزی جزیره</title>
-
-  <meta name="description" content="چادردوزی جزیره در آمل؛ تولید چادر مسافرتی، چادر برزنتی، سایبان و تعمیر چادر. آدرس: جاده هراز، روبروی پلیس‌راه محمدآباد. ارسال به سراسر ایران.">
+  <meta name="description" content="چادردوزی جزیره در آمل؛ تولید چادر مسافرتی، چادر برزنتی، سایبان و تعمیر چادر. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران. آدرس: جاده هراز، روبروی پلیس‌راه محمدآباد.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://chadooor.ir/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="چادر مسافرتی و برزنتی آمل | چادردوزی جزیره">
-  <meta property="og:description" content="تولید و تعمیر چادر مسافرتی و برزنتی در آمل، جاده هراز">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://chadooor.ir/">
-  <meta property="og:image" content="https://chadooor.ir/hero-chadoor.webp">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="چادردوزی جزیره آمل | تولید و تعمیر چادر">
-  <meta name="twitter:description" content="تولید چادر مسافرتی و برزنتی در آمل">
-  <meta name="twitter:image" content="https://chadooor.ir/hero-chadoor.webp">
-
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="google979c5dc13e5137c9">
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="favicon.svg">
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 
   <!-- Local Business Schema -->
@@ -59,10 +32,9 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 36.371061,
-      "longitude": 52.357198
+      "latitude": "36.4697",
+      "longitude": "52.3507"
     },
-    "hasMap": "https://maps.app.goo.gl/tmTA6vygLnNnsPhe6",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -70,30 +42,402 @@
       "closes": "22:00"
     },
     "priceRange": "$$",
-    "areaServed": [
-      {"@type": "City", "name": "آمل"},
-      {"@type": "State", "name": "مازندران"},
-      {"@type": "Country", "name": "ایران"}
-    ],
+    "areaServed": "ایران",
     "sameAs": [
       "https://instagram.com/chadoor_",
-      "https://t.me/gattent",
-      "https://youtube.com/@tent7172",
-      "https://linktr.ee/chadoor"
+      "https://t.me/gattent"
     ]
   }
   </script>
-</head>
 
+  <style>
+    :root {
+      --ink: #182622;
+      --muted: #66736f;
+      --cream: #f5f3ed;
+      --paper: #fffdf8;
+      --lime: #d5f263;
+      --coral: #f68165;
+      --teal: #235d56;
+      --line: #dedfd8;
+    }
+
+    body { background: var(--cream); }
+
+    /* Hero */
+    .home-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 50px;
+      align-items: center;
+      padding: 70px 0 80px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    .home-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .home-hero .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+    .home-hero h1 {
+      font-size: clamp(38px, 5.5vw, 62px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0 0 20px;
+      color: var(--ink);
+    }
+    .home-hero h1 span { color: var(--teal); }
+    .home-hero .lead {
+      color: var(--muted);
+      font-size: 17.5px;
+      line-height: 1.9;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(24,38,34,0.12);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    /* Ticker */
+    .ticker-wrapper {
+      background: var(--ink);
+      color: white;
+      overflow: hidden;
+      padding: 14px 0;
+    }
+ .ticker {
+      display: flex;
+      gap: 40px;
+      white-space: nowrap;
+      animation: ticker 28s linear infinite;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .ticker span { position: relative; }
+    .ticker span::after {
+      content: "•";
+      margin-right: 40px;
+      color: var(--lime);
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Section common */
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .section-title .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .section-title .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+    .section-title h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .section-title h2 span { color: var(--teal); }
+    .section-title p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 90px;
+    }
+    .feature-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 34px 28px;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(24,38,34,0.09);
+      border-color: transparent;
+    }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--lime);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+    .feature-card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Categories */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 90px;
+    }
+    .cat-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(24,38,34,0.08);
+      border-color: transparent;
+    }
+    .cat-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .cat-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .cat-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Services teaser */
+    .services-teaser {
+      background: var(--ink);
+      color: white;
+      border-radius: 26px;
+      padding: 55px 45px;
+      margin-bottom: 90px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .services-teaser h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 800;
+      margin: 0 0 14px;
+    }
+    .services-teaser p {
+      opacity: 0.85;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .services-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .services-list li {
+      position: relative;
+      padding-right: 20px;
+      margin-bottom: 8px;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    .services-list li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--lime);
+      font-weight: 700;
+    }
+ /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 90px;
+    }
+    .testimonial-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 24px;
+    }
+    .testimonial-card p {
+      font-size: 15px;
+      line-height: 1.85;
+      margin: 0 0 18px;
+      color: var(--ink);
+    }
+    .testimonial-card .author {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto 90px;
+    }
+    .faq-list details {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      padding: 18px 22px;
+    }
+    .faq-list summary {
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      list-style: none;
+      color: var(--ink);
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list details p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      background: var(--ink);
+      color: white;
+      border-radius: 26px;
+      padding: 60px 40px;
+      margin-bottom: 50px;
+    }
+    .final-cta h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+    .final-cta p {
+      opacity: 0.85;
+      font-size: 16.5px;
+      margin-bottom: 28px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn-whatsapp {
+      background: #25d366 !important;
+      color: white !important;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57 !important;
+    }
+    .contact-numbers {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .contact-numbers a {
+      color: white;
+      text-decoration: none;
+    }
+    .contact-numbers a:hover {
+      color: var(--lime);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .home-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 50px;
+      }
+      .home-hero .lead { margin-left: auto; margin-right: auto; }
+      .hero-btns { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr; }
+      .categories-grid { grid-template-columns: 1fr 1fr; }
+      .services-teaser { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .categories-grid { grid-template-columns: 1fr; }
+      .final-cta { padding: 45px 24px; }
+    }
+  </style>
+</head>
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
   <header class="site-header sticky-header">
     <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="لوگو چادردوزی جزیره آمل" class="brand-logo">
+      <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
       <span>چادردوزی جزیره J.A.T</span>
     </a>
-
     <nav class="main-nav" aria-label="منوی اصلی">
       <a href="products.html">محصولات</a>
       <a href="shop.html">فروشگاه</a>
@@ -103,46 +447,49 @@
       <a href="blog.html">مجله سفر</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-
     <div class="header-actions">
-      <a class="cart-link" href="cart.html">
+      <a class="cart-link" href="cart.html" aria-label="سبد خرید">
         🛒 <span id="cartCount">0</span>
       </a>
       <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
     </div>
-
     <button class="menu-toggle" aria-label="منو">☰</button>
   </header>
 
   <main>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero hero-full">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
+    <!-- Hero -->
+ <section class="home-hero">
+      <div>
         <p class="eyebrow">تولید و تعمیر چادر در آمل</p>
-        <h1 class="hero-title">
-          آماده‌ی<br>
-          <span class="highlight">ماجراجویی</span><br>
-          باش
-        </h1>
-        <p class="hero-desc">
-          چادرهای مقاوم و سفارشی برای سفر، کمپینگ و طبیعت‌گردی،
-          دوخته‌شده در کارگاه چادردوزی جزیره آمل
+        <h1>آماده‌ی<br><span>ماجراجویی</span><br>باش</h1>
+        <p class="lead">
+          چادرهای مقاوم و سفارشی برای سفر، کمپینگ و طبیعت‌گردی — 
+          دوخته‌شده در کارگاه چادردوزی جزیره آمل با تمرکز روی دوام و کیفیت واقعی.
         </p>
         <div class="hero-btns">
           <a href="shop.html" class="btn btn-primary btn-lg">مشاهده فروشگاه</a>
-          <a href="services.html" class="btn btn-outline btn-lg">تعمیر چادر</a>
+          <a href="services.html" class="btn btn-outline-dark btn-lg">تعمیر چادر</a>
         </div>
       </div>
-      <div class="hero-image-wrapper">
-        <img src="hero-chadoor.webp" alt="چادر مسافرتی تولید شده توسط چادردوزی جزیره آمل" class="hero-img" width="900" height="700" fetchpriority="high">
+      <div class="hero-image">
+        <img src="hero-chadoor.webp" 
+             alt="چادر مسافرتی تولید شده توسط چادردوزی جزیره آمل" 
+             width="900" height="700" 
+             fetchpriority="high"
+             onerror="this.src='chatr.webp'">
       </div>
     </section>
 
-    <!-- ================= TICKER ================= -->
+    <!-- Ticker -->
     <div class="ticker-wrapper">
       <div class="ticker">
+        <span>تولید مستقیم در آمل</span>
+        <span>چادر مسافرتی</span>
+        <span>چادر برزنتی</span>
+        <span>تعمیر تخصصی</span>
+        <span>دوخت سفارشی</span>
+        <span>ارسال سراسر ایران</span>
         <span>تولید مستقیم در آمل</span>
         <span>چادر مسافرتی</span>
         <span>چادر برزنتی</span>
@@ -152,84 +499,91 @@
       </div>
     </div>
 
-    <!-- ================= FEATURES ================= -->
-    <section class="section features-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">ساخته‌شده برای ماندن</p>
-          <h2>جزئیاتی که <span class="text-accent">در سفر اهمیت دارد</span></h2>
-        </div>
+    <div class="container" style="padding-top: 80px;">
 
+      <!-- Features -->
+      <section>
+        <div class="section-title">
+          <p class="eyebrow">ساخته‌شده برای ماندن</p>
+          <h2>جزئیاتی که <span>در سفر اهمیت دارد</span></h2>
+        </div>
         <div class="features-grid">
           <article class="feature-card">
-            <div class="feature-icon"><i data-lucide="shield-check"></i></div>
-            <h3>برزنت مقاوم</h3>
-            <p>پارچه مناسب شرایط مختلف آب‌وهوایی شمال و استفاده طولانی‌مدت</p>
+            <div class="feature-icon">🛡️</div>
+            <h3>برزنت و پارچه مقاوم</h3>
+            <p>انتخاب متریال مناسب شرایط آب‌وهوایی شمال و استفاده طولانی‌مدت در طبیعت.</p>
           </article>
-
           <article class="feature-card">
-            <div class="feature-icon"><i data-lucide="scissors"></i></div>
+            <div class="feature-icon">✂️</div>
             <h3>دوخت سفارشی</h3>
-            <p>ساخت چادر دقیقاً مطابق اندازه و نیاز شما در کارگاه آمل</p>
+            <p>ساخت چادر دقیقاً مطابق اندازه و نیاز شما در کارگاه آمل، بدون واسطه.</p>
           </article>
-
           <article class="feature-card">
-            <div class="feature-icon"><i data-lucide="wrench"></i></div>
+            <div class="feature-icon">🔧</div>
             <h3>تعمیر و بازسازی</h3>
-            <p>ترمیم پارگی، زیپ، فنر و بخش‌های آسیب‌دیده با کیفیت بالا</p>
+            <p>ترمیم پارگی، زیپ، فنر و بخش‌های آسیب‌دیده با کیفیت کارگاهی و دوام واقعی.</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================= VISUAL BREAK ================= -->
-    <section class="visual-break">
-      <div class="visual-content">
-        <h2>وقتی باران شروع می‌شود،<br>خیالت از چادرت راحت باشد</h2>
-        <p>کیفیت دوخت یعنی آرامش در دل طبیعت</p>
-      </div>
-    </section>
-
-    <!-- ================= SERVICES ================= -->
-    <section class="section services-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">خدمات تخصصی</p>
-          <h2>چادرت آسیب دیده؟<br><span class="text-accent">دوباره آماده‌اش می‌کنیم</span></h2>
+      <!-- Categories -->
+      <section>
+        <div class="section-title">
+          <p class="eyebrow">محصولات ما</p>
+          <h2>برای هر نیاز، <span>یک انتخاب</span></h2>
         </div>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <span class="number">۰۱</span>
-            <h3>تعمیر چادر</h3>
-            <p>بررسی کامل و تعمیر بخش‌های آسیب‌دیده</p>
-          </div>
-          <div class="service-card">
-            <span class="number">۰۲</span>
-            <h3>ترمیم پارچه</h3>
-            <p>دوخت مجدد و تقویت نقاط ضعیف</p>
-          </div>
-          <div class="service-card">
-            <span class="number">۰۳</span>
-            <h3>تعویض زیپ و قطعات</h3>
-            <p>تعمیر یا تعویض زیپ، فنر و یراق‌آلات</p>
-          </div>
+        <div class="categories-grid">
+          <a href="shop.html" class="cat-card">
+            <div class="cat-icon">⛺</div>
+            <h3>چادر مسافرتی</h3>
+            <p>کمپینگ و سفر خانوادگی</p>
+          </a>
+          <a href="shop.html" class="cat-card">
+            <div class="cat-icon">🏠</div>
+            <h3>چادر برزنتی</h3>
+            <p>مقاوم و طولانی‌مدت</p>
+          </a>
+          <a href="shop.html" class="cat-card">
+            <div class="cat-icon">🧒</div>
+            <h3>چادر کودک</h3>
+            <p>بازی و سرگرمی</p>
+          </a>
+          <a href="shop.html" class="cat-card">
+            <div class="cat-icon">🦟</div>
+            <h3>پشه‌بند</h3>
+            <p>خواب راحت در فضای باز</p>
+          </a>
         </div>
+      </section>
 
-        <div class="text-center mt-5">
+      <!-- Services Teaser -->
+      <section class="services-teaser">
+        <div>
+          <h2>چادرت آسیب دیده؟<br>دوباره آماده‌اش می‌کنیم</h2>
+          <p>
+            بسیاری از چادرها با تعمیر اصولی دوباره قابل استفاده می‌شوند.
+            ما پارگی، زیپ، فنر و بخش‌های آسیب‌دیده را با دقت بازسازی می‌کنیم.
+          </p>
+          <ul class="services-list">
+            <li>ترمیم پارچه و درزها</li>
+ <li>تعویض زیپ و قطعات</li>
+            <li>بازسازی چادرهای قدیمی</li>
+            <li>قیمت شفاف قبل از شروع کار</li>
+          </ul>
           <a href="services.html" class="btn btn-primary">مشاهده خدمات تعمیر</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ================= TESTIMONIALS ================= -->
-    <section class="section testimonials-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">تجربه مشتریان</p>
-          <h2>مسیرهای خوب با <span class="text-accent">اعتماد</span> شروع می‌شوند</h2>
+        <div style="text-align:center;">
+          <div style="font-size:64px; margin-bottom:12px;">🔧</div>
+          <p style="opacity:0.7; font-size:15px;">تعمیر تخصصی در کارگاه آمل</p>
         </div>
+      </section>
 
+      <!-- Testimonials -->
+      <section>
+        <div class="section-title">
+          <p class="eyebrow">تجربه مشتریان</p>
+          <h2>مسیرهای خوب با <span>اعتماد</span> شروع می‌شوند</h2>
+        </div>
         <div class="testimonials-grid">
           <article class="testimonial-card">
             <p>«اندازه‌گیری و دوخت بسیار دقیق بود و نتیجه کاملاً مطابق نیاز ما شد.»</p>
@@ -244,77 +598,59 @@
             <div class="author">علی کریمی — بابل</div>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================= FAQ ================= -->
-    <section class="section faq-section">
-      <div class="container">
-        <div class="section-header">
+      <!-- FAQ -->
+      <section>
+        <div class="section-title">
           <p class="eyebrow">سوالات پرتکرار</p>
-          <h2>قبل از سفارش، <span class="text-accent">هرچه می‌خواهی بدان</span></h2>
+          <h2>قبل از سفارش، <span>هرچه می‌خواهی بدان</span></h2>
         </div>
-
         <div class="faq-list">
-          <details>
-            <summary>چادردوزی جزیره کجاست؟</summary>
+          Summary:
+چادردوزی جزیره کجاست؟
             <p>چادردوزی جزیره J.A.T در آمل، جاده هراز، روبروی پلیس‌راه محمدآباد قرار دارد.</p>
-          </details>
-          <details>
-            <summary>آیا چادر مسافرتی در آمل تولید می‌کنید؟</summary>
-            <p>بله، تولید چادر مسافرتی و برزنتی در مدل‌ها و اندازه‌های مختلف انجام می‌شود.</p>
-          </details>
-          <details>
-            <summary>آیا تعمیر چادر انجام می‌دهید؟</summary>
+          Summary:
+آیا چادر مسافرتی در آمل تولید می‌کنید؟
+            <p>بله، تولید چادر مسافرتی و برزنتی در مدل‌ها و اندازه‌های مختلف (و حتی سفارشی) انجام می‌شود.</p>
+          Summary:
+آیا تعمیر چادر انجام می‌دهید؟
             <p>بله، تعمیر پارگی، زیپ، فنر و بخش‌های آسیب‌دیده در کارگاه آمل انجام می‌شود.</p>
-          </details>
-          <details>
-            <summary>آیا ارسال به شهرستان دارید؟</summary>
+          Summary:
+آیا ارسال به شهرستان دارید؟
             <p>بله، امکان ارسال سفارش به سراسر ایران وجود دارد.</p>
-          </details>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================= CTA نهایی ================= -->
-    <section class="cta-final">
-      <div class="container">
+      <!-- Final CTA -->
+      <section class="final-cta">
         <h2>چادر بعدی‌ات از همین‌جا شروع می‌شود</h2>
         <p>تولید مستقیم در آمل • ارسال به سراسر ایران</p>
         <div class="cta-buttons">
           <a href="shop.html" class="btn btn-primary btn-lg">ورود به فروشگاه</a>
-          <a href="https://wa.me/989118031241?text=سلام، برای سفارش چادر از آمل مشاوره می‌خواهم." 
+          <a href="https://wa.me/989118031241?text=سلام، برای سفارش چادر از آمل مشاوره می‌خواهم"
              class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
             پیام در واتساپ
           </a>
         </div>
-
         <div class="contact-numbers">
           <a href="tel:+989118031241">۰۹۱۱ ۸۰۳ ۱۲۴۱</a>
           <a href="tel:+989158017134">۰۹۱۵ ۸۰۱ ۷۱۳۴</a>
         </div>
-      </div>
-    </section>
+      </section>
 
+    </div>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
-      <a class="brand" href="index.html">
-        <img src="favicon.svg" alt="لوگو چادردوزی جزیره" width="45" height="45">
-        <span>چادردوزی جزیره</span>
+      <a href="index.html" class="brand">
+        <img src="favicon.svg" alt="لوگو" width="44" height="44">
+        <span>چادردوزی جزیره J.A.T</span>
       </a>
       <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
     </div>
-
-    <div class="social-links">
-      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
-      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-      <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
-      <a href="https://youtube.com/@tent7172" target="_blank" rel="noopener">یوتیوب</a>
-    </div>
-
     <nav class="footer-menu">
       <a href="products.html">محصولات</a>
       <a href="shop.html">فروشگاه</a>
@@ -323,23 +659,26 @@
       <a href="about.html">درباره ما</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-
+    <div class="social-links">
+      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+      <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+    </div>
     <div class="copyright">
-      © ۲۰۲۶ چادردوزی جزیره J.A.T — کلیه حقوق محفوظ است.
+      © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
+      کلیه حقوق این وب‌سایت محفوظ است.
     </div>
   </footer>
-
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
-
+ <script src="script.js"></script>
   <script>
-    try {
-      const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
-      const count = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
-      const el = document.getElementById("cartCount");
-      if (el) el.innerText = count;
-    } catch (e) {}
+    (function () {
+      try {
+        const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+        const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
+        const el = document.getElementById("cartCount");
+        if (el) el.textContent = count;
+      } catch (e) {}
+    })();
   </script>
-
 </body>
 </html>
