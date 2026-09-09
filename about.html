@@ -1,618 +1,558 @@
-<!doctype html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>درباره ما | چادردوزی جزیره J.A.T آمل</title>
+  <meta name="description" content="چادردوزی جزیره J.A.T در آمل، تولیدکننده و تعمیرکار تخصصی چادر مسافرتی، چادر برزنتی و تجهیزات کمپینگ. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chadooor.ir/about.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
-<meta charset="UTF-8">
+  <style>
+    :root {
+      --ink: #182622;
+      --muted: #66736f;
+      --cream: #f5f3ed;
+      --paper: #fffdf8;
+      --lime: #d5f263;
+      --coral: #f68165;
+      --teal: #235d56;
+      --line: #dedfd8;
+    }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    .about-page {
+      background: var(--cream);
+    }
 
+    /* Hero */
+    .about-hero {
+      padding: 90px 0 50px;
+      text-align: center;
+    }
+    .about-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .about-hero .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+    .about-hero h1 {
+      font-size: clamp(34px, 5.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0 0 22px;
+      color: var(--ink);
+    }
+    .about-hero h1 span {
+      color: var(--teal);
+    }
+    .about-hero .lead {
+      max-width: 640px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 17.5px;
+      line-height: 1.9;
+    }
 
-<title>
-درباره ما | چادردوزی جزیره J.A.T
-</title>
+    /* Story Section */
+    .story-section {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+      padding: 40px 0 90px;
+    }
+    .story-content h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 800;
+      margin: 0 0 20px;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .story-content p {
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.95;
+      margin-bottom: 18px;
+    }
+    .story-image {
+      position: relative;
+    }
+    .story-image img {
+      width: 100%;
+      border-radius: 22px;
+      box-shadow: 0 20px 50px rgba(24, 38, 34, 0.12);
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+    .story-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: var(--ink);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+    }
 
+    /* Values */
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .section-title h2 {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
 
-<meta 
-name="description"
-content="درباره چادردوزی جزیره J.A.T در آمل؛ تولیدکننده و تعمیرکار چادرهای مسافرتی، برزنتی و تجهیزات کمپینگ."
->
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-bottom: 90px;
+    }
+    .value-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 36px 28px;
+      transition: all 0.3s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(24, 38, 34, 0.09);
+      border-color: transparent;
+    }
+    .value-icon {
+      width: 54px;
+      height: 54px;
+      background: var(--lime);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+ justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .value-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .value-card p {
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.85;
+      margin: 0;
+    }
 
+    /* Process */
+    .process-box {
+      background: var(--ink);
+      color: white;
+      border-radius: 28px;
+      padding: 70px 50px;
+      margin-bottom: 90px;
+    }
+    .process-box .section-title h2 {
+      color: white;
+    }
+    .process-box .section-title p {
+      color: rgba(255,255,255,0.75);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 50px;
+    }
+    .process-item {
+      text-align: center;
+    }
+    .process-num {
+      width: 48px;
+      height: 48px;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .process-item h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .process-item p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      opacity: 0.85;
+      margin: 0;
+    }
 
-<meta 
-name="robots"
-content="index, follow"
->
+    /* Why Us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 90px;
+    }
+    .why-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 26px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .why-item .check {
+      width: 28px;
+      height: 28px;
+      background: var(--teal);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-item h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .why-item p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
 
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 60px 40px;
+      margin-bottom: 60px;
+    }
+    .final-cta h2 {
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 800;
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
+    .final-cta p {
+      color: var(--muted);
+      font-size: 16.5px;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-whatsapp {
+      background: #25d366 !important;
+      color: white !important;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57 !important;
+    }
 
-<link 
-rel="canonical"
-href="https://chadooor.ir/about.html"
-/>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-<link
-href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-rel="stylesheet"
-/>
-
-
-<link
-rel="icon"
-type="image/svg+xml"
-href="favicon.svg"
-/>
-
-
-<link
-rel="apple-touch-icon"
-href="favicon.svg"
-/>
-
-
-<link
-rel="stylesheet"
-href="styles.css"
-/>
-
-
+    /* Responsive */
+    @media (max-width: 980px) {
+      .story-section {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-box {
+        padding: 50px 30px;
+      }
+    }
+    @media (max-width: 560px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-hero {
+        padding: 70px 0 40px;
+      }
+      .final-cta {
+        padding: 45px 24px;
+      }
+    }
+  </style>
 </head>
-
-
-<body>
-
-
-<!-- ================= HEADER ================= -->
-
-
-<header class="site-header">
-
-
-<a 
-class="brand"
-href="index.html"
-aria-label="چادردوزی جزیره J.A.T"
->
-
-
-<span class="brand-mark">
-
-
-<img 
-src="favicon.svg"
-alt="لوگو چادردوزی جزیره J.A.T"
-width="45"
-height="45"
->
-
-
-</span>
-
-
-<span>
-چادردوزی جزیره J.A.T
-</span>
-
-
-</a>
-
-
-
-
-<nav 
-class="main-nav"
-aria-label="منوی اصلی"
->
-
-
-<a href="products.html">
-محصولات
-</a>
-
-
-<a href="shop.html">
-🛒 فروشگاه
-</a>
-
-
-<a href="services.html">
-خدمات ما
-</a>
-
-
-<a href="gallery.html">
-گالری
-</a>
-
-
-<a 
-href="about.html"
-aria-current="page"
->
-درباره J.A.T
-</a>
-
-
-<a href="blog.html">
-مجله سفر
-</a>
-
-
-<a href="contact.html">
-ثبت سفارش
-</a>
-
-
-</nav>
-
-
-
-
-
-<a 
-class="header-action"
-href="contact.html"
->
-
-ثبت سفارش
-
-</a>
-
-
-
-
-
-<button
-class="menu-toggle"
-type="button"
-aria-label="باز کردن منو"
-aria-expanded="false"
->
-
-
-<i data-lucide="menu"></i>
-
-
-</button>
-
-
-
-</header>
-<!-- ================= MAIN ================= -->
-
-<main class="inner-page">
-
-
-<section class="about-layout">
-
-
-<div class="page-hero">
-
-
-<p class="eyebrow">
-
-<span></span>
-
-درباره چادردوزی جزیره
-
-</p>
-
-
-
-<h1>
-
-با دست ساخته می‌شود،
-
-<br>
-
-<em>
-برای سال‌ها می‌ماند.
-</em>
-
-</h1>
-
-
-
-<p>
-
-چادردوزی جزیره J.A.T در آمل،
-تولیدکننده و تعمیرکننده چادرهای مسافرتی،
-برزنتی و تجهیزات کمپینگ است.
-
-ما با تمرکز بر دوخت دقیق،
-انتخاب پارچه و متریال مناسب،
-محصولاتی تولید می‌کنیم که برای سفر،
-طبیعت‌گردی و استفاده طولانی‌مدت قابل اعتماد باشند.
-
-</p>
-
-
-
-<a 
-class="button button-primary"
-href="contact.html"
->
-
-با ما در تماس باشید
-
-<i data-lucide="arrow-left"></i>
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-<div class="about-image">
-
-
-<img
-
-src="about-chadooor.jpg"
-
-alt="چادردوزی جزیره J.A.T آمل - تولید و تعمیر چادر"
-
-loading="lazy"
-
-/>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-<!-- ================= VALUES ================= -->
-
-
-<section class="values">
-
-
-
-<div>
-
-<i data-lucide="map-pin"></i>
-
-
-<h2>
-آمل، مازندران
-</h2>
-
-
-<p>
-
-فعالیت در قلب شمال ایران و همراه مسیرهای واقعی سفر.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div>
-
-<i data-lucide="badge-check"></i>
-
-
-<h2>
-تولید مستقیم
-</h2>
-
-
-<p>
-
-از انتخاب پارچه تا برش، دوخت و آماده‌سازی نهایی با دقت انجام می‌شود.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<div>
-
-<i data-lucide="heart-handshake"></i>
-
-
-<h2>
-همراه مشتری
-</h2>
-
-
-<p>
-
-برای انتخاب محصول، سفارش اختصاصی و تعمیر چادر در کنار شما هستیم.
-
-</p>
-
-
-</div>
-
-
-
-
-</section>
-
-
-
-
-
-
-<!-- ================= ABOUT SEO TEXT ================= -->
-
-
-<section class="page-hero"
-style="margin-top:70px;"
->
-
-
-<p class="eyebrow">
-
-<span></span>
-
-چرا J.A.T؟
-
-</p>
-
-
-
-<h2>
-
-تجربه، کیفیت و
-
-<br>
-
-<em>
-دوخت حرفه‌ای
-</em>
-
-</h2>
-
-
-
-<p>
-
-چادردوزی جزیره J.A.T با هدف ارائه خدمات تخصصی
-در زمینه تولید چادر مسافرتی، چادر برزنتی،
-پشه‌بند و تعمیر انواع چادر فعالیت می‌کند.
-
-هر سفارش با توجه به نیاز مشتری،
-نوع استفاده و شرایط محیطی آماده می‌شود.
-
-</p>
-
-
-
-</section>
-
-
-
-</main>
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-
-<div class="footer-top">
-
-
-<a 
-class="brand"
-href="index.html"
-aria-label="صفحه اصلی"
->
-
-
-<span class="brand-mark">
-
-
-<img
-src="favicon.svg"
-alt="لوگو چادردوزی جزیره J.A.T"
-width="45"
-height="45"
-/>
-
-
-</span>
-
-
-<span>
-چادردوزی جزیره J.A.T
-</span>
-
-
-</a>
-
-
-
-<p class="footer-slogan">
-
-برای هر مسیر، یک پناه مطمئن.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<nav 
-class="footer-menu"
-aria-label="لینک‌های فوتر"
->
-
-
-<a href="products.html">
-محصولات
-</a>
-
-
-<span>|</span>
-
-
-<a href="shop.html">
-فروشگاه
-</a>
-
-
-<span>|</span>
-
-
-<a href="services.html">
-خدمات ما
-</a>
-
-
-<span>|</span>
-
-
-<a href="gallery.html">
-گالری
-</a>
-
-
-<span>|</span>
-
-
-<a href="about.html">
-درباره J.A.T
-</a>
-
-
-<span>|</span>
-
-
-<a href="blog.html">
-مجله سفر
-</a>
-
-
-<span>|</span>
-
-
-<a href="contact.html">
-ثبت سفارش
-</a>
-
-
-</nav>
-
-
-
-
-
-
-<div class="social-links">
-
-
-
-<a 
-href="https://wa.me/989118031241"
-target="_blank"
-rel="noopener noreferrer"
->
-
-واتساپ
-
-</a>
-
-
-
-
-<a 
-href="https://instagram.com/chadoor_"
-target="_blank"
-rel="noopener noreferrer"
->
-
-اینستاگرام
-
-</a>
-
-
-
-
-<a 
-href="https://t.me/GATTENT"
-target="_blank"
-rel="noopener noreferrer"
->
-
-تلگرام
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="copyright">
-
-
-© 2026 چادردوزی جزیره J.A.T
-
-
-<br>
-
-
-کلیه حقوق این وب‌سایت محفوظ است.
-
-
-</div>
-
-
-
-
-</footer>
-
-
-
-
-
-<!-- ================= SCRIPTS ================= -->
-
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-
-<script src="script.js"></script>
-
-
-
+<body class="about-page">
+
+  <!-- HEADER -->
+  <header class="site-header sticky-header">
+    <a href="index.html" class="brand">
+ <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+    <nav class="main-nav" aria-label="منوی اصلی">
+      <a href="products.html">محصولات</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="services.html">خدمات</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html" class="active">درباره ما</a>
+      <a href="blog.html">مجله سفر</a>
+      <a href="contact.html">ثبت سفارش</a>
+    </nav>
+    <div class="header-actions">
+      <a class="cart-link" href="cart.html" aria-label="سبد خرید">
+        🛒 <span id="cartCount">0</span>
+      </a>
+      <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+    </div>
+    <button class="menu-toggle" aria-label="باز کردن منو">☰</button>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Hero -->
+      <section class="about-hero">
+        <p class="eyebrow">درباره چادردوزی جزیره</p>
+        <h1>با دست ساخته می‌شود،<br><span>برای سال‌ها می‌ماند.</span></h1>
+        <p class="lead">
+          چادردوزی جزیره J.A.T در آمل، کارگاهی تخصصی برای تولید و تعمیر چادر مسافرتی، برزنتی و تجهیزات کمپینگ است.
+          ما به کیفیت دوخت، انتخاب درست پارچه و دوام واقعی محصول اهمیت می‌دهیم.
+        </p>
+        <a href="contact.html" class="btn btn-primary">مشاوره رایگان و ثبت سفارش</a>
+      </section>
+
+      <!-- Story -->
+      <section class="story-section">
+        <div class="story-content">
+          <h2>داستان ما از دل نیاز واقعی شروع شد</h2>
+          <p>
+            بسیاری از مسافران و طبیعت‌گردان بعد از چند بار استفاده، با پارگی چادر، خرابی زیپ، ضعف اسکلت یا نفوذ آب روبه‌رو می‌شوند.
+            این تجربه باعث شد تصمیم بگیریم کارگاهی داشته باشیم که هم چادر مقاوم تولید کند و هم بتواند چادرهای آسیب‌دیده را دوباره قابل استفاده کند.
+          </p>
+          <p>
+            امروز در کارگاه جاده هراز آمل، هر سفارش را با توجه به نوع استفاده مشتری طراحی و می‌دوزیم.
+            چه برای کمپینگ خانوادگی، چه برای باغ و حیاط، چه برای ماشین یا کامیون — هدف ما ساخت محصولی است که در شرایط واقعی شمال ایران دوام بیاورد.
+          </p>
+          <p>
+            تولید مستقیم یعنی کنترل کامل روی کیفیت. از انتخاب پارچه تا برش، دوخت و آماده‌سازی نهایی، همه مراحل در کارگاه خودمان انجام می‌شود.
+          </p>
+        </div>
+        <div class="story-image">
+          <img src="about-chadooor.jpg" 
+               alt="کارگاه چادردوزی جزیره J.A.T در آمل - تولید و تعمیر چادر مسافرتی" 
+               loading="lazy"
+               onerror="this.src='hero-chadoor.webp'">
+          <div class="story-badge">کارگاه آمل • جاده هراز</div>
+        </div>
+      </section>
+
+      <!-- Values -->
+      <section>
+        <div class="section-title">
+          <h2>چیزی که برای ما مهم است</h2>
+          <p>سه اصل ساده که هر روز در کارگاه رعایت می‌کنیم</p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">📍</div>
+            <h3>آشنا با شرایط شمال</h3>
+            <p>
+              کارگاه ما در آمل و جاده هراز قرار دارد. آشنایی با رطوبت، باران و شرایط واقعی سفر در شمال ایران، انتخاب پارچه و نوع دوخت را دقیق‌تر می‌کند.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">✂️</div>
+            <h3>تولید مستقیم و سفارشی</h3>
+            <p>
+              واسطه‌ای در کار نیست. هر چادر بر اساس نیاز شما (ابعاد، نوع استفاده و بودجه) طراحی و دوخته می‌شود. کنترل کیفیت از ابتدا تا انتها با خودمان است.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔧</div>
+            <h3>تعمیر تخصصی و صادقانه</h3>
+            <p>
+              همه چادرها نیاز به تعویض ندارند. بسیاری از آسیب‌ها قابل تعمیر اصولی هستند. ما با بررسی دقیق، بهترین و اقتصادی‌ترین راه را به شما پیشنهاد می‌دهیم.
+            </p>
+          </div>
+        </div>
+      </section>
+ <!-- Process -->
+      <section class="process-box">
+        <div class="section-title">
+          <h2>فرآیند کار ما چطور است؟</h2>
+          <p>از اولین تماس تا تحویل نهایی، مسیر مشخص و شفاف است</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-item">
+            <div class="process-num">۱</div>
+            <h4>مشاوره دقیق</h4>
+            <p>نیاز شما، نوع استفاده، تعداد نفرات و شرایط محیطی را بررسی می‌کنیم.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-num">۲</div>
+            <h4>انتخاب متریال</h4>
+            <p>پارچه، زیپ و یراق مناسب با توجه به بودجه و دوام مورد نیاز انتخاب می‌شود.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-num">۳</div>
+            <h4>برش و دوخت</h4>
+            <p>با دقت کارگاهی و استاندارد مشخص، محصول آماده و کنترل کیفیت می‌شود.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-num">۴</div>
+            <h4>تحویل و پشتیبانی</h4>
+            <p>ارسال به سراسر ایران همراه با راهنمایی نگهداری و پاسخگویی بعد از فروش.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section>
+        <div class="section-title">
+          <h2>چرا چادردوزی جزیره؟</h2>
+          <p>دلایلی که مشتریان به ما اعتماد می‌کنند</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="check">✓</div>
+            <div>
+              <h4>تولیدکننده واقعی هستیم</h4>
+              <p>نه فروشگاه واسطه. محصول در کارگاه خودمان دوخته می‌شود.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="check">✓</div>
+            <div>
+              <h4>امکان سفارش ابعاد دلخواه</h4>
+              <p>چادر و برزنت را دقیقاً مطابق نیاز و فضای شما می‌سازیم.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="check">✓</div>
+            <div>
+              <h4>تعمیر اصولی چادر</h4>
+              <p>قبل از خرید چادر جدید، امکان بازسازی چادر قبلی را بررسی می‌کنیم.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="check">✓</div>
+            <div>
+              <h4>ارسال به سراسر ایران</h4>
+              <p>از آمل به تمام شهرها ارسال داریم و پیگیری سفارش انجام می‌شود.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta">
+        <h2>آماده سفارش چادر بعدی‌تان هستید؟</h2>
+        <p>
+          برای مشاوره رایگان، استعلام قیمت یا ثبت سفارش سفارشی، کافی است با ما در ارتباط باشید.
+          تیم چادردوزی جزیره آماده پاسخگویی است.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/989118031241?text=سلام، درباره سفارش چادر مشاوره می‌خواهم" 
+             class="btn btn-whatsapp" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            مشاوره در واتساپ
+          </a>
+          <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <a href="index.html" class="brand">
+        <img src="favicon.svg" alt="لوگو" width="44" height="44">
+        <span>چادردوزی جزیره J.A.T</span>
+      </a>
+      <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+    </div>
+    <nav class="footer-menu" aria-label="لینک‌های فوتر">
+      <a href="products.html">محصولات</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="services.html">خدمات</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html">درباره ما</a>
+      <a href="blog.html">مجله سفر</a>
+      <a href="contact.html">ثبت سفارش</a>
+    </nav>
+    <div class="social-links">
+ <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+      <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+    </div>
+    <div class="copyright">
+      © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
+      کلیه حقوق این وب‌سایت محفوظ است.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // به‌روزرسانی عدد سبد خرید
+    (function () {
+      try {
+        const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+        const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
+        const el = document.getElementById("cartCount");
+        if (el) el.textContent = count;
+      } catch (e) {}
+    })();
+  </script>
 </body>
-
 </html>
