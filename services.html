@@ -1,41 +1,309 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>خدمات تعمیر چادر در آمل | چادردوزی جزیره J.A.T</title>
-
-  <meta name="description" content="تعمیر چادر مسافرتی و برزنتی در آمل. ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی چادر توسط چادردوزی جزیره.">
+  <meta name="description" content="تعمیر تخصصی چادر مسافرتی و برزنتی در آمل. ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل چادر توسط چادردوزی جزیره. کیفیت بالا و قیمت منصفانه.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chadooor.ir/services.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="خدمات تعمیر چادر در آمل | چادردوزی جزیره">
-  <meta property="og:description" content="تعمیر تخصصی چادر مسافرتی و برزنتی در آمل">
-  <meta property="og:url" content="https://chadooor.ir/services.html">
-  <meta property="og:image" content="https://chadooor.ir/hero-chadoor.webp">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="favicon.svg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
-</head>
 
+  <style>
+    :root {
+      --ink: #182622;
+      --muted: #66736f;
+      --cream: #f5f3ed;
+      --paper: #fffdf8;
+      --lime: #d5f263;
+      --coral: #f68165;
+      --teal: #235d56;
+      --line: #dedfd8;
+    }
+
+    body { background: var(--cream); }
+
+    /* Hero */
+    .services-hero {
+      padding: 90px 0 55px;
+      text-align: center;
+    }
+    .services-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .services-hero .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+    .services-hero h1 {
+      font-size: clamp(34px, 5.5vw, 52px);
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0 0 18px;
+      color: var(--ink);
+    }
+    .services-hero h1 span { color: var(--teal); }
+    .services-hero .lead {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 90px;
+    }
+    .service-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 36px 30px;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(24,38,34,0.09);
+      border-color: transparent;
+    }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      background: var(--lime);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .service-card h2 {
+      font-size: 21px;
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .service-card p {
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    /* Process */
+    .process-box {
+      background: var(--ink);
+      color: white;
+      border-radius: 26px;
+      padding: 60px 40px;
+      margin-bottom: 90px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .section-title h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+    .section-title p {
+      opacity: 0.8;
+      font-size: 16px;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .process-item { text-align: center; }
+    .process-num {
+      width: 48px;
+      height: 48px;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .process-item h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .process-item p {
+      font-size: 14.5px;
+      opacity: 0.85;
+      line-height: 1.7;
+      margin: 0;
+    }
+ /* Why Us */
+    .why-section {
+      margin-bottom: 90px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .why-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .why-check {
+      width: 28px;
+      height: 28px;
+      background: var(--teal);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-item h4 {
+      font-size: 16.5px;
+      font-weight: 700;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+    .why-item p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Notes */
+    .notes-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px 36px;
+      margin-bottom: 90px;
+    }
+    .notes-box h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 20px;
+      color: var(--ink);
+    }
+    .notes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .notes-list li {
+      position: relative;
+      padding-right: 22px;
+      margin-bottom: 12px;
+      font-size: 15.5px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .notes-list li::before {
+      content: "•";
+      position: absolute;
+      right: 0;
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      background: var(--ink);
+      color: white;
+      border-radius: 24px;
+      padding: 60px 40px;
+      margin-bottom: 60px;
+    }
+    .final-cta h2 {
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 800;
+      margin: 0 0 14px;
+    }
+    .final-cta p {
+      opacity: 0.85;
+      font-size: 16.5px;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-whatsapp {
+      background: #25d366 !important;
+      color: white !important;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57 !important;
+    }
+    .btn-outline-light {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.35);
+      color: white;
+    }
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--ink);
+      border-color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .process-box { padding: 45px 28px; }
+    }
+    @media (max-width: 560px) {
+      .process-grid { grid-template-columns: 1fr; }
+      .final-cta { padding: 45px 24px; }
+      .notes-box { padding: 30px 24px; }
+    }
+  </style>
+</head>
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
   <header class="site-header sticky-header">
     <a href="index.html" class="brand">
       <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
       <span>چادردوزی جزیره J.A.T</span>
     </a>
-
     <nav class="main-nav" aria-label="منوی اصلی">
       <a href="products.html">محصولات</a>
       <a href="shop.html">فروشگاه</a>
@@ -45,188 +313,177 @@
       <a href="blog.html">مجله سفر</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-
     <div class="header-actions">
+      <a class="cart-link" href="cart.html" aria-label="سبد خرید">
+        🛒 <span id="cartCount">0</span>
+      </a>
       <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
     </div>
-
     <button class="menu-toggle" aria-label="منو">☰</button>
   </header>
 
   <main>
-
-    <!-- ================= PAGE HERO ================= -->
-    <section class="page-hero">
-      <div class="container">
+    <div class="container">
+<!-- Hero -->
+      <section class="services-hero">
         <p class="eyebrow">خدمات تخصصی</p>
-        <h1>
-          چادرت آسیب دیده؟<br>
-          <span class="text-accent">دوباره آماده‌اش می‌کنیم</span>
-        </h1>
-        <p class="hero-desc">
-          تعمیر حرفه‌ای چادر مسافرتی و برزنتی در کارگاه آمل. 
-          ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل.
+        <h1>چادرت آسیب دیده؟<br><span>دوباره آماده‌اش می‌کنیم</span></h1>
+        <p class="lead">
+          تعمیر حرفه‌ای چادر مسافرتی و برزنتی در کارگاه آمل.
+          ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل با کیفیت بالا.
         </p>
-      </div>
-    </section>
+        <a href="https://wa.me/989118031241?text=سلام، برای تعمیر چادر مشاوره می‌خواهم"
+           class="btn btn-primary" target="_blank" rel="noopener">
+          درخواست تعمیر
+        </a>
+      </section>
 
-    <!-- ================= SERVICES GRID ================= -->
-    <section class="section services-main">
-      <div class="container">
+      <!-- Services -->
+      <section class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">🔧</div>
+          <h2>تعمیر چادر</h2>
+          <p>
+            بررسی کامل چادر و تعمیر بخش‌های آسیب‌دیده شامل بدنه، درزها، اسکلت و ساختار کلی.
+            هدف ما بازگرداندن چادر به حالت قابل اعتماد است.
+          </p>
+        </article>
 
-        <div class="services-grid-large">
+        <article class="service-card">
+          <div class="service-icon">🧵</div>
+          <h2>ترمیم پارچه</h2>
+          <p>
+            دوخت مجدد قسمت‌های پاره یا فرسوده با پارچه مقاوم و دوخت محکم.
+            نقاط ضعیف تقویت می‌شوند تا دوباره آسیب نبینند.
+          </p>
+        </article>
 
-          <article class="service-card-large">
-            <div class="service-icon">
-              <i data-lucide="wrench"></i>
-            </div>
-            <h2>تعمیر چادر</h2>
-            <p>
-              بررسی کامل چادر و تعمیر بخش‌های آسیب‌دیده 
-              شامل بدنه، درزها و ساختار کلی.
-            </p>
-          </article>
+        <article class="service-card">
+          <div class="service-icon">🔄</div>
+          <h2>تعویض زیپ و قطعات</h2>
+          <p>
+            تعویض یا تعمیر زیپ، فنر، قلاب، پایه و یراق‌آلات آسیب‌دیده.
+            قطعات با کیفیت مناسب جایگزین می‌شوند.
+          </p>
+        </article>
 
-          <article class="service-card-large">
-            <div class="service-icon">
-              <i data-lucide="scissors"></i>
-            </div>
-            <h2>ترمیم پارچه</h2>
-            <p>
-              دوخت مجدد قسمت‌های پاره یا فرسوده با 
-              پارچه مقاوم و دوخت محکم.
-            </p>
-          </article>
+        <article class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h2>بازسازی کامل</h2>
+          <p>
+            بازسازی چادرهای قدیمی و فرسوده برای استفاده دوباره و طولانی‌مدت.
+            در بسیاری از موارد تعمیر به‌صرفه‌تر از خرید چادر جدید است.
+          </p>
+        </article>
+      </section>
 
-          <article class="service-card-large">
-            <div class="service-icon">
-              <i data-lucide="refresh-cw"></i>
-            </div>
-            <h2>تعویض زیپ و قطعات</h2>
-            <p>
-              تعویض یا تعمیر زیپ، فنر، قلاب و 
-              یراق‌آلات آسیب‌دیده.
-            </p>
-          </article>
-
-          <article class="service-card-large">
-            <div class="service-icon">
-              <i data-lucide="shield-check"></i>
-            </div>
-            <h2>بازسازی کامل</h2>
-            <p>
-              بازسازی چادرهای قدیمی و فرسوده 
-              برای استفاده دوباره و طولانی‌مدت.
-            </p>
-          </article>
-
+      <!-- Process -->
+      <section class="process-box">
+        <div class="section-title">
+          <h2 style="color:white">فرآیند تعمیر چادر</h2>
+          <p>از تحویل تا دریافت دوباره، مسیر مشخص و شفاف است</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ================= PROCESS ================= -->
-    <section class="section process-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <p class="eyebrow">نحوه کار</p>
-          <h2>فرآیند تعمیر چادر<br><span class="text-accent">چطور انجام می‌شود؟</span></h2>
-        </div>
-
         <div class="process-grid">
-          <div class="process-step">
-            <span class="step-number">۰۱</span>
-            <h3>تحویل چادر</h3>
-            <p>چادر را به کارگاه آمل بیاورید یا از طریق ارسال تحویل دهید.</p>
+          <div class="process-item">
+            <div class="process-num">۱</div>
+            <h4>تحویل چادر</h4>
+            <p>چادر را به کارگاه آمل بیاورید یا از طریق ارسال برای ما بفرستید.</p>
           </div>
-
-          <div class="process-step">
-            <span class="step-number">۰۲</span>
-            <h3>بررسی و اعلام هزینه</h3>
-            <p>وضعیت چادر بررسی و هزینه تعمیر به شما اعلام می‌شود.</p>
+          <div class="process-item">
+            <div class="process-num">۲</div>
+            <h4>بررسی و اعلام هزینه</h4>
+            <p>وضعیت چادر بررسی می‌شود و هزینه تعمیر به صورت شفاف اعلام می‌گردد.</p>
           </div>
-
-          <div class="process-step">
-            <span class="step-number">۰۳</span>
-            <h3>انجام تعمیر</h3>
-            <p>تعمیرات با دقت و کیفیت بالا انجام می‌شود.</p>
+          <div class="process-item">
+            <div class="process-num">۳</div>
+            <h4>انجام تعمیر</h4>
+            <p>تعمیرات با دقت و کیفیت کارگاهی انجام می‌شود.</p>
           </div>
-
-          <div class="process-step">
-            <span class="step-number">۰۴</span>
-            <h3>تحویل نهایی</h3>
-            <p>چادر آماده و سالم به شما تحویل داده می‌شود.</p>
+          <div class="process-item">
+            <div class="process-num">۴</div>
+            <h4>تحویل نهایی</h4>
+            <p>چادر آماده و سالم به شما تحویل یا ارسال می‌شود.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================= WHY US ================= -->
-    <section class="section why-section">
-      <div class="container">
+      <!-- Why Us -->
+      <section class="why-section">
+        <div class="section-title">
+          <h2>چرا تعمیر در چادردوزی جزیره؟</h2>
+          <p>تفاوت ما در کیفیت و صداقت کار است</p>
+        </div>
         <div class="why-grid">
-          <div class="why-content">
-            <p class="eyebrow">چرا چادردوزی جزیره؟</p>
-            <h2>تعمیر با کیفیت،<br><span class="text-accent">نه تعمیر موقتی</span></h2>
-            <p>
-              ما فقط وصله نمی‌کنیم. هدف‌مان این است که چادر شما 
-              بعد از تعمیر، دوباره قابل اعتماد و آماده سفر باشد.
-            </p>
-            <ul class="why-list">
-              <li>استفاده از پارچه و یراق باکیفیت</li>
-              <li>دوخت مقاوم و اصولی</li>
-              <li>تجربه تخصصی در چادرهای مسافرتی و برزنتی</li>
-              <li>قیمت منصفانه و شفاف</li>
-            </ul>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>تعمیر اصولی، نه موقتی</h4>
+              <p>هدف ما این است که چادر بعد از تعمیر دوباره قابل اعتماد باشد، نه فقط ظاهر درست شود.</p>
+            </div>
           </div>
-
-          <div class="why-box">
-            <h3>آماده تعمیر چادرت هستیم</h3>
-            <p>برای هماهنگی و اعلام هزینه با ما در ارتباط باش.</p>
-            <a href="https://wa.me/989118031241?text=سلام، برای تعمیر چادر مشاوره می‌خواهم." 
-               class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-              پیام در واتساپ
-            </a>
-            <div class="contact-phones">
-              <a href="tel:+989118031241">۰۹۱۱ ۸۰۳ ۱۲۴۱</a>
-              <a href="tel:+989158017134">۰۹۱۵ ۸۰۱ ۷۱۳۴</a>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>تجربه تخصصی</h4>
+              <p>تخصص ما روی چادرهای مسافرتی و برزنتی است و با آسیب‌های رایج این نوع چادرها آشنا هستیم.</p>
+            </div>
+          </div>
+          <div class="why-item">
+ <div class="why-check">✓</div>
+            <div>
+              <h4>متریال مناسب</h4>
+              <p>از پارچه و یراق باکیفیت استفاده می‌کنیم تا تعمیر دوام واقعی داشته باشد.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>قیمت شفاف و منصفانه</h4>
+              <p>قبل از شروع کار، هزینه را اعلام می‌کنیم. هیچ هزینه پنهانی وجود ندارد.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================= CTA ================= -->
-    <section class="cta-final">
-      <div class="container">
-        <h2>چادرت رو دوباره به سفر برگردون</h2>
-        <p>تعمیر تخصصی در آمل • ارسال به سراسر ایران</p>
+      <!-- Notes -->
+      <section class="notes-box">
+        <h3>نکات مهم قبل از درخواست تعمیر</h3>
+        <ul class="notes-list">
+          <li>اگر پارگی خیلی وسیع یا اسکلت کاملاً شکسته باشد، ممکن است تعمیر به‌صرفه نباشد و خرید چادر جدید پیشنهاد شود.</li>
+          <li>برای اعلام دقیق هزینه، بهتر است عکس از قسمت‌های آسیب‌دیده ارسال کنید یا چادر را حضوری بیاورید.</li>
+          <li>زمان تعمیر بسته به نوع آسیب و شلوغی کارگاه متفاوت است (معمولاً چند روز کاری).</li>
+          <li>امکان ارسال چادر از شهرستان‌ها وجود دارد (هماهنگی قبلی لازم است).</li>
+        </ul>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta">
+        <h2>آماده تعمیر چادرت هستیم</h2>
+        <p>
+          برای هماهنگی، ارسال عکس آسیب‌دیدگی یا اعلام هزینه، 
+          کافی است با ما در واتساپ در ارتباط باشید.
+        </p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary btn-lg">ثبت درخواست تعمیر</a>
-          <a href="https://wa.me/989118031241" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-            مشاوره رایگان
+          <a href="https://wa.me/989118031241?text=سلام، برای تعمیر چادر مشاوره می‌خواهم"
+             class="btn btn-whatsapp" target="_blank" rel="noopener">
+            پیام در واتساپ
           </a>
+          <a href="contact.html" class="btn btn-outline-light">فرم تماس</a>
         </div>
-      </div>
-    </section>
+      </section>
 
+    </div>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <a href="index.html" class="brand">
-        <img src="favicon.svg" alt="لوگو چادردوزی جزیره" width="45" height="45">
+        <img src="favicon.svg" alt="لوگو" width="44" height="44">
         <span>چادردوزی جزیره J.A.T</span>
       </a>
       <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
     </div>
-
-    <div class="social-links">
-      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
-      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-      <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
-    </div>
-
     <nav class="footer-menu">
       <a href="products.html">محصولات</a>
       <a href="shop.html">فروشگاه</a>
@@ -235,14 +492,27 @@
       <a href="about.html">درباره ما</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-
+    <div class="social-links">
+      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+      <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+    </div>
     <div class="copyright">
       © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
       کلیه حقوق این وب‌سایت محفوظ است.
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      try {
+        const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+        const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
+        const el = document.getElementById("cartCount");
+        if (el) el.textContent = count;
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
