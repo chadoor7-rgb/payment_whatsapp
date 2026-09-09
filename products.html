@@ -1,75 +1,333 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>محصولات چادر مسافرتی و برزنتی | چادردوزی جزیره آمل</title>
-
-  <meta name="description" content="خرید و سفارش چادر مسافرتی، چادر برزنتی و پشه‌بند سفارشی در آمل از چادردوزی جزیره J.A.T.">
-  <meta name="keywords" content="چادر مسافرتی آمل, چادر برزنتی آمل, پشه‌بند سفارشی, تجهیزات کمپینگ آمل, خرید چادر در آمل">
-
+  <meta name="description" content="خرید و سفارش چادر مسافرتی، چادر برزنتی، چادر کودک، پشه‌بند و خدمات تعمیر از چادردوزی جزیره J.A.T در آمل. تولید مستقیم، دوخت سفارشی و ارسال به سراسر ایران.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chadooor.ir/products.html">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="محصولات چادر مسافرتی و برزنتی | چادردوزی جزیره آمل">
-  <meta property="og:description" content="چادرهای مسافرتی، برزنتی و پشه‌بند سفارشی برای سفر و کمپینگ در آمل.">
-  <meta property="og:url" content="https://chadooor.ir/products.html">
-  <meta property="og:image" content="https://chadooor.ir/chatr.webp">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="favicon.svg">
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "محصولات چادردوزی جزیره J.A.T",
-    "description": "چادر مسافرتی، چادر برزنتی و پشه‌بند سفارشی در آمل",
-    "url": "https://chadooor.ir/products.html",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "چادر مسافرتی",
-        "url": "https://chadooor.ir/travel-tent.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "چادر برزنتی",
-        "url": "https://chadooor.ir/tarpaulin.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "پشه‌بند",
-        "url": "https://chadooor.ir/mosquito-net.html"
-      }
-    ]
-  }
-  </script>
+  <style>
+    :root {
+      --ink: #182622;
+      --muted: #66736f;
+      --cream: #f5f3ed;
+      --paper: #fffdf8;
+      --lime: #d5f263;
+      --coral: #f68165;
+      --teal: #235d56;
+      --line: #dedfd8;
+    }
+
+    body { background: var(--cream); }
+
+    /* Hero */
+    .products-hero {
+      padding: 90px 0 55px;
+      text-align: center;
+    }
+    .products-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .products-hero .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+    .products-hero h1 {
+      font-size: clamp(34px, 5.5vw, 54px);
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0 0 18px;
+      color: var(--ink);
+    }
+    .products-hero h1 span { color: var(--teal); }
+    .products-hero .lead {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-bottom: 90px;
+    }
+    .product-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 50px rgba(24,38,34,0.1);
+      border-color: transparent;
+    }
+    .product-image {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .product-card:hover .product-image img {
+      transform: scale(1.06);
+    }
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--coral);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+    }
+    .product-badge.teal { background: var(--teal); }
+    .product-badge.lime {
+      background: var(--lime);
+      color: var(--ink);
+    }
+    .product-content {
+      padding: 28px 26px 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .product-category {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .product-content h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .product-content > p {
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.85;
+      margin: 0 0 16px;
+      flex-grow: 1;
+    }
+    .product-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+    }
+    .product-features li {
+      position: relative;
+ padding-right: 18px;
+      margin-bottom: 7px;
+      font-size: 14.5px;
+      color: var(--ink);
+    }
+    .product-features li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .product-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .product-actions .btn {
+      flex: 1;
+      min-width: 130px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Benefits */
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+    .section-title h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 90px;
+    }
+    .benefit-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(24,38,34,0.07);
+    }
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--lime);
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin: 0 auto 16px;
+    }
+    .benefit-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+    .benefit-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Process */
+    .process-box {
+      background: var(--ink);
+      color: white;
+      border-radius: 26px;
+      padding: 60px 40px;
+      margin-bottom: 90px;
+    }
+    .process-box .section-title h2 { color: white; }
+    .process-box .section-title p { color: rgba(255,255,255,0.75); }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 45px;
+    }
+    .process-item { text-align: center; }
+    .process-num {
+      width: 46px;
+      height: 46px;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 17px;
+      margin-bottom: 14px;
+    }
+    .process-item h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .process-item p {
+      font-size: 14px;
+      opacity: 0.85;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 55px 40px;
+      margin-bottom: 60px;
+    }
+    .final-cta h2 {
+      font-size: clamp(24px, 3.5vw, 30px);
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .final-cta p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 26px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-whatsapp {
+      background: #25d366 !important;
+      color: white !important;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57 !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-box { padding: 45px 28px; }
+    }
+    @media (max-width: 560px) {
+      .benefits-grid,
+      .process-grid { grid-template-columns: 1fr; }
+      .product-actions { flex-direction: column; }
+      .final-cta { padding: 40px 22px; }
+    }
+  </style>
 </head>
-
 <body>
-
-  <!-- ================= HEADER ================= -->
+ <!-- HEADER -->
   <header class="site-header sticky-header">
     <a href="index.html" class="brand">
       <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
       <span>چادردوزی جزیره J.A.T</span>
     </a>
-
     <nav class="main-nav" aria-label="منوی اصلی">
       <a href="products.html" class="active">محصولات</a>
       <a href="shop.html">فروشگاه</a>
@@ -79,153 +337,223 @@
       <a href="blog.html">مجله سفر</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-
     <div class="header-actions">
-      <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
+      <a class="cart-link" href="cart.html" aria-label="سبد خرید">
+        🛒 <span id="cartCount">0</span>
+      </a>
       <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
     </div>
-
     <button class="menu-toggle" aria-label="منو">☰</button>
   </header>
 
   <main>
+    <div class="container">
 
-    <!-- ================= PAGE HERO ================= -->
-    <section class="page-hero">
-      <div class="container">
+      <!-- Hero -->
+      <section class="products-hero">
         <p class="eyebrow">مجموعه محصولات</p>
-        <h1>
-          برای هر مسیر،<br>
-          <span class="text-accent">یک انتخاب مطمئن</span>
-        </h1>
-        <p class="hero-desc">
-          محصولات چادردوزی جزیره برای سفر، کمپینگ و استفاده‌های حرفه‌ای 
-          با دقت طراحی و دوخته می‌شوند.
+        <h1>برای هر مسیر،<br><span>یک انتخاب مطمئن</span></h1>
+        <p class="lead">
+          چادر مسافرتی، برزنتی، چادر کودک و پشه‌بند — همه با دوخت دقیق و متریال مناسب شرایط واقعی سفر و استفاده طولانی‌مدت در شمال ایران.
         </p>
-      </div>
-    </section>
+        <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه و قیمت‌ها</a>
+      </section>
 
-    <!-- ================= PRODUCTS ================= -->
-    <section class="section products-section">
-      <div class="container">
+      <!-- Products -->
+      <section class="products-grid">
 
-        <div class="products-grid">
+        <!-- چادر مسافرتی -->
+        <article class="product-card">
+          <div class="product-image">
+            <img src="chatr.webp" alt="چادر مسافرتی چادردوزی جزیره" loading="eager"
+                 onerror="this.src='hero-chadoor.webp'">
+            <span class="product-badge">محبوب‌ترین</span>
+          </div>
+          <div class="product-content">
+            <span class="product-category">سفر و کمپینگ</span>
+            <h2>چادر مسافرتی</h2>
+            <p>
+              چادرهای مقاوم و جادار برای کمپینگ، سفرهای خانوادگی و طبیعت‌گردی. طراحی‌شده برای استفاده واقعی در شرایط مختلف آب‌وهوایی.
+            </p>
+            <ul class="product-features">
+              <li>ظرفیت‌های مختلف از ۴ تا ۱۲ نفره و بیشتر</li>
+              <li>دوخت مقاوم و پارچه مناسب</li>
+              <li>امکان سفارش ابعاد کاملاً سفارشی</li>
+            </ul>
+            <div class="product-actions">
+              <a href="shop.html" class="btn btn-primary">مشاهده در فروشگاه</a>
+              <a href="https://wa.me/989118031241?text=سلام، درباره چادر مسافرتی سوال دارم"
+                 class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>
+            </div>
+          </div>
+        </article>
 
-          <!-- چادر مسافرتی -->
-          <article class="product-card product-card-large">
-            <div class="product-image">
-              <img src="chatr.webp" 
-                   alt="چادر مسافرتی چادردوزی جزیره" 
-                   width="800" height="600"
-                   loading="eager"
-                   decoding="async"
-                   onerror="this.src='hero-chadoor.webp'">
-              <span class="product-badge">محبوب</span>
+        <!-- چادر برزنتی -->
+        <article class="product-card">
+          <div class="product-image">
+            <img src="tghr.jpg" alt="چادر برزنتی چادردوزی جزیره" loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+            <span class="product-badge teal">مقاوم</span>
+          </div>
+          <div class="product-content">
+            <span class="product-category">استفاده طولانی‌مدت</span>
+            <h2>چادر برزنتی</h2>
+            <p>
+              راه‌حل محکم برای باغ، حیاط، پروژه‌ها و استفاده‌های طولانی. برزنت ضخیم با دوخت حرفه‌ای و دوام بالا.
+            </p>
+            <ul class="product-features">
+              <li>پارچه برزنت مقاوم در برابر آب و آفتاب</li>
+              <li>مناسب سایبان و فضای باز</li>
+              <li>تولید در ابعاد دلخواه شما</li>
+            </ul>
+            <div class="product-actions">
+              <a href="shop.html" class="btn btn-primary">مشاهده در فروشگاه</a>
+              <a href="https://wa.me/989118031241?text=سلام، درباره چادر برزنتی سوال دارم"
+                 class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>
             </div>
-            <div class="product-content">
-              <span class="product-tag">سفر و کمپینگ</span>
-              <h2>چادر مسافرتی</h2>
-              <p>
-                چادرهای کاربردی و مقاوم برای کمپ، سفر جاده‌ای 
-                و دورهمی‌های فضای باز.
-              </p>
-              <div class="product-actions">
-                <a href="travel-tent.html" class="btn btn-primary">مشاهده مشخصات</a>
-                <a href="shop.html" class="btn btn-outline-dark">خرید از فروشگاه</a>
-              </div>
+          </div>
+        </article>
+ <!-- چادر کودک -->
+        <article class="product-card">
+          <div class="product-image">
+            <img src="tent-kids-sag.jpg" alt="چادر کودک چادردوزی جزیره" loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+            <span class="product-badge lime">کودک</span>
+          </div>
+          <div class="product-content">
+            <span class="product-category">بازی و سرگرمی</span>
+            <h2>چادر کودک</h2>
+            <p>
+              چادرهای رنگی و جذاب برای بازی کودکان در منزل و فضای باز. ابعاد مناسب و طراحی شاد برای بچه‌ها.
+            </p>
+            <ul class="product-features">
+              <li>ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر</li>
+              <li>طرح‌های متنوع دخترانه و پسرانه</li>
+              <li>سبک، ایمن و قابل حمل</li>
+            </ul>
+            <div class="product-actions">
+              <a href="shop.html" class="btn btn-primary">مشاهده در فروشگاه</a>
+              <a href="https://wa.me/989118031241?text=سلام، درباره چادر کودک سوال دارم"
+                 class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- چادر برزنتی -->
-          <article class="product-card">
-            <div class="product-image">
-              <img src="KHIME.jpg" 
-                   alt="چادر برزنتی چادردوزی جزیره" 
-                   width="600" height="450"
-                   loading="lazy"
-                   decoding="async"
-                   onerror="this.src='hero-chadoor.webp'">
+        <!-- پشه‌بند -->
+        <article class="product-card">
+          <div class="product-image">
+            <img src="pasheband.jpg" alt="پشه‌بند سفارشی چادردوزی جزیره" loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+          </div>
+          <div class="product-content">
+            <span class="product-category">راحتی در فضای باز</span>
+            <h2>پشه‌بند</h2>
+            <p>
+              پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و اندازه‌های متنوع برای خواب راحت بدون نگرانی از حشرات.
+            </p>
+            <ul class="product-features">
+              <li>دوخت دقیق و مقاوم</li>
+              <li>امکان سفارش سایز دلخواه</li>
+              <li>مناسب چادر و محیط‌های باز</li>
+            </ul>
+            <div class="product-actions">
+              <a href="shop.html" class="btn btn-primary">مشاهده در فروشگاه</a>
+              <a href="https://wa.me/989118031241?text=سلام، درباره پشه‌بند سوال دارم"
+                 class="btn btn-outline-dark" target="_blank" rel="noopener">مشاوره</a>
             </div>
-            <div class="product-content">
-              <span class="product-tag">مقاوم و کاربردی</span>
-              <h2>چادر برزنتی</h2>
-              <p>
-                راه‌حلی محکم برای پروژه‌ها، سایه‌بان و 
-                استفاده‌های طولانی‌مدت.
-              </p>
-              <div class="product-actions">
-                <a href="tarpaulin.html" class="btn btn-outline-dark">مشاهده مشخصات</a>
-                <a href="shop.html" class="btn btn-primary">خرید از فروشگاه</a>
-              </div>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- پشه‌بند -->
-          <article class="product-card">
-            <div class="product-image">
-              <img src="pasheband.jpg" 
-                   alt="پشه‌بند سفارشی چادردوزی جزیره" 
-                   width="600" height="450"
-                   loading="lazy"
-                   decoding="async"
-                   onerror="this.src='hero-chadoor.webp'">
-            </div>
-            <div class="product-content">
-              <span class="product-tag">سبک و راحت</span>
-              <h2>پشه‌بند</h2>
-              <p>
-                دوخت تمیز و اندازه‌های متنوع برای 
-                خواب راحت در فضای باز.
-              </p>
-              <div class="product-actions">
-                <a href="mosquito-net.html" class="btn btn-outline-dark">مشاهده مشخصات</a>
-                <a href="shop.html" class="btn btn-primary">خرید از فروشگاه</a>
-              </div>
-            </div>
-          </article>
+      </section>
 
+      <!-- Benefits -->
+      <section>
+        <div class="section-title">
+          <h2>چرا محصولات چادردوزی جزیره؟</h2>
+          <p>تفاوت ما در جزئیات و دقت کار است</p>
         </div>
-      </div>
-    </section>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">✂️</div>
+            <h3>تولید مستقیم</h3>
+            <p>از انتخاب پارچه تا دوخت نهایی در کارگاه خودمان انجام می‌شود.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">📏</div>
+            <h3>سفارشی‌سازی</h3>
+            <p>ابعاد و مشخصات را دقیقاً مطابق نیاز شما می‌سازیم.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h3>دوام واقعی</h3>
+            <p>طراحی‌شده برای استفاده طولانی در شرایط واقعی شمال ایران.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🚚</div>
+            <h3>ارسال سراسر ایران</h3>
+            <p>از آمل به تمام شهرها ارسال و پیگیری می‌شود.</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- ================= CTA گالری ================= -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <p class="eyebrow light">نمونه‌کارها</p>
-          <h2>
-            کارهای انجام‌شده را<br>
-            <span>در گالری ببینید</span>
-          </h2>
-          <p>
-            تصاویر واقعی محصولات، چادرها و نمونه‌کارهای 
-            چادردوزی جزیره را مشاهده کنید.
-          </p>
-          <a href="gallery.html" class="btn btn-primary btn-lg">
-            مشاهده گالری
+      <!-- Process -->
+      <section class="process-box">
+        <div class="section-title">
+          <h2>چطور سفارش بدهید؟</h2>
+          <p>مسیر ساده از مشاوره تا تحویل</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-item">
+            <div class="process-num">۱</div>
+            <h4>مشاوره</h4>
+            <p>نیاز و بودجه خود را بگویید تا بهترین گزینه پیشنهاد شود.</p>
+          </div>
+ <div class="process-item">
+            <div class="process-num">۲</div>
+            <h4>تأیید مشخصات</h4>
+            <p>ابعاد، نوع پارچه و جزئیات نهایی مشخص می‌شود.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-num">۳</div>
+            <h4>تولید و دوخت</h4>
+            <p>سفارش شما با دقت در کارگاه دوخته و کنترل کیفیت می‌شود.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-num">۴</div>
+            <h4>ارسال</h4>
+            <p>محصول آماده و به آدرس شما در سراسر ایران ارسال می‌گردد.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta">
+        <h2>محصول مورد نظرتان را پیدا نکردید؟</h2>
+        <p>
+          بسیاری از سفارش‌ها به صورت کاملاً سفارشی دوخته می‌شوند.
+          برای مشاوره رایگان و استعلام قیمت با ما در ارتباط باشید.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/989118031241?text=سلام، می‌خواهم درباره محصولات مشاوره بگیرم"
+             class="btn btn-whatsapp" target="_blank" rel="noopener">
+            مشاوره در واتساپ
           </a>
+          <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
         </div>
-      </div>
-    </section>
+      </section>
 
+    </div>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <a href="index.html" class="brand">
-        <img src="favicon.svg" alt="لوگو چادردوزی جزیره" width="45" height="45">
+        <img src="favicon.svg" alt="لوگو" width="44" height="44">
         <span>چادردوزی جزیره J.A.T</span>
       </a>
       <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
     </div>
-
-    <div class="social-links">
-      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
-      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-      <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
-    </div>
-
     <nav class="footer-menu">
       <a href="products.html">محصولات</a>
       <a href="shop.html">فروشگاه</a>
@@ -234,26 +562,27 @@
       <a href="about.html">درباره ما</a>
       <a href="contact.html">ثبت سفارش</a>
     </nav>
-
+    <div class="social-links">
+      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+      <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+    </div>
     <div class="copyright">
       © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
       کلیه حقوق این وب‌سایت محفوظ است.
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
-
+  <script src="script.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    (function () {
       try {
         const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
         const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
         const el = document.getElementById("cartCount");
         if (el) el.textContent = count;
-      } catch(e) {}
-    });
+      } catch (e) {}
+    })();
   </script>
-
 </body>
 </html>
