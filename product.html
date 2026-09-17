@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>جزئیات محصول | چادردوزی جزیره J.A.T</title>
   <meta name="description" content="مشاهده جزئیات و سفارش چادر مسافرتی و برزنتی از تولیدکننده در آمل">
-  <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -26,7 +25,7 @@
 
     .product-detail {
       max-width: 1100px;
-      margin: 50px auto 80px;
+      margin: 40px auto 80px;
       padding: 0 20px;
     }
 
@@ -37,7 +36,6 @@
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
     }
 
     .product-image-box {
@@ -45,19 +43,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 420px;
+      min-height: 450px;
       padding: 30px;
     }
 
     .product-image-box img {
       max-width: 100%;
-      max-height: 480px;
+      max-height: 500px;
       object-fit: contain;
       border-radius: 12px;
     }
 
     .product-info-box {
-      padding: 45px 40px;
+      padding: 40px 36px;
       display: flex;
       flex-direction: column;
     }
@@ -70,15 +68,15 @@
       font-weight: 600;
       padding: 5px 14px;
       border-radius: 50px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       width: fit-content;
     }
 
     .product-info-box h1 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: var(--ink);
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       line-height: 1.4;
     }
 
@@ -86,7 +84,7 @@
       font-size: 26px;
       font-weight: 800;
       color: #c62828;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .product-price.contact {
@@ -96,25 +94,98 @@
 
     .product-desc {
       color: var(--muted);
-      font-size: 16px;
+      font-size: 15.5px;
       line-height: 1.9;
-      margin-bottom: 30px;
-      flex-grow: 1;
+      margin-bottom: 25px;
+    }
+
+    .features-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+
+    .features-list li {
+      position: relative;
+      padding-right: 22px;
+      margin-bottom: 8px;
+      font-size: 14.5px;
+      color: var(--ink);
+    }
+
+    .features-list li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--teal);
+      font-weight: 700;
     }
 
     .product-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin-top: auto;
     }
 
     .btn-whatsapp {
       background: #25d366 !important;
       color: white !important;
-      border: none;
     }
     .btn-whatsapp:hover {
       background: #1ebe57 !important;
+    }
+
+    /* مشخصات فنی */
+    .specs-section {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .specs-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 35px 30px;
+    }
+
+    .specs-box h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table th,
+    .specs-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+      font-size: 15px;
+    }
+
+    .specs-table th {
+      width: 40%;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .specs-table td {
+      color: var(--ink);
+      font-weight: 500;
     }
 
     .loading, .error-box {
@@ -130,10 +201,10 @@
         grid-template-columns: 1fr;
       }
       .product-info-box {
-        padding: 30px 24px;
+        padding: 28px 22px;
       }
       .product-info-box h1 {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
   </style>
@@ -168,6 +239,16 @@
     <div class="product-detail">
       <div id="content">
         <div class="loading">در حال بارگذاری محصول...</div>
+      </div>
+    </div>
+
+    <!-- بخش مشخصات (فقط وقتی محصول لود شد نمایش داده می‌شود) -->
+    <div id="specs-section" class="specs-section" style="display:none;">
+      <div class="specs-box">
+        <h2>مشخصات فنی</h2>
+        <table class="specs-table" id="specs-table">
+          <!-- با جاوااسکریپت پر می‌شود -->
+        </table>
       </div>
     </div>
   </main>
@@ -216,6 +297,8 @@
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'));
     const contentDiv = document.getElementById('content');
+    const specsSection = document.getElementById('specs-section');
+    const specsTable = document.getElementById('specs-table');
 
     if (!productId) {
       contentDiv.innerHTML = `
@@ -226,10 +309,7 @@
         </div>`;
     } else {
       fetch('products.json')
-        .then(res => {
-          if (!res.ok) throw new Error('خطا');
-          return res.json();
-        })
+        .then(res => res.json())
         .then(products => {
           const product = products.find(p => p.id === productId);
 
@@ -243,12 +323,21 @@
             return;
           }
 
-          let priceHtml = '';
-          if (product.price && product.price > 0) {
-            priceHtml = `<div class="product-price">${product.price.toLocaleString('fa-IR')} تومان</div>`;
-          } else {
-            priceHtml = `<div class="product-price contact">برای اطلاع از قیمت تماس بگیرید</div>`;
-          }
+          // قیمت
+          let priceHtml = product.price > 0
+            ? `<div class="product-price">${product.price.toLocaleString('fa-IR')} تومان</div>`
+            : `<div class="product-price contact">برای اطلاع از قیمت تماس بگیرید</div>`;
+
+          // ویژگی‌های پیش‌فرض (می‌توانید بعداً از json بخوانید)
+          const defaultFeatures = [
+            "طراحی دو جداره با پارچه مقاوم",
+            "اسکلت فلزی مستحکم",
+            "تهویه مناسب با پنجره‌های توری‌دار",
+            "کف ضدآب",
+            "مناسب استفاده در تمام فصول"
+          ];
+
+          let featuresHtml = defaultFeatures.map(f => `<li>${f}</li>`).join('');
 
           const whatsappText = encodeURIComponent(`سلام، درباره محصول «${product.name}» اطلاعات و قیمت می‌خواهم.`);
           const whatsappLink = `https://wa.me/989118031241?text=${whatsappText}`;
@@ -256,14 +345,19 @@
           contentDiv.innerHTML = `
             <div class="product-wrapper">
               <div class="product-image-box">
-                <img src="${product.image}" alt="${product.name}"
-                     onerror="this.src='hero-chadoor.webp'">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='hero-chadoor.webp'">
               </div>
               <div class="product-info-box">
                 <span class="product-category">${product.category || 'عمومی'}</span>
                 <h1>${product.name}</h1>
                 ${priceHtml}
                 <p class="product-desc">${product.description || 'توضیحات موجود نیست.'}</p>
+                
+                <div class="features-title">ویژگی‌های کلیدی</div>
+                <ul class="features-list">
+                  ${featuresHtml}
+                </ul>
+
                 <div class="product-actions">
                   <a href="${whatsappLink}" class="btn btn-whatsapp" target="_blank" rel="noopener">
                     سفارش از طریق واتساپ
@@ -273,6 +367,21 @@
               </div>
             </div>
           `;
+
+          // جدول مشخصات نمونه (برای چادر ۸ نفره)
+          if (product.id === 22 || product.name.includes('۸ نفره')) {
+            specsTable.innerHTML = `
+              <tr><th>گنجایش</th><td>۸ نفره</td></tr>
+              <tr><th>ابعاد بازشده</th><td>۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر</td></tr>
+              <tr><th>ارتفاع داخلی</th><td>۲۱۰ سانتی‌متر</td></tr>
+              <tr><th>تعداد لایه</th><td>دو جداره</td></tr>
+              <tr><th>جنس پارچه</th><td>آکسفورد ضدآب</td></tr>
+              <tr><th>جنس کف</th><td>پلی‌استر ضدآب</td></tr>
+              <tr><th>قطر ستون</th><td>۰٫۹ سانتی‌متر</td></tr>
+              <tr><th>وزن تقریبی</th><td>۱۳ کیلوگرم</td></tr>
+            `;
+            specsSection.style.display = 'block';
+          }
 
           document.title = product.name + ' | چادردوزی جزیره J.A.T';
         })
