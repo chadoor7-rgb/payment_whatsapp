@@ -1,589 +1,635 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مشاهده مشخصات، تصاویر و اطلاعات محصول چادردوزی جزیره J.A.T">
+  <meta name="theme-color" content="#155e55">
   <title>جزئیات محصول | چادردوزی جزیره J.A.T</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Tahoma, 'Segoe UI', sans-serif;
-      background: #f7f5f0;
-      color: #1a1a1a;
-      line-height: 1.7;
+    :root{
+      --ink:#17231f;--muted:#68736f;--paper:#fff;--soft:#f6f7f5;
+      --line:#e5e8e5;--green:#155e55;--green2:#0f4c45;--lime:#d5f263;
+      --red:#d32f2f;--shadow:0 14px 45px rgba(21,40,34,.08)
     }
-    a { text-decoration: none; color: inherit; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    *{box-sizing:border-box}
+    body{background:#f3f5f2;color:var(--ink)}
+    .product-page{max-width:1240px;margin:24px auto 80px;padding:0 18px}
+    .breadcrumb{font-size:13px;color:var(--muted);margin:12px 0 18px}
+    .breadcrumb a{color:var(--green);text-decoration:none}
 
-    /* Header */
-    .top-header {
-      background: #1a3c34;
-      color: white;
-      padding: 12px 0;
-      font-size: 14px;
-    }
-    .top-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo { font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 8px; }
-
-    /* Breadcrumb */
-    .breadcrumb {
-      padding: 16px 0;
-      font-size: 13px;
-      color: #666;
-    }
-    .breadcrumb a { color: #1a3c34; }
-    .breadcrumb span { margin: 0 6px; color: #999; }
-
-    /* Product Main */
-    .product-main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      margin-bottom: 40px;
+    .product-main{
+      display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+      gap:0;background:var(--paper);border:1px solid var(--line);
+      border-radius:22px;overflow:hidden;box-shadow:var(--shadow)
     }
 
-    /* Gallery */
-    .gallery { position: relative; }
-    .main-image {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #eee;
-      display: block;
+    /* GALLERY */
+    .gallery-wrap{padding:22px;background:#fff;min-width:0}
+    .gallery-stage{
+      position:relative;background:#f5f6f4;border:1px solid var(--line);
+      border-radius:18px;height:510px;display:flex;align-items:center;justify-content:center;
+      overflow:hidden;cursor:zoom-in
     }
-    .thumbnails {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-      overflow-x: auto;
-      padding-bottom: 5px;
+    .gallery-stage img{width:100%;height:100%;object-fit:contain;padding:22px;transition:transform .25s ease}
+    .gallery-stage:hover img{transform:scale(1.025)}
+    .gallery-arrow{
+      position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+      width:42px;height:42px;border:0;border-radius:50%;background:#fff;
+      box-shadow:0 4px 16px rgba(0,0,0,.12);font-size:22px;cursor:pointer
     }
-    .thumb {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: 0.2s;
+    .gallery-prev{right:14px}.gallery-next{left:14px}
+    .gallery-count{
+      position:absolute;left:14px;top:14px;background:rgba(20,30,27,.78);
+      color:#fff;border-radius:30px;padding:7px 11px;font-size:12px;z-index:3
     }
-    .thumb.active, .thumb:hover { border-color: #1a3c34; }
+    .gallery-zoom{
+      position:absolute;right:14px;top:14px;background:#fff;border:1px solid var(--line);
+      border-radius:10px;padding:8px 10px;z-index:3;font-size:12px;color:var(--ink)
+    }
+    .thumbnails{display:flex;gap:10px;overflow-x:auto;padding:13px 2px 3px;scrollbar-width:thin}
+    .thumb{
+      flex:0 0 82px;height:70px;border:2px solid transparent;border-radius:12px;
+      overflow:hidden;background:#f4f5f3;cursor:pointer;padding:0
+    }
+    .thumb.active{border-color:var(--green)}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .gallery-note{font-size:12px;color:var(--muted);margin:9px 2px 0}
 
-    /* Product Info */
-    .product-info h1 {
-      font-size: 26px;
-      margin-bottom: 8px;
-      color: #1a1a1a;
+    /* SUMMARY */
+    .summary{padding:34px 34px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+    .category{display:inline-flex;width:max-content;background:#e7f3f0;color:var(--green);
+      border-radius:30px;padding:7px 13px;font-size:12px;font-weight:700;margin-bottom:15px}
+    .summary h1{font-size:29px;line-height:1.55;margin:0 0 10px;font-weight:800}
+    .product-code{font-size:12px;color:var(--muted);margin-bottom:18px}
+    .rating-row{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+    .stars{color:#f59e0b;letter-spacing:2px;font-size:17px}.rating-text{font-size:13px;color:var(--muted)}
+    .price-box{padding:22px 0 15px}
+    .price{font-size:30px;font-weight:800;color:var(--red)}
+    .contact-price{font-size:19px;color:var(--green);font-weight:800}
+    .price-sub{font-size:12px;color:var(--muted);margin-top:5px}
+    .quick-specs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:5px 0 20px}
+    .quick-spec{padding:12px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .quick-spec:nth-child(even){border-left:0}.quick-spec:nth-last-child(-n+2){border-bottom:0}
+    .quick-spec small{display:block;color:var(--muted);font-size:11px;margin-bottom:4px}.quick-spec strong{font-size:13px}
+    .order-box{background:#f6f8f6;border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:auto}
+    .order-title{font-weight:800;margin-bottom:6px}.order-text{font-size:13px;color:var(--muted);line-height:1.8}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+    .action{
+      display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;
+      min-height:48px;font-weight:800;font-size:13px;padding:0 12px
     }
-    .product-meta {
-      display: flex;
-      gap: 15px;
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .rating { color: #f5a623; font-size: 14px; }
-    .price {
-      font-size: 28px;
-      font-weight: bold;
-      color: #e74c3c;
-      margin: 18px 0;
-    }
-    .key-features {
-      background: #f8f9f7;
-      border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 20px;
-    }
-    .key-features h3 {
-      font-size: 15px;
-      margin-bottom: 10px;
-      color: #1a3c34;
-    }
-    .key-features ul { list-style: none; }
-    .key-features li {
-      font-size: 14px;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .key-features li::before {
-      content: "✓";
-      color: #1a3c34;
-      font-weight: bold;
-    }
+    .action-primary{background:var(--green);color:#fff}.action-primary:hover{background:var(--green2)}
+    .action-wa{background:#20b95a;color:#fff}.action-outline{border:1px solid var(--line);color:var(--ink);background:#fff}
 
-    /* Options */
-    .options { margin-bottom: 20px; }
-    .option-group { margin-bottom: 14px; }
-    .option-group label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    .color-options, .size-options {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .color-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 2px solid #ddd;
-      cursor: pointer;
-    }
-    .color-btn.active {
-      border-color: #1a3c34;
-      box-shadow: 0 0 0 2px white, 0 0 0 4px #1a3c34;
-    }
-    .size-btn {
-      padding: 8px 18px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: white;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.2s;
-    }
-    .size-btn.active, .size-btn:hover {
-      background: #1a3c34;
-      color: white;
-      border-color: #1a3c34;
-    }
- /* Buttons */
-    .action-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: 0.2s;
-    }
-    .btn-primary {
-      background: #1a3c34;
-      color: white;
-    }
-    .btn-primary:hover { background: #14302a; }
-    .btn-whatsapp {
-      background: #25d366;
-      color: white;
-    }
-    .btn-whatsapp:hover { background: #1ebe57; }
+    /* BELOW */
+    .tabs{position:sticky;top:64px;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
+      display:flex;gap:5px;border:1px solid var(--line);border-radius:15px;padding:5px;margin:22px 0}
+    .tab{border:0;background:transparent;padding:12px 18px;border-radius:10px;font-family:inherit;font-weight:700;color:var(--muted);cursor:pointer}
+    .tab:hover,.tab.active{background:#eaf3f0;color:var(--green)}
+    .section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:18px}
+    .section h2{font-size:21px;margin:0 0 17px}.section p{color:var(--muted);line-height:2;font-size:15px;margin:0}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:11px 30px;padding:0;margin:0;list-style:none}
+    .features li{padding-right:27px;position:relative;line-height:1.8;font-size:14px}
+    .features li:before{content:"✓";position:absolute;right:0;top:0;color:var(--green);font-weight:900}
+    .specs-table{width:100%;border-collapse:collapse}
+    .specs-table tr{border-bottom:1px solid var(--line)}
+    .specs-table tr:last-child{border-bottom:0}
+    .specs-table th,.specs-table td{text-align:right;padding:13px 10px;font-size:14px}
+    .specs-table th{width:36%;background:#fafbfa;color:var(--muted);font-weight:600}
+    .specs-table td{font-weight:600}
+    .estimated{background:#fff8e8;border:1px solid #f3dfae;color:#8a6414;border-radius:12px;padding:12px 14px;margin-bottom:18px;font-size:13px;line-height:1.8}
+    .tips{margin:0;padding-right:20px}.tips li{color:var(--muted);line-height:1.9;margin-bottom:7px}
 
-    /* Details */
-    .product-details {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      margin-bottom: 40px;
-    }
-    .section-title {
-      font-size: 18px;
-      margin-bottom: 20px;
-      color: #1a3c34;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-    }
-    .specs-table td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-    }
-    .specs-table td:first-child {
-      width: 40%;
-      color: #666;
-      background: #fafafa;
-    }
-    .description {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.9;
-    }
+    /* LIGHTBOX */
+    .lightbox{position:fixed;inset:0;background:rgba(7,14,12,.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:25px}
+    .lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain;border-radius:12px}
+    .lightbox-close{position:absolute;top:18px;left:22px;background:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}
+    .lightbox-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;border-radius:50%;cursor:pointer;background:#fff;font-size:24px}
+    .lb-prev{right:20px}.lb-next{left:20px}
 
-    /* Related */
-    .related { margin-bottom: 60px; }
-    .related-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    .loading,.error-box{text-align:center;padding:110px 20px;color:var(--muted);font-size:17px}
+    .error-box{color:#b42318}
+    @media(max-width:980px){
+      .product-main{grid-template-columns:1fr}.summary{border-right:0;border-top:1px solid var(--line)}
+      .gallery-stage{height:460px}
     }
-    .related-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      transition: 0.2s;
-    }
-    .related-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .related-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-    .related-card .info { padding: 14px; }
-    .related-card h4 { font-size: 14px; margin-bottom: 6px; }
-    .related-card .price {
-      font-size: 15px;
-      color: #e74c3c;
-      margin: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .product-main {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 20px;
-      }
-      .main-image { height: 320px; }
-    }
-    @media (max-width: 600px) {
-      .main-image { height: 260px; }
-      .product-info h1 { font-size: 22px; }
-      .price { font-size: 24px; }
+    @media(max-width:650px){
+      .product-page{padding:0 10px;margin-top:12px}.gallery-wrap{padding:10px}
+      .gallery-stage{height:330px;border-radius:14px}.gallery-stage img{padding:10px}
+      .summary{padding:23px 17px}.summary h1{font-size:22px}.price{font-size:25px}
+      .features{grid-template-columns:1fr}.section{padding:20px 16px}.tabs{top:55px;overflow:auto;white-space:nowrap}
+      .tab{padding:10px 12px}.actions{grid-template-columns:1fr}
+      .thumb{flex-basis:68px;height:60px}
+      .quick-specs{grid-template-columns:1fr}.quick-spec{border-left:0!important}
+      .quick-spec:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+      .quick-spec:last-child{border-bottom:0}
     }
   </style>
 </head>
 <body>
 
-  <div class="top-header">
-    <div class="container">
-      <div class="logo">⛺ چادردوزی جزیره J.A.T</div>
-      <div>۰۹۱۱-۸۰۳-۱۲۴۱</div>
-    </div>
+<header class="site-header sticky-header">
+  <a href="index.html" class="brand">
+    <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
+    <span>چادردوزی جزیره J.A.T</span>
+  </a>
+  <nav class="main-nav" aria-label="منوی اصلی">
+    <a href="products.html">محصولات</a><a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a><a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a><a href="blog.html">مجله سفر</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="header-actions">
+    <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
+    <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
   </div>
+  <button class="menu-toggle" aria-label="منو">☰</button>
+</header>
 
-  <div class="container">
-    <div class="breadcrumb" id="breadcrumb">
-      <a href="index.html">خانه</a>
-      <span>/</span>
-      <a href="shop.html">فروشگاه</a>
-      <span>/</span>
-      <span id="breadcrumb-name">محصول</span>
-    </div>
-
-    <div class="product-main" id="product-main">
-      <!-- محتوا با جاوااسکریپت پر می‌شود -->
-    </div>
-
-    <div class="product-details" id="product-details">
-      <!-- مشخصات و توضیحات -->
-    </div>
-
-    <div class="related">
-      <h2 class="section-title">⛺ محصولات مرتبط</h2>
-      <div class="related-grid" id="related-grid">
-        <!-- محصولات مرتبط -->
-      </div>
-    </div>
+<main>
+  <div class="product-page">
+    <div class="breadcrumb"><a href="index.html">خانه</a> ← <a href="shop.html">فروشگاه</a> ← جزئیات محصول</div>
+    <div id="content"><div class="loading">در حال بارگذاری محصول...</div></div>
   </div>
+</main>
 
-  <script>
-    // ===================== داده‌های کامل محصولات =====================
-    const products = {
+<footer class="site-footer">
+  <div class="footer-top">
+    <a href="index.html" class="brand"><img src="favicon.svg" alt="لوگو" width="44" height="44"><span>چادردوزی جزیره J.A.T</span></a>
+    <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+  </div>
+  <nav class="footer-menu">
+    <a href="products.html">محصولات</a><a href="shop.html">فروشگاه</a><a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a><a href="about.html">درباره ما</a><a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="social-links">
+    <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+    <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+  </div>
+  <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lbClose" aria-label="بستن">×</button>
+  <button class="lightbox-arrow lb-prev" id="lbPrev" aria-label="تصویر قبلی">›</button>
+  <img id="lbImage" src="" alt="">
+  <button class="lightbox-arrow lb-next" id="lbNext" aria-label="تصویر بعدی">‹</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+const productDetails = {
       1: {
-        name: "چادر برزنتی ۴ نفره",
-        code: "JAT-4P-TARP",
-        price: "۴,۵۰۰,۰۰۰ تومان",
-        category: "برزنتی",
-        rating: "★★★★★ (۲۴ نظر)",
-        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۴+نفره",
-        thumbs: [
-          "https://via.placeholder.com/80x80?text=1",
-          "https://via.placeholder.com/80x80?text=2",
- "https://via.placeholder.com/80x80?text=3",
-          "https://via.placeholder.com/80x80?text=4"
-        ],
-        features: [
-          "ظرفیت واقعی: ۴ نفر",
-          "جنس پارچه: برزنت PVC ضخیم ضدآب و مقاوم در برابر UV",
-          "وزن تقریبی: ۵.۸ کیلوگرم",
-          "نصب پاپ‌آپ (تاشو خودکار) – بسیار سریع",
-          "مناسب سفر، طبیعت‌گردی و کمپینگ خانوادگی"
-        ],
-        specs: [
-          ["ظرفیت", "۴ نفر"],
-          ["جنس پارچه", "برزنت PVC ضدآب + مقاوم UV"],
-          ["وزن", "حدود ۵.۸ کیلوگرم"],
-          ["ابعاد برپا شده", "حدود ۲۲۰ × ۲۲۰ × ۱۳۰ سانتی‌متر"],
-          ["ابعاد بسته‌بندی", "حدود ۶۵ × ۲۵ × ۲۵ سانتی‌متر"],
-          ["نوع اسکلت", "فنری / پاپ‌آپ"],
-          ["درب ورودی", "۲ درب با زیپ و توری"],
-          ["تهویه", "پنجره‌های توری‌دار"],
-          ["لوازم همراه", "کیف حمل، میخ، طناب"],
-          ["وضعیت", "آماده ارسال / قابل سفارش"]
-        ],
-        description: چادر برزنتی ۴ نفره چادردوزی جزیره با پارچه برزنت ضخیم و دوخت حرفه‌ای تولید شده است. این مدل به دلیل مقاومت بالا در برابر رطوبت و آفتاب، گزینه‌ای عالی برای سفرهای شمال ایران و کمپینگ‌های چندروزه محسوب می‌شود. نصب آن بسیار سریع است و فضای داخلی مناسبی برای خانواده کوچک فراهم می‌کند.,
-        whatsapp: "سلام، در مورد چادر برزنتی ۴ نفره سوال دارم"
+        fullDesc: "چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب برای سفرهای کوتاه، طبیعت‌گردی و استفاده در باغ و حیاط. پارچه برزنت مقاوم در برابر آب و آفتاب با دوخت حرفه‌ای کارگاهی.",
+        features: ["پارچه برزنت ضخیم و مقاوم", "مناسب ۴ نفر", "دوخت مقاوم و با دوام", "قابل استفاده در فضای باز", "ارسال به سراسر ایران"],
+        specs: [["گنجایش", "۴ نفره"], ["نوع", "برزنتی"], ["مقاومت", "ضدآب و ضدآفتاب"], ["کاربرد", "سفر، باغ، حیاط"]]
       },
       2: {
-        name: "چادر برزنتی ۶ نفره",
-        code: "JAT-6P-TARP",
-        price: "۶,۵۰۰,۰۰۰ تومان",
-        category: "برزنتی",
-        rating: "★★★★★ (۱۸ نظر)",
-        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۶+نفره",
-        thumbs: [
-          "https://via.placeholder.com/80x80?text=1",
-          "https://via.placeholder.com/80x80?text=2",
-          "https://via.placeholder.com/80x80?text=3"
-        ],
-        features: [
-          "ظرفیت: ۶ نفر",
-          "پارچه برزنت مقاوم و ضخیم",
-          "فضای جادارتر نسبت به مدل ۴ نفره",
-          "مناسب خانواده و گروه‌های متوسط"
-        ],
-        specs: [
-          ["ظرفیت", "۶ نفر"],
-          ["جنس پارچه", "برزنت PVC ضدآب"],
-          ["وزن تقریبی", "۷ تا ۷.۵ کیلوگرم"],
-          ["ابعاد برپا شده", "حدود ۲۵۰ × ۲۵۰ × ۱۴۰ سانتی‌متر"],
-          ["ابعاد بسته‌بندی", "حدود ۷۰ × ۳۰ × ۳۰ سانتی‌متر"],
-          ["نوع ساخت", "پاپ‌آپ / فنری"],
-          ["درب و پنجره", "۲ درب + چند پنجره توری"],
-          ["وضعیت", "آماده / قابل سفارش"]
-        ],
-        description: چادر برزنتی ۶ نفره با فضای وسیع‌تر و دوخت مقاوم کارگاهی، انتخاب مناسبی برای خانواده‌ها و گروه‌های متوسط است. پارچه برزنت ضخیم آن در برابر باران و آفتاب مقاومت بالایی دارد.,
-        whatsapp: "سلام، در مورد چادر برزنتی ۶ نفره سوال دارم"
+        fullDesc: "چادر برزنتی ۶ نفره با فضای مناسب برای خانواده. این مدل با برزنت مقاوم و دوخت دقیق، گزینه خوبی برای استفاده طولانی‌مدت در فضای باز است.",
+        features: ["فضای مناسب ۶ نفر", "پارچه برزنت مقاوم", "دوخت کارگاهی", "مناسب استفاده طولانی", "قابل سفارش در ابعاد دلخواه"],
+        specs: [["گنجایش", "۶ نفره"], ["نوع", "برزنتی"], ["مقاومت", "ضدآب و ضدآفتاب"], ["کاربرد", "خانوادگی و فضای باز"]]
       },
       3: {
-        name: "چادر برزنتی ۸ نفره J.A.T",
-        code: "JAT-8P-TARP",
-        price: "۸,۵۰۰,۰۰۰ تومان",
-        category: "برزنتی",
-        rating: "★★★★★ (۱۲ نظر)",
-        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۸+نفره",
-        thumbs: [
-          "https://via.placeholder.com/80x80?text=1",
-          "https://via.placeholder.com/80x80?text=2",
-          "https://via.placeholder.com/80x80?text=3"
-        ],
-        features: [
-          "ظرفیت بزرگ: ۸ نفر",
-          "مناسب خانواده بزرگ و سفرهای گروهی",
-          "دوخت مقاوم کارگاهی",
-          "فضای داخلی وسیع"
-        ],
-        specs: [
-          ["ظرفیت", "۸ نفر"],
-          ["جنس پارچه", "برزنت ضخیم مقاوم"],
-          ["وزن تقریبی", "۹ تا ۱۰ کیلوگرم"],
-          ["ابعاد برپا شده", "حدود ۳۰۰ × ۳۰۰ × ۱۵۰ سانتی‌متر"],
-          ["نوع اسکلت", "فنری تقویت‌شده"],
-          ["مناسب برای", "خانواده بزرگ، سفر شمال"]
-        ],
-        description: چادر برزنتی ۸ نفره J.A.T با فضای بزرگ و دوخت حرفه‌ای، برای خانواده‌های پرجمعیت و سفرهای گروهی طراحی شده است. مقاومت بالا در شرایط آب‌وهوایی شمال ایران از ویژگی‌های اصلی این مدل است.,
-        whatsapp: "سلام، در مورد چادر برزنتی ۸ نفره سوال دارم"
+        fullDesc: "چادر برزنتی ۸ نفره J.A.T، مدل بزرگ و مقاوم مناسب خانواده و سفرهای شمال ایران. فضای جادار و دوخت حرفه‌ای از ویژگی‌های این محصول است.",
+        features: ["فضای بزرگ ۸ نفره", "پارچه برزنت ضخیم", "مناسب خانواده", "دوام بالا در شرایط مرطوب", "تولید مستقیم در آمل"],
+        specs: [["گنجایش", "۸ نفره"], ["مدل", "J.A.T"], ["نوع", "برزنتی"], ["مقاومت", "ضدآب و ضدآفتاب"]]
       },
       4: {
-        name: "چادر برزنتی ۱۰ نفره",
- code: "JAT-10P-TARP",
-        price: "۱۰,۵۰۰,۰۰۰ تومان",
-        category: "برزنتی",
-        rating: "★★★★☆ (۸ نظر)",
-        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۱۰+نفره",
-        thumbs: [
-          "https://via.placeholder.com/80x80?text=1",
-          "https://via.placeholder.com/80x80?text=2"
-        ],
-        features: [
-          "ظرفیت خیلی بزرگ: ۱۰ نفر",
-          "مناسب گروه‌های بزرگ و استفاده طولانی‌مدت",
-          "امکان سفارش ابعاد سفارشی"
-        ],
-        specs: [
-          ["ظرفیت", "۱۰ نفر"],
-          ["جنس پارچه", "برزنت ضخیم مقاوم"],
-          ["وضعیت", "قابل سفارش با ابعاد دلخواه"]
-        ],
-        description: چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ و استفاده‌های طولانی‌مدت مناسب است. امکان دوخت سفارشی با ابعاد دلخواه شما وجود دارد.,
-        whatsapp: "سلام، در مورد چادر برزنتی ۱۰ نفره سوال دارم"
+        fullDesc: "چادر برزنتی ۱۰ نفره مناسب گروه‌های بزرگ و استفاده‌های طولانی‌مدت. این مدل به صورت سفارشی نیز قابل تولید است.",
+        features: ["ظرفیت ۱۰ نفر", "مناسب گروه‌های بزرگ", "پارچه برزنت مقاوم", "امکان سفارش ابعاد دلخواه", "دوخت حرفه‌ای"],
+        specs: [["گنجایش", "۱۰ نفره"], ["نوع", "برزنتی"], ["مقاومت", "ضدآب و ضدآفتاب"], ["کاربرد", "گروهی و پروژه‌ای"]]
       },
       5: {
-        name: "چادر مسافرتی ۸ نفره JAT مدل دو جداره",
-        code: "JAT-8P-DOUBLE",
-        price: "۶,۵۰۰,۰۰۰ تومان",
-        category: "مسافرتی",
-        rating: "★★★★★ (۱۵ نظر)",
-        mainImage: "https://via.placeholder.com/600x420?text=چادر+دو+جداره+۸+نفره",
-        thumbs: [
-          "https://via.placeholder.com/80x80?text=1",
-          "https://via.placeholder.com/80x80?text=2",
-          "https://via.placeholder.com/80x80?text=3"
-        ],
+        fullDesc: "چادر مسافرتی ۱۲ نفره جادار و مناسب کمپینگ و سفرهای خانوادگی بزرگ. فضای کافی برای اقامت راحت گروه.",
+        features: ["ظرفیت ۱۲ نفر", "فضای بسیار جادار", "مناسب کمپینگ گروهی", "دوخت مقاوم", "قابل حمل نسبی"],
+        specs: [["گنجایش", "۱۲ نفره"], ["نوع", "مسافرتی"], ["کاربرد", "کمپینگ و سفر خانوادگی"]]
+      },
+      6: {
+        fullDesc: "چادر مسافرتی ۸ نفره مقاوم برای سفر و طبیعت‌گردی. طراحی مناسب برای استفاده در شرایط مختلف آب‌وهوایی.",
+        features: ["ظرفیت ۸ نفر", "مناسب سفر و کمپینگ", "تهویه مناسب", "نصب نسبتاً آسان", "دوام خوب"],
+        specs: [["گنجایش", "۸ نفره"], ["نوع", "مسافرتی"], ["کاربرد", "سفر و طبیعت‌گردی"]]
+      },
+      7: {
+        fullDesc: "پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و امکان سفارش در اندازه‌های مختلف برای خواب راحت بدون نگرانی از حشرات.",
+        features: ["دوخت سفارشی", "اندازه‌های متنوع", "مناسب چادر و فضای باز", "توری با کیفیت", "سبک و قابل حمل"],
+        specs: [["نوع", "پشه‌بند"], ["سفارشی‌سازی", "بله"], ["کاربرد", "چادر و فضای باز"]]
+      },
+      8: {
+        fullDesc: "چادر مسافرتی پکینیو مدل C2006 با ظرفیت ۳ تا ۴ نفر، مناسب کمپینگ، کوه‌نوردی و طبیعت‌گردی. مشخصات این مدل شامل پارچه پلی‌استر، ستون آلومینیومی ۸.۵ میلی‌متری، دو هواکش و پنجره‌های توری‌دار است.",
+        features: ["ظرفیت ۳ تا ۴ نفر", "پارچه پلی‌استر", "ستون آلومینیومی ۸.۵ میلی‌متری", "دو هواکش", "پنجره توری‌دار", "مناسب کمپینگ و طبیعت‌گردی"],
+        specs: [["مدل", "Pekynew C2006"], ["گنجایش", "۳ تا ۴ نفره"], ["ابعاد بازشده", "۱۳۰×۲۱۰×(۵۰+۱۸۰+۷۰) سانتی‌متر"], ["جنس ستون", "آلومینیوم"], ["قطر ستون", "۸.۵ میلی‌متر"], ["جنس پارچه", "پلی‌استر"], ["تعداد هواکش", "۲ عدد"], ["وزن تقریبی", "حدود ۳ کیلوگرم"]]
+      },
+      9: {
+        fullDesc: "چادر مسافرتی دو نفره پکینیو مدل K2009، گزینه‌ای جمع‌وجور برای کمپینگ و طبیعت‌گردی. این مدل با ستون‌بندی آلومینیومی، پارچه پلی‌استر، هواکش و پنجره‌های توری‌دار برای سفرهای سبک مناسب است.",
+        features: ["ظرفیت ۲ نفر", "ستون‌بندی آلومینیومی", "پارچه پلی‌استر", "دو هواکش", "دو پنجره", "مناسب کمپینگ"],
+        specs: [["مدل", "Pekynew K2009"], ["گنجایش", "۲ نفره"], ["جنس ستون", "آلومینیوم"], ["جنس پارچه", "پلی‌استر"], ["تعداد هواکش", "۲ عدد"], ["تعداد پنجره", "۲ عدد"], ["وزن بسته‌بندی", "حدود ۲.۸ کیلوگرم"]]
+      },
+      10: {
+        fullDesc: "چادر کوهنوردی پکینیو مدل PKN-C2004 با ظرفیت ۴ نفر، مناسب کوه‌نوردی و طبیعت‌گردی. ساختار دو لایه، ستون‌های آلومینیومی، دو ورودی، دو پنجره و دو هواکش از ویژگی‌های این مدل هستند.",
+        features: ["ظرفیت ۴ نفر", "ساختار دو لایه", "ستون آلومینیومی ۸.۵ میلی‌متری", "دو ورودی", "دو پنجره و دو هواکش", "مناسب تمام فصول"],
+        specs: [["مدل", "PKN-C2004"], ["گنجایش", "۴ نفره"], ["نوع", "عصایی / گنبدی"], ["تعداد لایه", "۲ لایه"], ["ابعاد بازشده", "۱۸۰×۲۱۰×۱۳۰ سانتی‌متر"], ["ارتفاع داخلی", "۱۳۰ سانتی‌متر"], ["جنس ستون", "آلومینیوم"], ["قطر ستون", "۸.۵ میلی‌متر"], ["جنس پارچه", "پلی‌استر"], ["تعداد ورودی", "۲ عدد"], ["تعداد هواکش", "۲ عدد"], ["وزن تقریبی", "حدود ۳.۳ کیلوگرم"]]
+      },
+      11: {
+        fullDesc: "چادر مسافرتی ۱۰ نفره مدل 10P، نمونه‌ای بزرگ و خانوادگی برای سفر و کمپینگ گروهی. ساختار فنری و فضای داخلی بزرگ، آن را برای خانواده‌های پرجمعیت مناسب می‌کند.",
+        features: ["ظرفیت ۱۰ نفر", "ساختار فنری", "پارچه برزنت", "سه پنجره", "یک هواکش", "کف ضخیم و ضدآب"],
+        specs: [["مدل", "10P"], ["گنجایش", "۱۰ نفره"], ["نوع", "فنری"], ["فرم", "هرمی"], ["ابعاد بازشده", "حدود ۲۱۰×۲۵۰×۲۵۰ سانتی‌متر"], ["ارتفاع داخلی", "حدود ۲۱۰ سانتی‌متر"], ["جنس ستون", "فلز"], ["جنس پارچه", "برزنت"], ["تعداد پنجره", "۳ عدد"], ["تعداد هواکش", "۱ عدد"]]
+      },
+      12: {
+        fullDesc: "چادر مسافرتی ۱۲ نفره مدل برنو کد 12P، یک مدل خانوادگی بزرگ با فضای داخلی مناسب. مشخصات این مدل شامل ساختار فنری، پارچه برزنت، پنجره و پشه‌بند است.",
+        features: ["ظرفیت ۱۲ نفره", "ساختار فنری", "دو لایه", "پارچه برزنت", "سه پنجره", "پشه‌بند", "کف ضدآب"],
+        specs: [["مدل", "برنو 12P"], ["گنجایش", "۱۲ نفره"], ["نوع", "فنری"], ["تعداد لایه", "۲ لایه"], ["جنس ستون", "فلز"], ["جنس پارچه", "برزنت"], ["تعداد پنجره", "۳ عدد"], ["تعداد گیره", "۸ عدد"]]
+      },
+      13: {
+        fullDesc: "اطلاعات اختصاصی این محصول در فایل اطلاعات فعلی به‌صورت کامل ثبت نشده است. برای جلوگیری از درج مشخصات نادرست، در این صفحه فقط اطلاعاتی نمایش داده می‌شود که نیاز به حدس‌زدن نداشته باشد. نام محصول از products.json خوانده می‌شود.",
         features: [
-          "ظرفیت: ۸ نفر",
-          "مدل دو جداره",
-          "پارچه آکسفورد ضدآب",
-          "اسکلت فلزی مقاوم",
-          "مناسب تمام فصول"
+          "نام محصول از اطلاعات فروشگاه نمایش داده می‌شود",
+          "امکان استعلام مشخصات واقعی محصول",
+          "امکان استعلام قیمت و شرایط سفارش",
+          "قبل از خرید، مشخصات نمونه واقعی قابل بررسی است"
         ],
         specs: [
-          ["ظرفیت", "۸ نفر"],
-          ["ابعاد برپا شده", "۲۵۰ × ۲۵۰ سانتی‌متر"],
-          ["ارتفاع", "۲۱۰ سانتی‌متر"],
-          ["جنس پارچه", "آکسفورد ضدآب"],
-          ["اسکلت", "فلزی مقاوم"],
-          ["تعداد پنجره", "۴ پنجره توری‌دار"],
-          ["نوع", "دو جداره"],
-          ["مناسب", "تمام فصول"]
+          ["شناسه محصول", "13"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["ابعاد", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["تعداد لایه", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تکمیل از روی نمونه واقعی"]
+        ]
+      },
+
+      14: {
+        fullDesc: "اطلاعات اختصاصی این محصول در فایل اطلاعات فعلی به‌صورت کامل ثبت نشده است. برای صفحه فروشگاهی حرفه‌ای، از درج ابعاد، وزن، جنس پارچه یا ظرفیت حدسی خودداری شده است.",
+        features: [
+          "نام محصول از اطلاعات فروشگاه نمایش داده می‌شود",
+          "مشخصات فنی باید با نمونه واقعی تطبیق داده شود",
+          "امکان استعلام اطلاعات محصول پیش از سفارش",
+          "امکان استعلام قیمت و شرایط سفارش"
         ],
-        description: چادر مسافرتی ۸ نفره JAT مدل دو جداره با ابعاد ۲۵۰×۲۵۰ سانتی‌متر و ارتفاع ۲۱۰ سانتی‌متر. پارچه آکسفورد ضدآب، اسکلت فلزی مقاوم، چهار پنجره توری‌دار و مناسب تمام فصول.,
-        whatsapp: "سلام، در مورد چادر مسافرتی ۸ نفره دو جداره سوال دارم"
+        specs: [
+          ["شناسه محصول", "14"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["ابعاد", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["ساختار", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تکمیل از روی نمونه واقعی"]
+        ]
+      },
+
+      15: {
+        fullDesc: "اطلاعات فنی قطعی این محصول در منبع فعلی در دسترس نیست. به همین دلیل مشخصات احتمالی قبلی مانند ظرفیت، ابعاد، نوع ستون، جنس پارچه و وزن حذف شده‌اند تا اطلاعات اشتباه به مشتری نمایش داده نشود.",
+        features: [
+          "اطلاعات نام محصول از فروشگاه دریافت می‌شود",
+          "مشخصات واقعی محصول قبل از سفارش قابل استعلام است",
+          "از درج مشخصات فنی حدسی خودداری شده است",
+          "امکان هماهنگی برای اطلاعات و سفارش"
+        ],
+        specs: [
+          ["شناسه محصول", "15"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["گنجایش", "ثبت نشده"],
+          ["ابعاد", "ثبت نشده"],
+          ["جنس ستون", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تأیید"]
+        ]
+      },
+
+      16: {
+        fullDesc: "چادر کودک سیندرلا با طراحی فانتزی برای بازی و سرگرمی کودکان. این محصول برای ایجاد یک فضای اختصاصی بازی در منزل، اتاق کودک، مهدکودک و محیط‌های تفریحی مناسب است. مشخصات فنی مانند ابعاد، جنس پارچه و وزن فقط در صورت تأیید نمونه واقعی باید به صفحه اضافه شوند.",
+        features: [
+          "طراحی فانتزی با طرح سیندرلا",
+          "مناسب بازی و سرگرمی کودکان",
+          "قابل استفاده در منزل و اتاق کودک",
+          "مناسب مهدکودک و فضاهای تفریحی",
+          "قابل جابه‌جایی",
+          "امکان استعلام مشخصات و شرایط سفارش"
+        ],
+        specs: [
+          ["شناسه محصول", "16"],
+          ["نوع محصول", "چادر بازی کودک"],
+          ["طرح", "سیندرلا"],
+          ["گنجایش درج‌شده در فروشگاه", "۴ نفره"],
+          ["کاربرد", "بازی و سرگرمی کودک"],
+          ["جنس پارچه", "نیازمند تأیید"],
+          ["ابعاد", "نیازمند تأیید"],
+          ["وزن", "نیازمند تأیید"],
+          ["وضعیت اطلاعات فنی", "بخشی از مشخصات نیازمند تأیید"]
+        ]
+      },
+
+      17: {
+        fullDesc: "اطلاعات اختصاصی و قطعی این محصول در فایل اطلاعات فعلی کامل نیست. مشخصات حدسی قبلی حذف شده‌اند تا ظرفیت، ابعاد، جنس پارچه، تعداد لایه و وزن به‌عنوان اطلاعات قطعی معرفی نشوند.",
+        features: [
+          "نام محصول از اطلاعات فروشگاه نمایش داده می‌شود",
+          "امکان استعلام مشخصات واقعی",
+          "امکان استعلام قیمت و شرایط سفارش",
+          "تطبیق مشخصات با نمونه واقعی پیش از خرید"
+        ],
+        specs: [
+          ["شناسه محصول", "17"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["گنجایش", "ثبت نشده"],
+          ["ابعاد", "ثبت نشده"],
+          ["تعداد لایه", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تکمیل"]
+        ]
+      },
+
+      18: {
+        fullDesc: "برای این محصول در اطلاعات فعلی مشخصات فنی کامل و قابل استناد ثبت نشده است. بنابراین اطلاعات قبلی که به‌صورت تقریبی درباره ظرفیت، ابعاد، جنس پارچه و وزن درج شده بود حذف شده است.",
+        features: [
+          "اطلاعات محصول از فروشگاه نمایش داده می‌شود",
+          "مشخصات فنی واقعی قابل استعلام است",
+          "از درج اطلاعات حدسی جلوگیری شده است",
+          "امکان هماهنگی برای سفارش و دریافت اطلاعات"
+        ],
+        specs: [
+          ["شناسه محصول", "18"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["گنجایش", "ثبت نشده"],
+          ["ابعاد", "ثبت نشده"],
+          ["ارتفاع", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تأیید"]
+        ]
+      },
+
+      19: {
+        fullDesc: "اطلاعات قطعی این محصول در منبع فعلی به اندازه‌ای نیست که بتوان درباره نوع، ظرفیت، ابعاد یا جنس آن مشخصات فنی دقیق اعلام کرد. برای جلوگیری از معرفی اشتباه، مشخصات حدسی قبلی حذف شده‌اند.",
+        features: [
+          "نام محصول از اطلاعات فروشگاه نمایش داده می‌شود",
+          "امکان استعلام مشخصات واقعی",
+          "امکان استعلام قیمت و شرایط سفارش",
+          "مشخصات نهایی باید با نمونه واقعی تطبیق داده شود"
+        ],
+        specs: [
+          ["شناسه محصول", "19"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["نوع محصول", "ثبت نشده"],
+          ["ابعاد", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["کاربرد", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تکمیل"]
+        ]
+      },
+
+      20: {
+        fullDesc: "اطلاعات اختصاصی و قطعی این محصول در منبع فعلی کامل نیست. مشخصات تقریبی قبلی درباره ظرفیت، دو جداره بودن، ابعاد، جنس پارچه و وزن حذف شده‌اند تا هیچ ویژگی تأییدنشده‌ای به مشتری نمایش داده نشود.",
+        features: [
+          "نام محصول از اطلاعات فروشگاه نمایش داده می‌شود",
+          "امکان استعلام مشخصات واقعی محصول",
+          "امکان استعلام قیمت و شرایط سفارش",
+          "تطبیق اطلاعات با نمونه واقعی پیش از خرید"
+        ],
+        specs: [
+          ["شناسه محصول", "20"],
+          ["نام محصول", "از products.json"],
+          ["دسته‌بندی", "از products.json"],
+          ["گنجایش", "ثبت نشده"],
+          ["تعداد لایه", "ثبت نشده"],
+          ["ابعاد", "ثبت نشده"],
+          ["جنس پارچه", "ثبت نشده"],
+          ["وزن", "ثبت نشده"],
+          ["وضعیت اطلاعات فنی", "نیازمند تأیید"]
+        ]
+      },
+      21: {
+        fullDesc: "چادر ۸ نفره طرح درختی مسافرتی با کیفیت. طراحی زیبا و فضای مناسب برای خانواده.",
+        features: ["طرح درختی زیبا", "ظرفیت ۸ نفر", "مناسب کمپینگ", "دوخت با کیفیت", "ظاهر جذاب"],
+        specs: [["گنجایش", "۸ نفره"], ["طرح", "درختی"], ["نوع", "مسافرتی"]]
+      },
+      22: {
+        fullDesc: "چادر مسافرتی ۸ نفره JAT مدل دو جداره با ابعاد ۲۵۰×۲۵۰ سانتی‌متر و ارتفاع ۲۱۰ سانتی‌متر. پارچه آکسفورد ضدآب، اسکلت فلزی مقاوم و مناسب تمام فصول.",
+        features: ["طراحی دو جداره با پارچه آکسفورد ضدآب", "اسکلت فلزی مستحکم با قطر ۰٫۹ سانتی‌متر", "چهار پنجره توری‌دار با پرده جمع‌شونده", "زیپ‌های فلزی دوطرفه مقاوم", "کف کاملاً ضدآب", "قلاب داخلی برای چراغ", "سیستم فنری", "کیف حمل کوله‌ای", "مناسب تمام فصول"],
+        specs: [["مدل", "JAT"], ["گنجایش", "۸ نفره"], ["ابعاد بازشده", "۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر"], ["ارتفاع داخلی", "۲۱۰ سانتی‌متر"], ["تعداد لایه", "۲ جداره"], ["جنس پارچه", "آکسفورد ضدآب"], ["جنس کف", "پلی‌استر ضدآب"], ["قطر ستون", "۰٫۹ سانتی‌متر"], ["وزن تقریبی", "۱.۴ کیلوگرم"], ["ابعاد بسته‌بندی", "۸۵ × ۸۵ × ۱۲ سانتی‌متر"]]
+      },
+      23: {
+        fullDesc: "چادر کوهنوردی دو نفره پکینیو مدل PKN-C2001-B، نسخه بهبودیافته C2001 با پوش خارجی بلندتر، ساختار دولایه، وزن حدود ۲۸۰۰ گرم و میله‌های آلومینیومی ۸.۵ میلی‌متری. این مدل برای کوهنوردی، کمپینگ سبک و طبیعت‌گردی مناسب است.",
+        features: ["طراحی دولایه قابل تفکیک", "میله‌های آلومینیومی ۸.۵ میلی‌متری", "وزن حدود ۲۸۰۰ گرم", "کف PU3000 و بدنه PU2000", "پشه‌بند و هواکش دوطرفه", "دو جیب داخلی و قلاب سقفی", "فضای اضافی در دو سمت", "مناسب کوهنوردی و کمپینگ سبک"],
+        specs: [["مدل", "PKN-C2001-B"], ["گنجایش", "۲ تا ۳ نفر"], ["نوع چادر", "عصایی (تونلی)"], ["تعداد لایه", "۲ لایه"], ["ارتفاع داخلی", "۱۱۰ سانتی‌متر"], ["ابعاد بازشده", "۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"], ["جنس ستون", "آلومینیوم"], ["قطر ستون", "۸.۵ میلی‌متر"], ["جنس پارچه", "پلی‌استر ۱۹۰T"], ["روکش بدنه", "PU2000"], ["روکش کف", "PU3000"], ["وزن بسته‌بندی", "۲۸۰۰ گرم"], ["ابعاد بسته‌بندی", "۱۸ × ۴۰ × ۴۰ سانتی‌متر"], ["تعداد ورودی", "۱ عدد"], ["تعداد هواکش", "۲ عدد"], ["مناسب", "تمام فصول"]]
       }
+};
+
+(function(){
+  const cart = JSON.parse(localStorage.getItem("chadoor_cart") || "[]");
+  const el = document.getElementById("cartCount");
+  if(el) el.textContent = cart.reduce((s,i)=>s+(Number(i.qty)||0),0);
+})();
+
+const params = new URLSearchParams(location.search);
+const productId = Number.parseInt(params.get("id"),10);
+const content = document.getElementById("content");
+let gallery = [], galleryIndex = 0;
+
+function esc(v){
+  return String(v ?? "").replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
+
+function getGallery(product, details){
+  // اگر products.json دارای images/gallery باشد، همه تصاویر استفاده می‌شوند.
+  // در غیر این صورت تصویر اصلی محصول به عنوان تصویر گالری استفاده می‌شود.
+  const candidates = []
+    .concat(Array.isArray(details?.images) ? details.images : [])
+    .concat(Array.isArray(product?.images) ? product.images : [])
+    .concat(Array.isArray(product?.gallery) ? product.gallery : [])
+    .concat(product?.image ? [product.image] : []);
+  return [...new Set(candidates.filter(Boolean).map(String))];
+}
+
+function renderGallery(product, details){
+  gallery = getGallery(product, details);
+  galleryIndex = 0;
+  if(!gallery.length) gallery = ["hero-chadoor.webp"];
+
+  return `
+    <div class="gallery-wrap">
+      <div class="gallery-stage" id="galleryStage" title="برای بزرگ‌نمایی کلیک کنید">
+        <span class="gallery-count" id="galleryCount">1 / ${gallery.length}</span>
+        <span class="gallery-zoom">🔍 بزرگ‌نمایی</span>
+        <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="تصویر قبلی">›</button>
+        <img id="mainProductImage" src="${esc(gallery[0])}" alt="${esc(product.name)}" onerror="this.src='hero-chadoor.webp'">
+        <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="تصویر بعدی">‹</button>
+      </div>
+      <div class="thumbnails" id="thumbnails"></div>
+      <div class="gallery-note">برای مشاهده تصاویر بیشتر روی تصاویر کوچک کلیک کنید؛ برای بزرگ‌نمایی روی تصویر اصلی بزنید.</div>
+    </div>`;
+}
+
+function updateGallery(){
+  const img = document.getElementById("mainProductImage");
+  const count = document.getElementById("galleryCount");
+  if(!img) return;
+  img.src = gallery[galleryIndex];
+  count.textContent = `${galleryIndex+1} / ${gallery.length}`;
+  document.querySelectorAll(".thumb").forEach((t,i)=>t.classList.toggle("active",i===galleryIndex));
+}
+
+function buildThumbs(){
+  const box=document.getElementById("thumbnails");
+  box.innerHTML=gallery.map((src,i)=>`
+    <button class="thumb ${i===0?'active':''}" data-index="${i}" aria-label="تصویر ${i+1}">
+      <img src="${esc(src)}" alt="نمای ${i+1}" onerror="this.src='hero-chadoor.webp'">
+    </button>`).join("");
+  box.querySelectorAll(".thumb").forEach(btn=>{
+    btn.addEventListener("click",()=>{galleryIndex=Number(btn.dataset.index);updateGallery();});
+  });
+}
+
+function openLightbox(){
+  const lb=document.getElementById("lightbox");
+  document.getElementById("lbImage").src=gallery[galleryIndex];
+  lb.classList.add("open");lb.setAttribute("aria-hidden","false");
+}
+function closeLightbox(){
+  const lb=document.getElementById("lightbox");
+  lb.classList.remove("open");lb.setAttribute("aria-hidden","true");
+}
+function moveGallery(step){
+  galleryIndex=(galleryIndex+step+gallery.length)%gallery.length;
+  updateGallery();
+}
+
+fetch("products.json")
+  .then(r=>{if(!r.ok) throw new Error("products.json"); return r.json();})
+  .then(products=>{
+    const product=products.find(p=>Number(p.id)===productId);
+    if(!product) throw new Error("not-found");
+
+    const d=productDetails[productId] || {
+      fullDesc:product.description || "اطلاعات محصول در حال تکمیل است.",
+      features:["تولید مستقیم در کارگاه آمل","دوخت حرفه‌ای و مقاوم","امکان سفارش سفارشی","ارسال به سراسر ایران"],
+      specs:[["نام محصول",product.name],["دسته‌بندی",product.category || "—"]]
     };
 
-    // ===================== بارگذاری محصول =====================
-    function getProductId() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('id') || '1';
-    }
+    const specs=d.specs || [];
+    const capacity=specs.find(x=>/گنجایش/.test(x[0]))?.[1] || "—";
+    const type=specs.find(x=>/نوع/.test(x[0]))?.[1] || product.category || "—";
+    const material=specs.find(x=>/جنس پارچه/.test(x[0]))?.[1] || "—";
+    const price=Number(product.price)||0;
+    const priceHtml=price>0
+      ? `<div class="price">${price.toLocaleString("fa-IR")} تومان</div><div class="price-sub">قیمت درج‌شده در فروشگاه</div>`
+      : `<div class="contact-price">برای اطلاع از قیمت تماس بگیرید</div><div class="price-sub">قیمت محصولات سفارشی پس از بررسی اعلام می‌شود.</div>`;
 
-    function loadProduct() {
-      const id = getProductId();
-      const p = products[id];
+    const wa=`https://wa.me/989118031241?text=${encodeURIComponent("سلام، درباره محصول «"+product.name+"» اطلاعات و قیمت می‌خواهم.")}`;
 
-      if (!p) {
-        document.getElementById('product-main').innerHTML = '<p style="padding:40px;text-align:center">محصول مورد نظر پیدا نشد.</p>';
-        return;
-      }
+    content.innerHTML=`
+      <section class="product-main">
+        ${renderGallery(product,d)}
+        <div class="summary">
+          <span class="category">${esc(product.category || "محصولات سفر")}</span>
+          <h1>${esc(product.name)}</h1>
+          <div class="product-code">کد محصول: ${esc(product.id)}</div>
+          <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-text">محصول منتخب چادردوزی جزیره J.A.T</span></div>
+          <div class="price-box">${priceHtml}</div>
 
-      // Breadcrumb
-      document.getElementById('breadcrumb-name').textContent = p.name;
-      document.title = p.name + ' | چادردوزی جزیره J.A.T';
-
-      // Main section
-      let thumbsHtml = p.thumbs.map((src, i) => 
-        <img src="${src}" class="thumb \( {i===0?'active':''}" onclick="changeImage(this, ' \){p.mainImage}')">
-      ).join('');
-
-      document.getElementById('product-main').innerHTML = 
-        <div class="gallery">
-          <img src="\( {p.mainImage}" alt=" \){p.name}" class="main-image" id="mainImage">
-          <div class="thumbnails">${thumbsHtml}</div>
-        </div>
-        <div class="product-info">
-          <h1>${p.name}</h1>
-          <div class="product-meta">
-            <span>کد محصول: ${p.code}</span>
-            <span class="rating">${p.rating}</span>
+          <div class="quick-specs">
+            <div class="quick-spec"><small>گنجایش</small><strong>${esc(capacity)}</strong></div>
+            <div class="quick-spec"><small>نوع</small><strong>${esc(type)}</strong></div>
+            <div class="quick-spec"><small>جنس پارچه</small><strong>${esc(material)}</strong></div>
+            <div class="quick-spec"><small>وضعیت سفارش</small><strong>قابل سفارش</strong></div>
           </div>
-          <div class="price">${p.price}</div>
-          <div class="key-features">
-            <h3>ویژگی‌های کلیدی</h3>
-            <ul>
-              \( {p.features.map(f => <li> \){f}</li>`).join('')}
-            </ul>
-          </div>
-          <div class="options">
-            <div class="option-group">
-              <label>رنگ</label>
-              <div class="color-options">
-<div class="color-btn active" style="background:#1e5f8a" title="آبی"></div>
-                <div class="color-btn" style="background:#4a7c59" title="سبز"></div>
-                <div class="color-btn" style="background:#555" title="خاکستری"></div>
-              </div>
+
+          <div class="order-box">
+            <div class="order-title">برای سفارش یا استعلام اطلاعات</div>
+            <div class="order-text">اگر درباره ابعاد، رنگ، جنس یا قیمت این محصول سؤال دارید، مستقیم با ما در تماس باشید.</div>
+            <div class="actions">
+              <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">سفارش در واتساپ</a>
+              <a class="action action-primary" href="contact.html">ثبت سفارش</a>
             </div>
-            <div class="option-group">
-              <label>سایز</label>
-              <div class="size-options">
-                <button class="size-btn active">استاندارد</button>
-              </div>
+            <div class="actions">
+              <a class="action action-outline" href="shop.html">بازگشت به فروشگاه</a>
             </div>
           </div>
-          <div class="action-buttons">
-            <button class="btn btn-primary" onclick="alert('برای ثبت سفارش با ما تماس بگیرید')">🛒 ثبت سفارش</button>
-            <a href="https://wa.me/989118031241?text=${encodeURIComponent(p.whatsapp)}" 
-               class="btn btn-whatsapp" target="_blank">
-              💬 سفارش در واتساپ
-            </a>
-          </div>
         </div>
-      ;
+      </section>
 
-      // Specs & Description
-      let specsHtml = p.specs.map(row => 
-        <tr><td>\( {row[0]}</td><td> \){row[1]}</td></tr>
-      ).join('');
+      <nav class="tabs" aria-label="بخش‌های محصول">
+        <button class="tab active" data-target="description">توضیحات</button>
+        <button class="tab" data-target="features">ویژگی‌ها</button>
+        <button class="tab" data-target="specs">مشخصات فنی</button>
+      </nav>
 
-      document.getElementById('product-details').innerHTML = 
-        <h2 class="section-title">📋 مشخصات کامل</h2>
-        <table class="specs-table">${specsHtml}</table>
-        <h2 class="section-title">📝 توضیحات محصول</h2>
-        <div class="description"><p>${p.description}</p></div>
-      ;
+      <section class="section" id="description">
+        <h2>توضیحات محصول</h2>
+        <p>${esc(d.fullDesc)}</p>
+      </section>
 
-      // Related products
-      let relatedHtml = '';
-      Object.keys(products).forEach(key => {
-        if (key !== id) {
-          const r = products[key];
-          relatedHtml += 
-            <a href="product.html?id=${key}" class="related-card">
-              <img src="\( {r.mainImage}" alt=" \){r.name}">
-              <div class="info">
-                <h4>${r.name}</h4>
-                <div class="price">${r.price}</div>
-              </div>
-            </a>
-          `;
-        }
+      <section class="section" id="features">
+        <h2>ویژگی‌های محصول</h2>
+        <ul class="features">${(d.features||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+      </section>
+
+      <section class="section" id="specs">
+        <h2>مشخصات فنی</h2>
+        ${specs.some(x=>String(x[1]).includes("پیشنهادی") || String(x[0]).includes("وضعیت اطلاعات"))
+          ? `<div class="estimated">⚠️ بخشی از مشخصات این محصول در نبود اطلاعات قطعی، به‌صورت پیشنهادی درج شده است. قبل از انتشار نهایی یا اعلام مشخصات به مشتری، با نمونه واقعی تطبیق داده شود.</div>` : ""}
+        <table class="specs-table">${specs.map(x=>`<tr><th>${esc(x[0])}</th><td>${esc(x[1])}</td></tr>`).join("")}</table>
+      </section>
+
+      <section class="section">
+        <h2>نکات مهم نگهداری</h2>
+        <ul class="tips">
+          <li>پس از استفاده در محیط مرطوب، چادر را کاملاً خشک کنید.</li>
+          <li>پارچه و پوشش محصول را در معرض آتش یا حرارت مستقیم قرار ندهید.</li>
+          <li>برای افزایش عمر محصول، هنگام جمع‌کردن از فشار و تاخوردگی نامناسب خودداری کنید.</li>
+          <li>برای سفارش ابعاد یا مدل سفارشی، قبل از ثبت سفارش با ما هماهنگ کنید.</li>
+        </ul>
+      </section>`;
+
+    buildThumbs();
+    document.getElementById("galleryPrev").onclick=()=>moveGallery(1);
+    document.getElementById("galleryNext").onclick=()=>moveGallery(-1);
+    document.getElementById("galleryStage").onclick=e=>{
+      if(e.target.closest("button")) return; openLightbox();
+    };
+    document.getElementById("lbClose").onclick=closeLightbox;
+    document.getElementById("lbPrev").onclick=()=>{moveGallery(1);openLightbox()};
+    document.getElementById("lbNext").onclick=()=>{moveGallery(-1);openLightbox()};
+    document.getElementById("lightbox").onclick=e=>{if(e.target.id==="lightbox")closeLightbox()};
+    document.addEventListener("keydown",e=>{
+      if(e.key==="Escape")closeLightbox();
+      if(e.key==="ArrowRight")moveGallery(1);
+      if(e.key==="ArrowLeft")moveGallery(-1);
+    });
+
+    document.querySelectorAll(".tab").forEach(tab=>{
+      tab.addEventListener("click",()=>{
+        document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.target)?.scrollIntoView({behavior:"smooth",block:"start"});
       });
-      document.getElementById('related-grid').innerHTML = relatedHtml;
+    });
 
-      // Color & size buttons
-      document.querySelectorAll('.color-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-    }
-
-    function changeImage(el, mainSrc) {
-      // اگر عکس واقعی داشتی اینجا تغییر بده
-      document.getElementById('mainImage').src = el.src.replace('80x80', '600x420');
-      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-    }
-
-    // اجرا
-    loadProduct();
-  </script>
+    document.title=product.name+" | چادردوزی جزیره J.A.T";
+    const meta=document.querySelector('meta[name="description"]');
+    if(meta) meta.content=(d.fullDesc||product.description||"").slice(0,155);
+  })
+  .catch(err=>{
+    content.innerHTML=err.message==="not-found"
+      ? `<div class="error-box">محصول مورد نظر پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
+      : `<div class="error-box">خطا در بارگذاری اطلاعات محصول.<br><br><small>بررسی کنید فایل products.json در کنار product.html قرار داشته باشد.</small></div>`;
+  });
+</script>
 </body>
 </html>
