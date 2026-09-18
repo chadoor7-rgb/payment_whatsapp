@@ -1,537 +1,271 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>گالری تصاویر | چادردوزی جزیره آمل</title>
-
-  <meta name="description" content="گالری تصاویر چادرهای مسافرتی، برزنتی و نمونه‌کارهای چادردوزی جزیره در آمل.">
+  <title>گالری تصاویر چادر | چادردوزی جزیره آمل</title>
+  <meta name="description" content="گالری تصاویر چادر مسافرتی، برزنتی، چادر کودک و نمونه کارهای تعمیر چادردوزی جزیره در آمل.">
   <link rel="canonical" href="https://chadooor.ir/gallery.html">
-
-  <meta property="og:title" content="گالری تصاویر | چادردوزی جزیره آمل">
-  <meta property="og:description" content="نمونه‌کارها و تصاویر محصولات چادردوزی جزیره">
-  <meta property="og:url" content="https://chadooor.ir/gallery.html">
-  <meta property="og:image" content="https://chadooor.ir/hero-chadoor.webp">
-
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="favicon.svg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Schema: ImageGallery -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ImageGallery",
-    "name": "گالری تصاویر چادردوزی جزیره J.A.T",
-    "description": "گالری تصاویر واقعی چادرهای مسافرتی، برزنتی، پشه‌بند و نمونه‌کارهای تعمیر و تولید در آمل",
-    "url": "https://chadooor.ir/gallery.html",
-    "image": [
-      "https://chadooor.ir/chatr.webp",
-      "https://chadooor.ir/8n-jat.webp",
-      "https://chadooor.ir/tent.jpg",
-      "https://chadooor.ir/brno-bereznti-8.webp",
-      "https://chadooor.ir/KHIME.jpg",
-      "https://chadooor.ir/BEREZENT.webp",
-      "https://chadooor.ir/pasheband.jpg",
-      "https://chadooor.ir/travel-tent-during-repair.webp"
-    ],
-    "author": {
-      "@type": "Organization",
-      "name": "چادردوزی جزیره J.A.T",
-      "url": "https://chadooor.ir"
-    }
-  }
-  </script>
-
   <style>
-    /* گالری + لایتن‌باکس */
-    .gallery-filter-section {
-      padding: 1.5rem 0 0.5rem;
+    .gallery-hero {
+      text-align: center;
+      padding: 2.5rem 1rem 1.5rem;
+    }
+    .gallery-hero h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.5rem;
+      font-weight: 800;
+    }
+    .gallery-hero p {
+      color: #68736f;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.8;
     }
     .gallery-filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.5rem;
       justify-content: center;
+      padding: 0 1rem 1.5rem;
     }
-    .gallery-filters .filter-btn {
-      padding: 0.55rem 1.2rem;
+    .g-filter {
+      padding: 0.45rem 1rem;
       border-radius: 999px;
       border: 1px solid #e5e5e5;
       background: #fafafa;
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       cursor: pointer;
-      transition: all 0.2s ease;
     }
-    .gallery-filters .filter-btn:hover {
-      border-color: #c9a227;
-    }
-    .gallery-filters .filter-btn.active {
-      background: #c9a227;
+    .g-filter.active, .g-filter:hover {
+      background: #155e55;
       color: #fff;
-      border-color: #c9a227;
+      border-color: #155e55;
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
     }
     .gallery-item {
       position: relative;
       border-radius: 14px;
       overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #f0f0f0;
       cursor: pointer;
-      background: #f5f5f5;
-      aspect-ratio: 4 / 3;
     }
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
+      transition: transform 0.35s;
     }
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-    .gallery-overlay {
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item .caption {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
-      display: flex;
-      align-items: flex-end;
-      padding: 1rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    .gallery-overlay span {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
       color: #fff;
-      font-size: 0.95rem;
+      padding: 1.5rem 0.8rem 0.7rem;
+      font-size: 0.85rem;
       font-weight: 600;
     }
-
-    /* Lightbox */
-    .lightbox {
+    .lightbox-g {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.92);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(7,14,12,0.92);
       z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      padding: 1rem;
-    }
-    .lightbox.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .lightbox-content {
-      position: relative;
-      max-width: 95vw;
-      max-height: 90vh;
-      text-align: center;
-    }
-    .lightbox-content img {
-      max-width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    }
-    .lightbox-caption {
-      color: #eee;
-      margin-top: 0.8rem;
-      font-size: 1rem;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 2.4rem;
-      cursor: pointer;
-      line-height: 1;
-      z-index: 10;
-      transition: color 0.2s;
-    }
-    .lightbox-close:hover {
-      color: #c9a227;
-    }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.12);
-      border: none;
-      color: #fff;
-      font-size: 2.2rem;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s;
-      z-index: 10;
+      padding: 20px;
     }
-    .lightbox-nav:hover {
-      background: rgba(255,255,255,0.25);
+    .lightbox-g.open { display: flex; }
+    .lightbox-g img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 12px;
     }
-    .lightbox-prev {
-      right: 1.2rem;
+    .lightbox-g .close-lb {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      background: #fff;
+      border: 0;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 22px;
+      cursor: pointer;
     }
-    .lightbox-next {
-      left: 1.2rem;
+    .cta-gallery {
+      text-align: center;
+      padding: 2rem 1rem 3.5rem;
     }
-    @media (max-width: 640px) {
-      .lightbox-nav {
-        width: 42px;
-        height: 42px;
-        font-size: 1.8rem;
-      }
-      .lightbox-prev { right: 0.6rem; }
-      .lightbox-next { left: 0.6rem; }
-      .lightbox-close {
-        top: 0.8rem;
-        left: 0.8rem;
-        font-size: 2rem;
-      }
+    .cta-gallery a {
+      display: inline-block;
+      background: #155e55;
+      color: #fff;
+      font-weight: 800;
+      padding: 0.85rem 1.8rem;
+      border-radius: 12px;
+      text-decoration: none;
     }
   </style>
 </head>
-
 <body>
+<header class="site-header sticky-header">
+  <a href="index.html" class="brand">
+    <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
+    <span>چادردوزی جزیره J.A.T</span>
+  </a>
+  <nav class="main-nav" aria-label="منوی اصلی">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
+    <a href="blog.html">مجله سفر</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="header-actions">
+    <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
+    <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+  </div>
+  <button class="menu-toggle" aria-label="منو">☰</button>
+</header>
 
-  <!-- HEADER -->
-  <header class="site-header sticky-header">
-    <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
-      <span>چادردوزی جزیره J.A.T</span>
-    </a>
+<main>
+  <section class="gallery-hero">
+    <h1>گالری تصاویر</h1>
+    <p>نمونه چادرهای تولیدشده و کارهای تعمیر در کارگاه چادردوزی جزیره</p>
+  </section>
 
-    <nav class="main-nav" aria-label="منوی اصلی">
-      <a href="products.html">محصولات</a>
-      <a href="shop.html">فروشگاه</a>
-      <a href="services.html">خدمات</a>
-      <a href="gallery.html" class="active">گالری</a>
-      <a href="about.html">درباره ما</a>
-      <a href="blog.html">مجله سفر</a>
-      <a href="contact.html">ثبت سفارش</a>
-    </nav>
-
-    <div class="header-actions">
-      <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
-    </div>
-
-    <button class="menu-toggle" aria-label="منو">☰</button>
-  </header>
-
-  <main>
-
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">نمونه‌کارها</p>
-        <h1>
-          کارهای انجام‌شده را<br>
-          <span class="text-accent">از نزدیک ببینید</span>
-        </h1>
-        <p class="hero-desc">
-          تصاویر واقعی از چادرهای مسافرتی، برزنتی، 
-          پشه‌بند و نمونه‌کارهای چادردوزی جزیره در آمل.
-        </p>
-      </div>
-    </section>
-
-    <!-- FILTER -->
-    <section class="gallery-filter-section">
-      <div class="container">
-        <div class="gallery-filters">
-          <button class="filter-btn active" data-filter="all">همه</button>
-          <button class="filter-btn" data-filter="travel">چادر مسافرتی</button>
-          <button class="filter-btn" data-filter="tarpaulin">چادر برزنتی</button>
-          <button class="filter-btn" data-filter="net">پشه‌بند</button>
-          <button class="filter-btn" data-filter="workshop">کارگاه</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY GRID -->
-    <section class="section gallery-section">
-      <div class="container">
-        <div class="gallery-grid" id="galleryGrid">
-
-          <!-- چادر مسافرتی -->
-          <div class="gallery-item" data-category="travel">
-            <img src="favicon.svg" alt="برند چادردوزی جزیره" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>چادر برند</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="travel">
-            <img src="8n-jat.webp" alt="چادر مسافرتی نمونه کار" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>نمونه کار</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="travel">
-            <img src="tent.jpg" alt="کمپینگ چادر مسافرتی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>کمپینگ</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="travel">
-            <img src="brno-bereznti-8.webp" alt="چادر مسافرتی برزنتی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>چادر برزنتی</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="travel">
-            <img src="bereznte-8-drakhte.jpg" alt="چادر ۸ نفره طرح درختی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>طرح درختی</span></div>
-          </div>
-
-          <!-- تعمیرات -->
-          <div class="gallery-item" data-category="workshop">
-            <img src="travel-tent-before-repair.webp" alt="چادر مسافرتی قبل تعمیر" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>قبل تعمیر</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="workshop">
-            <img src="travel-tent-during-repair.webp" alt="تعمیر چادر مسافرتی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>حین تعمیر</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="workshop">
-            <img src="tent-after-repair-1.jpg" alt="چادر مسافرتی بعد تعمیر" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>بعد تعمیر</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="workshop">
-            <img src="travel-tent-after-repair-side.jpg" alt="نتیجه تعمیر چادر" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>نتیجه نهایی</span></div>
-          </div>
-
-          <!-- برزنتی -->
-          <div class="gallery-item" data-category="tarpaulin">
-            <img src="KHIME.jpg" alt="چادر برزنتی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>چادر برزنتی</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="tarpaulin">
-            <img src="BEREZENT.webp" alt="چادر برزنتی سفارشی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>برزنتی سفارشی</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="tarpaulin">
-            <img src="SAIBANg.jpg" alt="سایبان برزنتی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>سایبان</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="tarpaulin">
-            <img src="10n-bereznt.webp" alt="چادر برزنتی ۱۰ نفره" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>۱۰ نفره</span></div>
-          </div>
-
-          <!-- پشه‌بند -->
-          <div class="gallery-item" data-category="net">
-            <img src="pasheband.jpg" alt="پشه‌بند سفارشی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>پشه‌بند</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="net">
-            <img src="pasheband-bdon-fanar.jpg" alt="پشه‌بند بدون فنر" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>بدون فنر</span></div>
-          </div>
-
-          <!-- کارگاه -->
-          <div class="gallery-item" data-category="workshop">
-            <img src="skeleton-tent-8-custom-production.jpg" alt="تولید چادر سفارشی" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>تولید سفارشی</span></div>
-          </div>
-
-          <div class="gallery-item" data-category="workshop">
-            <img src="travel-tent-after-repair-side.jpg" alt="تعمیر چادر در آمل" width="600" height="450" loading="lazy" decoding="async" onerror="this.src='hero-chadoor.webp'">
-            <div class="gallery-overlay"><span>تعمیرات</span></div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-final">
-      <div class="container">
-        <h2>از کیفیت کار مطمئن شدی؟</h2>
-        <p>همین حالا سفارش بده یا برای مشاوره رایگان پیام بده</p>
-        <div class="cta-buttons">
-          <a href="shop.html" class="btn btn-primary btn-lg">مشاهده فروشگاه</a>
-          <a href="https://wa.me/989118031241?text=درود، از گالری سایت پیام می‌دم" 
-             class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-            پیام در واتساپ
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-top">
-      <a href="index.html" class="brand">
-        <img src="favicon.svg" alt="لوگو چادردوزی جزیره" width="45" height="45">
-        <span>چادردوزی جزیره J.A.T</span>
-      </a>
-      <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
-    </div>
-
-    <div class="social-links">
-      <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
-      <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-      <a href="https://t.me/gattent" target="_blank" rel="noopener">تلگرام</a>
-    </div>
-
-    <nav class="footer-menu">
-      <a href="products.html">محصولات</a>
-      <a href="shop.html">فروشگاه</a>
-      <a href="services.html">خدمات</a>
-      <a href="gallery.html">گالری</a>
-      <a href="about.html">درباره ما</a>
-      <a href="contact.html">ثبت سفارش</a>
-    </nav>
-
-    <div class="copyright">
-      © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
-      کلیه حقوق این وب‌سایت محفوظ است.
-    </div>
-  </footer>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="بستن تصویر">×</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="تصویر قبلی">‹</button>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="تصویر بعدی">›</button>
-    <div class="lightbox-content">
-      <img src="" alt="" id="lightboxImage" width="900" height="675">
-      <p class="lightbox-caption" id="lightboxCaption"></p>
-    </div>
+  <div class="gallery-filters" id="galleryFilters">
+    <button class="g-filter active" data-cat="all">همه</button>
+    <button class="g-filter" data-cat="برزنتی">برزنتی</button>
+    <button class="g-filter" data-cat="مسافرتی">مسافرتی</button>
+    <button class="g-filter" data-cat="کودک">کودک</button>
+    <button class="g-filter" data-cat="تعمیر">تعمیر</button>
+    <button class="g-filter" data-cat="پکینیو">پکینیو</button>
   </div>
 
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- برزنتی -->
+    <div class="gallery-item" data-cat="برزنتی"><img src="brno-4-jat.jpg" alt="چادر برزنتی ۴ نفره" loading="lazy"><div class="caption">چادر برزنتی ۴ نفره</div></div>
+    <div class="gallery-item" data-cat="برزنتی"><img src="6n-brezent.webp" alt="چادر برزنتی ۶ نفره" loading="lazy"><div class="caption">چادر برزنتی ۶ نفره</div></div>
+    <div class="gallery-item" data-cat="برزنتی"><img src="8n-jat.webp" alt="چادر برزنتی ۸ نفره" loading="lazy"><div class="caption">چادر برزنتی ۸ نفره J.A.T</div></div>
+    <div class="gallery-item" data-cat="برزنتی"><img src="10n-bereznt.webp" alt="چادر برزنتی ۱۰ نفره" loading="lazy"><div class="caption">چادر برزنتی ۱۰ نفره</div></div>
+    <div class="gallery-item" data-cat="برزنتی"><img src="brno-bereznti-8.webp" alt="برزنتی ۸ نفره" loading="lazy"><div class="caption">برزنتی ۸ نفره</div></div>
+    <div class="gallery-item" data-cat="برزنتی"><img src="BEREZENT.webp" alt="برزنت" loading="lazy"><div class="caption">برزنت</div></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // فیلتر
-      const filterBtns = document.querySelectorAll(".gallery-filters .filter-btn");
-      const items = Array.from(document.querySelectorAll(".gallery-item"));
+    <!-- مسافرتی -->
+    <div class="gallery-item" data-cat="مسافرتی"><img src="tghr.jpg" alt="چادر دو جداره JAT" loading="lazy"><div class="caption">چادر ۸ نفره دو جداره JAT</div></div>
+    <div class="gallery-item" data-cat="مسافرتی"><img src="bereznte-8-drakhte.jpg" alt="چادر طرح درختی" loading="lazy"><div class="caption">چادر ۸ نفره طرح درختی</div></div>
+    <div class="gallery-item" data-cat="مسافرتی"><img src="KHIME.jpg" alt="خیمه ۱۲ نفره" loading="lazy"><div class="caption">خیمه / چادر ۱۲ نفره</div></div>
+    <div class="gallery-item" data-cat="مسافرتی"><img src="SRVIS-TENT.jpg" alt="سرویس بهداشتی" loading="lazy"><div class="caption">سرویس بهداشتی مسافرتی</div></div>
+    <div class="gallery-item" data-cat="مسافرتی"><img src="SAIBANg.jpg" alt="سایبان" loading="lazy"><div class="caption">سایبان</div></div>
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          const filter = btn.dataset.filter;
+    <!-- کودک -->
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-sag.jpg" alt="چادر کودک سگ" loading="lazy"><div class="caption">چادر کودک طرح سگ</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-dog.jpg" alt="چادر کودک سگ ۲" loading="lazy"><div class="caption">چادر کودک طرح سگ</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-ankaboti.jpg" alt="چادر عنکبوتی" loading="lazy"><div class="caption">چادر کودک مرد عنکبوتی</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-girl.jpg" alt="چادر دخترانه" loading="lazy"><div class="caption">چادر کودک دخترانه</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-girl-alsa.jpg" alt="چادر السا" loading="lazy"><div class="caption">چادر کودک السا</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-kite.jpg" alt="چادر کیتی" loading="lazy"><div class="caption">چادر کودک کیتی</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-sendrla.jpg" alt="چادر سیندرلا" loading="lazy"><div class="caption">چادر کودک سیندرلا</div></div>
+    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-koromi.jpg" alt="چادر کرومی" loading="lazy"><div class="caption">چادر کودک کرومی</div></div>
 
-          items.forEach(item => {
-            if (filter === "all" || item.dataset.category === filter) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
+    <!-- پکینیو -->
+    <div class="gallery-item" data-cat="پکینیو"><img src="c2001.webp" alt="پکینیو C2001" loading="lazy"><div class="caption">پکینیو C2001</div></div>
+    <div class="gallery-item" data-cat="پکینیو"><img src="c2001b.webp" alt="پکینیو C2001-B" loading="lazy"><div class="caption">پکینیو C2001-B</div></div>
+    <div class="gallery-item" data-cat="پکینیو"><img src="c2004.webp" alt="پکینیو C2004" loading="lazy"><div class="caption">پکینیو C2004</div></div>
+    <div class="gallery-item" data-cat="پکینیو"><img src="c2006.webp" alt="پکینیو C2006" loading="lazy"><div class="caption">پکینیو C2006</div></div>
+    <div class="gallery-item" data-cat="پکینیو"><img src="c2009.webp" alt="پکینیو C2009" loading="lazy"><div class="caption">پکینیو C2009</div></div>
 
-      // لایتن‌باکس
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightboxImage");
-      const lightboxCaption = document.getElementById("lightboxCaption");
-      const lightboxClose = document.getElementById("lightboxClose");
-      const lightboxPrev = document.getElementById("lightboxPrev");
-      const lightboxNext = document.getElementById("lightboxNext");
+    <!-- تعمیر -->
+    <div class="gallery-item" data-cat="تعمیر"><img src="travel-tent-before-repair.webp" alt="قبل از تعمیر" loading="lazy"><div class="caption">قبل از تعمیر</div></div>
+    <div class="gallery-item" data-cat="تعمیر"><img src="travel-tent-during-repair.webp" alt="در حال تعمیر" loading="lazy"><div class="caption">در حال تعمیر</div></div>
+    <div class="gallery-item" data-cat="تعمیر"><img src="tent-after-repair-1.jpg" alt="بعد از تعمیر" loading="lazy"><div class="caption">بعد از تعمیر</div></div>
+    <div class="gallery-item" data-cat="تعمیر"><img src="travel-tent-after-repair-side.jpg" alt="تعمیر شده" loading="lazy"><div class="caption">چادر تعمیرشده</div></div>
+  </div>
 
-      let currentIndex = 0;
-      let visibleItems = [];
+  <div class="cta-gallery">
+    <a href="shop.html">مشاهده فروشگاه و قیمت‌ها</a>
+  </div>
+</main>
 
-      function getVisibleItems() {
-        return items.filter(item => item.style.display !== "none");
-      }
+<div class="lightbox-g" id="galleryLightbox">
+  <button class="close-lb" id="closeGalleryLb" aria-label="بستن">×</button>
+  <img id="galleryLbImg" src="" alt="">
+</div>
 
-      function openLightbox(index) {
-        visibleItems = getVisibleItems();
-        if (visibleItems.length === 0) return;
+<footer class="site-footer">
+  <div class="footer-top">
+    <a href="index.html" class="brand">
+      <img src="favicon.svg" alt="لوگو" width="44" height="44">
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+    <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+  </div>
+  <nav class="footer-menu">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="social-links">
+    <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+    <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+  </div>
+  <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+</footer>
 
-        currentIndex = index;
-        const item = visibleItems[currentIndex];
-        const img = item.querySelector("img");
-        const caption = item.querySelector(".gallery-overlay span");
-
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt || "";
-        lightboxCaption.textContent = caption ? caption.textContent : img.alt;
-
-        lightbox.classList.add("active");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove("active");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-        lightboxImg.src = "";
-      }
-
-      function showNext() {
-        if (visibleItems.length === 0) return;
-        currentIndex = (currentIndex + 1) % visibleItems.length;
-        openLightbox(currentIndex);
-      }
-
-      function showPrev() {
-        if (visibleItems.length === 0) return;
-        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
-        openLightbox(currentIndex);
-      }
-
-      items.forEach((item) => {
-        item.addEventListener("click", () => {
-          const visible = getVisibleItems();
-          const realIndex = visible.indexOf(item);
-          if (realIndex !== -1) openLightbox(realIndex);
-        });
-      });
-
-      lightboxClose.addEventListener("click", closeLightbox);
-      lightboxNext.addEventListener("click", showNext);
-      lightboxPrev.addEventListener("click", showPrev);
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (!lightbox.classList.contains("active")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft") showNext();
-        if (e.key === "ArrowRight") showPrev();
-      });
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // فیلتر
+  document.getElementById("galleryFilters").addEventListener("click", (e) => {
+    const btn = e.target.closest(".g-filter");
+    if (!btn) return;
+    document.querySelectorAll(".g-filter").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const cat = btn.dataset.cat;
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      item.style.display = (cat === "all" || item.dataset.cat === cat) ? "" : "none";
     });
-  </script>
+  });
 
+  // لایت‌باکس
+  const lb = document.getElementById("galleryLightbox");
+  const lbImg = document.getElementById("galleryLbImg");
+  document.querySelectorAll(".gallery-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const img = item.querySelector("img");
+      if (img) {
+        lbImg.src = img.src;
+        lb.classList.add("open");
+      }
+    });
+  });
+  document.getElementById("closeGalleryLb").onclick = () => lb.classList.remove("open");
+  lb.onclick = (e) => { if (e.target === lb) lb.classList.remove("open"); };
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") lb.classList.remove("open"); });
+});
+</script>
 </body>
 </html>
