@@ -42,7 +42,7 @@
     .order-box{background:#f6f8f6;border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:auto}
     .order-title{font-weight:800;margin-bottom:6px}.order-text{font-size:13px;color:var(--muted);line-height:1.8}
     .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-    .action{display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;min-height:48px;font-weight:800;font-size:13px;padding:0 12px}
+    .action{display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;min-height:48px;font-weight:800;font-size:13px;padding:0 12px;border:0;cursor:pointer;font-family:inherit}
     .action-primary{background:var(--green);color:#fff}.action-primary:hover{background:var(--green2)}
     .action-wa{background:#20b95a;color:#fff}.action-outline{border:1px solid var(--line);color:var(--ink);background:#fff}
     .tabs{position:sticky;top:64px;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);display:flex;gap:5px;border:1px solid var(--line);border-radius:15px;padding:5px;margin:22px 0}
@@ -69,7 +69,7 @@
 </head>
 <body>
 <header class="site-header sticky-header">
-  <a href="index.html" class="brand"><img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44"><span>چادردوزی جزیره J.A.T</span></a>
+  <a href="index.html" class="brand"><img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44"><span>چادردوزی جزیره J.A.T</span></a>
   <nav class="main-nav" aria-label="منوی اصلی">
     <a href="products.html">محصولات</a><a href="shop.html">فروشگاه</a><a href="services.html">خدمات</a>
     <a href="gallery.html">گالری</a><a href="about.html">درباره ما</a><a href="blog.html">مجله سفر</a><a href="contact.html">ثبت سفارش</a>
@@ -115,189 +115,44 @@
 <script src="script.js"></script>
 <script>
 const productDetails = {
-  1: {
-    fullDesc: "چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده نیمه‌دائمی. دوخت مقاوم و پارچه برزنتی با کیفیت که در برابر رطوبت و آفتاب شمال ایران دوام خوبی دارد.",
-    features: ["پارچه برزنتی مقاوم در برابر آب و آفتاب","دوخت کارگاهی با تمرکز روی دوام","مناسب ۴ نفر + وسایل","قابل سفارش در ابعاد دلخواه","مناسب باغ، حیاط و کمپینگ","تولید مستقیم در کارگاه آمل"],
-    specs: [["گنجایش","۴ نفره"],["نوع","برزنتی"],["ابعاد تقریبی بازشده","قابل سفارش (معمولاً حدود ۲۲۰×۲۲۰)"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره (قابل ارتقا)"],["مناسب برای","سفر، باغ، استفاده طولانی"],["تولید","مستقیم در کارگاه آمل"],["امکان سفارشی‌سازی","بله"]],
-    images: ["brno-4-jat.jpg","tghr.jpg"]
-  },
-  2: {
-    fullDesc: "چادر برزنتی ۶ نفره با فضای مناسب برای خانواده‌های متوسط. طراحی‌شده برای استفاده واقعی در شرایط شمال ایران.",
-    features: ["فضای جادار برای ۶ نفر","پارچه برزنتی مقاوم","دوخت حرفه‌ای کارگاهی","مناسب کمپینگ و باغ","امکان تغییر ابعاد","ارسال به سراسر ایران"],
-    specs: [["گنجایش","۶ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره"],["مناسب برای","خانواده، باغ، کمپینگ"],["تولید","مستقیم در آمل"],["امکان سفارشی‌سازی","بله"]],
-    images: ["6n-brezent.webp","brno-8-s.webp"]
-  },
-  3: {
-    fullDesc: "چادر برزنتی ۸ نفره مدل J.A.T، یکی از پرفروش‌ترین محصولات کارگاه. فضای بزرگ و مقاوم برای خانواده‌های پرجمعیت.",
-    features: ["ظرفیت ۸ نفره واقعی","پارچه برزنتی ضخیم و مقاوم","دوخت تقویت‌شده در نقاط حساس","مناسب سفرهای شمال و استفاده طولانی","امکان افزودن پنجره و پشه‌بند","تولید مستقیم بدون واسطه"],
-    specs: [["گنجایش","۸ نفره"],["مدل","J.A.T"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["مناسب برای","خانواده بزرگ، باغ، کمپینگ گروهی"],["تولید","کارگاه آمل"],["امکان سفارشی‌سازی","بله"]],
-    images: ["8n-jat.webp","brno-bereznti-8.webp","brno-8-r.webp"]
-  },
-  4: {
-    fullDesc: "چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ‌تر یا استفاده به‌عنوان سایبان و فضای نشیمن. معمولاً به‌صورت سفارشی دوخته می‌شود.",
-    features: ["فضای خیلی جادار","مناسب گروه‌های بزرگ","پارچه برزنتی سنگین","دوخت مقاوم کارگاهی","قابل سفارش در ابعاد دقیق","مناسب باغ و پروژه‌های طولانی‌مدت"],
-    specs: [["گنجایش","۱۰ نفره و بیشتر"],["نوع","برزنتی سفارشی"],["جنس پارچه","برزنت ضخیم"],["مناسب برای","گروه بزرگ، باغ، سایبان"],["تولید","سفارشی در آمل"],["امکان سفارشی‌سازی","کامل"]],
-    images: ["10n-bereznt.webp","tent-12-berezent.jpg"]
-  },
-  5: {
-    fullDesc: "چادر مسافرتی ۱۲ نفره جادار و مناسب کمپینگ و سفرهای خانوادگی بزرگ.",
-    features: ["ظرفیت ۱۲ نفر","فضای بسیار جادار","مناسب کمپینگ گروهی","دوخت مقاوم","قابل حمل نسبی"],
-    specs: [["گنجایش","۱۲ نفره"],["نوع","مسافرتی"],["کاربرد","کمپینگ و سفر خانوادگی"]],
-    images: ["KHIME.jpg","tent-12.jpg"]
-  },
-  6: {
-    fullDesc: "چادر مسافرتی ۸ نفره مقاوم برای سفر و طبیعت‌گردی.",
-    features: ["ظرفیت ۸ نفر","مناسب سفر و کمپینگ","تهویه مناسب","نصب نسبتاً آسان","دوام خوب"],
-    specs: [["گنجایش","۸ نفره"],["نوع","مسافرتی"],["کاربرد","سفر و طبیعت‌گردی"]],
-    images: ["tent.jpg","brno-8-s.webp"]
-  },
-  7: {
-    fullDesc: "پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و امکان سفارش در اندازه‌های مختلف.",
-    features: ["دوخت سفارشی","اندازه‌های متنوع","مناسب چادر و فضای باز","توری با کیفیت","سبک و قابل حمل"],
-    specs: [["نوع","پشه‌بند"],["سفارشی‌سازی","بله"],["کاربرد","چادر و فضای باز"]],
-    images: ["pasheband.jpg","pasheband-bdon-fanar.jpg"]
-  },
-  8: {
-    fullDesc: "خدمات تعمیر تخصصی چادر مسافرتی و برزنتی در کارگاه آمل. ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل.",
-    features: ["ترمیم پارگی و درزها","تعویض زیپ و قطعات","تعمیر فنر و اسکلت","بازسازی چادرهای قدیمی","قیمت شفاف قبل از شروع کار"],
-    specs: [["نوع خدمت","تعمیر تخصصی چادر"],["محل انجام","کارگاه آمل"],["موارد قابل تعمیر","پارگی، زیپ، فنر، اسکلت"]],
-    images: ["travel-tent-during-repair.webp","travel-tent-before-repair.webp","tent-after-repair-1.jpg"]
-  },
-  9: {
-    fullDesc: "چادر کودک طرح سگ با ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی در منزل و فضای باز.",
-    features: ["ابعاد تقریبی ۱۴۰×۱۴۰ سانتی‌متر","طرح سگ جذاب","سبک و قابل حمل","مناسب منزل و فضای باز","نصب آسان"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["نوع","چادر بازی کودک"],["طرح","سگ"]],
-    images: ["tent-kids-sag.jpg","tent-kids-dog.jpg"]
-  },
-  10: {
-    fullDesc: "چادر کودک طرح سگ با رنگ‌بندی متفاوت. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طرح سگ","رنگ‌بندی متفاوت","سبک و قابل حمل"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سگ"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-dog.jpg","tent-kids-sag.jpg"]
-  },
-  11: {
-    fullDesc: "چادر کودک طرح کرومی با طراحی جذاب. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["طرح کرومی جذاب","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","سبک و ایمن","نصب آسان"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کرومی"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-koromi.jpg"]
-  },
-  12: {
-    fullDesc: "چادر کودک طرح مرد عنکبوتی مخصوص پسران. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["طرح مرد عنکبوتی","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","مناسب پسران","سبک و قابل حمل"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","مرد عنکبوتی"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-ankaboti.jpg"]
-  },
-  13: {
-    fullDesc: "چادر کودک دخترانه شاد و رنگی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["طرح دخترانه شاد","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","رنگ‌بندی جذاب","سبک و ایمن"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","دخترانه"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-girl.jpg","tent-kids-girl-1.jpg"]
-  },
-  14: {
-    fullDesc: "چادر کودک دخترانه طرح السا با رنگ‌بندی متفاوت.",
-    features: ["طرح السا","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","رنگ‌بندی متفاوت","سبک و قابل حمل"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","السا"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-girl-alsa.jpg"]
-  },
-  15: {
-    fullDesc: "چادر کودک دخترانه طرح کیتی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["طرح کیتی","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طراحی شیک","سبک و ایمن"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کیتی"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-kite.jpg"]
-  },
-  16: {
-    fullDesc: "چادر کودک طرح سیندرلا با طراحی فانتزی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["طرح سیندرلا","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طراحی فانتزی","سبک و قابل جابه‌جایی"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سیندرلا"],["نوع","چادر بازی کودک"]],
-    images: ["tent-kids-sendrla.jpg"]
-  },
-  17: {
-    fullDesc: "میز و صندلی مسافرتی با کیفیت مناسب کمپینگ و سفر.",
-    features: ["مناسب کمپینگ و سفر","سبک و قابل حمل","قابل جمع شدن"],
-    specs: [["نوع","میز و صندلی مسافرتی"],["کاربرد","کمپینگ و سفر"]],
-    images: ["camping-table-chairs-equipment.jpg"]
-  },
-  18: {
-    fullDesc: "برزنت ضخیم مناسب چادر نیسان، کامیون و استفاده‌های طولانی‌مدت در فضای باز.",
-    features: ["برزنت ضخیم و مقاوم","مناسب نیسان و کامیون","دوخت کارگاهی","قابل سفارش در ابعاد دلخواه"],
-    specs: [["نوع","برزنت"],["کاربرد","چادر نیسان، کامیون و فضای باز"],["امکان سفارشی‌سازی","بله"]],
-    images: ["BEREZENT.webp"]
-  },
-  19: {
-    fullDesc: "سایبان بازویی در رنگ‌های مختلف. مناسب باغ، حیاط و فضای باز.",
-    features: ["سایبان بازویی","رنگ‌های مختلف","مناسب باغ و حیاط","تولید مستقیم"],
-    specs: [["نوع","سایبان بازویی"],["کاربرد","باغ، حیاط و فضای باز"]],
-    images: ["SAIBANg.jpg","nasb-saiban.webp"]
-  },
-  20: {
-    fullDesc: "سرویس بهداشتی / حمام مسافرتی با کیفیت مناسب کمپینگ و سفر.",
-    features: ["فضای خصوصی","مناسب کمپینگ و سفر","قابل حمل"],
-    specs: [["نوع","سرویس بهداشتی مسافرتی"],["کاربرد","کمپینگ و سفر"]],
-    images: ["SRVIS-TENT.jpg"]
-  },
-  21: {
-    fullDesc: "چادر ۸ نفره طرح درختی مسافرتی با کیفیت. طراحی زیبا و فضای مناسب برای خانواده.",
-    features: ["طرح درختی زیبا","ظرفیت ۸ نفر","مناسب کمپینگ","دوخت با کیفیت","ظاهر جذاب"],
-    specs: [["گنجایش","۸ نفره"],["طرح","درختی"],["نوع","مسافرتی"]],
-    images: ["bereznte-8-drakhte.jpg","tent-12-6-zlei.jpg"]
-  },
-  22: {
-    fullDesc: "چادر مسافرتی ۸ نفره JAT مدل دو جداره. ابعاد ۲۵۰×۲۵۰ سانتی‌متر و ارتفاع داخلی ۲۱۰ سانتی‌متر. پارچه آکسفورد ضدآب و اسکلت فلزی مقاوم.",
-    features: ["طراحی دو جداره با پارچه آکسفورد ضدآب","اسکلت فلزی مستحکم با قطر ستون ۰٫۹ سانتی‌متر","چهار پنجره توری‌دار با پرده جمع‌شونده","زیپ‌های فلزی دوطرفه مقاوم","کف کاملاً ضدآب","قلاب داخلی برای آویختن چراغ","سیستم فنری","کیف حمل کوله‌ای","مناسب تمام فصول"],
-    specs: [["مدل","JAT"],["گنجایش","۸ نفره"],["ابعاد بازشده","۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر"],["ارتفاع داخلی","۲۱۰ سانتی‌متر"],["تعداد لایه","دو جداره"],["جنس پارچه","آکسفورد ضدآب"],["جنس کف","پلی‌استر ضدآب"],["قطر ستون","۰٫۹ سانتی‌متر"],["وزن تقریبی بسته‌بندی","حدود ۱٫۴ تا ۱٫۵ کیلوگرم"],["ابعاد بسته‌بندی","۸۵ × ۸۵ × ۱۲ سانتی‌متر"]],
-    images: ["tghr.jpg","brno-8-s.webp","brno-8-r.webp"]
-  },
-  23: {
-    fullDesc: "چادر کوهنوردی دو نفره پکینیو مدل PKN-C2001-B. ساختار دولایه، وزن حدود ۲۸۰۰ گرم و میله‌های آلومینیومی ۸.۵ میلی‌متری.",
-    features: ["طراحی دولایه قابل تفکیک","میله‌های آلومینیومی ۸.۵ میلی‌متری","وزن حدود ۲۸۰۰ گرم","کف PU3000 و بدنه PU2000","پشه‌بند و هواکش دوطرفه","دو جیب داخلی و قلاب سقفی","مناسب کوهنوردی و کمپینگ سبک"],
-    specs: [["مدل","PKN-C2001-B"],["گنجایش","۲ تا ۳ نفر"],["نوع چادر","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۱۰ سانتی‌متر"],["ابعاد بازشده","۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن بسته‌بندی","۲۸۰۰ گرم"]],
-    images: ["c2001b.webp","c2001bjat.webp","c2001.webp"]
-  },
-  24: {
-    fullDesc: "چادر کوهنوردی ۲ تا ۳ نفره پکینیو مدل PKN-C2001. چادر دوپوش عصایی با میله‌های آلومینیومی ۸.۵ میلی‌متری و وزن حدود ۲.۵ کیلوگرم.",
-    features: ["ظرفیت ۲ تا ۳ نفر","ساختار دوپوش قابل تفکیک","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم","دو هواکش و پشه‌بند","کف PU3000 و بدنه PU2000"],
-    specs: [["مدل","PKN-C2001"],["گنجایش","۲ تا ۳ نفر"],["نوع","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۱۰ سانتی‌متر"],["ابعاد بازشده","۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T / ۲۱۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن","حدود ۲۵۰۰ گرم"]],
-    images: ["c2001.webp","c2001jat.webp","c2001b.webp"]
-  },
-  25: {
-    fullDesc: "چادر کوهنوردی ۳ تا ۴ نفره پکینیو مدل C2004. ساختار دو لایه با میله‌های آلومینیومی و فضای جادارتر.",
-    features: ["ظرفیت ۳ تا ۴ نفر","ساختار دو لایه","میله‌های آلومینیومی ۸.۵ میلی‌متر","دو ورودی و دو هواکش","فضای داخلی جادار"],
-    specs: [["مدل","C2004 / PKN-C2004"],["گنجایش","۳ تا ۴ نفر"],["نوع","عصایی / گنبدی"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","حدود ۱۳۰ سانتی‌متر"],["ابعاد بازشده","حدود ۱۸۰ × ۲۱۰ × ۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر"],["وزن تقریبی","حدود ۳.۳ کیلوگرم"]],
-    images: ["c2004.webp","c2004ja.webp","c2004jat.webp"]
-  },
-  26: {
-    fullDesc: "چادر کوهنوردی ۳ تا ۴ نفره پکینیو مدل C2006. یکی از پرفروش‌ترین مدل‌ها با وزن حدود ۳ کیلوگرم و طراحی دوپوش.",
-    features: ["ظرفیت ۳ تا ۴ نفر","ساختار دوپوش","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۳ کیلوگرم","دو هواکش و دو پنجره","فضای انباری و آشپزخانه"],
-    specs: [["مدل","C2006 / PKN-C2006"],["گنجایش","۳ تا ۴ نفر"],["نوع","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۳۰ سانتی‌متر"],["ابعاد بازشده","۱۳۰ × ۲۱۰ × (۵۰+۱۸۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن","حدود ۲۸۰۰ تا ۳۰۰۰ گرم"]],
-    images: ["c2006.webp","c2006jat.webp"]
-  },
-  27: {
-    fullDesc: "چادر ۲ نفره پکینیو مدل C2009. نسخه ارتقا یافته با مقاومت بالاتر در برابر باد.",
-    features: ["ظرفیت ۱ تا ۲ نفر","لایه بیرونی ضخیم‌تر","مقاومت بالاتر در برابر باد","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم"],
-    specs: [["مدل","C2009 / PKN-C2009"],["گنجایش","۱ تا ۲ نفر"],["نوع","کوهنوردی"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر Ripstop"],["وزن تقریبی","حدود ۲۵۰۰ گرم"]],
-    images: ["c2009.webp","c2009jat.webp"]
-  }
+  1:{fullDesc:"چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده نیمه‌دائمی. دوخت مقاوم و پارچه برزنتی با کیفیت.",features:["پارچه برزنتی مقاوم","دوخت کارگاهی","مناسب ۴ نفر + وسایل","قابل سفارش در ابعاد دلخواه","تولید مستقیم در آمل"],specs:[["گنجایش","۴ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره"],["تولید","مستقیم در کارگاه آمل"],["امکان سفارشی‌سازی","بله"]],images:["brno-4-jat.jpg","tghr.jpg"]},
+  2:{fullDesc:"چادر برزنتی ۶ نفره با فضای مناسب برای خانواده‌های متوسط. طراحی‌شده برای شرایط شمال ایران.",features:["فضای جادار برای ۶ نفر","پارچه برزنتی مقاوم","دوخت حرفه‌ای","مناسب کمپینگ و باغ","ارسال سراسر ایران"],specs:[["گنجایش","۶ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره"],["تولید","مستقیم در آمل"],["امکان سفارشی‌سازی","بله"]],images:["6n-brezent.webp","brno-8-s.webp"]},
+  3:{fullDesc:"چادر برزنتی ۸ نفره مدل J.A.T، یکی از پرفروش‌ترین محصولات کارگاه. فضای بزرگ و مقاوم.",features:["ظرفیت ۸ نفره واقعی","پارچه برزنتی ضخیم","دوخت تقویت‌شده","مناسب سفرهای شمال","تولید مستقیم"],specs:[["گنجایش","۸ نفره"],["مدل","J.A.T"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تولید","کارگاه آمل"],["امکان سفارشی‌سازی","بله"]],images:["8n-jat.webp","brno-bereznti-8.webp","brno-8-r.webp"]},
+  4:{fullDesc:"چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ یا سایبان. معمولاً سفارشی دوخته می‌شود.",features:["فضای خیلی جادار","مناسب گروه‌های بزرگ","پارچه برزنتی سنگین","قابل سفارش ابعاد دقیق"],specs:[["گنجایش","۱۰ نفره و بیشتر"],["نوع","برزنتی سفارشی"],["جنس پارچه","برزنت ضخیم"],["امکان سفارشی‌سازی","کامل"]],images:["10n-bereznt.webp","tent-12-berezent.jpg"]},
+  5:{fullDesc:"چادر مسافرتی ۱۲ نفره جادار مناسب کمپینگ و سفرهای خانوادگی بزرگ.",features:["ظرفیت ۱۲ نفر","فضای جادار","مناسب کمپینگ گروهی","دوخت مقاوم"],specs:[["گنجایش","۱۲ نفره"],["نوع","مسافرتی"],["کاربرد","کمپینگ و سفر خانوادگی"]],images:["KHIME.jpg","tent-12.jpg"]},
+  6:{fullDesc:"چادر مسافرتی ۸ نفره مقاوم برای سفر و طبیعت‌گردی.",features:["ظرفیت ۸ نفر","مناسب سفر و کمپینگ","تهویه مناسب","نصب آسان"],specs:[["گنجایش","۸ نفره"],["نوع","مسافرتی"],["کاربرد","سفر و طبیعت‌گردی"]],images:["tent.jpg","brno-8-s.webp"]},
+  7:{fullDesc:"پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و اندازه‌های متنوع.",features:["دوخت سفارشی","اندازه‌های متنوع","مناسب چادر و فضای باز","توری با کیفیت"],specs:[["نوع","پشه‌بند"],["سفارشی‌سازی","بله"],["کاربرد","چادر و فضای باز"]],images:["pasheband.jpg","pasheband-bdon-fanar.jpg"]},
+  8:{fullDesc:"خدمات تعمیر تخصصی چادر در کارگاه آمل. ترمیم پارگی، زیپ، فنر و بازسازی.",features:["ترمیم پارگی","تعویض زیپ","تعمیر فنر","بازسازی چادر قدیمی","قیمت شفاف"],specs:[["نوع خدمت","تعمیر تخصصی چادر"],["محل انجام","کارگاه آمل"]],images:["travel-tent-during-repair.webp","travel-tent-before-repair.webp","tent-after-repair-1.jpg"]},
+  9:{fullDesc:"چادر کودک طرح سگ، ابعاد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی در منزل و فضای باز.",features:["ابعاد ۱۴۰×۱۴۰","طرح سگ","سبک و قابل حمل","نصب آسان"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سگ"],["نوع","چادر بازی کودک"]],images:["tent-kids-sag.jpg","tent-kids-dog.jpg"]},
+  10:{fullDesc:"چادر کودک طرح سگ با رنگ‌بندی متفاوت. ابعاد حدود ۱۴۰×۱۴۰ سانتی‌متر.",features:["ابعاد ۱۴۰×۱۴۰","طرح سگ","رنگ‌بندی متفاوت","سبک"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سگ"]],images:["tent-kids-dog.jpg","tent-kids-sag.jpg"]},
+  11:{fullDesc:"چادر کودک طرح کرومی. ابعاد حدود ۱۴۰×۱۴۰ سانتی‌متر.",features:["طرح کرومی","ابعاد ۱۴۰×۱۴۰","سبک و ایمن"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کرومی"]],images:["tent-kids-koromi.jpg"]},
+  12:{fullDesc:"چادر کودک طرح مرد عنکبوتی مخصوص پسران.",features:["طرح مرد عنکبوتی","ابعاد ۱۴۰×۱۴۰","مناسب پسران"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","مرد عنکبوتی"]],images:["tent-kids-ankaboti.jpg"]},
+  13:{fullDesc:"چادر کودک دخترانه شاد و رنگی.",features:["طرح دخترانه","ابعاد ۱۴۰×۱۴۰","رنگ‌بندی جذاب"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","دخترانه"]],images:["tent-kids-girl.jpg","tent-kids-girl-1.jpg"]},
+  14:{fullDesc:"چادر کودک دخترانه طرح السا.",features:["طرح السا","ابعاد ۱۴۰×۱۴۰","رنگ‌بندی متفاوت"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","السا"]],images:["tent-kids-girl-alsa.jpg"]},
+  15:{fullDesc:"چادر کودک دخترانه طرح کیتی.",features:["طرح کیتی","ابعاد ۱۴۰×۱۴۰","طراحی شیک"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کیتی"]],images:["tent-kids-kite.jpg"]},
+  16:{fullDesc:"چادر کودک طرح سیندرلا با طراحی فانتزی.",features:["طرح سیندرلا","ابعاد ۱۴۰×۱۴۰","طراحی فانتزی"],specs:[["گنجایش","۱ تا ۲ کودک"],["ابعاد","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سیندرلا"]],images:["tent-kids-sendrla.jpg"]},
+  17:{fullDesc:"میز و صندلی مسافرتی سبک و قابل حمل مناسب کمپینگ.",features:["مناسب کمپینگ","سبک و قابل حمل","قابل جمع شدن"],specs:[["نوع","میز و صندلی مسافرتی"],["کاربرد","کمپینگ و سفر"]],images:["camping-table-chairs-equipment.jpg"]},
+  18:{fullDesc:"برزنت ضخیم مناسب چادر نیسان، کامیون و استفاده طولانی‌مدت.",features:["برزنت ضخیم","مناسب نیسان و کامیون","دوخت کارگاهی","سفارشی"],specs:[["نوع","برزنت"],["کاربرد","نیسان، کامیون و فضای باز"],["امکان سفارشی‌سازی","بله"]],images:["BEREZENT.webp"]},
+  19:{fullDesc:"سایبان بازویی در رنگ‌های مختلف. مناسب باغ و حیاط.",features:["سایبان بازویی","رنگ‌های مختلف","مناسب باغ و حیاط"],specs:[["نوع","سایبان بازویی"],["کاربرد","باغ، حیاط و فضای باز"]],images:["SAIBANg.jpg","nasb-saiban.webp"]},
+  20:{fullDesc:"سرویس بهداشتی / حمام مسافرتی مناسب کمپینگ و سفر.",features:["فضای خصوصی","مناسب کمپینگ","قابل حمل"],specs:[["نوع","سرویس بهداشتی مسافرتی"],["کاربرد","کمپینگ و سفر"]],images:["SRVIS-TENT.jpg"]},
+  21:{fullDesc:"چادر ۸ نفره طرح درختی مسافرتی با ظاهر زیبا.",features:["طرح درختی","ظرفیت ۸ نفر","مناسب کمپینگ","ظاهر جذاب"],specs:[["گنجایش","۸ نفره"],["طرح","درختی"],["نوع","مسافرتی"]],images:["bereznte-8-drakhte.jpg","tent-12-6-zlei.jpg"]},
+  22:{fullDesc:"چادر مسافرتی ۸ نفره JAT مدل دو جداره. ابعاد ۲۵۰×۲۵۰ و ارتفاع ۲۱۰ سانتی‌متر. پارچه آکسفورد ضدآب.",features:["دو جداره آکسفورد ضدآب","اسکلت فلزی ۰٫۹ سانتی‌متر","چهار پنجره توری‌دار","کف ضدآب","سیستم فنری","کیف کوله‌ای"],specs:[["مدل","JAT"],["گنجایش","۸ نفره"],["ابعاد بازشده","۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر"],["ارتفاع داخلی","۲۱۰ سانتی‌متر"],["تعداد لایه","دو جداره"],["جنس پارچه","آکسفورد ضدآب"],["جنس کف","پلی‌استر ضدآب"],["قطر ستون","۰٫۹ سانتی‌متر"]],images:["tghr.jpg","brno-8-s.webp","brno-8-r.webp"]},
+  23:{fullDesc:"چادر کوهنوردی ۲ نفره پکینیو PKN-C2001-B. دوپوش، وزن حدود ۲۸۰۰ گرم، میله آلومینیومی ۸.۵ میلی‌متر.",features:["دوپوش قابل تفکیک","میله آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲۸۰۰ گرم","کف PU3000","مناسب کوهنوردی"],specs:[["مدل","PKN-C2001-B"],["گنجایش","۲ تا ۳ نفر"],["نوع","عصایی"],["تعداد لایه","۲ لایه"],["ارتفاع","۱۱۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["وزن","۲۸۰۰ گرم"]],images:["c2001b.webp","c2001bjat.webp","c2001.webp"]},
+  24:{fullDesc:"چادر کوهنوردی ۲ تا ۳ نفره پکینیو PKN-C2001. دوپوش، میله آلومینیومی، وزن حدود ۲.۵ کیلوگرم.",features:["ظرفیت ۲ تا ۳ نفر","دوپوش","میله آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم"],specs:[["مدل","PKN-C2001"],["گنجایش","۲ تا ۳ نفر"],["نوع","عصایی"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["وزن","حدود ۲۵۰۰ گرم"]],images:["c2001.webp","c2001jat.webp","c2001b.webp"]},
+  25:{fullDesc:"چادر کوهنوردی ۳ تا ۴ نفره پکینیو C2004. دو لایه، فضای جادار.",features:["ظرفیت ۳ تا ۴ نفر","دو لایه","میله آلومینیومی","فضای جادار"],specs:[["مدل","C2004"],["گنجایش","۳ تا ۴ نفر"],["تعداد لایه","۲ لایه"],["ارتفاع","حدود ۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["وزن تقریبی","حدود ۳.۳ کیلوگرم"]],images:["c2004.webp","c2004ja.webp","c2004jat.webp"]},
+  26:{fullDesc:"چادر کوهنوردی ۳ تا ۴ نفره پکینیو C2006. پرفروش، وزن حدود ۳ کیلوگرم، دوپوش.",features:["ظرفیت ۳ تا ۴ نفر","دوپوش","میله آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۳ کیلوگرم"],specs:[["مدل","C2006"],["گنجایش","۳ تا ۴ نفر"],["تعداد لایه","۲ لایه"],["ارتفاع","۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["وزن","حدود ۲۸۰۰ تا ۳۰۰۰ گرم"]],images:["c2006.webp","c2006jat.webp"]},
+  27:{fullDesc:"چادر ۲ نفره پکینیو C2009. نسخه ارتقا یافته با مقاومت بالاتر در برابر باد.",features:["ظرفیت ۱ تا ۲ نفر","مقاومت بالاتر در برابر باد","میله آلومینیومی","وزن حدود ۲.۵ کیلوگرم"],specs:[["مدل","C2009"],["گنجایش","۱ تا ۲ نفر"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["وزن تقریبی","حدود ۲۵۰۰ گرم"]],images:["c2009.webp","c2009jat.webp"]}
 };
-
-(function(){
-  const cart = JSON.parse(localStorage.getItem("chadoor_cart") || "[]");
-  const el = document.getElementById("cartCount");
-  if(el) el.textContent = cart.reduce((s,i)=>s+(Number(i.qty)||0),0);
-})();
 
 const params = new URLSearchParams(location.search);
 const productId = Number.parseInt(params.get("id"), 10);
 const content = document.getElementById("content");
 let gallery = [], galleryIndex = 0;
 
-function esc(v){return String(v ?? "").replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 
 function getGallery(product, details){
-  const candidates = []
-    .concat(Array.isArray(details?.images) ? details.images : [])
-    .concat(Array.isArray(product?.images) ? product.images : [])
-    .concat(Array.isArray(product?.gallery) ? product.gallery : [])
-    .concat(product?.image ? [product.image] : []);
+  const candidates = [].concat(details?.images||[]).concat(product?.images||[]).concat(product?.image?[product.image]:[]);
   return [...new Set(candidates.filter(Boolean).map(String))];
 }
 
@@ -305,18 +160,17 @@ function renderGallery(product, details){
   gallery = getGallery(product, details);
   galleryIndex = 0;
   if(!gallery.length) gallery = ["hero-chadoor.webp"];
-  return `
-    <div class="gallery-wrap">
-      <div class="gallery-stage" id="galleryStage" title="برای بزرگ‌نمایی کلیک کنید">
-        <span class="gallery-count" id="galleryCount">1 / ${gallery.length}</span>
-        <span class="gallery-zoom">🔍 بزرگ‌نمایی</span>
-        <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="تصویر قبلی">›</button>
-        <img id="mainProductImage" src="${esc(gallery[0])}" alt="${esc(product.name)}" onerror="this.src='hero-chadoor.webp'">
-        <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="تصویر بعدی">‹</button>
-      </div>
-      <div class="thumbnails" id="thumbnails"></div>
-      <div class="gallery-note">برای مشاهده تصاویر بیشتر روی تصاویر کوچک کلیک کنید؛ برای بزرگ‌نمایی روی تصویر اصلی بزنید.</div>
-    </div>`;
+  return `<div class="gallery-wrap">
+    <div class="gallery-stage" id="galleryStage" title="برای بزرگ‌نمایی کلیک کنید">
+      <span class="gallery-count" id="galleryCount">1 / ${gallery.length}</span>
+      <span class="gallery-zoom">🔍 بزرگ‌نمایی</span>
+      <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="قبلی">›</button>
+      <img id="mainProductImage" src="${esc(gallery[0])}" alt="${esc(product.name)}" onerror="this.src='hero-chadoor.webp'">
+      <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="بعدی">‹</button>
+    </div>
+    <div class="thumbnails" id="thumbnails"></div>
+    <div class="gallery-note">برای مشاهده تصاویر بیشتر روی تصاویر کوچک کلیک کنید.</div>
+  </div>`;
 }
 
 function updateGallery(){
@@ -330,27 +184,27 @@ function updateGallery(){
 
 function buildThumbs(){
   const box = document.getElementById("thumbnails");
-  box.innerHTML = gallery.map((src,i)=>`
-    <button class="thumb ${i===0?'active':''}" data-index="${i}" aria-label="تصویر ${i+1}">
-      <img src="${esc(src)}" alt="نمای ${i+1}" onerror="this.src='hero-chadoor.webp'">
-    </button>`).join("");
+  box.innerHTML = gallery.map((src,i)=>`<button class="thumb ${i===0?"active":""}" data-index="${i}"><img src="${esc(src)}" alt="" onerror="this.src='hero-chadoor.webp'"></button>`).join("");
   box.querySelectorAll(".thumb").forEach(btn=>{
-    btn.addEventListener("click", ()=>{galleryIndex = Number(btn.dataset.index); updateGallery();});
+    btn.addEventListener("click",()=>{galleryIndex=Number(btn.dataset.index);updateGallery();});
   });
 }
 
-function openLightbox(){
-  const lb = document.getElementById("lightbox");
-  document.getElementById("lbImage").src = gallery[galleryIndex];
-  lb.classList.add("open"); lb.setAttribute("aria-hidden","false");
-}
-function closeLightbox(){
-  const lb = document.getElementById("lightbox");
-  lb.classList.remove("open"); lb.setAttribute("aria-hidden","true");
-}
-function moveGallery(step){
-  galleryIndex = (galleryIndex + step + gallery.length) % gallery.length;
-  updateGallery();
+function openLightbox(){document.getElementById("lbImage").src=gallery[galleryIndex];document.getElementById("lightbox").classList.add("open");}
+function closeLightbox(){document.getElementById("lightbox").classList.remove("open");}
+function moveGallery(step){galleryIndex=(galleryIndex+step+gallery.length)%gallery.length;updateGallery();}
+
+function addToCartLocal(product){
+  const CART_KEY = "chadoor_cart";
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem(CART_KEY)||"[]"); } catch(e){}
+  const existing = cart.find(i => Number(i.id) === Number(product.id));
+  if(existing) existing.qty = (Number(existing.qty)||1) + 1;
+  else cart.push({id:product.id, name:product.name, price:product.price||0, image:product.image||"", qty:1});
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  const total = cart.reduce((s,i)=>s+(Number(i.qty)||0),0);
+  document.querySelectorAll("#cartCount").forEach(el => el.textContent = total);
+  alert("«" + product.name + "» به سبد خرید اضافه شد.");
 }
 
 fetch("products.json")
@@ -361,8 +215,8 @@ fetch("products.json")
 
     const d = productDetails[productId] || {
       fullDesc: product.description || "اطلاعات محصول در حال تکمیل است.",
-      features: ["تولید مستقیم در کارگاه آمل","دوخت حرفه‌ای و مقاوم","امکان سفارش سفارشی","ارسال به سراسر ایران"],
-      specs: [["نام محصول", product.name],["دسته‌بندی", product.category || "—"]],
+      features: ["تولید مستقیم در کارگاه آمل","دوخت حرفه‌ای","امکان سفارش سفارشی","ارسال سراسر ایران"],
+      specs: [["نام محصول", product.name],["دسته‌بندی", product.category||"—"]],
       images: product.image ? [product.image] : []
     };
 
@@ -376,13 +230,13 @@ fetch("products.json")
       ? `<div class="price">${price.toLocaleString("fa-IR")} تومان</div><div class="price-sub">قیمت درج‌شده در فروشگاه</div>`
       : `<div class="contact-price">برای اطلاع از قیمت تماس بگیرید</div><div class="price-sub">قیمت محصولات سفارشی پس از بررسی اعلام می‌شود.</div>`;
 
-    const wa = `https://wa.me/989118031241?text=${encodeURIComponent("سلام، درباره محصول «" + product.name + "» اطلاعات و قیمت می‌خواهم.")}`;
+    const wa = `https://wa.me/989118031241?text=${encodeURIComponent("سلام، درباره محصول «"+product.name+"» اطلاعات و قیمت می‌خواهم.")}`;
 
     content.innerHTML = `
       <section class="product-main">
         ${renderGallery(product, d)}
         <div class="summary">
-          <span class="category">${esc(product.category || "محصولات سفر")}</span>
+          <span class="category">${esc(product.category||"محصولات سفر")}</span>
           <h1>${esc(product.name)}</h1>
           <div class="product-code">کد محصول: ${esc(product.id)}</div>
           <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-text">محصول منتخب چادردوزی جزیره J.A.T</span></div>
@@ -395,18 +249,19 @@ fetch("products.json")
           </div>
           <div class="order-box">
             <div class="order-title">برای سفارش یا استعلام اطلاعات</div>
-            <div class="order-text">اگر درباره ابعاد، رنگ، جنس یا قیمت این محصول سؤال دارید، مستقیم با ما در تماس باشید.</div>
+            <div class="order-text">اگر درباره ابعاد، رنگ، جنس یا قیمت این محصول سؤال دارید، با ما در تماس باشید.</div>
             <div class="actions">
               <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">سفارش در واتساپ</a>
-              <a class="action action-primary" href="contact.html">ثبت سفارش</a>
+              <button type="button" class="action action-primary" id="addToCartBtn">افزودن به سبد</button>
             </div>
             <div class="actions" style="margin-top:10px">
+              <a class="action action-outline" href="contact.html">ثبت سفارش</a>
               <a class="action action-outline" href="shop.html">بازگشت به فروشگاه</a>
             </div>
           </div>
         </div>
       </section>
-      <nav class="tabs" aria-label="بخش‌های محصول">
+      <nav class="tabs">
         <button class="tab active" data-target="description">توضیحات</button>
         <button class="tab" data-target="features">ویژگی‌ها</button>
         <button class="tab" data-target="specs">مشخصات فنی</button>
@@ -418,11 +273,20 @@ fetch("products.json")
         <h2>نکات مهم نگهداری</h2>
         <ul class="tips">
           <li>پس از استفاده در محیط مرطوب، چادر را کاملاً خشک کنید.</li>
-          <li>پارچه و پوشش محصول را در معرض آتش یا حرارت مستقیم قرار ندهید.</li>
-          <li>برای افزایش عمر محصول، هنگام جمع‌کردن از فشار و تاخوردگی نامناسب خودداری کنید.</li>
-          <li>برای سفارش ابعاد یا مدل سفارشی، قبل از ثبت سفارش با ما هماهنگ کنید.</li>
+          <li>پارچه را در معرض آتش یا حرارت مستقیم قرار ندهید.</li>
+          <li>هنگام جمع‌کردن از فشار و تاخوردگی نامناسب خودداری کنید.</li>
+          <li>برای سفارش سفارشی قبل از ثبت با ما هماهنگ کنید.</li>
         </ul>
       </section>`;
+
+    // دکمه افزودن به سبد
+    document.getElementById("addToCartBtn")?.addEventListener("click", () => {
+      if (typeof window.chadoorAddToCart === "function") {
+        window.chadoorAddToCart({id:product.id, name:product.name, price:product.price||0, image:product.image||""});
+      } else {
+        addToCartLocal(product);
+      }
+    });
 
     buildThumbs();
     document.getElementById("galleryPrev").onclick = () => moveGallery(1);
@@ -431,27 +295,25 @@ fetch("products.json")
     document.getElementById("lbClose").onclick = closeLightbox;
     document.getElementById("lbPrev").onclick = () => { moveGallery(1); openLightbox(); };
     document.getElementById("lbNext").onclick = () => { moveGallery(-1); openLightbox(); };
-    document.getElementById("lightbox").onclick = e => { if(e.target.id === "lightbox") closeLightbox(); };
+    document.getElementById("lightbox").onclick = e => { if(e.target.id==="lightbox") closeLightbox(); };
     document.addEventListener("keydown", e => {
-      if(e.key === "Escape") closeLightbox();
-      if(e.key === "ArrowRight") moveGallery(1);
-      if(e.key === "ArrowLeft") moveGallery(-1);
+      if(e.key==="Escape") closeLightbox();
+      if(e.key==="ArrowRight") moveGallery(1);
+      if(e.key==="ArrowLeft") moveGallery(-1);
     });
     document.querySelectorAll(".tab").forEach(tab => {
       tab.addEventListener("click", () => {
         document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
-        document.getElementById(tab.dataset.target)?.scrollIntoView({behavior:"smooth", block:"start"});
+        document.getElementById(tab.dataset.target)?.scrollIntoView({behavior:"smooth",block:"start"});
       });
     });
     document.title = product.name + " | چادردوزی جزیره J.A.T";
-    const meta = document.querySelector('meta[name="description"]');
-    if(meta) meta.content = (d.fullDesc || product.description || "").slice(0, 155);
   })
   .catch(err => {
-    content.innerHTML = err.message === "not-found"
-      ? `<div class="error-box">محصول مورد نظر پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
-      : `<div class="error-box">خطا در بارگذاری اطلاعات محصول.<br><br><small>بررسی کنید فایل products.json در کنار product.html قرار داشته باشد.</small></div>`;
+    content.innerHTML = err.message==="not-found"
+      ? `<div class="error-box">محصول پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
+      : `<div class="error-box">خطا در بارگذاری محصول.</div>`;
   });
 </script>
 </body>
