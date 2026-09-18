@@ -10,62 +10,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    :root{
-      --ink:#17231f;--muted:#68736f;--paper:#fff;--soft:#f6f7f5;
-      --line:#e5e8e5;--green:#155e55;--green2:#0f4c45;--lime:#d5f263;
-      --red:#d32f2f;--shadow:0 14px 45px rgba(21,40,34,.08)
-    }
-    *{box-sizing:border-box}
-    body{background:#f3f5f2;color:var(--ink)}
+    :root{--ink:#17231f;--muted:#68736f;--paper:#fff;--soft:#f6f7f5;--line:#e5e8e5;--green:#155e55;--green2:#0f4c45;--lime:#d5f263;--red:#d32f2f;--shadow:0 14px 45px rgba(21,40,34,.08)}
+    *{box-sizing:border-box}body{background:#f3f5f2;color:var(--ink)}
     .product-page{max-width:1240px;margin:24px auto 80px;padding:0 18px}
-    .breadcrumb{font-size:13px;color:var(--muted);margin:12px 0 18px}
-    .breadcrumb a{color:var(--green);text-decoration:none}
-    .product-main{
-      display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
-      gap:0;background:var(--paper);border:1px solid var(--line);
-      border-radius:22px;overflow:hidden;box-shadow:var(--shadow)
-    }
+    .breadcrumb{font-size:13px;color:var(--muted);margin:12px 0 18px}.breadcrumb a{color:var(--green);text-decoration:none}
+    .product-main{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
     .gallery-wrap{padding:22px;background:#fff;min-width:0}
-    .gallery-stage{
-      position:relative;background:#f5f6f4;border:1px solid var(--line);
-      border-radius:18px;height:510px;display:flex;align-items:center;justify-content:center;
-      overflow:hidden;cursor:zoom-in
-    }
+    .gallery-stage{position:relative;background:#f5f6f4;border:1px solid var(--line);border-radius:18px;height:510px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in}
     .gallery-stage img{width:100%;height:100%;object-fit:contain;padding:22px;transition:transform .25s ease}
     .gallery-stage:hover img{transform:scale(1.025)}
-    .gallery-arrow{
-      position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-      width:42px;height:42px;border:0;border-radius:50%;background:#fff;
-      box-shadow:0 4px 16px rgba(0,0,0,.12);font-size:22px;cursor:pointer
-    }
+    .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border:0;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12);font-size:22px;cursor:pointer}
     .gallery-prev{right:14px}.gallery-next{left:14px}
-    .gallery-count{
-      position:absolute;left:14px;top:14px;background:rgba(20,30,27,.78);
-      color:#fff;border-radius:30px;padding:7px 11px;font-size:12px;z-index:3
-    }
-    .gallery-zoom{
-      position:absolute;right:14px;top:14px;background:#fff;border:1px solid var(--line);
-      border-radius:10px;padding:8px 10px;z-index:3;font-size:12px;color:var(--ink)
-    }
+    .gallery-count{position:absolute;left:14px;top:14px;background:rgba(20,30,27,.78);color:#fff;border-radius:30px;padding:7px 11px;font-size:12px;z-index:3}
+    .gallery-zoom{position:absolute;right:14px;top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;z-index:3;font-size:12px;color:var(--ink)}
     .thumbnails{display:flex;gap:10px;overflow-x:auto;padding:13px 2px 3px;scrollbar-width:thin}
-    .thumb{
-      flex:0 0 82px;height:70px;border:2px solid transparent;border-radius:12px;
-      overflow:hidden;background:#f4f5f3;cursor:pointer;padding:0
-    }
-    .thumb.active{border-color:var(--green)}
-    .thumb img{width:100%;height:100%;object-fit:cover}
+    .thumb{flex:0 0 82px;height:70px;border:2px solid transparent;border-radius:12px;overflow:hidden;background:#f4f5f3;cursor:pointer;padding:0}
+    .thumb.active{border-color:var(--green)}.thumb img{width:100%;height:100%;object-fit:cover}
     .gallery-note{font-size:12px;color:var(--muted);margin:9px 2px 0}
     .summary{padding:34px 34px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
-    .category{display:inline-flex;width:max-content;background:#e7f3f0;color:var(--green);
-      border-radius:30px;padding:7px 13px;font-size:12px;font-weight:700;margin-bottom:15px}
+    .category{display:inline-flex;width:max-content;background:#e7f3f0;color:var(--green);border-radius:30px;padding:7px 13px;font-size:12px;font-weight:700;margin-bottom:15px}
     .summary h1{font-size:29px;line-height:1.55;margin:0 0 10px;font-weight:800}
     .product-code{font-size:12px;color:var(--muted);margin-bottom:18px}
     .rating-row{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid var(--line)}
     .stars{color:#f59e0b;letter-spacing:2px;font-size:17px}.rating-text{font-size:13px;color:var(--muted)}
-    .price-box{padding:22px 0 15px}
-    .price{font-size:30px;font-weight:800;color:var(--red)}
-    .contact-price{font-size:19px;color:var(--green);font-weight:800}
-    .price-sub{font-size:12px;color:var(--muted);margin-top:5px}
+    .price-box{padding:22px 0 15px}.price{font-size:30px;font-weight:800;color:var(--red)}
+    .contact-price{font-size:19px;color:var(--green);font-weight:800}.price-sub{font-size:12px;color:var(--muted);margin-top:5px}
     .quick-specs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:5px 0 20px}
     .quick-spec{padding:12px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
     .quick-spec:nth-child(even){border-left:0}.quick-spec:nth-last-child(-n+2){border-bottom:0}
@@ -73,14 +42,10 @@
     .order-box{background:#f6f8f6;border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:auto}
     .order-title{font-weight:800;margin-bottom:6px}.order-text{font-size:13px;color:var(--muted);line-height:1.8}
     .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-    .action{
-      display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;
-      min-height:48px;font-weight:800;font-size:13px;padding:0 12px
-    }
+    .action{display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;min-height:48px;font-weight:800;font-size:13px;padding:0 12px}
     .action-primary{background:var(--green);color:#fff}.action-primary:hover{background:var(--green2)}
     .action-wa{background:#20b95a;color:#fff}.action-outline{border:1px solid var(--line);color:var(--ink);background:#fff}
-    .tabs{position:sticky;top:64px;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
-      display:flex;gap:5px;border:1px solid var(--line);border-radius:15px;padding:5px;margin:22px 0}
+    .tabs{position:sticky;top:64px;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);display:flex;gap:5px;border:1px solid var(--line);border-radius:15px;padding:5px;margin:22px 0}
     .tab{border:0;background:transparent;padding:12px 18px;border-radius:10px;font-family:inherit;font-weight:700;color:var(--muted);cursor:pointer}
     .tab:hover,.tab.active{background:#eaf3f0;color:var(--green)}
     .section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:18px}
@@ -88,52 +53,26 @@
     .features{display:grid;grid-template-columns:1fr 1fr;gap:11px 30px;padding:0;margin:0;list-style:none}
     .features li{padding-right:27px;position:relative;line-height:1.8;font-size:14px}
     .features li:before{content:"✓";position:absolute;right:0;top:0;color:var(--green);font-weight:900}
-    .specs-table{width:100%;border-collapse:collapse}
-    .specs-table tr{border-bottom:1px solid var(--line)}
-    .specs-table tr:last-child{border-bottom:0}
+    .specs-table{width:100%;border-collapse:collapse}.specs-table tr{border-bottom:1px solid var(--line)}.specs-table tr:last-child{border-bottom:0}
     .specs-table th,.specs-table td{text-align:right;padding:13px 10px;font-size:14px}
-    .specs-table th{width:36%;background:#fafbfa;color:var(--muted);font-weight:600}
-    .specs-table td{font-weight:600}
-    .estimated{background:#fff8e8;border:1px solid #f3dfae;color:#8a6414;border-radius:12px;padding:12px 14px;margin-bottom:18px;font-size:13px;line-height:1.8}
+    .specs-table th{width:36%;background:#fafbfa;color:var(--muted);font-weight:600}.specs-table td{font-weight:600}
     .tips{margin:0;padding-right:20px}.tips li{color:var(--muted);line-height:1.9;margin-bottom:7px}
     .lightbox{position:fixed;inset:0;background:rgba(7,14,12,.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:25px}
     .lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain;border-radius:12px}
     .lightbox-close{position:absolute;top:18px;left:22px;background:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}
     .lightbox-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;border-radius:50%;cursor:pointer;background:#fff;font-size:24px}
     .lb-prev{right:20px}.lb-next{left:20px}
-    .loading,.error-box{text-align:center;padding:110px 20px;color:var(--muted);font-size:17px}
-    .error-box{color:#b42318}
-    @media(max-width:980px){
-      .product-main{grid-template-columns:1fr}.summary{border-right:0;border-top:1px solid var(--line)}
-      .gallery-stage{height:460px}
-    }
-    @media(max-width:650px){
-      .product-page{padding:0 10px;margin-top:12px}.gallery-wrap{padding:10px}
-      .gallery-stage{height:330px;border-radius:14px}.gallery-stage img{padding:10px}
-      .summary{padding:23px 17px}.summary h1{font-size:22px}.price{font-size:25px}
-      .features{grid-template-columns:1fr}.section{padding:20px 16px}.tabs{top:55px;overflow:auto;white-space:nowrap}
-      .tab{padding:10px 12px}.actions{grid-template-columns:1fr}
-      .thumb{flex-basis:68px;height:60px}
-      .quick-specs{grid-template-columns:1fr}.quick-spec{border-left:0!important}
-      .quick-spec:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
-      .quick-spec:last-child{border-bottom:0}
-    }
+    .loading,.error-box{text-align:center;padding:110px 20px;color:var(--muted);font-size:17px}.error-box{color:#b42318}
+    @media(max-width:980px){.product-main{grid-template-columns:1fr}.summary{border-right:0;border-top:1px solid var(--line)}.gallery-stage{height:460px}}
+    @media(max-width:650px){.product-page{padding:0 10px;margin-top:12px}.gallery-wrap{padding:10px}.gallery-stage{height:330px;border-radius:14px}.gallery-stage img{padding:10px}.summary{padding:23px 17px}.summary h1{font-size:22px}.price{font-size:25px}.features{grid-template-columns:1fr}.section{padding:20px 16px}.tabs{top:55px;overflow:auto;white-space:nowrap}.tab{padding:10px 12px}.actions{grid-template-columns:1fr}.thumb{flex-basis:68px;height:60px}.quick-specs{grid-template-columns:1fr}.quick-spec{border-left:0!important}.quick-spec:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.quick-spec:last-child{border-bottom:0}}
   </style>
 </head>
 <body>
 <header class="site-header sticky-header">
-  <a href="index.html" class="brand">
-    <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
-    <span>چادردوزی جزیره J.A.T</span>
-  </a>
+  <a href="index.html" class="brand"><img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44"><span>چادردوزی جزیره J.A.T</span></a>
   <nav class="main-nav" aria-label="منوی اصلی">
-    <a href="products.html">محصولات</a>
-    <a href="shop.html">فروشگاه</a>
-    <a href="services.html">خدمات</a>
-    <a href="gallery.html">گالری</a>
-    <a href="about.html">درباره ما</a>
-    <a href="blog.html">مجله سفر</a>
-    <a href="contact.html">ثبت سفارش</a>
+    <a href="products.html">محصولات</a><a href="shop.html">فروشگاه</a><a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a><a href="about.html">درباره ما</a><a href="blog.html">مجله سفر</a><a href="contact.html">ثبت سفارش</a>
   </nav>
   <div class="header-actions">
     <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
@@ -144,28 +83,19 @@
 
 <main>
   <div class="product-page">
-    <div class="breadcrumb">
-      <a href="index.html">خانه</a> ← <a href="shop.html">فروشگاه</a> ← جزئیات محصول
-    </div>
+    <div class="breadcrumb"><a href="index.html">خانه</a> ← <a href="shop.html">فروشگاه</a> ← جزئیات محصول</div>
     <div id="content"><div class="loading">در حال بارگذاری محصول...</div></div>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-top">
-    <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="لوگو" width="44" height="44">
-      <span>چادردوزی جزیره J.A.T</span>
-    </a>
+    <a href="index.html" class="brand"><img src="favicon.svg" alt="لوگو" width="44" height="44"><span>چادردوزی جزیره J.A.T</span></a>
     <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
   </div>
   <nav class="footer-menu">
-    <a href="products.html">محصولات</a>
-    <a href="shop.html">فروشگاه</a>
-    <a href="services.html">خدمات</a>
-    <a href="gallery.html">گالری</a>
-    <a href="about.html">درباره ما</a>
-    <a href="contact.html">ثبت سفارش</a>
+    <a href="products.html">محصولات</a><a href="shop.html">فروشگاه</a><a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a><a href="about.html">درباره ما</a><a href="contact.html">ثبت سفارش</a>
   </nav>
   <div class="social-links">
     <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
@@ -186,139 +116,166 @@
 <script>
 const productDetails = {
   1: {
-    fullDesc: "چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده نیمه‌دائمی. دوخت مقاوم و پارچه برزنتی با کیفیت که در برابر رطوبت و آفتاب شمال ایران دوام خوبی دارد. این مدل به‌صورت سفارشی هم قابل تولید است.",
+    fullDesc: "چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده نیمه‌دائمی. دوخت مقاوم و پارچه برزنتی با کیفیت که در برابر رطوبت و آفتاب شمال ایران دوام خوبی دارد.",
     features: ["پارچه برزنتی مقاوم در برابر آب و آفتاب","دوخت کارگاهی با تمرکز روی دوام","مناسب ۴ نفر + وسایل","قابل سفارش در ابعاد دلخواه","مناسب باغ، حیاط و کمپینگ","تولید مستقیم در کارگاه آمل"],
-    specs: [["گنجایش","۴ نفره"],["نوع","برزنتی"],["ابعاد تقریبی بازشده","قابل سفارش (معمولاً حدود ۲۲۰×۲۲۰)"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره (قابل ارتقا)"],["مناسب برای","سفر، باغ، استفاده طولانی"],["تولید","مستقیم در کارگاه آمل"],["امکان سفارشی‌سازی","بله"]]
+    specs: [["گنجایش","۴ نفره"],["نوع","برزنتی"],["ابعاد تقریبی بازشده","قابل سفارش (معمولاً حدود ۲۲۰×۲۲۰)"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره (قابل ارتقا)"],["مناسب برای","سفر، باغ، استفاده طولانی"],["تولید","مستقیم در کارگاه آمل"],["امکان سفارشی‌سازی","بله"]],
+    images: ["brno-4-jat.jpg","tghr.jpg"]
   },
   2: {
-    fullDesc: "چادر برزنتی ۶ نفره با فضای مناسب برای خانواده‌های متوسط. طراحی‌شده برای استفاده واقعی در شرایط شمال ایران. دوخت محکم و پارچه مقاوم که عمر طولانی‌تری نسبت به چادرهای معمولی دارد.",
+    fullDesc: "چادر برزنتی ۶ نفره با فضای مناسب برای خانواده‌های متوسط. طراحی‌شده برای استفاده واقعی در شرایط شمال ایران.",
     features: ["فضای جادار برای ۶ نفر","پارچه برزنتی مقاوم","دوخت حرفه‌ای کارگاهی","مناسب کمپینگ و باغ","امکان تغییر ابعاد","ارسال به سراسر ایران"],
-    specs: [["گنجایش","۶ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره"],["مناسب برای","خانواده، باغ، کمپینگ"],["تولید","مستقیم در آمل"],["امکان سفارشی‌سازی","بله"]]
+    specs: [["گنجایش","۶ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره"],["مناسب برای","خانواده، باغ، کمپینگ"],["تولید","مستقیم در آمل"],["امکان سفارشی‌سازی","بله"]],
+    images: ["6n-brezent.webp","brno-8-s.webp"]
   },
   3: {
-    fullDesc: "چادر برزنتی ۸ نفره مدل J.A.T، یکی از پرفروش‌ترین محصولات کارگاه. فضای بزرگ و مقاوم برای خانواده‌های پرجمعیت یا استفاده گروهی. طراحی‌شده با توجه به رطوبت و باران شمال.",
+    fullDesc: "چادر برزنتی ۸ نفره مدل J.A.T، یکی از پرفروش‌ترین محصولات کارگاه. فضای بزرگ و مقاوم برای خانواده‌های پرجمعیت.",
     features: ["ظرفیت ۸ نفره واقعی","پارچه برزنتی ضخیم و مقاوم","دوخت تقویت‌شده در نقاط حساس","مناسب سفرهای شمال و استفاده طولانی","امکان افزودن پنجره و پشه‌بند","تولید مستقیم بدون واسطه"],
-    specs: [["گنجایش","۸ نفره"],["مدل","J.A.T"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["مناسب برای","خانواده بزرگ، باغ، کمپینگ گروهی"],["تولید","کارگاه آمل"],["امکان سفارشی‌سازی","بله"]]
+    specs: [["گنجایش","۸ نفره"],["مدل","J.A.T"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["مناسب برای","خانواده بزرگ، باغ، کمپینگ گروهی"],["تولید","کارگاه آمل"],["امکان سفارشی‌سازی","بله"]],
+    images: ["8n-jat.webp","brno-bereznti-8.webp","brno-8-r.webp"]
   },
   4: {
-    fullDesc: "چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ‌تر یا استفاده به‌عنوان سایبان و فضای نشیمن. این مدل معمولاً به‌صورت سفارشی دوخته می‌شود تا دقیقاً مطابق نیاز مشتری باشد.",
+    fullDesc: "چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ‌تر یا استفاده به‌عنوان سایبان و فضای نشیمن. معمولاً به‌صورت سفارشی دوخته می‌شود.",
     features: ["فضای خیلی جادار","مناسب گروه‌های بزرگ","پارچه برزنتی سنگین","دوخت مقاوم کارگاهی","قابل سفارش در ابعاد دقیق","مناسب باغ و پروژه‌های طولانی‌مدت"],
-    specs: [["گنجایش","۱۰ نفره و بیشتر"],["نوع","برزنتی سفارشی"],["جنس پارچه","برزنت ضخیم"],["مناسب برای","گروه بزرگ، باغ، سایبان"],["تولید","سفارشی در آمل"],["امکان سفارشی‌سازی","کامل"]]
+    specs: [["گنجایش","۱۰ نفره و بیشتر"],["نوع","برزنتی سفارشی"],["جنس پارچه","برزنت ضخیم"],["مناسب برای","گروه بزرگ، باغ، سایبان"],["تولید","سفارشی در آمل"],["امکان سفارشی‌سازی","کامل"]],
+    images: ["10n-bereznt.webp","tent-12-berezent.jpg"]
   },
   5: {
-    fullDesc: "چادر مسافرتی ۱۲ نفره جادار و مناسب کمپینگ و سفرهای خانوادگی بزرگ. فضای کافی برای اقامت راحت گروه.",
+    fullDesc: "چادر مسافرتی ۱۲ نفره جادار و مناسب کمپینگ و سفرهای خانوادگی بزرگ.",
     features: ["ظرفیت ۱۲ نفر","فضای بسیار جادار","مناسب کمپینگ گروهی","دوخت مقاوم","قابل حمل نسبی"],
-    specs: [["گنجایش","۱۲ نفره"],["نوع","مسافرتی"],["کاربرد","کمپینگ و سفر خانوادگی"]]
+    specs: [["گنجایش","۱۲ نفره"],["نوع","مسافرتی"],["کاربرد","کمپینگ و سفر خانوادگی"]],
+    images: ["KHIME.jpg","tent-12.jpg"]
   },
   6: {
-    fullDesc: "چادر مسافرتی ۸ نفره مقاوم برای سفر و طبیعت‌گردی. طراحی مناسب برای استفاده در شرایط مختلف آب‌وهوایی.",
+    fullDesc: "چادر مسافرتی ۸ نفره مقاوم برای سفر و طبیعت‌گردی.",
     features: ["ظرفیت ۸ نفر","مناسب سفر و کمپینگ","تهویه مناسب","نصب نسبتاً آسان","دوام خوب"],
-    specs: [["گنجایش","۸ نفره"],["نوع","مسافرتی"],["کاربرد","سفر و طبیعت‌گردی"]]
+    specs: [["گنجایش","۸ نفره"],["نوع","مسافرتی"],["کاربرد","سفر و طبیعت‌گردی"]],
+    images: ["tent.jpg","brno-8-s.webp"]
   },
   7: {
-    fullDesc: "پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و امکان سفارش در اندازه‌های مختلف برای خواب راحت بدون نگرانی از حشرات.",
+    fullDesc: "پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و امکان سفارش در اندازه‌های مختلف.",
     features: ["دوخت سفارشی","اندازه‌های متنوع","مناسب چادر و فضای باز","توری با کیفیت","سبک و قابل حمل"],
-    specs: [["نوع","پشه‌بند"],["سفارشی‌سازی","بله"],["کاربرد","چادر و فضای باز"]]
+    specs: [["نوع","پشه‌بند"],["سفارشی‌سازی","بله"],["کاربرد","چادر و فضای باز"]],
+    images: ["pasheband.jpg","pasheband-bdon-fanar.jpg"]
   },
   8: {
-    fullDesc: "خدمات تعمیر تخصصی چادر مسافرتی و برزنتی در کارگاه آمل. ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل چادرهای آسیب‌دیده با کیفیت کارگاهی.",
+    fullDesc: "خدمات تعمیر تخصصی چادر مسافرتی و برزنتی در کارگاه آمل. ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل.",
     features: ["ترمیم پارگی و درزها","تعویض زیپ و قطعات","تعمیر فنر و اسکلت","بازسازی چادرهای قدیمی","قیمت شفاف قبل از شروع کار"],
-    specs: [["نوع خدمت","تعمیر تخصصی چادر"],["محل انجام","کارگاه آمل"],["موارد قابل تعمیر","پارگی، زیپ، فنر، اسکلت"]]
+    specs: [["نوع خدمت","تعمیر تخصصی چادر"],["محل انجام","کارگاه آمل"],["موارد قابل تعمیر","پارگی، زیپ، فنر، اسکلت"]],
+    images: ["travel-tent-during-repair.webp","travel-tent-before-repair.webp","tent-after-repair-1.jpg"]
   },
   9: {
-    fullDesc: "چادر کودک طرح سگ با ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی در منزل، اتاق کودک و فضای باز. سبک، قابل حمل و ایمن برای کودکان.",
-    features: ["ابعاد تقریبی ۱۴۰×۱۴۰ سانتی‌متر","طرح سگ جذاب برای کودکان","سبک و قابل حمل","مناسب منزل و فضای باز","نصب و جمع‌کردن آسان","جنس پارچه مناسب بازی کودک"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["نوع","چادر بازی کودک"],["طرح","سگ"],["کاربرد","بازی در منزل و فضای باز"],["وزن تقریبی","سبک"]]
+    fullDesc: "چادر کودک طرح سگ با ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی در منزل و فضای باز.",
+    features: ["ابعاد تقریبی ۱۴۰×۱۴۰ سانتی‌متر","طرح سگ جذاب","سبک و قابل حمل","مناسب منزل و فضای باز","نصب آسان"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["نوع","چادر بازی کودک"],["طرح","سگ"]],
+    images: ["tent-kids-sag.jpg","tent-kids-dog.jpg"]
   },
   10: {
-    fullDesc: "چادر کودک طرح سگ با رنگ‌بندی متفاوت. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی و سرگرمی کودکان.",
-    features: ["ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طرح سگ","رنگ‌بندی متفاوت","سبک و قابل حمل","مناسب منزل و فضای باز"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سگ"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک طرح سگ با رنگ‌بندی متفاوت. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
+    features: ["ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طرح سگ","رنگ‌بندی متفاوت","سبک و قابل حمل"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سگ"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-dog.jpg","tent-kids-sag.jpg"]
   },
   11: {
-    fullDesc: "چادر کودک طرح کرومی با طراحی جذاب. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی کودکان در منزل و فضای باز.",
-    features: ["طرح کرومی جذاب","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","سبک و ایمن","نصب آسان","مناسب اتاق کودک"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کرومی"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک طرح کرومی با طراحی جذاب. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
+    features: ["طرح کرومی جذاب","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","سبک و ایمن","نصب آسان"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کرومی"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-koromi.jpg"]
   },
   12: {
-    fullDesc: "چادر کودک طرح مرد عنکبوتی مخصوص پسران. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی و سرگرمی.",
-    features: ["طرح مرد عنکبوتی","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","مناسب پسران","سبک و قابل حمل","نصب آسان"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","مرد عنکبوتی"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک طرح مرد عنکبوتی مخصوص پسران. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
+    features: ["طرح مرد عنکبوتی","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","مناسب پسران","سبک و قابل حمل"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","مرد عنکبوتی"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-ankaboti.jpg"]
   },
   13: {
-    fullDesc: "چادر کودک دخترانه شاد و رنگی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی در منزل و فضای باز.",
-    features: ["طرح دخترانه شاد","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","رنگ‌بندی جذاب","سبک و ایمن","مناسب اتاق کودک"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","دخترانه"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک دخترانه شاد و رنگی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
+    features: ["طرح دخترانه شاد","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","رنگ‌بندی جذاب","سبک و ایمن"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","دخترانه"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-girl.jpg","tent-kids-girl-1.jpg"]
   },
   14: {
-    fullDesc: "چادر کودک دخترانه طرح السا با رنگ‌بندی متفاوت. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
-    features: ["طرح السا","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","رنگ‌بندی متفاوت","سبک و قابل حمل","مناسب بازی کودک"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","السا"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک دخترانه طرح السا با رنگ‌بندی متفاوت.",
+    features: ["طرح السا","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","رنگ‌بندی متفاوت","سبک و قابل حمل"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","السا"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-girl-alsa.jpg"]
   },
   15: {
-    fullDesc: "چادر کودک دخترانه طرح کیتی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی و سرگرمی.",
-    features: ["طرح کیتی","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طراحی شیک","سبک و ایمن","نصب آسان"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کیتی"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک دخترانه طرح کیتی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
+    features: ["طرح کیتی","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طراحی شیک","سبک و ایمن"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","کیتی"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-kite.jpg"]
   },
   16: {
-    fullDesc: "چادر کودک طرح سیندرلا با طراحی فانتزی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر. مناسب بازی در منزل، اتاق کودک و فضاهای تفریحی.",
-    features: ["طرح سیندرلا","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طراحی فانتزی","سبک و قابل جابه‌جایی","مناسب مهدکودک و منزل"],
-    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سیندرلا"],["نوع","چادر بازی کودک"]]
+    fullDesc: "چادر کودک طرح سیندرلا با طراحی فانتزی. ابعاد استاندارد حدود ۱۴۰×۱۴۰ سانتی‌متر.",
+    features: ["طرح سیندرلا","ابعاد ۱۴۰×۱۴۰ سانتی‌متر","طراحی فانتزی","سبک و قابل جابه‌جایی"],
+    specs: [["گنجایش","۱ تا ۲ کودک"],["ابعاد تقریبی","۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سیندرلا"],["نوع","چادر بازی کودک"]],
+    images: ["tent-kids-sendrla.jpg"]
   },
   17: {
-    fullDesc: "میز و صندلی مسافرتی با کیفیت مناسب کمپینگ و سفر. سبک و قابل جمع شدن برای حمل آسان.",
-    features: ["مناسب کمپینگ و سفر","سبک و قابل حمل","قابل جمع شدن","کیفیت مناسب استفاده در فضای باز"],
-    specs: [["نوع","میز و صندلی مسافرتی"],["کاربرد","کمپینگ و سفر"]]
+    fullDesc: "میز و صندلی مسافرتی با کیفیت مناسب کمپینگ و سفر.",
+    features: ["مناسب کمپینگ و سفر","سبک و قابل حمل","قابل جمع شدن"],
+    specs: [["نوع","میز و صندلی مسافرتی"],["کاربرد","کمپینگ و سفر"]],
+    images: ["camping-table-chairs-equipment.jpg"]
   },
   18: {
-    fullDesc: "برزنت ضخیم مناسب چادر نیسان، کامیون و استفاده‌های طولانی‌مدت در فضای باز. تولید و دوخت در کارگاه آمل.",
+    fullDesc: "برزنت ضخیم مناسب چادر نیسان، کامیون و استفاده‌های طولانی‌مدت در فضای باز.",
     features: ["برزنت ضخیم و مقاوم","مناسب نیسان و کامیون","دوخت کارگاهی","قابل سفارش در ابعاد دلخواه"],
-    specs: [["نوع","برزنت"],["کاربرد","چادر نیسان، کامیون و فضای باز"],["امکان سفارشی‌سازی","بله"]]
+    specs: [["نوع","برزنت"],["کاربرد","چادر نیسان، کامیون و فضای باز"],["امکان سفارشی‌سازی","بله"]],
+    images: ["BEREZENT.webp"]
   },
   19: {
-    fullDesc: "سایبان بازویی در رنگ‌های مختلف. مناسب باغ، حیاط و فضای باز. تولید و نصب در کارگاه آمل.",
+    fullDesc: "سایبان بازویی در رنگ‌های مختلف. مناسب باغ، حیاط و فضای باز.",
     features: ["سایبان بازویی","رنگ‌های مختلف","مناسب باغ و حیاط","تولید مستقیم"],
-    specs: [["نوع","سایبان بازویی"],["کاربرد","باغ، حیاط و فضای باز"]]
+    specs: [["نوع","سایبان بازویی"],["کاربرد","باغ، حیاط و فضای باز"]],
+    images: ["SAIBANg.jpg","nasb-saiban.webp"]
   },
   20: {
-    fullDesc: "سرویس بهداشتی / حمام مسافرتی با کیفیت مناسب کمپینگ و سفر. فضای خصوصی و قابل حمل.",
-    features: ["فضای خصوصی","مناسب کمپینگ و سفر","قابل حمل","کیفیت مناسب استفاده در طبیعت"],
-    specs: [["نوع","سرویس بهداشتی مسافرتی"],["کاربرد","کمپینگ و سفر"]]
+    fullDesc: "سرویس بهداشتی / حمام مسافرتی با کیفیت مناسب کمپینگ و سفر.",
+    features: ["فضای خصوصی","مناسب کمپینگ و سفر","قابل حمل"],
+    specs: [["نوع","سرویس بهداشتی مسافرتی"],["کاربرد","کمپینگ و سفر"]],
+    images: ["SRVIS-TENT.jpg"]
   },
   21: {
     fullDesc: "چادر ۸ نفره طرح درختی مسافرتی با کیفیت. طراحی زیبا و فضای مناسب برای خانواده.",
     features: ["طرح درختی زیبا","ظرفیت ۸ نفر","مناسب کمپینگ","دوخت با کیفیت","ظاهر جذاب"],
-    specs: [["گنجایش","۸ نفره"],["طرح","درختی"],["نوع","مسافرتی"]]
+    specs: [["گنجایش","۸ نفره"],["طرح","درختی"],["نوع","مسافرتی"]],
+    images: ["bereznte-8-drakhte.jpg","tent-12-6-zlei.jpg"]
   },
   22: {
-    fullDesc: "چادر مسافرتی ۸ نفره JAT مدل دو جداره، گزینه‌ای مناسب برای خانواده‌ها و گروه‌های کوچک. با ابعاد ۲۵۰ × ۲۵۰ سانتی‌متر و ارتفاع داخلی ۲۱۰ سانتی‌متر، فضای کافی برای اقامت راحت فراهم می‌کند. طراحی هرمی و اسکلت فلزی مقاوم، پایداری خوبی در برابر باد ایجاد کرده است.",
-    features: ["طراحی دو جداره با پارچه آکسفورد ضدآب","اسکلت فلزی مستحکم با قطر ستون ۰٫۹ سانتی‌متر","چهار پنجره توری‌دار با پرده جمع‌شونده","زیپ‌های فلزی دوطرفه مقاوم","کف کاملاً ضدآب","قلاب داخلی برای آویختن چراغ","سیستم فنری برای نصب آسان‌تر","کیف حمل کوله‌ای","مناسب تمام فصول"],
-    specs: [["مدل","JAT"],["گنجایش","۸ نفره"],["ابعاد بازشده","۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر"],["ارتفاع داخلی","۲۱۰ سانتی‌متر"],["تعداد لایه","دو جداره"],["جنس پارچه","آکسفورد ضدآب"],["جنس کف","پلی‌استر ضدآب"],["قطر ستون","۰٫۹ سانتی‌متر"],["وزن تقریبی بسته‌بندی","حدود ۱٫۴ تا ۱٫۵ کیلوگرم"],["ابعاد بسته‌بندی","۸۵ × ۸۵ × ۱۲ سانتی‌متر"]]
+    fullDesc: "چادر مسافرتی ۸ نفره JAT مدل دو جداره. ابعاد ۲۵۰×۲۵۰ سانتی‌متر و ارتفاع داخلی ۲۱۰ سانتی‌متر. پارچه آکسفورد ضدآب و اسکلت فلزی مقاوم.",
+    features: ["طراحی دو جداره با پارچه آکسفورد ضدآب","اسکلت فلزی مستحکم با قطر ستون ۰٫۹ سانتی‌متر","چهار پنجره توری‌دار با پرده جمع‌شونده","زیپ‌های فلزی دوطرفه مقاوم","کف کاملاً ضدآب","قلاب داخلی برای آویختن چراغ","سیستم فنری","کیف حمل کوله‌ای","مناسب تمام فصول"],
+    specs: [["مدل","JAT"],["گنجایش","۸ نفره"],["ابعاد بازشده","۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر"],["ارتفاع داخلی","۲۱۰ سانتی‌متر"],["تعداد لایه","دو جداره"],["جنس پارچه","آکسفورد ضدآب"],["جنس کف","پلی‌استر ضدآب"],["قطر ستون","۰٫۹ سانتی‌متر"],["وزن تقریبی بسته‌بندی","حدود ۱٫۴ تا ۱٫۵ کیلوگرم"],["ابعاد بسته‌بندی","۸۵ × ۸۵ × ۱۲ سانتی‌متر"]],
+    images: ["tghr.jpg","brno-8-s.webp","brno-8-r.webp"]
   },
   23: {
-    fullDesc: "چادر کوهنوردی دو نفره پکینیو مدل PKN-C2001-B، نسخه بهبودیافته C2001 با پوش خارجی بلندتر، ساختار دولایه، وزن حدود ۲۸۰۰ گرم و میله‌های آلومینیومی ۸.۵ میلی‌متری. این مدل برای کوهنوردی، کمپینگ سبک و طبیعت‌گردی مناسب است.",
-    features: ["طراحی دولایه قابل تفکیک","میله‌های آلومینیومی ۸.۵ میلی‌متری","وزن حدود ۲۸۰۰ گرم","کف PU3000 و بدنه PU2000","پشه‌بند و هواکش دوطرفه","دو جیب داخلی و قلاب سقفی","فضای اضافی در دو سمت","مناسب کوهنوردی و کمپینگ سبک"],
-    specs: [["مدل","PKN-C2001-B"],["گنجایش","۲ تا ۳ نفر"],["نوع چادر","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۱۰ سانتی‌متر"],["ابعاد بازشده","۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن بسته‌بندی","۲۸۰۰ گرم"],["ابعاد بسته‌بندی","۱۸ × ۴۰ × ۴۰ سانتی‌متر"],["تعداد ورودی","۱ عدد"],["تعداد هواکش","۲ عدد"],["مناسب","تمام فصول"]]
+    fullDesc: "چادر کوهنوردی دو نفره پکینیو مدل PKN-C2001-B. ساختار دولایه، وزن حدود ۲۸۰۰ گرم و میله‌های آلومینیومی ۸.۵ میلی‌متری.",
+    features: ["طراحی دولایه قابل تفکیک","میله‌های آلومینیومی ۸.۵ میلی‌متری","وزن حدود ۲۸۰۰ گرم","کف PU3000 و بدنه PU2000","پشه‌بند و هواکش دوطرفه","دو جیب داخلی و قلاب سقفی","مناسب کوهنوردی و کمپینگ سبک"],
+    specs: [["مدل","PKN-C2001-B"],["گنجایش","۲ تا ۳ نفر"],["نوع چادر","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۱۰ سانتی‌متر"],["ابعاد بازشده","۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن بسته‌بندی","۲۸۰۰ گرم"]],
+    images: ["c2001b.webp","c2001bjat.webp","c2001.webp"]
   },
   24: {
-    fullDesc: "چادر کوهنوردی ۲ تا ۳ نفره پکینیو مدل PKN-C2001. چادر دوپوش عصایی با میله‌های آلومینیومی ۸.۵ میلی‌متری، وزن حدود ۲.۵ کیلوگرم و مناسب کوهنوردی و کمپینگ سبک.",
-    features: ["ظرفیت ۲ تا ۳ نفر","ساختار دوپوش قابل تفکیک","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم","دو هواکش و پشه‌بند","کف PU3000 و بدنه PU2000","مناسب کوهنوردی و کمپینگ سبک"],
-    specs: [["مدل","PKN-C2001"],["گنجایش","۲ تا ۳ نفر"],["نوع","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۱۰ سانتی‌متر"],["ابعاد بازشده","۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T / ۲۱۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن","حدود ۲۵۰۰ گرم"],["ابعاد بسته‌بندی","حدود ۴۰ × ۱۵ × ۱۵ سانتی‌متر"]]
+    fullDesc: "چادر کوهنوردی ۲ تا ۳ نفره پکینیو مدل PKN-C2001. چادر دوپوش عصایی با میله‌های آلومینیومی ۸.۵ میلی‌متری و وزن حدود ۲.۵ کیلوگرم.",
+    features: ["ظرفیت ۲ تا ۳ نفر","ساختار دوپوش قابل تفکیک","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم","دو هواکش و پشه‌بند","کف PU3000 و بدنه PU2000"],
+    specs: [["مدل","PKN-C2001"],["گنجایش","۲ تا ۳ نفر"],["نوع","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۱۰ سانتی‌متر"],["ابعاد بازشده","۱۱۰ × ۲۱۰ × (۵۰+۱۵۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T / ۲۱۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن","حدود ۲۵۰۰ گرم"]],
+    images: ["c2001.webp","c2001jat.webp","c2001b.webp"]
   },
   25: {
-    fullDesc: "چادر کوهنوردی ۳ تا ۴ نفره پکینیو مدل C2004. ساختار دو لایه با میله‌های آلومینیومی، فضای جادارتر و مناسب کوهنوردی و طبیعت‌گردی.",
-    features: ["ظرفیت ۳ تا ۴ نفر","ساختار دو لایه","میله‌های آلومینیومی ۸.۵ میلی‌متر","دو ورودی و دو هواکش","فضای داخلی جادار","مناسب تمام فصول"],
-    specs: [["مدل","C2004 / PKN-C2004"],["گنجایش","۳ تا ۴ نفر"],["نوع","عصایی / گنبدی"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","حدود ۱۳۰ سانتی‌متر"],["ابعاد بازشده","حدود ۱۸۰ × ۲۱۰ × ۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر"],["وزن تقریبی","حدود ۳.۳ کیلوگرم"]]
+    fullDesc: "چادر کوهنوردی ۳ تا ۴ نفره پکینیو مدل C2004. ساختار دو لایه با میله‌های آلومینیومی و فضای جادارتر.",
+    features: ["ظرفیت ۳ تا ۴ نفر","ساختار دو لایه","میله‌های آلومینیومی ۸.۵ میلی‌متر","دو ورودی و دو هواکش","فضای داخلی جادار"],
+    specs: [["مدل","C2004 / PKN-C2004"],["گنجایش","۳ تا ۴ نفر"],["نوع","عصایی / گنبدی"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","حدود ۱۳۰ سانتی‌متر"],["ابعاد بازشده","حدود ۱۸۰ × ۲۱۰ × ۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر"],["وزن تقریبی","حدود ۳.۳ کیلوگرم"]],
+    images: ["c2004.webp","c2004ja.webp","c2004jat.webp"]
   },
   26: {
-    fullDesc: "چادر کوهنوردی ۳ تا ۴ نفره پکینیو مدل C2006. یکی از پرفروش‌ترین مدل‌ها با وزن حدود ۳ کیلوگرم، میله‌های آلومینیومی و طراحی دوپوش. مناسب کمپینگ و طبیعت‌گردی.",
-    features: ["ظرفیت ۳ تا ۴ نفر","ساختار دوپوش","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۳ کیلوگرم","دو هواکش و دو پنجره","فضای انباری و آشپزخانه","مناسب کوهنوردی و کمپینگ"],
-    specs: [["مدل","C2006 / PKN-C2006"],["گنجایش","۳ تا ۴ نفر"],["نوع","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۳۰ سانتی‌متر"],["ابعاد بازشده","۱۳۰ × ۲۱۰ × (۵۰+۱۸۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن","حدود ۲۸۰۰ تا ۳۰۰۰ گرم"],["ابعاد بسته‌بندی","۲۰ × ۲۰ × ۴۰ سانتی‌متر"]]
+    fullDesc: "چادر کوهنوردی ۳ تا ۴ نفره پکینیو مدل C2006. یکی از پرفروش‌ترین مدل‌ها با وزن حدود ۳ کیلوگرم و طراحی دوپوش.",
+    features: ["ظرفیت ۳ تا ۴ نفر","ساختار دوپوش","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۳ کیلوگرم","دو هواکش و دو پنجره","فضای انباری و آشپزخانه"],
+    specs: [["مدل","C2006 / PKN-C2006"],["گنجایش","۳ تا ۴ نفر"],["نوع","عصایی (تونلی)"],["تعداد لایه","۲ لایه"],["ارتفاع داخلی","۱۳۰ سانتی‌متر"],["ابعاد بازشده","۱۳۰ × ۲۱۰ × (۵۰+۱۸۰+۷۰) سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر ۱۹۰T"],["روکش بدنه","PU2000"],["روکش کف","PU3000"],["وزن","حدود ۲۸۰۰ تا ۳۰۰۰ گرم"]],
+    images: ["c2006.webp","c2006jat.webp"]
   },
   27: {
-    fullDesc: "چادر ۲ نفره پکینیو مدل C2009. نسخه ارتقا یافته با مقاومت بالاتر در برابر باد و ضخامت بیشتر لایه بیرونی. مناسب کوهنوردی سبک.",
-    features: ["ظرفیت ۱ تا ۲ نفر","لایه بیرونی ضخیم‌تر","مقاومت بالاتر در برابر باد","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم","دو هواکش"],
-    specs: [["مدل","C2009 / PKN-C2009"],["گنجایش","۱ تا ۲ نفر"],["نوع","کوهنوردی"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر Ripstop"],["وزن تقریبی","حدود ۲۵۰۰ گرم"]]
+    fullDesc: "چادر ۲ نفره پکینیو مدل C2009. نسخه ارتقا یافته با مقاومت بالاتر در برابر باد.",
+    features: ["ظرفیت ۱ تا ۲ نفر","لایه بیرونی ضخیم‌تر","مقاومت بالاتر در برابر باد","میله‌های آلومینیومی ۸.۵ میلی‌متر","وزن حدود ۲.۵ کیلوگرم"],
+    specs: [["مدل","C2009 / PKN-C2009"],["گنجایش","۱ تا ۲ نفر"],["نوع","کوهنوردی"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون","۸.۵ میلی‌متر"],["جنس پارچه","پلی‌استر Ripstop"],["وزن تقریبی","حدود ۲۵۰۰ گرم"]],
+    images: ["c2009.webp","c2009jat.webp"]
   }
 };
 
@@ -333,9 +290,7 @@ const productId = Number.parseInt(params.get("id"), 10);
 const content = document.getElementById("content");
 let gallery = [], galleryIndex = 0;
 
-function esc(v){
-  return String(v ?? "").replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-}
+function esc(v){return String(v ?? "").replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 
 function getGallery(product, details){
   const candidates = []
@@ -380,44 +335,35 @@ function buildThumbs(){
       <img src="${esc(src)}" alt="نمای ${i+1}" onerror="this.src='hero-chadoor.webp'">
     </button>`).join("");
   box.querySelectorAll(".thumb").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      galleryIndex = Number(btn.dataset.index);
-      updateGallery();
-    });
+    btn.addEventListener("click", ()=>{galleryIndex = Number(btn.dataset.index); updateGallery();});
   });
 }
 
 function openLightbox(){
   const lb = document.getElementById("lightbox");
   document.getElementById("lbImage").src = gallery[galleryIndex];
-  lb.classList.add("open");
-  lb.setAttribute("aria-hidden","false");
+  lb.classList.add("open"); lb.setAttribute("aria-hidden","false");
 }
-
 function closeLightbox(){
   const lb = document.getElementById("lightbox");
-  lb.classList.remove("open");
-  lb.setAttribute("aria-hidden","true");
+  lb.classList.remove("open"); lb.setAttribute("aria-hidden","true");
 }
-
 function moveGallery(step){
   galleryIndex = (galleryIndex + step + gallery.length) % gallery.length;
   updateGallery();
 }
 
 fetch("products.json")
-  .then(r => {
-    if(!r.ok) throw new Error("products.json");
-    return r.json();
-  })
+  .then(r => { if(!r.ok) throw new Error("products.json"); return r.json(); })
   .then(products => {
     const product = products.find(p => Number(p.id) === productId);
     if(!product) throw new Error("not-found");
 
     const d = productDetails[productId] || {
-      fullDesc: product.description || "اطلاعات محصول در حال تکمیل است. برای جزئیات بیشتر با ما تماس بگیرید.",
+      fullDesc: product.description || "اطلاعات محصول در حال تکمیل است.",
       features: ["تولید مستقیم در کارگاه آمل","دوخت حرفه‌ای و مقاوم","امکان سفارش سفارشی","ارسال به سراسر ایران"],
-      specs: [["نام محصول", product.name],["دسته‌بندی", product.category || "—"]]
+      specs: [["نام محصول", product.name],["دسته‌بندی", product.category || "—"]],
+      images: product.image ? [product.image] : []
     };
 
     const specs = d.specs || [];
@@ -439,10 +385,7 @@ fetch("products.json")
           <span class="category">${esc(product.category || "محصولات سفر")}</span>
           <h1>${esc(product.name)}</h1>
           <div class="product-code">کد محصول: ${esc(product.id)}</div>
-          <div class="rating-row">
-            <span class="stars">★★★★★</span>
-            <span class="rating-text">محصول منتخب چادردوزی جزیره J.A.T</span>
-          </div>
+          <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-text">محصول منتخب چادردوزی جزیره J.A.T</span></div>
           <div class="price-box">${priceHtml}</div>
           <div class="quick-specs">
             <div class="quick-spec"><small>گنجایش</small><strong>${esc(capacity)}</strong></div>
@@ -463,30 +406,14 @@ fetch("products.json")
           </div>
         </div>
       </section>
-
       <nav class="tabs" aria-label="بخش‌های محصول">
         <button class="tab active" data-target="description">توضیحات</button>
         <button class="tab" data-target="features">ویژگی‌ها</button>
         <button class="tab" data-target="specs">مشخصات فنی</button>
       </nav>
-
-      <section class="section" id="description">
-        <h2>توضیحات محصول</h2>
-        <p>${esc(d.fullDesc)}</p>
-      </section>
-
-      <section class="section" id="features">
-        <h2>ویژگی‌های محصول</h2>
-        <ul class="features">${(d.features || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
-      </section>
-
-      <section class="section" id="specs">
-        <h2>مشخصات فنی</h2>
-        <table class="specs-table">
-          ${specs.map(x => `<tr><th>${esc(x[0])}</th><td>${esc(x[1])}</td></tr>`).join("")}
-        </table>
-      </section>
-
+      <section class="section" id="description"><h2>توضیحات محصول</h2><p>${esc(d.fullDesc)}</p></section>
+      <section class="section" id="features"><h2>ویژگی‌های محصول</h2><ul class="features">${(d.features||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>
+      <section class="section" id="specs"><h2>مشخصات فنی</h2><table class="specs-table">${specs.map(x=>`<tr><th>${esc(x[0])}</th><td>${esc(x[1])}</td></tr>`).join("")}</table></section>
       <section class="section">
         <h2>نکات مهم نگهداری</h2>
         <ul class="tips">
@@ -495,30 +422,21 @@ fetch("products.json")
           <li>برای افزایش عمر محصول، هنگام جمع‌کردن از فشار و تاخوردگی نامناسب خودداری کنید.</li>
           <li>برای سفارش ابعاد یا مدل سفارشی، قبل از ثبت سفارش با ما هماهنگ کنید.</li>
         </ul>
-      </section>
-    `;
+      </section>`;
 
     buildThumbs();
-
     document.getElementById("galleryPrev").onclick = () => moveGallery(1);
     document.getElementById("galleryNext").onclick = () => moveGallery(-1);
-    document.getElementById("galleryStage").onclick = e => {
-      if(e.target.closest("button")) return;
-      openLightbox();
-    };
+    document.getElementById("galleryStage").onclick = e => { if(!e.target.closest("button")) openLightbox(); };
     document.getElementById("lbClose").onclick = closeLightbox;
     document.getElementById("lbPrev").onclick = () => { moveGallery(1); openLightbox(); };
     document.getElementById("lbNext").onclick = () => { moveGallery(-1); openLightbox(); };
-    document.getElementById("lightbox").onclick = e => {
-      if(e.target.id === "lightbox") closeLightbox();
-    };
-
+    document.getElementById("lightbox").onclick = e => { if(e.target.id === "lightbox") closeLightbox(); };
     document.addEventListener("keydown", e => {
       if(e.key === "Escape") closeLightbox();
       if(e.key === "ArrowRight") moveGallery(1);
       if(e.key === "ArrowLeft") moveGallery(-1);
     });
-
     document.querySelectorAll(".tab").forEach(tab => {
       tab.addEventListener("click", () => {
         document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -526,7 +444,6 @@ fetch("products.json")
         document.getElementById(tab.dataset.target)?.scrollIntoView({behavior:"smooth", block:"start"});
       });
     });
-
     document.title = product.name + " | چادردوزی جزیره J.A.T";
     const meta = document.querySelector('meta[name="description"]');
     if(meta) meta.content = (d.fullDesc || product.description || "").slice(0, 155);
