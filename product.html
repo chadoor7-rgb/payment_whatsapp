@@ -1,73 +1,44 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>چادر برزنتی ۴ نفره | چادردوزی جزیره J.A.T</title>
+  <title>جزئیات محصول | چادردوزی جزیره J.A.T</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Tahoma', 'Segoe UI', sans-serif;
+      font-family: Tahoma, 'Segoe UI', sans-serif;
       background: #f7f5f0;
       color: #1a1a1a;
       line-height: 1.7;
     }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== Header ساده ===== */
+    /* Header */
     .top-header {
       background: #1a3c34;
       color: white;
       padding: 12px 0;
       font-size: 14px;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
     .top-header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+    .logo { font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 8px; }
 
-    .logo {
-      font-weight: bold;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ===== Breadcrumb ===== */
+    /* Breadcrumb */
     .breadcrumb {
       padding: 16px 0;
       font-size: 13px;
       color: #666;
     }
+    .breadcrumb a { color: #1a3c34; }
+    .breadcrumb span { margin: 0 6px; color: #999; }
 
-    .breadcrumb a {
-      color: #1a3c34;
-    }
-
-    .breadcrumb span {
-      margin: 0 6px;
-      color: #999;
-    }
-
-    /* ===== Product Main ===== */
+    /* Product Main */
     .product-main {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -80,10 +51,7 @@
     }
 
     /* Gallery */
-    .gallery {
-      position: relative;
-    }
-
+    .gallery { position: relative; }
     .main-image {
       width: 100%;
       height: 420px;
@@ -92,7 +60,6 @@
       background: #eee;
       display: block;
     }
-
     .thumbnails {
       display: flex;
       gap: 10px;
@@ -100,7 +67,6 @@
       overflow-x: auto;
       padding-bottom: 5px;
     }
-
     .thumb {
       width: 80px;
       height: 80px;
@@ -110,11 +76,7 @@
       border: 2px solid transparent;
       transition: 0.2s;
     }
-
-    .thumb.active,
-    .thumb:hover {
-      border-color: #1a3c34;
-    }
+    .thumb.active, .thumb:hover { border-color: #1a3c34; }
 
     /* Product Info */
     .product-info h1 {
@@ -122,7 +84,6 @@
       margin-bottom: 8px;
       color: #1a1a1a;
     }
-
     .product-meta {
       display: flex;
       gap: 15px;
@@ -130,37 +91,27 @@
       color: #666;
       margin-bottom: 12px;
       align-items: center;
+      flex-wrap: wrap;
     }
-
-    .rating {
-      color: #f5a623;
-      font-size: 14px;
-    }
-
+    .rating { color: #f5a623; font-size: 14px; }
     .price {
       font-size: 28px;
       font-weight: bold;
       color: #e74c3c;
       margin: 18px 0;
     }
-
     .key-features {
       background: #f8f9f7;
       border-radius: 10px;
       padding: 16px;
       margin-bottom: 20px;
     }
-
     .key-features h3 {
       font-size: 15px;
       margin-bottom: 10px;
       color: #1a3c34;
     }
-
-    .key-features ul {
-      list-style: none;
-    }
-
+    .key-features ul { list-style: none; }
     .key-features li {
       font-size: 14px;
       margin-bottom: 6px;
@@ -168,7 +119,6 @@
       align-items: center;
       gap: 8px;
     }
-
     .key-features li::before {
       content: "✓";
       color: #1a3c34;
@@ -176,28 +126,19 @@
     }
 
     /* Options */
-    .options {
-      margin-bottom: 20px;
-    }
-
-    .option-group {
-      margin-bottom: 14px;
-    }
-
+    .options { margin-bottom: 20px; }
+    .option-group { margin-bottom: 14px; }
     .option-group label {
       display: block;
       font-size: 14px;
       margin-bottom: 8px;
       font-weight: 600;
     }
-
-    .color-options,
-    .size-options {
+    .color-options, .size-options {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
-
     .color-btn {
       width: 32px;
       height: 32px;
@@ -205,12 +146,10 @@
       border: 2px solid #ddd;
       cursor: pointer;
     }
-
     .color-btn.active {
       border-color: #1a3c34;
       box-shadow: 0 0 0 2px white, 0 0 0 4px #1a3c34;
     }
-
     .size-btn {
       padding: 8px 18px;
       border: 1px solid #ddd;
@@ -220,20 +159,17 @@
       font-size: 14px;
       transition: 0.2s;
     }
-.size-btn.active,
-    .size-btn:hover {
+    .size-btn.active, .size-btn:hover {
       background: #1a3c34;
       color: white;
       border-color: #1a3c34;
     }
-
-    /* Buttons */
+ /* Buttons */
     .action-buttons {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-
     .btn {
       display: flex;
       align-items: center;
@@ -247,26 +183,18 @@
       border: none;
       transition: 0.2s;
     }
-
     .btn-primary {
       background: #1a3c34;
       color: white;
     }
-
-    .btn-primary:hover {
-      background: #14302a;
-    }
-
+    .btn-primary:hover { background: #14302a; }
     .btn-whatsapp {
       background: #25d366;
       color: white;
     }
+    .btn-whatsapp:hover { background: #1ebe57; }
 
-    .btn-whatsapp:hover {
-      background: #1ebe57;
-    }
-
-    /* ===== Specs & Description ===== */
+    /* Details */
     .product-details {
       background: white;
       border-radius: 16px;
@@ -274,7 +202,6 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       margin-bottom: 40px;
     }
-
     .section-title {
       font-size: 18px;
       margin-bottom: 20px;
@@ -283,42 +210,34 @@
       align-items: center;
       gap: 8px;
     }
-
     .specs-table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 30px;
     }
-
     .specs-table td {
       padding: 12px 15px;
       border-bottom: 1px solid #eee;
       font-size: 14px;
     }
-
     .specs-table td:first-child {
       width: 40%;
       color: #666;
       background: #fafafa;
     }
-
     .description {
       font-size: 15px;
       color: #333;
       line-height: 1.9;
     }
 
-    /* ===== Related Products ===== */
-    .related {
-      margin-bottom: 60px;
-    }
-
+    /* Related */
+    .related { margin-bottom: 60px; }
     .related-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
     }
-
     .related-card {
       background: white;
       border-radius: 12px;
@@ -326,64 +245,41 @@
       box-shadow: 0 3px 12px rgba(0,0,0,0.06);
       transition: 0.2s;
     }
-
     .related-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-
     .related-card img {
       width: 100%;
       height: 160px;
       object-fit: cover;
     }
-
-    .related-card .info {
-      padding: 14px;
-    }
-
-    .related-card h4 {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
+    .related-card .info { padding: 14px; }
+    .related-card h4 { font-size: 14px; margin-bottom: 6px; }
     .related-card .price {
       font-size: 15px;
       color: #e74c3c;
       margin: 0;
     }
 
-    /* ===== Responsive ===== */
+    /* Responsive */
     @media (max-width: 900px) {
       .product-main {
         grid-template-columns: 1fr;
         gap: 25px;
         padding: 20px;
       }
-
-      .main-image {
-        height: 320px;
-      }
+      .main-image { height: 320px; }
     }
-
     @media (max-width: 600px) {
-      .main-image {
-        height: 260px;
-      }
-
-      .product-info h1 {
-        font-size: 22px;
-      }
-
-      .price {
-        font-size: 24px;
-      }
+      .main-image { height: 260px; }
+      .product-info h1 { font-size: 22px; }
+      .price { font-size: 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header ساده -->
   <div class="top-header">
     <div class="container">
       <div class="logo">⛺ چادردوزی جزیره J.A.T</div>
@@ -392,198 +288,302 @@
   </div>
 
   <div class="container">
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
+    <div class="breadcrumb" id="breadcrumb">
       <a href="index.html">خانه</a>
       <span>/</span>
       <a href="shop.html">فروشگاه</a>
       <span>/</span>
-      <a href="#">چادر برزنتی</a>
-      <span>/</span>
-      چادر برزنتی ۴ نفره
+      <span id="breadcrumb-name">محصول</span>
     </div>
 
-    <!-- Product Main -->
-    <div class="product-main">
-      <!-- Gallery -->
-      <div class="gallery">
-        <img src="https://via.placeholder.com/600x420?text=چادر+برزنتی+۴+نفره" 
-             alt="چادر برزنتی ۴ نفره" 
-             class="main-image" 
-             id="mainImage">
-
-        <div class="thumbnails">
-          <img src="https://via.placeholder.com/80x80?text=1" class="thumb active" onclick="changeImage(this)">
-          <img src="https://via.placeholder.com/80x80?text=2" class="thumb" onclick="changeImage(this)">
- <img src="https://via.placeholder.com/80x80?text=3" class="thumb" onclick="changeImage(this)">
-          <img src="https://via.placeholder.com/80x80?text=4" class="thumb" onclick="changeImage(this)">
-          <img src="https://via.placeholder.com/80x80?text=5" class="thumb" onclick="changeImage(this)">
-        </div>
-      </div>
-
-      <!-- Info -->
-      <div class="product-info">
-        <h1>چادر برزنتی ۴ نفره</h1>
-        
-        <div class="product-meta">
-          <span>کد محصول: JAT-4P-TARP</span>
-          <span class="rating">★★★★★ (۲۴ نظر)</span>
-        </div>
-
-        <div class="price">۴,۵۰۰,۰۰۰ تومان</div>
-
-        <div class="key-features">
-          <h3>ویژگی‌های کلیدی</h3>
-          <ul>
-            <li>ظرفیت: ۴ نفر</li>
-            <li>جنس پارچه: برزنت PVC ضد آب و مقاوم در برابر UV</li>
-            <li>وزن: ۵.۸ کیلوگرم (شامل کیف حمل)</li>
-            <li>نصب بسیار سریع و آسان</li>
-          </ul>
-        </div>
-
-        <div class="options">
-          <div class="option-group">
-            <label>رنگ</label>
-            <div class="color-options">
-              <div class="color-btn active" style="background:#1e5f8a" title="آبی"></div>
-              <div class="color-btn" style="background:#4a7c59" title="سبز"></div>
-              <div class="color-btn" style="background:#555" title="خاکستری"></div>
-            </div>
-          </div>
-
-          <div class="option-group">
-            <label>سایز</label>
-            <div class="size-options">
-              <button class="size-btn active">۴ نفره</button>
-              <button class="size-btn">۶ نفره</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="action-buttons">
-          <button class="btn btn-primary">🛒 ثبت سفارش</button>
-          <a href="https://wa.me/989118031241?text=سلام، در مورد چادر برزنتی ۴ نفره سوال دارم" 
-             class="btn btn-whatsapp" target="_blank">
-            💬 سفارش در واتساپ
-          </a>
-        </div>
-      </div>
+    <div class="product-main" id="product-main">
+      <!-- محتوا با جاوااسکریپت پر می‌شود -->
     </div>
 
-    <!-- Specs & Description -->
-    <div class="product-details">
-      <h2 class="section-title">📋 مشخصات کامل</h2>
-      
-      <table class="specs-table">
-        <tr>
-          <td>ظرفیت</td>
-          <td>۴ نفر</td>
-        </tr>
-        <tr>
-          <td>جنس پارچه</td>
-          <td>برزنت PVC (ضد آب و مقاوم در برابر UV)</td>
-        </tr>
-        <tr>
-          <td>وزن</td>
-          <td>۵.۸ کیلوگرم</td>
-        </tr>
-        <tr>
-          <td>ابعاد برپا شده</td>
-          <td>۲۲۰ × ۲۲۰ × ۱۳۰ سانتی‌متر</td>
-        </tr>
-        <tr>
-          <td>ابعاد بسته‌بندی</td>
-          <td>۶۵ × ۲۵ × ۲۵ سانتی‌متر</td>
-        </tr>
-        <tr>
-          <td>نوع ساخت</td>
-          <td>پاپ‌آپ (تاشو خودکار)</td>
-        </tr>
-        <tr>
-          <td>درب ورودی</td>
-          <td>۲ درب با زیپ و مشبک</td>
-        </tr>
-        <tr>
-          <td>لوازم جانبی</td>
-          <td>کیف حمل، میخ، طناب کشی، پایه‌های تقویت‌شده</td>
-        </tr>
-      </table>
-
-      <h2 class="section-title">📝 توضیحات محصول</h2>
-      <div class="description">
-        <p>
-          چادر برزنتی ۴ نفره جزیره، انتخابی ایده‌آل برای طبیعت‌گردان و کمپینگ‌های حرفه‌ای است. 
-          این چادر با پارچه برزنت PVC ضد آب و مقاوم در برابر نور خورشید، محافظت کامل در برابر باران و رطوبت را تضمین می‌کند.
-        </p>
-        <p style="margin-top:12px">
-          طراحی پاپ‌آپ آن نصب را بسیار سریع و آسان کرده و حمل آن به لطف کیف حمل جمع و جور بسیار راحت است. 
-          مناسب برای سفرهای خانوادگی، کوهنوردی سبک و کمپ‌های آخر هفته.
-        </p>
-      </div>
+    <div class="product-details" id="product-details">
+      <!-- مشخصات و توضیحات -->
     </div>
 
-    <!-- Related Products -->
     <div class="related">
       <h2 class="section-title">⛺ محصولات مرتبط</h2>
-      <div class="related-grid">
-        <div class="related-card">
-          <img src="https://via.placeholder.com/300x160?text=چادر+۶+نفره" alt="">
-<div class="info">
-            <h4>چادر برزنتی ۶ نفره</h4>
-            <div class="price">۶,۵۰۰,۰۰۰ تومان</div>
-          </div>
-        </div>
-        <div class="related-card">
-          <img src="https://via.placeholder.com/300x160?text=چادر+پاپ‌آپ" alt="">
-          <div class="info">
-            <h4>چادر پاپ‌آپ ۴ نفره</h4>
-            <div class="price">۲,۹۸۰,۰۰۰ تومان</div>
-          </div>
-        </div>
-        <div class="related-card">
-          <img src="https://via.placeholder.com/300x160?text=چادر+تونلی" alt="">
-          <div class="info">
-            <h4>چادر تونلی ۳ نفره</h4>
-            <div class="price">۳,۲۵۰,۰۰۰ تومان</div>
-          </div>
-        </div>
-        <div class="related-card">
-          <img src="https://via.placeholder.com/300x160?text=کیف+حمل" alt="">
-          <div class="info">
-            <h4>کیف حمل چادر</h4>
-            <div class="price">۴۸۰,۰۰۰ تومان</div>
-          </div>
-        </div>
+      <div class="related-grid" id="related-grid">
+        <!-- محصولات مرتبط -->
       </div>
     </div>
   </div>
 
   <script>
-    // تغییر عکس اصلی با کلیک روی thumbnail
-    function changeImage(el) {
+    // ===================== داده‌های کامل محصولات =====================
+    const products = {
+      1: {
+        name: "چادر برزنتی ۴ نفره",
+        code: "JAT-4P-TARP",
+        price: "۴,۵۰۰,۰۰۰ تومان",
+        category: "برزنتی",
+        rating: "★★★★★ (۲۴ نظر)",
+        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۴+نفره",
+        thumbs: [
+          "https://via.placeholder.com/80x80?text=1",
+          "https://via.placeholder.com/80x80?text=2",
+ "https://via.placeholder.com/80x80?text=3",
+          "https://via.placeholder.com/80x80?text=4"
+        ],
+        features: [
+          "ظرفیت واقعی: ۴ نفر",
+          "جنس پارچه: برزنت PVC ضخیم ضدآب و مقاوم در برابر UV",
+          "وزن تقریبی: ۵.۸ کیلوگرم",
+          "نصب پاپ‌آپ (تاشو خودکار) – بسیار سریع",
+          "مناسب سفر، طبیعت‌گردی و کمپینگ خانوادگی"
+        ],
+        specs: [
+          ["ظرفیت", "۴ نفر"],
+          ["جنس پارچه", "برزنت PVC ضدآب + مقاوم UV"],
+          ["وزن", "حدود ۵.۸ کیلوگرم"],
+          ["ابعاد برپا شده", "حدود ۲۲۰ × ۲۲۰ × ۱۳۰ سانتی‌متر"],
+          ["ابعاد بسته‌بندی", "حدود ۶۵ × ۲۵ × ۲۵ سانتی‌متر"],
+          ["نوع اسکلت", "فنری / پاپ‌آپ"],
+          ["درب ورودی", "۲ درب با زیپ و توری"],
+          ["تهویه", "پنجره‌های توری‌دار"],
+          ["لوازم همراه", "کیف حمل، میخ، طناب"],
+          ["وضعیت", "آماده ارسال / قابل سفارش"]
+        ],
+        description: چادر برزنتی ۴ نفره چادردوزی جزیره با پارچه برزنت ضخیم و دوخت حرفه‌ای تولید شده است. این مدل به دلیل مقاومت بالا در برابر رطوبت و آفتاب، گزینه‌ای عالی برای سفرهای شمال ایران و کمپینگ‌های چندروزه محسوب می‌شود. نصب آن بسیار سریع است و فضای داخلی مناسبی برای خانواده کوچک فراهم می‌کند.,
+        whatsapp: "سلام، در مورد چادر برزنتی ۴ نفره سوال دارم"
+      },
+      2: {
+        name: "چادر برزنتی ۶ نفره",
+        code: "JAT-6P-TARP",
+        price: "۶,۵۰۰,۰۰۰ تومان",
+        category: "برزنتی",
+        rating: "★★★★★ (۱۸ نظر)",
+        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۶+نفره",
+        thumbs: [
+          "https://via.placeholder.com/80x80?text=1",
+          "https://via.placeholder.com/80x80?text=2",
+          "https://via.placeholder.com/80x80?text=3"
+        ],
+        features: [
+          "ظرفیت: ۶ نفر",
+          "پارچه برزنت مقاوم و ضخیم",
+          "فضای جادارتر نسبت به مدل ۴ نفره",
+          "مناسب خانواده و گروه‌های متوسط"
+        ],
+        specs: [
+          ["ظرفیت", "۶ نفر"],
+          ["جنس پارچه", "برزنت PVC ضدآب"],
+          ["وزن تقریبی", "۷ تا ۷.۵ کیلوگرم"],
+          ["ابعاد برپا شده", "حدود ۲۵۰ × ۲۵۰ × ۱۴۰ سانتی‌متر"],
+          ["ابعاد بسته‌بندی", "حدود ۷۰ × ۳۰ × ۳۰ سانتی‌متر"],
+          ["نوع ساخت", "پاپ‌آپ / فنری"],
+          ["درب و پنجره", "۲ درب + چند پنجره توری"],
+          ["وضعیت", "آماده / قابل سفارش"]
+        ],
+        description: چادر برزنتی ۶ نفره با فضای وسیع‌تر و دوخت مقاوم کارگاهی، انتخاب مناسبی برای خانواده‌ها و گروه‌های متوسط است. پارچه برزنت ضخیم آن در برابر باران و آفتاب مقاومت بالایی دارد.,
+        whatsapp: "سلام، در مورد چادر برزنتی ۶ نفره سوال دارم"
+      },
+      3: {
+        name: "چادر برزنتی ۸ نفره J.A.T",
+        code: "JAT-8P-TARP",
+        price: "۸,۵۰۰,۰۰۰ تومان",
+        category: "برزنتی",
+        rating: "★★★★★ (۱۲ نظر)",
+        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۸+نفره",
+        thumbs: [
+          "https://via.placeholder.com/80x80?text=1",
+          "https://via.placeholder.com/80x80?text=2",
+          "https://via.placeholder.com/80x80?text=3"
+        ],
+        features: [
+          "ظرفیت بزرگ: ۸ نفر",
+          "مناسب خانواده بزرگ و سفرهای گروهی",
+          "دوخت مقاوم کارگاهی",
+          "فضای داخلی وسیع"
+        ],
+        specs: [
+          ["ظرفیت", "۸ نفر"],
+          ["جنس پارچه", "برزنت ضخیم مقاوم"],
+          ["وزن تقریبی", "۹ تا ۱۰ کیلوگرم"],
+          ["ابعاد برپا شده", "حدود ۳۰۰ × ۳۰۰ × ۱۵۰ سانتی‌متر"],
+          ["نوع اسکلت", "فنری تقویت‌شده"],
+          ["مناسب برای", "خانواده بزرگ، سفر شمال"]
+        ],
+        description: چادر برزنتی ۸ نفره J.A.T با فضای بزرگ و دوخت حرفه‌ای، برای خانواده‌های پرجمعیت و سفرهای گروهی طراحی شده است. مقاومت بالا در شرایط آب‌وهوایی شمال ایران از ویژگی‌های اصلی این مدل است.,
+        whatsapp: "سلام، در مورد چادر برزنتی ۸ نفره سوال دارم"
+      },
+      4: {
+        name: "چادر برزنتی ۱۰ نفره",
+ code: "JAT-10P-TARP",
+        price: "۱۰,۵۰۰,۰۰۰ تومان",
+        category: "برزنتی",
+        rating: "★★★★☆ (۸ نظر)",
+        mainImage: "https://via.placeholder.com/600x420?text=چادر+برزنتی+۱۰+نفره",
+        thumbs: [
+          "https://via.placeholder.com/80x80?text=1",
+          "https://via.placeholder.com/80x80?text=2"
+        ],
+        features: [
+          "ظرفیت خیلی بزرگ: ۱۰ نفر",
+          "مناسب گروه‌های بزرگ و استفاده طولانی‌مدت",
+          "امکان سفارش ابعاد سفارشی"
+        ],
+        specs: [
+          ["ظرفیت", "۱۰ نفر"],
+          ["جنس پارچه", "برزنت ضخیم مقاوم"],
+          ["وضعیت", "قابل سفارش با ابعاد دلخواه"]
+        ],
+        description: چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ و استفاده‌های طولانی‌مدت مناسب است. امکان دوخت سفارشی با ابعاد دلخواه شما وجود دارد.,
+        whatsapp: "سلام، در مورد چادر برزنتی ۱۰ نفره سوال دارم"
+      },
+      5: {
+        name: "چادر مسافرتی ۸ نفره JAT مدل دو جداره",
+        code: "JAT-8P-DOUBLE",
+        price: "۶,۵۰۰,۰۰۰ تومان",
+        category: "مسافرتی",
+        rating: "★★★★★ (۱۵ نظر)",
+        mainImage: "https://via.placeholder.com/600x420?text=چادر+دو+جداره+۸+نفره",
+        thumbs: [
+          "https://via.placeholder.com/80x80?text=1",
+          "https://via.placeholder.com/80x80?text=2",
+          "https://via.placeholder.com/80x80?text=3"
+        ],
+        features: [
+          "ظرفیت: ۸ نفر",
+          "مدل دو جداره",
+          "پارچه آکسفورد ضدآب",
+          "اسکلت فلزی مقاوم",
+          "مناسب تمام فصول"
+        ],
+        specs: [
+          ["ظرفیت", "۸ نفر"],
+          ["ابعاد برپا شده", "۲۵۰ × ۲۵۰ سانتی‌متر"],
+          ["ارتفاع", "۲۱۰ سانتی‌متر"],
+          ["جنس پارچه", "آکسفورد ضدآب"],
+          ["اسکلت", "فلزی مقاوم"],
+          ["تعداد پنجره", "۴ پنجره توری‌دار"],
+          ["نوع", "دو جداره"],
+          ["مناسب", "تمام فصول"]
+        ],
+        description: چادر مسافرتی ۸ نفره JAT مدل دو جداره با ابعاد ۲۵۰×۲۵۰ سانتی‌متر و ارتفاع ۲۱۰ سانتی‌متر. پارچه آکسفورد ضدآب، اسکلت فلزی مقاوم، چهار پنجره توری‌دار و مناسب تمام فصول.,
+        whatsapp: "سلام، در مورد چادر مسافرتی ۸ نفره دو جداره سوال دارم"
+      }
+    };
+
+    // ===================== بارگذاری محصول =====================
+    function getProductId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id') || '1';
+    }
+
+    function loadProduct() {
+      const id = getProductId();
+      const p = products[id];
+
+      if (!p) {
+        document.getElementById('product-main').innerHTML = '<p style="padding:40px;text-align:center">محصول مورد نظر پیدا نشد.</p>';
+        return;
+      }
+
+      // Breadcrumb
+      document.getElementById('breadcrumb-name').textContent = p.name;
+      document.title = p.name + ' | چادردوزی جزیره J.A.T';
+
+      // Main section
+      let thumbsHtml = p.thumbs.map((src, i) => 
+        <img src="${src}" class="thumb \( {i===0?'active':''}" onclick="changeImage(this, ' \){p.mainImage}')">
+      ).join('');
+
+      document.getElementById('product-main').innerHTML = 
+        <div class="gallery">
+          <img src="\( {p.mainImage}" alt=" \){p.name}" class="main-image" id="mainImage">
+          <div class="thumbnails">${thumbsHtml}</div>
+        </div>
+        <div class="product-info">
+          <h1>${p.name}</h1>
+          <div class="product-meta">
+            <span>کد محصول: ${p.code}</span>
+            <span class="rating">${p.rating}</span>
+          </div>
+          <div class="price">${p.price}</div>
+          <div class="key-features">
+            <h3>ویژگی‌های کلیدی</h3>
+            <ul>
+              \( {p.features.map(f => <li> \){f}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="options">
+            <div class="option-group">
+              <label>رنگ</label>
+              <div class="color-options">
+<div class="color-btn active" style="background:#1e5f8a" title="آبی"></div>
+                <div class="color-btn" style="background:#4a7c59" title="سبز"></div>
+                <div class="color-btn" style="background:#555" title="خاکستری"></div>
+              </div>
+            </div>
+            <div class="option-group">
+              <label>سایز</label>
+              <div class="size-options">
+                <button class="size-btn active">استاندارد</button>
+              </div>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-primary" onclick="alert('برای ثبت سفارش با ما تماس بگیرید')">🛒 ثبت سفارش</button>
+            <a href="https://wa.me/989118031241?text=${encodeURIComponent(p.whatsapp)}" 
+               class="btn btn-whatsapp" target="_blank">
+              💬 سفارش در واتساپ
+            </a>
+          </div>
+        </div>
+      ;
+
+      // Specs & Description
+      let specsHtml = p.specs.map(row => 
+        <tr><td>\( {row[0]}</td><td> \){row[1]}</td></tr>
+      ).join('');
+
+      document.getElementById('product-details').innerHTML = 
+        <h2 class="section-title">📋 مشخصات کامل</h2>
+        <table class="specs-table">${specsHtml}</table>
+        <h2 class="section-title">📝 توضیحات محصول</h2>
+        <div class="description"><p>${p.description}</p></div>
+      ;
+
+      // Related products
+      let relatedHtml = '';
+      Object.keys(products).forEach(key => {
+        if (key !== id) {
+          const r = products[key];
+          relatedHtml += 
+            <a href="product.html?id=${key}" class="related-card">
+              <img src="\( {r.mainImage}" alt=" \){r.name}">
+              <div class="info">
+                <h4>${r.name}</h4>
+                <div class="price">${r.price}</div>
+              </div>
+            </a>
+          `;
+        }
+      });
+      document.getElementById('related-grid').innerHTML = relatedHtml;
+
+      // Color & size buttons
+      document.querySelectorAll('.color-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    }
+
+    function changeImage(el, mainSrc) {
+      // اگر عکس واقعی داشتی اینجا تغییر بده
       document.getElementById('mainImage').src = el.src.replace('80x80', '600x420');
-      
-      // حذف active از همه
       document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
     }
 
-    // انتخاب سایز
-    document.querySelectorAll('.size-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-
-    // انتخاب رنگ
-    document.querySelectorAll('.color-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
+    // اجرا
+    loadProduct();
   </script>
 </body>
 </html>
