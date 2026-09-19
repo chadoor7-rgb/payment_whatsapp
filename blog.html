@@ -1,31 +1,43 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مجله سفر | راهنمای خرید و نگهداری چادر | چادردوزی جزیره</title>
-  <meta name="description" content="راهنمای خرید چادر مسافرتی، نگهداری چادر برزنتی و نکات کمپینگ. مقالات کاربردی از کارگاه چادردوزی جزیره آمل.">
+
+  <title>مجله سفر | راهنمای خرید، تعمیر و نگهداری چادر | چادردوزی جزیره</title>
+
+  <meta name="description" content="مجله سفر چادردوزی جزیره J.A.T؛ راهنمای خرید چادر مسافرتی، تعمیر چادر، تعمیر زیپ و فنر، ضدآب کردن، نگهداری چادر برزنتی و نکات کمپینگ.">
+
+  <meta name="keywords" content="مجله چادر مسافرتی, خرید چادر, تعمیر چادر, تعمیر فنر چادر, تعمیر زیپ چادر, ضدآب کردن چادر, نگهداری چادر, چادر برزنتی, کمپینگ">
+
   <link rel="canonical" href="https://chadooor.ir/blog.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+
   <style>
     .blog-hero {
       text-align: center;
       padding: 2.8rem 1rem 1.8rem;
       background: linear-gradient(180deg, #f6f8f6 0%, #fff 100%);
     }
+
     .blog-hero h1 {
       font-size: 2rem;
       margin: 0 0 0.6rem;
       font-weight: 800;
     }
+
     .blog-hero p {
       color: #68736f;
-      max-width: 520px;
+      max-width: 600px;
       margin: 0 auto;
       line-height: 1.8;
     }
+
     .blog-list {
       max-width: 900px;
       margin: 0 auto;
@@ -34,6 +46,7 @@
       flex-direction: column;
       gap: 1.5rem;
     }
+
     .blog-card {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -46,25 +59,30 @@
       color: inherit;
       transition: transform 0.25s, box-shadow 0.25s;
     }
+
     .blog-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 14px 32px rgba(21,40,34,0.1);
     }
+
     .blog-card-img {
       background: #f0f0f0;
       min-height: 200px;
     }
+
     .blog-card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
+
     .blog-card-body {
       padding: 1.5rem 1.6rem;
       display: flex;
       flex-direction: column;
     }
+
     .blog-tag {
       display: inline-block;
       background: #e7f3f0;
@@ -76,12 +94,14 @@
       margin-bottom: 0.7rem;
       width: max-content;
     }
+
     .blog-card h2 {
       font-size: 1.2rem;
       margin: 0 0 0.6rem;
       font-weight: 800;
       line-height: 1.5;
     }
+
     .blog-card p {
       color: #68736f;
       font-size: 0.92rem;
@@ -89,23 +109,30 @@
       margin: 0 0 1rem;
       flex: 1;
     }
+
     .blog-meta {
       font-size: 0.82rem;
       color: #999;
     }
+
     .blog-read {
       color: #155e55;
       font-weight: 700;
       font-size: 0.9rem;
       margin-top: 0.5rem;
     }
+
     /* مقاله کامل */
     .article-page {
       max-width: 760px;
       margin: 0 auto;
       padding: 2rem 1.2rem 4rem;
     }
-    .article-page.hidden { display: none; }
+
+    .article-page.hidden {
+      display: none;
+    }
+
     .article-back {
       display: inline-flex;
       align-items: center;
@@ -116,17 +143,20 @@
       font-weight: 600;
       margin-bottom: 1.5rem;
     }
+
     .article-page h1 {
       font-size: 1.7rem;
       line-height: 1.45;
       margin: 0 0 0.8rem;
       font-weight: 800;
     }
+
     .article-meta {
       color: #999;
       font-size: 0.88rem;
       margin-bottom: 1.5rem;
     }
+
     .article-cover {
       width: 100%;
       border-radius: 16px;
@@ -134,25 +164,33 @@
       max-height: 360px;
       object-fit: cover;
     }
+
     .article-body {
       color: #444;
       line-height: 2;
       font-size: 1.02rem;
     }
+
     .article-body h2 {
       font-size: 1.25rem;
       margin: 2rem 0 0.8rem;
       color: #17231f;
     }
-    .article-body p { margin: 0 0 1.1rem; }
+
+    .article-body p {
+      margin: 0 0 1.1rem;
+    }
+
     .article-body ul {
       margin: 0 0 1.2rem;
       padding-right: 1.4rem;
     }
+
     .article-body li {
       margin-bottom: 0.5rem;
       line-height: 1.85;
     }
+
     .article-cta {
       background: #f6f8f6;
       border-radius: 16px;
@@ -160,10 +198,12 @@
       margin-top: 2.5rem;
       text-align: center;
     }
+
     .article-cta p {
       margin: 0 0 1rem;
       color: #68736f;
     }
+
     .article-cta a {
       display: inline-block;
       background: #155e55;
@@ -174,21 +214,47 @@
       text-decoration: none;
       margin: 0 0.3rem 0.4rem;
     }
-    .article-cta a.wa { background: #20b95a; }
+
+    .article-cta a.wa {
+      background: #20b95a;
+    }
+
     @media (max-width: 700px) {
-      .blog-card { grid-template-columns: 1fr; }
-      .blog-card-img { min-height: 180px; max-height: 200px; }
-      .blog-hero h1 { font-size: 1.6rem; }
-      .article-page h1 { font-size: 1.4rem; }
+      .blog-card {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-card-img {
+        min-height: 180px;
+        max-height: 200px;
+      }
+
+      .blog-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .article-page h1 {
+        font-size: 1.4rem;
+      }
     }
   </style>
+
 </head>
+
 <body>
+
 <header class="site-header sticky-header">
+
   <a href="index.html" class="brand">
-    <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
+    <img
+      src="favicon.svg"
+      alt="لوگوی چادردوزی جزیره"
+      class="brand-logo"
+      width="44"
+      height="44">
     <span>چادردوزی جزیره J.A.T</span>
   </a>
+
   <nav class="main-nav" aria-label="منوی اصلی">
     <a href="products.html">محصولات</a>
     <a href="shop.html">فروشگاه</a>
@@ -198,254 +264,1238 @@
     <a href="blog.html">مجله سفر</a>
     <a href="contact.html">ثبت سفارش</a>
   </nav>
+
   <div class="header-actions">
-    <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
-    <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+    <a class="cart-link" href="cart.html" aria-label="سبد خرید">
+      🛒 <span id="cartCount">0</span>
+    </a>
+
+```
+<a href="contact.html" class="btn btn-primary btn-sm">
+  ثبت سفارش
+</a>
+```
+
   </div>
-  <button class="menu-toggle" aria-label="منو">☰</button>
+
+  <button class="menu-toggle" aria-label="منو">
+    ☰
+  </button>
+
 </header>
 
 <main>
-  <!-- لیست مقالات -->
+
+  <!-- ============================= -->
+
+  <!-- صفحه اصلی مجله -->
+
+  <!-- ============================= -->
+
   <div id="blogListView">
-    <section class="blog-hero">
-      <h1>مجله سفر</h1>
-      <p>راهنمای خرید چادر، نگهداری و نکات کاربردی کمپینگ — از تجربه کارگاه چادردوزی جزیره</p>
-    </section>
 
-    <div class="blog-list">
-      <a href="#guide-buy-tent" class="blog-card" data-article="guide-buy-tent">
-        <div class="blog-card-img">
-          <img src="8n-jat.webp" alt="راهنمای خرید چادر" onerror="this.src='hero-chadoor.webp'">
-        </div>
-        <div class="blog-card-body">
-          <span class="blog-tag">راهنمای خرید</span>
-          <h2>چطور چادر مسافرتی مناسب انتخاب کنیم؟</h2>
-          <p>ظرفیت، نوع پارچه، تعداد لایه و فصل استفاده — نکاتی که قبل از خرید چادر باید بدانید تا انتخاب اشتباه نکنید.</p>
-          <div class="blog-meta">۵ دقیقه مطالعه</div>
-          <div class="blog-read">ادامه مطلب ←</div>
-        </div>
-      </a>
+```
+<section class="blog-hero">
 
-      <a href="#care-tent" class="blog-card" data-article="care-tent">
-        <div class="blog-card-img">
-          <img src="travel-tent-during-repair.webp" alt="نگهداری چادر" onerror="this.src='hero-chadoor.webp'">
-        </div>
-        <div class="blog-card-body">
-          <span class="blog-tag">نگهداری</span>
-          <h2>چطور عمر چادر را بیشتر کنیم؟</h2>
-          <p>خشک کردن بعد از باران، جمع‌کردن درست، نگهداری در انبار و اشتباهات رایجی که چادر را زود خراب می‌کنند.</p>
-          <div class="blog-meta">۴ دقیقه مطالعه</div>
-          <div class="blog-read">ادامه مطلب ←</div>
-        </div>
-      </a>
+  <h1>مجله سفر</h1>
 
-      <a href="#canvas-vs-travel" class="blog-card" data-article="canvas-vs-travel">
-        <div class="blog-card-img">
-          <img src="10n-bereznt.webp" alt="چادر برزنتی یا مسافرتی" onerror="this.src='hero-chadoor.webp'">
-        </div>
-        <div class="blog-card-body">
-          <span class="blog-tag">مقایسه</span>
-          <h2>چادر برزنتی یا مسافرتی؟ کدام برای شما بهتر است؟</h2>
-          <p>تفاوت دوخت، دوام، وزن و کاربرد. اگر برای باغ می‌خواهید یا برای سفر شمال، انتخاب درست فرق دارد.</p>
-          <div class="blog-meta">۶ دقیقه مطالعه</div>
-          <div class="blog-read">ادامه مطلب ←</div>
-        </div>
-      </a>
+  <p>
+    راهنمای خرید، تعمیر و نگهداری چادر مسافرتی،
+    چادر برزنتی و نکات کاربردی کمپینگ
+    از تجربه کارگاه چادردوزی جزیره J.A.T
+  </p>
+
+</section>
+
+
+<div class="blog-list">
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۱ -->
+  <!-- ================================= -->
+
+  <a href="repair-tent.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="travel-tent-during-repair.webp"
+        alt="تعمیر چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
     </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        تعمیر چادر
+      </span>
+
+      <h2>
+        تعمیر چادر مسافرتی؛ راهنمای کامل تشخیص آسیب و ترمیم اصولی
+      </h2>
+
+      <p>
+        پارگی پارچه، خرابی زیپ، نفوذ آب و آسیب اسکلت
+        از مشکلات رایج چادر هستند. در این مقاله
+        روش تشخیص و تعمیر هرکدام را بررسی می‌کنیم.
+      </p>
+
+      <div class="blog-meta">
+        ۶ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۲ -->
+  <!-- ================================= -->
+
+  <a href="spring-tent-repair.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="travel-tent-during-repair.webp"
+        alt="تعمیر فنر چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        تعمیر فنر
+      </span>
+
+      <h2>
+        تعمیر فنر چادر مسافرتی؛ علت خرابی و روش تعویض
+      </h2>
+
+      <p>
+        خم شدن یا شکستن فنر می‌تواند عملکرد چادر را مختل کند.
+        با روش صحیح بررسی و تعویض فنر آشنا شوید.
+      </p>
+
+      <div class="blog-meta">
+        ۵ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۳ -->
+  <!-- ================================= -->
+
+  <a href="travel-tent-buying-guide.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="KHIME.jpg"
+        alt="راهنمای خرید چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        راهنمای خرید
+      </span>
+
+      <h2>
+        چگونه چادر مسافرتی مناسب انتخاب کنیم؟
+      </h2>
+
+      <p>
+        نکات مهم انتخاب چادر بر اساس تعداد نفرات،
+        فصل استفاده، نوع پارچه، تهویه و شرایط سفر.
+      </p>
+
+      <div class="blog-meta">
+        ۷ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۴ -->
+  <!-- ================================= -->
+
+  <a href="canvas-tent-maintenance.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="BEREZENT.webp"
+        alt="نگهداری چادر برزنتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        نگهداری چادر
+      </span>
+
+      <h2>
+        نگهداری چادر برزنتی؛ ۱۰ نکته برای افزایش عمر
+      </h2>
+
+      <p>
+        روش‌های صحیح تمیز کردن، خشک کردن، جمع کردن
+        و نگهداری چادرهای برزنتی برای افزایش دوام.
+      </p>
+
+      <div class="blog-meta">
+        ۶ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۵ -->
+  <!-- ================================= -->
+
+  <a href="tent-tear-repair.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="tent-after-repair-1.jpg"
+        alt="تعمیر پارگی چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        تعمیر پارچه
+      </span>
+
+      <h2>
+        چگونه پارگی چادر مسافرتی را تعمیر کنیم؟
+      </h2>
+
+      <p>
+        روش‌های اصولی ترمیم پارگی، سوراخ‌های کوچک
+        و آسیب‌های پارچه چادر مسافرتی.
+      </p>
+
+      <div class="blog-meta">
+        ۵ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۶ -->
+  <!-- ================================= -->
+
+  <a href="tent-zipper-repair.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="tent.jpg"
+        alt="تعمیر زیپ چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        تعمیر زیپ
+      </span>
+
+      <h2>
+        تعمیر زیپ چادر مسافرتی؛ علت خرابی و راهکارها
+      </h2>
+
+      <p>
+        علت گیر کردن، جدا شدن و خراب شدن زیپ چادر
+        و زمان مناسب برای تعمیر یا تعویض آن.
+      </p>
+
+      <div class="blog-meta">
+        ۵ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۷ -->
+  <!-- ================================= -->
+
+  <a href="waterproof-tent.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="6n-brezent.webp"
+        alt="ضدآب کردن چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        آب‌بندی چادر
+      </span>
+
+      <h2>
+        چگونه چادر مسافرتی را ضدآب کنیم؟
+      </h2>
+
+      <p>
+        روش‌های آب‌بندی درزها و افزایش مقاومت چادر
+        در برابر باران و رطوبت.
+      </p>
+
+      <div class="blog-meta">
+        ۶ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۸ -->
+  <!-- ================================= -->
+
+  <a href="folding-storing-travel-tent.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="8n-jat.webp"
+        alt="روش صحیح جمع کردن چادر مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        نگهداری
+      </span>
+
+      <h2>
+        روش صحیح جمع کردن و نگهداری چادر مسافرتی
+      </h2>
+
+      <p>
+        نکات مهم برای خشک کردن، جمع کردن و نگهداری
+        طولانی‌مدت چادر بدون آسیب به پارچه و اسکلت.
+      </p>
+
+      <div class="blog-meta">
+        ۵ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۹ -->
+  <!-- ================================= -->
+
+  <a href="tent-for-north-iran.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="camping-table-chairs-equipment.jpg"
+        alt="چادر مناسب شمال ایران"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        کمپینگ شمال
+      </span>
+
+      <h2>
+        چادر مسافرتی برای شمال ایران؛ انتخاب مناسب باران و رطوبت
+      </h2>
+
+      <p>
+        ویژگی‌های مهم چادر برای مناطق مرطوب و بارانی
+        شمال ایران و نکات انتخاب مناسب.
+      </p>
+
+      <div class="blog-meta">
+        ۶ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۱۰ -->
+  <!-- ================================= -->
+
+  <a href="tent-repair-amol.html" class="blog-card">
+
+    <div class="blog-card-img">
+      <img
+        src="tghr.jpg"
+        alt="تعمیر چادر مسافرتی در آمل"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        خدمات آمل
+      </span>
+
+      <h2>
+        تعمیر چادر مسافرتی در آمل؛ تعمیر بهتر است یا خرید؟
+      </h2>
+
+      <p>
+        بررسی امکان تعمیر پارچه، زیپ، فنر و بخش‌های مختلف
+        چادر و زمان مناسب برای تعمیر یا تعویض.
+      </p>
+
+      <div class="blog-meta">
+        ۶ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۱۱ -->
+  <!-- ================================= -->
+
+  <a href="#guide-buy-tent" class="blog-card" data-article="guide-buy-tent">
+
+    <div class="blog-card-img">
+      <img
+        src="8n-jat.webp"
+        alt="چطور چادر مسافرتی مناسب انتخاب کنیم"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        راهنمای خرید
+      </span>
+
+      <h2>
+        چطور چادر مسافرتی مناسب انتخاب کنیم؟
+      </h2>
+
+      <p>
+        ظرفیت، نوع پارچه، تعداد لایه و فصل استفاده؛
+        نکاتی که قبل از خرید چادر باید بدانید.
+      </p>
+
+      <div class="blog-meta">
+        ۵ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۱۲ -->
+  <!-- ================================= -->
+
+  <a href="#care-tent" class="blog-card" data-article="care-tent">
+
+    <div class="blog-card-img">
+      <img
+        src="travel-tent-during-repair.webp"
+        alt="روش افزایش عمر چادر"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        نگهداری
+      </span>
+
+      <h2>
+        چطور عمر چادر را بیشتر کنیم؟
+      </h2>
+
+      <p>
+        خشک کردن بعد از باران، جمع‌کردن درست،
+        نگهداری در انبار و اشتباهات رایج.
+      </p>
+
+      <div class="blog-meta">
+        ۴ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- ================================= -->
+  <!-- مقاله ۱۳ -->
+  <!-- ================================= -->
+
+  <a href="#canvas-vs-travel" class="blog-card" data-article="canvas-vs-travel">
+
+    <div class="blog-card-img">
+      <img
+        src="10n-bereznt.webp"
+        alt="مقایسه چادر برزنتی و مسافرتی"
+        loading="lazy"
+        onerror="this.src='hero-chadoor.webp'">
+    </div>
+
+    <div class="blog-card-body">
+
+      <span class="blog-tag">
+        مقایسه
+      </span>
+
+      <h2>
+        چادر برزنتی یا مسافرتی؟ کدام برای شما بهتر است؟
+      </h2>
+
+      <p>
+        تفاوت دوخت، دوام، وزن و کاربرد چادر برزنتی
+        و چادر مسافرتی را بررسی می‌کنیم.
+      </p>
+
+      <div class="blog-meta">
+        ۶ دقیقه مطالعه
+      </div>
+
+      <div class="blog-read">
+        ادامه مطلب ←
+      </div>
+
+    </div>
+
+  </a>
+
+</div>
+```
+
   </div>
 
-  <!-- مقاله ۱ -->
+  <!-- ================================= -->
+
+  <!-- مقاله داخلی ۱۱ -->
+
+  <!-- ================================= -->
+
   <article class="article-page hidden" id="guide-buy-tent">
-    <a href="blog.html" class="article-back">→ بازگشت به مجله</a>
-    <span class="blog-tag">راهنمای خرید</span>
-    <h1>چطور چادر مسافرتی مناسب انتخاب کنیم؟</h1>
-    <div class="article-meta">چادردوزی جزیره · راهنمای کاربردی</div>
-    <img class="article-cover" src="8n-jat.webp" alt="چادر مسافرتی" onerror="this.src='hero-chadoor.webp'">
-    <div class="article-body">
-      <p>خرید چادر فقط انتخاب یک رنگ و یک عکس جذاب نیست. اگر ظرفیت، نوع پارچه و شرایط استفاده را در نظر نگیرید، ممکن است بعد از یک سفر کوتاه پشیمان شوید.</p>
 
-      <h2>۱. ظرفیت واقعی، نه فقط عدد روی برچسب</h2>
-      <p>چادر «۴ نفره» معمولاً برای ۴ نفر بدون وسایل زیاد طراحی شده. اگر با خانواده سفر می‌کنید و کوله، پتو و یخدان هم دارید، بهتر است یک سایز بزرگ‌تر بگیرید. برای زوج‌ها اغلب چادر ۳ نفره راحت‌تر است.</p>
+```
+<a href="blog.html" class="article-back">
+  → بازگشت به مجله
+</a>
 
-      <h2>۲. تک‌جداره یا دو جداره؟</h2>
-      <ul>
-        <li><strong>تک‌جداره:</strong> سبک‌تر و ارزان‌تر، مناسب سفرهای کوتاه و آب‌وهوای خشک‌تر.</li>
-        <li><strong>دو جداره:</strong> تهویه بهتر، مقاومت بیشتر در برابر باران و رطوبت — مناسب شمال ایران و کمپینگ چندروزه.</li>
-      </ul>
+<span class="blog-tag">
+  راهنمای خرید
+</span>
 
-      <h2>۳. جنس پارچه</h2>
-      <p>پارچه‌های آکسفورد و پلی‌استر با روکش ضدآب برای چادر مسافرتی رایج‌اند. برای استفاده طولانی‌تر در باغ یا حیاط، چادر برزنتی دوام بیشتری دارد.</p>
+<h1>
+  چطور چادر مسافرتی مناسب انتخاب کنیم؟
+</h1>
 
-      <h2>۴. فصل و محل استفاده</h2>
-      <p>اگر بیشتر در بهار و تابستان شمال کمپ می‌زنید، تهویه و پشه‌بند مهم است. برای پاییز و زمستان، مقاومت در برابر باد و باران اولویت دارد.</p>
+<div class="article-meta">
+  چادردوزی جزیره · راهنمای کاربردی
+</div>
 
-      <h2>جمع‌بندی</h2>
-      <p>قبل از خرید از خودتان بپرسید: چند نفر؟ چند روز؟ کجا؟ با چه بودجه‌ای؟ با این چهار سوال، انتخاب خیلی ساده‌تر می‌شود. اگر هنوز مردد هستید، از طریق واتساپ با کارگاه مشورت کنید.</p>
-    </div>
-    <div class="article-cta">
-      <p>آماده انتخاب چادر هستید؟</p>
-      <a href="shop.html">مشاهده فروشگاه</a>
-      <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85." target="_blank" rel="noopener" class="wa">مشاوره واتساپ</a>
-    </div>
+<img
+  class="article-cover"
+  src="8n-jat.webp"
+  alt="چادر مسافرتی"
+  onerror="this.src='hero-chadoor.webp'">
+
+<div class="article-body">
+
+  <p>
+    خرید چادر فقط انتخاب یک رنگ و یک عکس جذاب نیست.
+    اگر ظرفیت، نوع پارچه و شرایط استفاده را در نظر نگیرید،
+    ممکن است بعد از یک سفر کوتاه پشیمان شوید.
+  </p>
+
+  <h2>
+    ۱. ظرفیت واقعی، نه فقط عدد روی برچسب
+  </h2>
+
+  <p>
+    چادر «۴ نفره» معمولاً برای ۴ نفر بدون وسایل زیاد طراحی شده.
+    اگر با خانواده سفر می‌کنید و کوله، پتو و یخدان هم دارید،
+    بهتر است یک سایز بزرگ‌تر بگیرید.
+    برای زوج‌ها اغلب چادر ۳ نفره راحت‌تر است.
+  </p>
+
+  <h2>
+    ۲. تک‌جداره یا دو جداره؟
+  </h2>
+
+  <ul>
+    <li>
+      <strong>تک‌جداره:</strong>
+      سبک‌تر و ارزان‌تر، مناسب سفرهای کوتاه و آب‌وهوای خشک‌تر.
+    </li>
+
+    <li>
+      <strong>دو جداره:</strong>
+      تهویه بهتر و مقاومت بیشتر در برابر باران و رطوبت.
+    </li>
+  </ul>
+
+  <h2>
+    ۳. جنس پارچه
+  </h2>
+
+  <p>
+    پارچه‌های آکسفورد و پلی‌استر با روکش ضدآب
+    برای چادر مسافرتی رایج‌اند.
+    برای استفاده طولانی‌تر در باغ یا حیاط،
+    چادر برزنتی معمولاً گزینه مقاوم‌تری است.
+  </p>
+
+  <h2>
+    ۴. فصل و محل استفاده
+  </h2>
+
+  <p>
+    اگر بیشتر در بهار و تابستان شمال کمپ می‌زنید،
+    تهویه و پشه‌بند مهم است.
+    برای پاییز و زمستان، مقاومت در برابر باد و باران
+    اهمیت بیشتری پیدا می‌کند.
+  </p>
+
+  <h2>
+    جمع‌بندی
+  </h2>
+
+  <p>
+    قبل از خرید از خودتان بپرسید:
+    چند نفر؟ چند روز؟ کجا؟ با چه بودجه‌ای؟
+    با این چهار سؤال، انتخاب خیلی ساده‌تر می‌شود.
+  </p>
+
+</div>
+
+<div class="article-cta">
+
+  <p>
+    آماده انتخاب چادر هستید؟
+  </p>
+
+  <a href="shop.html">
+    مشاهده فروشگاه
+  </a>
+
+  <a
+    href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85."
+    target="_blank"
+    rel="noopener"
+    class="wa">
+    مشاوره واتساپ
+  </a>
+
+</div>
+```
+
   </article>
 
-  <!-- مقاله ۲ -->
+  <!-- ================================= -->
+
+  <!-- مقاله داخلی ۱۲ -->
+
+  <!-- ================================= -->
+
   <article class="article-page hidden" id="care-tent">
-    <a href="blog.html" class="article-back">→ بازگشت به مجله</a>
-    <span class="blog-tag">نگهداری</span>
-    <h1>چطور عمر چادر را بیشتر کنیم؟</h1>
-    <div class="article-meta">چادردوزی جزیره · نکات نگهداری</div>
-    <img class="article-cover" src="travel-tent-during-repair.webp" alt="نگهداری چادر" onerror="this.src='hero-chadoor.webp'">
-    <div class="article-body">
-      <p>خیلی از چادرها زود خراب نمی‌شوند؛ اشتباه در خشک‌کردن و جمع‌کردن، عمرشان را کم می‌کند. با چند عادت ساده می‌توانید سال‌ها از همان چادر استفاده کنید.</p>
 
-      <h2>۱. همیشه خشک جمع کنید</h2>
-      <p>بعد از باران یا شبنم صبحگاهی، چادر را کاملاً خشک کنید. جمع‌کردن خیس باعث کپک، بوی بد و پوسیدگی درزها می‌شود. اگر مجبورید خیس جمع کنید، در اولین فرصت در خانه پهن و خشکش کنید.</p>
+```
+<a href="blog.html" class="article-back">
+  → بازگشت به مجله
+</a>
 
-      <h2>۲. از آتش و حرارت مستقیم دور نگه دارید</h2>
-      <p>پارچه چادر نزدیک منقل، اجاق یا بخاری آسیب می‌بیند. حتی جرقه کوچک می‌تواند سوراخ ایجاد کند.</p>
+<span class="blog-tag">
+  نگهداری
+</span>
 
-      <h2>۳. جمع‌کردن درست</h2>
-      <p>از تا کردن محکم و فشار بیش از حد خودداری کنید. زیپ‌ها را تا ته ببندید و میله‌ها را جدا و مرتب در کیف بگذارید تا خم نشوند.</p>
+<h1>
+  چطور عمر چادر را بیشتر کنیم؟
+</h1>
 
-      <h2>۴. محل نگهداری</h2>
-      <p>جای خشک و خنک، دور از نور مستقیم آفتاب. انبار نم‌دار یا بالکن در معرض آفتاب، پارچه را ضعیف می‌کند.</p>
+<div class="article-meta">
+  چادردوزی جزیره · نکات نگهداری
+</div>
 
-      <h2>۵. اگر آسیب دید</h2>
-      <p>پارگی کوچک را زود ترمیم کنید تا بزرگ‌تر نشود. زیپ گیرکرده را با اجبار نکشید. بسیاری از این موارد در کارگاه قابل تعمیرند و ارزان‌تر از خرید چادر جدید تمام می‌شوند.</p>
-    </div>
-    <div class="article-cta">
-      <p>چادرتان آسیب دیده؟</p>
-      <a href="services.html">خدمات تعمیر</a>
-      <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85." target="_blank" rel="noopener" class="wa">ارسال عکس در واتساپ</a>
-    </div>
+<img
+  class="article-cover"
+  src="travel-tent-during-repair.webp"
+  alt="نگهداری چادر"
+  onerror="this.src='hero-chadoor.webp'">
+
+<div class="article-body">
+
+  <p>
+    خیلی از چادرها زود خراب نمی‌شوند؛
+    اشتباه در خشک‌کردن و جمع‌کردن، عمرشان را کم می‌کند.
+    با چند عادت ساده می‌توانید سال‌ها از همان چادر استفاده کنید.
+  </p>
+
+  <h2>
+    ۱. همیشه خشک جمع کنید
+  </h2>
+
+  <p>
+    بعد از باران یا شبنم صبحگاهی، چادر را کاملاً خشک کنید.
+    جمع‌کردن خیس باعث کپک، بوی بد و آسیب به درزها می‌شود.
+    اگر مجبورید خیس جمع کنید، در اولین فرصت آن را پهن و خشک کنید.
+  </p>
+
+  <h2>
+    ۲. از آتش و حرارت مستقیم دور نگه دارید
+  </h2>
+
+  <p>
+    پارچه چادر نزدیک منقل، اجاق یا بخاری آسیب می‌بیند.
+    حتی جرقه کوچک می‌تواند سوراخ ایجاد کند.
+  </p>
+
+  <h2>
+    ۳. جمع‌کردن درست
+  </h2>
+
+  <p>
+    از تا کردن محکم و فشار بیش از حد خودداری کنید.
+    زیپ‌ها را تا حد امکان مرتب ببندید و میله‌ها را جدا
+    و مرتب در کیف قرار دهید تا خم نشوند.
+  </p>
+
+  <h2>
+    ۴. محل نگهداری
+  </h2>
+
+  <p>
+    جای خشک و خنک، دور از نور مستقیم آفتاب انتخاب کنید.
+    انبار نم‌دار یا بالکن در معرض آفتاب می‌تواند
+    باعث فرسودگی پارچه شود.
+  </p>
+
+  <h2>
+    ۵. اگر آسیب دید
+  </h2>
+
+  <p>
+    پارگی کوچک را زود ترمیم کنید تا بزرگ‌تر نشود.
+    زیپ گیرکرده را با اجبار نکشید.
+    بسیاری از این موارد قابل تعمیر هستند.
+  </p>
+
+</div>
+
+<div class="article-cta">
+
+  <p>
+    چادرتان آسیب دیده؟
+  </p>
+
+  <a href="services.html">
+    خدمات تعمیر
+  </a>
+
+  <a
+    href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85."
+    target="_blank"
+    rel="noopener"
+    class="wa">
+    ارسال عکس در واتساپ
+  </a>
+
+</div>
+```
+
   </article>
 
-  <!-- مقاله ۳ -->
+  <!-- ================================= -->
+
+  <!-- مقاله داخلی ۱۳ -->
+
+  <!-- ================================= -->
+
   <article class="article-page hidden" id="canvas-vs-travel">
-    <a href="blog.html" class="article-back">→ بازگشت به مجله</a>
-    <span class="blog-tag">مقایسه</span>
-    <h1>چادر برزنتی یا مسافرتی؟ کدام برای شما بهتر است؟</h1>
-    <div class="article-meta">چادردوزی جزیره · مقایسه کاربردی</div>
-    <img class="article-cover" src="10n-bereznt.webp" alt="چادر برزنتی" onerror="this.src='hero-chadoor.webp'">
-    <div class="article-body">
-      <p>هر دو نوع چادر کاربرد خودشان را دارند. انتخاب اشتباه معمولاً از اینجا شروع می‌شود که کسی برای باغ، چادر مسافرتی سبک می‌خرد یا برای کوهنوردی، برزنتی سنگین.</p>
 
-      <h2>چادر مسافرتی</h2>
-      <ul>
-        <li>سبک‌تر و قابل حمل‌تر</li>
-        <li>نصب نسبتاً سریع</li>
-        <li>مناسب کمپینگ، سفر و طبیعت‌گردی</li>
-        <li>مدل‌های دو جداره برای باران بهترند</li>
-      </ul>
-      <p>اگر مدام جابه‌جا می‌شوید و چادر را در صندوق ماشین می‌گذارید، مسافرتی انتخاب منطقی‌تری است.</p>
+```
+<a href="blog.html" class="article-back">
+  → بازگشت به مجله
+</a>
 
-      <h2>چادر برزنتی</h2>
-      <ul>
-        <li>پارچه ضخیم‌تر و دوام بالاتر</li>
-        <li>مناسب باغ، حیاط و استفاده طولانی‌مدت</li>
-        <li>قابل سفارش در ابعاد دلخواه</li>
-        <li>سنگین‌تر؛ بیشتر برای نصب ثابت یا نیمه‌ثابت</li>
-      </ul>
-      <p>اگر چادر را برای چند ماه در باغ یا کنار ویلا می‌گذارید، برزنتی ارزش خرید بیشتری دارد.</p>
+<span class="blog-tag">
+  مقایسه
+</span>
 
-      <h2>جدول ساده تصمیم‌گیری</h2>
-      <ul>
-        <li><strong>سفر و کمپ چندروزه:</strong> مسافرتی</li>
-        <li><strong>باغ و استفاده طولانی:</strong> برزنتی</li>
-        <li><strong>گروه بزرگ و فضای ثابت:</strong> برزنتی سفارشی</li>
-        <li><strong>کوهنوردی سبک:</strong> مسافرتی دوپوش (مثل مدل‌های پکینیو)</li>
-      </ul>
+<h1>
+  چادر برزنتی یا مسافرتی؟ کدام برای شما بهتر است؟
+</h1>
 
-      <h2>نکته کارگاهی</h2>
-      <p>در کارگاه چادردوزی جزیره هر دو نوع دوخته و تعمیر می‌شود. اگر هنوز بین دو گزینه مردد هستید، نوع استفاده و تعداد نفر را بگویید تا پیشنهاد دقیق‌تری بدهیم.</p>
-    </div>
-    <div class="article-cta">
-      <p>می‌خواهید مدل مناسب خودتان را ببینید؟</p>
-      <a href="shop.html">فروشگاه چادر</a>
-      <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%DB%8C%D9%86%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%A8%D8%B1%D8%B2%D9%86%D8%AA%DB%8C%20%D9%88%20%D9%85%D8%B3%D8%A7%D9%81%D8%B1%D8%AA%DB%8C%20%D9%85%D8%B1%D8%AF%D8%AF%D9%85." target="_blank" rel="noopener" class="wa">مشاوره واتساپ</a>
-    </div>
+<div class="article-meta">
+  چادردوزی جزیره · مقایسه کاربردی
+</div>
+
+<img
+  class="article-cover"
+  src="10n-bereznt.webp"
+  alt="چادر برزنتی"
+  onerror="this.src='hero-chadoor.webp'">
+
+<div class="article-body">
+
+  <p>
+    هر دو نوع چادر کاربرد خودشان را دارند.
+    انتخاب مناسب به محل استفاده، میزان جابه‌جایی،
+    مدت استفاده و شرایط آب‌وهوایی بستگی دارد.
+  </p>
+
+  <h2>
+    چادر مسافرتی
+  </h2>
+
+  <ul>
+
+    <li>
+      سبک‌تر و قابل حمل‌تر
+    </li>
+
+    <li>
+      نصب نسبتاً سریع
+    </li>
+
+    <li>
+      مناسب کمپینگ، سفر و طبیعت‌گردی
+    </li>
+
+    <li>
+      مدل‌های دو جداره برای باران مناسب‌تر هستند
+    </li>
+
+  </ul>
+
+  <p>
+    اگر مدام جابه‌جا می‌شوید و چادر را در صندوق ماشین
+    قرار می‌دهید، چادر مسافرتی معمولاً کاربردی‌تر است.
+  </p>
+
+  <h2>
+    چادر برزنتی
+  </h2>
+
+  <ul>
+
+    <li>
+      پارچه ضخیم‌تر و دوام بالاتر
+    </li>
+
+    <li>
+      مناسب باغ، حیاط و استفاده طولانی‌مدت
+    </li>
+
+    <li>
+      قابل سفارش در ابعاد دلخواه
+    </li>
+
+    <li>
+      سنگین‌تر و مناسب‌تر برای نصب ثابت یا نیمه‌ثابت
+    </li>
+
+  </ul>
+
+  <p>
+    اگر چادر را برای مدت طولانی در باغ یا کنار ویلا
+    قرار می‌دهید، چادر برزنتی می‌تواند متناسب‌تر باشد.
+  </p>
+
+  <h2>
+    تصمیم‌گیری ساده
+  </h2>
+
+  <ul>
+
+    <li>
+      <strong>سفر و کمپ چندروزه:</strong>
+      چادر مسافرتی
+    </li>
+
+    <li>
+      <strong>باغ و استفاده طولانی:</strong>
+      چادر برزنتی
+    </li>
+
+    <li>
+      <strong>گروه بزرگ و فضای ثابت:</strong>
+      چادر برزنتی سفارشی
+    </li>
+
+    <li>
+      <strong>سفر سبک:</strong>
+      چادر مسافرتی سبک
+    </li>
+
+  </ul>
+
+  <h2>
+    نکته کارگاهی
+  </h2>
+
+  <p>
+    در کارگاه چادردوزی جزیره هر دو نوع چادر
+    دوخته و تعمیر می‌شود.
+    نوع استفاده و تعداد نفرات را مشخص کنید
+    تا انتخاب دقیق‌تری داشته باشید.
+  </p>
+
+</div>
+
+<div class="article-cta">
+
+  <p>
+    می‌خواهید مدل مناسب خودتان را ببینید؟
+  </p>
+
+  <a href="shop.html">
+    فروشگاه چادر
+  </a>
+
+  <a
+    href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%DB%8C%D9%86%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%A8%D8%B1%D8%B2%D9%86%D8%AA%DB%8C%20%D9%88%20%D9%85%D8%B3%D8%A7%D9%81%D8%B1%D8%AA%DB%8C%20%D9%85%D8%B1%D8%AF%D8%AF%D9%85."
+    target="_blank"
+    rel="noopener"
+    class="wa">
+    مشاوره واتساپ
+  </a>
+
+</div>
+```
+
   </article>
+
 </main>
 
+<!-- ================================= -->
+
+<!-- فوتر -->
+
+<!-- ================================= -->
+
 <footer class="site-footer">
+
   <div class="footer-top">
-    <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="لوگو" width="44" height="44">
-      <span>چادردوزی جزیره J.A.T</span>
-    </a>
-    <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+
+```
+<a href="index.html" class="brand">
+
+  <img
+    src="favicon.svg"
+    alt="لوگوی چادردوزی جزیره"
+    width="44"
+    height="44">
+
+  <span>
+    چادردوزی جزیره J.A.T
+  </span>
+
+</a>
+
+<p class="footer-slogan">
+  برای هر مسیر، یک پناه مطمئن.
+</p>
+```
+
   </div>
+
   <nav class="footer-menu">
-    <a href="products.html">محصولات</a>
-    <a href="shop.html">فروشگاه</a>
-    <a href="services.html">خدمات</a>
-    <a href="gallery.html">گالری</a>
-    <a href="about.html">درباره ما</a>
-    <a href="contact.html">ثبت سفارش</a>
+
+```
+<a href="products.html">
+  محصولات
+</a>
+
+<a href="shop.html">
+  فروشگاه
+</a>
+
+<a href="services.html">
+  خدمات
+</a>
+
+<a href="gallery.html">
+  گالری
+</a>
+
+<a href="about.html">
+  درباره ما
+</a>
+
+<a href="contact.html">
+  ثبت سفارش
+</a>
+```
+
   </nav>
+
   <div class="social-links">
-    <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
-    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-    <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+
+```
+<a
+  href="https://wa.me/989118031241"
+  target="_blank"
+  rel="noopener">
+  واتساپ
+</a>
+
+<a
+  href="https://instagram.com/chadoor_"
+  target="_blank"
+  rel="noopener">
+  اینستاگرام
+</a>
+
+<a
+  href="https://t.me/GATTENT"
+  target="_blank"
+  rel="noopener">
+  تلگرام
+</a>
+```
+
   </div>
-  <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+
+  <div class="copyright">
+
+```
+© ۲۰۲۶ چادردوزی جزیره J.A.T
+<br>
+کلیه حقوق این وب‌سایت محفوظ است.
+```
+
+  </div>
+
 </footer>
 
 <script src="script.js"></script>
+
 <script>
-(function(){
+(function () {
+
   const listView = document.getElementById("blogListView");
   const articles = document.querySelectorAll(".article-page");
 
-  function showList(){
+  function showList() {
+
     listView.style.display = "";
-    articles.forEach(a => a.classList.add("hidden"));
+
+    articles.forEach(function (article) {
+      article.classList.add("hidden");
+    });
+
     window.scrollTo(0, 0);
   }
 
-  function showArticle(id){
-    listView.style.display = "none";
-    articles.forEach(a => {
-      if(a.id === id) a.classList.remove("hidden");
-      else a.classList.add("hidden");
-    });
-    window.scrollTo(0, 0);
-  }
 
-  // کلیک روی کارت‌ها
-  document.querySelectorAll("[data-article]").forEach(card => {
-    card.addEventListener("click", (e) => {
-      e.preventDefault();
-      const id = card.dataset.article;
-      history.pushState({article: id}, "", "#" + id);
-      showArticle(id);
-    });
-  });
+  function showArticle(id) {
 
-  // دکمه بازگشت داخل مقاله
-  document.querySelectorAll(".article-back").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      history.pushState({}, "", "blog.html");
+    const target = document.getElementById(id);
+
+    if (!target) {
       showList();
-    });
-  });
-
-  // بارگذاری اولیه با هش
-  function checkHash(){
-    const hash = location.hash.replace("#", "");
-    if(hash && document.getElementById(hash)?.classList.contains("article-page") !== false && document.getElementById(hash)){
-      showArticle(hash);
-    } else {
-      showList();
+      return;
     }
+
+    listView.style.display = "none";
+
+    articles.forEach(function (article) {
+
+      if (article.id === id) {
+        article.classList.remove("hidden");
+      } else {
+        article.classList.add("hidden");
+      }
+
+    });
+
+    window.scrollTo(0, 0);
   }
 
-  window.addEventListener("popstate", checkHash);
+
+  /*
+   * فقط ۳ مقاله داخلی
+   */
+
+  document
+    .querySelectorAll("[data-article]")
+    .forEach(function (card) {
+
+      card.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        const id = card.dataset.article;
+
+        history.pushState(
+          { article: id },
+          "",
+          "#" + id
+        );
+
+        showArticle(id);
+
+      });
+
+    });
+
+
+  /*
+   * دکمه بازگشت
+   */
+
+  document
+    .querySelectorAll(".article-back")
+    .forEach(function (button) {
+
+      button.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        history.pushState(
+          {},
+          "",
+          "blog.html"
+        );
+
+        showList();
+
+      });
+
+    });
+
+
+  /*
+   * اگر صفحه با لینک #article باز شد
+   */
+
+  function checkHash() {
+
+    const hash = location.hash.replace("#", "");
+
+    const target = document.getElementById(hash);
+
+    if (
+      hash &&
+      target &&
+      target.classList.contains("article-page")
+    ) {
+
+      showArticle(hash);
+
+    } else {
+
+      showList();
+
+    }
+
+  }
+
+
+  window.addEventListener(
+    "popstate",
+    checkHash
+  );
+
+
   checkHash();
+
 })();
 </script>
+
 </body>
 </html>
