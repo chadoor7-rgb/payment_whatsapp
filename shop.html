@@ -3,125 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فروشگاه چادر مسافرتی و برزنتی | چادردوزی جزیره آمل</title>
-  <meta name="description" content="خرید آنلاین چادر مسافرتی، چادر برزنتی، چادر کودک و پشه‌بند مستقیم از تولیدکننده در آمل. ارسال به سراسر ایران.">
+  <title>فروشگاه چادر مسافرتی و برزنتی | خرید از تولیدکننده در آمل | چادردوزی جزیره</title>
+  <meta name="description" content="خرید چادر مسافرتی، چادر برزنتی، چادر کودک، پشه‌بند و تجهیزات کمپینگ مستقیم از کارگاه چادردوزی جزیره در آمل. ارسال به سراسر ایران.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chadooor.ir/shop.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
   <style>
+    :root {
+      --ink: #182622;
+      --muted: #66736f;
+      --cream: #f5f3ed;
+      --paper: #fffdf8;
+      --teal: #235d56;
+      --line: #dedfd8;
+      --coral: #f68165;
+    }
+
+    body { background: var(--cream); }
+
     .shop-hero {
       text-align: center;
-      padding: 2.5rem 1rem 1.5rem;
+      padding: 50px 20px 30px;
     }
     .shop-hero h1 {
-      font-size: 1.9rem;
-      margin: 0 0 0.6rem;
+      font-size: clamp(26px, 4vw, 36px);
       font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 12px;
     }
     .shop-hero p {
-      color: #68736f;
-      max-width: 560px;
+      max-width: 620px;
       margin: 0 auto;
+      color: var(--muted);
       line-height: 1.8;
+      font-size: 16px;
     }
-    .shop-toolbar {
+
+    .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 auto 1.8rem;
-      max-width: 1200px;
-      padding: 0 1rem;
-    }
-    .filter-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
+      gap: 10px;
+      justify-content: center;
+      margin: 10px 0 30px;
+      padding: 0 16px;
     }
     .filter-btn {
-      padding: 0.5rem 1rem;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 8px 16px;
       border-radius: 999px;
-      border: 1px solid #e5e5e5;
-      background: #fafafa;
-      font-family: inherit;
-      font-size: 0.88rem;
       cursor: pointer;
-      transition: all 0.2s;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
     }
     .filter-btn.active,
     .filter-btn:hover {
-      background: #155e55;
+      background: var(--teal);
       color: #fff;
-      border-color: #155e55;
+      border-color: var(--teal);
     }
-    .shop-grid {
+
+    .products-grid {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem 3rem;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
     }
-    .shop-card {
-      background: #fff;
-      border-radius: 16px;
+
+    .product-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.07);
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform .25s, box-shadow .25s;
     }
-    .shop-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(24,38,34,.08);
     }
-    .shop-image {
-      display: block;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
-    .shop-image img {
+    .product-card img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
-      transition: transform 0.35s;
+      background: #f0f0f0;
     }
-    .shop-card:hover .shop-image img {
-      transform: scale(1.04);
+    .product-body {
+      padding: 16px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
-    .shop-empty {
+    .product-cat {
+      font-size: 12px;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .product-body h3 {
+      font-size: 16px;
+      margin: 0 0 8px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .product-body p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 12px;
+      flex: 1;
+    }
+    .product-price {
+      font-size: 16px;
+      font-weight: 800;
+      color: #c62828;
+      margin-bottom: 12px;
+    }
+    .product-price.contact {
+      color: var(--teal);
+      font-size: 14px;
+    }
+    .product-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .product-actions a {
+      flex: 1;
       text-align: center;
-      padding: 3rem 1rem;
-      color: #68736f;
+      text-decoration: none;
+      padding: 10px 8px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .btn-detail {
+      background: var(--teal);
+      color: #fff;
+    }
+    .btn-wa {
+      background: #25d366;
+      color: #fff;
+    }
+
+    .seo-block, .links-block, .bottom-seo {
+      max-width: 900px;
+      margin: 0 auto 36px;
+      padding: 24px 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .seo-block h2, .links-block h2, .bottom-seo h2 {
+      font-size: 20px;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .seo-block p, .bottom-seo p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+    .seo-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .seo-list article {
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+    .seo-list h3 {
+      font-size: 15px;
+      margin: 0 0 6px;
+    }
+    .seo-list a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .seo-list p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .links-block a {
+      display: inline-block;
+      margin: 6px 8px 6px 0;
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--muted);
       grid-column: 1 / -1;
     }
-    .shop-cta {
+    .custom-cta {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      padding: 28px 22px;
       text-align: center;
-      padding: 2rem 1rem 3.5rem;
-      background: #f6f8f6;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 18px;
     }
-    .shop-cta h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.6rem;
+    .custom-cta h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
     }
-    .shop-cta p {
-      color: #68736f;
-      margin-bottom: 1.2rem;
+    .custom-cta p {
+      opacity: .9;
+      margin: 0 0 18px;
+    }
+    .custom-cta a {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
+
 <header class="site-header sticky-header">
   <a href="index.html" class="brand">
-    <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
+    <img src="favicon.svg" alt="لوگوی چادردوزی جزیره" class="brand-logo" width="44" height="44">
     <span>چادردوزی جزیره J.A.T</span>
   </a>
   <nav class="main-nav" aria-label="منوی اصلی">
     <a href="products.html">محصولات</a>
-    <a href="shop.html">فروشگاه</a>
+    <a href="shop.html" class="active">فروشگاه</a>
     <a href="services.html">خدمات</a>
     <a href="gallery.html">گالری</a>
     <a href="about.html">درباره ما</a>
@@ -137,29 +260,85 @@
 
 <main>
   <section class="shop-hero">
-    <h1>فروشگاه چادردوزی جزیره</h1>
-    <p>خرید چادر مسافرتی، برزنتی، چادر کودک و پشه‌بند مستقیم از تولیدکننده در آمل. ارسال به سراسر ایران.</p>
+    <h1>فروشگاه چادر مسافرتی و برزنتی</h1>
+    <p>
+      خرید مستقیم از تولیدکننده در آمل؛ چادر مسافرتی، برزنتی، کودک، پشه‌بند و تجهیزات کمپینگ با امکان ارسال به سراسر ایران.
+    </p>
   </section>
 
-  <div class="shop-toolbar">
-    <div class="filter-group" id="filterGroup">
-      <button class="filter-btn active" data-filter="all">همه</button>
-      <button class="filter-btn" data-filter="مسافرتی">مسافرتی</button>
-      <button class="filter-btn" data-filter="برزنتی">برزنتی</button>
-      <button class="filter-btn" data-filter="کودک">چادر کودک</button>
-      <button class="filter-btn" data-filter="پشه‌بند">پشه‌بند</button>
-      <button class="filter-btn" data-filter="خدمات">خدمات</button>
+  <!-- فیلترها -->
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="همه">همه</button>
+    <button class="filter-btn" data-filter="مسافرتی">مسافرتی</button>
+    <button class="filter-btn" data-filter="برزنتی">برزنتی</button>
+    <button class="filter-btn" data-filter="کودک">چادر کودک</button>
+    <button class="filter-btn" data-filter="پشه‌بند">پشه‌بند</button>
+    <button class="filter-btn" data-filter="خدمات">خدمات</button>
+  </div>
+
+  <!-- گرید محصولات (از JSON) -->
+  <div class="products-grid" id="productsGrid">
+    <div class="loading">در حال بارگذاری محصولات...</div>
+  </div>
+
+  <!-- محتوای ثابت برای سئو -->
+  <section class="seo-block">
+    <h2>محصولات پرفروش چادردوزی جزیره</h2>
+    <p>
+      در فروشگاه ما می‌توانید انواع چادر را مستقیم از کارگاه در آمل سفارش دهید.
+      امکان دوخت سفارشی، تعمیر و ارسال به شهرستان‌ها وجود دارد.
+    </p>
+    <div class="seo-list">
+      <article>
+        <h3><a href="product.html?id=3">چادر برزنتی ۸ نفره J.A.T</a></h3>
+        <p>مدل پرفروش کارگاه؛ مناسب خانواده، باغ و استفاده طولانی‌مدت.</p>
+      </article>
+      <article>
+        <h3><a href="product.html?id=22">چادر مسافرتی ۸ نفره JAT دو جداره</a></h3>
+        <p>ابعاد ۲۵۰×۲۵۰ و ارتفاع ۲۱۰ سانتی‌متر؛ پارچه آکسفورد ضدآب.</p>
+      </article>
+      <article>
+        <h3><a href="product.html?id=23">چادر کوهنوردی ۲ نفره پکینیو C2001-B</a></h3>
+        <p>چادر سبک دوپوش مناسب کوهنوردی با وزن حدود ۲.۸ کیلوگرم.</p>
+      </article>
+      <article>
+        <h3><a href="product.html?id=9">چادر کودک طرح سگ</a></h3>
+        <p>چادر بازی کودک حدود ۱۴۰×۱۴۰ سانتی‌متر برای منزل و فضای باز.</p>
+      </article>
+      <article>
+        <h3><a href="product.html?id=8">تعمیر چادر مسافرتی</a></h3>
+        <p>ترمیم پارگی، زیپ، فنر و بازسازی چادر در کارگاه آمل.</p>
+      </article>
     </div>
-  </div>
+  </section>
 
-  <div class="shop-grid" id="productGrid">
-    <div class="shop-empty">در حال بارگذاری محصولات...</div>
-  </div>
+  <!-- لینک‌های داخلی -->
+  <section class="links-block">
+    <h2>راهنماهای مرتبط</h2>
+    <a href="travel-tent-buying-guide.html">راهنمای خرید چادر مسافرتی</a>
+    <a href="canvas-vs-travel-tent.html">تفاوت چادر برزنتی و مسافرتی</a>
+    <a href="common-mistakes-buying-tent.html">اشتباهات رایج خرید چادر</a>
+    <a href="services.html">خدمات تعمیر چادر</a>
+    <a href="contact.html">ثبت سفارش و مشاوره</a>
+  </section>
 
-  <section class="shop-cta">
-    <h2>محصول مورد نظرت را پیدا نکردی؟</h2>
-    <p>چادر سفارشی با ابعاد دلخواه در کارگاه آمل دوخته می‌شود.</p>
-    <a href="contact.html" class="btn btn-primary">درخواست مشاوره و سفارش سفارشی</a>
+  <!-- CTA سفارشی -->
+  <section class="custom-cta">
+    <h2>محصول مورد نظرتان را پیدا نکردید؟</h2>
+    <p>چادر و برزنت سفارشی با ابعاد دلخواه در کارگاه آمل دوخته می‌شود.</p>
+    <a href="https://wa.me/989118031241?text=سلام، برای سفارش سفارشی چادر مشاوره می‌خواهم" target="_blank" rel="noopener">مشاوره در واتساپ</a>
+  </section>
+
+  <!-- متن سئو پایین -->
+  <section class="bottom-seo">
+    <h2>خرید چادر مسافرتی و برزنتی از تولیدکننده در آمل</h2>
+    <p>
+      چادردوزی جزیره J.A.T در آمل، تولیدکننده و تعمیرکار تخصصی چادر مسافرتی، چادر برزنتی و تجهیزات کمپینگ است.
+      با خرید مستقیم از کارگاه، می‌توانید مدل آماده سفارش دهید یا چادر را مطابق نیاز خود به‌صورت سفارشی بدوزید.
+    </p>
+    <p>
+      ارسال به سراسر ایران انجام می‌شود و برای انتخاب مدل مناسب می‌توانید از راهنماهای مجله سفر یا مشاوره واتساپ استفاده کنید.
+    </p>
   </section>
 </main>
 
@@ -177,6 +356,7 @@
     <a href="services.html">خدمات</a>
     <a href="gallery.html">گالری</a>
     <a href="about.html">درباره ما</a>
+    <a href="blog.html">مجله سفر</a>
     <a href="contact.html">ثبت سفارش</a>
   </nav>
   <div class="social-links">
@@ -184,45 +364,80 @@
     <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
     <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
   </div>
-  <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+  <div class="copyright">
+    © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
+    کلیه حقوق این وب‌سایت محفوظ است.
+  </div>
 </footer>
 
 <script src="script.js"></script>
 <script>
-  // فیلتر دسته‌بندی
-  document.addEventListener("DOMContentLoaded", () => {
-    const filterGroup = document.getElementById("filterGroup");
-    if (!filterGroup) return;
+  (function () {
+    try {
+      const cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
+      const count = cart.reduce((s, i) => s + (i.qty || 0), 0);
+      const el = document.getElementById("cartCount");
+      if (el) el.textContent = count;
+    } catch (e) {}
+  })();
 
-    filterGroup.addEventListener("click", (e) => {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
+  const grid = document.getElementById("productsGrid");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  let allProducts = [];
 
-      filterGroup.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  function formatPrice(price) {
+    if (!price || price <= 0) {
+      return '<div class="product-price contact">تماس بگیرید</div>';
+    }
+    return `<div class="product-price">${Number(price).toLocaleString("fa-IR")} تومان</div>`;
+  }
+
+  function renderProducts(list) {
+    if (!list.length) {
+      grid.innerHTML = '<div class="loading">محصولی در این دسته پیدا نشد.</div>';
+      return;
+    }
+
+    grid.innerHTML = list.map(p => {
+      const wa = encodeURIComponent(`سلام، درباره «${p.name}» اطلاعات و قیمت می‌خواهم.`);
+      return `
+        <article class="product-card" data-category="${p.category || ""}">
+          <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='hero-chadoor.webp'">
+          <div class="product-body">
+            <div class="product-cat">${p.category || "عمومی"}</div>
+            <h3>${p.name}</h3>
+            <p>${p.description || ""}</p>
+            ${formatPrice(p.price)}
+            <div class="product-actions">
+              <a class="btn-detail" href="product.html?id=${p.id}">جزئیات</a>
+              <a class="btn-wa" href="https://wa.me/989118031241?text=${wa}" target="_blank" rel="noopener">واتساپ</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  fetch("products.json")
+    .then(r => r.json())
+    .then(data => {
+      allProducts = data;
+      renderProducts(allProducts);
+    })
+    .catch(() => {
+      grid.innerHTML = '<div class="loading">خطا در بارگذاری محصولات. لطفاً صفحه را تازه کنید.</div>';
+    });
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-
-      const filter = btn.dataset.filter;
-      const cards = document.querySelectorAll(".shop-card, .product-card");
-
-      cards.forEach(card => {
-        const categoryText = card.querySelector("h3")?.textContent || "";
-        const desc = card.querySelector("p")?.textContent || "";
-        const fullText = (categoryText + " " + desc).toLowerCase();
-
-        if (filter === "all") {
-          card.style.display = "";
-        } else if (filter === "مسافرتی") {
-          card.style.display = fullText.includes("مسافرتی") || fullText.includes("کوهنوردی") || fullText.includes("jat") || fullText.includes("پکینیو") ? "" : "none";
-        } else if (filter === "برزنتی") {
-          card.style.display = fullText.includes("برزنت") ? "" : "none";
-        } else if (filter === "کودک") {
-          card.style.display = fullText.includes("کودک") ? "" : "none";
-        } else if (filter === "پشه‌بند") {
-          card.style.display = fullText.includes("پشه‌بند") || fullText.includes("پشه") ? "" : "none";
-        } else if (filter === "خدمات") {
-          card.style.display = fullText.includes("تعمیر") || fullText.includes("سایبان") || fullText.includes("خدمات") ? "" : "none";
-        }
-      });
+      const f = btn.dataset.filter;
+      if (f === "همه") {
+        renderProducts(allProducts);
+      } else {
+        renderProducts(allProducts.filter(p => (p.category || "").includes(f)));
+      }
     });
   });
 </script>
