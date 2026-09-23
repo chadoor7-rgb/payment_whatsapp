@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>گالری تصاویر چادر | چادردوزی جزیره آمل</title>
-  <meta name="description" content="گالری تصاویر چادر مسافرتی، برزنتی، چادر کودک و نمونه کارهای تعمیر چادردوزی جزیره در آمل.">
+  <meta name="description" content="گالری تصاویر چادر مسافرتی، برزنتی، چادر کودک، پکینیو و نمونه کارهای تعمیر چادردوزی جزیره در آمل.">
   <link rel="canonical" href="https://chadooor.ir/gallery.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- استایل اختصاصی صفحه گالری -->
   <style>
+    /* بخش عنوان بالای گالری */
     .gallery-hero {
       text-align: center;
       padding: 2.5rem 1rem 1.5rem;
@@ -25,6 +28,8 @@
       margin: 0 auto;
       line-height: 1.8;
     }
+
+    /* دکمه‌های فیلتر دسته‌بندی تصاویر */
     .gallery-filters {
       display: flex;
       flex-wrap: wrap;
@@ -46,6 +51,8 @@
       color: #fff;
       border-color: #155e55;
     }
+
+    /* شبکه نمایش تصاویر گالری */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -69,6 +76,8 @@
       transition: transform 0.35s;
     }
     .gallery-item:hover img { transform: scale(1.05); }
+
+    /* کپشن روی تصویر */
     .gallery-item .caption {
       position: absolute;
       bottom: 0;
@@ -80,6 +89,8 @@
       font-size: 0.85rem;
       font-weight: 600;
     }
+
+    /* لایت‌باکس نمایش بزرگ تصویر */
     .lightbox-g {
       position: fixed;
       inset: 0;
@@ -109,6 +120,8 @@
       font-size: 22px;
       cursor: pointer;
     }
+
+    /* دکمه فراخوان به فروشگاه */
     .cta-gallery {
       text-align: center;
       padding: 2rem 1rem 3.5rem;
@@ -125,6 +138,8 @@
   </style>
 </head>
 <body>
+
+<!-- هدر سایت (منوی اصلی) -->
 <header class="site-header sticky-header">
   <a href="index.html" class="brand">
     <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
@@ -147,70 +162,293 @@
 </header>
 
 <main>
+  <!-- عنوان صفحه گالری -->
   <section class="gallery-hero">
     <h1>گالری تصاویر</h1>
     <p>نمونه چادرهای تولیدشده و کارهای تعمیر در کارگاه چادردوزی جزیره</p>
   </section>
 
+  <!-- فیلتر دسته‌بندی تصاویر: همه | برزنتی | مسافرتی | کودک | پکینیو | تعمیر | تجهیزات -->
   <div class="gallery-filters" id="galleryFilters">
     <button class="g-filter active" data-cat="all">همه</button>
     <button class="g-filter" data-cat="برزنتی">برزنتی</button>
     <button class="g-filter" data-cat="مسافرتی">مسافرتی</button>
     <button class="g-filter" data-cat="کودک">کودک</button>
-    <button class="g-filter" data-cat="تعمیر">تعمیر</button>
     <button class="g-filter" data-cat="پکینیو">پکینیو</button>
+    <button class="g-filter" data-cat="تعمیر">تعمیر</button>
+    <button class="g-filter" data-cat="تجهیزات">تجهیزات</button>
   </div>
 
+  <!-- شبکه تصاویر گالری -->
   <div class="gallery-grid" id="galleryGrid">
-    <!-- برزنتی -->
-    <div class="gallery-item" data-cat="برزنتی"><img src="brno-4-jat.jpg" alt="چادر برزنتی ۴ نفره" loading="lazy"><div class="caption">چادر برزنتی ۴ نفره</div></div>
-    <div class="gallery-item" data-cat="برزنتی"><img src="6n-brezent.webp" alt="چادر برزنتی ۶ نفره" loading="lazy"><div class="caption">چادر برزنتی ۶ نفره</div></div>
-    <div class="gallery-item" data-cat="برزنتی"><img src="8n-jat.webp" alt="چادر برزنتی ۸ نفره" loading="lazy"><div class="caption">چادر برزنتی ۸ نفره J.A.T</div></div>
-    <div class="gallery-item" data-cat="برزنتی"><img src="10n-bereznt.webp" alt="چادر برزنتی ۱۰ نفره" loading="lazy"><div class="caption">چادر برزنتی ۱۰ نفره</div></div>
-    <div class="gallery-item" data-cat="برزنتی"><img src="brno-bereznti-8.webp" alt="برزنتی ۸ نفره" loading="lazy"><div class="caption">برزنتی ۸ نفره</div></div>
-    <div class="gallery-item" data-cat="برزنتی"><img src="BEREZENT.webp" alt="برزنت" loading="lazy"><div class="caption">برزنت</div></div>
 
-    <!-- مسافرتی -->
-    <div class="gallery-item" data-cat="مسافرتی"><img src="tghr.jpg" alt="چادر دو جداره JAT" loading="lazy"><div class="caption">چادر ۸ نفره دو جداره JAT</div></div>
-    <div class="gallery-item" data-cat="مسافرتی"><img src="bereznte-8-drakhte.jpg" alt="چادر طرح درختی" loading="lazy"><div class="caption">چادر ۸ نفره طرح درختی</div></div>
-    <div class="gallery-item" data-cat="مسافرتی"><img src="KHIME.jpg" alt="خیمه ۱۲ نفره" loading="lazy"><div class="caption">خیمه / چادر ۱۲ نفره</div></div>
-    <div class="gallery-item" data-cat="مسافرتی"><img src="SRVIS-TENT.jpg" alt="سرویس بهداشتی" loading="lazy"><div class="caption">سرویس بهداشتی مسافرتی</div></div>
-    <div class="gallery-item" data-cat="مسافرتی"><img src="SAIBANg.jpg" alt="سایبان" loading="lazy"><div class="caption">سایبان</div></div>
+    <!-- ========== دسته: برزنتی ========== -->
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="brno-4-jat.jpg" alt="چادر برزنتی ۴ نفره" loading="lazy">
+      <div class="caption">چادر برزنتی ۴ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="6n-brezent.webp" alt="چادر برزنتی ۶ نفره" loading="lazy">
+      <div class="caption">چادر برزنتی ۶ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="8n-jat.webp" alt="چادر برزنتی ۸ نفره J.A.T" loading="lazy">
+      <div class="caption">چادر برزنتی ۸ نفره J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="10n-bereznt.webp" alt="چادر برزنتی ۱۰ نفره" loading="lazy">
+      <div class="caption">چادر برزنتی ۱۰ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="brno-bereznti-8.webp" alt="برزنتی ۸ نفره" loading="lazy">
+      <div class="caption">برزنتی ۸ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="BEREZENT.webp" alt="برزنت" loading="lazy">
+      <div class="caption">برزنت</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="berno-8n.webp" alt="برزنتی ۸ نفره" loading="lazy">
+      <div class="caption">برزنتی ۸ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="brno-8-r.webp" alt="برزنتی ۸ نفره" loading="lazy">
+      <div class="caption">برزنتی ۸ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="brno-8-s.webp" alt="برزنتی ۸ نفره" loading="lazy">
+      <div class="caption">برزنتی ۸ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="noghreh8.webp" alt="چادر برزنتی نقره‌ای ۸ نفره" loading="lazy">
+      <div class="caption">چادر برزنتی نقره‌ای ۸ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="tarp.webp" alt="تارپ برزنتی" loading="lazy">
+      <div class="caption">تارپ برزنتی</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="tarp-1.webp" alt="تارپ برزنتی" loading="lazy">
+      <div class="caption">تارپ برزنتی</div>
+    </div>
+    <div class="gallery-item" data-cat="برزنتی">
+      <img src="tarp-2.webp" alt="تارپ برزنتی" loading="lazy">
+      <div class="caption">تارپ برزنتی</div>
+    </div>
 
-    <!-- کودک -->
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-sag.jpg" alt="چادر کودک سگ" loading="lazy"><div class="caption">چادر کودک طرح سگ</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-dog.jpg" alt="چادر کودک سگ ۲" loading="lazy"><div class="caption">چادر کودک طرح سگ</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-ankaboti.jpg" alt="چادر عنکبوتی" loading="lazy"><div class="caption">چادر کودک مرد عنکبوتی</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-girl.jpg" alt="چادر دخترانه" loading="lazy"><div class="caption">چادر کودک دخترانه</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-girl-alsa.jpg" alt="چادر السا" loading="lazy"><div class="caption">چادر کودک السا</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-kite.jpg" alt="چادر کیتی" loading="lazy"><div class="caption">چادر کودک کیتی</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-sendrla.jpg" alt="چادر سیندرلا" loading="lazy"><div class="caption">چادر کودک سیندرلا</div></div>
-    <div class="gallery-item" data-cat="کودک"><img src="tent-kids-koromi.jpg" alt="چادر کرومی" loading="lazy"><div class="caption">چادر کودک کرومی</div></div>
+    <!-- ========== دسته: مسافرتی ========== -->
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="tghr.jpg" alt="چادر ۸ نفره دو جداره JAT" loading="lazy">
+      <div class="caption">چادر ۸ نفره دو جداره JAT</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="bereznte-8-drakhte.jpg" alt="چادر ۸ نفره طرح درختی" loading="lazy">
+      <div class="caption">چادر ۸ نفره طرح درختی</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="KHIME.jpg" alt="خیمه ۱۲ نفره" loading="lazy">
+      <div class="caption">خیمه / چادر ۱۲ نفره</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="khime-2.webp" alt="خیمه" loading="lazy">
+      <div class="caption">خیمه</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="khaime-3.webp" alt="خیمه" loading="lazy">
+      <div class="caption">خیمه</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="SRVIS-TENT.jpg" alt="سرویس بهداشتی مسافرتی" loading="lazy">
+      <div class="caption">سرویس بهداشتی مسافرتی</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="SAIBANg.jpg" alt="سایبان" loading="lazy">
+      <div class="caption">سایبان</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="tent-jat.webp" alt="چادر مسافرتی J.A.T" loading="lazy">
+      <div class="caption">چادر مسافرتی J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="tent-jat-1.webp" alt="چادر مسافرتی J.A.T" loading="lazy">
+      <div class="caption">چادر مسافرتی J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="tent-jat-2.webp" alt="چادر مسافرتی J.A.T" loading="lazy">
+      <div class="caption">چادر مسافرتی J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="tent-jat-3.webp" alt="چادر مسافرتی J.A.T" loading="lazy">
+      <div class="caption">چادر مسافرتی J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="tent-jat-4.webp" alt="چادر مسافرتی J.A.T" loading="lazy">
+      <div class="caption">چادر مسافرتی J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="chatr.webp" alt="چادر چتری" loading="lazy">
+      <div class="caption">چادر چتری</div>
+    </div>
+    <div class="gallery-item" data-cat="مسافرتی">
+      <img src="nasb-saiban.webp" alt="نصب سایبان" loading="lazy">
+      <div class="caption">نصب سایبان</div>
+    </div>
 
-    <!-- پکینیو -->
-    <div class="gallery-item" data-cat="پکینیو"><img src="c2001.webp" alt="پکینیو C2001" loading="lazy"><div class="caption">پکینیو C2001</div></div>
-    <div class="gallery-item" data-cat="پکینیو"><img src="c2001b.webp" alt="پکینیو C2001-B" loading="lazy"><div class="caption">پکینیو C2001-B</div></div>
-    <div class="gallery-item" data-cat="پکینیو"><img src="c2004.webp" alt="پکینیو C2004" loading="lazy"><div class="caption">پکینیو C2004</div></div>
-    <div class="gallery-item" data-cat="پکینیو"><img src="c2006.webp" alt="پکینیو C2006" loading="lazy"><div class="caption">پکینیو C2006</div></div>
-    <div class="gallery-item" data-cat="پکینیو"><img src="c2009.webp" alt="پکینیو C2009" loading="lazy"><div class="caption">پکینیو C2009</div></div>
+    <!-- ========== دسته: کودک ========== -->
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-sag.jpg" alt="چادر کودک طرح سگ" loading="lazy">
+      <div class="caption">چادر کودک طرح سگ</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-dog.jpg" alt="چادر کودک طرح سگ" loading="lazy">
+      <div class="caption">چادر کودک طرح سگ</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-ankaboti.jpg" alt="چادر کودک مرد عنکبوتی" loading="lazy">
+      <div class="caption">چادر کودک مرد عنکبوتی</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-girl.jpg" alt="چادر کودک دخترانه" loading="lazy">
+      <div class="caption">چادر کودک دخترانه</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-girl-alsa.jpg" alt="چادر کودک السا" loading="lazy">
+      <div class="caption">چادر کودک السا</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-kite.jpg" alt="چادر کودک کیتی" loading="lazy">
+      <div class="caption">چادر کودک کیتی</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-sendrla.jpg" alt="چادر کودک سیندرلا" loading="lazy">
+      <div class="caption">چادر کودک سیندرلا</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids-koromi.jpg" alt="چادر کودک کرومی" loading="lazy">
+      <div class="caption">چادر کودک کرومی</div>
+    </div>
+    <div class="gallery-item" data-cat="کودک">
+      <img src="tent-kids.webp" alt="چادر کودک" loading="lazy">
+      <div class="caption">چادر کودک</div>
+    </div>
 
-    <!-- تعمیر -->
-    <div class="gallery-item" data-cat="تعمیر"><img src="travel-tent-before-repair.webp" alt="قبل از تعمیر" loading="lazy"><div class="caption">قبل از تعمیر</div></div>
-    <div class="gallery-item" data-cat="تعمیر"><img src="travel-tent-during-repair.webp" alt="در حال تعمیر" loading="lazy"><div class="caption">در حال تعمیر</div></div>
-    <div class="gallery-item" data-cat="تعمیر"><img src="tent-after-repair-1.jpg" alt="بعد از تعمیر" loading="lazy"><div class="caption">بعد از تعمیر</div></div>
-    <div class="gallery-item" data-cat="تعمیر"><img src="travel-tent-after-repair-side.jpg" alt="تعمیر شده" loading="lazy"><div class="caption">چادر تعمیرشده</div></div>
-  </div>
+    <!-- ========== دسته: پکینیو (بدون تکرار) ========== -->
+    <div class="gallery-item" data-cat="پکینیو">
+      <img src="c2001.webp" alt="پکینیو C2001" loading="lazy">
+      <div class="caption">پکینیو C2001</div>
+    </div>
+    <div class="gallery-item" data-cat="پکینیو">
+      <img src="c2001b.webp" alt="پکینیو C2001-B" loading="lazy">
+      <div class="caption">پکینیو C2001-B</div>
+    </div>
+    <div class="gallery-item" data-cat="پکینیو">
+      <img src="tent-c2002.webp" alt="پکینیو C2002" loading="lazy">
+      <div class="caption">پکینیو C2002</div>
+    </div>
+    <div class="gallery-item" data-cat="پکینیو">
+      <img src="c2004.webp" alt="پکینیو C2004" loading="lazy">
+      <div class="caption">پکینیو C2004</div>
+    </div>
+    <div class="gallery-item" data-cat="پکینیو">
+      <img src="c2006.webp" alt="پکینیو C2006" loading="lazy">
+      <div class="caption">پکینیو C2006</div>
+    </div>
+    <div class="gallery-item" data-cat="پکینیو">
+      <img src="c2009.webp" alt="پکینیو C2009" loading="lazy">
+      <div class="caption">پکینیو C2009</div>
+    </div>
 
+    <!-- ========== دسته: تعمیر ========== -->
+    <div class="gallery-item" data-cat="تعمیر">
+      <img src="travel-tent-before-repair.webp" alt="قبل از تعمیر" loading="lazy">
+      <div class="caption">قبل از تعمیر</div>
+    </div>
+    <div class="gallery-item" data-cat="تعمیر">
+      <img src="travel-tent-during-repair.webp" alt="در حال تعمیر" loading="lazy">
+      <div class="caption">در حال تعمیر</div>
+    </div>
+    <div class="gallery-item" data-cat="تعمیر">
+      <img src="tent-after-repair-1.jpg" alt="بعد از تعمیر" loading="lazy">
+      <div class="caption">بعد از تعمیر</div>
+    </div>
+    <div class="gallery-item" data-cat="تعمیر">
+      <img src="travel-tent-after-repair-side.jpg" alt="چادر تعمیرشده" loading="lazy">
+      <div class="caption">چادر تعمیرشده</div>
+    </div>
+
+    <!-- ========== دسته: تجهیزات (روکش خودرو، صندلی، پشه‌بند) ========== -->
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="car-cover.webp" alt="روکش خودرو" loading="lazy">
+      <div class="caption">روکش خودرو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="Car-Cover.jpg" alt="روکش خودرو" loading="lazy">
+      <div class="caption">روکش خودرو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="Custom-Waterproof-Car-Cover-J.A.T.jpg" alt="روکش ضدآب خودرو J.A.T" loading="lazy">
+      <div class="caption">روکش ضدآب خودرو J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="car-cover-jat.jpg" alt="روکش خودرو J.A.T" loading="lazy">
+      <div class="caption">روکش خودرو J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="chair.webp" alt="صندلی تاشو" loading="lazy">
+      <div class="caption">صندلی تاشو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="chair-2.webp" alt="صندلی تاشو" loading="lazy">
+      <div class="caption">صندلی تاشو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="chair-3.webp" alt="صندلی تاشو" loading="lazy">
+      <div class="caption">صندلی تاشو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="chair4.webp" alt="صندلی تاشو" loading="lazy">
+      <div class="caption">صندلی تاشو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="chair-m.webp" alt="صندلی تاشو" loading="lazy">
+      <div class="caption">صندلی تاشو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="chair-m-2.webp" alt="صندلی تاشو" loading="lazy">
+      <div class="caption">صندلی تاشو</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="basheband.webp" alt="پشه‌بند" loading="lazy">
+      <div class="caption">پشه‌بند</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="pasheband.jpg" alt="پشه‌بند" loading="lazy">
+      <div class="caption">پشه‌بند</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="pasheband-bdon-fanar.jpg" alt="پشه‌بند بدون فنر" loading="lazy">
+      <div class="caption">پشه‌بند بدون فنر</div>
+    </div>
+    <div class="gallery-item" data-cat="تجهیزات">
+      <img src="camping-table-chairs-equipment.jpg" alt="میز و صندلی کمپینگ" loading="lazy">
+      <div class="caption">میز و صندلی کمپینگ</div>
+    </div>
+
+  </div><!-- پایان gallery-grid -->
+
+  <!-- فراخوان به صفحه فروشگاه -->
   <div class="cta-gallery">
     <a href="shop.html">مشاهده فروشگاه و قیمت‌ها</a>
   </div>
 </main>
 
+<!-- لایت‌باکس: نمایش بزرگ تصویر با کلیک -->
 <div class="lightbox-g" id="galleryLightbox">
   <button class="close-lb" id="closeGalleryLb" aria-label="بستن">×</button>
   <img id="galleryLbImg" src="" alt="">
 </div>
 
+<!-- فوتر سایت -->
 <footer class="site-footer">
   <div class="footer-top">
     <a href="index.html" class="brand">
@@ -237,22 +475,35 @@
 
 <script src="script.js"></script>
 <script>
+/**
+ * اسکریپت صفحه گالری
+ * ۱) فیلتر دسته‌بندی تصاویر
+ * ۲) باز و بسته شدن لایت‌باکس با کلیک روی تصویر
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  // فیلتر
+
+  // ---------- فیلتر دسته‌بندی ----------
   document.getElementById("galleryFilters").addEventListener("click", (e) => {
     const btn = e.target.closest(".g-filter");
     if (!btn) return;
+
+    // فعال کردن دکمه انتخاب‌شده
     document.querySelectorAll(".g-filter").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
+
     const cat = btn.dataset.cat;
+
+    // نمایش یا مخفی کردن آیتم‌ها بر اساس data-cat
     document.querySelectorAll(".gallery-item").forEach(item => {
       item.style.display = (cat === "all" || item.dataset.cat === cat) ? "" : "none";
     });
   });
 
-  // لایت‌باکس
+  // ---------- لایت‌باکس ----------
   const lb = document.getElementById("galleryLightbox");
   const lbImg = document.getElementById("galleryLbImg");
+
+  // باز کردن لایت‌باکس با کلیک روی هر تصویر
   document.querySelectorAll(".gallery-item").forEach(item => {
     item.addEventListener("click", () => {
       const img = item.querySelector("img");
@@ -262,9 +513,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // بستن با دکمه ×
   document.getElementById("closeGalleryLb").onclick = () => lb.classList.remove("open");
-  lb.onclick = (e) => { if (e.target === lb) lb.classList.remove("open"); };
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") lb.classList.remove("open"); });
+
+  // بستن با کلیک روی پس‌زمینه تیره
+  lb.onclick = (e) => {
+    if (e.target === lb) lb.classList.remove("open");
+  };
+
+  // بستن با کلید Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") lb.classList.remove("open");
+  });
 });
 </script>
 </body>
