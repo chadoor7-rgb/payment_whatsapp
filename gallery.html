@@ -12,7 +12,6 @@
 
   <!-- استایل اختصاصی صفحه گالری -->
   <style>
-    /* بخش عنوان بالای گالری */
     .gallery-hero {
       text-align: center;
       padding: 2.5rem 1rem 1.5rem;
@@ -28,8 +27,6 @@
       margin: 0 auto;
       line-height: 1.8;
     }
-
-    /* دکمه‌های فیلتر دسته‌بندی تصاویر */
     .gallery-filters {
       display: flex;
       flex-wrap: wrap;
@@ -51,8 +48,6 @@
       color: #fff;
       border-color: #155e55;
     }
-
-    /* شبکه نمایش تصاویر گالری */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -76,8 +71,6 @@
       transition: transform 0.35s;
     }
     .gallery-item:hover img { transform: scale(1.05); }
-
-    /* کپشن روی تصویر */
     .gallery-item .caption {
       position: absolute;
       bottom: 0;
@@ -89,8 +82,6 @@
       font-size: 0.85rem;
       font-weight: 600;
     }
-
-    /* لایت‌باکس نمایش بزرگ تصویر */
     .lightbox-g {
       position: fixed;
       inset: 0;
@@ -120,8 +111,6 @@
       font-size: 22px;
       cursor: pointer;
     }
-
-    /* دکمه فراخوان به فروشگاه */
     .cta-gallery {
       text-align: center;
       padding: 2rem 1rem 3.5rem;
@@ -139,7 +128,7 @@
 </head>
 <body>
 
-<!-- هدر سایت (منوی اصلی) -->
+<!-- هدر سایت -->
 <header class="site-header sticky-header">
   <a href="index.html" class="brand">
     <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
@@ -162,13 +151,13 @@
 </header>
 
 <main>
-  <!-- عنوان صفحه گالری -->
+  <!-- عنوان صفحه -->
   <section class="gallery-hero">
     <h1>گالری تصاویر</h1>
     <p>نمونه چادرهای تولیدشده و کارهای تعمیر در کارگاه چادردوزی جزیره</p>
   </section>
 
-  <!-- فیلتر دسته‌بندی تصاویر: همه | برزنتی | مسافرتی | کودک | پکینیو | تعمیر | تجهیزات -->
+  <!-- فیلتر دسته‌بندی -->
   <div class="gallery-filters" id="galleryFilters">
     <button class="g-filter active" data-cat="all">همه</button>
     <button class="g-filter" data-cat="برزنتی">برزنتی</button>
@@ -177,12 +166,13 @@
     <button class="g-filter" data-cat="پکینیو">پکینیو</button>
     <button class="g-filter" data-cat="تعمیر">تعمیر</button>
     <button class="g-filter" data-cat="تجهیزات">تجهیزات</button>
+    <button class="g-filter" data-cat="کارگاه">کارگاه</button>
   </div>
 
-  <!-- شبکه تصاویر گالری -->
+  <!-- شبکه تصاویر -->
   <div class="gallery-grid" id="galleryGrid">
 
-    <!-- ========== دسته: برزنتی ========== -->
+    <!-- ========== برزنتی ========== -->
     <div class="gallery-item" data-cat="برزنتی">
       <img src="brno-4-jat.jpg" alt="چادر برزنتی ۴ نفره" loading="lazy">
       <div class="caption">چادر برزنتی ۴ نفره</div>
@@ -235,7 +225,8 @@
       <img src="tarp-2.webp" alt="تارپ برزنتی" loading="lazy">
       <div class="caption">تارپ برزنتی</div>
     </div>
-    <!-- ========== دسته: مسافرتی ========== -->
+
+    <!-- ========== مسافرتی ========== -->
     <div class="gallery-item" data-cat="مسافرتی">
       <img src="tghr.jpg" alt="چادر ۸ نفره دو جداره JAT" loading="lazy">
       <div class="caption">چادر ۸ نفره دو جداره JAT</div>
@@ -273,7 +264,7 @@
       <div class="caption">نصب سایبان</div>
     </div>
 
-    <!-- ========== دسته: کودک ========== -->
+    <!-- ========== کودک ========== -->
     <div class="gallery-item" data-cat="کودک">
       <img src="tent-kids-sag.jpg" alt="چادر کودک طرح سگ" loading="lazy">
       <div class="caption">چادر کودک طرح سگ</div>
@@ -311,7 +302,7 @@
       <div class="caption">چادر کودک</div>
     </div>
 
-    <!-- ========== دسته: پکینیو (بدون تکرار) ========== -->
+    <!-- ========== پکینیو (بدون تکرار) ========== -->
     <div class="gallery-item" data-cat="پکینیو">
       <img src="c2001.webp" alt="پکینیو C2001" loading="lazy">
       <div class="caption">پکینیو C2001</div>
@@ -337,7 +328,7 @@
       <div class="caption">پکینیو C2009</div>
     </div>
 
-    <!-- ========== دسته: تعمیر ========== -->
+    <!-- ========== تعمیر ========== -->
     <div class="gallery-item" data-cat="تعمیر">
       <img src="travel-tent-before-repair.webp" alt="قبل از تعمیر" loading="lazy">
       <div class="caption">قبل از تعمیر</div>
@@ -355,7 +346,7 @@
       <div class="caption">چادر تعمیرشده</div>
     </div>
 
-    <!-- ========== دسته: تجهیزات (روکش خودرو، صندلی، پشه‌بند) ========== -->
+    <!-- ========== تجهیزات ========== -->
     <div class="gallery-item" data-cat="تجهیزات">
       <img src="car-cover.webp" alt="روکش خودرو" loading="lazy">
       <div class="caption">روکش خودرو</div>
@@ -413,21 +404,43 @@
       <div class="caption">میز و صندلی کمپینگ</div>
     </div>
 
-  </div><!-- پایان gallery-grid -->
+    <!-- ========== کارگاه تولید ========== -->
+    <div class="gallery-item" data-cat="کارگاه">
+      <img src="tent-jat.webp" alt="کارگاه تولید چادر J.A.T" loading="lazy">
+      <div class="caption">کارگاه تولید چادر J.A.T</div>
+    </div>
+    <div class="gallery-item" data-cat="کارگاه">
+      <img src="tent-jat-1.webp" alt="کارگاه تولید چادر" loading="lazy">
+      <div class="caption">کارگاه تولید چادر</div>
+    </div>
+    <div class="gallery-item" data-cat="کارگاه">
+      <img src="tent-jat-2.webp" alt="کارگاه تولید چادر" loading="lazy">
+      <div class="caption">کارگاه تولید چادر</div>
+    </div>
+    <div class="gallery-item" data-cat="کارگاه">
+      <img src="tent-jat-3.webp" alt="کارگاه تولید چادر" loading="lazy">
+      <div class="caption">کارگاه تولید چادر</div>
+    </div>
+    <div class="gallery-item" data-cat="کارگاه">
+      <img src="tent-jat-4.webp" alt="کارگاه تولید چادر" loading="lazy">
+      <div class="caption">کارگاه تولید چادر</div>
+    </div>
 
-  <!-- فراخوان به صفحه فروشگاه -->
+  </div>
+
+  <!-- دکمه فروشگاه -->
   <div class="cta-gallery">
     <a href="shop.html">مشاهده فروشگاه و قیمت‌ها</a>
   </div>
 </main>
 
-<!-- لایت‌باکس: نمایش بزرگ تصویر با کلیک -->
+<!-- لایت‌باکس -->
 <div class="lightbox-g" id="galleryLightbox">
   <button class="close-lb" id="closeGalleryLb" aria-label="بستن">×</button>
   <img id="galleryLbImg" src="" alt="">
 </div>
 
-<!-- فوتر سایت -->
+<!-- فوتر -->
 <footer class="site-footer">
   <div class="footer-top">
     <a href="index.html" class="brand">
@@ -454,35 +467,22 @@
 
 <script src="script.js"></script>
 <script>
-/**
- * اسکریپت صفحه گالری
- * ۱) فیلتر دسته‌بندی تصاویر
- * ۲) باز و بسته شدن لایت‌باکس با کلیک روی تصویر
- */
 document.addEventListener("DOMContentLoaded", () => {
-
-  // ---------- فیلتر دسته‌بندی ----------
+  // فیلتر دسته‌بندی
   document.getElementById("galleryFilters").addEventListener("click", (e) => {
     const btn = e.target.closest(".g-filter");
     if (!btn) return;
-
-    // فعال کردن دکمه انتخاب‌شده
     document.querySelectorAll(".g-filter").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-
     const cat = btn.dataset.cat;
-
-    // نمایش یا مخفی کردن آیتم‌ها بر اساس data-cat
     document.querySelectorAll(".gallery-item").forEach(item => {
       item.style.display = (cat === "all" || item.dataset.cat === cat) ? "" : "none";
     });
   });
 
-  // ---------- لایت‌باکس ----------
+  // لایت‌باکس
   const lb = document.getElementById("galleryLightbox");
   const lbImg = document.getElementById("galleryLbImg");
-
-  // باز کردن لایت‌باکس با کلیک روی هر تصویر
   document.querySelectorAll(".gallery-item").forEach(item => {
     item.addEventListener("click", () => {
       const img = item.querySelector("img");
@@ -492,19 +492,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // بستن با دکمه ×
   document.getElementById("closeGalleryLb").onclick = () => lb.classList.remove("open");
-
-  // بستن با کلیک روی پس‌زمینه تیره
-  lb.onclick = (e) => {
-    if (e.target === lb) lb.classList.remove("open");
-  };
-
-  // بستن با کلید Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") lb.classList.remove("open");
-  });
+  lb.onclick = (e) => { if (e.target === lb) lb.classList.remove("open"); };
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") lb.classList.remove("open"); });
 });
 </script>
 </body>
