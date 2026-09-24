@@ -297,6 +297,82 @@
       background: #1ebe57 !important;
     }
 
+
+    /* About Gallery */
+    .about-gallery-section {
+      padding: 0 0 90px;
+    }
+
+    .about-gallery {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 16px;
+    }
+
+    .about-gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 35px rgba(24, 38, 34, 0.08);
+    }
+
+    .about-gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .about-gallery-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .about-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-gallery-caption {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      left: 14px;
+      padding: 9px 13px;
+      border-radius: 12px;
+      background: rgba(24, 38, 34, 0.78);
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.6;
+      backdrop-filter: blur(5px);
+    }
+
+    @media (max-width: 700px) {
+      .about-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 180px 180px;
+      }
+
+      .about-gallery-item:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 220px);
+      }
+
+      .about-gallery-item:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
     /* Responsive */
     @media (max-width: 980px) {
       .story-section {
@@ -391,6 +467,49 @@
                loading="lazy"
                onerror="this.src='hero-chadoor.webp'">
           <div class="story-badge">کارگاه آمل • جاده هراز</div>
+        </div>
+      </section>
+
+
+      <!-- Gallery -->
+      <section class="about-gallery-section">
+        <div class="section-title">
+          <h2>تصاویر چادردوزی جزیره</h2>
+          <p>نمونه‌ای از چادر و تصاویر مرتبط با محصولات و فعالیت‌های ما</p>
+        </div>
+
+        <div class="about-gallery">
+          <div class="about-gallery-item">
+            <img src="khime.jpg"
+                 alt="چادر مسافرتی - چادردوزی جزیره J.A.T"
+                 loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+            <div class="about-gallery-caption">چادر مسافرتی J.A.T</div>
+          </div>
+
+          <div class="about-gallery-item">
+            <img src="khime-2.webp"
+                 alt="نمای دوم چادر مسافرتی J.A.T"
+                 loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+            <div class="about-gallery-caption">نمای دوم چادر</div>
+          </div>
+
+          <div class="about-gallery-item">
+            <img src="khaime-3.webp"
+                 alt="نمای سوم چادر مسافرتی J.A.T"
+                 loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+            <div class="about-gallery-caption">نمای سوم چادر</div>
+          </div>
+
+          <div class="about-gallery-item">
+            <img src="khaime-1.webp"
+                 alt="نمای چهارم چادر مسافرتی J.A.T"
+                 loading="lazy"
+                 onerror="this.src='hero-chadoor.webp'">
+            <div class="about-gallery-caption">نمای چهارم چادر</div>
+          </div>
         </div>
       </section>
 
