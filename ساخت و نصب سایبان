@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="راهنمای کامل و جامع ساخت و نصب سایبان مناسب فروشگاه، روف گاردن، کافه و فضاهای باز. انواع سایبان، مواد اولیه، مراحل ساخت، نصب و نکات نگهداری">
+    <meta name="keywords" content="سایبان فروشگاه, سایبان روف گاردن, ساخت سایبان, نصب سایبان, سایبان پارچه‌ای, سایبان فلزی, سایبان پلی کربنات">
+    <title>راهنمای کامل ساخت و نصب سایبان مناسب فروشگاه و روف گاردن</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            line-height: 1.9;
+            color: #2c3e50;
+            background: #f8f9fa;
+            font-size: 17px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+        }
+        
+        /* هدر مقاله */
+        .article-header {
+            background: linear-gradient(135deg, #1a5f4a 0%, #2d8f6f 50%, #3cb371 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+        
+        .article-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            line-height: 1.4;
+        }
+        
+        .article-header .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            font-weight: 300;
+            position: relative;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        
+        /* محتوای اصلی */
+        .content {
+            padding: 50px 45px;
+        }
+        
+        h2 {
+            color: #1a5f4a;
+            font-size: 1.6rem;
+            margin: 45px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #3cb371;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #2d8f6f;
+            font-size: 1.25rem;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        
+        .lead {
+            font-size: 1.15rem;
+            color: #444;
+            background: #f0f7f4;
+            padding: 25px;
+            border-radius: 12px;
+            border-right: 5px solid #3cb371;
+            margin-bottom: 35px;
+        }
+        
+        /* تصاویر */
+        .article-img {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: block;
+        }
+        
+        .img-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: -20px;
+            margin-bottom: 30px;
+            font-style: italic;
+}
+        
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .img-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .img-grid img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* باکس‌های ویژه */
+        .highlight-box {
+            background: linear-gradient(to left, #e8f5e9, #f1f8e9);
+            border-right: 5px solid #4caf50;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .warning-box {
+            background: #fff8e1;
+            border-right: 5px solid #ffc107;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .tip-box {
+            background: #e3f2fd;
+            border-right: 5px solid #2196f3;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        /* لیست‌ها */
+        ul, ol {
+            margin: 15px 0 25px 0;
+            padding-right: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        /* جدول */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #1a5f4a;
+            color: white;
+            padding: 15px 12px;
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f7f4;
+        }
+        
+        /* کارت انواع سایبان */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .type-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 14px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+        }
+        
+        .type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #3cb371;
+        }
+        
+        .type-card h4 {
+            color: #1a5f4a;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .type-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        /* مراحل */
+        .steps {
+            counter-reset: step;
+            margin: 30px 0;
+        }
+        
+        .step {
+            position: relative;
+            padding: 20px 20px 20px 70px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            right: 18px;
+ top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #1a5f4a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* فوتر مقاله */
+        .article-footer {
+            background: #f0f7f4;
+            padding: 40px 45px;
+            border-top: 1px solid #d4edda;
+            text-align: center;
+        }
+        
+        .article-footer p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .article-header {
+                padding: 40px 20px;
+            }
+            
+            .article-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.35rem;
+            }
+            
+            .meta-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .img-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- هدر -->
+        <header class="article-header">
+            <h1>راهنمای کامل ساخت و نصب سایبان مناسب فروشگاه، روف گاردن و فضاهای باز</h1>
+            <p class="subtitle">از انتخاب متریال تا اجرای حرفه‌ای؛ هر آنچه باید درباره سایبان بدانید</p>
+            <div class="meta-info">
+                <span>آخرین به‌روزرسانی: مهر ۱۴۰۴</span>
+                <span>زمان مطالعه: ۱۲ دقیقه</span>
+                <span>دسته‌بندی: معماری و طراحی فضای باز</span>
+            </div>
+        </header>
+
+        <!-- محتوا -->
+        <article class="content">
+            <p class="lead">
+                سایبان فقط یک پوشش ساده روی سر نیست؛ بلکه عنصری کلیدی در زیبایی، راحتی مشتریان، محافظت از کالاها و افزایش ارزش ملک محسوب می‌شود. چه برای فروشگاه تجاری باشد، چه روف‌گاردن لوکس یا حیاط خانه، انتخاب و نصب صحیح سایبان می‌تواند تفاوت چشمگیری ایجاد کند. در این مقاله جامع، همه جوانب ساخت و نصب سایبان را به‌صورت کاربردی و مرحله‌به‌مرحله بررسی می‌کنیم.
+            </p>
+
+            <!-- تصویر اصلی -->
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="سایبان زیبای کافه و رستوران" class="article-img">
+            <p class="img-caption">نمونه‌ای زیبا از سایبان پارچه‌ای در فضای تجاری و کافه</p>
+
+            <h2>سایبان چیست و چرا به آن نیاز داریم؟</h2>
+            <p>
+                سایبان یا سایه‌بان سازه‌ای است که برای ایجاد سایه، محافظت در برابر باران، برف، اشعه UV خورشید و حتی باد طراحی می‌شود. برخلاف سقف ثابت، سایبان‌ها معمولاً سبک‌تر، انعطاف‌پذیرتر و قابل تنظیم هستند. در فضاهای تجاری، سایبان می‌تواند فضای بیشتری برای نمایش کالا ایجاد کند و در روف‌گاردن‌ها، محیط دلنشینی برای استراحت فراهم آورد.
+            </p>
+
+            <div class="highlight-box">
+                <strong>مزایای اصلی نصب سایبان:</strong>
+                <ul>
+                    <li>کاهش دمای محیط تا ۸–۱۲ درجه سانتی‌گراد در تابستان</li>
+                    <li>محافظت از ویترین و کالاها در برابر نور مستقیم خورشید</li>
+                    <li>افزایش فضای قابل استفاده فروشگاه یا کافه</li>
+                    <li>بهبود ظاهر ساختمان و افزایش جذابیت بصری</li>
+                    <li>صرفه‌جویی در مصرف انرژی (کاهش نیاز به کولر)</li>
+                </ul>
+            </div>
+
+            <h2>انواع سایبان بر اساس کاربرد و متریال</h2>
+            <p>انتخاب نوع سایبان به کاربری فضا، بودجه، شرایط آب‌وهوایی و سلیقه زیبایی‌شناختی بستگی دارد. در ادامه رایج‌ترین انواع را بررسی می‌کنیم:</p>
+
+            <!-- گالری انواع سایبان -->
+<div class="img-grid">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="سایبان پارچه‌ای فروشگاه">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="سایبان و پرگولای مدرن">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="روف گاردن با سایبان">
+            </div>
+            <p class="img-caption">از راست به چپ: سایبان پارچه‌ای فروشگاه، پرگولای مدرن و روف‌گاردن با پوشش سایه‌انداز</p>
+
+            <div class="types-grid">
+                <div class="type-card">
+                    <h4>سایبان پارچه‌ای (برقی و دستی)</h4>
+                    <p>محبوب‌ترین گزینه برای فروشگاه‌ها و کافه‌ها. قابلیت جمع شدن، تنوع رنگی بالا و ظاهر مدرن. مناسب برای مناطق با باد متوسط.</p>
+                </div>
+                <div class="type-card">
+                    <h4>سایبان پلی‌کربنات</h4>
+                    <p>مقاوم در برابر ضربه، عبور نور مناسب، سبک و بادوام. ایده‌آل برای روف‌گاردن و پوشش حیاط. در برابر اشعه UV مقاوم است.</p>
+                </div>
+                <div class="type-card">
+                    <h4>سایبان فلزی (آلومینیوم و فولاد)</h4>
+                    <p>استحکام بالا، مناسب مناطق بادخیز و برف‌گیر. ظاهر صنعتی یا مدرن. نیاز به نگهداری کم‌تر نسبت به پارچه.</p>
+                </div>
+                <div class="type-card">
+                    <h4>سایبان چوبی و ترکیبی</h4>
+                    <p>جلوه طبیعی و گرم برای روف‌گاردن و فضاهای مسکونی. معمولاً با پوشش ضدآب و ضدآفتاب ترکیب می‌شود.</p>
+                </div>
+                <div class="type-card">
+                    <h4>سایبان متحرک (Retractable)</h4>
+                    <p>قابلیت باز و بسته شدن برقی یا دستی. کنترل نور و سایه در طول روز. گزینه لوکس برای فروشگاه‌های مدرن.</p>
+                </div>
+                <div class="type-card">
+                    <h4>سایبان ثابت (Fixed)</h4>
+                    <p>ساختار دائمی و محکم. هزینه نگهداری کمتر و مقاومت بالاتر در برابر شرایط سخت جوی.</p>
+                </div>
+            </div>
+
+            <h2>سایبان مناسب فروشگاه و مغازه</h2>
+            <p>
+                در فضاهای تجاری، سایبان علاوه بر کارکرد محافظتی، نقش تبلیغاتی و برندینگ هم دارد. رنگ، لوگو و طراحی آن باید با هویت بصری فروشگاه هماهنگ باشد.
+            </p>
+
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=80" alt="سایبان فروشگاه تجاری" class="article-img">
+            <p class="img-caption">سایبان شیک و کاربردی برای ویترین فروشگاه‌های تجاری</p>
+
+            <h3>نکات کلیدی برای فروشگاه:</h3>
+            <ul>
+                <li><strong>عمق مناسب:</strong> معمولاً بین ۱.۵ تا ۳ متر برای ایجاد فضای کافی جلوی ویترین</li>
+                <li><strong>ارتفاع:</strong> حداقل ۲.۲۰ متر از سطح زمین برای عبور راحت عابران</li>
+                <li><strong>مقاومت در برابر باد:</strong> در مناطق بادخیز از سیستم‌های قفل‌شونده و پایه‌های تقویت‌شده استفاده کنید</li>
+                <li><strong>نورپردازی:</strong> امکان نصب چراغ LED زیر سایبان برای جذابیت شبانه</li>
+                <li><strong>مجوز شهرداری:</strong> در بسیاری از شهرها نصب سایبان در معابر عمومی نیاز به مجوز دارد</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>نکته طلایی:</strong> سایبان‌های برقی با سنسور باد و باران، گزینه‌ای هوشمند برای فروشگاه‌هایی هستند که همیشه کسی برای جمع کردن سایبان حضور ندارد.
+            </div>
+
+            <h2>سایبان روف‌گاردن (بام سبز)</h2>
+            <p>
+                روف‌گاردن فضایی حساس است؛ وزن سازه، زهکشی، مقاومت در برابر باد و هماهنگی با گیاهان از اهمیت ویژه‌ای برخوردارند.
+            </p>
+
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80" alt="روف گاردن با سایبان و پرگولا" class="article-img">
+            <p class="img-caption">روف‌گاردن مدرن با سازه سایه‌انداز چوبی و پوشش شفاف</p>
+<h3>ویژگی‌های سایبان ایده‌آل روف‌گاردن:</h3>
+            <ul>
+                <li>وزن سبک برای جلوگیری از فشار اضافی به سقف</li>
+                <li>قابلیت عبور نسبی نور برای رشد گیاهان زیر سایه</li>
+                <li>سیستم زهکشی مناسب و شیب‌بندی صحیح</li>
+                <li>مقاومت بالا در برابر اشعه UV و تغییرات دمایی شدید</li>
+                <li>امکان ترکیب با پرگولا، دیوار سبز یا مبلمان فضای باز</li>
+            </ul>
+            <p>
+                پلی‌کربنات دوجداره یا سه‌جداره و سازه‌های آلومینیومی سبک، محبوب‌ترین انتخاب‌ها برای روف‌گاردن هستند. در طراحی مدرن، اغلب از سایبان‌های متحرک یا سیستم‌های لوور (تیغه‌ای) استفاده می‌شود که زاویه آن‌ها قابل تنظیم است.
+            </p>
+
+            <h2>مراحل طراحی و ساخت سایبان</h2>
+            <div class="steps">
+                <div class="step">
+                    <strong>بررسی نیاز و اندازه‌گیری دقیق</strong><br>
+                    تعیین کاربری، ابعاد فضا، جهت تابش خورشید، شدت باد و بارش منطقه و محدودیت‌های سازه‌ای.
+                </div>
+                <div class="step">
+                    <strong>انتخاب متریال و سبک طراحی</strong><br>
+                    هماهنگی با معماری ساختمان، بودجه و شرایط اقلیمی. مشورت با طراح یا مهندس سازه توصیه می‌شود.
+                </div>
+                <div class="step">
+                    <strong>طراحی فنی و محاسبات سازه</strong><br>
+                    محاسبه بار باد، بار برف، نقاط اتصال و مقاومت اتصالات. تهیه نقشه اجرایی.
+                </div>
+                <div class="step">
+                    <strong>ساخت قطعات در کارگاه</strong><br>
+                    برش و جوش اسکلت فلزی یا آلومینیومی، آماده‌سازی پوشش (پارچه، پلی‌کربنات یا ورق) و رنگ‌آمیزی ضدزنگ.
+                </div>
+                <div class="step">
+                    <strong>نصب در محل</strong><br>
+                    اتصال به دیوار یا ستون‌ها، تنظیم شیب، آب‌بندی و تست نهایی عملکرد.
+                </div>
+            </div>
+
+            <h2>مراحل نصب حرفه‌ای سایبان</h2>
+            <p>نصب صحیح مهم‌ترین عامل دوام و ایمنی سایبان است. مراحل کلی عبارتند از:</p>
+            <ol>
+                <li><strong>آماده‌سازی محل:</strong> تمیز کردن سطح، علامت‌گذاری نقاط اتصال و بررسی استحکام دیوار یا سقف.</li>
+                <li><strong>نصب براکت‌ها و پایه‌ها:</strong> استفاده از رول‌بولت یا انکر مناسب با توجه به نوع دیوار (بتنی، آجری، ساندویچ پنل).</li>
+                <li><strong>نصب اسکلت اصلی:</strong> تراز کردن دقیق با تراز لیزری و محکم کردن اتصالات.</li>
+                <li><strong>نصب پوشش:</strong> کشیدن پارچه یا نصب ورق پلی‌کربنات با رعایت کشش یکنواخت و آب‌بندی درزها.</li>
+                <li><strong>نصب موتور و سیستم کنترل (در مدل‌های برقی):</strong> سیم‌کشی ایمن و تست سنسورها.</li>
+                <li><strong>بازرسی نهایی:</strong> بررسی عملکرد، آب‌بندی و ایمنی.</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>هشدار ایمنی:</strong> نصب سایبان در ارتفاع بالا و روی سازه‌های ضعیف بدون محاسبه مهندسی می‌تواند خطرناک باشد. حتماً از نصاب‌های مجرب و دارای بیمه مسئولیت استفاده کنید.
+            </div>
+
+            <h2>مقایسه متریال‌های رایج سایبان</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>متریال</th>
+                            <th>مزایا</th>
+                            <th>معایب</th>
+                            <th>مناسب برای</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>پارچه آکریلیک</td>
+                            <td>زیبایی، تنوع رنگ، قابلیت جمع شدن</td>
+                            <td>حساسیت به باد شدید، نیاز به نگهداری</td>
+                            <td>فروشگاه، کافه، تراس</td>
+                        </tr>
+ <tr>
+                            <td>پلی‌کربنات</td>
+                            <td>مقاوم، عبور نور، سبک، ضدUV</td>
+                            <td>قیمت بالاتر، ظاهر کمتر انعطاف‌پذیر</td>
+                            <td>روف‌گاردن، حیاط، پوشش ثابت</td>
+                        </tr>
+                        <tr>
+                            <td>آلومینیوم</td>
+                            <td>سبک، ضدزنگ، بادوام</td>
+                            <td>قیمت نسبتاً بالا</td>
+                            <td>همه کاربردها (اسکلت)</td>
+                        </tr>
+                        <tr>
+                            <td>فولاد گالوانیزه</td>
+                            <td>استحکام بسیار بالا، مقرون‌به‌صرفه</td>
+                            <td>وزن بیشتر، نیاز به رنگ‌آمیزی دوره‌ای</td>
+                            <td>مناطق بادخیز و صنعتی</td>
+                        </tr>
+                        <tr>
+                            <td>چوب ترموود</td>
+                            <td>ظاهر طبیعی و لوکس</td>
+                            <td>نیاز به نگهداری بیشتر، قیمت بالا</td>
+                            <td>روف‌گاردن، ویلا، فضاهای مسکونی</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>نکات مهم نگهداری سایبان</h2>
+            <ul>
+                <li>پارچه‌های سایبان را حداقل سالی دو بار با آب و صابون ملایم بشویید.</li>
+                <li>از جمع کردن سایبان در زمان خیس بودن خودداری کنید تا از ایجاد کپک جلوگیری شود.</li>
+                <li>اتصالات فلزی را هر ۶ ماه یک‌بار از نظر زنگ‌زدگی بررسی کنید.</li>
+                <li>در فصل زمستان و بارش سنگین برف، سایبان‌های جمع‌شونده را حتماً جمع کنید.</li>
+                <li>موتورهای برقی را سالیانه سرویس کنید.</li>
+            </ul>
+
+            <h2>برآورد هزینه ساخت و نصب سایبان</h2>
+            <p>
+                هزینه سایبان به عوامل متعددی بستگی دارد: ابعاد، نوع متریال، سیستم حرکتی (دستی یا برقی)، پیچیدگی نصب و برند قطعات. به طور تقریبی:
+            </p>
+            <ul>
+                <li>سایبان پارچه‌ای ساده: از متری ۲.۵ تا ۵ میلیون تومان (بسته به کیفیت پارچه و اسکلت)</li>
+                <li>سایبان برقی با موتور معتبر: ۳۰ تا ۷۰ درصد گران‌تر از مدل دستی</li>
+                <li>پوشش پلی‌کربنات: معمولاً گران‌تر از پارچه اما دوام بالاتر</li>
+                <li>نصب تخصصی: ۱۰ تا ۲۵ درصد هزینه کل</li>
+            </ul>
+            <p>توصیه می‌شود حداقل از سه پیمانکار معتبر استعلام قیمت بگیرید و نمونه‌کارهای قبلی آن‌ها را بررسی کنید.</p>
+
+            <h2>سؤالات متداول</h2>
+            <h3>آیا نصب سایبان نیاز به مجوز دارد؟</h3>
+            <p>در صورتی که سایبان به معبر عمومی تجاوز کند یا در نمای ساختمان‌های تحت حفاظت میراث فرهنگی نصب شود، معمولاً نیاز به مجوز شهرداری یا مراجع مربوطه دارد.</p>
+
+            <h3>عمر مفید یک سایبان چقدر است؟</h3>
+            <p>با نگهداری مناسب، سایبان پارچه‌ای باکیفیت ۸ تا ۱۵ سال، پلی‌کربنات ۱۵ تا ۲۵ سال و اسکلت آلومینیومی بیش از ۲۰ سال عمر می‌کند.</p>
+
+            <h3>بهترین زمان نصب سایبان چه فصلی است؟</h3>
+            <p>بهار و پاییز ایده‌آل‌ترین زمان هستند؛ چون دمای معتدل کار را راحت‌تر می‌کند و بارش کمتری وجود دارد.</p>
+
+            <div class="highlight-box">
+                <strong>جمع‌بندی:</strong>
+                انتخاب و نصب سایبان مناسب، سرمایه‌گذاری هوشمندانه‌ای است که هم راحتی ایجاد می‌کند و هم به ارزش ملک و کسب‌وکار شما می‌افزاید. با در نظر گرفتن شرایط اقلیمی، کاربری فضا و کیفیت متریال، می‌توانید سایبانی داشته باشید که سال‌ها بدون دردسر خدمت کند. اگر پروژه‌ای در پیش دارید، حتماً با متخصصان سازه و طراحان فضای باز مشورت کنید تا نتیجه‌ای ایمن، زیبا و بادوام به دست آورید.
+            </div>
+        </article>
+
+        <!-- فوتر -->
+        <footer class="article-footer">
+            <p><strong>این مقاله راهنمای جامعی برای انتخاب، ساخت و نصب سایبان است.</strong></p>
+ <p>برای پروژه‌های خاص، حتماً از مهندس سازه و نصاب حرفه‌ای کمک بگیرید.</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #777;">© تمام حقوق محفوظ است | مناسب برای انتشار در وب‌سایت‌های تخصصی معماری، دکوراسیون و ساختمانی</p>
+        </footer>
+    </div>
+</body>
+</html>
