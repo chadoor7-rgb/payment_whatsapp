@@ -1,0 +1,920 @@
+ <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="چادردوزی جزیره J.A.T آمل | تولید مستقیم چادر مسافرتی، برزنتی، کمپینگ و دوخت سفارشی با کیفیت کارگاهی و ارسال سراسر ایران">
+    <title>چادردوزی جزیره J.A.T | تولید و دوخت تخصصی چادر</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            font-size: 16px;
+        }
+        
+        .promo-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        /* ===== هیرو تبلیغاتی ===== */
+        .hero {
+            background: linear-gradient(135deg, #0d3b2e 0%, #1a5f4a 40%, #2d8f6f 100%);
+            color: white;
+            padding: 70px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=60') center/cover;
+            opacity: 0.18;
+        }
+        
+        .hero-content { position: relative; z-index: 2; }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(4px);
+        }
+        
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero h1 span {
+            color: #a8e6cf;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin: 0 auto 35px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+            box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255,107,53,0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.7);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+        
+        /* ===== نوار ویژگی‌ها ===== */
+        .features-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            margin-top: -30px;
+ position: relative;
+            z-index: 5;
+            border-radius: 16px;
+            margin-left: 30px;
+            margin-right: 30px;
+            overflow: hidden;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 28px 15px;
+            border-left: 1px solid #eee;
+        }
+        
+        .feature-item:last-child { border-left: none; }
+        
+        .feature-item .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item h4 {
+            font-size: 1rem;
+            color: #1a5f4a;
+            margin-bottom: 5px;
+        }
+        
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        /* ===== بخش محصولات ===== */
+        .section {
+            padding: 60px 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #0d3b2e;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: all 0.35s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-body {
+            padding: 22px;
+        }
+        
+        .product-body h3 {
+            font-size: 1.2rem;
+            color: #0d3b2e;
+            margin-bottom: 10px;
+        }
+        
+        .product-body p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 18px;
+        }
+        
+        .product-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #1a5f4a;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        
+        /* ===== چرا ما ===== */
+        .why-us {
+            background: linear-gradient(to bottom, #f0f7f4, #fff);
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        
+        .why-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid #1a5f4a;
+        }
+        
+        .why-card .num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a5f4a;
+            margin-bottom: 10px;
+        }
+        
+        .why-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        /* ===== بنر CTA قوی ===== */
+        .cta-banner {
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 55px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+ font-weight: 700;
+        }
+        
+        .cta-banner p {
+            font-size: 1.15rem;
+            margin-bottom: 28px;
+            opacity: 0.95;
+        }
+        
+        .cta-banner .btn-white {
+            background: white;
+            color: #e55a2b;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .cta-banner .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* ===== اطلاعات تماس ===== */
+        .contact-strip {
+            background: #0d3b2e;
+            color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+        
+        .contact-item h4 {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        
+        .contact-item p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .contact-item a {
+            color: #a8e6cf;
+            text-decoration: none;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .hero { padding: 50px 20px; }
+            .hero h1 { font-size: 1.8rem; }
+            .features-bar {
+                grid-template-columns: 1fr 1fr;
+                margin: -20px 15px 0;
+            }
+            .feature-item { border-left: none; border-bottom: 1px solid #eee; }
+            .section { padding: 40px 20px; }
+            .section-title h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-wrapper">
+
+        <!-- هیرو چشم‌گیر -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">🏕️ تولید مستقیم در کارگاه آمل</div>
+                <h1>چادردوزی جزیره <span>J.A.T</span></h1>
+                <p>تولید و دوخت تخصصی چادر مسافرتی، برزنتی و کمپینگ با کیفیت کارگاهی، پارچه مقاوم و قیمت بدون واسطه. ارسال به سراسر ایران</p>
+                <div class="cta-group">
+                    <a href="https://chadooor.ir/shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
+                    <a href="https://wa.me/989118031241" class="btn btn-secondary">سفارش از واتساپ</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- نوار ویژگی‌های کلیدی -->
+        <div class="features-bar">
+            <div class="feature-item">
+                <div class="icon">✂️</div>
+                <h4>دوخت سفارشی</h4>
+                <p>ابعاد و طرح دلخواه شما</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🏭</div>
+                <h4>تولید مستقیم</h4>
+                <p>بدون واسطه از کارگاه</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🚚</div>
+                <h4>ارسال سراسری</h4>
+                <p>به تمام نقاط ایران</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🔧</div>
+                <h4>تعمیر تخصصی</h4>
+                <p>ترمیم و بازسازی چادر</p>
+            </div>
+        </div>
+
+        <!-- محصولات پرطرفدار -->
+        <section class="section">
+            <div class="section-title">
+                <h2>محصولات پرطرفدار J.A.T</h2>
+                <p>چادرهایی که در کارگاه جزیره با دقت دوخته می‌شوند و برای شرایط واقعی شمال ایران طراحی شده‌اند</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ac502?w=600&q=80" alt="چادر مسافرتی">
+                    <div class="product-body">
+                        <span class="product-tag">پرفروش</span>
+ <h3>چادر مسافرتی ۸ نفره دو جداره</h3>
+                        <p>ابعاد ۲۵۰×۲۵۰، ارتفاع ۲۱۰ سانتی‌متر، پارچه آکسفورد ضدآب و اسکلت مقاوم</p>
+                        <a href="https://chadooor.ir/shop.html" class="btn btn-primary" style="padding:10px 24px;font-size:0.95rem;">مشاهده جزئیات</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="چادر برزنتی">
+                    <div class="product-body">
+                        <span class="product-tag">مناسب خانواده</span>
+                        <h3>چادر برزنتی ۸ نفره J.A.T</h3>
+                        <p>مدل پرفروش کارگاه؛ مناسب باغ، حیاط و استفاده طولانی‌مدت با دوام بالا</p>
+                        <a href="https://chadooor.ir/shop.html" class="btn btn-primary" style="padding:10px 24px;font-size:0.95rem;">مشاهده جزئیات</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1445307806294-bff7f67ff225?w=600&q=80" alt="چادر سفارشی">
+                    <div class="product-body">
+                        <span class="product-tag">سفارشی</span>
+                        <h3>چادر سفارشی بر اساس نیاز شما</h3>
+                        <p>ابعاد، تعداد نفر، نوع پارچه و کاربری را بگویید، ما دقیقاً همان را می‌دوزیم</p>
+                        <a href="https://wa.me/989118031241" class="btn btn-primary" style="padding:10px 24px;font-size:0.95rem;">ثبت سفارش سفارشی</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- چرا چادردوزی جزیره -->
+        <section class="section why-us">
+            <div class="section-title">
+                <h2>چرا چادردوزی جزیره J.A.T؟</h2>
+                <p>تفاوت ما در تولید واقعی و کنترل کامل کیفیت است</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="num">۰۱</div>
+                    <h4>تولیدکننده واقعی</h4>
+                    <p>محصول در کارگاه خودمان در جاده هراز آمل دوخته می‌شود. واسطه‌ای در کار نیست.</p>
+                </div>
+                <div class="why-card">
+                    <div class="num">۰۲</div>
+                    <h4>دوخت سفارشی</h4>
+                    <p>هر چادر بر اساس نیاز، ابعاد و بودجه شما طراحی و تولید می‌شود.</p>
+                </div>
+                <div class="why-card">
+                    <div class="num">۰۳</div>
+                    <h4>مقاوم برای شمال</h4>
+                    <p>طراحی‌شده برای رطوبت، باران و شرایط واقعی استان‌های شمالی.</p>
+                </div>
+                <div class="why-card">
+                    <div class="num">۰۴</div>
+                    <h4>تعمیر و پشتیبانی</h4>
+                    <p>ترمیم پارگی، زیپ، فنر و بازسازی کامل چادرهای قدیمی هم انجام می‌دهیم.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بنر فراخوان قوی -->
+        <section class="cta-banner">
+            <h2>آماده سفارش چادر مورد نظرتان هستید؟</h2>
+            <p>همین حالا با ما در واتساپ در ارتباط باشید و مشاوره رایگان بگیرید</p>
+            <a href="https://wa.me/989118031241" class="btn btn-white">💬 پیام در واتساپ • ۰۹۱۱۸۰۳۱۲۴۱</a>
+        </section>
+
+        <!-- اطلاعات تماس -->
+        <div class="contact-strip">
+            <div class="contact-item">
+                <h4>آدرس کارگاه</h4>
+                <p>آمل، جاده هراز<br>روبروی پلیس‌راه محمدآباد</p>
+            </div>
+            <div class="contact-item">
+                <h4>تماس مستقیم</h4>
+                <p><a href="tel:09118031241">۰۹۱۱ ۸۰۳ ۱۲۴۱</a></p>
+            </div>
+            <div class="contact-item">
+ <h4>واتساپ سفارش</h4>
+                <p><a href="https://wa.me/989118031241">۰۹۱۱ ۸۰۳ ۱۲۴۱</a></p>
+            </div>
+            <div class="contact-item">
+                <h4>ساعات پاسخگویی</h4>
+                <p>همه‌روزه<br>۹ صبح تا ۹ شب</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+ <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="درباره چادردوزی جزیره J.A.T آمل | داستان کارگاه، نحوه تولید، مواد اولیه و خدمات تخصصی دوخت و تعمیر چادر">
+    <title>درباره ما و خدمات | چادردوزی جزیره J.A.T</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            line-height: 1.9;
+            color: #222;
+            background: #f7f7f7;
+            font-size: 16.5px;
+        }
+        
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 40px rgba(0,0,0,0.06);
+        }
+        
+        /* هدر صفحه */
+        .page-header {
+            background: linear-gradient(135deg, #0d3b2e, #1a5f4a);
+            color: white;
+            padding: 55px 40px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        
+        .page-header p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* محتوای اصلی */
+        .content {
+            padding: 50px 45px;
+        }
+        
+        h2 {
+            color: #0d3b2e;
+            font-size: 1.6rem;
+            margin: 45px 0 18px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2d8f6f;
+            display: inline-block;
+            font-weight: 700;
+        }
+        
+        h3 {
+            color: #1a5f4a;
+            font-size: 1.25rem;
+            margin: 28px 0 12px;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #333;
+        }
+        
+        .lead {
+            font-size: 1.15rem;
+            background: #f0f7f4;
+            padding: 25px;
+            border-radius: 14px;
+            border-right: 5px solid #1a5f4a;
+            margin-bottom: 35px;
+            line-height: 1.9;
+        }
+        
+        /* تصویر */
+        .article-img {
+            width: 100%;
+            border-radius: 14px;
+            margin: 25px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .img-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        /* باکس‌های ویژه */
+        .info-box {
+            background: #e8f5e9;
+            border-right: 5px solid #2d8f6f;
+            padding: 22px 25px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .tip-box {
+            background: #fff8e1;
+            border-right: 5px solid #ffc107;
+            padding: 22px 25px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        /* لیست مراحل */
+        .process-steps {
+            counter-reset: step;
+            margin: 30px 0;
+        }
+        
+        .process-step {
+            position: relative;
+            padding: 20px 20px 20px 75px;
+            margin-bottom: 18px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            right: 18px;
+ top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            background: #1a5f4a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+        
+        /* گرید خدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin: 30px 0;
+        }
+        
+        .service-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 14px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            border-color: #2d8f6f;
+        }
+        
+        .service-card h4 {
+            color: #0d3b2e;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        /* جدول */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #0d3b2e;
+            color: white;
+            padding: 14px 12px;
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        td {
+            padding: 13px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:nth-child(even) { background: #f9f9f9; }
+        
+        /* CTA پایین */
+        .bottom-cta {
+            background: linear-gradient(135deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 45px 40px;
+            text-align: center;
+        }
+        
+        .bottom-cta h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: white;
+        }
+        
+        .bottom-cta p {
+            margin-bottom: 25px;
+            opacity: 0.95;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 34px;
+            background: white;
+            color: #e55a2b;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* فوتر کوچک */
+        .page-footer {
+            background: #0d3b2e;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .page-footer a {
+            color: #a8e6cf;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .content { padding: 30px 20px; }
+            .page-header { padding: 40px 20px; }
+            .page-header h1 { font-size: 1.7rem; }
+            h2 { font-size: 1.35rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        
+        <!-- هدر -->
+        <header class="page-header">
+            <h1>درباره چادردوزی جزیره J.A.T</h1>
+            <p>داستان کارگاه، نحوه تولید و خدماتی که واقعاً ارائه می‌دهیم</p>
+        </header>
+
+        <article class="content">
+ <p class="lead">
+                چادردوزی جزیره J.A.T یک کارگاه واقعی تولید و تعمیر چادر در شهر آمل (جاده هراز) است. ما واسطه نیستیم؛ خودمان پارچه را می‌بریم، می‌دوزیم، تست می‌کنیم و به دست مشتری می‌رسانیم. هدفمان ساخت چادری است که در باران شمال، باد و استفاده مداوم کم نیاورد.
+            </p>
+
+            <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=900&q=80" alt="کمپینگ با چادر" class="article-img">
+            <p class="img-caption">چادرهای تولیدشده در کارگاه جزیره برای استفاده واقعی در طبیعت طراحی شده‌اند</p>
+
+            <h2>داستان ما از کجا شروع شد؟</h2>
+            <p>
+                سال‌ها تجربه کار با چادرهای آسیب‌دیده و نارضایتی مشتریان از کیفیت پایین محصولات بازار، ما را به این نتیجه رساند که باید خودمان تولیدکننده باشیم. امروز در کارگاه جاده هراز آمل، هر سفارش را با توجه به نوع استفاده مشتری (کمپینگ خانوادگی، باغ، ماشین، کامیون یا استفاده صنعتی) طراحی و می‌دوزیم.
+            </p>
+            <p>
+                تمرکز ما روی دوام واقعی است؛ نه فقط ظاهر زیبا. چادری که در رطوبت بالای شمال ایران و باران‌های مداوم تاب بیاورد.
+            </p>
+
+            <div class="info-box">
+                <strong>نکته مهم:</strong> ما تولیدکننده مستقیم هستیم. یعنی قیمت بدون واسطه، کنترل کامل روی کیفیت دوخت و امکان تغییر ابعاد و مشخصات طبق نیاز شما.
+            </div>
+
+            <h2>چه خدماتی ارائه می‌دهیم؟</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>تولید چادر مسافرتی</h4>
+                    <p>چادرهای ۲ تا ۱۲ نفره، تک‌جداره و دوجداره، با پارچه آکسفورد یا برزنت ضدآب و اسکلت مقاوم.</p>
+                </div>
+                <div class="service-card">
+                    <h4>چادر برزنتی</h4>
+                    <p>مناسب باغ، حیاط، استفاده طولانی‌مدت و شرایط سخت. دوام بالا و قابلیت سفارشی‌سازی ابعاد.</p>
+                </div>
+                <div class="service-card">
+                    <h4>دوخت کاملاً سفارشی</h4>
+                    <p>ابعاد، تعداد ورودی، نوع پارچه، رنگ و حتی جزئیات داخلی را طبق نیاز شما اجرا می‌کنیم.</p>
+                </div>
+                <div class="service-card">
+                    <h4>تعمیر تخصصی چادر</h4>
+                    <p>ترمیم پارگی، تعویض زیپ، تعمیر فنر، بازسازی کف و هر نوع آسیب دیگر در کارگاه خودمان.</p>
+                </div>
+                <div class="service-card">
+                    <h4>روکش خودرو و برزنت</h4>
+                    <p>روکش ماشین، برزنت کامیون، نیسان و انواع پوشش‌های صنعتی و کشاورزی.</p>
+                </div>
+                <div class="service-card">
+                    <h4>پشه‌بند و تجهیزات جانبی</h4>
+                    <p>پشه‌بند سفارشی، سایبان و سایر تجهیزات کمپینگ مرتبط با چادر.</p>
+                </div>
+            </div>
+
+            <h2>فرآیند تولید در کارگاه ما چگونه است؟</h2>
+            <p>هر چادر از مرحله ایده تا بسته‌بندی این مسیر را طی می‌کند:</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <strong>مشاوره و ثبت نیاز مشتری</strong><br>
+                    تعداد نفرات، نوع استفاده، بودجه و شرایط آب‌وهوایی منطقه را بررسی می‌کنیم.
+                </div>
+                <div class="process-step">
+                    <strong>انتخاب مواد اولیه</strong><br>
+                    پارچه آکسفورد ضدآب، برزنت باکیفیت، اسکلت فلزی یا آلومینیومی و زیپ‌های مقاوم انتخاب می‌شود.
+                </div>
+                <div class="process-step">
+                    <strong>برش و دوخت</strong><br>
+                    برش دقیق پارچه و دوخت صنعتی با چرخ‌های حرفه‌ای. تمام درزها تقویت می‌شوند.
+                </div>
+                <div class="process-step">
+                    <strong>مونتاژ اسکلت و تست</strong><br>
+                    نصب اسکلت، تست باز و بسته شدن، بررسی آب‌بندی و تحمل باد.
+                </div>
+                <div class="process-step">
+                    <strong>بسته‌بندی و ارسال</strong><br>
+                    قرار دادن در کیف حمل مناسب و ارسال به سراسر ایران.
+                </div>
+            </div>
+ <h2>مواد اولیه‌ای که استفاده می‌کنیم</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ماده</th>
+                            <th>کاربرد</th>
+                            <th>ویژگی مهم</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>پارچه آکسفورد ضدآب</td>
+                            <td>چادر مسافرتی دوجداره</td>
+                            <td>مقاوم در برابر آب و سایش</td>
+                        </tr>
+                        <tr>
+                            <td>برزنت باکیفیت</td>
+                            <td>چادر برزنتی و پوشش‌های صنعتی</td>
+                            <td>دوام بالا در فضای باز</td>
+                        </tr>
+                        <tr>
+                            <td>اسکلت فلزی / آلومینیوم</td>
+                            <td>ساختار اصلی چادر</td>
+                            <td>مقاومت در برابر باد</td>
+                        </tr>
+                        <tr>
+                            <td>زیپ فلزی دوطرفه</td>
+                            <td>ورودی‌ها و پنجره‌ها</td>
+                            <td>طول عمر بالا و عملکرد روان</td>
+                        </tr>
+                        <tr>
+                            <td>کف پلی‌استر ضدآب</td>
+                            <td>کف چادر</td>
+                            <td>جلوگیری از نفوذ رطوبت زمین</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>چرا مشتریان ما را انتخاب می‌کنند؟</h2>
+            <ul>
+                <li><strong>تولید واقعی:</strong> محصول در کارگاه خودمان دوخته می‌شود، نه از جای دیگر خریداری.</li>
+                <li><strong>امکان سفارشی‌سازی کامل:</strong> ابعاد، تعداد نفر، نوع پارچه و جزئیات را شما تعیین می‌کنید.</li>
+                <li><strong>قیمت بدون واسطه:</strong> مستقیم از تولیدکننده خرید می‌کنید.</li>
+                <li><strong>تعمیر و پشتیبانی:</strong> حتی بعد از خرید، اگر چادر آسیب دید، آن را تعمیر می‌کنیم.</li>
+                <li><strong>ارسال سراسری:</strong> به تمام شهرهای ایران ارسال داریم.</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>توصیه ما:</strong> اگر برای اولین بار چادر می‌خرید یا نیاز خاصی دارید، حتماً قبل از ثبت سفارش با ما تماس بگیرید یا در واتساپ پیام بدهید. مشاوره رایگان می‌دهیم تا بهترین انتخاب را داشته باشید.
+            </div>
+
+            <h2>موقعیت کارگاه و راه‌های ارتباط</h2>
+            <p>
+                کارگاه ما در <strong>آمل، جاده هراز، روبروی پلیس‌راه محمدآباد</strong> قرار دارد. می‌توانید حضوری تشریف بیاورید یا از طریق تماس و واتساپ سفارش ثبت کنید.
+            </p>
+            <ul>
+                <li>تلفن و واتساپ: <strong>۰۹۱۱ ۸۰۳ ۱۲۴۱</strong></li>
+                <li>ساعات پاسخگویی: همه‌روزه از ۹ صبح تا ۹ شب</li>
+            </ul>
+
+        </article>
+
+        <!-- فراخوان نهایی -->
+        <section class="bottom-cta">
+            <h3>می‌خواهید چادر مورد نظرتان را سفارش دهید؟</h3>
+            <p>همین حالا در واتساپ پیام بدهید تا راهنمایی‌تان کنیم</p>
+            <a href="https://wa.me/989118031241" class="btn">پیام در واتساپ • ۰۹۱۱۸۰۳۱۲۴۱</a>
+        </section>
+
+        <footer class="page-footer">
+            <p>چادردوزی جزیره J.A.T | تولید و تعمیر تخصصی چادر در آمل</p>
+            <p style="margin-top:8px;"><a href="https://chadooor.ir">بازگشت به فروشگاه</a> | <a href="https://wa.me/989118031241">تماس مستقیم</a></p>
+        </footer>
+    </div>
+</body>
+</html>
