@@ -60,12 +60,12 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ===== هیرو به صورت بنر تمام‌عرض ===== */
+    /* ===== هیرو بنر تمام‌عرض + متن راست‌چین ===== */
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: stretch;
+      text-align: right;
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 1.2rem 3rem;
@@ -80,6 +80,7 @@
       box-shadow: 0 16px 40px rgba(21, 40, 34, 0.12);
       margin-bottom: 2.2rem;
       order: -1;
+      align-self: center;
     }
 
     .hero-img img {
@@ -92,6 +93,9 @@
 
     .hero-content {
       max-width: 700px;
+      margin-right: 0;
+      margin-left: auto;
+      text-align: right;
     }
 
     .hero-content h1 {
@@ -112,25 +116,98 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
-    /* موبایل */
-    @media (max-width: 800px) {
-      .hero {
-        padding: 1.5rem 1rem 2.5rem;
-      }
-      .hero-img {
-        height: 260px;
-        border-radius: 16px;
-        margin-bottom: 1.6rem;
-      }
-      .hero-content h1 {
-        font-size: 1.9rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
+    /* ===== گرید ویژگی‌ها ===== */
+    .features-row {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1.2rem;
+    }
+
+    .feature-box {
+      background: #fff;
+      border: 1px solid #e5e8e5;
+      border-radius: 16px;
+      padding: 1.4rem;
+      text-align: center;
+    }
+
+    .feature-box .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-box h3 {
+      font-size: 1.05rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .feature-box p {
+      color: #68736f;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ===== گرید دسته‌بندی‌ها ===== */
+    .cat-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.3rem;
+      max-width: 1100px;
+      margin: 0 auto 3.5rem;
+      padding: 0 1rem;
+    }
+
+    .cat-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.6rem 1.3rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e5e8e5;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(21, 40, 34, 0.1);
+    }
+
+    .cat-card .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .cat-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .cat-card p {
+      color: #68736f;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0 0 0.8rem;
+    }
+
+    .cat-card span {
+      color: #155e55;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 0 0 1.8rem;
+      font-weight: 800;
     }
 
     /* تبلیغ چشمک‌زن */
@@ -142,7 +219,7 @@
       font-size: 20px;
       font-weight: bold;
       border-radius: 12px;
-      margin: 20px auto;
+      margin: 20px auto 2.5rem;
       max-width: 450px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       animation: strong-blink 1.2s infinite;
@@ -154,6 +231,36 @@
     @keyframes strong-blink {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(1.05); }
+    }
+
+    /* موبایل */
+    @media (max-width: 800px) {
+      .hero {
+        padding: 1.5rem 1rem 2.5rem;
+        text-align: right;
+      }
+      .hero-img {
+        height: 260px;
+        border-radius: 16px;
+        margin-bottom: 1.6rem;
+      }
+      .hero-content {
+        max-width: 100%;
+        margin: 0;
+      }
+      .hero-content h1 {
+        font-size: 1.9rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .hero-actions {
+        justify-content: flex-start;
+      }
+      .features-row,
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -196,6 +303,7 @@
     </div>
   </section>
 
+  <!-- ویژگی‌ها -->
   <div class="features-row">
     <div class="feature-box">
       <div class="icon">🛡️</div>
@@ -219,7 +327,7 @@
     </div>
   </div>
 
-  <!-- تبلیغ چشمک‌زن -->
+  <!-- تبلیغ -->
   <div class="blink-ad-strong">
     <a href="https://chadooor.ir/shop.html" target="_blank">
       🎉 پیشنهاد محدود! فرصت رو از دست نده 🎉
@@ -227,6 +335,8 @@
   </div>
 
   <h2 class="section-title">برای هر نیاز، یک انتخاب</h2>
+
+  <!-- دسته‌بندی‌ها -->
   <div class="cat-grid">
     <a href="shop.html" class="cat-card">
       <div class="emoji">⛺</div>
