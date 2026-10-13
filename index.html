@@ -58,205 +58,81 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
+  <style>/* ===== هیرو به صورت بنر تمام‌عرض ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3rem;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 1100px;          /* عرض کامل بنر */
+  height: 420px;              /* ارتفاع بنر */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(21, 40, 34, 0.12);
+  margin-bottom: 2.2rem;
+  order: -1;                  /* تصویر بالای متن قرار می‌گیرد */
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  font-weight: 800;
+}
+
+.hero-content p {
+  color: #68736f;
+  line-height: 1.9;
+  margin-bottom: 1.6rem;
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+}
+
+/* موبایل */
+@media (max-width: 800px) {
   .hero {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2rem;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2.5rem 1.2rem 3rem;
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .hero-img {
+    height: 260px;
+    border-radius: 16px;
+    margin-bottom: 1.6rem;
   }
 
   .hero-content h1 {
-    font-size: 2.4rem;
-    line-height: 1.35;
-    margin: 0 0 1rem;
-    font-weight: 800;
+    font-size: 1.9rem;
   }
 
   .hero-content p {
-    color: #68736f;
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-
-  /* ===== اصلاح تصویر هیرو ===== */
-  .hero-img {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(21, 40, 34, 0.12);
-    height: 380px;              /* ارتفاع ثابت */
-  }
-
-  .hero-img img {
-    width: 100%;
-    height: 100%;               /* کل ارتفاع کانتینر را پر می‌کند */
-    display: block;
-    object-fit: cover;          /* تصویر را بدون فضای خالی پوشش می‌دهد */
-    object-position: center;
-  }
-
-  .features-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2.5rem 1.2rem 3rem;
-  }
-
-  .feature-box {
-    background: #fff;
-    border: 1px solid #e5e8e5;
-    border-radius: 16px;
-    padding: 1.4rem;
-    text-align: center;
-  }
-
-  .feature-box .icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .feature-box h3 {
-    font-size: 1.05rem;
-    margin: 0 0 0.4rem;
-  }
-
-  .feature-box p {
-    color: #68736f;
-    font-size: 0.88rem;
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: 1.6rem;
-    margin: 0 0 1.8rem;
-    font-weight: 800;
-  }
-
-  .cat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.3rem;
-    max-width: 1100px;
-    margin: 0 auto 3.5rem;
-    padding: 0 1rem;
-  }
-
-  .cat-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 1.6rem 1.3rem;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid #e5e8e5;
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-
-  .cat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(21, 40, 34, 0.1);
-  }
-
-  .cat-card .emoji {
-    font-size: 2.2rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .cat-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.15rem;
-  }
-
-  .cat-card p {
-    color: #68736f;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin: 0 0 0.8rem;
-  }
-
-  .cat-card span {
-    color: #155e55;
-    font-weight: 700;
-    font-size: 0.88rem;
-  }
-
-  .cta-band {
-    background: #155e55;
-    color: #fff;
-    text-align: center;
-    padding: 2.8rem 1rem;
-  }
-
-  .cta-band h2 {
-    margin: 0 0 0.7rem;
-    font-size: 1.5rem;
-  }
-
-  .cta-band p {
-    opacity: 0.9;
-    margin-bottom: 1.3rem;
-  }
-
-  .cta-band .btn {
-    background: #fff;
-    color: #155e55;
-    font-weight: 800;
-    padding: 0.85rem 1.8rem;
-    border-radius: 12px;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .repair-box {
-    max-width: 900px;
-    margin: 0 auto 3.5rem;
-    padding: 2rem 1.5rem;
-    background: #f6f8f6;
-    border-radius: 18px;
-    text-align: center;
-  }
-
-  .repair-box h2 {
-    margin: 0 0 0.6rem;
-  }
-
-  .repair-box p {
-    color: #68736f;
-    margin-bottom: 1.2rem;
-    line-height: 1.8;
-  }
-
-  @media (max-width: 800px) {
-    .hero {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    .hero-content h1 {
-      font-size: 1.8rem;
-    }
-    .hero-actions {
-      justify-content: center;
-    }
-    .hero-img {
-      height: 260px;            /* ارتفاع کمتر در موبایل */
-    }
-  }
-</style>
+}
 </head>
 <body>
 <header class="site-header sticky-header">
