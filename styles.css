@@ -1408,3 +1408,20 @@ button, input, textarea {
   flex-wrap: wrap;
   margin-top: auto;
 }
+<!-- گالری کوچک صفحه اصلی -->
+<h2 class="section-title">نمونه‌کارهای ما</h2>
+
+<div class="gallery-grid" style="margin-bottom: 3rem;">
+  <a href="gallery.html" class="gallery-item">
+    <img src="home-gallery-1.webp" alt="چادر مسافرتی" loading="lazy">
+  </a>
+  <a href="gallery.html" class="gallery-item">
+    <img src="home-gallery-2.webp" alt="چادر برزنتی" loading="lazy">
+  </a>
+  <a href="gallery.html" class="gallery-item">
+    <img src="home-gallery-3.webp" alt="تعمیر چادر" loading="lazy">
+  </a>
+  <a href="gallery.html" class="gallery-item">
+    <img src="home-gallery-4.webp" alt="چادر کودک" loading="lazy">
+  </a>
+</div>
