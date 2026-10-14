@@ -1425,3 +1425,24 @@ button, input, textarea {
     <img src="home-gallery-4.webp" alt="چادر کودک" loading="lazy">
   </a>
 </div>
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 50px;
+  font-size: 13px;
+  color: var(--teal);
+  transition: all 0.2s;
+}
+
+.social-links a:hover {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+
+.social-links a svg {
+  flex-shrink: 0;
+}
