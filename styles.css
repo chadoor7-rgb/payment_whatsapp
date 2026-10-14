@@ -1446,3 +1446,50 @@ button, input, textarea {
 .social-links a svg {
   flex-shrink: 0;
 }
+/* ================= SOCIAL ICONS - فقط آیکون رنگی ================= */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 50px;
+  font-size: 13px;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+
+.social-links a svg {
+  flex-shrink: 0;
+  transition: fill 0.25s ease;
+}
+
+/* واتساپ - سبز */
+.social-links a[href*="wa.me"] svg {
+  fill: #25D366;
+}
+.social-links a[href*="wa.me"]:hover svg {
+  fill: white;
+}
+
+/* اینستاگرام - صورتی/قرمز */
+.social-links a[href*="instagram"] svg {
+  fill: #E1306C;
+}
+.social-links a[href*="instagram"]:hover svg {
+  fill: white;
+}
+
+/* تلگرام - آبی */
+.social-links a[href*="t.me"] svg {
+  fill: #0088cc;
+}
+.social-links a[href*="t.me"]:hover svg {
+  fill: white;
+}
