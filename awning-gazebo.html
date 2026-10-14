@@ -159,27 +159,34 @@
 </head>
 <body>
 
-<!-- ==================== HEADER ==================== -->
 <header class="site-header">
   <a class="brand" href="index.html">
     <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
     <span>چادردوزی جزیره J.A.T</span>
   </a>
+
   <nav class="main-nav" aria-label="ناوبری اصلی">
     <a href="products.html">محصولات</a>
-    <a href="services.html">خدمات ما</a>
-    <a href="about.html">درباره J.A.T</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
     <a href="blog.html">مجله سفر</a>
+    <a href="contact.html">ثبت سفارش</a>
   </nav>
-  <a class="header-action" href="contact.html">
-    درخواست مشاوره
-    <i data-lucide="arrow-left"></i>
-  </a>
+
+  <div class="header-actions">
+    <a href="cart.html" class="cart-link" aria-label="سبد خرید">
+      <i data-lucide="shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </a>
+    <a class="btn btn-primary btn-sm" href="contact.html">ثبت سفارش</a>
+  </div>
+
   <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">
     <i data-lucide="menu"></i>
   </button>
 </header>
-
 <!-- ==================== MAIN ==================== -->
 <main class="inner-page">
   <div class="container" style="max-width: 960px; margin: 0 auto; padding: 0 20px;">
