@@ -1,1015 +1,840 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گونی جامبو راه راه درجه ۱ | برند JAT</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: #f5f7fa;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گونی جامبو راه راه درجه ۱ | برند JAT | چادردوزی جزیره</title>
+  <meta name="description" content="خرید گونی جامبو راه راه ضد آب و آفتاب درجه ۱ برند JAT. عرض ۲ تا ۸ متر، آنتی UV، مناسب نمای ساختمان، کشاورزی و بسته‌بندی. تولید مستقیم در آمل.">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Estedad', Tahoma, sans-serif;
+      line-height: 1.8;
+      color: #1a3c34;
+      background: #f7f9f8;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* ========== HEADER & NAV ========== */
-        .top-bar {
-            background: #1a5276;
-            color: #fff;
-            padding: 8px 0;
-            font-size: 0.9rem;
-        }
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .top-bar a {
-            color: #fff;
-            margin-left: 15px;
-        }
-        .top-bar a:hover {
-            color: #f1c40f;
-        }
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #1a3c34;
+    }
+    .main-nav { display: flex; gap: 22px; }
+    .main-nav a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #333;
+      transition: color 0.2s;
+    }
+    .main-nav a:hover, .main-nav a.active { color: #155e55; }
+    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .cart-btn {
+      position: relative;
+      background: #155e55;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cart-btn:hover { background: #0f4a43; }
+    .cart-count {
+      background: #e74c3c;
+      color: #fff;
+      font-size: 0.75rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -6px;
+      left: -6px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-primary { background: #155e55; color: #fff; }
+    .btn-primary:hover { background: #0f4a43; }
+    .btn-sm { padding: 8px 16px; font-size: 0.88rem; }
 
-        header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .header-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: #1a5276;
-        }
-        .logo span {
-            color: #e74c3c;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        nav a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover,
-        nav a.active {
-            color: #2980b9;
-        }
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .cart-btn {
-            position: relative;
-            background: #2980b9;
-            color: #fff;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.3s;
-        }
-        .cart-btn:hover {
-            background: #1a5276;
-        }
-        .cart-count {
-            background: #e74c3c;
-            color: #fff;
-            font-size: 0.75rem;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: -6px;
-            left: -6px;
-        }
-        .login-btn {
-            color: #1a5276;
-            font-weight: 500;
-        }
-        .login-btn:hover {
-            color: #2980b9;
-        }
+    /* Breadcrumb */
+    .breadcrumb {
+      background: #fff;
+      padding: 14px 0;
+      margin: 20px 0;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #666;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .breadcrumb a { color: #155e55; }
+    .breadcrumb a:hover { text-decoration: underline; }
 
-        /* ========== BREADCRUMB ========== */
-        .breadcrumb {
-            background: #fff;
-            padding: 14px 0;
-            margin: 20px 0;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #666;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-        }
-        .breadcrumb a {
-            color: #2980b9;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
+    /* Product Section */
+    .product-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .product-section { grid-template-columns: 1fr; }
+      .main-nav { display: none; }
+    }
+    .product-gallery {
+      background: #eef5f3;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 360px;
+      position: relative;
+    }
+    .product-gallery .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #e74c3c;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .product-gallery .placeholder {
+      font-size: 1.4rem;
+      color: #8fb5ad;
+      text-align: center;
+    }
+    .product-info h1 {
+      font-size: 1.55rem;
+      color: #1a3c34;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+    .rating { color: #f4c430; margin-bottom: 14px; }
+    .rating span { color: #777; font-size: 0.9rem; margin-right: 8px; }
+    .price-box {
+      background: #e8f5f1;
+      border-radius: 12px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+    .price {
+      font-size: 1.45rem;
+      color: #155e55;
+      font-weight: 800;
+    }
+    .price small { font-size: 0.9rem; color: #555; }
+    .options { margin: 18px 0; }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .options select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d0d8d5;
+      border-radius: 10px;
+      font-size: 1rem;
+      background: #fff;
+      font-family: inherit;
+    }
+    .qty-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .qty-box button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #d0d8d5;
+      background: #fff;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .qty-box input {
+      width: 60px;
+      height: 40px;
+      text-align: center;
+      border: 1px solid #d0d8d5;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-family: inherit;
+    }
+    .add-to-cart {
+      width: 100%;
+      background: #155e55;
+      color: #fff;
+      border: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .add-to-cart:hover { background: #0f4a43; }
+    .guarantees {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-        /* ========== PRODUCT SECTION ========== */
-        .product-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            background: #fff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            margin-bottom: 40px;
-        }
-        @media (max-width: 768px) {
-            .product-section {
-                grid-template-columns: 1fr;
-            }
-            nav ul {
-                display: none;
-            }
-        }
-        .product-gallery {
-            background: #f0f4f8;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 350px;
-            position: relative;
-        }
-        .product-gallery .badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #e74c3c;
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        .product-gallery .placeholder {
-            font-size: 4rem;
-            color: #bdc3c7;
-        }
-        .product-info h1 {
-            font-size: 1.6rem;
-            color: #1a5276;
-            margin-bottom: 10px;
-        }
-        .rating {
-            color: #f1c40f;
-            margin-bottom: 15px;
-        }
-        .rating span {
-            color: #777;
-            font-size: 0.9rem;
-            margin-right: 8px;
-        }
-        .price-box {
-            background: #eafaf1;
-            border-radius: 10px;
-            padding: 18px;
-            margin: 20px 0;
-        }
-        .price {
-            font-size: 1.5rem;
-            color: #27ae60;
-            font-weight: bold;
-        }
-        .price small {
-            font-size: 0.9rem;
-            color: #555;
-        }
-        .options {
-            margin: 20px 0;
-        }
-        .options label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        .options select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            background: #fff;
-        }
-        .qty-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .qty-box button {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        .qty-box input {
-            width: 60px;
-            height: 40px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1.1rem;
-        }
-        .add-to-cart {
-            width: 100%;
-            background: #2980b9;
-            color: #fff;
-            border: none;
-            padding: 16px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .add-to-cart:hover {
-            background: #1a5276;
-        }
-        .guarantees {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        .guarantees span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+    /* Tabs */
+    .tabs {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .tab-headers {
+      display: flex;
+      border-bottom: 2px solid #eee;
+    }
+    .tab-headers button {
+      flex: 1;
+      padding: 16px;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #666;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .tab-headers button.active {
+      color: #155e55;
+      border-bottom: 3px solid #155e55;
+      font-weight: 700;
+    }
+    .tab-content { padding: 30px; display: none; }
+    .tab-content.active { display: block; }
+    h3 {
+      color: #1a3c34;
+      border-right: 4px solid #155e55;
+      padding-right: 12px;
+      margin: 25px 0 15px;
+      font-size: 1.2rem;
+    }
+    p { margin-bottom: 15px; text-align: justify; }
+    ul { list-style: none; margin: 15px 0; }
+    ul li {
+      position: relative;
+      padding-right: 25px;
+      margin-bottom: 10px;
+    }
+    ul li::before {
+      content: "◆";
+      color: #155e55;
+      position: absolute;
+      right: 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+    .feature-box {
+      background: #eef5f3;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #d4e6df;
+    }
+    .feature-box h4 { color: #1a3c34; margin-bottom: 10px; }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .info-table th, .info-table td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: right;
+    }
+    .info-table th {
+      background: #1a3c34;
+      color: #fff;
+    }
+    .info-table tr:nth-child(even) { background: #f9f9f9; }
+    .highlight {
+      background: #e8f5f1;
+      border-right: 4px solid #155e55;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 10px 10px 0;
+    }
 
-        /* ========== TABS ========== */
-        .tabs {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            margin-bottom: 40px;
-            overflow: hidden;
-        }
-        .tab-headers {
-            display: flex;
-            border-bottom: 2px solid #eee;
-        }
-        .tab-headers button {
-            flex: 1;
-            padding: 16px;
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            color: #666;
-            transition: all 0.3s;
-        }
-        .tab-headers button.active {
-            color: #1a5276;
-            border-bottom: 3px solid #2980b9;
-            font-weight: bold;
-        }
-        .tab-content {
-            padding: 30px;
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        h3 {
-            color: #1a5276;
-            border-right: 4px solid #2980b9;
-            padding-right: 12px;
-            margin: 25px 0 15px;
-            font-size: 1.2rem;
-        }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        ul {
-            list-style: none;
-            margin: 15px 0;
-        }
-        ul li {
-            position: relative;
-            padding-right: 25px;
-            margin-bottom: 10px;
-        }
-        ul li::before {
-            content: "◆";
-            color: #2980b9;
-            position: absolute;
-            right: 0;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        .feature-box {
-            background: #f0f7fc;
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid #d4e6f1;
-        }
-        .feature-box h4 {
-            color: #1a5276;
-            margin-bottom: 10px;
-        }
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        .info-table th,
-        .info-table td {
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            text-align: right;
-        }
-        .info-table th {
-            background: #1a5276;
-            color: #fff;
-        }
-        .info-table tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-        .highlight {
-            background: #eafaf1;
-            border-right: 4px solid #27ae60;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
+    /* Cart Sidebar */
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      left: -400px;
+      width: 380px;
+      height: 100%;
+      background: #fff;
+      box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+      z-index: 2000;
+      transition: left 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-sidebar.open { left: 0; }
+    .cart-header {
+      background: #1a3c34;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-header h3 { color: #fff; border: none; margin: 0; padding: 0; }
+    .close-cart {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .cart-items { flex: 1; overflow-y: auto; padding: 20px; }
+    .cart-item {
+      display: flex;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-item-info { flex: 1; }
+    .cart-item-info h4 { font-size: 0.95rem; margin-bottom: 5px; }
+    .cart-item-info .item-price { color: #155e55; font-weight: 700; }
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .cart-item-actions button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .remove-item {
+      color: #e74c3c;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .cart-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid #eee;
+      background: #f9f9f9;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .checkout-btn {
+      width: 100%;
+      background: #155e55;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .checkout-btn:hover { background: #0f4a43; }
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 1500;
+      display: none;
+    }
+    .overlay.show { display: block; }
 
-        /* ========== CART SIDEBAR ========== */
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            left: -400px;
-            width: 380px;
-            height: 100%;
-            background: #fff;
-            box-shadow: 5px 0 25px rgba(0,0,0,0.15);
-            z-index: 2000;
-            transition: left 0.35s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .cart-sidebar.open {
-            left: 0;
-        }
-        .cart-header {
-            background: #1a5276;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-header h3 {
-            color: #fff;
-            border: none;
-            margin: 0;
-            padding: 0;
-        }
-        .close-cart {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-        }
-        .cart-item {
-            display: flex;
-            gap: 15px;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .cart-item-info {
-            flex: 1;
-        }
-        .cart-item-info h4 {
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
-        .cart-item-info .item-price {
-            color: #27ae60;
-            font-weight: bold;
-        }
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 8px;
-        }
-        .cart-item-actions button {
-            width: 28px;
-            height: 28px;
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .remove-item {
-            color: #e74c3c;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-        .cart-empty {
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-        }
-        .cart-footer {
-            padding: 20px;
-            border-top: 1px solid #eee;
-            background: #f9f9f9;
-        }
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .checkout-btn {
-            width: 100%;
-            background: #27ae60;
-            color: #fff;
-            border: none;
-            padding: 14px;
-            border-radius: 10px;
-            font-size: 1.05rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .checkout-btn:hover {
-            background: #219653;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            z-index: 1500;
-            display: none;
-        }
-        .overlay.show {
-            display: block;
-        }
+    /* Footer */
+    .site-footer {
+      background: #1a3c34;
+      color: #e8f0ee;
+      padding: 50px 24px 30px;
+      margin-top: 50px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 35px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-col h4 { margin-bottom: 14px; font-size: 1.1rem; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col a { color: #cde0db; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.88rem;
+      color: #8fb5ad;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-        /* ========== FOOTER ========== */
-        footer {
-            background: #1a5276;
-            color: #fff;
-            padding: 50px 0 25px;
-            margin-top: 40px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        .footer-col h4 {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 8px;
-            padding-right: 0;
-        }
-        .footer-col ul li::before {
-            content: none;
-        }
-        .footer-col a {
-            color: #ddd;
-            transition: color 0.3s;
-        }
-        .footer-col a:hover {
-            color: #f1c40f;
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            font-size: 0.9rem;
-            opacity: 0.85;
-        }
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #155e55;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      z-index: 3000;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; }
 
-        /* Toast notification */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #27ae60;
-            color: #fff;
-            padding: 14px 30px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            z-index: 3000;
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        .toast.show {
-            opacity: 1;
-        }
-    </style>
+    /* WhatsApp floating */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+      z-index: 999;
+      font-size: 0.95rem;
+    }
+    .floating-whatsapp:hover { background: #1ebe57; }
+  </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div>
-                <a href="#contact">تماس با ما</a>
-                <a href="#about">درباره ما</a>
-            </div>
-            <div>
-                ارسال رایگان برای سفارش‌های بالای 100 میلیون 
-            </div>
-        </div>
+  <!-- Header -->
+  <header class="site-header">
+    <a href="https://chadooor.ir/" class="brand">
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+    <nav class="main-nav">
+      <a href="https://chadooor.ir/">صفحه اصلی</a>
+      <a href="https://chadooor.ir/shop.html">فروشگاه</a>
+      <a href="https://chadooor.ir/services.html">خدمات</a>
+      <a href="https://chadooor.ir/gallery.html">گالری</a>
+      <a href="https://chadooor.ir/about.html">درباره ما</a>
+      <a href="https://chadooor.ir/contact.html">ثبت سفارش</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 سبد خرید
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a href="https://chadooor.ir/contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="https://chadooor.ir/">خانه</a> /
+      <a href="https://chadooor.ir/shop.html">فروشگاه</a> /
+      گونی جامبو راه راه درجه ۱
     </div>
 
-    <!-- Header -->
-    <header>
-        <div class="container header-main">
-            <a href="#" class="logo">JAT <span>TENT</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">صفحه اصلی</a></li>
-                    <li><a href="#shop">فروشگاه</a></li>
-                    <li><a href="#blog">وبلاگ</a></li>
-                    <li><a href="#about">درباره ما</a></li>
-                    <li><a href="#contact">تماس با ما</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="#login" class="login-btn">ورود / عضویت</a>
-                <button class="cart-btn" onclick="toggleCart()">
-                    🛒 سبد خرید
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-            </div>
+    <!-- Product Section -->
+    <div class="product-section">
+      <div class="product-gallery">
+        <span class="badge">درجه ۱</span>
+        <div class="placeholder">
+          📦<br>تصویر گونی جامبو راه راه<br>
+          <small style="font-size:0.85rem;">(goni.webp را جایگزین کنید)</small>
         </div>
-    </header>
+      </div>
 
-    <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb">
-            <a href="#">خانه</a> / 
-            <a href="#shop">گونی راه راه</a> / 
-            گونی جامبو راه راه درجه ۱ ♦️ گونی نما ساختمان
+      <div class="product-info">
+        <h1>گونی جامبو راه راه ضد آب و آفتاب</h1>
+        <p style="color:#666; margin-bottom:10px;">برند <strong>JAT</strong> | گونی نما ساختمان | چادردوزی جزیره</p>
+
+        <div class="rating">
+          ★★★★★ <span>(۵ دیدگاه مشتری)</span>
         </div>
 
-        <!-- Product Section -->
-        <div class="product-section">
-            <div class="product-gallery">
-                <span class="badge">درجه ۱</span>
-                <div class="placeholder">goni.webp</div>
-            </div>
-
-            <div class="product-info">
-                <h1>گونی جامبو راه راه ضد آب و آفتاب</h1>
-                <p style="color:#666; margin-bottom:10px;">برند <strong>JAT</strong> | گونی نما ساختمان</p>
-                
-                <div class="rating">
-                    ★★★★★ <span>(۵ دیدگاه مشتری)</span>
-                </div>
-
-                <div class="price-box">
-                    <div class="price">۵,۲۵۰,۰۰۰ – ۵,۳۰۰,۰۰۰ <small>ریال</small></div>
-                </div>
-
-                <div class="options">
-                    <label for="width">انتخاب عرض:</label>
-                    <select id="width">
-                        <option value="2">عرض ۲ متر</option>
-                        <option value="3">عرض ۳ متر</option>
-                        <option value="4" selected>عرض ۴ متر</option>
-                        <option value="6">عرض ۶ متر</option>
-                        <option value="8">عرض ۸ متر</option>
-                    </select>
-                </div>
-
-                <div class="qty-box">
-                    <span>تعداد:</span>
-                    <button onclick="changeQty(-1)">−</button>
-                    <input type="number" id="qty" value="1" min="1">
-                    <button onclick="changeQty(1)">+</button>
-                </div>
-
-                <button class="add-to-cart" onclick="addToCart()">
-                    🛒 افزودن به سبد خرید
-                </button>
-
-                <div class="guarantees">
-                    <span>✓ گارانتی اصالت کالا</span>
-                    <span>✓ ضمانت تعویض در صورت معیوب بودن</span>
-                    <span>✓ هزینه حمل به عهده خریدار</span>
-                </div>
-            </div>
+        <div class="price-box">
+          <div class="price">۵,۲۵۰,۰۰۰ – ۵,۳۰۰,۰۰۰ <small>ریال</small></div>
         </div>
 
-        <!-- Tabs -->
-        <div class="tabs">
-            <div class="tab-headers">
-                <button class="active" onclick="openTab(event, 'desc')">توضیحات</button>
-                <button onclick="openTab(event, 'specs')">مشخصات فنی</button>
-                <button onclick="openTab(event, 'reviews')">نظرات (۵)</button>
-            </div>
-
-            <div id="desc" class="tab-content active">
-                <h3>گونی جامبو ضد آب و آفتاب چیست؟</h3>
-                <p>
-                    گونی نما راه راه لمینت‌دار یا گونی جامبو ضد آب و آفتاب، یک محصول کاربردی و نوآورانه است که در صنایع مختلف از جمله کشاورزی، ساختمان‌سازی، حمل و نقل و بسیاری دیگر مورد استفاده قرار می‌گیرد.
-                </p>
-                <p>
-                    این نوع گونی‌ها به دلیل ویژگی‌های منحصر به فرد خود، از جمله مقاومت در برابر آب و آفتاب، طول عمر بالا و کاربردهای چندگانه، به یکی از پرطرفدارترین محصولات در بازار تبدیل شده‌اند.
-                </p>
-                <p>
-                    گونی ضد آب، نوعی کیسه یا پوشش محافظ است که از الیاف پلی‌پروپیلن (PP) یا پلی‌اتیلن (PE) تولید می‌شود و به گونه‌ای طراحی شده که در برابر نفوذ آب، رطوبت و گردوغبار مقاوم باشد.
-                </p>
-                <p>
-                    گونی نما راه راه در عرض‌های ۲ متری، ۳ متری، ۴ متری، ۶ متری و ۸ متری تولید و عرضه می‌شوند و وزن آنها به ازای یک متر مربع ۱۸۵ الی ۱۹۰ گرم می‌باشد. این محصولات دارای آنتی UV بوده که کیفیت و مقاومت بسیار بالایی در برابر نور خورشید و عوامل محیطی دارد.
-                </p>
-                <p>
-                    متراژ هر رول بسته به سفارش مشتری قابل تغییر است اما به صورت استاندارد هر رول بین ۵۰ الی ۱۲۰ متر طول می‌باشد که وزن تقریبی آن بین ۴۰ الی ۵۵ کیلوگرم متغیر است.
-                </p>
-
-                <h3>ویژگی‌های کلیدی</h3>
-                <div class="features-grid">
-                    <div class="feature-box">
-                        <h4>مقاومت بالا در برابر آب</h4>
-                        <p>با استفاده از مواد پلیمری با کیفیت و لمینت‌های محافظتی، از نفوذ آب و رطوبت جلوگیری می‌کند.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h4>مقاومت در برابر نور خورشید</h4>
-                        <p>دارای لایه‌های محافظتی خاص در برابر اشعه‌های مضر UV.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h4>طول عمر و دوام بالا</h4>
-                        <p>تولید شده با مواد با کیفیت و ساختار مقاوم که نیاز به تعویض کمتری دارد.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h4>تنوع در اندازه و رنگ</h4>
-                        <p>قابل تهیه در اندازه‌ها و رنگ‌های مختلف متناسب با نیاز مشتریان.</p>
-                    </div>
-                </div>
-
-                <h3>کاربردها</h3>
-                <ul>
-                    <li><strong>کشاورزی:</strong> پوشش محافظ محصولات کشاورزی در برابر آب، رطوبت و نور خورشید</li>
-                    <li><strong>ساختمان‌سازی:</strong> پوشش مواد ساختمانی و محافظت از آنها در برابر عوامل محیطی</li>
-                    <li><strong>حمل و نقل:</strong> پوشش محافظتی ایده‌آل برای کالاهای حساس</li>
-                    <li><strong>انبارداری:</strong> حفاظت از کالاها در انبار</li>
-                    <li><strong>بسته‌بندی:</strong> پوشش بسته‌بندی مقاوم و مطمئن</li>
-                </ul>
-
-                <h3>متریال</h3>
-                <p>
-                    گونی نما راه راه متشکل از یک لایه پارچه بافته شده از جنس پلی‌اتیلن یا پلی‌پروپیلن است که با یک لایه دیگر پلیمر لمینت شده است.
-                </p>
-                <ul>
-                    <li>مقاومت بالا در برابر کشش و پارگی</li>
-                    <li>مقاومت در برابر رطوبت (خاصیت ضدآب)</li>
-                    <li>سبکی با وجود استحکام</li>
-                    <li>قابل بازیافت و دوستدار محیط زیست</li>
-                </ul>
-
-                <div class="highlight">
-                    <strong>برند JAT</strong> با استفاده از مرغوب‌ترین متریال‌ها، این محصول را با کیفیت بالا و دوخت بسیار محکم و بادوام تولید می‌کند. خرید مستقیم از تولیدکننده باعث حذف واسطه‌ها و کاهش چشمگیر قیمت می‌شود.
-                </div>
-            </div>
-
-            <div id="specs" class="tab-content">
-                <h3>مشخصات فنی محصول</h3>
-                <table class="info-table">
-                    <tr>
-                        <th>ویژگی</th>
-                        <th>مقدار</th>
-                    </tr>
-                    <tr>
-                        <td>نام محصول</td>
-                        <td>گونی جامبو راه راه درجه ۱</td>
-                    </tr>
-                    <tr>
-                        <td>برند</td>
-                        <td>JAT</td>
-                    </tr>
-                    <tr>
-                        <td>عرض‌های موجود</td>
-                        <td>۲، ۳، ۴، ۶ و ۸ متر</td>
-                    </tr>
-                    <tr>
-                        <td>وزن متر مربع</td>
-                        <td>۱۸۵ الی ۱۹۰ گرم</td>
-                    </tr>
-                    <tr>
-                        <td>طول استاندارد رول</td>
-                        <td>۵۰ الی ۱۲۰ متر</td>
-                    </tr>
-                    <tr>
-                        <td>وزن تقریبی هر رول</td>
-                        <td>۴۰ الی ۵۵ کیلوگرم</td>
-                    </tr>
-                    <tr>
-                        <td>محافظت UV</td>
-                        <td>دارد (آنتی UV)</td>
-                    </tr>
-                    <tr>
-                        <td>جنس</td>
-                        <td>پلی‌پروپیلن / پلی‌اتیلن + لمینت</td>
-                    </tr>
-                    <tr>
-                        <td>مقاومت در برابر آب</td>
-                        <td>بالا (ضد آب)</td>
-                    </tr>
-                    <tr>
-                        <td>کاربرد اصلی</td>
-                        <td>نمای ساختمان، کشاورزی، بسته‌بندی، سایبان موقت</td>
-                    </tr>
-                </table>
-
-                <h3>انواع گونی نما</h3>
-                <table class="info-table">
-                    <tr>
-                        <th>نوع</th>
-                        <th>توضیحات</th>
-                    </tr>
-                    <tr>
-                        <td>گونی نما آبی</td>
-                        <td>ارزان‌ترین نوع – مناسب پوشش زیر داربست، نمای سوله و حصارکشی</td>
-                    </tr>
-                    <tr>
-                        <td>گونی نما یک‌رو یا دو‌رو لمینت</td>
-                        <td>عرض‌های ۲ تا ۸ متر – مقاوم در برابر آب و آفتاب</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="reviews" class="tab-content">
-                <h3>نظرات مشتریان</h3>
-                <div style="border-bottom:1px solid #eee; padding:20px 0;">
-                    <strong>علی رضایی</strong> <span style="color:#f1c40f;">★★★★★</span>
-                    <p style="margin-top:8px;">کیفیت عالی و ضد آب واقعی. برای نمای ساختمان استفاده کردم و کاملاً راضی هستم.</p>
-                </div>
-                <div style="border-bottom:1px solid #eee; padding:20px 0;">
-                    <strong>محمد حسینی</strong> <span style="color:#f1c40f;">★★★★★</span>
-                    <p style="margin-top:8px;">رول‌ها استاندارد و وزن مناسبی دارند. ارسال سریع بود.</p>
-                </div>
-                <div style="border-bottom:1px solid #eee; padding:20px 0;">
-                    <strong>سارا محمدی</strong> <span style="color:#f1c40f;">★★★★☆</span>
-                    <p style="margin-top:8px;">برای سایبان موقت عالی بود. فقط کاش رنگ‌های بیشتری داشت.</p>
-                </div>
-                <div style="padding:20px 0;">
-                    <strong>رضا کریمی</strong> <span style="color:#f1c40f;">★★★★★</span>
-                    <p style="margin-top:8px;">خرید مستقیم از برند JAT خیلی به‌صرفه‌تر از بازار بود.</p>
-                </div>
-            </div>
+        <div class="options">
+          <label for="width">انتخاب عرض:</label>
+          <select id="width">
+            <option value="2">عرض ۲ متر</option>
+            <option value="3">عرض ۳ متر</option>
+            <option value="4" selected>عرض ۴ متر</option>
+            <option value="6">عرض ۶ متر</option>
+            <option value="8">عرض ۸ متر</option>
+          </select>
         </div>
+
+        <div class="qty-box">
+          <span>تعداد:</span>
+          <button onclick="changeQty(-1)">−</button>
+          <input type="number" id="qty" value="1" min="1">
+          <button onclick="changeQty(1)">+</button>
+        </div>
+
+        <button class="add-to-cart" onclick="addToCart()">
+          🛒 افزودن به سبد خرید
+        </button>
+
+        <div class="guarantees">
+          <span>✓ گارانتی اصالت کالا</span>
+          <span>✓ ضمانت تعویض در صورت معیوب بودن</span>
+          <span>✓ هزینه حمل به عهده خریدار</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>درباره JAT</h4>
-                    <p style="color:#ddd; font-size:0.95rem;">
-                        برند JAT دوخت انواع گونی نما، راه راه، الوان و تارپولین با کیفیت بالا و قیمت مناسب.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>دسترسی سریع</h4>
-                    <ul>
-                        <li><a href="#">صفحه اصلی</a></li>
-                        <li><a href="#shop">فروشگاه</a></li>
-                        <li><a href="#blog">وبلاگ</a></li>
-                        <li><a href="#about">درباره ما</a></li>
-                        <li><a href="#contact">تماس با ما</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>محصولات</h4>
-                    <ul>
-                        <li><a href="#">گونی جامبو راه راه</a></li>
-                        <li><a href="#">پارچه نانو</a></li>
-                        <li><a href="#">چتر</a></li>
-                        <li><a href="#">]چادر برزنتی</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>تماس با ما</h4>
-                    <ul>
-                        <li>📞 09118031241</li>
-                        <li>📧 chadoor7@gmail.com</li>
-                        <li>📍 مازندران آمل، ایران</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                © 20126 برند JAT TENT— تمامی حقوق محفوظ است.
-            </div>
-        </div>
-    </footer>
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab-headers">
+        <button class="active" onclick="openTab(event, 'desc')">توضیحات</button>
+        <button onclick="openTab(event, 'specs')">مشخصات فنی</button>
+        <button onclick="openTab(event, 'reviews')">نظرات (۵)</button>
+      </div>
 
-    <!-- Cart Sidebar -->
-    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>سبد خرید</h3>
-            <button class="close-cart" onclick="toggleCart()">×</button>
+      <div id="desc" class="tab-content active">
+        <h3>گونی جامبو ضد آب و آفتاب چیست؟</h3>
+        <p>
+          گونی نما راه راه لمینت‌دار یا گونی جامبو ضد آب و آفتاب، محصولی کاربردی است که در کشاورزی، ساختمان‌سازی، حمل‌ونقل و انبارداری استفاده می‌شود.
+        </p>
+        <p>
+          این گونی‌ها به دلیل مقاومت بالا در برابر آب و آفتاب، طول عمر خوب و کاربردهای چندگانه، یکی از پرطرفدارترین محصولات بازار هستند.
+        </p>
+        <p>
+          گونی ضد آب از الیاف پلی‌پروپیلن (PP) یا پلی‌اتیلن (PE) تولید می‌شود و در برابر نفوذ آب، رطوبت و گردوغبار مقاوم است.
+        </p>
+        <p>
+          عرض‌های موجود: ۲، ۳، ۴، ۶ و ۸ متر. وزن هر متر مربع حدود ۱۸۵ تا ۱۹۰ گرم. دارای آنتی UV برای مقاومت بالا در برابر نور خورشید.
+        </p>
+        <p>
+          طول استاندارد هر رول بین ۵۰ تا ۱۲۰ متر و وزن تقریبی هر رول ۴۰ تا ۵۵ کیلوگرم است (قابل تغییر بر اساس سفارش).
+        </p>
+
+        <h3>ویژگی‌های کلیدی</h3>
+        <div class="features-grid">
+          <div class="feature-box">
+            <h4>مقاومت بالا در برابر آب</h4>
+            <p>با لمینت محافظتی از نفوذ آب و رطوبت جلوگیری می‌کند.</p>
+          </div>
+          <div class="feature-box">
+            <h4>مقاومت در برابر نور خورشید</h4>
+            <p>دارای لایه محافظتی آنتی UV.</p>
+          </div>
+          <div class="feature-box">
+            <h4>طول عمر و دوام بالا</h4>
+            <p>تولید شده با مواد باکیفیت و ساختار مقاوم.</p>
+          </div>
+          <div class="feature-box">
+            <h4>تنوع در اندازه</h4>
+            <p>عرض‌های ۲ تا ۸ متر متناسب با نیاز شما.</p>
+          </div>
         </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">سبد خرید شما خالی است</div>
+
+        <h3>کاربردها</h3>
+        <ul>
+          <li><strong>کشاورزی:</strong> پوشش محافظ محصولات در برابر آب و آفتاب</li>
+          <li><strong>ساختمان‌سازی:</strong> گونی نمای ساختمان و پوشش مصالح</li>
+          <li><strong>حمل و نقل:</strong> پوشش محافظ کالاهای حساس</li>
+          <li><strong>انبارداری و بسته‌بندی:</strong> حفاظت مطمئن از کالا</li>
+        </ul>
+
+        <div class="highlight">
+          <strong>برند JAT (چادردوزی جزیره)</strong> این محصول را با متریال مرغوب و دوخت محکم تولید می‌کند. خرید مستقیم از تولیدکننده = قیمت بهتر و کیفیت تضمینی.
         </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>جمع کل:</span>
-                <span id="cartTotal">۰ ریال</span>
-            </div>
-            <button class="checkout-btn" onclick="checkout()">ادامه فرآیند خرید</button>
+      </div>
+
+      <div id="specs" class="tab-content">
+        <h3>مشخصات فنی محصول</h3>
+        <table class="info-table">
+          <tr><th>ویژگی</th><th>مقدار</th></tr>
+          <tr><td>نام محصول</td><td>گونی جامبو راه راه درجه ۱</td></tr>
+          <tr><td>برند</td><td>JAT (چادردوزی جزیره)</td></tr>
+          <tr><td>عرض‌های موجود</td><td>۲، ۳، ۴، ۶ و ۸ متر</td></tr>
+          <tr><td>وزن متر مربع</td><td>۱۸۵ تا ۱۹۰ گرم</td></tr>
+          <tr><td>طول استاندارد رول</td><td>۵۰ تا ۱۲۰ متر</td></tr>
+          <tr><td>وزن تقریبی هر رول</td><td>۴۰ تا ۵۵ کیلوگرم</td></tr>
+          <tr><td>محافظت UV</td><td>دارد (آنتی UV)</td></tr>
+          <tr><td>جنس</td><td>پلی‌پروپیلن / پلی‌اتیلن + لمینت</td></tr>
+          <tr><td>مقاومت در برابر آب</td><td>بالا (ضد آب)</td></tr>
+          <tr><td>کاربرد اصلی</td><td>نمای ساختمان، کشاورزی، بسته‌بندی، سایبان موقت</td></tr>
+        </table>
+      </div>
+
+      <div id="reviews" class="tab-content">
+        <h3>نظرات مشتریان</h3>
+        <div style="border-bottom:1px solid #eee; padding:20px 0;">
+          <strong>علی رضایی</strong> <span style="color:#f4c430;">★★★★★</span>
+          <p style="margin-top:8px;">کیفیت عالی و ضد آب واقعی. برای نمای ساختمان استفاده کردم و کاملاً راضی هستم.</p>
         </div>
+        <div style="border-bottom:1px solid #eee; padding:20px 0;">
+          <strong>محمد حسینی</strong> <span style="color:#f4c430;">★★★★★</span>
+          <p style="margin-top:8px;">رول‌ها استاندارد و وزن مناسبی دارند. ارسال سریع بود.</p>
+        </div>
+        <div style="border-bottom:1px solid #eee; padding:20px 0;">
+          <strong>سارا محمدی</strong> <span style="color:#f4c430;">★★★★☆</span>
+          <p style="margin-top:8px;">برای سایبان موقت عالی بود. فقط کاش رنگ‌های بیشتری داشت.</p>
+        </div>
+        <div style="padding:20px 0;">
+          <strong>رضا کریمی</strong> <span style="color:#f4c430;">★★★★★</span>
+          <p style="margin-top:8px;">خرید مستقیم از برند JAT خیلی به‌صرفه‌تر از بازار بود.</p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Toast -->
-    <div class="toast" id="toast">محصول به سبد خرید اضافه شد ✓</div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>درباره چادردوزی جزیره</h4>
+        <p style="color:#cde0db; font-size:0.95rem;">
+          تولید و تعمیر چادر مسافرتی، برزنتی، گونی نما و تجهیزات کمپینگ با کیفیت بالا در آمل.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="https://chadooor.ir/">صفحه اصلی</a></li>
+          <li><a href="https://chadooor.ir/shop.html">فروشگاه</a></li>
+          <li><a href="https://chadooor.ir/services.html">خدمات</a></li>
+          <li><a href="https://chadooor.ir/about.html">درباره ما</a></li>
+          <li><a href="https://chadooor.ir/contact.html">ثبت سفارش</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>محصولات</h4>
+        <ul>
+          <li><a href="https://chadooor.ir/shop.html">چادر مسافرتی</a></li>
+          <li><a href="https://chadooor.ir/shop.html">چادر برزنتی</a></li>
+          <li><a href="#">گونی جامبو راه راه</a></li>
+          <li><a href="https://chadooor.ir/shop.html">پشه‌بند و تجهیزات</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تماس با ما</h4>
+        <ul>
+          <li><a href="tel:09118031241">📞 ۰۹۱۱۸۰۳۱۲۴۱</a></li>
+          <li><a href="mailto:chadoor7@gmail.com">📧 chadoor7@gmail.com</a></li>
+          <li>📍 مازندران، آمل</li>
+          <li><a href="https://wa.me/989118031241" target="_blank">واتساپ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © ۲۰۲۶ چادردوزی جزیره J.A.T — تمامی حقوق محفوظ است.
+    </div>
+  </footer>
 
-    <script>
-        let cart = [];
-        const productName = "گونی جامبو راه راه ضد آب و آفتاب";
-        const basePrice = 5250000;
+  <!-- Cart Sidebar -->
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>سبد خرید</h3>
+      <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">سبد خرید شما خالی است</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>جمع کل:</span>
+        <span id="cartTotal">۰ ریال</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">ادامه فرآیند خرید</button>
+    </div>
+  </div>
 
-        function changeQty(delta) {
-            const input = document.getElementById('qty');
-            let val = parseInt(input.value) + delta;
-            if (val < 1) val = 1;
-            input.value = val;
-        }
+  <!-- Toast -->
+  <div class="toast" id="toast">محصول به سبد خرید اضافه شد ✓</div>
 
-        function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('open');
-            document.getElementById('overlay').classList.toggle('show');
-        }
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/989118031241?text=سلام، درباره گونی جامبو راه راه سوال دارم" 
+     class="floating-whatsapp" target="_blank" rel="noopener">
+    💬 مشاوره واتساپ
+  </a>
 
-        function addToCart() {
-            const width = document.getElementById('width').value;
-            const qty = parseInt(document.getElementById('qty').value);
-            const price = basePrice;
+  <script>
+    let cart = [];
+    const productName = "گونی جامبو راه راه ضد آب و آفتاب";
+    const basePrice = 5250000;
 
-            const existing = cart.find(item => item.width === width);
-            if (existing) {
-                existing.qty += qty;
-            } else {
-                cart.push({
-                    id: Date.now(),
-                    name: productName,
-                    width: width,
-                    qty: qty,
-                    price: price
-                });
-            }
-            updateCartUI();
-            showToast();
-        }
+    function changeQty(delta) {
+      const input = document.getElementById('qty');
+      let val = parseInt(input.value) + delta;
+      if (val < 1) val = 1;
+      input.value = val;
+    }
 
-        function updateCartUI() {
-            const container = document.getElementById('cartItems');
-            const countEl = document.getElementById('cartCount');
-            const totalEl = document.getElementById('cartTotal');
+    function toggleCart() {
+      document.getElementById('cartSidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
 
-            if (cart.length === 0) {
-                container.innerHTML = '<div class="cart-empty">سبد خرید شما خالی است</div>';
-                countEl.textContent = '0';
-                totalEl.textContent = '۰ ریال';
-                return;
-            }
+    function addToCart() {
+      const width = document.getElementById('width').value;
+      const qty = parseInt(document.getElementById('qty').value);
+      const existing = cart.find(item => item.width === width);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ id: Date.now(), name: productName, width, qty, price: basePrice });
+      }
+      updateCartUI();
+      showToast();
+    }
 
-            let total = 0;
-            let count = 0;
-            let html = '';
+    function updateCartUI() {
+      const container = document.getElementById('cartItems');
+      const countEl = document.getElementById('cartCount');
+      const totalEl = document.getElementById('cartTotal');
 
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.qty;
-                total += itemTotal;
-                count += item.qty;
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="cart-empty">سبد خرید شما خالی است</div>';
+        countEl.textContent = '0';
+        totalEl.textContent = '۰ ریال';
+        return;
+      }
 
-                html += `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <h4>${item.name}</h4>
-                            <div style="font-size:0.85rem; color:#666;">عرض ${item.width} متر</div>
-                            <div class="item-price">${itemTotal.toLocaleString('fa-IR')} ریال</div>
-                            <div class="cart-item-actions">
-                                <button onclick="changeCartQty(${index}, -1)">−</button>
-                                <span>${item.qty}</span>
-                                <button onclick="changeCartQty(${index}, 1)">+</button>
-                                <button class="remove-item" onclick="removeItem(${index})">حذف</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
+      let total = 0, count = 0, html = '';
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        count += item.qty;
+        html += `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <div style="font-size:0.85rem; color:#666;">عرض ${item.width} متر</div>
+              <div class="item-price">${itemTotal.toLocaleString('fa-IR')} ریال</div>
+              <div class="cart-item-actions">
+                <button onclick="changeCartQty(${index}, -1)">−</button>
+                <span>${item.qty}</span>
+                <button onclick="changeCartQty(${index}, 1)">+</button>
+                <button class="remove-item" onclick="removeItem(${index})">حذف</button>
+              </div>
+            </div>
+          </div>`;
+      });
+      container.innerHTML = html;
+      countEl.textContent = count;
+      totalEl.textContent = total.toLocaleString('fa-IR') + ' ریال';
+    }
 
-            container.innerHTML = html;
-            countEl.textContent = count;
-            totalEl.textContent = total.toLocaleString('fa-IR') + ' ریال';
-        }
+    function changeCartQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty < 1) cart.splice(index, 1);
+      updateCartUI();
+    }
 
-        function changeCartQty(index, delta) {
-            cart[index].qty += delta;
-            if (cart[index].qty < 1) {
-                cart.splice(index, 1);
-            }
-            updateCartUI();
-        }
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
 
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
+    function checkout() {
+      if (cart.length === 0) {
+        alert('سبد خرید خالی است!');
+        return;
+      }
+      alert('در حال انتقال به صفحه پرداخت...\n(نسخه نمایشی)');
+    }
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert('سبد خرید خالی است!');
-                return;
-            }
-            alert('در حال انتقال به صفحه پرداخت...\n(این یک نسخه نمایشی است)');
-        }
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
 
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2500);
-        }
-
-        function openTab(evt, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-headers button').forEach(el => el.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
-    </script>
+    function openTab(evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-headers button').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
 </html>
