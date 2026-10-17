@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود و عضویت | چادردوزی جزیره J.A.T</title>
+  <meta name="description" content="ورود به حساب کاربری یا عضویت در سایت چادردوزی جزیره J.A.T">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Estedad', Tahoma, sans-serif;
+      line-height: 1.8;
+      color: #1a3c34;
+      background: #f7f9f8;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Top Bar */
+    .top-bar {
+      background: #1a3c34;
+      color: #fff;
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar a { color: #fff; margin-left: 18px; }
+    .top-bar a:hover { color: #f4c430; }
+
+    /* Header */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #1a3c34;
+    }
+    .logo img { width: 42px; height: 42px; border-radius: 8px; }
+    .logo .red { color: #e74c3c; }
+    .main-nav ul { display: flex; list-style: none; gap: 22px; }
+    .main-nav a { font-weight: 500; font-size: 0.95rem; color: #333; }
+    .main-nav a:hover { color: #155e55; }
+    @media (max-width: 768px) {
+      .main-nav ul { display: none; }
+      .top-bar .container { flex-direction: column; gap: 6px; text-align: center; }
+    }
+
+    /* Auth Box */
+    .auth-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      min-height: calc(100vh - 200px);
+    }
+    .auth-box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 440px;
+      overflow: hidden;
+    }
+    .auth-tabs {
+      display: flex;
+      border-bottom: 2px solid #eee;
+    }
+    .auth-tabs button {
+      flex: 1;
+      padding: 16px;
+      border: none;
+      background: none;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #888;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .auth-tabs button.active {
+      color: #155e55;
+      border-bottom: 3px solid #155e55;
+    }
+    .auth-content {
+      padding: 30px 28px 35px;
+    }
+    .auth-content h2 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: #1a3c34;
+    }
+    .auth-content .subtitle {
+      color: #777;
+      font-size: 0.92rem;
+      margin-bottom: 25px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d0d8d5;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.25s;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #155e55;
+      box-shadow: 0 0 0 3px rgba(21,94,85,0.12);
+    }
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+    .form-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .form-row a { color: #155e55; font-weight: 500; }
+    .form-row a:hover { text-decoration: underline; }
+    .btn-submit {
+      width: 100%;
+      background: #155e55;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.25s;
+    }
+    .btn-submit:hover { background: #0f4a43; }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0;
+      color: #999;
+      font-size: 0.88rem;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e0e5e3;
+    }
+    .social-login {
+      display: flex;
+      gap: 12px;
+    }
+    .social-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid #d0d8d5;
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.92rem;
+      transition: all 0.25s;
+    }
+    .social-btn:hover {
+      border-color: #155e55;
+      background: #f0f7f5;
+    }
+    .form-panel { display: none; }
+    .form-panel.active { display: block; }
+    .message {
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+      display: none;
+    }
+    .message.success {
+      background: #e8f5f1;
+      color: #155e55;
+      border: 1px solid #b8e0d4;
+    }
+    .message.error {
+      background: #fef2f2;
+      color: #c0392b;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #1a3c34;
+      color: #e8f0ee;
+      padding: 40px 24px 25px;
+      margin-top: auto;
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.88rem;
+      color: #8fb5ad;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div>
+        <a href="https://chadooor.ir/contact.html">تماس با ما</a>
+        <a href="https://chadooor.ir/about.html">درباره ما</a>
+      </div>
+      <div>ارسال رایگان برای سفارش‌های بالای ۱۰۰ میلیون ریال</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-main">
+      <a href="https://chadooor.ir/" class="logo">
+        <img src="favicon.svg" alt="لوگو">
+        <span>JAT <span class="red">TENT</span></span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="https://chadooor.ir/">صفحه اصلی</a></li>
+          <li><a href="https://chadooor.ir/shop.html">فروشگاه</a></li>
+          <li><a href="https://chadooor.ir/services.html">خدمات</a></li>
+          <li><a href="https://chadooor.ir/contact.html">تماس با ما</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Auth Form -->
+  <div class="auth-wrapper">
+    <div class="auth-box">
+      <div class="auth-tabs">
+        <button class="active" onclick="switchTab('login')">ورود</button>
+        <button onclick="switchTab('register')">عضویت</button>
+      </div>
+
+      <div class="auth-content">
+        <!-- پیام‌ها -->
+        <div id="message" class="message"></div>
+
+        <!-- فرم ورود -->
+        <div id="loginPanel" class="form-panel active">
+          <h2>خوش آمدید</h2>
+          <p class="subtitle">وارد حساب کاربری خود شوید</p>
+
+          <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label for="loginPhone">شماره موبایل یا ایمیل</label>
+              <input type="text" id="loginPhone" placeholder="مثال: 09121234567" required>
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">رمز عبور</label>
+              <input type="password" id="loginPassword" placeholder="رمز عبور خود را وارد کنید" required>
+            </div>
+            <div class="form-row">
+              <label>
+                <input type="checkbox"> مرا به خاطر بسپار
+              </label>
+              <a href="#" onclick="alert('در نسخه بعدی فعال می‌شود'); return false;">فراموشی رمز؟</a>
+            </div>
+            <button type="submit" class="btn-submit">ورود به حساب</button>
+          </form>
+
+          <div class="divider">یا</div>
+          <div class="social-login">
+            <button class="social-btn" onclick="alert('ورود با گوگل به‌زودی...')">
+              🔵 گوگل
+            </button>
+            <button class="social-btn" onclick="window.open('https://wa.me/989118031241','_blank')">
+              💬 واتساپ
+            </button>
+          </div>
+        </div>
+
+        <!-- فرم عضویت -->
+        <div id="registerPanel" class="form-panel">
+          <h2>عضویت در سایت</h2>
+          <p class="subtitle">حساب کاربری جدید بسازید</p>
+
+          <form onsubmit="handleRegister(event)">
+            <div class="form-group">
+              <label for="regName">نام و نام خانوادگی</label>
+              <input type="text" id="regName" placeholder="نام کامل خود را وارد کنید" required>
+            </div>
+            <div class="form-group">
+              <label for="regPhone">شماره موبایل</label>
+              <input type="tel" id="regPhone" placeholder="09121234567" required>
+            </div>
+            <div class="form-group">
+              <label for="regEmail">ایمیل (اختیاری)</label>
+              <input type="email" id="regEmail" placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+              <label for="regPassword">رمز عبور</label>
+              <input type="password" id="regPassword" placeholder="حداقل ۶ کاراکتر" required minlength="6">
+            </div>
+            <div class="form-group">
+              <label for="regPassword2">تکرار رمز عبور</label>
+              <input type="password" id="regPassword2" placeholder="رمز را دوباره وارد کنید" required>
+            </div>
+            <div class="form-row">
+              <label>
+                <input type="checkbox" required> قوانین و مقررات را می‌پذیرم
+              </label>
+            </div>
+            <button type="submit" class="btn-submit">ثبت‌نام</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      © ۲۰۲۶ چادردوزی جزیره J.A.T — تمامی حقوق محفوظ است.
+    </div>
+  </footer>
+
+  <script>
+    // جابه‌جایی بین ورود و عضویت
+    function switchTab(tab) {
+      document.querySelectorAll('.auth-tabs button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.form-panel').forEach(panel => panel.classList.remove('active'));
+      document.getElementById('message').style.display = 'none';
+
+      if (tab === 'login') {
+        document.querySelectorAll('.auth-tabs button')[0].classList.add('active');
+        document.getElementById('loginPanel').classList.add('active');
+      } else {
+        document.querySelectorAll('.auth-tabs button')[1].classList.add('active');
+        document.getElementById('registerPanel').classList.add('active');
+      }
+    }
+
+    // نمایش پیام
+    function showMessage(text, type) {
+      const msg = document.getElementById('message');
+      msg.textContent = text;
+      msg.className = 'message ' + type;
+      msg.style.display = 'block';
+    }
+
+    // ورود (نسخه نمایشی)
+    function handleLogin(e) {
+      e.preventDefault();
+      const phone = document.getElementById('loginPhone').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      if (phone.length < 10) {
+        showMessage('شماره موبایل یا ایمیل معتبر نیست', 'error');
+        return;
+      }
+      if (password.length < 4) {
+        showMessage('رمز عبور کوتاه است', 'error');
+        return;
+      }
+
+      // نسخه نمایشی – در واقعیت باید به سرور ارسال شود
+      showMessage('ورود موفقیت‌آمیز بود! در حال انتقال...', 'success');
+      setTimeout(() => {
+        window.location.href = 'https://chadooor.ir/';
+      }, 1500);
+    }
+
+    // عضویت (نسخه نمایشی)
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const password2 = document.getElementById('regPassword2').value;
+
+      if (name.length < 3) {
+        showMessage('نام را کامل وارد کنید', 'error');
+        return;
+      }
+      if (!/^09\d{9}$/.test(phone)) {
+        showMessage('شماره موبایل باید با ۰۹ شروع شود و ۱۱ رقم باشد', 'error');
+        return;
+      }
+      if (password.length < 6) {
+        showMessage('رمز عبور باید حداقل ۶ کاراکتر باشد', 'error');
+        return;
+      }
+      if (password !== password2) {
+        showMessage('رمز عبور و تکرار آن یکسان نیست', 'error');
+        return;
+      }
+
+      // نسخه نمایشی
+      showMessage('ثبت‌نام با موفقیت انجام شد! حالا می‌توانید وارد شوید.', 'success');
+      setTimeout(() => {
+        switchTab('login');
+        document.getElementById('loginPhone').value = phone;
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
