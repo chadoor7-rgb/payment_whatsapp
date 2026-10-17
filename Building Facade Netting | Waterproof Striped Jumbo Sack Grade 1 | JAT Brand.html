@@ -6,6 +6,7 @@
   <title>گونی جامبو راه راه درجه ۱ | برند JAT | چادردوزی جزیره</title>
   <meta name="description" content="خرید گونی جامبو راه راه ضد آب و آفتاب درجه ۱ برند JAT. عرض ۲ تا ۸ متر، آنتی UV، مناسب نمای ساختمان، کشاورزی و بسته‌بندی. تولید مستقیم در آمل.">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -17,35 +18,77 @@
     a { text-decoration: none; color: inherit; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-    /* Header */
-    .site-header {
+    /* ========== TOP BAR ========== */
+    .top-bar {
+      background: #1a3c34;
+      color: #fff;
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    .top-bar .container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 14px 24px;
+      align-items: center;
+    }
+    .top-bar a {
+      color: #fff;
+      margin-left: 18px;
+      transition: color 0.2s;
+    }
+    .top-bar a:hover { color: #f4c430; }
+
+    /* ========== HEADER ========== */
+    .site-header {
       background: #fff;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .brand {
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 700;
-      font-size: 1.15rem;
+      font-size: 1.4rem;
+      font-weight: 800;
       color: #1a3c34;
     }
-    .main-nav { display: flex; gap: 22px; }
+    .logo img {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+    }
+    .logo span.red { color: #e74c3c; }
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
     .main-nav a {
       font-weight: 500;
       font-size: 0.95rem;
       color: #333;
       transition: color 0.2s;
     }
-    .main-nav a:hover, .main-nav a.active { color: #155e55; }
-    .header-actions { display: flex; align-items: center; gap: 16px; }
+    .main-nav a:hover,
+    .main-nav a.active { color: #155e55; }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .login-btn {
+      color: #1a3c34;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .login-btn:hover { color: #155e55; }
     .cart-btn {
       position: relative;
       background: #155e55;
@@ -58,6 +101,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      font-family: inherit;
     }
     .cart-btn:hover { background: #0f4a43; }
     .cart-count {
@@ -74,22 +118,6 @@
       top: -6px;
       left: -6px;
     }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s;
-    }
-    .btn-primary { background: #155e55; color: #fff; }
-    .btn-primary:hover { background: #0f4a43; }
-    .btn-sm { padding: 8px 16px; font-size: 0.88rem; }
 
     /* Breadcrumb */
     .breadcrumb {
@@ -104,7 +132,7 @@
     .breadcrumb a { color: #155e55; }
     .breadcrumb a:hover { text-decoration: underline; }
 
-    /* Product Section */
+    /* ========== PRODUCT SECTION ========== */
     .product-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -117,33 +145,66 @@
     }
     @media (max-width: 768px) {
       .product-section { grid-template-columns: 1fr; }
-      .main-nav { display: none; }
+      .main-nav ul { display: none; }
+      .top-bar .container { flex-direction: column; gap: 6px; text-align: center; }
     }
+
+    /* گالری ۴ عکس */
     .product-gallery {
       background: #eef5f3;
       border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 360px;
+      padding: 15px;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
     .product-gallery .badge {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 25px;
+      right: 25px;
       background: #e74c3c;
       color: #fff;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 600;
+      z-index: 2;
     }
-    .product-gallery .placeholder {
-      font-size: 1.4rem;
-      color: #8fb5ad;
-      text-align: center;
+    .main-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      background: #dfece8;
     }
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .thumb {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.25s;
+      opacity: 0.7;
+    }
+    .thumb:hover,
+    .thumb.active {
+      border-color: #155e55;
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .main-img { height: 260px; }
+      .thumb { width: 62px; height: 62px; }
+    }
+
     .product-info h1 {
       font-size: 1.55rem;
       color: #1a3c34;
@@ -218,6 +279,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      font-family: inherit;
     }
     .add-to-cart:hover { background: #0f4a43; }
     .guarantees {
@@ -404,6 +466,7 @@
       font-size: 1.05rem;
       font-weight: 700;
       cursor: pointer;
+      font-family: inherit;
     }
     .checkout-btn:hover { background: #0f4a43; }
     .overlay {
@@ -433,6 +496,7 @@
       margin-right: auto;
     }
     .footer-col h4 { margin-bottom: 14px; font-size: 1.1rem; }
+    .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 8px; }
     .footer-col a { color: #cde0db; transition: color 0.2s; }
     .footer-col a:hover { color: #fff; }
@@ -464,7 +528,7 @@
     }
     .toast.show { opacity: 1; }
 
-    /* WhatsApp floating */
+    /* Floating WhatsApp */
     .floating-whatsapp {
       position: fixed;
       bottom: 25px;
@@ -486,25 +550,48 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ========== TOP BAR ========== -->
+  <div class="top-bar">
+    <div class="container">
+      <div>
+        <a href="https://chadooor.ir/contact.html">تماس با ما</a>
+        <a href="https://chadooor.ir/about.html">درباره ما</a>
+      </div>
+      <div>
+        ارسال رایگان برای سفارش‌های بالای ۱۰۰ میلیون ریال
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
   <header class="site-header">
-    <a href="https://chadooor.ir/" class="brand">
-      <span>چادردوزی جزیره J.A.T</span>
-    </a>
-    <nav class="main-nav">
-      <a href="https://chadooor.ir/">صفحه اصلی</a>
-      <a href="https://chadooor.ir/shop.html">فروشگاه</a>
-      <a href="https://chadooor.ir/services.html">خدمات</a>
-      <a href="https://chadooor.ir/gallery.html">گالری</a>
-      <a href="https://chadooor.ir/about.html">درباره ما</a>
-      <a href="https://chadooor.ir/contact.html">ثبت سفارش</a>
-    </nav>
-    <div class="header-actions">
-      <button class="cart-btn" onclick="toggleCart()">
-        🛒 سبد خرید
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-      <a href="https://chadooor.ir/contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+    <div class="container header-main">
+      <!-- لوگو -->
+      <a href="https://chadooor.ir/" class="logo">
+        <img src="favicon.svg" alt="لوگو JAT TENT">
+        <span>JAT <span class="red">TENT</span></span>
+      </a>
+
+      <!-- منو -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="https://chadooor.ir/">صفحه اصلی</a></li>
+          <li><a href="https://chadooor.ir/shop.html">فروشگاه</a></li>
+          <li><a href="https://chadooor.ir/services.html">خدمات</a></li>
+          <li><a href="https://chadooor.ir/gallery.html">گالری</a></li>
+          <li><a href="https://chadooor.ir/about.html">درباره ما</a></li>
+          <li><a href="https://chadooor.ir/contact.html">تماس با ما</a></li>
+        </ul>
+      </nav>
+
+      <!-- ورود + سبد خرید -->
+      <div class="header-actions">
+        <a href="#login" class="login-btn">ورود / عضویت</a>
+        <button class="cart-btn" onclick="toggleCart()">
+          🛒 سبد خرید
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -518,11 +605,20 @@
 
     <!-- Product Section -->
     <div class="product-section">
+      <!-- گالری ۴ عکس -->
       <div class="product-gallery">
         <span class="badge">درجه ۱</span>
-        <div class="placeholder">
-          📦<br>تصویر گونی جامبو راه راه<br>
-          <small style="font-size:0.85rem;">(goni.webp را جایگزین کنید)</small>
+        <img id="mainImage" src="goni-1.webp" alt="گونی جامبو راه راه درجه ۱" class="main-img"
+             onerror="this.src='https://via.placeholder.com/500x340?text=گونی+جامبو'">
+        <div class="thumbnails">
+          <img src="goni1.webp" alt="عکس ۱" class="thumb active" onclick="changeImage(this)"
+               onerror="this.src='https://via.placeholder.com/72?text=1'">
+          <img src="goni2.webp" alt="عکس ۲" class="thumb" onclick="changeImage(this)"
+               onerror="this.src='https://via.placeholder.com/72?text=2'">
+          <img src="goni3.webp" alt="عکس ۳" class="thumb" onclick="changeImage(this)"
+               onerror="this.src='https://via.placeholder.com/72?text=3'">
+          <img src="goni4.webp" alt="عکس ۴" class="thumb" onclick="changeImage(this)"
+               onerror="this.src='https://via.placeholder.com/72?text=4'">
         </div>
       </div>
 
@@ -682,7 +778,7 @@
           <li><a href="https://chadooor.ir/shop.html">فروشگاه</a></li>
           <li><a href="https://chadooor.ir/services.html">خدمات</a></li>
           <li><a href="https://chadooor.ir/about.html">درباره ما</a></li>
-          <li><a href="https://chadooor.ir/contact.html">ثبت سفارش</a></li>
+          <li><a href="https://chadooor.ir/contact.html">تماس با ما</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -741,6 +837,13 @@
     let cart = [];
     const productName = "گونی جامبو راه راه ضد آب و آفتاب";
     const basePrice = 5250000;
+
+    // تغییر عکس گالری
+    function changeImage(thumb) {
+      document.getElementById('mainImage').src = thumb.src;
+      document.querySelectorAll('.thumb').forEach(img => img.classList.remove('active'));
+      thumb.classList.add('active');
+    }
 
     function changeQty(delta) {
       const input = document.getElementById('qty');
