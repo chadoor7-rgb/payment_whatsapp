@@ -63,25 +63,44 @@
     }
   }
 
-  /* ---------- Mobile menu ---------- */
   function initMenu() {
-    const menuButton = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
-    if (!menuButton || !nav) return;
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
+  if (!menuButton || !nav) return;
 
-    menuButton.addEventListener("click", () => {
-      const opened = nav.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", opened ? "true" : "false");
-    });
+  const closeBtn = nav.querySelector(".menu-close");
 
-    // یک listener با delegation به‌جای یکی برای هر لینک
-    nav.addEventListener("click", (e) => {
-      if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-      }
-    });
+  function openMenu() {
+    nav.classList.add("open");
+    menuButton.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";   // جلوگیری از اسکرول صفحه
   }
+
+  function closeMenu() {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  menuButton.addEventListener("click", () => {
+    if (nav.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeMenu);
+  }
+
+  // بستن با کلیک روی لینک‌ها
+  nav.addEventListener("click", (e) => {
+    if (e.target.closest("a")) {
+      closeMenu();
+    }
+  });
+}
 
   /* ---------- Contact form → WhatsApp ---------- */
   function initContactForms() {
