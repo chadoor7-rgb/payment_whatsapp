@@ -1507,3 +1507,59 @@ button, input, textarea {
 .social-links a[href*="t.me"]:hover svg {
   fill: white;
 }
+/* جلوگیری از جابه‌جایی چپ و راست در موبایل */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.site-header {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* محدود کردن عرض جستجو در موبایل */
+@media (max-width: 768px) {
+  .site-search {
+    max-width: 140px !important;
+    flex-shrink: 1;
+  }
+
+  .site-search .gsc-control-cse,
+  .site-search .gsc-search-box,
+  .site-search table {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .brand span {
+    font-size: 14px;          /* متن لوگو کوچک‌تر شود */
+    max-width: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .brand {
+    max-width: 150px;
+    flex-shrink: 1;
+  }
+
+  .site-header {
+    padding: 0 12px;
+    gap: 8px;
+  }
+}
+
+/* برای گوشی‌های خیلی کوچک */
+@media (max-width: 400px) {
+  .site-search {
+    max-width: 110px !important;
+  }
+
+  .brand span {
+    max-width: 90px;
+    font-size: 13px;
+  }
+}
