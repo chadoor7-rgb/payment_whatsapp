@@ -63,13 +63,12 @@
     }
   }
 
-  /* ---------- Mobile menu (side drawer) ---------- */
+   /* ---------- Mobile menu (side drawer) ---------- */
   function initMenu() {
     const menuButton = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".main-nav");
     if (!menuButton || !nav) return;
 
-    // لایه تیره (اگر در HTML نباشد، ساخته می‌شود)
     let overlay = document.getElementById("navOverlay");
     if (!overlay) {
       overlay = document.createElement("button");
@@ -101,17 +100,27 @@
 
     overlay.addEventListener("click", closeMenu);
 
+    // کلیک روی لینک‌ها → بستن منو + رفتن به صفحه
     nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) closeMenu();
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
+
+      e.preventDefault();
+      closeMenu();
+
+      // کمی تأخیر تا منو بسته شود، بعد برو به صفحه
+      setTimeout(function () {
+        window.location.href = href;
+      }, 80);
     });
 
-    // بستن با کلید Escape
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("open")) closeMenu();
     });
   }
-
-
   /* ---------- Contact form → WhatsApp ---------- */
   function initContactForms() {
     const forms = document.querySelectorAll(".contact-form");
