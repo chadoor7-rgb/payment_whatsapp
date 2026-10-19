@@ -1,743 +1,514 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>پارچه برزنت | خرید و سفارش برزنت | چادردوزی جزیره J.A.T</title>
-
-  <meta name="description" content="معرفی پارچه برزنت برای تولید چادر برزنتی، سایبان و پوشش‌های محافظ. برای استعلام مشخصات فنی، ابعاد، متراژ و قیمت با چادردوزی جزیره J.A.T تماس بگیرید.">
-
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#155e55">
-
-  <link rel="canonical" href="https://chadooor.ir/parcheh-berenzt.html">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --green: #155e55;
-      --dark-green: #0f4c45;
-      --lime: #d5f263;
-      --text: #24312f;
-      --muted: #687572;
-      --bg: #f5f8f6;
-      --white: #fff;
-      --border: #e0e8e4;
-      --radius: 18px;
-      --shadow: 0 8px 30px rgba(15, 76, 69, .07);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Estedad", Tahoma, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 2;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin-inline: auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, .97);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-
-    .header-inner {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--green);
-      font-weight: 800;
-      font-size: 17px;
-    }
-
-    .brand img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-      font-size: 14px;
-      color: #44534f;
-    }
-
-    .nav a:hover {
-      color: var(--green);
-    }
-
-    .breadcrumb {
-      padding: 18px 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .breadcrumb span {
-      margin-inline: 5px;
-      color: #9aa7a2;
-    }
-
-    .hero {
-      padding: 36px 0 55px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      align-items: start;
-    }
-
-    .product-image,
-    .product-info,
-    .content-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .product-image {
-      overflow: hidden;
-      min-height: 340px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #edf3ef;
-    }
-
-    .product-image img {
-      width: 100%;
-      min-height: 340px;
-      object-fit: cover;
-    }
-
-    .image-placeholder {
-      text-align: center;
-      padding: 45px 25px;
-      color: var(--green);
-    }
-
-    .image-placeholder svg {
-      width: 88px;
-      height: 88px;
-      margin-bottom: 12px;
-    }
-
-    .product-info {
-      padding: 30px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: #edf6e8;
-      color: var(--green);
-      padding: 4px 12px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: clamp(25px, 3vw, 35px);
-      line-height: 1.7;
-      margin: 14px 0;
-      color: var(--dark-green);
-    }
-
-    h2 {
-      font-size: 23px;
-      line-height: 1.8;
-      color: var(--dark-green);
-      margin-top: 0;
-    }
-
-    h3 {
-      font-size: 17px;
-      color: var(--green);
-    }
-
-    .intro {
-      color: #53625d;
-      font-size: 15px;
-    }
-
-    .notice {
-      background: #f5f8e9;
-      border-right: 4px solid #a6bd45;
-      padding: 13px 16px;
-      border-radius: 9px;
-      margin: 20px 0;
-      font-size: 13px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 22px 0;
-    }
-
-    .feature {
-      background: #f6f9f7;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 13px;
-    }
-
-    .feature strong {
-      display: block;
-      color: var(--green);
-      margin-bottom: 3px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 10px 22px;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--dark-green);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--green);
-      color: var(--green);
-      background: white;
-    }
-
-    .btn-secondary:hover {
-      background: #eff6f2;
-    }
-
-    .content-section {
-      padding: 0 0 30px;
-    }
-
-    .content-card {
-      padding: 30px;
-      margin-bottom: 24px;
-    }
-
-    .content-card p {
-      color: #53615d;
-      margin: 10px 0 16px;
-    }
-
-    .check-list {
-      padding-right: 22px;
-      margin: 10px 0;
-    }
-
-    .check-list li {
-      padding: 5px 0;
-    }
-
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-    }
-
-    .spec-table th,
-    .spec-table td {
-      text-align: right;
-      padding: 13px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    .spec-table th {
-      width: 35%;
-      color: var(--green);
-      background: #f6f9f7;
-    }
-
-    .faq-item {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-item:last-child {
-      border-bottom: 0;
-    }
-
-    .faq-item h3 {
-      margin: 0 0 7px;
-    }
-
-    .faq-item p {
-      margin: 0;
-    }
-
-    .cta {
-      text-align: center;
-      padding: 35px 22px;
-      background: var(--dark-green);
-      color: white;
-      border-radius: var(--radius);
-      margin-bottom: 45px;
-    }
-
-    .cta h2 {
-      color: white;
-      margin-bottom: 8px;
-    }
-
-    .cta p {
-      color: #e1efeb;
-    }
-
-    .cta .btn {
-      background: var(--lime);
-      color: #20352f;
-      margin-top: 10px;
-    }
-
-    .site-footer {
-      background: #103d37;
-      color: #e5efeb;
-      padding: 30px 0;
-      font-size: 13px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    @media (max-width: 800px) {
-      .header-inner {
-        padding: 12px 0;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav {
-        gap: 12px;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .product-image,
-      .product-image img {
-        min-height: 260px;
-      }
-
-      .product-info,
-      .content-card {
-        padding: 22px;
-      }
-
-      .hero {
-        padding-top: 18px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .brand {
-        font-size: 15px;
-      }
-
-      .nav {
-        font-size: 12px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .spec-table th,
-      .spec-table td {
-        padding: 10px 8px;
-        font-size: 13px;
-      }
-    }
-  </style>
-
+  <title>چادر مسافرتی و برزنتی آمل | تولید و تعمیر چادر | چادردوزی جزیره</title>
+  <meta name="description" content="تولید و تعمیر چادر مسافرتی و برزنتی در آمل. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران. چادردوزی جزیره J.A.T">
+  <link rel="canonical" href="https://chadooor.ir/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="چادردوزی جزیره">
+  <meta property="og:title" content="چادر مسافرتی و برزنتی آمل | تولید و تعمیر چادر | چادردوزی جزیره">
+  <meta property="og:description" content="تولید و تعمیر چادر مسافرتی و برزنتی در آمل. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران. چادردوزی جزیره J.A.T">
+  <meta property="og:url" content="https://chadooor.ir/">
+  <meta property="og:image" content="https://chadooor.ir/favicon-512x512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:locale" content="fa_IR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="چادر مسافرتی و برزنتی آمل | چادردوزی جزیره">
+  <meta name="twitter:description" content="تولید و تعمیر چادر مسافرتی و برزنتی در آمل با کیفیت بالا">
+  <meta name="twitter:image" content="https://chadooor.ir/favicon-192x192.png">
+
+  <!-- Schema Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "پارچه برزنت | چادردوزی جزیره J.A.T",
-    "description": "معرفی پارچه برزنت و راهنمای انتخاب آن برای چادر، سایبان و پوشش‌های محافظ.",
-    "url": "https://chadooor.ir/parcheh-berenzt.html",
-    "inLanguage": "fa-IR",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "چادردوزی جزیره J.A.T",
-      "url": "https://chadooor.ir/"
-    }
+    "@type": "Organization",
+    "name": "چادردوزی جزیره",
+    "alternateName": ["Jazire Ariaie Tent", "J.A.T", "چادر دوزی جزیره"],
+    "url": "https://chadooor.ir",
+    "logo": "https://chadooor.ir/favicon-512x512.png",
+    "image": "https://chadooor.ir/favicon-512x512.png",
+    "telephone": "+989118031241",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "آمل",
+      "addressRegion": "مازندران",
+      "addressCountry": "IR"
+    },
+    "sameAs": [
+      "https://instagram.com/chadoor_",
+      "https://t.me/GATTENT",
+      "https://wa.me/989118031241"
+    ]
   }
   </script>
-</head>
 
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ===== هیرو ===== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 3rem;
+      text-align: right;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 1100px;
+      height: 420px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(21, 40, 34, 0.12);
+      margin: 0 auto 2.2rem;
+      order: -1;
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+      margin: 0 0 1rem;
+      font-weight: 800;
+    }
+
+    .hero-content p {
+      color: #68736f;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: flex-start;
+    }
+
+    /* ویژگی‌ها */
+    .features-row {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+    }
+ .feature-box {
+      background: #fff;
+      border: 1px solid #e5e8e5;
+      border-radius: 16px;
+      padding: 1.4rem;
+      text-align: center;
+    }
+
+    .feature-box .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-box h3 {
+      font-size: 1.05rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .feature-box p {
+      color: #68736f;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* دسته‌بندی‌ها */
+    .cat-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.3rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+
+    .cat-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.6rem 1.3rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e5e8e5;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(21, 40, 34, 0.1);
+    }
+
+    .cat-card .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .cat-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .cat-card p {
+      color: #68736f;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0 0 0.8rem;
+    }
+
+    .cat-card span {
+      color: #155e55;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 0 0 1.8rem;
+      font-weight: 800;
+    }
+
+    /* تبلیغ چشمک‌زن */
+    .blink-ad-strong {
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+      padding: 18px 30px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 12px;
+      margin: 20px auto 2.5rem;
+      max-width: 450px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: strong-blink 1.2s infinite;
+    }
+    .blink-ad-strong a {
+      color: white;
+      text-decoration: none;
+    }
+    @keyframes strong-blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.05); }
+    }
+
+    /* موبایل */
+    @media (max-width: 800px) {
+      .hero {
+        padding: 1.5rem 1rem 2.5rem;
+      }
+      .hero-img {
+        height: 240px;
+        border-radius: 16px;
+        margin-bottom: 1.6rem;
+      }
+      .hero-content {
+        max-width: 100%;
+        margin: 0;
+      }
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .features-row,
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="صفحه اصلی چادردوزی جزیره">
-        <img src="favicon.svg" alt="لوگوی چادردوزی جزیره J.A.T">
-        <span>چادردوزی جزیره J.A.T</span>
-      </a>
+<header class="site-header sticky-header">
+  <a href="index.html" class="brand">
+    <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
+    <span>چادردوزی جزیره J.A.T</span>
+  </a>
+  <nav class="main-nav" aria-label="منوی اصلی">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
+    <a href="blog.html">مجله سفر</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="header-actions">
+    <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
+    <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+  </div>
+  <button class="menu-toggle" aria-label="منو">☰</button>
+</header>
 
-      <nav class="nav" aria-label="منوی اصلی">
-        <a href="index.html">صفحه اصلی</a>
-        <a href="products.html">محصولات</a>
-        <a href="shop.html">فروشگاه</a>
-        <a href="services.html">خدمات</a>
-        <a href="gallery.html">گالری</a>
-        <a href="about.html">درباره ما</a>
-        <a href="contact.html">ثبت سفارش</a>
-      </nav>
+<main>
+  <!-- هیرو -->
+  <section class="hero">
+    <div class="hero-img">
+      <img src="hero-tent.webp" alt="چادر مسافرتی و تجهیزات کمپینگ چادردوزی جزیره" onerror="this.src='chadoor-hero.webp'">
     </div>
-  </header>
-
-  <main class="container">
-
-    <nav class="breadcrumb" aria-label="مسیر صفحه">
-      <a href="index.html">خانه</a>
-      <span>/</span>
-      <a href="shop.html">فروشگاه</a>
-      <span>/</span>
-      <strong>پارچه برزنت</strong>
-    </nav>
-
-    <section class="hero">
-      <div class="product-grid">
-
-        <div class="product-image">
-          <!-- پس از تأیید عکس واقعی محصول، آدرس تصویر را جایگزین کنید. -->
-          <div class="image-placeholder">
-            <svg viewBox="0 0 100 100" fill="none"
-                 stroke="currentColor" stroke-width="2.5"
-                 stroke-linecap="round" stroke-linejoin="round"
-                 role="img" aria-label="نماد پارچه برزنت">
-              <path d="M15 35 L50 15 L85 35 L85 75 L50 90 L15 75 Z"/>
-              <path d="M15 35 L50 55 L85 35"/>
-              <path d="M50 55 L50 90"/>
-              <path d="M30 26 L65 46"/>
-              <path d="M25 55 L25 70 M35 61 L35 76 M65 61 L65 80 M75 55 L75 75"/>
-            </svg>
-            <h2>پارچه برزنت</h2>
-            <p>تصویر واقعی محصول را پس از انتخاب و تأیید اضافه کنید.</p>
-          </div>
-        </div>
-
-        <div class="product-info">
-          <span class="eyebrow">محصولات چادردوزی جزیره</span>
-
-          <h1>پارچه برزنت؛ مناسب پوشش و تولید تجهیزات</h1>
-
-          <p class="intro">
-            پارچه برزنت از متریال‌های پرکاربرد در ساخت چادر برزنتی،
-            سایبان و انواع پوشش‌های محافظ است. انتخاب نوع مناسب آن
-            به ابعاد مورد نیاز، شرایط مصرف و مشخصات فنی پارچه بستگی دارد.
-          </p>
-
-          <div class="notice">
-            مشخصات فنی، موجودی، عرض قابل سفارش و قیمت این محصول باید
-            پیش از خرید از مجموعه استعلام شود.
-          </div>
-
-          <div class="features">
-            <div class="feature">
-              <strong>کاربردهای متنوع</strong>
-              چادر، سایبان و پوشش محافظ
-            </div>
-            <div class="feature">
-              <strong>انتخاب متناسب با نیاز</strong>
-              با توجه به ابعاد پروژه
-            </div>
-            <div class="feature">
-              <strong>مشخصات فنی</strong>
-              قابل بررسی پیش از سفارش
-            </div>
-            <div class="feature">
-              <strong>ثبت درخواست</strong>
-              برای استعلام قیمت و موجودی
-            </div>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn-primary"
-               href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AE%D8%B1%DB%8C%D8%AF%20%D9%BE%D8%A7%D8%B1%DA%86%D9%87%20%D8%A8%D8%B1%D8%B2%D9%86%D8%AA%20%D9%88%20%D8%A7%D8%B3%D8%AA%D8%B9%D9%84%D8%A7%D9%85%20%D9%82%DB%8C%D9%85%D8%AA%20%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7%DB%8C%DB%8C%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85."
-               target="_blank" rel="noopener noreferrer">
-              استعلام قیمت در واتساپ
-            </a>
-
-            <a class="btn btn-secondary" href="contact.html">
-              ثبت سفارش
-            </a>
-          </div>
-        </div>
-
+    <div class="hero-content">
+ <h1>آماده‌ی<br>ماجراجویی<br>باش</h1>
+      <p>چادرهای مقاوم و سفارشی برای سفر، کمپینگ و طبیعت‌گردی — دوخته‌شده در کارگاه چادردوزی جزیره آمل با تمرکز روی دوام و کیفیت واقعی.</p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
+        <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85." target="_blank" rel="noopener" class="btn" style="background:#20b95a;color:#fff;">مشاوره واتساپ</a>
       </div>
-    </section>
-
-    <section class="content-section">
-      <article class="content-card">
-        <h2>معرفی پارچه برزنت</h2>
-
-        <p>
-          پارچه برزنت در تولید و ساخت پوشش‌های مختلف مورد استفاده قرار
-          می‌گیرد. ویژگی‌هایی مانند جنس الیاف، نوع پوشش، گرماژ و عرض پارچه
-          در انتخاب محصول مناسب نقش دارند. به همین دلیل، بهتر است پارچه
-          بر اساس نوع کاربرد و شرایط استفاده انتخاب شود.
-        </p>
-
-        <p>
-          در چادردوزی جزیره J.A.T می‌توانید برای بررسی نیاز پروژه،
-          انتخاب پوشش مناسب و اطلاع از امکان سفارش محصولات مرتبط
-          با چادر و پوشش‌های محافظ، درخواست خود را مطرح کنید.
-        </p>
-      </article>
-
-      <article class="content-card">
-        <h2>کاربردهای پارچه برزنت</h2>
-
-        <ul class="check-list">
-          <li>تولید چادرهای برزنتی با توجه به نوع پارچه</li>
-          <li>ساخت سایبان و پوشش‌های سفارشی</li>
-          <li>پوشش برخی تجهیزات و کالاها</li>
-          <li>تولید روکش‌های محافظ متناسب با ابعاد مورد نیاز</li>
-          <li>کاربردهای کارگاهی و صنعتی متناسب با مشخصات فنی</li>
-        </ul>
-
-        <p>
-          مناسب بودن هر پارچه برای یک کاربرد خاص باید با توجه به
-          ویژگی‌های واقعی آن بررسی شود؛ برای مثال، همه انواع برزنت
-          الزاماً ضدآب یا مناسب استفاده طولانی‌مدت در فضای باز نیستند.
-        </p>
-      </article>
-
-      <article class="content-card">
-        <h2>مشخصات فنی و ابعاد پارچه برزنت</h2>
-
-        <p>
-          اطلاعات زیر باید برای محصول موجود در فروشگاه چادردوزی جزیره
-          پس از تأیید تأمین‌کننده تکمیل شود.
-        </p>
-
-        <table class="spec-table">
-          <tbody>
-            <tr>
-              <th scope="row">نوع محصول</th>
-              <td>پارچه برزنت</td>
-            </tr>
-            <tr>
-              <th scope="row">گرماژ</th>
-              <td>نیازمند تأیید</td>
-            </tr>
-            <tr>
-              <th scope="row">عرض پارچه</th>
-              <td>نیازمند استعلام</td>
-            </tr>
-            <tr>
-              <th scope="row">طول رول یا متراژ فروش</th>
-              <td>نیازمند استعلام</td>
-            </tr>
-            <tr>
-              <th scope="row">ضدآب بودن</th>
-              <td>باید بر اساس مشخصات واقعی پارچه تأیید شود</td>
-            </tr>
-            <tr>
-              <th scope="row">قیمت</th>
-              <td>برای اطلاع از قیمت روز تماس بگیرید</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article class="content-card">
-        <h2>راهنمای خرید برزنت</h2>
-
-        <h3>۱. مشخص کردن نوع مصرف</h3>
-        <p>
-          ابتدا تعیین کنید پارچه برای چادر، سایبان، روکش یا کاربرد
-          دیگری مورد نیاز است. شرایط استفاده بر انتخاب نوع پارچه تأثیر دارد.
-        </p>
-
-        <h3>۲. انتخاب عرض و متراژ</h3>
-        <p>
-          ابعاد محل پوشش را اندازه‌گیری کنید و با در نظر گرفتن محل دوخت،
-          لبه‌ها و میزان برش مورد نیاز، متراژ مناسب را مشخص کنید.
-        </p>
-
-        <h3>۳. بررسی مشخصات فنی</h3>
-        <p>
-          پیش از خرید، اطلاعات مربوط به گرماژ، جنس، پوشش سطحی و مقاومت
-          مورد انتظار را از فروشنده دریافت کنید.
-        </p>
-
-        <h3>۴. استعلام قیمت و موجودی</h3>
-        <p>
-          قیمت نهایی ممکن است با توجه به نوع پارچه، متراژ، عرض و شیوه
-          عرضه متفاوت باشد. پیش از ثبت سفارش، اطلاعات نهایی را تأیید کنید.
-        </p>
-      </article>
-
-      <article class="content-card">
-        <h2>سؤالات متداول درباره پارچه برزنت</h2>
-
-        <div class="faq-item">
-          <h3>پارچه برزنت چه کاربردی دارد؟</h3>
-          <p>
-            بسته به جنس و پوشش پارچه، می‌توان از آن در تولید چادر،
-            سایبان و پوشش‌های محافظ استفاده کرد.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>آیا همه پارچه‌های برزنت ضدآب هستند؟</h3>
-          <p>
-            خیر. ضدآب بودن به جنس، پوشش و ویژگی‌های فنی پارچه بستگی دارد
-            و باید برای محصول مورد نظر تأیید شود.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>قیمت پارچه برزنت چگونه تعیین می‌شود؟</h3>
-          <p>
-            نوع پارچه، گرماژ، عرض، متراژ و شرایط عرضه می‌توانند بر قیمت
-            تأثیر بگذارند. برای دریافت قیمت دقیق باید مشخصات محصول استعلام شود.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>چگونه برای خرید برزنت سفارش ثبت کنیم؟</h3>
-          <p>
-            از طریق واتساپ یا صفحه تماس با ما، کاربرد مورد نظر و ابعاد
-            مورد نیاز خود را ارسال کنید تا امکان سفارش بررسی شود.
-          </p>
-        </div>
-      </article>
-    </section>
-
-    <section class="cta">
-      <h2>برای انتخاب پارچه برزنت راهنمایی می‌خواهید؟</h2>
-      <p>
-        برای استعلام مشخصات، موجودی، قیمت و امکان سفارش با چادردوزی
-        جزیره J.A.T در ارتباط باشید.
-      </p>
-
-      <a class="btn"
-         href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D9%BE%D8%A7%D8%B1%DA%86%D9%87%20%D8%A8%D8%B1%D8%B2%D9%86%D8%AA%20%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85."
-         target="_blank" rel="noopener noreferrer">
-        ارتباط از طریق واتساپ
-      </a>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>چادردوزی جزیره J.A.T</strong>
-        <p>برای هر مسیر، یک پناه مطمئن.</p>
-      </div>
-
-      <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
-        <a href="index.html">صفحه اصلی</a>
-        <a href="shop.html">فروشگاه</a>
-        <a href="services.html">خدمات</a>
-        <a href="about.html">درباره ما</a>
-        <a href="contact.html">تماس با ما</a>
-      </nav>
-
-      <div>© تمامی حقوق محفوظ است.</div>
     </div>
-  </footer>
+  </section>
+
+  <!-- ویژگی‌ها -->
+  <div class="features-row">
+    <div class="feature-box">
+      <div class="icon">🛡️</div>
+      <h3>برزنت و پارچه مقاوم</h3>
+      <p>متریال مناسب شرایط آب‌وهوایی شمال و استفاده طولانی‌مدت.</p>
+    </div>
+    <div class="feature-box">
+      <div class="icon">✂️</div>
+      <h3>دوخت سفارشی</h3>
+      <p>ساخت چادر دقیقاً مطابق اندازه و نیاز شما در کارگاه آمل.</p>
+    </div>
+    <div class="feature-box">
+      <div class="icon">🔧</div>
+      <h3>تعمیر و بازسازی</h3>
+      <p>ترمیم پارگی، زیپ، فنر و بخش‌های آسیب‌دیده با کیفیت کارگاهی.</p>
+    </div>
+    <div class="feature-box">
+      <div class="icon">🚚</div>
+      <h3>ارسال سراسر ایران</h3>
+      <p>از آمل به تمام شهرها ارسال و پیگیری سفارش انجام می‌شود.</p>
+    </div>
+  </div>
+
+  <!-- تبلیغ -->
+  <div class="blink-ad-strong">
+    <a href="https://chadooor.ir/shop.html" target="_blank">
+      🎉 پیشنهاد محدود! فرصت رو از دست نده 🎉
+    </a>
+  </div>
+
+  <h2 class="section-title">برای هر نیاز، یک انتخاب</h2>
+
+  <!-- دسته‌بندی‌ها -->
+  <div class="cat-grid">
+    <a href="shop.html" class="cat-card">
+      <div class="emoji">⛺</div>
+      <h3>چادر مسافرتی</h3>
+      <p>کمپینگ و سفر خانوادگی — از ۲ نفره تا ۱۲ نفره و مدل‌های پکینیو</p>
+      <span>مشاهده محصولات ←</span>
+    </a>
+    <a href="shop.html" class="cat-card">
+      <div class="emoji">🏠</div>
+      <h3>چادر برزنتی</h3>
+      <p>مقاوم و طولانی‌مدت — مناسب باغ، حیاط و استفاده نیمه‌دائمی</p>
+      <span>مشاهده محصولات ←</span>
+    </a>
+    <a href="shop.html" class="cat-card">
+      <div class="emoji">🧒</div>
+      <h3>چادر کودک</h3>
+      <p>بازی و سرگرمی — طرح‌های متنوع دخترانه و پسرانه</p>
+      <span>مشاهده محصولات ←</span>
+    </a>
+    <a href="shop.html" class="cat-card">
+      <div class="emoji">🦟</div>
+      <h3>پشه‌بند و تجهیزات</h3>
+      <p>پشه‌بند سفارشی، سایبان، میز و صندلی مسافرتی</p>
+      <span>مشاهده محصولات ←</span>
+    </a>
+  </div>
+
+  <div class="repair-box">
+    <h2>چادرت آسیب دیده؟ دوباره آماده‌اش می‌کنیم</h2>
+    <p>بسیاری از چادرها با تعمیر اصولی دوباره قابل استفاده می‌شوند. ترمیم پارگی، زیپ، فنر و بازسازی کامل در کارگاه آمل.</p>
+    <a href="services.html" class="btn btn-primary">مشاهده خدمات تعمیر</a>
+  </div>
+
+  <section class="cta-band">
+    <h2>چادر بعدی‌ات از همین‌جا شروع می‌شود</h2>
+    <p>تولید مستقیم در آمل • ارسال به سراسر ایران</p>
+    <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85." target="_blank" rel="noopener" class="btn">مشاوره واتساپ</a>
+  </section>
+</main>
+
+ <!-- گالری کوچک صفحه اصلی -->
+<h2 class="section-title">نمونه‌کارهای ما</h2>
+
+<div class="gallery-grid" style="margin-bottom: 3rem;">
+  <a href="gallery.html" class="gallery-item">
+    <img src="c2001.webp" alt="چادر مسافرتی" loading="lazy">
+  </a>
+  <a href="gallery.html" class="gallery-item">
+    <img src="khaime-1.webp" alt="چادر برزنتی" loading="lazy">
+  </a>
+  <a href="gallery.html" class="gallery-item">
+    <img src="brno-8-r.webp" alt="تعمیر چادر" loading="lazy">
+  </a>
+  <a href="gallery.html" class="gallery-item">
+    <img src="tent-kids.webp" alt="چادر کودک" loading="lazy">
+  </a>
+</div>
+<!-- نظرات مشتریان -->
+<section class="testimonials" style="padding: 60px 20px; background: #f8f9fa; text-align: center;">
+  <h2 style="font-size: 1.8rem; margin-bottom: 40px; color: #1a3c34;">نظر مشتریان ما</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1100px; margin: 0 auto;">
+    <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); width: 300px; text-align: right;">
+ <p style="font-size: 0.95rem; line-height: 1.7; color: #333;">«چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز سالم رسید.»</p>
+      <p style="margin-top: 15px; font-weight: bold; color: #1a3c34;">— amir از شیراز</p>
+      <div style="color: #f4c430; margin-top: 8px;">★★★★★</div>
+    </div>
+    <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); width: 300px; text-align: right;">
+      <p style="font-size: 0.95rem; line-height: 1.7; color: #333;">«چادرم پاره شده بود، تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود.»</p>
+      <p style="margin-top: 15px; font-weight: bold; color: #1a3c34;">— farahnaz از تهران</p>
+      <div style="color: #f4c430; margin-top: 8px;">★★★★★</div>
+    </div>
+    <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); width: 300px; text-align: right;">
+      <p style="font-size: 0.95rem; line-height: 1.7; color: #333;">«چادر کودک سفارش دادم، طرح قشنگ و کیفیت عالی. دخترم خیلی دوست داره.»</p>
+      <p style="margin-top: 15px; font-weight: bold; color: #1a3c34;">— arash از ساری</p>
+      <div style="color: #f4c430; margin-top: 8px;">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a href="index.html" class="brand">
+      <img src="favicon.svg" alt="لوگو" width="44" height="44">
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+    <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+  </div>
+  <nav class="footer-menu">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+<div class="social-links">
+  <!-- واتساپ -->
+  <a href="https://wa.me/989118031241" target="_blank" rel="noopener" aria-label="واتساپ" title="واتساپ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span>واتساپ</span>
+  </a>
+
+  <!-- اینستاگرام -->
+  <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener" aria-label="اینستاگرام" title="اینستاگرام">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+    </svg>
+    <span>اینستاگرام</span>
+  </a>
+
+  <!-- تلگرام -->
+  <a href="https://t.me/GATTENT" target="_blank" rel="noopener" aria-label="تلگرام" title="تلگرام">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+    <span>تلگرام</span>
+  </a>
+</div>
+  <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- Schema LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "چادردوزی جزیره J.A.T",
+  "image": "https://chadooor.ir/logo.png",
+  "url": "https://chadooor.ir",
+  "telephone": "+989118031241",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "جاده هراز، روبروی پلیس‌راه محمدآباد",
+    "addressLocality": "آمل",
+    "addressRegion": "مازندران",
+    "addressCountry": "IR"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "12"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "m.r از شیراز" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز کاملاً سالم رسید."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "ایمان از تهران" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "چادرم از چند جا پاره شده بود. تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "احسان از ساری" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "چادر کودک طرح سگ سفارش دادم. خیلی قشنگ و محکم بود. دخترم عاشقش شد."
+    }
+  ]
+}
+</script>
+
+<!-- دکمه شناور واتساپ -->
+<a href="https://wa.me/989118031241?text=سلام، درباره چادر سوال دارم"
+ class="floating-whatsapp" 
+   target="_blank" 
+   rel="noopener"
+   title="گفتگو در واتساپ">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span>مشاوره واتساپ</span>
+</a>
 
 </body>
 </html>
