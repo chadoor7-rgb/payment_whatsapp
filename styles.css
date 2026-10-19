@@ -1718,3 +1718,48 @@ body {
     height: 26px;
   }
 }
+
+/* اصلاح دکمه شناور واتساپ در گوشی */
+@media screen and (max-width: 768px) {
+  a.floating-whatsapp {
+    position: fixed !important;
+
+    right: 15px !important;
+    left: auto !important;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    max-width: calc(100vw - 30px) !important;
+    min-height: 48px !important;
+
+    padding: 10px 15px !important;
+    background: #25D366 !important;
+    color: #ffffff !important;
+
+    border-radius: 50px !important;
+    z-index: 2147483647 !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    transform: none;
+    box-sizing: border-box !important;
+  }
+
+  a.floating-whatsapp svg {
+    display: block !important;
+    width: 26px !important;
+    height: 26px !important;
+    flex-shrink: 0 !important;
+  }
+
+  a.floating-whatsapp span {
+    display: inline !important;
+    visibility: visible !important;
+  }
+}
