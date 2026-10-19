@@ -1580,3 +1580,34 @@ body {
     z-index: 10060 !important;
   }
 }
+.nav-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10040 !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    overflow: visible !important;
+  }
+
+  .main-nav {
+    z-index: 10050 !important;
+    background: #fffdf8 !important;
+  }
+
+  .main-nav.open {
+    transform: translateX(0) !important;
+  }
+
+  .main-nav a {
+    pointer-events: auto !important;
+    position: relative !important;
+    display: block !important;
+  }
+
+  .menu-toggle {
+    z-index: 10070 !important;
+  }
+}
