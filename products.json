@@ -53,7 +53,7 @@
     "category": "پشه‌بند",
     "description": "پشه‌بند سفارشی برای چادر و فضای باز. دوخت تمیز و اندازه‌های متنوع.",
     "price": 2000000,
-    "image": "basheband.webp"
+    "image": "pasheband.webp"
   },
   {
     "id": 8,
@@ -141,7 +141,7 @@
     "category": "برزنتی",
     "description": "برزنت ضخیم مناسب چادر نیسان، کامیون و استفاده‌های طولانی‌مدت.",
     "price": 0,
-    "image": "BEREZENT.webp"
+    "image": "berezent.webp"
   },
   {
     "id": 19,
@@ -269,7 +269,7 @@
     "category": "خدمات",
     "description": "گونی جامبو راه راه ضد آب و آفتاب .",
     "price": 7000,
-    "image": "goni-1.webp"
+    "image": "goni1.webp"
    },
    {
     "id": 35,
