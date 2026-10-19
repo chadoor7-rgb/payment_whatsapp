@@ -1466,7 +1466,7 @@ body {
     display: inline-flex !important;
   }
 
-  /* محدود کردن جستجو و لوگو در موبایل */
+  /* محدود کردن جستجو در موبایل */
   .site-search {
     max-width: 140px !important;
     flex-shrink: 1;
