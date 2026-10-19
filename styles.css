@@ -1611,3 +1611,40 @@ body {
     z-index: 10070 !important;
   }
 }
+
+/* رنگ اصلی لوگوهای شبکه‌های اجتماعی */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* واتساپ - سبز اصلی */
+.social-links a[href*="wa.me"] {
+  color: #25D366;
+}
+
+/* اینستاگرام - رنگ اصلی */
+.social-links a[href*="instagram.com"] {
+  color: #E4405F;
+}
+
+/* تلگرام - آبی اصلی */
+.social-links a[href*="t.me"] {
+  color: #0088CC;
+}
+
+/* اندازه لوگوها */
+.social-links a svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* افکت هنگام رفتن موس */
+.social-links a:hover {
+  filter: brightness(0.85);
+  transform: translateY(-3px);
+}
