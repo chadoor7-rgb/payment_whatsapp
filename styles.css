@@ -1546,3 +1546,22 @@ html, body {
     font-size: 13px;
   }
 }
+/* اجبار منوی تمام‌صفحه */
+@media (max-width: 980px) {
+  .main-nav.open {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    background: #fffdf8 !important;
+    z-index: 9999 !important;
+  }
+
+  .menu-toggle {
+    z-index: 10000 !important;
+  }
+}
