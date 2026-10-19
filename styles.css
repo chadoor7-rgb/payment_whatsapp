@@ -1541,3 +1541,14 @@ body {
   margin-right: 0 !important;
   margin-left: 4px !important;
 }
+@media (max-width: 980px) {
+  .main-nav,
+  .main-nav a {
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+  }
+
+  .nav-overlay {
+    z-index: 9998 !important;
+  }
+}
