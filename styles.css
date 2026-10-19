@@ -1512,4 +1512,32 @@ body {
     width: min(280px, 88vw) !important;
   }
 }
+/* درست کردن جهت نوشتن در جستجوی گوگل */
+.site-search,
+.site-search .gsc-control-cse,
+.site-search .gsc-control-wrapper-cse,
+.site-search .gsc-search-box,
+.site-search table,
+.site-search .gsc-input,
+.site-search .gsc-input-box,
+.site-search input.gsc-input,
+.site-search #gsc-i-id1 {
+  direction: rtl !important;
+  text-align: right !important;
+}
 
+.site-search .gsc-control-wrapper-cse {
+  dir: rtl;
+}
+
+/* جای لوگو گوگل و دکمه */
+.site-search .gsib_a {
+  padding-right: 8px !important;
+  padding-left: 0 !important;
+}
+
+.site-search .gsc-search-button,
+.site-search .gsc-search-button-v2 {
+  margin-right: 0 !important;
+  margin-left: 4px !important;
+}
