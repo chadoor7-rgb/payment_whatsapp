@@ -1648,3 +1648,73 @@ body {
   filter: brightness(0.85);
   transform: translateY(-3px);
 }
+
+/* دکمه شناور واتساپ */
+.floating-whatsapp {
+  position: fixed !important;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99999;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  background-color: #25D366;
+  color: #ffffff !important;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none !important;
+
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.22);
+
+  cursor: pointer;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+
+  transition: transform 0.25s ease,
+              background-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1ebe5d;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.floating-whatsapp:focus-visible {
+  outline: 3px solid #155e55;
+  outline-offset: 4px;
+}
+
+/* نمایش مناسب در موبایل */
+@media (max-width: 480px) {
+  .floating-whatsapp {
+    right: 14px;
+    bottom: 14px;
+    padding: 12px;
+    gap: 7px;
+    font-size: 13px;
+  }
+
+  .floating-whatsapp svg {
+    width: 26px;
+    height: 26px;
+  }
+}
