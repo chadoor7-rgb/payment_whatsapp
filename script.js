@@ -101,7 +101,8 @@
     overlay.addEventListener("click", closeMenu);
 
     // کلیک روی لینک‌ها → بستن منو + رفتن به صفحه
-    nav.addEventListener("click", function (e) {
+       // کلیک / لمس روی لینک‌ها
+    function goToLink(e) {
       const link = e.target.closest("a");
       if (!link) return;
 
@@ -109,18 +110,21 @@
       if (!href || href === "#") return;
 
       e.preventDefault();
+      e.stopPropagation();
       closeMenu();
 
-      // کمی تأخیر تا منو بسته شود، بعد برو به صفحه
       setTimeout(function () {
-        window.location.href = href;
-      }, 80);
-    });
+        window.location.assign(href);
+      }, 100);
+    }
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && nav.classList.contains("open")) closeMenu();
-    });
-  }
+    nav.addEventListener("click", goToLink);
+    nav.addEventListener("touchend", function (e) {
+      const link = e.target.closest("a");
+      if (!link) return;
+      e.preventDefault();
+      goToLink(e);
+    }, { passive: false }); 
   /* ---------- Contact form → WhatsApp ---------- */
   function initContactForms() {
     const forms = document.querySelectorAll(".contact-form");
