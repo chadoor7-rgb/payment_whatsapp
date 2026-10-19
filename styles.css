@@ -1552,3 +1552,31 @@ body {
     z-index: 9998 !important;
   }
 }
+/* رفع اولویت منو روی لایه تیره */
+.nav-overlay {
+  z-index: 9990 !important;
+}
+
+@media (max-width: 980px) {
+  .main-nav {
+    z-index: 10050 !important;
+    background: #fffdf8 !important;
+    pointer-events: auto !important;
+  }
+
+  .main-nav.open {
+    z-index: 10050 !important;
+    transform: translateX(0) !important;
+  }
+
+  .main-nav a {
+    position: relative;
+    z-index: 10051 !important;
+    pointer-events: auto !important;
+    display: block !important;
+  }
+
+  .menu-toggle {
+    z-index: 10060 !important;
+  }
+}
