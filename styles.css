@@ -198,25 +198,33 @@ button, input, textarea {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-
-/* تنظیم هرو برای لپ‌تاپ و نمایشگرهای بزرگ */
-@media (min-width: 769px) {
-  .hero-full {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: center;
-  }
-
-  .hero-image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-img {
-    height: auto;
-  }
+/* اصلاح تصویر اصلی سایت در لپ‌تاپ و موبایل */
+.hero-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(21, 40, 34, 0.12);
+  margin: 0 auto 2.2rem;
+  order: -1;
 }
 
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* تنظیم جداگانه برای موبایل */
+@media (max-width: 768px) {
+  .hero-img {
+    aspect-ratio: 4 / 3;
+  }
+}
 /* تنظیم هرو برای گوشی */
 @media (max-width: 768px) {
   .hero-full {
