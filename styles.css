@@ -1750,3 +1750,20 @@ body {
     visibility: visible !important;
   }
 }
+/* اجبار نمایش کامل تصویر هرو در لپ‌تاپ */
+@media (min-width: 769px) {
+  .hero-full .hero-image-wrapper {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .hero-full .hero-image-wrapper img.hero-img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    aspect-ratio: auto !important;
+  }
+}
