@@ -63,44 +63,54 @@
     }
   }
 
+  /* ---------- Mobile menu (side drawer) ---------- */
   function initMenu() {
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".main-nav");
-  if (!menuButton || !nav) return;
+    const menuButton = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+    if (!menuButton || !nav) return;
 
-  const closeBtn = nav.querySelector(".menu-close");
-
-  function openMenu() {
-    nav.classList.add("open");
-    menuButton.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";   // جلوگیری از اسکرول صفحه
-  }
-
-  function closeMenu() {
-    nav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  }
-
-  menuButton.addEventListener("click", () => {
-    if (nav.classList.contains("open")) {
-      closeMenu();
-    } else {
-      openMenu();
+    // لایه تیره (اگر در HTML نباشد، ساخته می‌شود)
+    let overlay = document.getElementById("navOverlay");
+    if (!overlay) {
+      overlay = document.createElement("button");
+      overlay.id = "navOverlay";
+      overlay.className = "nav-overlay";
+      overlay.type = "button";
+      overlay.setAttribute("aria-label", "بستن منو");
+      document.body.appendChild(overlay);
     }
-  });
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeMenu);
+    function openMenu() {
+      nav.classList.add("open");
+      menuButton.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      overlay.classList.add("show");
+    }
+
+    function closeMenu() {
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      overlay.classList.remove("show");
+    }
+
+    menuButton.addEventListener("click", function () {
+      if (nav.classList.contains("open")) closeMenu();
+      else openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) closeMenu();
+    });
+
+    // بستن با کلید Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("open")) closeMenu();
+    });
   }
 
-  // بستن با کلیک روی لینک‌ها
-  nav.addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-      closeMenu();
-    }
-  });
-}
 
   /* ---------- Contact form → WhatsApp ---------- */
   function initContactForms() {
