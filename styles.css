@@ -179,79 +179,66 @@ button, input, textarea {
   font-size: 16px;
 }
 
-/* ================= HERO ================= */
-.hero-full {
-  position: relative;
-  min-height: 88vh;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 40px;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 60px 28px 80px;
-}
 
-.hero-overlay {
-  display: none; /* برای حالت تصویر کامل می‌توان فعال کرد */
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-.eyebrow::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: var(--coral);
-  border-radius: 50%;
-}
-
-.hero-title {
-  font-size: clamp(42px, 6vw, 78px);
-  line-height: 1.2;
-  font-weight: 900;
-  margin: 0 0 20px;
-}
-
-.hero-title .highlight {
-  color: var(--teal);
-}
-
-.hero-desc {
-  max-width: 480px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.9;
-  margin-bottom: 32px;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
+/* ================= HERO IMAGE FIX ================= */
 
 .hero-image-wrapper {
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
 
 .hero-img {
+  display: block;
   width: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+/* تنظیم هرو برای لپ‌تاپ و نمایشگرهای بزرگ */
+@media (min-width: 769px) {
+  .hero-full {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+  }
+
+  .hero-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img {
+    height: auto;
+  }
+}
+
+/* تنظیم هرو برای گوشی */
+@media (max-width: 768px) {
+  .hero-full {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    min-height: auto;
+    padding: 32px 18px 48px;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 8vw, 44px);
+  }
 }
 
 /* ================= TICKER ================= */
