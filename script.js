@@ -63,10 +63,11 @@
     }
   }
 
-  /* ---------- Mobile menu (side drawer) ---------- */
+   /* ---------- Mobile menu (side drawer) ---------- */
   function initMenu() {
     const menuButton = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".main-nav");
+    const header = document.querySelector(".site-header");
     if (!menuButton || !nav) return;
 
     let overlay = document.getElementById("navOverlay");
@@ -84,6 +85,8 @@
       menuButton.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
       overlay.classList.add("show");
+      // مهم: هدر را بالای لایه تیره بیاور
+      if (header) header.style.zIndex = "10060";
     }
 
     function closeMenu() {
@@ -91,6 +94,7 @@
       menuButton.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
       overlay.classList.remove("show");
+      if (header) header.style.zIndex = "";
     }
 
     menuButton.addEventListener("click", function () {
@@ -100,39 +104,16 @@
 
     overlay.addEventListener("click", closeMenu);
 
-    function goToLink(e) {
+    // لینک‌ها بدون preventDefault — مرورگر خودش برود
+    nav.addEventListener("click", function (e) {
       const link = e.target.closest("a");
       if (!link) return;
-
       const href = link.getAttribute("href");
       if (!href || href === "#") return;
-
-      e.preventDefault();
-      e.stopPropagation();
       closeMenu();
-
-      setTimeout(function () {
-        window.location.assign(href);
-      }, 100);
-    }
-
-    nav.addEventListener("click", goToLink);
-    nav.addEventListener(
-      "touchend",
-      function (e) {
-        const link = e.target.closest("a");
-        if (!link) return;
-        e.preventDefault();
-        goToLink(e);
-      },
-      { passive: false }
-    );
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && nav.classList.contains("open")) closeMenu();
+      // ناوبری عادی مرورگر
     });
   }
-
   /* ---------- Contact form → WhatsApp ---------- */
   function initContactForms() {
     const forms = document.querySelectorAll(".contact-form");
