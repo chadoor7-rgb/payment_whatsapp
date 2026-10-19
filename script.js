@@ -335,7 +335,17 @@
       initCartPage();
     });
   }
-
+  /* ---------- Fix Google Search RTL ---------- */
+  function fixGoogleSearchDir() {
+    const input = document.querySelector(".gsc-input, input.gsc-input");
+    const wrapper = document.querySelector(".gsc-control-wrapper-cse");
+    if (wrapper) wrapper.setAttribute("dir", "rtl");
+    if (input) {
+      input.setAttribute("dir", "rtl");
+      input.style.direction = "rtl";
+      input.style.textAlign = "right";
+    }
+  }
   /* ---------- Boot ---------- */
   function boot() {
     updateCartCount();
