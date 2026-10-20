@@ -1631,6 +1631,31 @@ body {
   color: #0088CC;
 }
 
+    <a class="social-x" href="https://x.com/korosh-ariaie"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="ایکس" title="ایکس">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.35L5.62 22H2.5l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.4L17.8 20Z"/>
+      </svg>
+    </a>
+
+    <a class="social-facebook" href="https://www.facebook.com/"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="فیسبوک" title="فیسبوک">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.93.26-1.56 1.6-1.56h1.7V4.14A22 22 0 0 0 14.32 4c-2.46 0-4.14 1.5-4.14 4.26v2.34H7.4v3.2h2.78V22h3.32Z"/>
+      </svg>
+    </a>
+
+    <a class="social-youtube" href="https://youtube.com/@tent7172"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="یوتیوب" title="یوتیوب">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.56 12 3.56 12 3.56s-7.55 0-9.4.52A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.52 9.4.52 9.4.52s7.55 0 9.4-.52a3 3 0 0 0 2.1-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+      </svg>
+    </a>
+  </div>
+
 /* اندازه لوگوها */
 .social-links a svg {
   width: 20px;
