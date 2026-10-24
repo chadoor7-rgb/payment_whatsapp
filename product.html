@@ -390,10 +390,13 @@ fetch("products.json")
     addProductSchema(product, d);
   })
   .catch(err => {
-    content.innerHTML = err.message==="not-found"
+    console.error("خطا در بارگذاری جزئیات محصول:", err);
+
+    content.innerHTML = err.message === "not-found"
       ? `<div class="error-box">محصول پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
-      : `<div class="error-box">خطا در بارگذاری محصول.</div>`;
+      : `<div class="error-box">بارگذاری محصول انجام نشد. فایل products.json، مسیر تصاویر و کنسول مرورگر را بررسی کنید.</div>`;
   });
+</script>
 
 </body>
 </html>
