@@ -2013,3 +2013,111 @@ section.testimonials .testimonial-badge {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* =========================================
+   نظر خریدار عمده - فقط همین بخش
+   CHADOOR J.A.T
+========================================= */
+
+.wholesale-review {
+  direction: rtl;
+  width: 100%;
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.wholesale-review,
+.wholesale-review * {
+  box-sizing: border-box;
+}
+
+.wholesale-review__card {
+  position: relative;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #e5e8e5;
+  border-top: 3px solid #ffc928;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(24, 38, 34, 0.08);
+  color: #182622;
+}
+
+.wholesale-review__badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: #fff4cc;
+  color: #795b00;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.wholesale-review__card h2 {
+  margin: 0 0 14px;
+  color: #182622;
+  font-size: 1.35rem;
+  line-height: 1.8;
+}
+
+.wholesale-review__stars {
+  margin-bottom: 16px;
+  color: #f4b923;
+  font-size: 25px;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+.wholesale-review__card blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #46534e;
+  font-size: 0.98rem;
+  line-height: 2.1;
+}
+
+.wholesale-review__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e8ebe7;
+  color: #68736f;
+  font-size: 0.88rem;
+}
+
+.wholesale-review__footer strong {
+  color: #235d56;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .wholesale-review {
+    margin: 24px auto;
+    padding: 0 12px;
+  }
+
+  .wholesale-review__card {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .wholesale-review__card h2 {
+    font-size: 1.15rem;
+  }
+
+  .wholesale-review__card blockquote {
+    font-size: 0.92rem;
+    line-height: 2;
+  }
+
+  .wholesale-review__footer {
+    gap: 10px 16px;
+  }
+}
+ 
