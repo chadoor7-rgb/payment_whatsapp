@@ -179,13 +179,11 @@ const productReviews = {
 function getReviewsForProduct(product) {
   const category = (product.category || "").toLowerCase();
   const name = (product.name || "").toLowerCase();
-
   if (category.includes("برزنت") || name.includes("برزنت")) return productReviews["برزنتی"];
   if (category.includes("مسافرت") || name.includes("مسافرت") || name.includes("کوهنوردی") || name.includes("پکینیو")) return productReviews["مسافرتی"];
   if (category.includes("کودک") || name.includes("کودک") || name.includes("بچ") || name.includes("سگ") || name.includes("السا") || name.includes("کیتی") || name.includes("سیندرلا") || name.includes("عنکبوتی")) return productReviews["کودک"];
   if (category.includes("تعمیر") || name.includes("تعمیر")) return productReviews["تعمیر"];
   if (category.includes("پشه‌بند") || name.includes("پشه‌بند") || name.includes("توری")) return productReviews["پشه‌بند"];
-  
   return productReviews["default"];
 }
 
@@ -195,10 +193,12 @@ const content = document.getElementById("content");
 let gallery = [], galleryIndex = 0;
 
 function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+
 function getGallery(product, details){
   const candidates = [].concat(details?.images||[]).concat(product?.images||[]).concat(product?.image?[product.image]:[]);
   return [...new Set(candidates.filter(Boolean).map(String))];
 }
+
 function renderGallery(product, details){
   gallery = getGallery(product, details);
   galleryIndex = 0;
@@ -215,6 +215,7 @@ function renderGallery(product, details){
     <div class="gallery-note">برای مشاهده تصاویر بیشتر روی تصاویر کوچک کلیک کنید.</div>
   </div>`;
 }
+
 function updateGallery(){
   const img = document.getElementById("mainProductImage");
   const count = document.getElementById("galleryCount");
@@ -223,6 +224,7 @@ function updateGallery(){
   count.textContent = `${galleryIndex+1} / ${gallery.length}`;
   document.querySelectorAll(".thumb").forEach((t,i)=>t.classList.toggle("active", i===galleryIndex));
 }
+
 function buildThumbs(){
   const box = document.getElementById("thumbnails");
   box.innerHTML = gallery.map((src,i)=>`<button class="thumb ${i===0?"active":""}" data-index="${i}"><img src="${esc(src)}" alt="" onerror="this.src='hero-chadoor.webp'"></button>`).join("");
@@ -230,9 +232,11 @@ function buildThumbs(){
     btn.addEventListener("click",()=>{galleryIndex=Number(btn.dataset.index);updateGallery();});
   });
 }
+
 function openLightbox(){document.getElementById("lbImage").src=gallery[galleryIndex];document.getElementById("lightbox").classList.add("open");}
 function closeLightbox(){document.getElementById("lightbox").classList.remove("open");}
 function moveGallery(step){galleryIndex=(galleryIndex+step+gallery.length)%gallery.length;updateGallery();}
+
 function addToCartLocal(product){
   const CART_KEY = "chadoor_cart";
   let cart = [];
@@ -247,50 +251,49 @@ function addToCartLocal(product){
 }
 
 function addProductSchema(product, details) {
-  const existing = document.querySelector(
-    'script[data-schema="product"]'
-  );
-
+  const existing = document.querySelector('script[data-schema="product"]');
   if (existing) existing.remove();
 
   const priceToman = Number(product.price) || 0;
-
   const image =
     (details?.images && details.images[0]) ||
     product.image ||
     "favicon.svg";
+  const fullImage = new URL(image, "https://chadooor.ir/").href;
 
-  const fullImage = new URL(
-    image,
-    "https://chadooor.ir/"
-  ).href;
+  // نظرات مربوط به این محصول
+  const reviews = getReviewsForProduct(product);
+  const reviewCount = reviews.length || 3;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
     "image": [fullImage],
-    "description":
-      details?.fullDesc ||
-      product.description ||
-      product.name,
+    "description": details?.fullDesc || product.description || product.name,
     "sku": String(product.id),
     "brand": {
       "@type": "Brand",
       "name": "چادردوزی جزیره J.A.T"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": String(reviewCount),
+      "bestRating": "5",
+      "worstRating": "1"
     }
   };
 
-  // فقط محصولاتی که قیمت مشخص دارند، پیشنهاد قیمت می‌گیرند.
-  // قیمت فروشگاه تومان است؛ Schema با IRR قیمت را به ریال می‌خواهد.
+  // فقط محصولاتی که قیمت مشخص دارند
   if (priceToman > 0) {
     schema.offers = {
       "@type": "Offer",
-      "url":
-        "https://chadooor.ir/product.html?id=" +
-        encodeURIComponent(product.id),
+      "url": "https://chadooor.ir/product.html?id=" + encodeURIComponent(product.id),
       "priceCurrency": "IRR",
-      "price": String(priceToman * 10),
+      "price": String(priceToman * 10), // تومان → ریال
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
       "seller": {
         "@type": "Organization",
         "name": "چادردوزی جزیره J.A.T"
@@ -302,7 +305,6 @@ function addProductSchema(product, details) {
   script.type = "application/ld+json";
   script.setAttribute("data-schema", "product");
   script.textContent = JSON.stringify(schema);
-
   document.head.appendChild(script);
 }
 
@@ -375,7 +377,6 @@ fetch("products.json")
           <li>برای سفارش سفارشی قبل از ثبت با ما هماهنگ کنید.</li>
         </ul>
       </section>
-
       <!-- نظرات هوشمند مشتریان -->
       <section class="section" style="background:#f7f5f0; border-radius:18px;">
         <h2 style="text-align:center; margin-bottom:22px; font-size:21px;">نظر مشتریان درباره این محصول</h2>
@@ -418,44 +419,26 @@ fetch("products.json")
       });
     });
     document.title = product.name + " | چادردوزی جزیره J.A.T";
-const metaDescription =
-  document.querySelector('meta[name="description"]');
-
-if (metaDescription) {
-  const descriptionText =
-    d.fullDesc || product.description || product.name;
-
-  metaDescription.setAttribute(
-    "content",
-    (product.name + " | " + descriptionText)
-      .replace(/\s+/g, " ")
-      .slice(0, 155)
-  );
-}
-
-let canonical =
-  document.querySelector('link[rel="canonical"]');
-
-if (!canonical) {
-  canonical = document.createElement("link");
-  canonical.rel = "canonical";
-  document.head.appendChild(canonical);
-}
-
-canonical.href =
-  "https://chadooor.ir/product.html?id=" +
-  encodeURIComponent(product.id);
-
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      const descriptionText = d.fullDesc || product.description || product.name;
+      metaDescription.setAttribute("content", (product.name + " | " + descriptionText).replace(/\s+/g, " ").slice(0, 155));
+    }
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = "https://chadooor.ir/product.html?id=" + encodeURIComponent(product.id);
     addProductSchema(product, d);
   })
   .catch(err => {
     console.error("خطا در بارگذاری جزئیات محصول:", err);
-
     content.innerHTML = err.message === "not-found"
       ? `<div class="error-box">محصول پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
       : `<div class="error-box">بارگذاری محصول انجام نشد. فایل products.json، مسیر تصاویر و کنسول مرورگر را بررسی کنید.</div>`;
   });
 </script>
-
 </body>
 </html>
