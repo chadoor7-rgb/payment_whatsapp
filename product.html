@@ -245,33 +245,64 @@ function addToCartLocal(product){
   document.querySelectorAll("#cartCount").forEach(el => el.textContent = total);
   alert("«" + product.name + "» به سبد خرید اضافه شد.");
 }
+
 function addProductSchema(product, details) {
-  const existing = document.querySelector('script[data-schema="product"]');
+  const existing = document.querySelector(
+    'script[data-schema="product"]'
+  );
+
   if (existing) existing.remove();
-  const price = Number(product.price) || 0;
-  const image = (details?.images && details.images[0]) || product.image || "favicon-512x512.png";
-  const fullImage = image.startsWith("http") ? image : "https://chadooor.ir/" + image;
+
+  const priceToman = Number(product.price) || 0;
+
+  const image =
+    (details?.images && details.images[0]) ||
+    product.image ||
+    "favicon.svg";
+
+  const fullImage = new URL(
+    image,
+    "https://chadooor.ir/"
+  ).href;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "image": fullImage,
-    "description": details?.fullDesc || product.description || product.name,
+    "image": [fullImage],
+    "description":
+      details?.fullDesc ||
+      product.description ||
+      product.name,
     "sku": String(product.id),
-    "brand": { "@type": "Brand", "name": "چادردوزی جزیره J.A.T" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://chadooor.ir/product.html?id=" + product.id,
-      "priceCurrency": "IRR",
-      "price": price > 0 ? String(price) : "0",
-      "availability": "https://schema.org/InStock",
-      "seller": { "@type": "Organization", "name": "چادردوزی جزیره" }
+    "brand": {
+      "@type": "Brand",
+      "name": "چادردوزی جزیره J.A.T"
     }
   };
+
+  // فقط محصولاتی که قیمت مشخص دارند، پیشنهاد قیمت می‌گیرند.
+  // قیمت فروشگاه تومان است؛ Schema با IRR قیمت را به ریال می‌خواهد.
+  if (priceToman > 0) {
+    schema.offers = {
+      "@type": "Offer",
+      "url":
+        "https://chadooor.ir/product.html?id=" +
+        encodeURIComponent(product.id),
+      "priceCurrency": "IRR",
+      "price": String(priceToman * 10),
+      "seller": {
+        "@type": "Organization",
+        "name": "چادردوزی جزیره J.A.T"
+      }
+    };
+  }
+
   const script = document.createElement("script");
   script.type = "application/ld+json";
   script.setAttribute("data-schema", "product");
   script.textContent = JSON.stringify(schema);
+
   document.head.appendChild(script);
 }
 
@@ -387,6 +418,34 @@ fetch("products.json")
       });
     });
     document.title = product.name + " | چادردوزی جزیره J.A.T";
+const metaDescription =
+  document.querySelector('meta[name="description"]');
+
+if (metaDescription) {
+  const descriptionText =
+    d.fullDesc || product.description || product.name;
+
+  metaDescription.setAttribute(
+    "content",
+    (product.name + " | " + descriptionText)
+      .replace(/\s+/g, " ")
+      .slice(0, 155)
+  );
+}
+
+let canonical =
+  document.querySelector('link[rel="canonical"]');
+
+if (!canonical) {
+  canonical = document.createElement("link");
+  canonical.rel = "canonical";
+  document.head.appendChild(canonical);
+}
+
+canonical.href =
+  "https://chadooor.ir/product.html?id=" +
+  encodeURIComponent(product.id);
+
     addProductSchema(product, d);
   })
   .catch(err => {
