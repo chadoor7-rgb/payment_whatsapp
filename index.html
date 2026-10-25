@@ -32,30 +32,131 @@
   <meta name="twitter:image" content="https://chadooor.ir/favicon-192x192.png">
 
   <!-- Schema Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "چادردوزی جزیره",
-    "alternateName": ["Jazire Ariaie Tent", "J.A.T", "چادر دوزی جزیره"],
-    "url": "https://chadooor.ir",
-    "logo": "https://chadooor.ir/favicon-512x512.png",
-    "image": "https://chadooor.ir/favicon-512x512.png",
-    "telephone": "+989118031241",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "آمل",
-      "addressRegion": "مازندران",
-      "addressCountry": "IR"
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://chadooor.ir/#organization",
+      "name": "چادردوزی جزیره J.A.T",
+      "alternateName": [
+        "J.A.T",
+        "چادردوزی جزیره",
+        "Jazire Ariaie Tent",
+        "چادر دوزی جزیره آمل"
+      ],
+      "url": "https://chadooor.ir",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://chadooor.ir/favicon-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://chadooor.ir/favicon-512x512.png",
+      "description": "تولیدکننده و تعمیرکار تخصصی چادر مسافرتی، چادر برزنتی و تجهیزات کمپینگ در آمل. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران.",
+      "telephone": "+989118031241",
+      "email": "info@chadooor.ir",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "جاده هراز، روبروی پلیس‌راه محمدآباد",
+        "addressLocality": "آمل",
+        "addressRegion": "مازندران",
+        "postalCode": "46131",
+        "addressCountry": "IR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.3711",
+        "longitude": "52.3550"
+      },
+      "sameAs": [
+        "https://instagram.com/chadoor_",
+        "https://t.me/GATTENT",
+        "https://x.com/korosh_ariaie",
+        "https://youtube.com/@chadoortent",
+        "https://www.facebook.com/korosh.ariaie.gat"
+      ],
+      "foundingDate": "2015",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Iran"
+      }
     },
-    "sameAs": [
-      "https://instagram.com/chadoor_",
-      "https://t.me/GATTENT",
-      "https://wa.me/989118031241"
-    ]
-  }
-  </script>
-
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://chadooor.ir/#localbusiness",
+      "name": "چادردوزی جزیره J.A.T",
+      "image": "https://chadooor.ir/favicon-512x512.png",
+      "url": "https://chadooor.ir/",
+      "telephone": "+989118031241",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "جاده هراز، روبروی پلیس‌راه محمدآباد",
+        "addressLocality": "آمل",
+        "addressRegion": "مازندران",
+        "addressCountry": "IR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.3711",
+        "longitude": "52.3550"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "parentOrganization": {
+        "@id": "https://chadooor.ir/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://chadooor.ir/#website",
+      "url": "https://chadooor.ir",
+      "name": "چادردوزی جزیره J.A.T",
+      "description": "تولید و تعمیر چادر مسافرتی و برزنتی در آمل",
+      "publisher": {
+        "@id": "https://chadooor.ir/#organization"
+      },
+      "inLanguage": "fa-IR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://chadooor.ir/shop.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chadooor.ir/#webpage",
+      "url": "https://chadooor.ir/",
+      "name": "چادر مسافرتی و برزنتی آمل | تولید و تعمیر چادر | چادردوزی جزیره",
+      "description": "تولید و تعمیر چادر مسافرتی و برزنتی در آمل. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران. چادردوزی جزیره J.A.T",
+      "isPartOf": {
+        "@id": "https://chadooor.ir/#website"
+      },
+      "about": {
+        "@id": "https://chadooor.ir/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://chadooor.ir/favicon-512x512.png"
+      },
+      "inLanguage": "fa-IR"
+    }
+  ]
+}
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
