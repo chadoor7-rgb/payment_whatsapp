@@ -5,72 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سبد خرید | چادردوزی جزیره J.A.T</title>
   <meta name="description" content="سبد خرید چادردوزی جزیره - مشاهده و ثبت سفارش محصولات">
+  <meta name="robots" content="noindex, follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .cart-page { max-width: 900px; margin: 2rem auto 4rem; padding: 0 1rem; }
-    .cart-page h1 { font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: 800; }
+    .cart-page { max-width: 920px; margin: 2rem auto 4rem; padding: 0 1rem; }
+    .cart-page h1 { font-size: 1.7rem; margin-bottom: 0.4rem; font-weight: 800; }
+    .cart-subtitle { color: #68736f; font-size: 0.92rem; margin-bottom: 1.6rem; }
     .cart-empty {
-      text-align: center; padding: 4rem 1rem; background: #fff;
-      border-radius: 16px; border: 1px solid #e5e8e5;
+      text-align: center; padding: 4.5rem 1.5rem; background: #fff;
+      border-radius: 18px; border: 1px solid #e5e8e5;
     }
-    .cart-empty p { color: #68736f; margin: 1rem 0 1.5rem; }
+    .cart-empty .icon { font-size: 3.4rem; margin-bottom: 0.8rem; }
+    .cart-empty h2 { font-size: 1.25rem; margin: 0 0 0.6rem; }
+    .cart-empty p { color: #68736f; margin: 0 0 1.6rem; line-height: 1.7; }
     .cart-list { display: flex; flex-direction: column; gap: 1rem; }
     .cart-item {
-      display: grid; grid-template-columns: 90px 1fr auto; gap: 1rem;
-      background: #fff; border: 1px solid #e5e8e5; border-radius: 14px;
-      padding: 1rem; align-items: center;
+      display: grid; grid-template-columns: 95px 1fr auto; gap: 1.1rem;
+      background: #fff; border: 1px solid #e5e8e5; border-radius: 16px;
+      padding: 1.1rem; align-items: center; transition: box-shadow .2s;
     }
+    .cart-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,.05); }
     .cart-item img {
-      width: 90px; height: 75px; object-fit: cover; border-radius: 10px; background: #f5f5f5;
+      width: 95px; height: 80px; object-fit: cover; border-radius: 12px; background: #f5f5f5;
     }
-    .cart-item-info h3 { font-size: 1rem; margin: 0 0 0.3rem; font-weight: 700; }
+    .cart-item-info h3 { font-size: 1rem; margin: 0 0 0.35rem; font-weight: 700; }
+    .cart-item-info h3 a { color: inherit; text-decoration: none; }
+    .cart-item-info h3 a:hover { color: #155e55; }
     .cart-item-info .price { color: #d32f2f; font-weight: 800; font-size: 0.95rem; }
-    .cart-item-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; }
+    .cart-item-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.7rem; }
     .qty-control { display: flex; align-items: center; gap: 0.5rem; }
     .qty-btn {
-      width: 32px; height: 32px; border: 1px solid #ddd; background: #fafafa;
-      border-radius: 8px; font-size: 1.1rem; cursor: pointer; display: flex;
-      align-items: center; justify-content: center;
+      width: 34px; height: 34px; border: 1px solid #ddd; background: #fafafa;
+      border-radius: 9px; font-size: 1.15rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center; font-family: inherit; transition: .15s;
     }
     .qty-btn:hover { background: #155e55; color: #fff; border-color: #155e55; }
-    .qty-value { min-width: 28px; text-align: center; font-weight: 700; }
+    .qty-value { min-width: 30px; text-align: center; font-weight: 700; font-size: 0.95rem; }
     .remove-btn {
-      background: none; border: none; color: #b42318; font-size: 0.82rem;
-      cursor: pointer; font-family: inherit;
+      background: none; border: none; color: #b42318; font-size: 0.83rem;
+      cursor: pointer; font-family: inherit; padding: 0;
     }
+    .remove-btn:hover { text-decoration: underline; }
     .cart-summary {
       margin-top: 1.8rem; background: #fff; border: 1px solid #e5e8e5;
-      border-radius: 16px; padding: 1.5rem;
+      border-radius: 18px; padding: 1.6rem;
     }
     .summary-row {
-      display: flex; justify-content: space-between; margin-bottom: 0.8rem;
+      display: flex; justify-content: space-between; margin-bottom: 0.75rem;
       font-size: 0.95rem;
     }
     .summary-row.total {
-      font-size: 1.2rem; font-weight: 800; border-top: 1px solid #e5e8e5;
-      padding-top: 0.9rem; margin-top: 0.5rem; color: #d32f2f;
+      font-size: 1.25rem; font-weight: 800; border-top: 1px solid #e5e8e5;
+      padding-top: 1rem; margin-top: 0.6rem; color: #d32f2f;
+    }
+    .discount-box {
+      display: flex; gap: 0.6rem; margin: 1.1rem 0 0.4rem;
+    }
+    .discount-box input {
+      flex: 1; border: 1px solid #ddd; border-radius: 10px; padding: 0.7rem 1rem;
+      font-family: inherit; font-size: 0.92rem;
+    }
+    .discount-box button {
+      background: #155e55; color: #fff; border: none; border-radius: 10px;
+      padding: 0 1.2rem; font-weight: 700; font-family: inherit; cursor: pointer;
+    }
+    .discount-msg { font-size: 0.85rem; margin-top: 0.4rem; min-height: 1.2em; }
+    .discount-msg.success { color: #0f7a45; }
+    .discount-msg.error { color: #b42318; }
+    .shipping-note {
+      background: #f6f8f6; border-radius: 12px; padding: 0.9rem 1rem;
+      font-size: 0.87rem; color: #555; margin: 1rem 0 0.5rem; line-height: 1.7;
     }
     .cart-actions {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.3rem;
     }
     .btn-wa {
       background: #20b95a; color: #fff; border: none; border-radius: 12px;
-      padding: 0.9rem; font-weight: 800; font-size: 0.95rem; cursor: pointer;
-      font-family: inherit; text-decoration: none; text-align: center;
-      display: flex; align-items: center; justify-content: center;
+      padding: 0.95rem; font-weight: 800; font-size: 0.95rem;
+      text-decoration: none; text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
     }
     .btn-continue {
       background: #f5f5f5; color: #17231f; border: 1px solid #e5e5e5;
-      border-radius: 12px; padding: 0.9rem; font-weight: 700; font-size: 0.95rem;
-      text-decoration: none; text-align: center; display: flex;
-      align-items: center; justify-content: center;
+      border-radius: 12px; padding: 0.95rem; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; text-align: center;
+      display: flex; align-items: center; justify-content: center;
     }
+    .clear-cart {
+      background: none; border: none; color: #b42318; font-size: 0.88rem;
+      cursor: pointer; font-family: inherit; margin-top: 1rem; display: inline-block;
+    }
+    .clear-cart:hover { text-decoration: underline; }
     @media (max-width: 600px) {
-      .cart-item { grid-template-columns: 70px 1fr; }
-      .cart-item-actions { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; }
+      .cart-item { grid-template-columns: 75px 1fr; gap: 0.9rem; }
+      .cart-item-actions { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; }
       .cart-actions { grid-template-columns: 1fr; }
+      .discount-box { flex-direction: column; }
     }
   </style>
 </head>
@@ -98,7 +130,15 @@
 
 <main>
   <div class="cart-page">
+    <div class="breadcrumb" style="font-size:13px;color:#68736f;margin-bottom:1.1rem;">
+      <a href="index.html" style="color:#155e55;text-decoration:none;">خانه</a> ← 
+      <a href="shop.html" style="color:#155e55;text-decoration:none;">فروشگاه</a> ← 
+      سبد خرید
+    </div>
+
     <h1>سبد خرید</h1>
+    <p class="cart-subtitle">محصولات انتخاب‌شده را بررسی کنید و سفارش خود را از طریق واتساپ ثبت کنید.</p>
+
     <div id="cartContent">
       <div class="cart-empty">
         <p>در حال بارگذاری سبد خرید...</p>
@@ -106,8 +146,6 @@
     </div>
   </div>
 </main>
-
-
 <footer class="site-footer">
   <div class="footer-top">
     <a href="index.html" class="brand">
@@ -124,60 +162,47 @@
     <a href="gallery.html">گالری</a>
     <a href="about.html">درباره ما</a>
     <a href="blog.html">مجله سفر</a>
-    <a href="contact.html">تماس </a>
+    <a href="contact.html">تماس با ما</a>
   </nav>
 
   <div class="social-links" aria-label="شبکه‌های اجتماعی">
-    <a href="https://wa.me/989118031241"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="واتساپ" title="واتساپ">
+    <!-- واتساپ -->
+    <a href="https://wa.me/989118031241" target="_blank" rel="noopener noreferrer" aria-label="واتساپ" title="واتساپ">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.15 1.6 5.96L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.88-5.33 11.88-11.88a11.8 11.8 0 0 0-3.47-8.44ZM12.1 21.78h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 0 1-1.51-5.28c0-5.45 4.43-9.88 9.88-9.88a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
       </svg>
     </a>
 
-    <a href="https://instagram.com/chadoor_"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="اینستاگرام" title="اینستاگرام">
+    <!-- اینستاگرام اصلی -->
+    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام" title="اینستاگرام">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
       </svg>
     </a>
 
-    <a href="https://t.me/GATTENT"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="تلگرام" title="تلگرام">
+    <!-- تلگرام -->
+    <a href="https://t.me/GATTENT" target="_blank" rel="noopener noreferrer" aria-label="تلگرام" title="تلگرام">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M22.4 2.6 19 21c-.25 1.3-.95 1.6-1.92 1l-5.3-3.9-2.56 2.46c-.28.28-.52.52-1.06.52l.38-5.4L18.36 6.9c.4-.38-.09-.59-.62-.21L6.1 14.2.9 12.57c-1.13-.36-1.15-1.13.24-1.68L21.48 3c.94-.35 1.76.23.92-.4Z"/>
       </svg>
     </a>
 
-    <a href="https://x.com/korosh_ariaie"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="ایکس" title="ایکس">
+    <!-- ایکس (توییتر) -->
+    <a href="https://x.com/korosh_ariaie" target="_blank" rel="noopener noreferrer" aria-label="ایکس" title="ایکس">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.35L5.62 22H2.5l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.4L17.8 20Z"/>
       </svg>
     </a>
 
-    <a href="https://instagram.com/chadortent.ir"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="اینستاگرام" title="اینستاگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-      </svg>
-    </a>
-    <a href="https://www.facebook.com/korosh ariaie gat"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="فیسبوک" title="فیسبوک">
+    <!-- فیسبوک -->
+    <a href="https://www.facebook.com/korosh.ariaie.gat" target="_blank" rel="noopener noreferrer" aria-label="فیسبوک" title="فیسبوک">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.93.26-1.56 1.6-1.56h1.7V4.14A22 22 0 0 0 14.32 4c-2.46 0-4.14 1.5-4.14 4.26v2.34H7.4v3.2h2.78V22h3.32Z"/>
       </svg>
     </a>
 
-    <a href="https://youtube.com/@chadoortent"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="یوتیوب" title="یوتیوب">
+    <!-- یوتیوب -->
+    <a href="https://youtube.com/@chadoortent" target="_blank" rel="noopener noreferrer" aria-label="یوتیوب" title="یوتیوب">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.56 12 3.56 12 3.56s-7.55 0-9.4.52A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.52 9.4.52 9.4.52s7.55 0 9.4-.52a3 3 0 0 0 2.1-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
       </svg>
@@ -189,45 +214,28 @@
     <p>کلیه حقوق این وب‌سایت محفوظ است.</p>
   </div>
 </footer>
-
-<script src="script.js"></script>
-
-<!-- اطلاعات کسب‌وکار برای موتورهای جست‌وجو -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "چادردوزی جزیره J.A.T",
-  "image": "https://chadooor.ir/favicon.svg",
-  "url": "https://chadooor.ir/",
-  "telephone": "+989118031241",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "جاده هراز، روبروی پلیس‌راه محمدآباد",
-    "addressLocality": "آمل",
-    "addressRegion": "مازندران",
-    "addressCountry": "IR"
-  }
-}
-</script>
-
 <!-- دکمه شناور واتساپ -->
-<a
-  href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
-  class="floating-whatsapp"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="مشاوره از طریق واتساپ"
-  title="گفتگو در واتساپ">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+<a href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
+   class="floating-whatsapp" target="_blank" rel="noopener" aria-label="مشاوره واتساپ">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
+
 <script src="script.js"></script>
+
 <script>
 (function(){
   const CART_KEY = "chadoor_cart";
+  const DISCOUNT_KEY = "chadoor_discount";
+
+  // کدهای تخفیف معتبر (می‌توانید تغییر دهید)
+  const COUPONS = {
+    "JAT10": { percent: 10, label: "۱۰٪ تخفیف" },
+    "CHADOOR15": { percent: 15, label: "۱۵٪ تخفیف" },
+    "WELCOME": { percent: 5, label: "۵٪ تخفیف خوش‌آمدگویی" }
+  };
 
   function getCart(){
     try { return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); }
@@ -239,38 +247,68 @@
     updateCartCount();
   }
 
+  function getDiscount(){
+    try { return JSON.parse(localStorage.getItem(DISCOUNT_KEY) || "null"); }
+    catch { return null; }
+  }
+
+  function saveDiscount(code){
+    if(code) localStorage.setItem(DISCOUNT_KEY, JSON.stringify(code));
+    else localStorage.removeItem(DISCOUNT_KEY);
+  }
+
   function updateCartCount(){
     const cart = getCart();
     const total = cart.reduce((s, i) => s + (Number(i.qty) || 0), 0);
     document.querySelectorAll("#cartCount").forEach(el => el.textContent = total);
   }
 
+  function calcTotals(cart, discount){
+    let subtotal = 0;
+    cart.forEach(item => {
+      subtotal += (Number(item.price) || 0) * (Number(item.qty) || 1);
+    });
+    let discountAmount = 0;
+    if(discount && COUPONS[discount]){
+      discountAmount = Math.round(subtotal * COUPONS[discount].percent / 100);
+    }
+    return {
+      subtotal,
+      discountAmount,
+      total: Math.max(0, subtotal - discountAmount)
+    };
+  }
+
   function renderCart(){
     const cart = getCart();
+    const discount = getDiscount();
     const box = document.getElementById("cartContent");
 
     if(!cart.length){
       box.innerHTML = `
         <div class="cart-empty">
-          <div style="font-size:3rem;margin-bottom:0.5rem;">🛒</div>
-          <p>سبد خرید شما خالی است.</p>
-          <a href="shop.html" class="btn btn-primary">رفتن به فروشگاه</a>
+          <div class="icon">🛒</div>
+          <h2>سبد خرید شما خالی است</h2>
+          <p>هنوز محصولی اضافه نکرده‌اید.<br>از فروشگاه دیدن کنید و محصول مورد نظرتان را انتخاب کنید.</p>
+          <a href="shop.html" class="btn btn-primary">مشاهده فروشگاه</a>
         </div>`;
       return;
     }
 
-    let totalPrice = 0;
+    const totals = calcTotals(cart, discount);
+    const hasPrice = totals.subtotal > 0;
+
     const itemsHtml = cart.map((item, index) => {
       const price = Number(item.price) || 0;
       const qty = Number(item.qty) || 1;
-      totalPrice += price * qty;
-      const priceText = price > 0 ? price.toLocaleString("fa-IR") + " تومان" : "تماس بگیرید";
-
+      const priceText = price > 0 ? price.toLocaleString("fa-IR") + " تومان" : "قیمت پس از تماس";
       return `
-        <div class="cart-item" data-index="${index}">
-          <img src="${item.image || 'hero-chadoor.webp'}" alt="${item.name}" onerror="this.src='hero-chadoor.webp'">
+        <div class="cart-item">
+          <a href="product.html?id=${item.id}">
+            <img src="${item.image || 'hero-chadoor.webp'}" alt="${item.name}" onerror="this.src='hero-chadoor.webp'">
+          </a>
           <div class="cart-item-info">
-            <h3>${item.name}</h3>
+            <h3><a href="product.html?id=${item.id}">${item.name}</a></h3>
             <div class="price">${priceText}</div>
           </div>
           <div class="cart-item-actions">
@@ -284,28 +322,71 @@
         </div>`;
     }).join("");
 
-    const totalText = totalPrice > 0
-      ? totalPrice.toLocaleString("fa-IR") + " تومان"
-      : "پس از تماس اعلام می‌شود";
-
-    // ساخت متن واتساپ
-    const waLines = cart.map(i => {
+    // ساخت پیام واتساپ
+    let waLines = cart.map(i => {
       const p = Number(i.price) || 0;
-      return `• ${i.name} × ${i.qty}` + (p > 0 ? ` (${p.toLocaleString("fa-IR")} تومان)` : "");
+      return `• ${i.name}  ×${i.qty}` + (p > 0 ? `  (${p.toLocaleString("fa-IR")} تومان)` : "");
     }).join("\n");
-    const waText = `سلام، می‌خواهم این سفارش را ثبت کنم:\n\n${waLines}\n\nجمع کل: ${totalText}`;
+
+    let waText = `سلام، می‌خواهم این سفارش را ثبت کنم:\n\n${waLines}\n\n`;
+    if(hasPrice){
+      waText += `جمع جزء: ${totals.subtotal.toLocaleString("fa-IR")} تومان\n`;
+      if(totals.discountAmount > 0){
+        waText += `تخفیف: ${totals.discountAmount.toLocaleString("fa-IR")} تومان\n`;
+      }
+      waText += `مبلغ قابل پرداخت: ${totals.total.toLocaleString("fa-IR")} تومان\n`;
+    }
+    if(discount) waText += `کد تخفیف: ${discount}\n`;
+    waText += `\nلطفاً راهنمایی کنید.`;
+
     const waLink = "https://wa.me/989118031241?text=" + encodeURIComponent(waText);
 
     box.innerHTML = `
       <div class="cart-list">${itemsHtml}</div>
+
       <div class="cart-summary">
-        <div class="summary-row"><span>تعداد اقلام</span><span>${cart.reduce((s,i)=>s+(Number(i.qty)||0),0)} عدد</span></div>
-        <div class="summary-row total"><span>جمع کل</span><span>${totalText}</span></div>
+        <div class="summary-row">
+          <span>تعداد اقلام</span>
+          <span>${cart.reduce((s,i)=>s+(Number(i.qty)||0),0)} عدد</span>
+        </div>
+        <div class="summary-row">
+          <span>جمع جزء</span>
+          <span>${hasPrice ? totals.subtotal.toLocaleString("fa-IR") + " تومان" : "—"}</span>
+        </div>
+
+        ${totals.discountAmount > 0 ? `
+          <div class="summary-row" style="color:#0f7a45">
+            <span>تخفیف (${COUPONS[discount].label})</span>
+            <span>− ${totals.discountAmount.toLocaleString("fa-IR")} تومان</span>
+          </div>` : ""}
+
+        <div class="summary-row total">
+          <span>مبلغ قابل پرداخت</span>
+          <span>${hasPrice ? totals.total.toLocaleString("fa-IR") + " تومان" : "پس از تماس اعلام می‌شود"}</span>
+        </div>
+
+        <!-- کد تخفیف -->
+        <div class="discount-box">
+          <input type="text" id="discountInput" placeholder="کد تخفیف را وارد کنید" value="${discount || ""}">
+          <button id="applyDiscount">اعمال</button>
+        </div>
+        <div class="discount-msg" id="discountMsg"></div>
+
+        <div class="shipping-note">
+          🚚 هزینه ارسال بر اساس شهر مقصد پس از ثبت سفارش اعلام می‌شود.<br>
+          محصولات سفارشی ممکن است نیاز به هماهنگی ابعاد و جنس داشته باشند.
+        </div>
+
         <div class="cart-actions">
-          <a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">ثبت سفارش در واتساپ</a>
+          <a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">
+            ثبت سفارش در واتساپ
+          </a>
           <a href="shop.html" class="btn-continue">ادامه خرید</a>
         </div>
-      </div>`;
+
+        <button class="clear-cart" id="clearCart">پاک کردن کل سبد خرید</button>
+      </div>
+    `;
 
     // رویدادها
     box.querySelectorAll("[data-action]").forEach(btn => {
@@ -319,11 +400,46 @@
         } else if(action === "minus"){
           cart[index].qty = Math.max(1, (Number(cart[index].qty) || 1) - 1);
         } else if(action === "remove"){
-          cart.splice(index, 1);
+          if(confirm("آیا از حذف این محصول مطمئن هستید؟")){
+            cart.splice(index, 1);
+          } else return;
         }
         saveCart(cart);
         renderCart();
       });
+    });
+
+    // اعمال کد تخفیف
+    document.getElementById("applyDiscount")?.addEventListener("click", () => {
+      const code = (document.getElementById("discountInput").value || "").trim().toUpperCase();
+      const msg = document.getElementById("discountMsg");
+
+      if(!code){
+        saveDiscount(null);
+        msg.textContent = "کد تخفیف حذف شد.";
+        msg.className = "discount-msg";
+        renderCart();
+        return;
+      }
+
+      if(COUPONS[code]){
+        saveDiscount(code);
+        msg.textContent = `کد تخفیف «${COUPONS[code].label}» با موفقیت اعمال شد.`;
+        msg.className = "discount-msg success";
+        renderCart();
+      } else {
+        msg.textContent = "کد تخفیف معتبر نیست.";
+        msg.className = "discount-msg error";
+      }
+    });
+
+    // پاک کردن کل سبد
+    document.getElementById("clearCart")?.addEventListener("click", () => {
+      if(confirm("آیا می‌خواهید تمام محصولات سبد خرید حذف شوند؟")){
+        saveCart([]);
+        saveDiscount(null);
+        renderCart();
+      }
     });
   }
 
