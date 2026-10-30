@@ -1014,3 +1014,11 @@ button, input, textarea {
     overflow: visible !important;
   }
 }
+@media (max-width: 980px) {
+  .main-nav {
+    transform: none !important;
+  }
+  .main-nav.open {
+    transform: none !important;
+  }
+}
