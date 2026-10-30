@@ -886,3 +886,46 @@ button, input, textarea {
     padding: 60px 0;
   }
 }
+/* جلوگیری از اسکرول افقی */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* اصلاح هدر در موبایل */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 12px !important;
+    height: 64px !important;
+    gap: 8px !important;
+    overflow: hidden;
+  }
+
+  .brand span {
+    font-size: 13px !important;
+    max-width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .brand-logo {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* مخفی کردن جستجوی گوگل در موبایل (علت اصلی شلوغی) */
+  .site-search,
+  .gsc-control-cse,
+  .gcse-search {
+    display: none !important;
+  }
+
+  .header-actions .btn {
+    display: none !important; /* دکمه ثبت سفارش در موبایل از منو در دسترس است */
+  }
+
+  .cart-link {
+    font-size: 14px;
+  }
+}
