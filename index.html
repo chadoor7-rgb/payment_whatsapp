@@ -760,6 +760,53 @@
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
+<script>
+(function () {
+  var btn = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('.main-nav');
+  if (!btn || !nav) return;
 
+  var overlay = document.getElementById('navOverlay');
+  if (!overlay) {
+    overlay = document.createElement('button');
+    overlay.id = 'navOverlay';
+    overlay.className = 'nav-overlay';
+    overlay.type = 'button';
+    overlay.setAttribute('aria-label', 'بستن منو');
+    document.body.appendChild(overlay);
+  }
+
+  function openMenu() {
+    nav.classList.add('open');
+    nav.style.setProperty('right', '0', 'important');
+    nav.style.setProperty('left', 'auto', 'important');
+    overlay.classList.add('show');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    nav.classList.remove('open');
+    nav.style.setProperty('right', '-100%', 'important');
+    nav.style.setProperty('left', 'auto', 'important');
+    overlay.classList.remove('show');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (nav.classList.contains('open')) closeMenu();
+    else openMenu();
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+</script>
 </body>
      </html>
