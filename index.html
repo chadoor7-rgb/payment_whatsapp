@@ -760,52 +760,106 @@
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
+  <script src="script.js"></script>
 <script>
 (function () {
-  var btn = document.querySelector('.menu-toggle');
-  var nav = document.querySelector('.main-nav');
-  if (!btn || !nav) return;
+  "use strict";
 
-  var overlay = document.getElementById('navOverlay');
-  if (!overlay) {
-    overlay = document.createElement('button');
-    overlay.id = 'navOverlay';
-    overlay.className = 'nav-overlay';
-    overlay.type = 'button';
-    overlay.setAttribute('aria-label', 'بستن منو');
-    document.body.appendChild(overlay);
+  function setupMenu() {
+    var oldBtn = document.querySelector(".menu-toggle");
+    var nav = document.querySelector(".main-nav");
+    if (!oldBtn || !nav) return;
+
+    // حذف لیسنرهای قبلی با جایگزین کردن دکمه
+    var btn = oldBtn.cloneNode(true);
+    oldBtn.parentNode.replaceChild(btn, oldBtn);
+
+    // ساخت overlay
+    var overlay = document.getElementById("navOverlay");
+    if (!overlay) {
+      overlay = document.createElement("button");
+      overlay.id = "navOverlay";
+      overlay.className = "nav-overlay";
+      overlay.type = "button";
+      overlay.setAttribute("aria-label", "بستن منو");
+      document.body.appendChild(overlay);
+    }
+
+    function openMenu() {
+      nav.classList.add("open");
+      // اجبار استایل‌ها (بدون تداخل)
+      nav.style.cssText = [
+        "display:block",
+        "position:fixed",
+        "top:0",
+        "bottom:0",
+        "width:280px",
+        "max-width:85vw",
+        "margin:0",
+        "padding:100px 20px 40px",
+        "background:#fffdf8",
+        "z-index:10050",
+        "overflow-y:auto",
+        "box-shadow:-10px 0 40px rgba(0,0,0,0.18)",
+        "left:auto",
+        "right:0",
+        "transform:none",
+        "transition:right 0.3s ease"
+      ].join(";") + ";";
+
+      overlay.classList.add("show");
+      overlay.style.display = "block";
+      btn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      nav.classList.remove("open");
+      nav.style.cssText = [
+        "display:block",
+        "position:fixed",
+        "top:0",
+        "bottom:0",
+        "width:280px",
+        "max-width:85vw",
+        "margin:0",
+        "padding:100px 20px 40px",
+        "background:#fffdf8",
+        "z-index:10050",
+        "overflow-y:auto",
+        "left:auto",
+        "right:-100%",
+        "transform:none"
+      ].join(";") + ";";
+
+      overlay.classList.remove("show");
+      overlay.style.display = "none";
+      btn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    // حالت اولیه: بسته
+    closeMenu();
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if (nav.classList.contains("open")) closeMenu();
+      else openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
   }
 
-  function openMenu() {
-    nav.classList.add('open');
-    nav.style.setProperty('right', '0', 'important');
-    nav.style.setProperty('left', 'auto', 'important');
-    overlay.classList.add('show');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupMenu);
+  } else {
+    setupMenu();
   }
-
-  function closeMenu() {
-    nav.classList.remove('open');
-    nav.style.setProperty('right', '-100%', 'important');
-    nav.style.setProperty('left', 'auto', 'important');
-    overlay.classList.remove('show');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (nav.classList.contains('open')) closeMenu();
-    else openMenu();
-  });
-
-  overlay.addEventListener('click', closeMenu);
-
-  nav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
 })();
 </script>
 </body>
