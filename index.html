@@ -763,101 +763,104 @@
 (function () {
   "use strict";
 
-  function setupMenu() {
+  function ready(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  ready(function () {
     var oldBtn = document.querySelector(".menu-toggle");
     var nav = document.querySelector(".main-nav");
     if (!oldBtn || !nav) return;
 
-    // حذف لیسنرهای قبلی با جایگزین کردن دکمه
+    // دکمه جدید بدون لیسنر قبلی
     var btn = oldBtn.cloneNode(true);
     oldBtn.parentNode.replaceChild(btn, oldBtn);
 
-    // ساخت overlay
+    // منو را از هدر خارج کن و به body بچسبان (خیلی مهم)
+    document.body.appendChild(nav);
+
+    // overlay
     var overlay = document.getElementById("navOverlay");
     if (!overlay) {
-      overlay = document.createElement("button");
+      overlay = document.createElement("div");
       overlay.id = "navOverlay";
       overlay.className = "nav-overlay";
-      overlay.type = "button";
-      overlay.setAttribute("aria-label", "بستن منو");
       document.body.appendChild(overlay);
     }
 
-    function openMenu() {
-      nav.classList.add("open");
-      // اجبار استایل‌ها (بدون تداخل)
-      nav.style.cssText = [
-        "display:block",
-        "position:fixed",
-        "top:0",
-        "bottom:0",
-        "width:280px",
-        "max-width:85vw",
-        "margin:0",
-        "padding:100px 20px 40px",
-        "background:#fffdf8",
-        "z-index:10050",
-        "overflow-y:auto",
-        "box-shadow:-10px 0 40px rgba(0,0,0,0.18)",
-        "left:auto",
-        "right:0",
-        "transform:none",
-        "transition:right 0.3s ease"
-      ].join(";") + ";";
-
-      overlay.classList.add("show");
-      overlay.style.display = "block";
-      btn.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeMenu() {
+    function applyClosed() {
       nav.classList.remove("open");
-      nav.style.cssText = [
-        "display:block",
-        "position:fixed",
-        "top:0",
-        "bottom:0",
-        "width:280px",
-        "max-width:85vw",
-        "margin:0",
-        "padding:100px 20px 40px",
-        "background:#fffdf8",
-        "z-index:10050",
-        "overflow-y:auto",
-        "left:auto",
-        "right:-100%",
-        "transform:none"
-      ].join(";") + ";";
-
+      nav.style.setProperty("display", "block", "important");
+      nav.style.setProperty("position", "fixed", "important");
+      nav.style.setProperty("top", "0", "important");
+      nav.style.setProperty("bottom", "0", "important");
+      nav.style.setProperty("width", "280px", "important");
+      nav.style.setProperty("max-width", "85vw", "important");
+      nav.style.setProperty("margin", "0", "important");
+      nav.style.setProperty("padding", "100px 20px 40px", "important");
+      nav.style.setProperty("background", "#fffdf8", "important");
+      nav.style.setProperty("z-index", "10050", "important");
+      nav.style.setProperty("overflow-y", "auto", "important");
+      nav.style.setProperty("box-shadow", "-10px 0 40px rgba(0,0,0,0.18)", "important");
+      nav.style.setProperty("left", "auto", "important");
+      nav.style.setProperty("right", "-100%", "important");
+      nav.style.setProperty("transform", "none", "important");
       overlay.classList.remove("show");
-      overlay.style.display = "none";
+      overlay.style.setProperty("display", "none", "important");
       btn.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
     }
 
-    // حالت اولیه: بسته
-    closeMenu();
+    function applyOpen() {
+      nav.classList.add("open");
+      nav.style.setProperty("display", "block", "important");
+      nav.style.setProperty("position", "fixed", "important");
+      nav.style.setProperty("top", "0", "important");
+      nav.style.setProperty("bottom", "0", "important");
+      nav.style.setProperty("width", "280px", "important");
+      nav.style.setProperty("max-width", "85vw", "important");
+      nav.style.setProperty("margin", "0", "important");
+      nav.style.setProperty("padding", "100px 20px 40px", "important");
+      nav.style.setProperty("background", "#fffdf8", "important");
+      nav.style.setProperty("z-index", "10050", "important");
+      nav.style.setProperty("overflow-y", "auto", "important");
+      nav.style.setProperty("box-shadow", "-10px 0 40px rgba(0,0,0,0.18)", "important");
+      nav.style.setProperty("left", "auto", "important");
+      nav.style.setProperty("right", "0px", "important");
+      nav.style.setProperty("transform", "none", "important");
+      overlay.classList.add("show");
+      overlay.style.setProperty("display", "block", "important");
+      overlay.style.setProperty("position", "fixed", "important");
+      overlay.style.setProperty("inset", "0", "important");
+      overlay.style.setProperty("background", "rgba(0,0,0,0.5)", "important");
+      overlay.style.setProperty("z-index", "10040", "important");
+      btn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    applyClosed();
 
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-      e.stopImmediatePropagation();
-      if (nav.classList.contains("open")) closeMenu();
-      else openMenu();
-    });
+      e.stopPropagation();
+      if (nav.classList.contains("open")) applyClosed();
+      else applyOpen();
+    }, true);
 
-    overlay.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", function () {
+      applyClosed();
+    });
 
     nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", closeMenu);
+      a.addEventListener("click", function () {
+        applyClosed();
+      });
     });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupMenu);
-  } else {
-    setupMenu();
-  }
+  });
 })();
 </script>
 </body>
