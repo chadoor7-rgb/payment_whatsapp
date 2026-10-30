@@ -940,3 +940,98 @@ button, input, textarea {
     width: 100%;
   }
    }
+/* ================= منوی موبایل - نسخه اصلاح‌شده ================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #182622;
+  padding: 8px;
+  z-index: 10070;
+  line-height: 1;
+  position: relative;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10040;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-overlay.show {
+  display: block !important;
+}
+
+@media (max-width: 980px) {
+  .menu-toggle {
+    display: block !important;
+  }
+
+  /* مخفی کردن منوی دسکتاپ و تبدیل به کشو */
+  .main-nav {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 280px !important;
+    max-width: 85vw !important;
+    height: 100% !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 100px 20px 40px !important;
+    background: #fffdf8 !important;
+    z-index: 10050 !important;
+    overflow-y: auto !important;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15) !important;
+
+    /* به جای transform از right استفاده می‌کنیم */
+    right: -300px !important;
+    transition: right 0.3s ease !important;
+
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .main-nav.open {
+    right: 0 !important;
+  }
+
+  .main-nav a {
+    display: block !important;
+    width: 100% !important;
+    padding: 16px 12px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #182622 !important;
+    border-bottom: 1px solid #eee !important;
+    text-align: right !important;
+  }
+
+  .main-nav a:hover {
+    color: #235d56 !important;
+    background: #f0f7f5 !important;
+  }
+
+  .site-header {
+    overflow: visible !important;
+  }
+
+  .header-actions .btn {
+    display: none !important;
+  }
+
+  /* جلوگیری از اسکرول افقی */
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
