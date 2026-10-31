@@ -1877,3 +1877,65 @@ body {
 .nav-overlay.show {
   display: block;
 }
+/* دسته‌بندی‌های صفحه اصلی */
+.cat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.3rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.cat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.6rem 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e8e5;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: block;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(21, 40, 34, 0.1);
+}
+
+.cat-card .emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.cat-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.cat-card p {
+  color: #68736f;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0 0 0.8rem;
+}
+
+.cat-card span {
+  color: #155e55;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 1.8rem;
+  font-weight: 800;
+}
+
+@media (max-width: 800px) {
+  .cat-grid {
+    grid-template-columns: 1fr;
+  }
+}
