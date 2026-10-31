@@ -6,14 +6,12 @@
   <title>چادر مسافرتی و برزنتی آمل | تولید و تعمیر چادر | چادردوزی جزیره</title>
   <meta name="description" content="تولید و تعمیر چادر مسافرتی و برزنتی در آمل. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران. چادردوزی جزیره J.A.T">
   <link rel="canonical" href="https://chadooor.ir/">
-
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="چادردوزی جزیره">
@@ -24,14 +22,12 @@
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta property="og:locale" content="fa_IR">
-
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="چادر مسافرتی و برزنتی آمل | چادردوزی جزیره">
   <meta name="twitter:description" content="تولید و تعمیر چادر مسافرتی و برزنتی در آمل با کیفیت بالا">
   <meta name="twitter:image" content="https://chadooor.ir/favicon-192x192.png">
-
-  <!-- Schema Organization -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,12 +36,7 @@
         "@type": "Organization",
         "@id": "https://chadooor.ir/#organization",
         "name": "چادردوزی جزیره J.A.T",
-        "alternateName": [
-          "J.A.T",
-          "چادردوزی جزیره",
-          "Jazire Ariaie Tent",
-          "چادر دوزی جزیره آمل"
-        ],
+        "alternateName": ["J.A.T", "چادردوزی جزیره", "Jazire Ariaie Tent", "چادر دوزی جزیره آمل"],
         "url": "https://chadooor.ir",
         "logo": {
           "@type": "ImageObject",
@@ -76,7 +67,8 @@
           "https://x.com/korosh_ariaie",
           "https://youtube.com/@chadoortent",
           "https://facebook.com/travel0tent"
-        ]
+        ],
+        "privacyPolicy": "https://chadooor.ir/privacy.html"
       },
       {
         "@type": "LocalBusiness",
@@ -101,20 +93,11 @@
         },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Saturday",
-            "Sunday"
-          ],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"],
           "opens": "08:00",
           "closes": "22:00"
         },
-        "parentOrganization": {
-          "@id": "https://chadooor.ir/#organization"
-        },
+        "parentOrganization": { "@id": "https://chadooor.ir/#organization" },
         "privacyPolicy": "https://chadooor.ir/privacy.html"
       },
       {
@@ -123,9 +106,7 @@
         "url": "https://chadooor.ir",
         "name": "چادردوزی جزیره J.A.T",
         "description": "تولید و تعمیر چادر مسافرتی و برزنتی در آمل",
-        "publisher": {
-          "@id": "https://chadooor.ir/#organization"
-        },
+        "publisher": { "@id": "https://chadooor.ir/#organization" },
         "inLanguage": "fa-IR"
       },
       {
@@ -134,23 +115,16 @@
         "url": "https://chadooor.ir/",
         "name": "چادر مسافرتی و برزنتی آمل | تولید و تعمیر چادر | چادردوزی جزیره",
         "description": "تولید و تعمیر چادر مسافرتی و برزنتی در آمل. دوخت سفارشی، کیفیت بالا و ارسال به سراسر ایران. چادردوزی جزیره J.A.T",
-        "isPartOf": {
-          "@id": "https://chadooor.ir/#website"
-        },
-        "about": {
-          "@id": "https://chadooor.ir/#organization"
-        },
+        "isPartOf": { "@id": "https://chadooor.ir/#website" },
+        "about": { "@id": "https://chadooor.ir/#organization" },
         "inLanguage": "fa-IR"
       }
     ]
   }
   </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
   <style>
-    /* ===== هیرو ===== */
     .hero {
       display: flex;
       flex-direction: column;
@@ -159,39 +133,36 @@
       padding: 2rem 1.2rem 3rem;
       text-align: right;
     }
-
-    .hero-img {
+    .hero-img, .hero-media {
       width: 100%;
       max-width: 1100px;
       height: 420px;
-      border-radius: 20px;
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(21, 40, 34, 0.12);
+      box-shadow: 0 20px 50px rgba(21, 40, 34, 0.14);
       margin: 0 auto 2.2rem;
       order: -1;
+      position: relative;
     }
-
-    .hero-img img {
+    .hero-img img, .hero-media img, .hero-main-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
+      border-radius: 28px;
     }
-
     .hero-content {
       max-width: 700px;
       margin-left: auto;
       text-align: right;
     }
-
     .hero-content h1 {
       font-size: 2.5rem;
       line-height: 1.3;
       margin: 0 0 0.8rem;
       font-weight: 800;
     }
-
     .hero-subtitle {
       font-size: 1.25rem;
       font-weight: 700;
@@ -199,22 +170,18 @@
       margin: 0 0 1rem;
       line-height: 1.5;
     }
-
-    .hero-content p {
+    .hero-content p, .hero-desc {
       color: #68736f;
       line-height: 1.9;
       margin-bottom: 1.5rem;
       font-size: 1.05rem;
     }
-
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem;
       justify-content: flex-start;
     }
-
-    /* ویژگی‌ها */
     .features-row {
       display: grid !important;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -223,7 +190,6 @@
       margin: 0 auto 2.5rem;
       padding: 0 1rem;
     }
-
     .feature-box {
       background: #fff;
       border: 1px solid #e5e8e5;
@@ -231,25 +197,9 @@
       padding: 1.4rem;
       text-align: center;
     }
-
-    .feature-box .icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .feature-box h3 {
-      font-size: 1.05rem;
-      margin: 0 0 0.4rem;
-    }
-
-    .feature-box p {
-      color: #68736f;
-      font-size: 0.88rem;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    /* دسته‌بندی‌ها */
+    .feature-box .icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .feature-box h3 { font-size: 1.05rem; margin: 0 0 0.4rem; }
+    .feature-box p { color: #68736f; font-size: 0.88rem; line-height: 1.7; margin: 0; }
     .cat-grid {
       display: grid !important;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -258,7 +208,6 @@
       margin: 0 auto 3rem;
       padding: 0 1rem;
     }
-
     .cat-card {
       background: #fff;
       border-radius: 16px;
@@ -269,43 +218,20 @@
       border: 1px solid #e5e8e5;
       transition: transform 0.25s, box-shadow 0.25s;
     }
-
     .cat-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 28px rgba(21, 40, 34, 0.1);
     }
-
-    .cat-card .emoji {
-      font-size: 2.2rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .cat-card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.15rem;
-    }
-
-    .cat-card p {
-      color: #68736f;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin: 0 0 0.8rem;
-    }
-
-    .cat-card span {
-      color: #155e55;
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
+    .cat-card .emoji { font-size: 2.2rem; margin-bottom: 0.7rem; }
+    .cat-card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+    .cat-card p { color: #68736f; font-size: 0.9rem; line-height: 1.7; margin: 0 0 0.8rem; }
+    .cat-card span { color: #155e55; font-weight: 700; font-size: 0.88rem; }
     .section-title {
       text-align: center;
       font-size: 1.6rem;
       margin: 0 0 1.8rem;
       font-weight: 800;
     }
-
-    /* تبلیغ چشمک‌زن */
     .blink-ad-strong {
       background: linear-gradient(45deg, #ff6b6b, #ee5a24);
       color: white;
@@ -319,36 +245,19 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       animation: strong-blink 1.2s infinite;
     }
-    .blink-ad-strong a {
-      color: white;
-      text-decoration: none;
-    }
+    .blink-ad-strong a { color: white; text-decoration: none; }
     @keyframes strong-blink {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(1.05); }
     }
-
-    /* جستجوی گوگل */
     .site-search {
       max-width: 300px;
       margin: 10px auto 0;
       padding: 0 10px;
     }
-    .site-search .gsc-control-cse {
-      background: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-    }
-    .site-search .gsc-input-box {
-      border-radius: 20px !important;
-      border: 1px solid #ccc !important;
-      height: 36px !important;
-    }
-    .site-search input.gsc-input {
-      font-size: 13px !important;
-      height: 34px !important;
-      padding: 0 12px !important;
-    }
+    .site-search .gsc-control-cse { background: transparent !important; border: none !important; padding: 0 !important; }
+    .site-search .gsc-input-box { border-radius: 20px !important; border: 1px solid #ccc !important; height: 36px !important; }
+    .site-search input.gsc-input { font-size: 13px !important; height: 34px !important; padding: 0 12px !important; }
     .site-search .gsc-search-button-v2 {
       border-radius: 0 20px 20px 0 !important;
       background-color: #155e55 !important;
@@ -357,16 +266,7 @@
       width: 44px !important;
       padding: 0 !important;
     }
-    .site-search .gsc-search-button-v2 svg {
-      width: 15px !important;
-      height: 15px !important;
-    }
-    .site-search .gcsc-branding,
-    .site-search .gsc-branding {
-      display: none !important;
-    }
-
-    /* گالری صفحه اصلی */
+    .site-search .gcsc-branding, .site-search .gsc-branding { display: none !important; }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -383,9 +283,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
     }
-    .gallery-grid .gallery-item:hover {
-      transform: translateY(-4px);
-    }
+    .gallery-grid .gallery-item:hover { transform: translateY(-4px); }
     .gallery-grid .gallery-item img {
       width: 100%;
       height: 100%;
@@ -393,131 +291,73 @@
       display: block;
       transition: transform 0.4s ease;
     }
-    .gallery-grid .gallery-item:hover img {
-      transform: scale(1.05);
+    .gallery-grid .gallery-item:hover img { transform: scale(1.05); }
+    .testimonial-stars {
+      color: #f59e0b !important;
+      letter-spacing: 2px;
     }
-
-    /* موبایل */
     @media (max-width: 800px) {
-      .hero {
-        padding: 1.5rem 1rem 2.5rem;
-      }
-      .hero-img {
+      .hero { padding: 1.5rem 1rem 2.5rem; }
+      .hero-img, .hero-media {
         height: 240px;
-        border-radius: 16px;
+        border-radius: 20px;
         margin-bottom: 1.6rem;
       }
-      .hero-content {
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-content h1 {
-        font-size: 1.8rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      .features-row,
-      .cat-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-img img, .hero-media img, .hero-main-img { border-radius: 20px; }
+      .hero-content { max-width: 100%; margin: 0; }
+      .hero-content h1 { font-size: 1.8rem; }
+      .hero-content p, .hero-desc { font-size: 1rem; }
+      .features-row, .cat-grid { grid-template-columns: 1fr; }
     }
-    .testimonial-stars {
-  color: #f59e0b !important;
-  letter-spacing: 2px;
-}
   </style>
 </head>
 <body>
-
 <header class="site-header sticky-header">
   <a href="index.html" class="brand">
     <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
     <span>چادردوزی جزیره J.A.T</span>
   </a>
+
   <nav class="main-nav" aria-label="منوی اصلی">
-    <button class="menu-toggle" aria-label="منو">☰</button>
     <a href="products.html">محصولات</a>
     <a href="shop.html">فروشگاه</a>
     <a href="services.html">خدمات</a>
     <a href="gallery.html">گالری</a>
     <a href="about.html">درباره ما</a>
     <a href="blog.html">مجله سفر</a>
+    <a href="contact.html">تماس</a>
     <a href="privacy.html">حریم خصوصی</a>
   </nav>
+
   <div class="header-actions">
     <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
     <a href="contact.html" class="btn btn-primary btn-sm">تماس و ثبت سفارش</a>
   </div>
-  <button class="menu-toggle" aria-label="منو" aria-expanded="false">☰</button>
 
-  <!-- جستجوی گوگل -->
-  <div class="site-search">
-    <script async src="https://cse.google.com/cse.js?cx=d4a1cab3e1df743f4"></script>
-    <div class="gcse-search"></div>
-  </div>
+  <button class="menu-toggle" aria-label="منو" aria-expanded="false">☰</button>
 </header>
 
 <main>
- <!-- ===== هیرو جذاب ===== -->
-<section class="hero hero-v2">
-  <div class="hero-media">
-    <img 
-      src="hero-main.webp" 
-      alt="چادر مسافرتی و برزنتی تولید چادردوزی جزیره آمل" 
-      loading="eager"
-      class="hero-main-img"
-    >
-    <div class="hero-badge">تولید مستقیم در آمل</div>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">چادردوزی جزیره J.A.T</div>
-    
-    <h1>
-      آماده‌ی<br>
-      <span class="highlight">ماجراجویی</span><br>
-      باش
-    </h1>
-
-    <p class="hero-subtitle">تولید و توزیع انواع چادرهای مسافرتی و برزنتی</p>
-
-    <p class="hero-desc">
-      چادرهای مقاوم و سفارشی برای سفر، کمپینگ و طبیعت‌گردی — 
-      دوخته‌شده در کارگاه چادردوزی جزیره آمل با تمرکز روی دوام و کیفیت واقعی.
-    </p>
-
-    <div class="hero-actions">
-      <a href="shop.html" class="btn btn-primary btn-lg">
-        مشاهده فروشگاه
-      </a>
-      <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D8%A8%DA%AF%DB%8C%D8%B1%D9%85." 
-         class="btn btn-whatsapp btn-lg" 
-         target="_blank" 
-         rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-left:6px">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-        </svg>
-        مشاوره واتساپ
-      </a>
+  <!-- هیرو -->
+  <section class="hero hero-v2">
+    <div class="hero-media">
+      <img src="hero-main.webp" alt="چادر مسافرتی و برزنتی تولید چادردوزی جزیره آمل" loading="eager" class="hero-main-img">
     </div>
-
-    <div class="hero-trust">
-      <div class="trust-item">
-        <span class="trust-number">+20 سال</span>
-        <span class="trust-label">تجربه تولید</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-number">سفارشی</span>
-        <span class="trust-label">دوخت اختصاصی</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-number">رسال سریع</span>
-        <span class="trust-label">به سراسر ایران</span>
+    <div class="hero-content">
+      <h1>آماده‌ی<br><span class="highlight">ماجراجویی</span><br>باش</h1>
+      <p class="hero-subtitle">تولید و توزیع انواع چادرهای مسافرتی و برزنتی</p>
+      <p class="hero-desc">
+        چادرهای مقاوم و سفارشی برای سفر، کمپینگ و طبیعت‌گردی —
+        دوخته‌شده در کارگاه چادردوزی جزیره آمل با تمرکز روی دوام و کیفیت واقعی.
+      </p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-primary btn-lg">مشاهده فروشگاه</a>
+        <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D8%A8%DA%AF%DB%8C%D8%B1%D9%85."
+           class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">مشاوره واتساپ</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
   <!-- ویژگی‌ها -->
   <div class="features-row">
     <div class="feature-box">
@@ -544,9 +384,7 @@
 
   <!-- تبلیغ -->
   <div class="blink-ad-strong">
-    <a href="https://chadooor.ir/shop.html" target="_blank">
-      🎉 پیشنهاد محدود! فرصت رو از دست نده 🎉
-    </a>
+    <a href="shop.html">🎉 پیشنهاد محدود! فرصت رو از دست نده 🎉</a>
   </div>
 
   <h2 class="section-title">برای هر نیاز، یک انتخاب</h2>
@@ -591,24 +429,16 @@
     <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85." target="_blank" rel="noopener" class="btn">مشاوره واتساپ</a>
   </section>
 
-  <!-- گالری کوچک صفحه اصلی -->
+  <!-- گالری -->
   <h2 class="section-title">نمونه‌کارهای ما</h2>
   <div class="gallery-grid">
-    <a href="gallery.html" class="gallery-item">
-      <img src="c2001.webp" alt="چادر مسافرتی" loading="lazy">
-    </a>
-    <a href="gallery.html" class="gallery-item">
-      <img src="khaime-1.webp" alt="چادر برزنتی" loading="lazy">
-    </a>
-    <a href="gallery.html" class="gallery-item">
-      <img src="brno-8-r.webp" alt="تعمیر چادر" loading="lazy">
-    </a>
-    <a href="gallery.html" class="gallery-item">
-      <img src="tent-kids.webp" alt="چادر کودک" loading="lazy">
-    </a>
+    <a href="gallery.html" class="gallery-item"><img src="c2001.webp" alt="چادر مسافرتی" loading="lazy"></a>
+    <a href="gallery.html" class="gallery-item"><img src="khaime-1.webp" alt="چادر برزنتی" loading="lazy"></a>
+    <a href="gallery.html" class="gallery-item"><img src="brno-8-r.webp" alt="تعمیر چادر" loading="lazy"></a>
+    <a href="gallery.html" class="gallery-item"><img src="tent-kids.webp" alt="چادر کودک" loading="lazy"></a>
   </div>
 
-  <!-- نظرات مشتریان -->
+  <!-- نظرات -->
   <section class="testimonials section" id="testimonials" dir="rtl">
     <div class="container">
       <div class="section-heading">
@@ -616,53 +446,30 @@
         <h2>نظر مشتریان چادردوزی جزیره</h2>
         <p>رضایت مشتریان، انگیزه ما برای تولید چادرهای باکیفیت است.</p>
       </div>
-
       <div class="testimonial-grid">
-        <!-- نظر اول -->
         <article class="testimonial-card">
           <div class="testimonial-stars" aria-label="۵ ستاره">★★★★★</div>
-          <blockquote>
-            «چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز سالم رسید.»
-          </blockquote>
-          <div class="testimonial-footer">
-            <strong>amir</strong>
-            <span>شیراز</span>
-          </div>
+          <blockquote>«چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز سالم رسید.»</blockquote>
+          <div class="testimonial-footer"><strong>amir</strong><span>شیراز</span></div>
         </article>
-
-        <!-- نظر دوم -->
         <article class="testimonial-card">
           <div class="testimonial-stars" aria-label="۵ ستاره">★★★★★</div>
-          <blockquote>
-            «چادرم پاره شده بود، تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود.»
-          </blockquote>
-          <div class="testimonial-footer">
-            <strong>farahnaz</strong>
-            <span>تهران</span>
-          </div>
+          <blockquote>«چادرم پاره شده بود، تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود.»</blockquote>
+          <div class="testimonial-footer"><strong>farahnaz</strong><span>تهران</span></div>
         </article>
-
-        <!-- نظر سوم -->
         <article class="testimonial-card">
           <div class="testimonial-stars" aria-label="۵ ستاره">★★★★★</div>
-          <blockquote>
-            «چادر کودک سفارش دادم، طرح قشنگ و کیفیت عالی. دخترم خیلی دوست داره.»
-          </blockquote>
-          <div class="testimonial-footer">
-            <strong>arash</strong>
-            <span>ساری</span>
-          </div>
+          <blockquote>«چادر کودک سفارش دادم، طرح قشنگ و کیفیت عالی. دخترم خیلی دوست داره.»</blockquote>
+          <div class="testimonial-footer"><strong>arash</strong><span>ساری</span></div>
         </article>
-
-        <!-- نظر چهارم -->
         <article class="testimonial-card testimonial-featured">
           <div class="testimonial-badge">تجربه خرید عمده</div>
           <div class="testimonial-stars" aria-label="۵ ستاره">★★★★★</div>
           <blockquote>
-            «خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف کودک، نوجوان، ۴ نفره، ۶ نفره، ۸ نفره و ۱۲ نفره داشتیم؛ در مجموع حدود ۲۷۵ عدد. همه چادرها عالی بودند. از تیم J.A.T چادردوزی جزیره بابت کیفیت محصولات و پیگیری خوبشان تشکر می‌کنیم. این اولین خرید ما بود و حالا مشتری همیشگی این مجموعه شده‌ایم.»
+            «خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف داشتیم؛ در مجموع حدود ۲۷۵ عدد. همه چادرها عالی بودند. از تیم J.A.T بابت کیفیت و پیگیری خوبشان تشکر می‌کنیم.»
           </blockquote>
           <div class="testimonial-footer">
-            <strong>-0914***0430-اشکان</strong>
+            <strong>اشکان</strong>
             <span>ارومیه</span>
             <span>سفارش عمده حدود ۲۷۵ عدد</span>
           </div>
@@ -680,7 +487,6 @@
     </a>
     <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
   </div>
-
   <nav class="footer-menu" aria-label="پیوندهای پایین صفحه">
     <a href="products.html">محصولات</a>
     <a href="shop.html">فروشگاه</a>
@@ -691,58 +497,14 @@
     <a href="contact.html">تماس با ما</a>
     <a href="privacy.html">حریم خصوصی</a>
   </nav>
-
   <div class="social-links" aria-label="شبکه‌های اجتماعی">
-    <!-- واتساپ -->
-    <a href="https://wa.me/989118031241" target="_blank" rel="noopener noreferrer" aria-label="واتساپ" title="واتساپ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.15 1.6 5.96L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.88-5.33 11.88-11.88a11.8 11.8 0 0 0-3.47-8.44ZM12.1 21.78h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 0 1-1.51-5.28c0-5.45 4.43-9.88 9.88-9.88a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
-      </svg>
-    </a>
-
-    <!-- اینستاگرام -->
-    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام" title="اینستاگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-      </svg>
-    </a>
-
-    <!-- تلگرام -->
-    <a href="https://t.me/GATTENT" target="_blank" rel="noopener noreferrer" aria-label="تلگرام" title="تلگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M22.4 2.6 19 21c-.25 1.3-.95 1.6-1.92 1l-5.3-3.9-2.56 2.46c-.28.28-.52.52-1.06.52l.38-5.4L18.36 6.9c.4-.38-.09-.59-.62-.21L6.1 14.2.9 12.57c-1.13-.36-1.15-1.13.24-1.68L21.48 3c.94-.35 1.76.23.92-.4Z"/>
-      </svg>
-    </a>
-
-    <!-- ایکس -->
-    <a href="https://x.com/korosh_ariaie" target="_blank" rel="noopener noreferrer" aria-label="ایکس" title="ایکس">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.35L5.62 22H2.5l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.4L17.8 20Z"/>
-      </svg>
-    </a>
-
-    <!-- فیسبوک -->
-    <a href="https://facebook.com/travel0tent" target="_blank" rel="noopener noreferrer" aria-label="فیسبوک" title="فیسبوک">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.93.26-1.56 1.6-1.56h1.7V4.14A22 22 0 0 0 14.32 4c-2.46 0-4.14 1.5-4.14 4.26v2.34H7.4v3.2h2.78V22h3.32Z"/>
-      </svg>
-    </a>
-
-    <!-- اینستاگرام دوم -->
-    <a href="https://instagram.com/chadortent.ir" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام" title="اینستاگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-      </svg>
-    </a>
-
-    <!-- یوتیوب -->
-    <a href="https://youtube.com/@chadoortent" target="_blank" rel="noopener noreferrer" aria-label="یوتیوب" title="یوتیوب">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.56 12 3.56 12 3.56s-7.55 0-9.4.52A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.52 9.4.52 9.4.52s7.55 0 9.4-.52a3 3 0 0 0 2.1-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
-      </svg>
-    </a>
+    <a href="https://wa.me/989118031241" target="_blank" rel="noopener noreferrer" aria-label="واتساپ">واتساپ</a>
+    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام">اینستاگرام</a>
+    <a href="https://t.me/GATTENT" target="_blank" rel="noopener noreferrer" aria-label="تلگرام">تلگرام</a>
+    <a href="https://x.com/korosh_ariaie" target="_blank" rel="noopener noreferrer" aria-label="ایکس">ایکس</a>
+    <a href="https://facebook.com/travel0tent" target="_blank" rel="noopener noreferrer" aria-label="فیسبوک">فیسبوک</a>
+    <a href="https://youtube.com/@chadoortent" target="_blank" rel="noopener noreferrer" aria-label="یوتیوب">یوتیوب</a>
   </div>
-
   <div class="copyright">
     © ۲۰۲۶ چادردوزی جزیره J.A.T
     <p>کلیه حقوق این وب‌سایت محفوظ است.</p>
@@ -750,40 +512,28 @@
 </footer>
 
 <!-- دکمه شناور واتساپ -->
-<a
-  href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
-  class="floating-whatsapp"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="مشاوره از طریق واتساپ"
-  title="گفتگو در واتساپ">
+<a href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
+   class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="مشاوره از طریق واتساپ">
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
-  <script src="script.js"></script>
+
+<script src="script.js"></script>
 <script>
 (function () {
   "use strict";
-
   function ready(fn) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      fn();
-    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
   }
-
   ready(function () {
     var btn = document.querySelector(".menu-toggle");
     var nav = document.querySelector(".main-nav");
     if (!btn || !nav) return;
 
-    // فقط در موبایل این رفتار را اعمال کن
-    function isMobile() {
-      return window.innerWidth <= 900;
-    }
+    function isMobile() { return window.innerWidth <= 980; }
 
     var overlay = document.getElementById("navOverlay");
     if (!overlay) {
@@ -799,68 +549,41 @@
       overlay.style.display = "none";
       btn.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
-
-      if (isMobile()) {
-        nav.style.right = "-100%";
-      } else {
-        // در دسکتاپ استایل‌های موبایل را پاک کن
-        nav.removeAttribute("style");
-      }
+      if (isMobile()) nav.style.right = "-100%";
+      else nav.removeAttribute("style");
     }
 
     function openMenu() {
       if (!isMobile()) return;
       nav.classList.add("open");
-      nav.style.position = "fixed";
-      nav.style.top = "0";
-      nav.style.bottom = "0";
-      nav.style.width = "280px";
-      nav.style.maxWidth = "85vw";
-      nav.style.padding = "100px 20px 40px";
-      nav.style.background = "#fffdf8";
-      nav.style.zIndex = "10050";
-      nav.style.overflowY = "auto";
-      nav.style.boxShadow = "-10px 0 40px rgba(0,0,0,0.18)";
-      nav.style.right = "0";
-      nav.style.left = "auto";
-
-      overlay.style.display = "block";
-      overlay.style.position = "fixed";
-      overlay.style.inset = "0";
-      overlay.style.background = "rgba(0,0,0,0.5)";
-      overlay.style.zIndex = "10040";
+      nav.style.cssText = "display:block;position:fixed;top:0;bottom:0;width:280px;max-width:85vw;padding:100px 20px 40px;background:#fffdf8;z-index:10050;overflow-y:auto;box-shadow:-10px 0 40px rgba(0,0,0,0.18);right:0;left:auto;";
+      overlay.style.cssText = "display:block;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:10040;";
       overlay.classList.add("show");
-
       btn.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
     }
 
-    // وضعیت اولیه
     closeMenu();
 
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
       if (!isMobile()) return;
-
       if (nav.classList.contains("open")) closeMenu();
       else openMenu();
     });
 
     overlay.addEventListener("click", closeMenu);
 
-    nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        if (isMobile()) closeMenu();
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (isMobile()) setTimeout(closeMenu, 50);
       });
     });
 
-    // وقتی سایز صفحه عوض شد، منو را ریست کن
-    window.addEventListener("resize", function () {
-      closeMenu();
-    });
+    window.addEventListener("resize", closeMenu);
   });
 })();
 </script>
 </body>
-     </html>
+</html>
