@@ -482,6 +482,41 @@
   .testimonial-grid { grid-template-columns: 1fr; }
   .cat-grid { grid-template-columns: 1fr; }
 }
+    /* آیکون شبکه‌های اجتماعی - بزرگ‌تر */
+.site-footer .social-links {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 1.4rem 0 1.6rem;
+}
+
+.site-footer .social-links a {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px;
+  min-height: 52px;
+  border-radius: 50%;
+  border: 1px solid #e5e8e5;
+  background: #fff;
+  color: #155e55 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.site-footer .social-links a:hover {
+  background: #eaf3f0;
+  transform: translateY(-2px);
+  color: #0f4c45 !important;
+}
+
+.site-footer .social-links a svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: currentColor !important;
+}
     @media (max-width: 768px) {
       .hero-media { height: 240px; border-radius: 20px; }
       .hero-content h1 { font-size: 1.9rem; }
