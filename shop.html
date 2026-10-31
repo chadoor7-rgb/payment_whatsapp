@@ -386,5 +386,75 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+function addShopSchema(products) {
+  // حذف اسکیمای قبلی فروشگاه
+  document.querySelectorAll('script[data-schema="shop"]').forEach(s => s.remove());
+
+  const list = (products || []).slice(0, 30); // حداکثر ۳۰ آیتم
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "فروشگاه چادر مسافرتی و برزنتی | چادردوزی جزیره J.A.T",
+    "description": "خرید مستقیم از تولیدکننده در آمل؛ چادر مسافرتی، برزنتی، کودک، پشه‌بند و تجهیزات کمپینگ با ارسال به سراسر ایران.",
+    "url": "https://chadooor.ir/shop.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "چادردوزی جزیره J.A.T",
+      "url": "https://chadooor.ir"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "خانه",
+          "item": "https://chadooor.ir/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "فروشگاه",
+          "item": "https://chadooor.ir/shop.html"
+        }
+      ]
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "محصولات فروشگاه چادردوزی جزیره",
+      "numberOfItems": list.length,
+      "itemListElement": list.map(function (p, index) {
+        const image = p.image
+          ? (p.image.startsWith("http") ? p.image : "https://chadooor.ir/" + p.image.replace(/^\//, ""))
+          : undefined;
+
+        return {
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": "https://chadooor.ir/product.html?id=" + p.id,
+          "name": p.name,
+          "image": image
+        };
+      })
+    }
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-schema", "shop");
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+
+// مثال استفاده بعد از fetch:
+// fetch("products.json")
+//   .then(r => r.json())
+//   .then(products => {
+//     // ... رندر محصولات
+//     addShopSchema(products);
+//   });
+</script>
 </body>
 </html>
