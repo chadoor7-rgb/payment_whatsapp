@@ -547,5 +547,85 @@
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
+  <script>
+(function () {
+  "use strict";
+
+  function ready(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  ready(function () {
+    var btn = document.querySelector(".menu-toggle");
+    var nav = document.querySelector(".main-nav");
+    if (!btn || !nav) return;
+
+    var overlay = document.getElementById("navOverlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "navOverlay";
+      overlay.className = "nav-overlay";
+      document.body.appendChild(overlay);
+    }
+
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    function openMenu() {
+      nav.classList.add("open");
+      overlay.classList.add("show");
+      btn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      nav.classList.remove("open");
+      overlay.classList.remove("show");
+      btn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    // حذف لیسنرهای قبلی با clone
+    var newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    btn = newBtn;
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!isMobile()) return;
+      if (nav.classList.contains("open")) closeMenu();
+      else openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    // لینک‌ها حتماً کار کنند
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        var href = link.getAttribute("href");
+        if (!href || href === "#") return;
+
+        // اول منو را ببند، بعد برو
+        closeMenu();
+
+        // اگر به هر دلیل مرورگر نرفت، خودمان ببریم
+        setTimeout(function () {
+          window.location.href = href;
+        }, 10);
+      });
+    });
+
+    window.addEventListener("resize", function () {
+      if (!isMobile()) closeMenu();
+    });
+  });
+})();
+</script>
 </body>
 </html>
