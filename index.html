@@ -96,7 +96,7 @@
           "opens": "09:00",
           "closes": "20:00"
         },
-        "description": "بیش از ۲۰ سال سابقه تولید چاد�� مسافرتی و برزنتی. سفارش اختصاصی و ارسال سریع به سراسر ایران."
+        "description": "بیش از ۲۰ سال سابقه تولید چادر مسافرتی و برزنتی. سفارش اختصاصی و ارسال سریع به سراسر ایران."
       },
       {
         "@type": "WebSite",
@@ -321,6 +321,174 @@
       .features-row, .cat-grid { grid-template-columns: 1fr; }
     }
   </style>
+  /* دسته‌بندی‌ها */
+.cat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.3rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+.cat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.6rem 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e8e5;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: block;
+}
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(21, 40, 34, 0.1);
+}
+.cat-card .emoji { font-size: 2.2rem; margin-bottom: 0.7rem; }
+.cat-card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.cat-card p { color: #68736f; font-size: 0.9rem; line-height: 1.7; margin: 0 0 0.8rem; }
+.cat-card span { color: #155e55; font-weight: 700; font-size: 0.88rem; }
+
+/* عنوان بخش‌ها */
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 1.8rem;
+  font-weight: 800;
+}
+
+/* تبلیغ چشمک‌زن */
+.blink-ad-strong {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: #fff;
+  padding: 18px 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  margin: 20px auto 2.5rem;
+  max-width: 450px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: strong-blink 1.2s infinite;
+}
+.blink-ad-strong a { color: #fff; text-decoration: none; }
+@keyframes strong-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.05); }
+}
+
+/* نظرات */
+.testimonials {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.testimonials .section-desc {
+  text-align: center;
+  color: #68736f;
+  margin: 0 auto 1.8rem;
+  max-width: 560px;
+  line-height: 1.8;
+}
+.testimonial-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  text-align: right;
+}
+.testimonial-grid blockquote {
+  background: #fff;
+  border: 1px solid #e5e8e5;
+  border-radius: 16px;
+  padding: 1.4rem 1.3rem;
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(21, 40, 34, 0.05);
+}
+.testimonial-grid blockquote p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin: 0 0 0.9rem;
+}
+.testimonial-grid cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.88rem;
+  color: #68736f;
+  font-weight: 600;
+}
+.testimonial-featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, #fff 0%, #f6faf7 100%);
+  border-color: #cfe0d8;
+}
+.testimonial-badge {
+  display: inline-block;
+  background: #155e55;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+}
+
+/* فوتر کمی بزرگ‌تر */
+.site-footer {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+.site-footer .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.site-footer .brand img {
+  width: 52px;
+  height: 52px;
+}
+.footer-slogan {
+  font-size: 1rem;
+  color: #68736f;
+  margin: 0.8rem 0 1.5rem;
+}
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+.footer-menu a {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.2rem 0 1.5rem;
+}
+.social-links a {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e5e8e5;
+  background: #fff;
+}
+.copyright {
+  font-size: 0.9rem;
+  color: #68736f;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: 1fr; }
+}
 </head>
 <body>
 
@@ -461,6 +629,17 @@
         <div class="testimonial-stars">★★★★★</div>
         <p>«چادر کودک سفارش دادم، طرح قشنگ و کیفیت عالی. دخترم خیلی دوست داره.»</p>
         <cite>arash — ساری</cite>
+      </blockquote>
+            <!-- نظر مشتری عمده -->
+      <blockquote class="testimonial-featured">
+        <div class="testimonial-badge">تجربه خرید عمده</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p>
+          «خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف کودک، نوجوان، ۴ نفره، ۶ نفره، ۸ نفره و ۱۲ نفره داشتیم؛
+          در مجموع حدود ۲۷۵ عدد. همه چادرها عالی بودند. از تیم J.A.T چادردوزی جزیره بابت کیفیت محصولات
+          و پیگیری خوبشان تشکر می‌کنیم. این اولین خرید ما بود و حالا مشتری همیشگی این مجموعه شده‌ایم.»
+        </p>
+        <cite>اشکان — ارومیه<br>سفارش عمده حدود ۲۷۵ عدد</cite>
       </blockquote>
     </div>
   </section>
