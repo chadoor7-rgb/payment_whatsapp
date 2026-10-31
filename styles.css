@@ -1775,3 +1775,8 @@ body {
     aspect-ratio: auto !important;
   }
 }
+.testimonial-stars {
+  color: #f59e0b !important;   /* طلایی */
+  letter-spacing: 2px;
+  font-size: 16px;
+}
