@@ -314,14 +314,7 @@
       width: 20px;
       height: 20px;
     }
-
-    @media (max-width: 768px) {
-      .hero-media { height: 240px; border-radius: 20px; }
-      .hero-content h1 { font-size: 1.9rem; }
-      .features-row, .cat-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-  /* دسته‌بندی‌ها */
+/* دسته‌بندی‌ها */
 .cat-grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -489,6 +482,12 @@
   .testimonial-grid { grid-template-columns: 1fr; }
   .cat-grid { grid-template-columns: 1fr; }
 }
+    @media (max-width: 768px) {
+      .hero-media { height: 240px; border-radius: 20px; }
+      .hero-content h1 { font-size: 1.9rem; }
+      .features-row, .cat-grid { grid-template-columns: 1fr; }
+    }
+  </style>}
 </head>
 <body>
 
