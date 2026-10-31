@@ -2056,3 +2056,71 @@ body {
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
+/* ===== بخش نظرات مشتریان ===== */
+.testimonials {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.testimonials .section-title,
+.testimonials h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 0.6rem;
+}
+
+.testimonials .section-desc,
+.testimonials > p {
+  text-align: center;
+  color: #68736f;
+  margin: 0 auto 1.8rem;
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+.testimonial-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  text-align: right;
+}
+
+.testimonial-grid blockquote {
+  background: #fff;
+  border: 1px solid #e5e8e5;
+  border-radius: 16px;
+  padding: 1.4rem 1.3rem;
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(21, 40, 34, 0.05);
+}
+
+.testimonial-grid blockquote p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin: 0 0 0.9rem;
+}
+
+.testimonial-grid cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.88rem;
+  color: #68736f;
+  font-weight: 600;
+}
+
+.testimonial-stars {
+  color: #f59e0b !important;
+  letter-spacing: 2px;
+  font-size: 17px;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
