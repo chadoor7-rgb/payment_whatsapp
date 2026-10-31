@@ -221,6 +221,79 @@
       25%, 75% { opacity: 0.25; }
     }
   </style>
+  <style>
+  /* کارت نظر مشتری عمده */
+  .testimonial-featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(180deg, #fff 0%, #f6faf7 100%);
+    border: 1px solid #cfe0d8;
+    border-radius: 16px;
+    padding: 1.4rem 1.3rem;
+  }
+
+  .testimonial-badge {
+    display: inline-block;
+    background: #155e55;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    margin-bottom: 0.7rem;
+  }
+
+  .testimonial-stars {
+    color: #f59e0b !important;
+    letter-spacing: 2px;
+    font-size: 17px;
+    margin-bottom: 0.6rem;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+</style>
+  <!-- نظرات مشتریان -->
+<section class="testimonials">
+  <h2 class="section-title">نظر مشتریان چادردوزی جزیره</h2>
+  <p class="section-desc">رضایت مشتریان، انگیزه ما برای تولید چادرهای باکیفیت است.</p>
+
+  <div class="testimonial-grid">
+    <blockquote>
+      <div class="testimonial-stars">★★★★★</div>
+      <p>«چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز سالم رسید.»</p>
+      <cite>amir — شیراز</cite>
+    </blockquote>
+
+    <blockquote>
+      <div class="testimonial-stars">★★★★★</div>
+      <p>«چادرم پاره شده بود، تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود.»</p>
+      <cite>farahnaz — تهران</cite>
+    </blockquote>
+
+    <blockquote>
+      <div class="testimonial-stars">★★★★★</div>
+      <p>«چادر کودک سفارش دادم، طرح قشنگ و کیفیت عالی. دخترم خیلی دوست داره.»</p>
+      <cite>arash — ساری</cite>
+    </blockquote>
+
+    <!-- نظر مشتری عمده -->
+    <blockquote class="testimonial-featured">
+      <div class="testimonial-badge">تجربه خرید عمده</div>
+      <div class="testimonial-stars">★★★★★</div>
+      <p>
+        «خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف کودک، نوجوان، ۴ نفره، ۶ نفره، ۸ نفره و ۱۲ نفره داشتیم؛
+        در مجموع حدود ۲۷۵ عدد. همه چادرها عالی بودند. از تیم J.A.T چادردوزی جزیره بابت کیفیت محصولات
+        و پیگیری خوبشان تشکر می‌کنیم. این اولین خرید ما بود و حالا مشتری همیشگی این مجموعه شده‌ایم.»
+      </p>
+      <cite>اشکان — ارومیه<br>سفارش عمده حدود ۲۷۵ عدد</cite>
+    </blockquote>
+  </div>
+</section>
 </head>
 <body>
   <a href="https://chadooor.ir" class="blink-ad" target="_blank" rel="noopener noreferrer">
