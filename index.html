@@ -8,14 +8,12 @@
   <meta name="keywords" content="چادر مسافرتی, چادر برزنتی, چادر آمل, تولید چادر, تعمیر چادر, سفارش اختصاصی چادر, چادردوزی جزیره">
   <link rel="canonical" href="https://chadooor.ir/">
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="چادردوزی جزیره">
   <meta property="og:title" content="چادر مسافرتی و برزنتی آمل | +۲۰ سال تولید | چادردوزی جزیره">
@@ -26,13 +24,11 @@
   <meta property="og:image:height" content="512">
   <meta property="og:locale" content="fa_IR">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="چادر مسافرتی و برزنتی آمل | چادردوزی جزیره">
   <meta name="twitter:description" content="بیش از ۲۰ سال سابقه تولید چادر مسافرتی و برزنتی. سفارش اختصاصی و ارسال سریع به سراسر کشور.">
   <meta name="twitter:image" content="https://chadooor.ir/favicon-192x192.png">
 
-  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -100,14 +96,16 @@
           "opens": "09:00",
           "closes": "20:00"
         },
-        "description": "بیش از ۲۰ سال سابقه تولید چادر مسافرتی و برزنتی. سفارش اختصاصی و ارسال سریع به سراسر ایران."
+        "description": "بیش از ۲۰ سال سابقه تولید چاد�� مسافرتی و برزنتی. سفارش اختصاصی و ارسال سریع به سراسر ایران."
       },
       {
         "@type": "WebSite",
         "@id": "https://chadooor.ir/#website",
         "url": "https://chadooor.ir/",
         "name": "چادردوزی جزیره",
-        "publisher": { "@id": "https://chadooor.ir/#organization" },
+        "publisher": {
+          "@id": "https://chadooor.ir/#organization"
+        },
         "inLanguage": "fa-IR"
       },
       {
@@ -116,8 +114,12 @@
         "url": "https://chadooor.ir/",
         "name": "چادر مسافرتی و برزنتی آمل | +۲۰ سال تولید | چادردوزی جزیره",
         "description": "چادردوزی جزیره با بیش از ۲۰ سال سابقه تولید چادر مسافرتی و برزنتی. سفارش اختصاصی و ارسال سریع به سراسر ایران.",
-        "isPartOf": { "@id": "https://chadooor.ir/#website" },
-        "about": { "@id": "https://chadooor.ir/#organization" },
+        "isPartOf": {
+          "@id": "https://chadooor.ir/#website"
+        },
+        "about": {
+          "@id": "https://chadooor.ir/#organization"
+        },
         "inLanguage": "fa-IR"
       }
     ]
@@ -128,6 +130,38 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    :root {
+      --ink: #182622;
+      --muted: #66736f;
+      --cream: #f5f3ed;
+      --paper: #fffdf8;
+      --lime: #d5f263;
+      --coral: #f68165;
+      --teal: #235d56;
+      --line: #dedfd8;
+      --shadow: 0 20px 50px rgba(21, 40, 34, 0.14);
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Estedad, Tahoma, Arial, sans-serif;
+      direction: rtl;
+      text-align: right;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .hero {
       display: flex;
       flex-direction: column;
@@ -136,18 +170,20 @@
       padding: 2rem 1.2rem 3rem;
       text-align: right;
     }
-    .hero-img, .hero-media {
+
+    .hero-media {
       width: 100%;
       max-width: 1100px;
       height: 420px;
       border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(21, 40, 34, 0.14);
+      box-shadow: var(--shadow);
       margin: 0 auto 2.2rem;
       order: -1;
       position: relative;
     }
-    .hero-img img, .hero-media img, .hero-main-img {
+
+    .hero-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -155,21 +191,25 @@
       display: block;
       border-radius: 28px;
     }
+
     .hero-content {
       max-width: 700px;
       margin-left: auto;
       text-align: right;
     }
+
     .hero-content h1 {
-      font-size: 2.35rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
       line-height: 1.35;
       margin: 0 0 0.8rem;
       font-weight: 800;
     }
+
     .hero-content h1 .highlight {
-      color: #235d56;
+      color: #155e55;
       display: inline;
     }
+
     .hero-subtitle {
       font-size: 1.25rem;
       font-weight: 700;
@@ -177,18 +217,51 @@
       margin: 0 0 1rem;
       line-height: 1.5;
     }
-    .hero-content p, .hero-desc {
+
+    .hero-desc,
+    .hero-content p {
       color: #68736f;
       line-height: 1.9;
       margin-bottom: 1.5rem;
       font-size: 1.05rem;
     }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem;
       justify-content: flex-start;
     }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 0.9rem 1.5rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #155e55;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0f4c45;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ea95d;
+    }
+
     .features-row {
       display: grid !important;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -197,6 +270,7 @@
       margin: 0 auto 2.5rem;
       padding: 0 1rem;
     }
+
     .feature-box {
       background: #fff;
       border: 1px solid #e5e8e5;
@@ -204,7 +278,11 @@
       padding: 1.4rem;
       text-align: center;
     }
-    .feature-box .icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+
+    .feature-box .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
 
     .testimonial-stars,
     .stars {
@@ -238,12 +316,9 @@
     }
 
     @media (max-width: 768px) {
-      .hero-media, .hero-img { height: 240px; border-radius: 20px; }
+      .hero-media { height: 240px; border-radius: 20px; }
       .hero-content h1 { font-size: 1.9rem; }
       .features-row, .cat-grid { grid-template-columns: 1fr; }
-    }
-    .hero-content h1 .highlight {
-      color: #155e55;
     }
   </style>
 </head>
@@ -274,8 +349,7 @@
 </header>
 
 <main>
-  <!-- هیرو -->
-  <section class="hero hero-v2">
+  <section class="hero hero-v2" aria-label="معرفی اصلی">
     <div class="hero-media">
       <img src="hero-main.webp" alt="چادر مسافرتی و برزنتی تولید چادردوزی جزیره آمل با بیش از ۲۰ سال سابقه" loading="eager" class="hero-main-img">
     </div>
@@ -287,13 +361,12 @@
         باش
       </h1>
 
-      <h1>چادر مسافرتی و برزنتی آمل<br><span class="highlight">با بیش از ۲۰ سال سابقه</span></h1>
-
       <p class="hero-subtitle">تولید مستقیم • سفارش اختصاصی • ارسال سریع به سراسر کشور</p>
       <p class="hero-desc">
         چادردوزی جزیره با بیش از ۲۰ سال تجربه، تولیدکننده تخصصی چادر مسافرتی و برزنتی در آمل است.
         دوخت سفارشی مطابق نیاز شما و ارسال سریع به تمام نقاط ایران.
       </p>
+
       <div class="hero-actions">
         <a href="shop.html" class="btn btn-primary btn-lg">مشاهده فروشگاه</a>
         <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D9%85%DB%8C" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">مشاوره واتساپ</a>
@@ -301,8 +374,7 @@
     </div>
   </section>
 
-  <!-- ویژگی‌ها -->
-  <div class="features-row">
+  <div class="features-row" aria-label="ویژگی‌های اصلی">
     <div class="feature-box">
       <div class="icon">⭐</div>
       <h3>+۲۰ سال سابقه تولید</h3>
@@ -325,15 +397,13 @@
     </div>
   </div>
 
-  <!-- تبلیغ -->
   <div class="blink-ad-strong">
     <a href="shop.html">🎉 پیشنهاد محدود! فرصت رو از دست نده 🎉</a>
   </div>
 
   <h2 class="section-title">برای هر نیاز، یک انتخاب</h2>
 
-  <!-- دسته‌بندی‌ها -->
-  <div class="cat-grid">
+  <div class="cat-grid" aria-label="دسته‌بندی محصولات">
     <a href="shop.html" class="cat-card">
       <div class="emoji">⛺</div>
       <h3>چادر مسافرتی</h3>
@@ -360,21 +430,18 @@
     </a>
   </div>
 
-  <!-- تعمیر -->
   <section class="repair-cta">
     <h2>چادرت آسیب دیده؟ دوباره آماده‌اش می‌کنیم</h2>
     <p>بسیاری از چادرها با تعمیر اصولی دوباره قابل استفاده می‌شوند. ترمیم پارگی، زیپ، فنر و بازسازی کامل در کارگاه ما انجام می‌شود.</p>
     <a href="services.html" class="btn btn-primary">مشاهده خدمات تعمیر</a>
   </section>
 
-  <!-- CTA نهایی -->
   <section class="final-cta">
     <h2>چادر بعدی‌ات از همین‌جا شروع می‌شود</h2>
     <p>+۲۰ سال سابقه تولید • سفارش اختصاصی • ارسال سریع به سراسر کشور</p>
     <a href="https://wa.me/989118031241?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B4%D8%A7%D9%86" class="btn btn-whatsapp" target="_blank" rel="noopener">مشاوره واتساپ</a>
   </section>
 
-  <!-- نظرات مشتریان -->
   <section class="testimonials">
     <h2 class="section-title">نظر مشتریان چادردوزی جزیره</h2>
     <p class="section-desc">رضایت مشتریان، انگیزه ما برای تولید چادرهای باکیفیت است.</p>
@@ -399,7 +466,6 @@
   </section>
 </main>
 
-<!-- ========== فوتر کامل ========== -->
 <footer class="site-footer">
   <div class="footer-top">
     <a href="index.html" class="brand">
@@ -409,7 +475,6 @@
     <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
   </div>
 
-  <!-- منوی پایین صفحه -->
   <nav class="footer-menu" aria-label="پیوندهای پایین صفحه">
     <a href="products.html">محصولات</a>
     <a href="shop.html">فروشگاه</a>
@@ -421,7 +486,6 @@
     <a href="privacy.html">حریم خصوصی</a>
   </nav>
 
-  <!-- شبکه‌های اجتماعی -->
   <div class="social-links" aria-label="شبکه‌های اجتماعی">
     <a href="https://wa.me/989118031241" target="_blank" rel="noopener noreferrer" aria-label="واتساپ" title="واتساپ">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -466,8 +530,7 @@
   </div>
 </footer>
 
-<!-- دکمه شناور واتساپ -->
-<a href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
+<a href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%DB%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%87"
    class="floating-whatsapp"
    target="_blank"
    rel="noopener noreferrer"
@@ -479,7 +542,6 @@
   <span>تیم پشتیبانی</span>
 </a>
 
-<!-- فقط یک بار script.js برای منو و سبد خرید -->
 <script src="script.js" defer></script>
 </body>
 </html>
