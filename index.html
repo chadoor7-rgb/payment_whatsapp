@@ -1178,5 +1178,375 @@
 </a>
 
 <script src="script.js" defer></script>
+  [09/08/1405 09:31 PM] 🏕Travel Tent: <style>
+  /* ===== استایل‌های صفحه اصلی ===== */
+  .new-home {
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    color: #1a3c34;
+  }
+
+  .new-home .hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 40px auto 50px;
+    padding: 0 20px;
+  }
+
+  .new-home .hero-content {
+    flex: 1;
+  }
+
+  .new-home .hero-badge {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .new-home .hero h1 {
+    font-size: 38px;
+    line-height: 1.35;
+    margin: 0 0 18px;
+    color: #1a3c34;
+  }
+
+  .new-home .hero h1 span {
+    color: #0d5c4d;
+  }
+
+  .new-home .hero p {
+    font-size: 16.5px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 28px;
+    max-width: 500px;
+  }
+
+  .new-home .hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .new-home .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.25s;
+  }
+
+  .new-home .btn-primary {
+    background: #0d5c4d;
+    color: #fff;
+  }
+
+  .new-home .btn-primary:hover {
+    background: #094438;
+  }
+
+  .new-home .btn-secondary {
+    background: #fff;
+    color: #0d5c4d;
+    border: 2px solid #0d5c4d;
+  }
+
+  .new-home .hero-image {
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .new-home .hero-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  }
+
+  /* نوار اعتماد */
+  .new-home .trust {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 22px 15px;
+    background: #f7f9f8;
+    border-radius: 14px;
+  }
+
+  .new-home .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .new-home .trust-item strong {
+    display: block;
+    font-size: 14.5px;
+  }
+
+  .new-home .trust-item span {
+    font-size: 12.5px;
+    color: #666;
+  }
+
+  /* دسته‌بندی */
+  .new-home .cats {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
+  }
+
+  .new-home .cats h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 35px;
+  }
+
+  .new-home .cats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .new-home .cat-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 25px 18px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+  }
+
+  .new-home .cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #0d5c4d;
+  }
+
+  .new-home .cat-card .icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .new-home .cat-card h3 {
+    font-size: 17px;
+    margin: 0 0 8px;
+  }
+
+  .new-home .cat-card p {
+    font-size: 13.5px;
+    color: #666;
+    margin: 0 0 12px;
+    line-height: 1.5;
+  }
+
+  .new-home .cat-card .link {
+    font-size: 13.5px;
+    color: #0d5c4d;
+    font-weight: 600;
+  }
+
+  /* بخش تعمیر */
+  .new-home .repair {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 40px 30px;
+    background: #f0f7f5;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .new-home .repair h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .new-home .repair p {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    line-height: 1.7;
+  }
+
+  /* CTA نهایی */
+  .new-home .final-cta {
+    text-align: center;
+    background: #0d5c4d;
+    color: #fff;
+    padding: 55px 20px;
+    margin-top: 40px;
+  }
+
+  .new-home .final-cta h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .new-home .final-cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+  }
+
+  .new-home .final-cta .btn {
+    background: #fff;
+    color: #0d5c4d;
+    padding: 14px 35px;
+    font-size: 16px;
+  }
+
+  .new-home .final-cta .note {
+    margin-top: 14px;
+    font-size: 13.5px;
+    opacity: 0.85;
+  }
+[09/08/1405 09:31 PM] 🏕Travel Tent: /* موبایل */
+  @media (max-width: 900px) {
+    .new-home .hero {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 30px;
+    }
+    .new-home .hero h1 {
+      font-size: 30px;
+    }
+    .new-home .hero-buttons {
+      justify-content: center;
+    }
+    .new-home .trust {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .new-home .cats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .new-home .cats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="new-home">
+
+  <!-- هیرو -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">تولید مستقیم در آمل • بیش از ۲۰ سال تجربه</div>
+      <h1>چادر مقاوم، دوخت تخصصی<br><span>ارسال به سراسر ایران</span></h1>
+      <p>
+        چادر مسافرتی، برزنتی و کودک را دقیقاً مطابق نیازتان می‌دوزیم.
+        تعمیر تخصصی هم انجام می‌دهیم تا چادر قبلی‌تان دوباره مثل روز اول شود.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/989118031241?text=سلام، برای سفارش چادر مشاوره می‌خواهم" class="btn btn-primary" target="_blank">
+          مشاوره و ثبت سفارش در واتساپ
+        </a>
+        <a href="shop.html" class="btn btn-secondary">مشاهده محصولات</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://chadooor.ir/images/hero-tent.jpg" alt="چادر مسافرتی چادردوزی جزیره" onerror="this.src='https://via.placeholder.com/480x360?text=چادر+مسافرتی'">
+    </div>
+  </section>
+
+  <!-- نوار اعتماد -->
+  <section class="trust">
+    <div class="trust-item">
+      <div style="font-size:26px">⏱️</div>
+      <div>
+        <strong>+۲۰ سال تجربه</strong>
+        <span>تولید تخصصی</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div style="font-size:26px">✂️</div>
+      <div>
+        <strong>دوخت سفارشی</strong>
+        <span>در کارگاه آمل</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div style="font-size:26px">🚚</div>
+      <div>
+        <strong>ارسال سریع</strong>
+        <span>به سراسر ایران</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div style="font-size:26px">🔧</div>
+      <div>
+        <strong>تعمیر تخصصی</strong>
+        <span>با کیفیت کارگاهی</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- دسته‌بندی -->
+  <section class="cats">
+    <h2>برای هر نیاز، یک انتخاب</h2>
+    <div class="cats-grid">
+      <a href="shop.html" class="cat-card">
+        <div class="icon">⛺</div>
+        <h3>چادر مسافرتی</h3>
+        <p>از ۲ نفره تا ۱۲ نفره | مدل‌های دوپوش و پکینیو</p>
+        <div class="link">مشاهده محصولات ←</div>
+      </a>
+      <a href="shop.html" class="cat-card">
+        <div class="icon">🏠</div>
+        <h3>چادر برزنتی</h3>
+        <p>مقاوم و طولانی‌مدت | مناسب باغ و حیاط</p>
+        <div class="link">مشاهده محصولات ←</div>
+      </a>
+      <a href="shop.html" class="cat-card">
+        <div class="icon">🧒</div>
+        <h3>چادر کودک</h3>
+        <p>طرح‌های جذاب و ایمن برای بازی</p>
+        <div class="link">مشاهده محصولات ←</div>
+      </a>
+      <a href="shop.html" class="cat-card">
+        <div class="icon">🦟</div>
+        <h3>پشه‌بند و تجهیزات</h3>
+        <p>پشه‌بند سفارشی، سایبان، میز و صندلی</p>
+        <div class="link">مشاهده محصولات ←</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- تعمیر -->
+  <section class="repair">
+    <h2>چادرت آسیب دیده؟ دوباره آماده‌اش می‌کنیم</h2>
+    <p>
+      بسیاری از چادرها با تعمیر اصولی دوباره قابل استفاده می‌شوند.
+      ترمیم پارگی، تعویض زیپ، تعمیر فنر و بازسازی کامل در کارگاه آمل.
+    </p>
+    <a href="https://wa.me/989118031241?text=سلام، برای تعمیر چادر مشاوره می‌خواهم" class="btn btn-primary" target="_blank">
+      درخواست تعمیر در واتساپ
+    </a>
+  </section>
+
+  <!-- CTA نهایی -->
+  <section class="final-cta">
+    <h2>چادر بعدی‌ات از همین‌جا شروع می‌شود</h2>
+[09/08/1405 09:31 PM] 🏕Travel Tent: <p>تولید مستقیم در آمل • دوخت سفارشی • ارسال به سراسر ایران</p>
+    <a href="https://wa.me/989118031241?text=سلام، برای سفارش چادر مشاوره می‌خواهم" class="btn" target="_blank">
+      مشاوره رایگان در واتساپ
+    </a>
+    <div class="note">پاسخگویی همه‌روزه از ۸ صبح تا ۱۰ شب</div>
+  </section>
+
+</div>
 </body>
 </html>
