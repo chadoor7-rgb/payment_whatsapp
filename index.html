@@ -311,8 +311,7 @@
     }
   </style>
 </head>
-<body>
-<header class="site-header sticky-header">
+<body><header class="site-header sticky-header">
   <a href="index.html" class="brand">
     <img src="favicon.svg" alt="لوگو چادردوزی جزیره" class="brand-logo" width="44" height="44">
     <span>چادردوزی جزیره J.A.T</span>
@@ -335,7 +334,6 @@
 
   <button class="menu-toggle" aria-label="منو" aria-expanded="false">☰</button>
 </header>
-
 <main>
   <!-- هیرو -->
   <section class="hero hero-v2">
@@ -518,8 +516,6 @@
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
-
-<script src="script.js"></script>
 <script>
 (function () {
   "use strict";
@@ -532,7 +528,9 @@
     var nav = document.querySelector(".main-nav");
     if (!btn || !nav) return;
 
-    function isMobile() { return window.innerWidth <= 980; }
+    function isMobile() {
+      return window.innerWidth <= 980;
+    }
 
     var overlay = document.getElementById("navOverlay");
     if (!overlay) {
@@ -548,8 +546,11 @@
       overlay.style.display = "none";
       btn.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
-      if (isMobile()) nav.style.right = "-100%";
-      else nav.removeAttribute("style");
+      if (isMobile()) {
+        nav.style.right = "-100%";
+      } else {
+        nav.removeAttribute("style");
+      }
     }
 
     function openMenu() {
