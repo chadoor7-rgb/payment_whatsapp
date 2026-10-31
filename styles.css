@@ -1827,3 +1827,53 @@ body {
     border-radius: 20px;
   }
 }
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav.open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 85vw;
+    padding: 100px 20px 40px;
+    background: #fffdf8;
+    z-index: 10060;
+    overflow-y: auto;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.18);
+    gap: 14px;
+  }
+
+  .main-nav.open a {
+    display: block;
+    padding: 12px 8px;
+    font-size: 16px;
+    color: #17231f;
+    text-decoration: none;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 10070;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    z-index: 10080;
+  }
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 10040;
+}
+
+.nav-overlay.show {
+  display: block;
+}
