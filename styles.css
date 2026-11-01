@@ -2223,3 +2223,33 @@ body {
   height: 24px !important;
   fill: currentColor !important;
 }
+/* رفع موقت مشکل راست‌چین شدن */
+.site-header,
+.header-inner,
+.hero,
+.hero-section,
+.main-content,
+.new-home {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.site-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 12px 20px !important;
+}
+
+.main-nav {
+  display: flex !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  flex: 1 !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
