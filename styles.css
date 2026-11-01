@@ -2362,3 +2362,19 @@ body {
     display: block;
   }
 }
+.testimonial-featured {
+  grid-column: 1 / -1; /* عرض کامل در ردیف */
+  background: linear-gradient(180deg, #fff 0%, #f6faf7 100%);
+  border-color: #cfe0d8;
+}
+
+.testimonial-badge {
+  display: inline-block;
+  background: #155e55;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+}
