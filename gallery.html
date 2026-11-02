@@ -614,38 +614,19 @@
 <footer class="site-footer">
   <!-- فوتر شما دست نخورده باقی می‌ماند -->
   ...
-</footer>
-<script src="script.js" defer></script>
+</footer>[11/08/1405 11:29 AM] 🏕Travel Tent: <script src="script.js" defer></script>
 
 <script>
-(function () {
-  "use strict";
+document.addEventListener("DOMContentLoaded", function () {
 
-  function ready(fn) {
-    if (document.readyState !== "loading") fn();
-    else document.addEventListener("DOMContentLoaded", fn);
-  }
+  // ========== منوی همبرگری ==========
+  var btn = document.querySelector(".menu-toggle");
+  var nav = document.querySelector(".main-nav");
 
-  ready(function () {
-    const btn = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
-
-    if (!btn || !nav) {
-      console.log("منو یا دکمه پیدا نشد");
-      return;
-    }
-
-    // ساخت لایه تیره پشت منو
-    let overlay = document.getElementById("navOverlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "navOverlay";
-      document.body.appendChild(overlay);
-    }
-
-    function isMobile() {
-      return window.innerWidth <= 980;
-    }
+  if (btn && nav) {
+    var overlay = document.createElement("div");
+    overlay.id = "navOverlay";
+    document.body.appendChild(overlay);
 
     function closeMenu() {
       nav.classList.remove("open");
@@ -660,43 +641,42 @@
       btn.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
 
-      // استایل منوی موبایل
-      nav.style.cssText = 
-        display: flex !important;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 280px;
-        max-width: 85vw;
-        background: #0b3d2e;
-        padding: 90px 25px 40px;
-        z-index: 99999;
-        gap: 18px;
-        box-shadow: -8px 0 30px rgba(0,0,0,0.25);
-      ;
+      nav.style.display = "flex";
+      nav.style.flexDirection = "column";
+      nav.style.position = "fixed";
+      nav.style.top = "0";
+      nav.style.right = "0";
+      nav.style.bottom = "0";
+      nav.style.width = "280px";
+      nav.style.maxWidth = "85vw";
+      nav.style.background = "#0b3d2e";
+      nav.style.padding = "90px 25px 40px";
+      nav.style.zIndex = "99999";
+      nav.style.gap = "18px";
+      nav.style.boxShadow = "-8px 0 30px rgba(0,0,0,0.25)";
 
-      // استایل لینک‌های منو
-      nav.querySelectorAll("a").forEach(a => {
-        a.style.cssText = "color: white; font-size: 1.1rem; padding: 8px 0; display: block;";
-      });
+      var links = nav.querySelectorAll("a");
+      for (var i = 0; i < links.length; i++) {
+        links[i].style.color = "white";
+        links[i].style.fontSize = "1.1rem";
+        links[i].style.padding = "8px 0";
+        links[i].style.display = "block";
+      }
 
-      overlay.style.cssText = 
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.55);
-        z-index: 99990;
-      ;
+      overlay.style.display = "block";
+      overlay.style.position = "fixed";
+      overlay.style.top = "0";
+      overlay.style.left = "0";
+      overlay.style.right = "0";
+      overlay.style.bottom = "0";
+      overlay.style.background = "rgba(0,0,0,0.55)";
+      overlay.style.zIndex = "99990";
     }
 
-    // کلیک روی دکمه همبرگری
     btn.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
-
-      if (!isMobile()) return;
+      if (window.innerWidth > 980) return;
 
       if (nav.classList.contains("open")) {
         closeMenu();
@@ -705,73 +685,82 @@
       }
     });
 
-    // کلیک روی لایه تیره → بستن منو
     overlay.addEventListener("click", closeMenu);
 
-    // کلیک روی لینک‌های منو → بستن منو
-    nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (isMobile()) closeMenu();
+    var navLinks = nav.querySelectorAll("a");
+    for (var j = 0; j < navLinks.length; j++) {
+      navLinks[j].addEventListener("click", function () {
+        if (window.innerWidth <= 980) closeMenu();
       });
-    });
+    }
 
-    // تغییر سایز صفحه
     window.addEventListener("resize", function () {
-      if (!isMobile()) closeMenu();
-    });
-  });
-})();
-</script>
-
-<!-- اسکریپت فیلتر و لایت‌باکس گالری -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  // فیلتر
-  const filters = document.getElementById("galleryFilters");
-  if (filters) {
-    filters.addEventListener("click", function (e) {
-      const btn = e.target.closest(".g-filter");
-      if (!btn) return;
-
-      document.querySelectorAll(".g-filter").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const cat = btn.dataset.cat;
-      document.querySelectorAll(".gallery-item").forEach(item => {
-        item.style.display = (cat === "all" || item.dataset.cat === cat) ? "" : "none";
-      });
+      if (window.innerWidth > 980) closeMenu();
     });
   }
 
-  // لایت‌باکس
-  const lb = document.getElementById("galleryLightbox");
-  const lbImg = document.getElementById("galleryLbImg");
+  // ========== فیلتر گالری ==========
+  var filters = document.getElementById("galleryFilters");
+  if (filters) {
+    filters.addEventListener("click", function (e) {
+      var btn = e.target.closest(".g-filter");
+      if (!btn) return;
+
+      var allBtns = document.querySelectorAll(".g-filter");
+      for (var k = 0; k < allBtns.length; k++) {
+        allBtns[k].classList.remove("active");
+      }
+      btn.classList.add("active");
+
+      var cat = btn.getAttribute("data-cat");
+      var items = document.querySelectorAll(".gallery-item");
+
+      for (var m = 0; m < items.length; m++) {
+        if (cat === "all" || items[m].getAttribute("data-cat") === cat) {
+          items[m].style.display = "";
+        } else {
+          items[m].style.display = "none";
+        }
+      }
+    });
+  }
+
+  // ========== لایت‌باکس ==========
+  var lb = document.getElementById("galleryLightbox");
+  var lbImg = document.getElementById("galleryLbImg");
 
   if (lb && lbImg) {
-    document.querySelectorAll(".gallery-item").forEach(item => {
-      item.addEventListener("click", function () {
-        const img = item.querySelector("img");
+    var galleryItems = document.querySelectorAll(".gallery-item");
+    for (var n = 0; n < galleryItems.length; n++) {
+      galleryItems[n].addEventListener("click", function () {
+        var img = this.querySelector("img");
         if (img) {
           lbImg.src = img.src;
           lb.classList.add("open");
         }
       });
-    });
+    }
 
-    document.getElementById("closeGalleryLb").onclick = function () {
-      lb.classList.remove("open");
-    };
+    var closeBtn = document.getElementById("closeGalleryLb");
+    if (closeBtn) {
+      closeBtn.onclick = function () {
+        lb.classList.remove("open");
+      };
+    }
 
     lb.onclick = function (e) {
-      if (e.target === lb) lb.classList.remove("open");
+      if (e.target === lb) {
+        lb.classList.remove("open");
+      }
     };
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") lb.classList.remove("open");
+[11/08/1405 11:29 AM] 🏕Travel Tent: document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        lb.classList.remove("open");
+      }
     });
   }
+
 });
 </script>
-
 </body>
 </html>
