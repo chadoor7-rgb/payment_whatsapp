@@ -147,7 +147,7 @@
     <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
     <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
   </div>
-  <button class="menu-toggle" aria-label="منو">☰</button>
+ <button class="menu-toggle" aria-label="منو" aria-expanded="false" type="button">☰</button>
 </header>
 
 <main>
@@ -615,18 +615,121 @@
   <!-- فوتر شما دست نخورده باقی می‌ماند -->
   ...
 </footer>
-
-<!-- اسکریپت اصلی سایت -->
 <script src="script.js" defer></script>
 
-<!-- اسکریپت اختصاصی گالری -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
+  "use strict";
 
-  // فیلتر دسته‌بندی (اصلاح شده)
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+
+  ready(function () {
+    const btn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+
+    if (!btn || !nav) {
+      console.log("منو یا دکمه پیدا نشد");
+      return;
+    }
+
+    // ساخت لایه تیره پشت منو
+    let overlay = document.getElementById("navOverlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "navOverlay";
+      document.body.appendChild(overlay);
+    }
+
+    function isMobile() {
+      return window.innerWidth <= 980;
+    }
+
+    function closeMenu() {
+      nav.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      overlay.style.display = "none";
+      document.body.style.overflow = "";
+      nav.removeAttribute("style");
+    }
+
+    function openMenu() {
+      nav.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+
+      // استایل منوی موبایل
+      nav.style.cssText = 
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 85vw;
+        background: #0b3d2e;
+        padding: 90px 25px 40px;
+        z-index: 99999;
+        gap: 18px;
+        box-shadow: -8px 0 30px rgba(0,0,0,0.25);
+      ;
+
+      // استایل لینک‌های منو
+      nav.querySelectorAll("a").forEach(a => {
+        a.style.cssText = "color: white; font-size: 1.1rem; padding: 8px 0; display: block;";
+      });
+
+      overlay.style.cssText = 
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.55);
+        z-index: 99990;
+      ;
+    }
+
+    // کلیک روی دکمه همبرگری
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!isMobile()) return;
+
+      if (nav.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // کلیک روی لایه تیره → بستن منو
+    overlay.addEventListener("click", closeMenu);
+
+    // کلیک روی لینک‌های منو → بستن منو
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (isMobile()) closeMenu();
+      });
+    });
+
+    // تغییر سایز صفحه
+    window.addEventListener("resize", function () {
+      if (!isMobile()) closeMenu();
+    });
+  });
+})();
+</script>
+
+<!-- اسکریپت فیلتر و لایت‌باکس گالری -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // فیلتر
   const filters = document.getElementById("galleryFilters");
   if (filters) {
-    filters.addEventListener("click", (e) => {
+    filters.addEventListener("click", function (e) {
       const btn = e.target.closest(".g-filter");
       if (!btn) return;
 
@@ -646,7 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (lb && lbImg) {
     document.querySelectorAll(".gallery-item").forEach(item => {
-      item.addEventListener("click", () => {
+      item.addEventListener("click", function () {
         const img = item.querySelector("img");
         if (img) {
           lbImg.src = img.src;
@@ -655,9 +758,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    document.getElementById("closeGalleryLb").onclick = () => lb.classList.remove("open");
-    lb.onclick = (e) => { if (e.target === lb) lb.classList.remove("open"); };
-    document.addEventListener("keydown", (e) => {
+    document.getElementById("closeGalleryLb").onclick = function () {
+      lb.classList.remove("open");
+    };
+
+    lb.onclick = function (e) {
+      if (e.target === lb) lb.classList.remove("open");
+    };
+
+    document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") lb.classList.remove("open");
     });
   }
