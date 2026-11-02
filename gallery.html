@@ -613,48 +613,24 @@
 
 <footer class="site-footer">
   <!-- فوتر شما دست نخورده باقی می‌ماند -->
- <script src="script.js" defer></script>
-
 <script>
 window.addEventListener("load", function () {
-  console.log("اسکریپت منو بارگذاری شد");
-
   var btn = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".main-nav");
+  if (!btn || !nav) return;
 
-  if (!btn) {
-    console.log("دکمه منو پیدا نشد");
-    return;
-  }
-  if (!nav) {
-    console.log("منو پیدا نشد");
-    return;
-  }
-
-  // لایه تیره
-  var overlay = document.getElementById("navOverlay");
-  if (!overlay) {
-    overlay = document.createElement("div");
-    overlay.id = "navOverlay";
-    document.body.appendChild(overlay);
-  }
+  // ساخت لایه تیره
+  var overlay = document.createElement("div");
+  overlay.id = "navOverlay";
+  overlay.style.cssText = "display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:99990;";
+  document.body.appendChild(overlay);
 
   function closeMenu() {
     nav.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
     overlay.style.display = "none";
     document.body.style.overflow = "";
-    nav.style.display = "";
-    nav.style.position = "";
-    nav.style.top = "";
-    nav.style.right = "";
-    nav.style.bottom = "";
-    nav.style.width = "";
-    nav.style.background = "";
-    nav.style.padding = "";
-    nav.style.zIndex = "";
-    nav.style.flexDirection = "";
-    nav.style.gap = "";
+    nav.removeAttribute("style");
   }
 
   function openMenu() {
@@ -662,45 +638,19 @@ window.addEventListener("load", function () {
     btn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
 
-    nav.style.display = "flex";
-    nav.style.flexDirection = "column";
-    nav.style.position = "fixed";
-    nav.style.top = "0";
-    nav.style.right = "0";
-    nav.style.bottom = "0";
-    nav.style.width = "280px";
-    nav.style.maxWidth = "85vw";
-    nav.style.background = "#0b3d2e";
-    nav.style.padding = "90px 25px 40px";
-    nav.style.zIndex = "99999";
-    nav.style.gap = "12px";
-    nav.style.boxShadow = "-8px 0 30px rgba(0,0,0,0.3)";
+    nav.style.cssText = "display:flex; flex-direction:column; position:fixed; top:0; right:0; bottom:0; width:280px; max-width:85vw; background:#0b3d2e; padding:90px 25px 40px; z-index:99999; gap:12px; box-shadow:-8px 0 30px rgba(0,0,0,0.3);";
 
     var links = nav.querySelectorAll("a");
     for (var i = 0; i < links.length; i++) {
-      links[i].style.color = "#ffffff";
-      links[i].style.fontSize = "1.15rem";
-      links[i].style.padding = "10px 0";
-      links[i].style.display = "block";
-      links[i].style.textDecoration = "none";
+      links[i].style.cssText = "color:#ffffff; font-size:1.15rem; padding:12px 0; display:block; text-decoration:none;";
     }
 
     overlay.style.display = "block";
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.background = "rgba(0,0,0,0.55)";
-    overlay.style.zIndex = "99990";
   }
 
-  // کلیک روی دکمه
-  btn.onclick = function (e) {
+  btn.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    console.log("دکمه منو کلیک شد");
-
     if (window.innerWidth > 980) return;
 
     if (nav.classList.contains("open")) {
@@ -708,85 +658,16 @@ window.addEventListener("load", function () {
     } else {
       openMenu();
     }
-  };
-// لینک‌های منو
-nav.addEventListener("click", function(e) {
-  var link = e.target.closest("a");
-  if (link && window.innerWidth <= 980) {
-    // منو را بعد از کلیک ببند
-    setTimeout(closeMenu, 200);
-  }
-});
-  // کلیک روی پس‌زمینه تیره
-  overlay.onclick = function () {
-    closeMenu();
-  };
+  });
 
- var links = nav.querySelectorAll("a");
-for (var j = 0; j < links.length; j++) {
-  links[j].addEventListener("click", function (e) {
-    // اجازه بده لینک کار خودش را بکند
-    if (window.innerWidth <= 980) {
-      // کمی تأخیر بده تا لینک فرصت اجرا داشته باشد
-      setTimeout(function() {
-        closeMenu();
-      }, 150);
+  overlay.addEventListener("click", closeMenu);
+
+  // لینک‌ها
+  nav.addEventListener("click", function (e) {
+    if (e.target.closest("a") && window.innerWidth <= 980) {
+      setTimeout(closeMenu, 180);
     }
   });
-}
-  // ========== فیلتر گالری ==========
-  var filterBox = document.getElementById("galleryFilters");
-  if (filterBox) {
-    filterBox.onclick = function (e) {
-      var b = e.target.closest(".g-filter");
-      if (!b) return;
-
-      var allBtn = document.querySelectorAll(".g-filter");
-      for (var k = 0; k < allBtn.length; k++) {
-        allBtn[k].classList.remove("active");
-      }
-      b.classList.add("active");
-
-      var cat = b.getAttribute("data-cat");
-      var items = document.querySelectorAll(".gallery-item");
-      for (var m = 0; m < items.length; m++) {
-        if (cat === "all" || items[m].getAttribute("data-cat") === cat) {
-          items[m].style.display = "";
-        } else {
-          items[m].style.display = "none";
-        }
-      }
-    };
-  }
-
-  // ========== لایت‌باکس ==========
-  var lb = document.getElementById("galleryLightbox");
-  var lbImg = document.getElementById("galleryLbImg");
-  if (lb && lbImg) {
- var items = document.querySelectorAll(".gallery-item");
-    for (var n = 0; n < items.length; n++) {
-      items[n].onclick = function () {
-        var img = this.querySelector("img");
-        if (img) {
-          lbImg.src = img.src;
-          lb.classList.add("open");
-        }
-      };
-    }
-
-    var closeBtn = document.getElementById("closeGalleryLb");
-    if (closeBtn) {
-      closeBtn.onclick = function () {
-        lb.classList.remove("open");
-      };
-    }
-
-    lb.onclick = function (e) {
-      if (e.target === lb) {
-        lb.classList.remove("open");
-      }
-    };
-  }
 });
 </script>
 </body>
