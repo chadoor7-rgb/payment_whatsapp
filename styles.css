@@ -2378,3 +2378,25 @@ body {
   border-radius: 999px;
   margin-bottom: 0.7rem;
 }
+/* دکمه همبرگری */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  line-height: 1;
+  z-index: 10001;
+}
+
+@media (max-width: 980px) {
+  .menu-toggle {
+    display: block !important;
+  }
+  
+  .main-nav {
+    display: none;
+  }
+}
