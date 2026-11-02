@@ -1477,57 +1477,62 @@ button, input, textarea {
     display: block !important;
   }
 
-  /* منوی کناری موبایل */
-  .main-nav {
-    display: flex !important;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: auto;
-    width: min(300px, 85vw);
-    height: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    margin: 0;
-    padding: 90px 28px 40px;
-    background: #fffdf8;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 0;
-    z-index: 10050;
-    overflow-y: auto;
-    box-sizing: border-box;
-    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
-    transform: translateX(105%);
-    transition: transform 0.3s ease;
-    pointer-events: auto;
-  }
-  .main-nav a {
-    font-size: 17px;
-    font-weight: 700;
-    color: #182622 !important;
-    padding: 15px 12px;
-    width: 100%;
-    border-bottom: 1px solid #eee;
-    display: block;
-    position: relative;
-    z-index: 10051;
-    pointer-events: auto;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-  }
+/* منوی کناری موبایل */
+.main-nav {
+  display: flex !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: min(300px, 85vw);
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 90px 24px 40px;
+  background: #fffdf8;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  z-index: 10050;
+  overflow-y: auto;
+  box-sizing: border-box;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(105%);
+  transition: transform 0.3s ease;
+  pointer-events: auto;
+}
 
-  .main-nav a:last-child {
-    border-bottom: none;
-  }
+.main-nav.open {
+  transform: translateX(0) !important;
+}
 
-  .main-nav a:hover,
-  .main-nav a:active {
-    color: #235d56 !important;
-    background: rgba(35, 93, 86, 0.08);
-  }
+.main-nav a {
+  font-size: 17px;
+  font-weight: 700;
+  color: #182622 !important;
+  padding: 15px 12px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  display: block;
+  position: relative;
+  z-index: 10051;
+  pointer-events: auto;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.main-nav a:last-child {
+  border-bottom: none;
+}
+
+.main-nav a:hover,
+.main-nav a:active {
+  color: #235d56 !important;
+  background: rgba(35, 93, 86, 0.08);
+}
   .main-nav a:hover,
   .main-nav a:active {
     color: var(--teal);
