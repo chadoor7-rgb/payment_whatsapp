@@ -122,41 +122,74 @@
       document.body.appendChild(overlay);
     }
 
-    function openMenu() {
-      nav.classList.add("open");
-      menuButton.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
-      overlay.classList.add("show");
-      overlay.setAttribute("aria-hidden", "false");
-      if (header) header.style.zIndex = "10060";
-      menuButton.setAttribute("aria-label", "بستن منو");
-    }
+    function initMenu() {
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
+  const header = document.querySelector(".site-header");
+  
+  if (!menuButton || !nav) return;
 
-    function closeMenu() {
-      nav.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-      overlay.classList.remove("show");
-      overlay.setAttribute("aria-hidden", "true");
-      if (header) header.style.zIndex = "";
-      menuButton.setAttribute("aria-label", "باز کردن منو");
-    }
+  // جلوگیری از اضافه شدن چندباره event listener
+  if (menuButton.dataset.menuInitialized === "true") return;
+  menuButton.dataset.menuInitialized = "true";
 
-    menuButton.addEventListener("click", function () {
-      if (nav.classList.contains("open")) closeMenu();
-      else openMenu();
-    });
+  let overlay = document.getElementById("navOverlay");
+  if (!overlay) {
+    overlay = document.createElement("button");
+    overlay.id = "navOverlay";
+    overlay.className = "nav-overlay";
+    overlay.type = "button";
+    overlay.setAttribute("aria-label", "بستن منو");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.appendChild(overlay);
+  }
 
-    overlay.addEventListener("click", closeMenu);
+  function openMenu() {
+    nav.classList.add("open");
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "بستن منو");
+    document.body.style.overflow = "hidden";
+    overlay.classList.add("show");
+    overlay.setAttribute("aria-hidden", "false");
+    if (header) header.style.zIndex = "10060";
+  }
 
-    nav.addEventListener("click", function (event) {
-      const link = event.target.closest("a");
-      if (!link) return;
-      const href = link.getAttribute("href");
-      if (!href || href === "#") return;
+  function closeMenu() {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "باز کردن منو");
+    document.body.style.overflow = "";
+    overlay.classList.remove("show");
+    overlay.setAttribute("aria-hidden", "true");
+    if (header) header.style.zIndex = "";
+  }
+
+  menuButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (nav.classList.contains("open")) {
       closeMenu();
-    });
+    } else {
+      openMenu();
+    }
+  });
 
+  overlay.addEventListener("click", closeMenu);
+
+  nav.addEventListener("click", function (event) {
+    const link = event.target.closest("a");
+    if (link) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      closeMenu();
+    }
+  });
+}
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && nav.classList.contains("open")) closeMenu();
     });
