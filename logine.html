@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود و عضویت | چادردوزی جزیره J.A.T</title>
+  <meta name="description" content="ورود و عضویت در چادردوزی جزیره J.A.T. سفارش چادر از طریق واتساپ و تماس مستقیم با کارگاه آمل.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://chadooor.ir/login.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .auth-page {
+      min-height: calc(100vh - 200px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem 3rem;
+      background: linear-gradient(180deg, #f0f4f2 0%, #fff 55%);
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: #fff;
+      border: 1px solid #e5e8e5;
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(21, 40, 34, 0.08);
+      overflow: hidden;
+    }
+    .auth-head {
+      background: linear-gradient(135deg, #155e55, #0f4c45);
+      color: #fff;
+      padding: 1.6rem 1.5rem 1.3rem;
+      text-align: center;
+    }
+    .auth-head h1 {
+      margin: 0 0 0.4rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+    .auth-head p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .auth-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid #e5e8e5;
+    }
+    .auth-tab {
+      border: 0;
+      background: #f7f9f8;
+      padding: 0.95rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #68736f;
+      cursor: pointer;
+    }
+    .auth-tab.active {
+      background: #fff;
+      color: #155e55;
+      box-shadow: inset 0 -3px 0 #155e55;
+    }
+    .auth-body {
+      padding: 1.5rem 1.4rem 1.6rem;
+    }
+    .auth-panel { display: none; }
+    .auth-panel.active { display: block; }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #17231f;
+    }
+    .form-group input {
+      width: 100%;
+      border: 1px solid #dfe5e2;
+      border-radius: 12px;
+      padding: 0.75rem 0.9rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #fafbfa;
+      box-sizing: border-box;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #155e55;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(21, 94, 85, 0.12);
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0.3rem 0 1.1rem;
+      font-size: 0.85rem;
+    }
+    .form-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: #68736f;
+    }
+    .btn-auth {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      padding: 0.85rem;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      background: #155e55;
+      color: #fff;
+    }
+    .btn-auth:hover { background: #0f4c45; }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 0.75rem;
+      border-radius: 12px;
+      padding: 0.8rem;
+      background: #20b95a;
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .auth-note {
+      margin-top: 1.1rem;
+      padding: 0.85rem 1rem;
+      background: #f0f7f5;
+      border-radius: 12px;
+      font-size: 0.84rem;
+      color: #3d5c55;
+      line-height: 1.75;
+    }
+    .auth-msg {
+      display: none;
+      margin-bottom: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .auth-msg.show { display: block; }
+    .auth-msg.ok {
+      background: #e8f8ef;
+      color: #0f6b3c;
+      border: 1px solid #b8e8cb;
+    }
+    .auth-msg.err {
+      background: #fdecea;
+      color: #b42318;
+      border: 1px solid #f5c2c0;
+    }
+    .auth-foot {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: #68736f;
+    }
+    .auth-foot a { color: #155e55; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<header class="site-header sticky-header">
+  <a href="index.html" class="brand">
+    <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
+    <span>چادردوزی جزیره J.A.T</span>
+  </a>
+  <nav class="main-nav" aria-label="منوی اصلی">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
+    <a href="blog.html">مجله سفر</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="header-actions">
+    <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
+    <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
+  </div>
+  <button class="menu-toggle" aria-label="منو">☰</button>
+</header>
+
+<main class="auth-page">
+  <div class="auth-card">
+    <div class="auth-head">
+      <h1>ورود و عضویت</h1>
+      <p>چادردوزی جزیره J.A.T — کارگاه تولید در آمل</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" data-tab="login">ورود</button>
+      <button type="button" class="auth-tab" data-tab="register">عضویت</button>
+    </div>
+
+    <div class="auth-body">
+      <div id="authMsg" class="auth-msg" role="alert"></div>
+
+      <!-- ورود -->
+      <div class="auth-panel active" id="panel-login">
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginPhone">شماره موبایل</label>
+            <input type="tel" id="loginPhone" name="phone" placeholder="09121234567" inputmode="numeric" autocomplete="tel" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPass">رمز عبور</label>
+            <input type="password" id="loginPass" name="password" placeholder="رمز عبور" autocomplete="current-password" required>
+          </div>
+          <div class="form-row">
+            <label><input type="checkbox" id="rememberMe"> مرا به خاطر بسپار</label>
+            <a href="https://wa.me/989118031241?text=سلام، رمز عبورم را فراموش کرده‌ام" target="_blank" rel="noopener">فراموشی رمز؟</a>
+          </div>
+          <button type="submit" class="btn-auth">ورود</button>
+        </form>
+        <a class="btn-wa" href="https://wa.me/989118031241?text=سلام، برای سفارش چادر مشاوره می‌خواهم" target="_blank" rel="noopener">
+          سفارش سریع از واتساپ
+        </a>
+        <div class="auth-note">
+          برای خرید و سفارش چادر نیازی به عضویت نیست. می‌توانید مستقیم از واتساپ یا صفحه تماس اقدام کنید.
+        </div>
+      </div>
+
+      <!-- عضویت -->
+      <div class="auth-panel" id="panel-register">
+        <form id="registerForm" novalidate>
+          <div class="form-group">
+            <label for="regName">نام و نام خانوادگی</label>
+            <input type="text" id="regName" name="name" placeholder="نام کامل" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="regPhone">شماره موبایل</label>
+            <input type="tel" id="regPhone" name="phone" placeholder="09121234567" inputmode="numeric" autocomplete="tel" required>
+          </div>
+          <div class="form-group">
+            <label for="regPass">رمز عبور</label>
+            <input type="password" id="regPass" name="password" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password" required minlength="6">
+          </div>
+          <div class="form-group">
+            <label for="regPass2">تکرار رمز عبور</label>
+            <input type="password" id="regPass2" name="password2" placeholder="تکرار رمز" autocomplete="new-password" required>
+          </div>
+          <div class="form-row">
+            <label><input type="checkbox" id="acceptRules" required> قوانین سایت را می‌پذیرم</label>
+          </div>
+          <button type="submit" class="btn-auth">ثبت‌نام</button>
+        </form>
+        <a class="btn-wa" href="https://wa.me/989118031241?text=سلام، می‌خواهم عضو شوم / سفارش ثبت کنم" target="_blank" rel="noopener">
+          عضویت و سفارش از واتساپ
+        </a>
+        <div class="auth-note">
+          این فرم اطلاعات را فقط روی دستگاه شما ذخیره می‌کند. برای پیگیری سفارش واقعی با واتساپ کارگاه در ارتباط باشید.
+        </div>
+      </div>
+
+      <div class="auth-foot">
+        <a href="shop.html">بازگشت به فروشگاه</a> ·
+        <a href="contact.html">تماس با ما</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a href="index.html" class="brand">
+      <img src="favicon.svg" alt="لوگو" width="44" height="44">
+      <span>چادردوزی جزیره J.A.T</span>
+    </a>
+    <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+  </div>
+  <nav class="footer-menu">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="services.html">خدمات</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره ما</a>
+    <a href="contact.html">ثبت سفارش</a>
+  </nav>
+  <div class="social-links">
+    <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+    <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+  </div>
+  <div class="copyright">© ۲۰۲۶ چادردوزی جزیره J.A.T<br>کلیه حقوق این وب‌سایت محفوظ است.</div>
+</footer>
+
+<script src="script.js" defer></script>
+<script>
+(function () {
+  const msg = document.getElementById("authMsg");
+  const USER_KEY = "chadoor_user";
+
+  function showMsg(text, type) {
+    msg.textContent = text;
+    msg.className = "auth-msg show " + type;
+  }
+
+  function hideMsg() {
+    msg.className = "auth-msg";
+    msg.textContent = "";
+  }
+
+  function isValidPhone(v) {
+    return /^09\d{9}$/.test(String(v).replace(/\s+/g, ""));
+  }
+
+  // تب‌ها
+  document.querySelectorAll(".auth-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".auth-tab").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".auth-panel").forEach((p) => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById("panel-" + tab.dataset.tab).classList.add("active");
+      hideMsg();
+    });
+  });
+
+  // ورود
+  document.getElementById("loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const phone = document.getElementById("loginPhone").value.trim();
+    const pass = document.getElementById("loginPass").value;
+
+    if (!isValidPhone(phone)) {
+      showMsg("شماره موبایل معتبر وارد کنید (مثال: 09121234567).", "err");
+      return;
+    }
+    if (!pass || pass.length < 4) {
+      showMsg("رمز عبور را وارد کنید.", "err");
+      return;
+    }
+
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem(USER_KEY) || "null"); } catch (_) {}
+
+    if (saved && saved.phone === phone && saved.password === pass) {
+      if (document.getElementById("rememberMe").checked) {
+        localStorage.setItem("chadoor_session", JSON.stringify({ phone, name: saved.name, at: Date.now() }));
+      }
+      showMsg("خوش آمدید " + (saved.name || "") + ". در حال انتقال به فروشگاه…", "ok");
+      setTimeout(() => { location.href = "shop.html"; }, 900);
+    } else {
+      showMsg("کاربری با این مشخصات یافت نشد. ابتدا عضویت را تکمیل کنید یا از واتساپ سفارش دهید.", "err");
+    }
+  });
+
+  // عضویت
+  document.getElementById("registerForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("regName").value.trim();
+    const phone = document.getElementById("regPhone").value.trim();
+    const pass = document.getElementById("regPass").value;
+    const pass2 = document.getElementById("regPass2").value;
+
+    if (name.length < 3) {
+      showMsg("نام را کامل وارد کنید.", "err");
+      return;
+    }
+    if (!isValidPhone(phone)) {
+      showMsg("شماره موبایل معتبر وارد کنید (مثال: 09121234567).", "err");
+      return;
+    }
+    if (pass.length < 6) {
+      showMsg("رمز عبور حداقل ۶ کاراکتر باشد.", "err");
+      return;
+    }
+    if (pass !== pass2) {
+      showMsg("تکرار رمز عبور یکسان نیست.", "err");
+      return;
+    }
+    if (!document.getElementById("acceptRules").checked) {
+      showMsg("پذیرش قوانین الزامی است.", "err");
+      return;
+    }
+
+    const user = { name, phone, password: pass, createdAt: Date.now() };
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+    localStorage.setItem("chadoor_session", JSON.stringify({ phone, name, at: Date.now() }));
+    showMsg("عضویت با موفقیت ثبت شد. می‌توانید سفارش را از واتساپ یا فروشگاه ادامه دهید.", "ok");
+    setTimeout(() => { location.href = "shop.html"; }, 1200);
+  });
+})();
+</script>
+</body>
+</html>
