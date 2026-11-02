@@ -612,40 +612,39 @@
 </div>
 
 <footer class="site-footer">
-  <!-- فوتر شما دست نخورده باقی می‌ماند -->
+<script src="script.js"></script>
+
 <script>
+// منوی موبایل مخصوص گالری (هماهنگ با CSS اصلی)
 window.addEventListener("load", function () {
   var btn = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".main-nav");
   if (!btn || !nav) return;
 
-  // ساخت لایه تیره
-  var overlay = document.createElement("div");
-  overlay.id = "navOverlay";
-  overlay.style.cssText = "display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:99990;";
-  document.body.appendChild(overlay);
+  // جلوگیری از دوباره‌کاری
+  if (btn.dataset.menuFixed === "true") return;
+  btn.dataset.menuFixed = "true";
 
-  function closeMenu() {
-    nav.classList.remove("open");
-    btn.setAttribute("aria-expanded", "false");
-    overlay.style.display = "none";
-    document.body.style.overflow = "";
-    nav.removeAttribute("style");
+  var overlay = document.getElementById("navOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "navOverlay";
+    overlay.className = "nav-overlay";
+    document.body.appendChild(overlay);
   }
 
   function openMenu() {
     nav.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
+    overlay.classList.add("show");
     document.body.style.overflow = "hidden";
+  }
 
-    nav.style.cssText = "display:flex; flex-direction:column; position:fixed; top:0; right:0; bottom:0; width:280px; max-width:85vw; background:#0b3d2e; padding:90px 25px 40px; z-index:99999; gap:12px; box-shadow:-8px 0 30px rgba(0,0,0,0.3);";
-
-    var links = nav.querySelectorAll("a");
-    for (var i = 0; i < links.length; i++) {
-      links[i].style.cssText = "color:#ffffff; font-size:1.15rem; padding:12px 0; display:block; text-decoration:none;";
-    }
-
-    overlay.style.display = "block";
+  function closeMenu() {
+    nav.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+    overlay.classList.remove("show");
+    document.body.style.overflow = "";
   }
 
   btn.addEventListener("click", function (e) {
@@ -662,10 +661,9 @@ window.addEventListener("load", function () {
 
   overlay.addEventListener("click", closeMenu);
 
-  // لینک‌ها
   nav.addEventListener("click", function (e) {
-    if (e.target.closest("a") && window.innerWidth <= 980) {
-      setTimeout(closeMenu, 180);
+    if (e.target.closest("a")) {
+      closeMenu();
     }
   });
 });
