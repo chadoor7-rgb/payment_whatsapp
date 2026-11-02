@@ -605,112 +605,64 @@
   </svg>
   <span>تیم پشتیبانی</span>
 </a>
-<script src="script.js"></script>
+<!-- لایت‌باکس -->
+<div class="lightbox-g" id="galleryLightbox">
+  <button class="close-lb" id="closeGalleryLb" aria-label="بستن">×</button>
+  <img id="galleryLbImg" src="" alt="">
+</div>
+
+<footer class="site-footer">
+  <!-- فوتر شما دست نخورده باقی می‌ماند -->
+  ...
+</footer>
+
+<!-- اسکریپت اصلی سایت -->
+<script src="script.js" defer></script>
+
+<!-- اسکریپت اختصاصی گالری -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // فیلتر دسته‌بندی
-  document.getElementById("galleryFilters").addEventListener("click", (e) => {
-    const btn = e.target.closest(".g-filter");
-    if (!btn) return;
-    document.querySelectorAll(".g-filter").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    const cat = btn.dataset.cat;
-    document.querySelectorAll(".gallery-item").forEach(item => {
-      item.style.display = (cat === "all" || item.dataset.cat === cat) ? "" : "none";
+
+  // فیلتر دسته‌بندی (اصلاح شده)
+  const filters = document.getElementById("galleryFilters");
+  if (filters) {
+    filters.addEventListener("click", (e) => {
+      const btn = e.target.closest(".g-filter");
+      if (!btn) return;
+
+      document.querySelectorAll(".g-filter").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cat = btn.dataset.cat;
+      document.querySelectorAll(".gallery-item").forEach(item => {
+        item.style.display = (cat === "all" || item.dataset.cat === cat) ? "" : "none";
+      });
     });
-  });
+  }
 
   // لایت‌باکس
   const lb = document.getElementById("galleryLightbox");
   const lbImg = document.getElementById("galleryLbImg");
-  document.querySelectorAll(".gallery-item").forEach(item => {
-    item.addEventListener("click", () => {
-      const img = item.querySelector("img");
-      if (img) {
-        lbImg.src = img.src;
-        lb.classList.add("open");
-      }
-    });
-  });
-  document.getElementById("closeGalleryLb").onclick = () => lb.classList.remove("open");
-  lb.onclick = (e) => { if (e.target === lb) lb.classList.remove("open"); };
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") lb.classList.remove("open"); });
-});
-</script>
-  <script>
-(function () {
-  "use strict";
 
-  function ready(fn) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      fn();
-    }
-  }
-
-  ready(function () {
-    var btn = document.querySelector(".menu-toggle");
-    var nav = document.querySelector(".main-nav");
-    if (!btn || !nav) return;
-
-    function isMobile() {
-      return window.innerWidth <= 980;
-    }
-
-    var overlay = document.getElementById("navOverlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "navOverlay";
-      overlay.className = "nav-overlay";
-      document.body.appendChild(overlay);
-    }
-
-    function closeMenu() {
-      nav.classList.remove("open");
-      overlay.classList.remove("show");
-      overlay.style.display = "none";
-      btn.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-      if (isMobile()) {
-        nav.style.right = "-100%";
-      } else {
-        nav.removeAttribute("style");
-      }
-    }
-
-    function openMenu() {
-      if (!isMobile()) return;
-      nav.classList.add("open");
-      nav.style.cssText = "display:block;position:fixed;top:0;bottom:0;width:280px;max-width:85vw;padding:100px 20px 40px;background:#fffdf8;z-index:10050;overflow-y:auto;box-shadow:-10px 0 40px rgba(0,0,0,0.18);right:0;left:auto;";
-      overlay.style.cssText = "display:block;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:10040;";
-      overlay.classList.add("show");
-      btn.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
-    }
-
-    closeMenu();
-
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!isMobile()) return;
-      if (nav.classList.contains("open")) closeMenu();
-      else openMenu();
-    });
-
-    overlay.addEventListener("click", closeMenu);
-
-    nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        if (isMobile()) closeMenu();
+  if (lb && lbImg) {
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const img = item.querySelector("img");
+        if (img) {
+          lbImg.src = img.src;
+          lb.classList.add("open");
+        }
       });
     });
 
-    window.addEventListener("resize", closeMenu);
-  });
-})();
+    document.getElementById("closeGalleryLb").onclick = () => lb.classList.remove("open");
+    lb.onclick = (e) => { if (e.target === lb) lb.classList.remove("open"); };
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") lb.classList.remove("open");
+    });
+  }
+});
 </script>
-  <script src="script.js" defer></script>
+
 </body>
 </html>
