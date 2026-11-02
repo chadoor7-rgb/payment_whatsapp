@@ -1,7 +1,6 @@
-
 /* ==================================================
    CHADOOOR J.A.T - OPTIMIZED SCRIPT + CART
-   نسخه اصلاح‌شده با حفظ امکانات فعلی سایت
+   نسخه اصلاح‌شده و تمیز - منوی موبایل درست کار می‌کند
 ================================================== */
 
 (function () {
@@ -109,7 +108,12 @@
     const menuButton = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".main-nav");
     const header = document.querySelector(".site-header");
+
     if (!menuButton || !nav) return;
+
+    // جلوگیری از اضافه شدن چندباره event listener
+    if (menuButton.dataset.menuInitialized === "true") return;
+    menuButton.dataset.menuInitialized = "true";
 
     let overlay = document.getElementById("navOverlay");
     if (!overlay) {
@@ -122,76 +126,50 @@
       document.body.appendChild(overlay);
     }
 
-    function initMenu() {
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".main-nav");
-  const header = document.querySelector(".site-header");
-  
-  if (!menuButton || !nav) return;
-
-  // جلوگیری از اضافه شدن چندباره event listener
-  if (menuButton.dataset.menuInitialized === "true") return;
-  menuButton.dataset.menuInitialized = "true";
-
-  let overlay = document.getElementById("navOverlay");
-  if (!overlay) {
-    overlay = document.createElement("button");
-    overlay.id = "navOverlay";
-    overlay.className = "nav-overlay";
-    overlay.type = "button";
-    overlay.setAttribute("aria-label", "بستن منو");
-    overlay.setAttribute("aria-hidden", "true");
-    document.body.appendChild(overlay);
-  }
-
-  function openMenu() {
-    nav.classList.add("open");
-    menuButton.setAttribute("aria-expanded", "true");
-    menuButton.setAttribute("aria-label", "بستن منو");
-    document.body.style.overflow = "hidden";
-    overlay.classList.add("show");
-    overlay.setAttribute("aria-hidden", "false");
-    if (header) header.style.zIndex = "10060";
-  }
-
-  function closeMenu() {
-    nav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "باز کردن منو");
-    document.body.style.overflow = "";
-    overlay.classList.remove("show");
-    overlay.setAttribute("aria-hidden", "true");
-    if (header) header.style.zIndex = "";
-  }
-
-  menuButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    if (nav.classList.contains("open")) {
-      closeMenu();
-    } else {
-      openMenu();
+    function openMenu() {
+      nav.classList.add("open");
+      menuButton.setAttribute("aria-expanded", "true");
+      menuButton.setAttribute("aria-label", "بستن منو");
+      document.body.style.overflow = "hidden";
+      overlay.classList.add("show");
+      overlay.setAttribute("aria-hidden", "false");
+      if (header) header.style.zIndex = "10060";
     }
-  });
 
-  overlay.addEventListener("click", closeMenu);
-
-  nav.addEventListener("click", function (event) {
-    const link = event.target.closest("a");
-    if (link) {
-      closeMenu();
+    function closeMenu() {
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "باز کردن منو");
+      document.body.style.overflow = "";
+      overlay.classList.remove("show");
+      overlay.setAttribute("aria-hidden", "true");
+      if (header) header.style.zIndex = "";
     }
-  });
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && nav.classList.contains("open")) {
-      closeMenu();
-    }
-  });
-}
+    menuButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (nav.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    nav.addEventListener("click", function (event) {
+      const link = event.target.closest("a");
+      if (link) {
+        closeMenu();
+      }
+    });
+
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && nav.classList.contains("open")) closeMenu();
+      if (event.key === "Escape" && nav.classList.contains("open")) {
+        closeMenu();
+      }
     });
   }
 
@@ -208,6 +186,7 @@
         const phone = form.querySelector("#phone")?.value.trim() || "ثبت نشده";
         const service = form.querySelector("#service")?.value || "سفارش عمومی";
         const request = form.querySelector("#request")?.value.trim() || "بدون توضیح";
+
         const message =
           "سلام چادردوزی جزیره\n\nنام: " + name +
           "\nشماره تماس: " + phone +
@@ -260,13 +239,6 @@
     return path;
   }
 
-  function imageErrorHandler(image) {
-    image.onerror = null;
-    if (image.src && !image.src.endsWith("/" + FALLBACK_IMAGE) && !image.src.endsWith(FALLBACK_IMAGE)) {
-      image.src = FALLBACK_IMAGE;
-    }
-  }
-
   /* ---------- Shop products ---------- */
   function initShop() {
     const productGrid = document.querySelector("#productGrid") || document.querySelector(".shop-grid");
@@ -285,6 +257,7 @@
         }
 
         const fragment = document.createDocumentFragment();
+
         products.forEach((product) => {
           if (!product || product.id === undefined || !product.name) return;
 
@@ -316,6 +289,7 @@
                 '<a href="' + esc(whatsappUrl) + '" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;background:#20b95a;color:#fff;text-decoration:none;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;">واتساپ</a>' +
               '</div>' +
             '</div>';
+
           fragment.appendChild(article);
         });
 
@@ -341,6 +315,7 @@
     document.addEventListener("click", (event) => {
       const button = event.target.closest(".add-cart-btn");
       if (!button) return;
+
       addToCart({
         id: button.dataset.id,
         name: button.dataset.name,
@@ -368,7 +343,6 @@
       const quantity = Math.max(1, Number(item.qty) || 1);
       const price = Math.max(0, Number(item.price) || 0);
       const lineTotal = price * quantity;
-
       total += lineTotal;
       if (price === 0) hasQuoteItem = true;
 
@@ -412,7 +386,6 @@
 
       const id = Number(button.dataset.id);
       const nextCart = getCart().filter((item) => Number(item.id) !== id);
-
       if (saveCart(nextCart)) renderCartPage();
     });
 
@@ -423,9 +396,7 @@
   function fixGoogleSearchDir() {
     const input = document.querySelector(".gsc-input, input.gsc-input");
     const wrapper = document.querySelector(".gsc-control-wrapper-cse");
-
     if (wrapper) wrapper.setAttribute("dir", "rtl");
-
     if (input) {
       input.setAttribute("dir", "rtl");
       input.style.direction = "rtl";
@@ -444,7 +415,6 @@
     initCartPage();
     loadIcons();
     fixGoogleSearchDir();
-
     window.setTimeout(fixGoogleSearchDir, 1000);
     window.setTimeout(fixGoogleSearchDir, 3000);
   }
