@@ -1785,3 +1785,50 @@ button, input, textarea {
     width: min(280px, 88vw);
   }
 }
+/* اصلاح نهایی منوی موبایل - گالری  */
+@media (max-width: 980px) {
+  .main-nav {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: min(300px, 85vw) !important;
+    height: 100% !important;
+    min-height: 100dvh !important;
+    background: #ffffff !important;
+    flex-direction: column !important;
+    padding: 90px 24px 40px !important;
+    z-index: 10050 !important;
+    overflow-y: auto !important;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.12) !important;
+    transform: translateX(105%) !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .main-nav.open {
+    transform: translateX(0) !important;
+  }
+
+  .main-nav a {
+    color: #000000 !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    padding: 15px 12px !important;
+    width: 100% !important;
+    border-bottom: 1px solid #eee !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  .main-nav a:hover,
+  .main-nav a:active {
+    color: #155e55 !important;
+    background: rgba(0,0,0,0.04) !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    z-index: 10070 !important;
+  }
+}
