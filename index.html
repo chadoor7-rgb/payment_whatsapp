@@ -568,13 +568,19 @@
       opacity: 0.9;
     }
 
-    /* ===== فوتر ===== */
-    .footer-top {
+/* ===== فوتر ===== */
+.site-footer {
+  background: #0b3d2e !important;
+  color: #ffffff !important;
+  padding: 45px 20px 30px;
+}
+
+.footer-top {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
 }
 
@@ -584,65 +590,85 @@
   gap: 10px;
   color: #ffffff !important;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .footer-top .brand img {
   background: #ffffff;
-  border-radius: 8px;
-  padding: 3px;
-  width: 42px;
-  height: 42px;
+  border-radius: 10px;
+  padding: 4px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
 .footer-slogan {
-  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-size: 0.95rem;
-  color: #ffffff;
+  margin: 0;
 }
-    .footer-menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 25px;
-      font-size: 0.92rem;
-    }
 
-    .footer-menu a {
-      color: rgba(255,255,255,0.85);
-      transition: color 0.2s;
-    }
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
 
-    .footer-menu a:hover { color: #a8e6cf; }
+.footer-menu a {
+  color: #ffffff !important;
+  opacity: 0.9;
+  transition: opacity 0.2s, color 0.2s;
+  font-weight: 500;
+}
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 25px;
-      flex-wrap: wrap;
-    }
+.footer-menu a:hover {
+  opacity: 1;
+  color: #a8e6cf !important;
+}
 
-    .social-links a {
-      color: rgba(255,255,255,0.85);
-      transition: color 0.2s, transform 0.2s;
-    }
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
 
-    .social-links a:hover {
-      color: #a8e6cf;
-      transform: translateY(-2px);
-    }
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: #ffffff !important;
+  transition: all 0.25s;
+}
 
-    .copyright {
-      text-align: center;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.65);
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 18px;
-    }
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
 
+.copyright {
+  text-align: center;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 18px;
+  margin-top: 10px;
+}
+
+.copyright p {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+ 
     /* ریسپانسیو */
     @media (max-width: 800px) {
       .hero h1 { font-size: 1.85rem; }
@@ -781,7 +807,7 @@
           <img src="tent-jat-8-1.webp" alt="چادر برزنتی ۸ نفره J.A.T">
         </div>
         <div>
-          <img src="tentc2006.webp" alt="چادر مسافرتی ۸ نفره دوجداره">
+          <img src="tent-c2006.webp" alt="چادر مسافرتی ۸ نفره دوجداره">
         </div>
         <div>
           <img src="tent-kids-sendrla.jpg" alt="چادر کودک">
