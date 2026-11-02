@@ -613,108 +613,133 @@
 
 <footer class="site-footer">
   <!-- فوتر شما دست نخورده باقی می‌ماند -->
-  ...
-</footer>[11/08/1405 11:29 AM] 🏕Travel Tent: <script src="script.js" defer></script>
+ <script src="script.js" defer></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
+  console.log("اسکریپت منو بارگذاری شد");
 
-  // ========== منوی همبرگری ==========
   var btn = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".main-nav");
 
-  if (btn && nav) {
-    var overlay = document.createElement("div");
+  if (!btn) {
+    console.log("دکمه منو پیدا نشد");
+    return;
+  }
+  if (!nav) {
+    console.log("منو پیدا نشد");
+    return;
+  }
+
+  // لایه تیره
+  var overlay = document.getElementById("navOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
     overlay.id = "navOverlay";
     document.body.appendChild(overlay);
+  }
 
-    function closeMenu() {
-      nav.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-      overlay.style.display = "none";
-      document.body.style.overflow = "";
-      nav.removeAttribute("style");
+  function closeMenu() {
+    nav.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+    overlay.style.display = "none";
+    document.body.style.overflow = "";
+    nav.style.display = "";
+    nav.style.position = "";
+    nav.style.top = "";
+    nav.style.right = "";
+    nav.style.bottom = "";
+    nav.style.width = "";
+    nav.style.background = "";
+    nav.style.padding = "";
+    nav.style.zIndex = "";
+    nav.style.flexDirection = "";
+    nav.style.gap = "";
+  }
+
+  function openMenu() {
+    nav.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+
+    nav.style.display = "flex";
+    nav.style.flexDirection = "column";
+    nav.style.position = "fixed";
+    nav.style.top = "0";
+    nav.style.right = "0";
+    nav.style.bottom = "0";
+    nav.style.width = "280px";
+    nav.style.maxWidth = "85vw";
+    nav.style.background = "#0b3d2e";
+    nav.style.padding = "90px 25px 40px";
+    nav.style.zIndex = "99999";
+    nav.style.gap = "12px";
+    nav.style.boxShadow = "-8px 0 30px rgba(0,0,0,0.3)";
+
+    var links = nav.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+      links[i].style.color = "#ffffff";
+      links[i].style.fontSize = "1.15rem";
+      links[i].style.padding = "10px 0";
+      links[i].style.display = "block";
+      links[i].style.textDecoration = "none";
     }
 
-    function openMenu() {
-      nav.classList.add("open");
-      btn.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
+    overlay.style.display = "block";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0,0,0,0.55)";
+    overlay.style.zIndex = "99990";
+  }
 
-      nav.style.display = "flex";
-      nav.style.flexDirection = "column";
-      nav.style.position = "fixed";
-      nav.style.top = "0";
-      nav.style.right = "0";
-      nav.style.bottom = "0";
-      nav.style.width = "280px";
-      nav.style.maxWidth = "85vw";
-      nav.style.background = "#0b3d2e";
-      nav.style.padding = "90px 25px 40px";
-      nav.style.zIndex = "99999";
-      nav.style.gap = "18px";
-      nav.style.boxShadow = "-8px 0 30px rgba(0,0,0,0.25)";
+  // کلیک روی دکمه
+  btn.onclick = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("دکمه منو کلیک شد");
 
-      var links = nav.querySelectorAll("a");
-      for (var i = 0; i < links.length; i++) {
-        links[i].style.color = "white";
-        links[i].style.fontSize = "1.1rem";
-        links[i].style.padding = "8px 0";
-        links[i].style.display = "block";
-      }
+    if (window.innerWidth > 980) return;
 
-      overlay.style.display = "block";
-      overlay.style.position = "fixed";
-      overlay.style.top = "0";
-      overlay.style.left = "0";
-      overlay.style.right = "0";
-      overlay.style.bottom = "0";
-      overlay.style.background = "rgba(0,0,0,0.55)";
-      overlay.style.zIndex = "99990";
+    if (nav.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
     }
+  };
 
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (window.innerWidth > 980) return;
+  // کلیک روی پس‌زمینه تیره
+  overlay.onclick = function () {
+    closeMenu();
+  };
 
-      if (nav.classList.contains("open")) {
+  // کلیک روی لینک‌های منو
+  var links = nav.querySelectorAll("a");
+  for (var j = 0; j < links.length; j++) {
+    links[j].onclick = function () {
+      if (window.innerWidth <= 980) {
         closeMenu();
-      } else {
-        openMenu();
       }
-    });
-
-    overlay.addEventListener("click", closeMenu);
-
-    var navLinks = nav.querySelectorAll("a");
-    for (var j = 0; j < navLinks.length; j++) {
-      navLinks[j].addEventListener("click", function () {
-        if (window.innerWidth <= 980) closeMenu();
-      });
-    }
-
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 980) closeMenu();
-    });
+    };
   }
 
   // ========== فیلتر گالری ==========
-  var filters = document.getElementById("galleryFilters");
-  if (filters) {
-    filters.addEventListener("click", function (e) {
-      var btn = e.target.closest(".g-filter");
-      if (!btn) return;
+  var filterBox = document.getElementById("galleryFilters");
+  if (filterBox) {
+    filterBox.onclick = function (e) {
+      var b = e.target.closest(".g-filter");
+      if (!b) return;
 
-      var allBtns = document.querySelectorAll(".g-filter");
-      for (var k = 0; k < allBtns.length; k++) {
-        allBtns[k].classList.remove("active");
+      var allBtn = document.querySelectorAll(".g-filter");
+      for (var k = 0; k < allBtn.length; k++) {
+        allBtn[k].classList.remove("active");
       }
-      btn.classList.add("active");
+      b.classList.add("active");
 
-      var cat = btn.getAttribute("data-cat");
+      var cat = b.getAttribute("data-cat");
       var items = document.querySelectorAll(".gallery-item");
-
       for (var m = 0; m < items.length; m++) {
         if (cat === "all" || items[m].getAttribute("data-cat") === cat) {
           items[m].style.display = "";
@@ -722,23 +747,22 @@ document.addEventListener("DOMContentLoaded", function () {
           items[m].style.display = "none";
         }
       }
-    });
+    };
   }
 
   // ========== لایت‌باکس ==========
   var lb = document.getElementById("galleryLightbox");
   var lbImg = document.getElementById("galleryLbImg");
-
   if (lb && lbImg) {
-    var galleryItems = document.querySelectorAll(".gallery-item");
-    for (var n = 0; n < galleryItems.length; n++) {
-      galleryItems[n].addEventListener("click", function () {
+ var items = document.querySelectorAll(".gallery-item");
+    for (var n = 0; n < items.length; n++) {
+      items[n].onclick = function () {
         var img = this.querySelector("img");
         if (img) {
           lbImg.src = img.src;
           lb.classList.add("open");
         }
-      });
+      };
     }
 
     var closeBtn = document.getElementById("closeGalleryLb");
@@ -753,13 +777,7 @@ document.addEventListener("DOMContentLoaded", function () {
         lb.classList.remove("open");
       }
     };
- document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        lb.classList.remove("open");
-      }
-    });
   }
-
 });
 </script>
 </body>
