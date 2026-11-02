@@ -715,16 +715,18 @@ window.addEventListener("load", function () {
     closeMenu();
   };
 
-  // کلیک روی لینک‌های منو
-  var links = nav.querySelectorAll("a");
-  for (var j = 0; j < links.length; j++) {
-    links[j].onclick = function () {
-      if (window.innerWidth <= 980) {
+ var links = nav.querySelectorAll("a");
+for (var j = 0; j < links.length; j++) {
+  links[j].addEventListener("click", function (e) {
+    // اجازه بده لینک کار خودش را بکند
+    if (window.innerWidth <= 980) {
+      // کمی تأخیر بده تا لینک فرصت اجرا داشته باشد
+      setTimeout(function() {
         closeMenu();
-      }
-    };
-  }
-
+      }, 150);
+    }
+  });
+}
   // ========== فیلتر گالری ==========
   var filterBox = document.getElementById("galleryFilters");
   if (filterBox) {
