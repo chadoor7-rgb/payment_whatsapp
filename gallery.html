@@ -709,7 +709,14 @@ window.addEventListener("load", function () {
       openMenu();
     }
   };
-
+// لینک‌های منو
+nav.addEventListener("click", function(e) {
+  var link = e.target.closest("a");
+  if (link && window.innerWidth <= 980) {
+    // منو را بعد از کلیک ببند
+    setTimeout(closeMenu, 200);
+  }
+});
   // کلیک روی پس‌زمینه تیره
   overlay.onclick = function () {
     closeMenu();
