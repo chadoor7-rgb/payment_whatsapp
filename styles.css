@@ -1346,3 +1346,45 @@ body {
     padding: 32px 20px;
   }
 }
+/* ================= منوی همبرگری شیشه‌ای ================= */
+@media (max-width: 980px) {
+  .main-nav {
+    background: rgba(11, 61, 46, 0.88) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ================= رنگ اصلی شبکه‌های اجتماعی ================= */
+.social-links a[aria-label="واتساپ"],
+.social-links a[title="واتساپ"] {
+  background: #25d366 !important;
+  color: white !important;
+}
+
+.social-links a[aria-label="اینستاگرام"] {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+  color: white !important;
+}
+
+.social-links a[aria-label="تلگرام"] {
+  background: #0088cc !important;
+  color: white !important;
+}
+
+.social-links a[aria-label="ایکس"] {
+  background: #000000 !important;
+  color: white !important;
+}
+
+.social-links a[aria-label="یوتیوب"] {
+  background: #ff0000 !important;
+  color: white !important;
+}
+
+/* افکت هاور */
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
