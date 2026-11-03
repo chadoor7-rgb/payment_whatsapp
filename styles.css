@@ -810,3 +810,166 @@ tr:hover td {
     font-size: 0.9rem;
   }
 }
+/* ==================================================
+   نظرات + ستاره‌های طلایی + تصاویر گرد + وسط‌چین
+================================================== */
+
+/* وسط‌چین کردن تیترها و بخش‌های مهم */
+.section-title,
+.page-hero h1,
+.page-hero p,
+.testimonials h2,
+.highlight-box,
+.content-box > h2 {
+  text-align: center !important;
+}
+
+/* تصاویر گوشه‌گرد */
+img {
+  border-radius: 16px;
+}
+
+.hero-img img,
+.hero-image-wrapper img,
+.gallery-item img,
+.product-card img,
+.cat-card img {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* ================= نظرات مشتریان ================= */
+.testimonials {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 2.8rem;
+  color: #0b3d2e;
+  font-size: 1.7rem;
+}
+
+/* کارت‌های نظر عادی */
+.testimonial {
+  background: #ffffff;
+  border: 1px solid #e0eae6;
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin: 0 auto 22px;
+  max-width: 540px;
+  box-shadow: 0 10px 28px rgba(11, 61, 46, 0.07);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(11, 61, 46, 0.12);
+}
+
+/* ستاره‌های طلایی - همه حالت‌ها */
+.stars,
+.testimonial-stars,
+.testimonial .stars,
+.testimonial-featured .testimonial-stars {
+  color: #f5c518 !important;          /* طلایی */
+  font-size: 1.45rem;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 6px rgba(245, 197, 24, 0.35);
+  display: block;
+}
+
+/* متن نظر */
+.testimonial p {
+  color: #3d524b;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* نام مشتری */
+.testimonial .author {
+  display: block;
+  margin-top: 18px;
+  font-style: normal;
+  font-weight: 700;
+  color: #0b3d2e;
+  font-size: 0.95rem;
+}
+
+/* ===== نظر ویژه (عمده) ===== */
+.testimonial-featured {
+  background: linear-gradient(145deg, #f0f9f5, #ffffff);
+  border: 2px solid #a8e6cf;
+  border-radius: 22px;
+  padding: 36px 32px;
+  margin: 30px auto 10px;
+  max-width: 620px;
+  box-shadow: 0 14px 36px rgba(11, 61, 46, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-featured:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(11, 61, 46, 0.14);
+}
+
+/* بج «تجربه خرید عمده» */
+.testimonial-badge {
+  display: inline-block;
+  background: #0b3d2e;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.testimonial-featured p {
+  color: #2c4039;
+  font-size: 1.08rem;
+  line-height: 1.95;
+  font-style: italic;
+  margin: 12px 0 0;
+}
+
+.testimonial-featured cite {
+  display: block;
+  margin-top: 18px;
+  font-style: normal;
+  font-weight: 700;
+  color: #0b3d2e;
+  font-size: 0.95rem;
+}
+
+/* ================= کادرهای محتوا ================= */
+.content-box {
+  background: #ffffff;
+  border: 1px solid #e0e8e5;
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 10px 30px rgba(11, 61, 46, 0.07);
+  margin-bottom: 30px;
+}
+
+/* ================= موبایل ================= */
+@media (max-width: 768px) {
+  .testimonial,
+  .testimonial-featured {
+    padding: 26px 20px;
+    margin-bottom: 18px;
+  }
+
+  .content-box {
+    padding: 28px 20px;
+  }
+
+  img {
+    border-radius: 14px;
+  }
+}
