@@ -1,6 +1,5 @@
- /* ==================================================
-   CHADOOOR J.A.T - Unified Style 2026
-   استایل یکپارچه، تمیز و زیبا برای کل سایت
+[12/08/1405 12:49 PM] 🏕Travel Tent: /* ==================================================
+   CHADOOOR J.A.T - Beautiful Unified Style 2026
 ================================================== */
 
 :root {
@@ -12,11 +11,12 @@
   --orange-dark: #e55a2b;
   --text: #182622;
   --text-muted: #5a6a64;
-  --bg: #f5f7f6;
+  --bg: #f4f6f5;
   --white: #ffffff;
-  --radius: 16px;
-  --shadow: 0 8px 28px rgba(11, 61, 46, 0.08);
-  --shadow-hover: 0 16px 40px rgba(11, 61, 46, 0.12);
+  --paper: #ffffff;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(11, 61, 46, 0.08);
+  --shadow-hover: 0 18px 45px rgba(11, 61, 46, 0.13);
   --header-height: 76px;
 }
 
@@ -33,7 +33,6 @@ html {
 
 html, body {
   overflow-x: hidden;
-  max-width: 100%;
   width: 100%;
 }
 
@@ -41,8 +40,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: Vazirmatn, Tahoma, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 16.5px;
+  line-height: 1.85;
   direction: rtl;
   text-align: right;
 }
@@ -56,16 +55,12 @@ img {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease;
-}
-
-button, input, textarea {
-  font-family: inherit;
+  transition: all 0.25s ease;
 }
 
 /* ================= CONTAINER ================= */
 .container {
-  max-width: 1180px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -85,8 +80,7 @@ button, input, textarea {
   padding: 0 24px;
   max-width: 1240px;
   margin: 0 auto;
-  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.15);
-  direction: rtl;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
 }
 
 .site-header .brand {
@@ -108,7 +102,6 @@ button, input, textarea {
   padding: 3px;
 }
 
-/* منوی دسکتاپ */
 .main-nav {
   display: flex;
   align-items: center;
@@ -129,7 +122,6 @@ button, input, textarea {
   color: var(--lime);
 }
 
-/* بخش اقدامات هدر */
 .header-actions {
   display: flex;
   align-items: center;
@@ -143,7 +135,6 @@ button, input, textarea {
   font-weight: 600;
 }
 
-/* دکمه همبرگری */
 .menu-toggle {
   display: none;
   background: none;
@@ -152,11 +143,9 @@ button, input, textarea {
   color: var(--white);
   cursor: pointer;
   padding: 6px 10px;
-  line-height: 1;
   z-index: 10070;
 }
 
-/* لایه تیره پشت منو */
 .nav-overlay {
   display: none;
   position: fixed;
@@ -177,7 +166,7 @@ button, input, textarea {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 26px;
+  padding: 13px 28px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem;
@@ -194,15 +183,16 @@ button, input, textarea {
 .btn-primary:hover {
   background: var(--orange-dark);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
 }
 
 .btn-sm {
-  padding: 8px 18px;
+  padding: 9px 20px;
   font-size: 0.88rem;
 }
 
 .btn-lg {
-  padding: 15px 32px;
+  padding: 16px 34px;
   font-size: 1.05rem;
 }
 
@@ -216,17 +206,6 @@ button, input, textarea {
   transform: translateY(-2px);
 }
 
-.btn-outline {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: var(--primary);
-}
-
 /* ================= TYPOGRAPHY ================= */
 h1, h2, h3, h4 {
   line-height: 1.4;
@@ -235,31 +214,100 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
 }
- p {
+
+p {
   color: var(--text-muted);
   line-height: 1.9;
+  margin-bottom: 1rem;
 }
-
-/* ================= SECTIONS ================= */
-.section {
-  padding: 80px 0;
-}
-
-.section-title {
+[12/08/1405 12:49 PM] 🏕Travel Tent: /* ================= PAGE HERO ================= */
+.page-hero {
+  background: linear-gradient(135deg, #0b3d2e 0%, #1a5f4a 60%, #2d8f6f 100%);
+  color: white;
+  padding: 70px 24px 60px;
   text-align: center;
-  font-size: 1.7rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
+}
+
+.page-hero h1 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+}
+
+.breadcrumb a {
+  color: var(--lime);
+}
+
+/* ================= CONTENT ================= */
+.content-section {
+  padding: 60px 0;
+}
+
+.content-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.content-box h2 {
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--lime);
+  display: inline-block;
+}
+
+.content-box ul {
+  padding-right: 20px;
+  margin: 1.2rem 0;
+}
+
+.content-box li {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
 /* ================= FOOTER ================= */
@@ -271,31 +319,30 @@ h3 {
 }
 
 .footer-top {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .footer-top .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .footer-slogan {
   opacity: 0.85;
-  font-size: 1rem;
-  margin-top: 8px;
+  font-size: 1.05rem;
 }
 
 .footer-menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px 28px;
-  margin: 30px 0;
+  gap: 16px 28px;
+  margin: 32px 0;
 }
 
 .footer-menu a {
@@ -310,13 +357,13 @@ h3 {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin: 30px 0;
+  gap: 14px;
+  margin: 28px 0;
 }
 
 .social-links a {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
@@ -329,13 +376,13 @@ h3 {
 .social-links a:hover {
   background: var(--lime);
   color: var(--primary);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .footer-bottom {
   margin-top: 40px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.9rem;
   opacity: 0.75;
 }
@@ -379,8 +426,7 @@ h3 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .main-nav a:hover,
-  .main-nav a:active {
+  .main-nav a:hover {
     color: var(--lime);
     background: rgba(255, 255, 255, 0.06);
   }
@@ -397,12 +443,12 @@ h3 {
     height: 70px;
   }
 
-  .brand span {
-    font-size: 1rem;
+  .content-box {
+    padding: 28px 22px;
   }
 
-  .section {
-    padding: 50px 0;
+  .page-hero {
+    padding: 50px 20px 45px;
   }
 
   .container {
@@ -416,6 +462,6 @@ h3 {
   }
 
   .brand span {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
   }
 }
