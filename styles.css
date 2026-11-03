@@ -1055,3 +1055,294 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+[12/08/1405 01:53 PM] 🏕Travel Tent: /* ================= صفحه تولید (tolid-chador) ================= */
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* هیرو مقاله */
+.article-hero {
+  background: linear-gradient(135deg, #0b3d2e, #1a5f4a);
+  color: white;
+  text-align: center;
+  padding: 60px 24px 50px;
+  margin-bottom: 40px;
+}
+
+.article-hero .breadcrumb {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.article-hero .breadcrumb a {
+  color: #a8e6cf;
+}
+
+.article-hero h1 {
+  color: white;
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.article-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* محتوای مقاله */
+.content {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 10px 30px rgba(11, 61, 46, 0.07);
+  border: 1px solid #e0e8e5;
+}
+
+.content h2 {
+  color: #0b3d2e;
+  margin: 2.2rem 0 1rem;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #a8e6cf;
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.content p {
+  color: #4a5c56;
+  margin-bottom: 1.2rem;
+  line-height: 1.9;
+}
+
+.content .lead {
+  font-size: 1.15rem;
+  color: #1a2e28;
+  background: #f0f9f5;
+  border-right: 4px solid #0d9488;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+/* باکس هایلایت */
+.highlight-box {
+  background: linear-gradient(135deg, #f0f9f5, #e6f5ef);
+  border: 1px solid #a8e6cf;
+  border-radius: 16px;
+  padding: 24px 26px;
+  margin: 28px 0;
+}
+
+.highlight-box strong {
+  color: #0b3d2e;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.highlight-box ul {
+  margin: 0;
+  padding-right: 8px;
+}
+
+.highlight-box li {
+  position: relative;
+  padding-right: 26px;
+  margin-bottom: 10px;
+  color: #3d524b;
+}
+
+.highlight-box li::before {
+  content: "✓";
+  position: absolute;
+  right: 0;
+  color: #0d9488;
+  font-weight: 700;
+}
+
+/* کارت انواع چادر */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  margin: 25px 0 35px;
+}
+
+.type-card {
+  background: #ffffff;
+  border: 1px solid #e0eae6;
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 6px 18px rgba(11, 61, 46, 0.05);
+  transition: all 0.3s ease;
+}
+
+.type-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(11, 61, 46, 0.1);
+  border-color: #a8e6cf;
+}
+
+.type-card h4 {
+  color: #0b3d2e;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.type-card p {
+  color: #5c6f68;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* جدول */
+.table-wrap {
+  overflow-x: auto;
+  margin: 25px 0 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(11, 61, 46, 0.06);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table-wrap th {
+  background: #0b3d2e;
+  color: white;
+  padding: 14px 18px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.table-wrap td {
+  padding: 13px 18px;
+  border-bottom: 1px solid #eee;
+  color: #3d524b;
+}
+
+.table-wrap tr:hover td {
+  background: #f8faf9;
+}
+
+/* مراحل تولید */
+.steps {
+  display: grid;
+  gap: 14px;
+  margin: 25px 0 35px;
+}
+
+.step {
+  background: #ffffff;
+  border: 1px solid #e0eae6;
+  border-right: 4px solid #0d9488;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 14px rgba(11, 61, 46, 0.04);
+}
+
+.step strong {
+  color: #0b3d2e;
+  font-size: 1.05rem;
+}
+
+/* CTA وسط صفحه */
+.mid-cta {
+  background: linear-gradient(135deg, #0b3d2e, #1a5f4a);
+  color: white;
+  text-align: center;
+  padding: 40px 28px;
+  border-radius: 20px;
+  margin: 40px 0;
+}
+
+.mid-cta h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+.mid-cta p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.btn-white {
+  display: inline-block;
+  background: white;
+  color: #0b3d2e !important;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+[12/08/1405 01:53 PM] 🏕Travel Tent: /* باکس پیشنهاد */
+.tip-box {
+  background: #fff8e6;
+  border: 1px solid #f5d78e;
+  border-right: 4px solid #f5c518;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 28px 0;
+  color: #5c4a1f;
+}
+
+.tip-box strong {
+  color: #8a6d1b;
+}
+
+/* لیست‌ها */
+.content ul {
+  margin: 1.2rem 0;
+  padding-right: 8px;
+}
+
+.content ul li {
+  position: relative;
+  padding-right: 26px;
+  margin-bottom: 10px;
+  color: #4a5c56;
+}
+
+.content ul li::before {
+  content: "✓";
+  position: absolute;
+  right: 0;
+  color: #0d9488;
+  font-weight: 700;
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .content {
+    padding: 28px 18px;
+  }
+
+  .article-hero {
+    padding: 45px 18px 40px;
+  }
+
+  .types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mid-cta {
+    padding: 32px 20px;
+  }
+}
