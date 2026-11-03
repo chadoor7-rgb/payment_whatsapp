@@ -40,71 +40,103 @@
         
         a { text-decoration: none; color: inherit; }
         
-        /* ===== هدر سایت ===== */
-        .site-header {
-            background: #0b3d2e;
-            color: white;
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-        }
-        
-        .header-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-         color: #ffffff; /* رنگ کلی لوگو */
-        }
-        
-        .logo span {
-            color: #a8e6cf;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 22px;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a {
-            color: rgba(255,255,255,0.9);
-            transition: color 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: #a8e6cf;
-        }
-        
-        .header-cta {
-            background: #ff6b35;
-            color: white;
-            padding: 9px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        
-        .header-cta:hover {
-            background: #e55a2b;
-            transform: translateY(-2px);
-        }
+     /* ===== هدر ===== */
+.site-header {
+  background: #0b3d2e;
+  color: white;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 100%;
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.brand-logo {
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 3px;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+
+.main-nav a {
+  color: #000000 !important;
+  opacity: 0.92;
+  transition: opacity 0.2s, color 0.2s;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  opacity: 1;
+  color: #a8e6cf !important;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+   .cart-link {
+    color: #ffffff !important;
+    font-size: 1.05rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm { padding: 8px 18px; font-size: 0.88rem; }
+
+    .btn-lg { padding: 14px 30px; font-size: 1.05rem; }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover { background: #1da851; }
+
         
         /* ===== محتوای اصلی ===== */
         .page-wrapper {
