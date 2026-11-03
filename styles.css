@@ -1,4 +1,4 @@
-[12/08/1405 01:27 PM] 🏕Travel Tent: /* ==================================================
+ /* ==================================================
    CHADOOOR J.A.T - Final Premium Style 2026
    نسخه کامل و یکپارچه
 ================================================== */
@@ -231,7 +231,7 @@ ul {
   background: linear-gradient(135deg, #1da851, #25d366);
   transform: translateY(-3px);
 }
-[12/08/1405 01:27 PM] 🏕Travel Tent: /* ================= PAGE HERO ================= */
+ /* ================= PAGE HERO ================= */
 .page-hero {
   background: linear-gradient(135deg, #0b3d2e 0%, #164f3e 45%, #1f6b52 100%);
   color: white;
@@ -445,7 +445,7 @@ ul {
   box-shadow: 0 14px 36px rgba(11, 61, 46, 0.1);
   text-align: center;
 }
-[12/08/1405 01:27 PM] 🏕Travel Tent: .testimonial-featured:hover {
+ .testimonial-featured:hover {
   transform: translateY(-4px);
   box-shadow: 0 18px 42px rgba(11, 61, 46, 0.13);
 }
@@ -671,7 +671,7 @@ ul {
     border-radius: 14px;
   }
 }
-[12/08/1405 01:27 PM] 🏕Travel Tent: @media (max-width: 480px) {
+ @media (max-width: 480px) {
   .main-nav {
     width: min(285px, 90vw);
   }
