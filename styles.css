@@ -680,3 +680,39 @@ ul {
     font-size: 0.98rem;
   }
 }
+/* ================= فوتر قوی برای موبایل ================= */
+.site-footer {
+  background: #0b3d2e !important;
+  color: #ffffff !important;
+  padding: 60px 20px 100px !important; /* پایین بیشتر تا زیر دکمه شناور نره */
+  text-align: center !important;
+}
+
+.site-footer .brand,
+.site-footer .brand span,
+.site-footer .footer-slogan,
+.site-footer .footer-menu a,
+.site-footer .footer-bottom,
+.site-footer p,
+.site-footer cite {
+  color: #ffffff !important;
+}
+
+.site-footer .footer-menu a:hover {
+  color: #a8e6cf !important;
+}
+
+.site-footer .social-links a {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+.site-footer .social-links a:hover {
+  background: #a8e6cf !important;
+  color: #0b3d2e !important;
+}
+
+/* فاصله بیشتر پایین صفحه برای دکمه شناور */
+body {
+  padding-bottom: 80px;
+}
