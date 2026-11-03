@@ -807,3 +807,251 @@ body {
     font-size: 1.5rem;
   }
 }
+/* ================= کلاس‌های صفحه اصلی ================= */
+
+/* نوار اعتماد */
+.trust {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.trust-item {
+  background: #ffffff;
+  border: 1px solid #e0eae6;
+  border-radius: 16px;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 6px 18px rgba(11, 61, 46, 0.06);
+}
+
+.trust-item strong {
+  display: block;
+  color: #0b3d2e;
+  font-size: 1rem;
+}
+
+.trust-item span {
+  color: #5c6f68;
+  font-size: 0.88rem;
+}
+
+/* دسته‌بندی‌ها */
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cat-card {
+  background: #ffffff;
+  border: 1px solid #e0eae6;
+  border-radius: 18px;
+  padding: 28px 22px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(11, 61, 46, 0.06);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(11, 61, 46, 0.12);
+  border-color: #a8e6cf;
+}
+
+.cat-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.cat-card h3 {
+  color: #0b3d2e;
+  margin-bottom: 8px;
+}
+
+.cat-card p {
+  color: #5c6f68;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.cat-card .link {
+  color: #0d9488;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* گالری صفحه اصلی */
+.home-gallery {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.home-gallery h2 {
+  color: #0b3d2e;
+  margin-bottom: 8px;
+}
+
+.home-gallery > div > p {
+  color: #5c6f68;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* بخش تعمیر */
+.repair {
+  background: linear-gradient(135deg, #0b3d2e, #1a5f4a);
+  color: white;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.repair h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.repair p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 24px;
+}
+
+/* CTA نهایی */
+.final-cta {
+  background: linear-gradient(135deg, #0b3d2e, #1a5f4a);
+  color: white;
+  text-align: center;
+  padding: 70px 24px;
+}
+
+.final-cta h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.final-cta p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+}
+
+.final-cta .btn {
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.final-cta .note {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+}
+
+/* فوتر - کپی‌رایت */
+.copyright {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.92rem;
+  opacity: 0.8;
+  color: white;
+}
+
+.copyright p {
+  margin-top: 6px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* هیرو */
+.hero-v2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.hero-content {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(11, 61, 46, 0.08);
+  border: 1px solid #cce3da;
+  color: #0b3d2e;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.hero-content .highlight {
+  color: #0d9488;
+}
+
+.hero-subtitle {
+  text-align: center;
+  font-weight: 600;
+  color: #1a2e28;
+  margin-bottom: 10px;
+}
+
+.hero-desc {
+  text-align: center;
+  color: #5c6f68;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .trust {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .cats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
