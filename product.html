@@ -13,121 +13,698 @@
 
   <style>
     :root {
-      --ink:#17231f;--muted:#68736f;--paper:#fff;--soft:#f6f7f5;
-      --line:#e5e8e5;--green:#155e55;--green2:#0f4c45;
-      --red:#d32f2f;--shadow:0 14px 45px rgba(21,40,34,.08)
+      --ink:#17231f;
+      --muted:#68736f;
+      --paper:#fff;
+      --soft:#f6f7f5;
+      --line:#e5e8e5;
+      --green:#155e55;
+      --green2:#0f4c45;
+      --red:#d32f2f;
+      --shadow:0 14px 45px rgba(21,40,34,.08);
     }
-    *{box-sizing:border-box}
-    body{background:#f3f5f2;color:var(--ink);margin:0}
-    .product-page{max-width:1240px;margin:24px auto 80px;padding:0 18px}
-    .breadcrumb{font-size:13px;color:var(--muted);margin:12px 0 18px}
-    .breadcrumb a{color:var(--green);text-decoration:none}
-    .product-main{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
-    .gallery-wrap{padding:22px;background:#fff;min-width:0}
-    .gallery-stage{position:relative;background:#f5f6f4;border:1px solid var(--line);border-radius:18px;height:510px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in}
-    .gallery-stage img{width:100%;height:100%;object-fit:contain;padding:22px;transition:transform .25s}
-    .gallery-stage:hover img{transform:scale(1.025)}
-    .gallery-zoom{position:absolute;right:14px;top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px}
-    .gallery-note{font-size:12px;color:var(--muted);margin:12px 2px}
-    .summary{padding:34px;border-right:1px solid var(--line);display:flex;flex-direction:column}
-    .category{display:inline-flex;width:max-content;background:#e7f3f0;color:var(--green);border-radius:30px;padding:7px 13px;font-size:12px;font-weight:700;margin-bottom:15px}
-    .summary h1{font-size:29px;line-height:1.55;margin:0 0 10px;font-weight:800}
-    .product-code{font-size:12px;color:var(--muted);margin-bottom:18px}
-    .rating-row{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid var(--line)}
-    .stars{color:#f59e0b;letter-spacing:2px;font-size:17px}
-    .rating-text{font-size:13px;color:var(--muted)}
-    .price-box{padding:22px 0 15px}
-    .price{font-size:30px;font-weight:800;color:var(--red)}
-    .contact-price{font-size:19px;color:var(--green);font-weight:800}
-    .price-sub{font-size:12px;color:var(--muted);margin-top:5px}
-    .quick-specs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:5px 0 20px}
-    .quick-spec{padding:12px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .quick-spec:nth-child(even){border-left:0}
-    .quick-spec:nth-last-child(-n+2){border-bottom:0}
-    .quick-spec small{display:block;color:var(--muted);font-size:11px;margin-bottom:4px}
-    .quick-spec strong{font-size:13px}
-    .order-box{background:#f6f8f6;border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:auto}
-    .order-title{font-weight:800;margin-bottom:6px}
-    .order-text{font-size:13px;color:var(--muted);line-height:1.8}
-    .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-    .action{display:flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;min-height:48px;font-weight:800;font-size:13px;padding:0 12px;border:0;cursor:pointer;font-family:inherit}
-    .action-primary{background:var(--green);color:#fff}
-    .action-primary:hover{background:var(--green2)}
-    .action-wa{background:#20b95a;color:#fff}
-    .action-outline{border:1px solid var(--line);color:var(--ink);background:#fff}
-    .tabs{position:sticky;top:64px;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);display:flex;gap:5px;border:1px solid var(--line);border-radius:15px;padding:5px;margin:22px 0}
-    .tab{border:0;background:transparent;padding:12px 18px;border-radius:10px;font-family:inherit;font-weight:700;color:var(--muted);cursor:pointer}
-    .tab:hover,.tab.active{background:#eaf3f0;color:var(--green)}
-    .section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:18px}
-    .section h2{font-size:21px;margin:0 0 17px}
-    .section p{color:var(--muted);line-height:2;font-size:15px;margin:0}
-    .features{display:grid;grid-template-columns:1fr 1fr;gap:11px 30px;padding:0;margin:0;list-style:none}
-    .features li{padding-right:27px;position:relative;line-height:1.8;font-size:14px}
-    .features li:before{content:"✓";position:absolute;right:0;top:0;color:var(--green);font-weight:900}
-    .specs-table{width:100%;border-collapse:collapse}
-    .specs-table tr{border-bottom:1px solid var(--line)}
-    .specs-table tr:last-child{border-bottom:0}
-    .specs-table th,.specs-table td{text-align:right;padding:13px 10px;font-size:14px}
-    .specs-table th{width:36%;background:#fafbfa;color:var(--muted);font-weight:600}
-    .specs-table td{font-weight:600}
-    .tips{margin:0;padding-right:20px}
-    .tips li{color:var(--muted);line-height:1.9;margin-bottom:7px}
-    .loading,.error-box{text-align:center;padding:110px 20px;color:var(--muted);font-size:17px}
-    .error-box{color:#b42318}
+
+    * { box-sizing:border-box; }
+
+    body {
+      background:#f3f5f2;
+      color:var(--ink);
+      margin:0;
+      font-family:'Estedad',Tahoma,sans-serif;
+    }
+
+    .product-page {
+      max-width:1240px;
+      margin:24px auto 80px;
+      padding:0 18px;
+    }
+
+    .breadcrumb {
+      font-size:13px;
+      color:var(--muted);
+      margin:12px 0 18px;
+    }
+
+    .breadcrumb a {
+      color:var(--green);
+      text-decoration:none;
+    }
+
+    .product-main {
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery-wrap {
+      padding:22px;
+      background:#fff;
+      min-width:0;
+    }
+
+    .gallery-stage {
+      position:relative;
+      background:#f5f6f4;
+      border:1px solid var(--line);
+      border-radius:18px;
+      height:510px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      cursor:zoom-in;
+    }
+
+    .gallery-stage img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:22px;
+      transition:transform .25s;
+    }
+
+    .gallery-stage:hover img {
+      transform:scale(1.025);
+    }
+
+    .gallery-zoom {
+      position:absolute;
+      right:14px;
+      top:14px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:8px 10px;
+      font-size:12px;
+      z-index:2;
+    }
+
+    .gallery-note {
+      font-size:12px;
+      color:var(--muted);
+      margin:12px 2px;
+    }
+
+    .summary {
+      padding:34px;
+      border-right:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .category {
+      display:inline-flex;
+      width:max-content;
+      background:#e7f3f0;
+      color:var(--green);
+      border-radius:30px;
+      padding:7px 13px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+
+    .summary h1 {
+      font-size:29px;
+      line-height:1.55;
+      margin:0 0 10px;
+      font-weight:800;
+    }
+
+    .product-code {
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .rating-row {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .stars {
+      color:#f59e0b;
+      letter-spacing:2px;
+      font-size:17px;
+      direction:ltr;
+      display:inline-block;
+    }
+
+    .rating-text {
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .price-box {
+      padding:22px 0 15px;
+    }
+
+    .price {
+      font-size:30px;
+      font-weight:800;
+      color:var(--red);
+    }
+
+    .contact-price {
+      font-size:19px;
+      color:var(--green);
+      font-weight:800;
+    }
+
+    .price-sub {
+      font-size:12px;
+      color:var(--muted);
+      margin-top:5px;
+    }
+
+    .quick-specs {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      margin:5px 0 20px;
+    }
+
+    .quick-spec {
+      padding:12px;
+      border-left:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .quick-spec:nth-child(even) {
+      border-left:0;
+    }
+
+    .quick-spec:nth-last-child(-n+2) {
+      border-bottom:0;
+    }
+
+    .quick-spec small {
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      margin-bottom:4px;
+    }
+
+    .quick-spec strong {
+      font-size:13px;
+    }
+
+    .order-box {
+      background:#f6f8f6;
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:16px;
+      margin-top:auto;
+    }
+
+    .order-title {
+      font-weight:800;
+      margin-bottom:6px;
+    }
+
+    .order-text {
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .actions {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .action {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      border-radius:11px;
+      min-height:48px;
+      font-weight:800;
+      font-size:13px;
+      padding:0 12px;
+      border:0;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .action-primary {
+      background:var(--green);
+      color:#fff;
+    }
+
+    .action-primary:hover {
+      background:var(--green2);
+    }
+
+    .action-wa {
+      background:#20b95a;
+      color:#fff;
+    }
+
+    .action-outline {
+      border:1px solid var(--line);
+      color:var(--ink);
+      background:#fff;
+    }
+
+    .tabs {
+      position:sticky;
+      top:64px;
+      z-index:5;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(10px);
+      display:flex;
+      gap:5px;
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:5px;
+      margin:22px 0;
+    }
+
+    .tab {
+      border:0;
+      background:transparent;
+      padding:12px 18px;
+      border-radius:10px;
+      font-family:inherit;
+      font-weight:700;
+      color:var(--muted);
+      cursor:pointer;
+    }
+
+    .tab:hover,
+    .tab.active {
+      background:#eaf3f0;
+      color:var(--green);
+    }
+
+    .section {
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px;
+      margin-bottom:18px;
+    }
+
+    .section h2 {
+      font-size:21px;
+      margin:0 0 17px;
+    }
+
+    .section p {
+      color:var(--muted);
+      line-height:2;
+      font-size:15px;
+      margin:0;
+    }
+
+    .features {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:11px 30px;
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+
+    .features li {
+      padding-right:27px;
+      position:relative;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    .features li:before {
+      content:"✓";
+      position:absolute;
+      right:0;
+      top:0;
+      color:var(--green);
+      font-weight:900;
+    }
+
+    .specs-table {
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    .specs-table tr {
+      border-bottom:1px solid var(--line);
+    }
+
+    .specs-table tr:last-child {
+      border-bottom:0;
+    }
+
+    .specs-table th,
+    .specs-table td {
+      text-align:right;
+      padding:13px 10px;
+      font-size:14px;
+    }
+
+    .specs-table th {
+      width:36%;
+      background:#fafbfa;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .specs-table td {
+      font-weight:600;
+    }
+
+    .tips {
+      margin:0;
+      padding-right:20px;
+    }
+
+    .tips li {
+      color:var(--muted);
+      line-height:1.9;
+      margin-bottom:7px;
+    }
+
+    .loading,
+    .error-box {
+      text-align:center;
+      padding:110px 20px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .error-box {
+      color:#b42318;
+    }
+
+    /* نظرات مشتریان */
+    .testimonials {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .testimonial {
+      background:#fafbf9;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:19px;
+      margin:0;
+    }
+
+    .testimonial p {
+      color:#44504b;
+      font-size:14px;
+      line-height:2;
+      margin:10px 0 14px;
+    }
+
+    .testimonial .author {
+      color:var(--green);
+      font-size:13px;
+      font-weight:700;
+      line-height:2;
+    }
+
+    .testimonial-featured {
+      border:1px solid #cbded7;
+      background:#f3f8f5;
+    }
+
+    .testimonial-badge {
+      display:inline-block;
+      background:#e1efe9;
+      color:var(--green);
+      border-radius:20px;
+      padding:5px 12px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+
+    .testimonial cite {
+      display:block;
+      margin-top:14px;
+      font-style:normal;
+      font-weight:700;
+      color:var(--green);
+      font-size:13px;
+      line-height:2;
+    }
 
     /* فوتر کامل */
-    .site-footer{background:#103f39;color:#fff;margin-top:50px;padding:38px 20px 18px}
-    .footer-inner{max-width:1200px;margin:auto}
-    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:25px;border-bottom:1px solid rgba(255,255,255,.18)}
-    .footer-brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:800;font-size:18px}
-    .footer-brand img{width:48px;height:48px;object-fit:contain}
-    .footer-slogan{color:#d5f263;margin:0;font-size:14px}
-    .footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;padding:28px 0}
-    .footer-column h3{font-size:16px;margin:0 0 15px;color:#d5f263}
-    .footer-column a,.footer-column p{display:block;color:#e4eeeb;text-decoration:none;font-size:13px;line-height:2.2;margin:3px 0}
-    .footer-column a:hover{color:#d5f263}
-    .footer-social{display:flex;gap:10px;flex-wrap:wrap}
-    .footer-social a{display:inline-block;border:1px solid rgba(255,255,255,.25);border-radius:9px;padding:7px 13px}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.18);padding-top:17px;text-align:center;color:#d5dfdc;font-size:12px;line-height:2}
-
-    .lightbox{position:fixed;inset:0;background:rgba(7,14,12,.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:25px}
-    .lightbox.open{display:flex}
-    .lightbox img{max-width:94vw;max-height:90vh;object-fit:contain;border-radius:12px}
-    .lightbox-close{position:absolute;top:18px;left:22px;background:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}
-    .loading-image{padding:30px;color:var(--muted);text-align:center}
-    @media(max-width:980px){
-      .product-main{grid-template-columns:1fr}
-      .summary{border-right:0;border-top:1px solid var(--line)}
-      .gallery-stage{height:460px}
+    .site-footer {
+      background:#103f39;
+      color:#fff;
+      margin-top:50px;
+      padding:38px 20px 18px;
     }
-    @media(max-width:650px){
-      .product-page{padding:0 10px;margin-top:12px}
-      .gallery-wrap{padding:10px}
-      .gallery-stage{height:330px}
-      .gallery-stage img{padding:10px}
-      .summary{padding:23px 17px}
-      .summary h1{font-size:22px}
-      .price{font-size:25px}
-      .features{grid-template-columns:1fr}
-      .section{padding:20px 16px}
-      .tabs{top:55px;overflow:auto;white-space:nowrap}
-      .tab{padding:10px 12px}
-      .actions{grid-template-columns:1fr}
-      .quick-specs{grid-template-columns:1fr}
-      .quick-spec{border-left:0!important;border-bottom:1px solid var(--line)!important}
-      .quick-spec:last-child{border-bottom:0!important}
-      .footer-columns{grid-template-columns:1fr;gap:22px}
-      .footer-top{align-items:flex-start;flex-direction:column}
+
+    .footer-inner {
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .footer-top {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      padding-bottom:25px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-brand {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      font-size:18px;
+    }
+
+    .footer-brand img {
+      width:48px;
+      height:48px;
+      object-fit:contain;
+    }
+
+    .footer-slogan {
+      color:#d5f263;
+      margin:0;
+      font-size:14px;
+    }
+
+    .footer-columns {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:35px;
+      padding:28px 0;
+    }
+
+    .footer-column h3 {
+      font-size:16px;
+      margin:0 0 15px;
+      color:#d5f263;
+    }
+
+    .footer-column a,
+    .footer-column p {
+      display:block;
+      color:#e4eeeb;
+      text-decoration:none;
+      font-size:13px;
+      line-height:2.2;
+      margin:3px 0;
+    }
+
+    .footer-column a:hover {
+      color:#d5f263;
+    }
+
+    .footer-social {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social a {
+      display:inline-block;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:9px;
+      padding:7px 13px;
+    }
+
+    .footer-bottom {
+      border-top:1px solid rgba(255,255,255,.18);
+      padding-top:17px;
+      text-align:center;
+      color:#d5dfdc;
+      font-size:12px;
+      line-height:2;
+    }
+
+    /* بزرگ‌نمایی تصویر */
+    .lightbox {
+      position:fixed;
+      inset:0;
+      background:rgba(7,14,12,.9);
+      z-index:9999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:25px;
+    }
+
+    .lightbox.open {
+      display:flex;
+    }
+
+    .lightbox img {
+      max-width:94vw;
+      max-height:90vh;
+      object-fit:contain;
+      border-radius:12px;
+    }
+
+    .lightbox-close {
+      position:absolute;
+      top:18px;
+      left:22px;
+      background:#fff;
+      border:0;
+      border-radius:50%;
+      width:44px;
+      height:44px;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    .loading-image {
+      padding:30px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    @media(max-width:980px) {
+      .product-main {
+        grid-template-columns:1fr;
+      }
+
+      .summary {
+        border-right:0;
+        border-top:1px solid var(--line);
+      }
+
+      .gallery-stage {
+        height:460px;
+      }
+    }
+
+    @media(max-width:650px) {
+      .product-page {
+        padding:0 10px;
+        margin-top:12px;
+      }
+
+      .gallery-wrap {
+        padding:10px;
+      }
+
+      .gallery-stage {
+        height:330px;
+      }
+
+      .gallery-stage img {
+        padding:10px;
+      }
+
+      .summary {
+        padding:23px 17px;
+      }
+
+      .summary h1 {
+        font-size:22px;
+      }
+
+      .price {
+        font-size:25px;
+      }
+
+      .features {
+        grid-template-columns:1fr;
+      }
+
+      .section {
+        padding:20px 16px;
+      }
+
+      .tabs {
+        top:55px;
+        overflow:auto;
+        white-space:nowrap;
+      }
+
+      .tab {
+        padding:10px 12px;
+      }
+
+      .actions {
+        grid-template-columns:1fr;
+      }
+
+      .quick-specs {
+        grid-template-columns:1fr;
+      }
+
+      .quick-spec {
+        border-left:0!important;
+        border-bottom:1px solid var(--line)!important;
+      }
+
+      .quick-spec:last-child {
+        border-bottom:0!important;
+      }
+
+      .footer-columns {
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .footer-top {
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .testimonials {
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+
 <header class="site-header sticky-header">
   <a href="index.html" class="brand">
     <img src="favicon.svg" alt="لوگوی چادردوزی جزیره" class="brand-logo" width="44" height="44">
     <span>چادردوزی جزیره J.A.T</span>
   </a>
+
   <nav class="main-nav" aria-label="منوی اصلی">
     <a href="products.html">محصولات</a>
     <a href="shop.html">فروشگاه</a>
@@ -137,10 +714,14 @@
     <a href="blog.html">مجله سفر</a>
     <a href="contact.html">ثبت سفارش</a>
   </nav>
+
   <div class="header-actions">
-    <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
+    <a class="cart-link" href="cart.html" aria-label="سبد خرید">
+      🛒 <span id="cartCount">0</span>
+    </a>
     <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
   </div>
+
   <button class="menu-toggle" aria-label="منو">☰</button>
 </header>
 
@@ -150,12 +731,16 @@
       <a href="index.html">خانه</a> ←
       <a href="shop.html">فروشگاه</a> ← جزئیات محصول
     </div>
-    <div id="content"><div class="loading">در حال بارگذاری محصول...</div></div>
+
+    <div id="content">
+      <div class="loading">در حال بارگذاری محصول...</div>
+    </div>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
+
     <div class="footer-top">
       <a href="index.html" class="footer-brand">
         <img src="favicon.svg" alt="لوگوی چادردوزی جزیره">
@@ -165,6 +750,7 @@
     </div>
 
     <div class="footer-columns">
+
       <div class="footer-column">
         <h3>دسترسی سریع</h3>
         <a href="index.html">صفحه اصلی</a>
@@ -188,19 +774,24 @@
         <h3>ارتباط با ما</h3>
         <p>چادردوزی جزیره J.A.T</p>
         <p>آمل، مازندران</p>
-        <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ: ۰۹۱۱۸۰۳۱۲۴۱</a>
+        <a href="https://wa.me/989118031241" target="_blank" rel="noopener">
+          واتساپ: ۰۹۱۱۸۰۳۱۲۴۱
+        </a>
+
         <div class="footer-social">
           <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
           <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
           <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
         </div>
       </div>
+
     </div>
 
     <div class="footer-bottom">
       © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
       کلیه حقوق این وب‌سایت محفوظ است.
     </div>
+
   </div>
 </footer>
 
@@ -212,7 +803,7 @@
 <script src="script.js"></script>
 
 <script>
-/* اطلاعات تکمیلی محصولات؛ تصاویر فقط از products.json خوانده می‌شوند */
+/* اطلاعات تکمیلی محصولات؛ تصویر هر محصول فقط از products.json خوانده می‌شود */
 const productDetails = {
   1:{fullDesc:"چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده در فضای باز.",features:["پارچه برزنتی","دوخت کارگاهی","مناسب ۴ نفر","قابل سفارش در ابعاد دلخواه"],specs:[["گنجایش","۴ نفره"],["نوع","برزنتی"],["تولید","چادردوزی جزیره"]]},
   2:{fullDesc:"چادر برزنتی ۶ نفره با فضای مناسب برای سفرهای خانوادگی و استفاده در فضای باز.",features:["فضای مناسب ۶ نفر","پارچه برزنتی","مناسب کمپینگ","قابل سفارش"],specs:[["گنجایش","۶ نفره"],["نوع","برزنتی"]]},
@@ -251,31 +842,48 @@ const productDetails = {
   35:{fullDesc:"پارچه برزنتی مناسب کاربردهای پوششی و سفارش‌های مختلف.",features:["مناسب کاربردهای پوششی","امکان سفارش بر اساس مقدار"],specs:[["نوع","پارچه برزنتی"]]}
 };
 
+/* نظرات دریافتی از واتساپ */
+const customerReviews = [
+  {
+    text:"چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز سالم رسید.",
+    author:"امیر - 0917***7486 - شیراز"
+  },
+  {
+    text:"چادرم پاره شده بود، تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود.",
+    author:"فرحناز - 0935***6358 - تهران"
+  },
+  {
+    text:"چادر کودک سفارش دادم، طرح قشنگ و کیفیت عالی. دخترم خیلی دوست داره.",
+    author:"آرش - 0911***1241 - ساری"
+  },
+  {
+    text:"خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف کودک، نوجوان، ۴ نفره، ۶ نفره، ۸ نفره و ۱۲ نفره داشتیم؛ در مجموع حدود ۲۷۵ عدد. همه چادرها عالی بودند. از تیم J.A.T چادردوزی جزیره بابت کیفیت محصولات و پیگیری خوبشان تشکر می‌کنیم. این اولین خرید ما بود و حالا مشتری همیشگی این مجموعه شده‌ایم.",
+    author:"اشکان - 094****0430 - ارومیه",
+    featured:true,
+    note:"سفارش عمده حدود ۲۷۵ عدد"
+  },
+  {
+    text:"بار قبلی که سفارش داده بودیم سالم و کامل رسید. از پیگیری خوب تیم چادور ممنونیم. به زودی دوباره برای خرید عمده چادرهای مسافرتی اقدام می‌کنیم.",
+    author:"کیانی - اربیل، اقلیم کردستان عراق",
+    phone:"+964 750 *** 1616"
+  }
+];
+
 const params = new URLSearchParams(location.search);
 const productId = Number.parseInt(params.get("id"),10);
 const content = document.getElementById("content");
 
 function esc(v) {
   return String(v ?? "").replace(/[&<>"']/g,m=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
   }[m]));
 }
 
-function getReviewsForProduct(product) {
-  const name = (product.name || "").toLowerCase();
-  const category = (product.category || "").toLowerCase();
-
-  if(name.includes("کودک") || category.includes("کودک")) {
-    return [{text:"از کیفیت محصول راضی هستم.",name:"نظر مشتری"}];
-  }
-  if(name.includes("برزنت") || category.includes("برزنت")) {
-    return [{text:"کیفیت دوخت و محصول خوب بود.",name:"نظر مشتری"}];
-  }
-  return [{text:"از خرید خود رضایت دارم.",name:"نظر مشتری"}];
-}
-
-let currentProduct = null;
-
+/* فقط یک تصویر از products.json برای هر محصول */
 function renderProductImage(product) {
   const image = product.image ? String(product.image).trim() : "";
 
@@ -293,6 +901,33 @@ function renderProductImage(product) {
     </div>`;
 }
 
+/* نمایش نظرات واقعی واتساپ */
+function renderCustomerReviews() {
+  return `
+    <section class="section" id="customer-reviews">
+      <h2>نظر مشتریان چادردوزی جزیره</h2>
+
+      <div class="testimonials">
+        ${customerReviews.map(review => `
+          <div class="testimonial ${review.featured ? "testimonial-featured" : ""}">
+            ${review.featured ? `<div class="testimonial-badge">تجربه خرید عمده</div>` : ""}
+
+            <div class="stars" aria-label="امتیاز ۵ از ۵">★★★★★</div>
+
+            <p>«${esc(review.text)}»</p>
+
+            <div class="author">
+              ${esc(review.author)}
+              ${review.note ? `<br>${esc(review.note)}` : ""}
+              ${review.phone ? `<br><span dir="ltr">${esc(review.phone)}</span>` : ""}
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function addProductSchema(product, details) {
   document.querySelector('script[data-schema="product"]')?.remove();
 
@@ -302,14 +937,20 @@ function addProductSchema(product, details) {
     "name":product.name,
     "description":details.fullDesc || product.description || product.name,
     "sku":String(product.id),
-    "brand":{"@type":"Brand","name":"چادردوزی جزیره J.A.T"}
+    "brand":{
+      "@type":"Brand",
+      "name":"چادردوزی جزیره J.A.T"
+    }
   };
 
   if(product.image) {
-    schema.image = [new URL(product.image,"https://chadooor.ir/").href];
+    schema.image = [
+      new URL(product.image,"https://chadooor.ir/").href
+    ];
   }
 
   const price = Number(product.price) || 0;
+
   if(price > 0) {
     schema.offers = {
       "@type":"Offer",
@@ -340,6 +981,7 @@ function addToCart(product) {
 
   const key = "chadoor_cart";
   let cart = [];
+
   try {
     cart = JSON.parse(localStorage.getItem(key)||"[]");
     if(!Array.isArray(cart)) cart = [];
@@ -348,38 +990,48 @@ function addToCart(product) {
   }
 
   const existing = cart.find(item=>Number(item.id)===Number(product.id));
-  if(existing) existing.qty = (Number(existing.qty)||1)+1;
-  else cart.push({
-    id:product.id,
-    name:product.name,
-    price:Number(product.price)||0,
-    image:product.image||"",
-    qty:1
-  });
+
+  if(existing) {
+    existing.qty = (Number(existing.qty)||1)+1;
+  } else {
+    cart.push({
+      id:product.id,
+      name:product.name,
+      price:Number(product.price)||0,
+      image:product.image||"",
+      qty:1
+    });
+  }
 
   localStorage.setItem(key,JSON.stringify(cart));
 
   const total = cart.reduce((sum,item)=>sum+(Number(item.qty)||0),0);
   document.querySelectorAll("#cartCount").forEach(el=>el.textContent=total);
+
   alert("محصول به سبد خرید اضافه شد.");
 }
 
 function updateCartCount() {
   try {
     const cart = JSON.parse(localStorage.getItem("chadoor_cart")||"[]");
+
     const total = Array.isArray(cart)
       ? cart.reduce((sum,item)=>sum+(Number(item.qty)||0),0)
       : 0;
+
     document.querySelectorAll("#cartCount").forEach(el=>el.textContent=total);
   } catch(e) {}
 }
 
 function openLightbox() {
   if(!currentProduct?.image) return;
+
   const box = document.getElementById("lightbox");
   const image = document.getElementById("lbImage");
+
   image.src = currentProduct.image;
   image.alt = currentProduct.name;
+
   box.classList.add("open");
   box.setAttribute("aria-hidden","false");
 }
@@ -390,29 +1042,50 @@ function closeLightbox() {
   box.setAttribute("aria-hidden","true");
 }
 
+let currentProduct = null;
+
 fetch("products.json")
   .then(response=>{
-    if(!response.ok) throw new Error("products.json");
+    if(!response.ok) {
+      throw new Error("products.json");
+    }
     return response.json();
   })
   .then(products=>{
-    if(!Array.isArray(products)) throw new Error("ساختار products.json معتبر نیست.");
+    if(!Array.isArray(products)) {
+      throw new Error("ساختار products.json معتبر نیست.");
+    }
 
     const product = products.find(p=>Number(p.id)===productId);
-    if(!product) throw new Error("not-found");
+
+    if(!product) {
+      throw new Error("not-found");
+    }
 
     currentProduct = product;
 
     const details = productDetails[productId] || {
       fullDesc:product.description || "اطلاعات این محصول در حال تکمیل است.",
       features:["برای اطلاع از مشخصات بیشتر با ما تماس بگیرید."],
-      specs:[["نام محصول",product.name],["دسته‌بندی",product.category||"—"]]
+      specs:[
+        ["نام محصول",product.name],
+        ["دسته‌بندی",product.category||"—"]
+      ]
     };
 
     const specs = details.specs || [];
-    const capacity = specs.find(x=>/گنجایش/.test(x[0]))?.[1] || "—";
-    const type = specs.find(x=>/نوع/.test(x[0]))?.[1] || product.category || "—";
-    const material = specs.find(x=>/جنس/.test(x[0]))?.[1] || "—";
+
+    const capacity =
+      specs.find(x=>/گنجایش/.test(x[0]))?.[1] || "—";
+
+    const type =
+      specs.find(x=>/نوع/.test(x[0]))?.[1] ||
+      product.category ||
+      "—";
+
+    const material =
+      specs.find(x=>/جنس/.test(x[0]))?.[1] || "—";
+
     const price = Number(product.price)||0;
 
     const priceHtml = price > 0
@@ -425,10 +1098,9 @@ fetch("products.json")
       "سلام، درباره محصول «"+product.name+"» اطلاعات و قیمت می‌خواهم."
     );
 
-    const reviews = getReviewsForProduct(product);
-
     content.innerHTML = `
       <section class="product-main">
+
         <div class="gallery-wrap">
           <div class="gallery-stage" id="galleryStage" title="برای بزرگ‌نمایی کلیک کنید">
             ${renderProductImage(product)}
@@ -438,9 +1110,13 @@ fetch("products.json")
         </div>
 
         <div class="summary">
+
           <span class="category">${esc(product.category||"محصولات سفر")}</span>
+
           <h1>${esc(product.name)}</h1>
+
           <div class="product-code">کد محصول: ${esc(product.id)}</div>
+
           <div class="rating-row">
             <span class="stars">★★★★★</span>
             <span class="rating-text">چادردوزی جزیره J.A.T</span>
@@ -449,24 +1125,50 @@ fetch("products.json")
           <div class="price-box">${priceHtml}</div>
 
           <div class="quick-specs">
-            <div class="quick-spec"><small>گنجایش</small><strong>${esc(capacity)}</strong></div>
-            <div class="quick-spec"><small>نوع</small><strong>${esc(type)}</strong></div>
-            <div class="quick-spec"><small>جنس</small><strong>${esc(material)}</strong></div>
-            <div class="quick-spec"><small>وضعیت سفارش</small><strong>استعلام موجودی</strong></div>
+            <div class="quick-spec">
+              <small>گنجایش</small>
+              <strong>${esc(capacity)}</strong>
+            </div>
+
+            <div class="quick-spec">
+              <small>نوع</small>
+              <strong>${esc(type)}</strong>
+            </div>
+
+            <div class="quick-spec">
+              <small>جنس</small>
+              <strong>${esc(material)}</strong>
+            </div>
+
+            <div class="quick-spec">
+              <small>وضعیت سفارش</small>
+              <strong>استعلام موجودی</strong>
+            </div>
           </div>
 
           <div class="order-box">
             <div class="order-title">برای سفارش یا استعلام اطلاعات</div>
-            <div class="order-text">برای اطلاع از ابعاد، رنگ، جنس، موجودی و قیمت روز با ما در تماس باشید.</div>
-            <div class="actions">
-              <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">سفارش در واتساپ</a>
-              <button type="button" class="action action-primary" id="addToCartBtn">افزودن به سبد</button>
+
+            <div class="order-text">
+              برای اطلاع از ابعاد، رنگ، جنس، موجودی و قیمت روز با ما در تماس باشید.
             </div>
+
+            <div class="actions">
+              <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">
+                سفارش در واتساپ
+              </a>
+
+              <button type="button" class="action action-primary" id="addToCartBtn">
+                افزودن به سبد
+              </button>
+            </div>
+
             <div class="actions" style="margin-top:10px">
               <a class="action action-outline" href="contact.html">ثبت سفارش</a>
               <a class="action action-outline" href="shop.html">بازگشت به فروشگاه</a>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -474,6 +1176,7 @@ fetch("products.json")
         <button class="tab active" data-target="description">توضیحات</button>
         <button class="tab" data-target="features">ویژگی‌ها</button>
         <button class="tab" data-target="specs">مشخصات فنی</button>
+        <button class="tab" data-target="customer-reviews">نظرات مشتریان</button>
       </nav>
 
       <section class="section" id="description">
@@ -483,7 +1186,9 @@ fetch("products.json")
 
       <section class="section" id="features">
         <h2>ویژگی‌های محصول</h2>
-        <ul class="features">${(details.features||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+        <ul class="features">
+          ${(details.features||[]).map(x=>`<li>${esc(x)}</li>`).join("")}
+        </ul>
       </section>
 
       <section class="section" id="specs">
@@ -494,6 +1199,8 @@ fetch("products.json")
           <tr><th>دسته‌بندی</th><td>${esc(product.category||"—")}</td></tr>
         </table>
       </section>
+
+      ${renderCustomerReviews()}
 
       <section class="section">
         <h2>نکات مهم نگهداری</h2>
@@ -507,37 +1214,52 @@ fetch("products.json")
 
       <section class="section">
         <h2>راهنمای سفارش</h2>
-        <p>برای دریافت اطلاعات دقیق‌تر، موجودی و قیمت روز این محصول می‌توانید از طریق واتساپ با چادردوزی جزیره J.A.T ارتباط برقرار کنید.</p>
+        <p>
+          برای دریافت اطلاعات دقیق‌تر، موجودی و قیمت روز این محصول
+          می‌توانید از طریق واتساپ با چادردوزی جزیره J.A.T ارتباط برقرار کنید.
+        </p>
+
         <div class="actions">
-          <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">مشاوره در واتساپ</a>
-          <a class="action action-outline" href="shop.html">مشاهده سایر محصولات</a>
+          <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">
+            مشاوره در واتساپ
+          </a>
+          <a class="action action-outline" href="shop.html">
+            مشاهده سایر محصولات
+          </a>
         </div>
       </section>
     `;
 
-    document.getElementById("addToCartBtn").addEventListener("click",()=>addToCart(product));
+    document.getElementById("addToCartBtn").addEventListener("click",()=>{
+      addToCart(product);
+    });
 
-    document.getElementById("galleryStage").addEventListener("click",e=>{
-      if(e.target.id==="mainProductImage" || e.target.closest(".gallery-stage")) {
-        openLightbox();
-      }
+    document.getElementById("galleryStage").addEventListener("click",()=>{
+      openLightbox();
     });
 
     document.getElementById("lbClose").addEventListener("click",closeLightbox);
+
     document.getElementById("lightbox").addEventListener("click",e=>{
-      if(e.target.id==="lightbox") closeLightbox();
+      if(e.target.id==="lightbox") {
+        closeLightbox();
+      }
     });
 
     document.addEventListener("keydown",e=>{
-      if(e.key==="Escape") closeLightbox();
+      if(e.key==="Escape") {
+        closeLightbox();
+      }
     });
 
     document.querySelectorAll(".tab").forEach(tab=>{
       tab.addEventListener("click",()=>{
         document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
         tab.classList.add("active");
+
         document.getElementById(tab.dataset.target)?.scrollIntoView({
-          behavior:"smooth",block:"start"
+          behavior:"smooth",
+          block:"start"
         });
       });
     });
@@ -545,27 +1267,43 @@ fetch("products.json")
     document.title = product.name+" | چادردوزی جزیره J.A.T";
 
     const meta = document.querySelector('meta[name="description"]');
+
     if(meta) {
-      meta.content = (product.name+" | "+(details.fullDesc||product.description||"")).replace(/\s+/g," ").slice(0,155);
+      meta.content = (
+        product.name+" | "+
+        (details.fullDesc||product.description||"")
+      ).replace(/\s+/g," ").slice(0,155);
     }
 
     let canonical = document.querySelector('link[rel="canonical"]');
+
     if(!canonical) {
       canonical = document.createElement("link");
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = "https://chadooor.ir/product.html?id="+encodeURIComponent(product.id);
+
+    canonical.href =
+      "https://chadooor.ir/product.html?id="+encodeURIComponent(product.id);
 
     addProductSchema(product,details);
     updateCartCount();
   })
   .catch(error=>{
     console.error("خطا در بارگذاری محصول:",error);
+
     content.innerHTML = error.message==="not-found"
-      ? `<div class="error-box">محصول پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
-      : `<div class="error-box">بارگذاری محصول انجام نشد. فایل products.json و کنسول مرورگر را بررسی کنید.</div>`;
+      ? `<div class="error-box">
+           محصول پیدا نشد.
+           <br><br>
+           <a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a>
+         </div>`
+      : `<div class="error-box">
+           بارگذاری محصول انجام نشد.
+           فایل products.json و کنسول مرورگر را بررسی کنید.
+         </div>`;
   });
 </script>
+
 </body>
 </html>
