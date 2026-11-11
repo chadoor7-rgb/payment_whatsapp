@@ -425,3 +425,23 @@
     boot();
   }
 })();
+function getFilterCategory(category) {
+  const value = String(category || "").trim();
+
+  const categories = {
+    "چادر مسافرتی": "travel",
+    "چادر کوهنوردی": "travel",
+
+    "چادر برزنتی": "tarpaulin",
+    "برزنتی": "tarpaulin",
+
+    "چادر کودک": "kids",
+
+    "پشه‌بند": "accessories",
+    "تجهیزات کمپینگ": "accessories",
+    "روکش خودرو": "accessories",
+    "خدمات": "accessories"
+  };
+
+  return categories[value] || "accessories";
+}
