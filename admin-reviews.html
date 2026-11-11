@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#103f39">
+  <title>مدیریت نظرات مشتریان | چادردوزی جزیره</title>
+
+  <link rel="icon" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px 14px;
+      background: #f2f5f3;
+      color: #18332e;
+      font-family: Estedad, Tahoma, sans-serif;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 25px auto;
+    }
+
+    .header {
+      background: #103f39;
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 22px;
+    }
+
+    .header h1 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .header p {
+      margin: 0;
+      color: #d7e7e1;
+      font-size: 13px;
+    }
+
+    .panel, .login-box {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 5px 25px #163d3510;
+      margin-bottom: 20px;
+    }
+
+    .login-box {
+      max-width: 430px;
+      margin: 35px auto;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d7dfda;
+      border-radius: 9px;
+      font-family: inherit;
+      font-size: 14px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    button {
+      border: 0;
+      border-radius: 9px;
+      padding: 11px 18px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .primary {
+      background: #155e55;
+      color: white;
+    }
+
+    .danger {
+      background: #fde8e7;
+      color: #b42318;
+    }
+
+    .logout {
+      background: #e9eeeb;
+      color: #24443c;
+    }
+
+    .full {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tab {
+      background: #edf2ef;
+      color: #31564b;
+    }
+
+    .tab.active {
+      background: #155e55;
+      color: white;
+    }
+
+    .review {
+      border: 1px solid #e0e8e3;
+      border-radius: 13px;
+      padding: 17px;
+      margin-bottom: 13px;
+      background: #fff;
+    }
+
+    .review h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .stars {
+      color: #e9a400;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .review-text {
+      line-height: 2;
+      font-size: 14px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .meta {
+      color: #75827c;
+      font-size: 12px;
+      line-height: 2;
+      margin-top: 10px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .message {
+      padding: 12px;
+      border-radius: 9px;
+      background: #edf5f0;
+      color: #205a3d;
+      font-size: 13px;
+      line-height: 1.9;
+      margin-top: 14px;
+      display: none;
+      overflow-wrap: anywhere;
+    }
+
+    .message.error {
+      background: #fff0ee;
+      color: #a12b20;
+    }
+
+    .hidden { display: none !important; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 35px 10px;
+      color: #78857e;
+    }
+
+    .status {
+      font-size: 12px;
+      color: #65756d;
+      margin-top: 8px;
+    }
+
+    @media(max-width:600px) {
+      .panel, .login-box { padding: 17px; }
+      .header h1 { font-size: 19px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <h1>مدیریت نظرات مشتریان</h1>
+    <p>چادردوزی جزیره J.A.T</p>
+  </header>
+
+  <!-- ورود مدیر -->
+  <section id="loginBox" class="login-box">
+    <h2>ورود مدیر سایت</h2>
+
+    <form id="loginForm">
+      <label for="email">ایمیل مدیر</label>
+      <input
+        id="email"
+        type="email"
+        value="chadoor7@gmail.com"
+        autocomplete="username"
+        required
+      >
+
+      <label for="password">رمز عبور</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        required
+      >
+
+      <button class="primary full" id="loginButton" type="submit">
+        ورود به پنل مدیریت
+      </button>
+    </form>
+
+    <div id="loginMessage" class="message"></div>
+  </section>
+
+  <!-- پنل مدیریت -->
+  <section id="adminPanel" class="panel hidden">
+
+    <div class="topbar">
+      <div>
+        <h2>پنل بررسی نظرات</h2>
+        <div id="adminEmail" class="status"></div>
+      </div>
+
+      <button id="logoutButton" class="logout">
+        خروج از حساب
+      </button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-status="pending">
+        در انتظار تأیید
+      </button>
+
+      <button class="tab" data-status="approved">
+        منتشرشده
+      </button>
+
+      <button class="tab" data-status="rejected">
+        ردشده
+      </button>
+    </div>
+
+    <div id="reviewMessage" class="message"></div>
+    <div id="reviewsList">
+      <div class="empty">در حال دریافت نظرات...</div>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+(() => {
+  "use strict";
+
+  // اطلاعات اتصال عمومی پروژه
+  const SUPABASE_URL =
+    "https://risngagkugcdrsywrxva.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_N3ZsOvSj6MioK-rxNNxh0w_w9Fd6FEC";
+
+  const ADMIN_EMAIL = "chadoor7@gmail.com";
+
+  const client = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  const loginBox = document.getElementById("loginBox");
+  const adminPanel = document.getElementById("adminPanel");
+  const loginForm = document.getElementById("loginForm");
+  const loginButton = document.getElementById("loginButton");
+  const loginMessage = document.getElementById("loginMessage");
+  const reviewMessage = document.getElementById("reviewMessage");
+  const reviewsList = document.getElementById("reviewsList");
+  const adminEmail = document.getElementById("adminEmail");
+
+  let currentStatus = "pending";
+  let busy = false;
+
+  function showMessage(element, message, error = false) {
+    element.textContent = message;
+    element.className = "message" + (error ? " error" : "");
+    element.style.display = "block";
+  }
+
+  function hideMessage(element) {
+    element.style.display = "none";
+  }
+
+  function showLogin() {
+    loginBox.classList.remove("hidden");
+    adminPanel.classList.add("hidden");
+  }
+
+  function showAdmin(email) {
+    loginBox.classList.add("hidden");
+    adminPanel.classList.remove("hidden");
+    adminEmail.textContent = "حساب واردشده: " + email;
+  }
+
+  async function checkAdmin() {
+    const { data: { session }, error } =
+      await client.auth.getSession();
+
+    if (error || !session) {
+      showLogin();
+      return;
+    }
+
+    if (session.user.email !== ADMIN_EMAIL) {
+      await client.auth.signOut();
+      showLogin();
+      showMessage(
+        loginMessage,
+        "این حساب اجازه ورود به پنل مدیریت را ندارد.",
+        true
+      );
+      return;
+    }
+
+    const { data, error: adminError } =
+      await client.rpc("is_review_admin");
+
+    if (adminError || data !== true) {
+      await client.auth.signOut();
+      showLogin();
+      showMessage(
+        loginMessage,
+        "دسترسی مدیر تأیید نشد. تنظیمات دسترسی Supabase باید بررسی شود.",
+        true
+      );
+      return;
+    }
+
+    showAdmin(session.user.email);
+    await loadReviews();
+  }
+
+  loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (busy) return;
+    busy = true;
+
+    hideMessage(loginMessage);
+    loginButton.disabled = true;
+    loginButton.textContent = "در حال ورود...";
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (email.toLowerCase() !== ADMIN_EMAIL) {
+      showMessage(
+        loginMessage,
+        "فقط ایمیل مدیر اصلی مجاز به ورود است.",
+        true
+      );
+    } else {
+      const { error } = await client.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        showMessage(loginMessage, error.message, true);
+      } else {
+        await checkAdmin();
+      }
+    }
+
+    busy = false;
+    loginButton.disabled = false;
+    loginButton.textContent = "ورود به پنل مدیریت";
+  });
+
+  async function loadReviews() {
+    reviewsList.innerHTML =
+      '<div class="empty">در حال دریافت نظرات...</div>';
+
+    hideMessage(reviewMessage);
+
+    const { data, error } = await client
+      .from("customer_reviews")
+      .select("*")
+      .eq("status", currentStatus)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      reviewsList.innerHTML = "";
+      showMessage(
+        reviewMessage,
+        "خطا در دریافت نظرات: " + error.message,
+        true
+      );
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      reviewsList.innerHTML =
+        '<div class="empty">در این بخش نظری وجود ندارد.</div>';
+      return;
+    }
+
+    reviewsList.innerHTML = "";
+
+    data.forEach((review) => {
+      const card = document.createElement("article");
+      card.className = "review";
+
+      const title = document.createElement("h3");
+      title.textContent = review.customer_name || "مشتری";
+
+      const stars = document.createElement("div");
+      stars.className = "stars";
+      stars.textContent = "★".repeat(review.rating) +
+        "☆".repeat(5 - review.rating);
+
+      const text = document.createElement("div");
+      text.className = "review-text";
+      text.textContent = review.review_text || "";
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+
+      const date = review.created_at
+        ? new Date(review.created_at).toLocaleString("fa-IR")
+        : "";
+
+      meta.textContent =
+        "شهر: " + (review.city || "ثبت نشده") +
+        " | محصول: " + (review.product_name || "ثبت نشده") +
+        " | تاریخ: " + date;
+
+      card.append(title, stars, text, meta);
+
+      if (currentStatus === "pending") {
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const approve = document.createElement("button");
+        approve.className = "primary";
+        approve.textContent = "تأیید و انتشار";
+        approve.addEventListener("click", () => {
+          updateStatus(review.id, "approved");
+        });
+
+        const reject = document.createElement("button");
+        reject.className = "danger";
+        reject.textContent = "رد نظر";
+        reject.addEventListener("click", () => {
+          updateStatus(review.id, "rejected");
+        });
+
+        actions.append(approve, reject);
+        card.appendChild(actions);
+      }
+
+      if (currentStatus === "rejected") {
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const restore = document.createElement("button");
+        restore.className = "primary";
+        restore.textContent = "بازگرداندن به انتظار بررسی";
+        restore.addEventListener("click", () => {
+          updateStatus(review.id, "pending");
+        });
+
+        actions.appendChild(restore);
+        card.appendChild(actions);
+      }
+
+      if (currentStatus === "approved") {
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const unpublish = document.createElement("button");
+        unpublish.className = "danger";
+        unpublish.textContent = "برداشتن از انتشار";
+        unpublish.addEventListener("click", () => {
+          updateStatus(review.id, "pending");
+        });
+
+        actions.appendChild(unpublish);
+        card.appendChild(actions);
+      }
+
+      reviewsList.appendChild(card);
+    });
+  }
+
+  async function updateStatus(id, status) {
+    if (!confirm("آیا از تغییر وضعیت این نظر مطمئن هستید؟")) {
+      return;
+    }
+
+    const { error } = await client
+      .from("customer_reviews")
+      .update({ status })
+      .eq("id", id);
+
+    if (error) {
+      showMessage(
+        reviewMessage,
+        "تغییر وضعیت انجام نشد: " + error.message,
+        true
+      );
+      return;
+    }
+
+    showMessage(reviewMessage, "وضعیت نظر با موفقیت تغییر کرد.");
+    await loadReviews();
+  }
+
+  document.querySelectorAll(".tab").forEach((button) => {
+    button.addEventListener("click", async () => {
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      button.classList.add("active");
+      currentStatus = button.dataset.status;
+      await loadReviews();
+    });
+  });
+
+  document.getElementById("logoutButton")
+    .addEventListener("click", async () => {
+      await client.auth.signOut();
+      showLogin();
+    });
+
+  client.auth.onAuthStateChange(() => {
+    // وضعیت نشست هنگام بارگذاری اولیه بررسی می‌شود.
+  });
+
+  checkAdmin();
+
+})();
+</script>
+
+</body>
+</html>
