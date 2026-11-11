@@ -273,6 +273,7 @@
 
           const article = document.createElement("article");
           article.className = "shop-card product-card";
+           article.dataset.category = getFilterCategory(product.category);
           article.innerHTML =
             '<a href="product.html?id=' + id + '" class="shop-image">' +
               '<img src="' + esc(image) + '" alt="' + esc(name) + '" loading="lazy" decoding="async" width="400" height="300" onerror="this.onerror=null;this.src=\'' + FALLBACK_IMAGE + '\'">' +
@@ -299,6 +300,7 @@
         }
 
         productGrid.replaceChildren(fragment);
+         initShopFilters();
         loadIcons();
       })
       .catch((error) => {
@@ -444,4 +446,31 @@ function getFilterCategory(category) {
   };
 
   return categories[value] || "accessories";
+}
+function initShopFilters() {
+  const buttons = document.querySelectorAll(".filter-btn");
+  const grid = document.querySelector("#productGrid");
+
+  if (!buttons.length || !grid) return;
+
+  buttons.forEach((button) => {
+    if (button.dataset.filterInitialized === "true") return;
+    button.dataset.filterInitialized = "true";
+
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      buttons.forEach((item) => {
+        item.classList.toggle("active", item === button);
+      });
+
+      grid.querySelectorAll(".product-card").forEach((card) => {
+        const show =
+          filter === "all" ||
+          card.dataset.category === filter;
+
+        card.hidden = !show;
+      });
+    });
+  });
 }
