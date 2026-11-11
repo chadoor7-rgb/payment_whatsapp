@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="مشاهده مشخصات، تصاویر و اطلاعات محصول چادردوزی جزیره J.A.T">
+  <meta name="description" content="مشاهده مشخصات و تصویر محصولات چادردوزی جزیره J.A.T">
   <meta name="theme-color" content="#155e55">
   <title>جزئیات محصول | چادردوزی جزیره J.A.T</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -12,28 +12,24 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    :root{--ink:#17231f;--muted:#68736f;--paper:#fff;--soft:#f6f7f5;--line:#e5e8e5;--green:#155e55;--green2:#0f4c45;--lime:#d5f263;--red:#d32f2f;--shadow:0 14px 45px rgba(21,40,34,.08)}
+    :root {
+      --ink:#17231f;--muted:#68736f;--paper:#fff;--soft:#f6f7f5;
+      --line:#e5e8e5;--green:#155e55;--green2:#0f4c45;
+      --red:#d32f2f;--shadow:0 14px 45px rgba(21,40,34,.08)
+    }
     *{box-sizing:border-box}
-    body{background:#f3f5f2;color:var(--ink)}
+    body{background:#f3f5f2;color:var(--ink);margin:0}
     .product-page{max-width:1240px;margin:24px auto 80px;padding:0 18px}
     .breadcrumb{font-size:13px;color:var(--muted);margin:12px 0 18px}
     .breadcrumb a{color:var(--green);text-decoration:none}
-    .product-main{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+    .product-main{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
     .gallery-wrap{padding:22px;background:#fff;min-width:0}
     .gallery-stage{position:relative;background:#f5f6f4;border:1px solid var(--line);border-radius:18px;height:510px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in}
-    .gallery-stage img{width:100%;height:100%;object-fit:contain;padding:22px;transition:transform .25s ease}
+    .gallery-stage img{width:100%;height:100%;object-fit:contain;padding:22px;transition:transform .25s}
     .gallery-stage:hover img{transform:scale(1.025)}
-    .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border:0;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.12);font-size:22px;cursor:pointer}
-    .gallery-prev{right:14px}
-    .gallery-next{left:14px}
-    .gallery-count{position:absolute;left:14px;top:14px;background:rgba(20,30,27,.78);color:#fff;border-radius:30px;padding:7px 11px;font-size:12px;z-index:3}
-    .gallery-zoom{position:absolute;right:14px;top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;z-index:3;font-size:12px;color:var(--ink)}
-    .thumbnails{display:flex;gap:10px;overflow-x:auto;padding:13px 2px 3px;scrollbar-width:thin}
-    .thumb{flex:0 0 82px;height:70px;border:2px solid transparent;border-radius:12px;overflow:hidden;background:#f4f5f3;cursor:pointer;padding:0}
-    .thumb.active{border-color:var(--green)}
-    .thumb img{width:100%;height:100%;object-fit:cover}
-    .gallery-note{font-size:12px;color:var(--muted);margin:9px 2px 0}
-    .summary{padding:34px 34px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+    .gallery-zoom{position:absolute;right:14px;top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px}
+    .gallery-note{font-size:12px;color:var(--muted);margin:12px 2px}
+    .summary{padding:34px;border-right:1px solid var(--line);display:flex;flex-direction:column}
     .category{display:inline-flex;width:max-content;background:#e7f3f0;color:var(--green);border-radius:30px;padding:7px 13px;font-size:12px;font-weight:700;margin-bottom:15px}
     .summary h1{font-size:29px;line-height:1.55;margin:0 0 10px;font-weight:800}
     .product-code{font-size:12px;color:var(--muted);margin-bottom:18px}
@@ -76,16 +72,29 @@
     .specs-table td{font-weight:600}
     .tips{margin:0;padding-right:20px}
     .tips li{color:var(--muted);line-height:1.9;margin-bottom:7px}
+    .loading,.error-box{text-align:center;padding:110px 20px;color:var(--muted);font-size:17px}
+    .error-box{color:#b42318}
+
+    /* فوتر کامل */
+    .site-footer{background:#103f39;color:#fff;margin-top:50px;padding:38px 20px 18px}
+    .footer-inner{max-width:1200px;margin:auto}
+    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:25px;border-bottom:1px solid rgba(255,255,255,.18)}
+    .footer-brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:800;font-size:18px}
+    .footer-brand img{width:48px;height:48px;object-fit:contain}
+    .footer-slogan{color:#d5f263;margin:0;font-size:14px}
+    .footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;padding:28px 0}
+    .footer-column h3{font-size:16px;margin:0 0 15px;color:#d5f263}
+    .footer-column a,.footer-column p{display:block;color:#e4eeeb;text-decoration:none;font-size:13px;line-height:2.2;margin:3px 0}
+    .footer-column a:hover{color:#d5f263}
+    .footer-social{display:flex;gap:10px;flex-wrap:wrap}
+    .footer-social a{display:inline-block;border:1px solid rgba(255,255,255,.25);border-radius:9px;padding:7px 13px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.18);padding-top:17px;text-align:center;color:#d5dfdc;font-size:12px;line-height:2}
+
     .lightbox{position:fixed;inset:0;background:rgba(7,14,12,.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:25px}
     .lightbox.open{display:flex}
     .lightbox img{max-width:94vw;max-height:90vh;object-fit:contain;border-radius:12px}
     .lightbox-close{position:absolute;top:18px;left:22px;background:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}
-    .lightbox-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;border-radius:50%;cursor:pointer;background:#fff;font-size:24px}
-    .lb-prev{right:20px}
-    .lb-next{left:20px}
-    .loading,.error-box{text-align:center;padding:110px 20px;color:var(--muted);font-size:17px}
-    .error-box{color:#b42318}
-    .no-product-image{color:var(--muted);font-size:14px;text-align:center;padding:25px;line-height:2}
+    .loading-image{padding:30px;color:var(--muted);text-align:center}
     @media(max-width:980px){
       .product-main{grid-template-columns:1fr}
       .summary{border-right:0;border-top:1px solid var(--line)}
@@ -94,7 +103,7 @@
     @media(max-width:650px){
       .product-page{padding:0 10px;margin-top:12px}
       .gallery-wrap{padding:10px}
-      .gallery-stage{height:330px;border-radius:14px}
+      .gallery-stage{height:330px}
       .gallery-stage img{padding:10px}
       .summary{padding:23px 17px}
       .summary h1{font-size:22px}
@@ -104,23 +113,21 @@
       .tabs{top:55px;overflow:auto;white-space:nowrap}
       .tab{padding:10px 12px}
       .actions{grid-template-columns:1fr}
-      .thumb{flex-basis:68px;height:60px}
       .quick-specs{grid-template-columns:1fr}
-      .quick-spec{border-left:0!important}
-      .quick-spec:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
-      .quick-spec:last-child{border-bottom:0}
+      .quick-spec{border-left:0!important;border-bottom:1px solid var(--line)!important}
+      .quick-spec:last-child{border-bottom:0!important}
+      .footer-columns{grid-template-columns:1fr;gap:22px}
+      .footer-top{align-items:flex-start;flex-direction:column}
     }
   </style>
 </head>
 
 <body>
-
 <header class="site-header sticky-header">
   <a href="index.html" class="brand">
-    <img src="favicon.svg" alt="لوگو" class="brand-logo" width="44" height="44">
+    <img src="favicon.svg" alt="لوگوی چادردوزی جزیره" class="brand-logo" width="44" height="44">
     <span>چادردوزی جزیره J.A.T</span>
   </a>
-
   <nav class="main-nav" aria-label="منوی اصلی">
     <a href="products.html">محصولات</a>
     <a href="shop.html">فروشگاه</a>
@@ -130,12 +137,10 @@
     <a href="blog.html">مجله سفر</a>
     <a href="contact.html">ثبت سفارش</a>
   </nav>
-
   <div class="header-actions">
     <a class="cart-link" href="cart.html" aria-label="سبد خرید">🛒 <span id="cartCount">0</span></a>
     <a href="contact.html" class="btn btn-primary btn-sm">ثبت سفارش</a>
   </div>
-
   <button class="menu-toggle" aria-label="منو">☰</button>
 </header>
 
@@ -143,651 +148,325 @@
   <div class="product-page">
     <div class="breadcrumb">
       <a href="index.html">خانه</a> ←
-      <a href="shop.html">فروشگاه</a> ←
-      جزئیات محصول
+      <a href="shop.html">فروشگاه</a> ← جزئیات محصول
     </div>
-    <div id="content">
-      <div class="loading">در حال بارگذاری محصول...</div>
-    </div>
+    <div id="content"><div class="loading">در حال بارگذاری محصول...</div></div>
   </div>
 </main>
 
 <footer class="site-footer">
-  <div class="footer-top">
-    <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="لوگو" width="44" height="44">
-      <span>چادردوزی جزیره J.A.T</span>
-    </a>
-    <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
-  </div>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="index.html" class="footer-brand">
+        <img src="favicon.svg" alt="لوگوی چادردوزی جزیره">
+        <span>چادردوزی جزیره J.A.T</span>
+      </a>
+      <p class="footer-slogan">برای هر مسیر، یک پناه مطمئن.</p>
+    </div>
 
-  <nav class="footer-menu">
-    <a href="products.html">محصولات</a>
-    <a href="shop.html">فروشگاه</a>
-    <a href="services.html">خدمات</a>
-    <a href="gallery.html">گالری</a>
-    <a href="about.html">درباره ما</a>
-    <a href="contact.html">ثبت سفارش</a>
-  </nav>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>دسترسی سریع</h3>
+        <a href="index.html">صفحه اصلی</a>
+        <a href="products.html">محصولات</a>
+        <a href="shop.html">فروشگاه</a>
+        <a href="services.html">خدمات و تعمیرات</a>
+        <a href="gallery.html">گالری تصاویر</a>
+        <a href="blog.html">مجله سفر</a>
+      </div>
 
-  <div class="social-links">
-    <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
-    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
-    <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
-  </div>
+      <div class="footer-column">
+        <h3>راهنمای مشتریان</h3>
+        <a href="about.html">درباره چادردوزی جزیره</a>
+        <a href="contact.html">ثبت سفارش</a>
+        <a href="cart.html">سبد خرید</a>
+        <a href="contact.html">مشاوره و استعلام قیمت</a>
+        <p>تولید و دوخت انواع چادر و تجهیزات سفری</p>
+      </div>
 
-  <div class="copyright">
-    © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
-    کلیه حقوق این وب‌سایت محفوظ است.
+      <div class="footer-column">
+        <h3>ارتباط با ما</h3>
+        <p>چادردوزی جزیره J.A.T</p>
+        <p>آمل، مازندران</p>
+        <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ: ۰۹۱۱۸۰۳۱۲۴۱</a>
+        <div class="footer-social">
+          <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener">اینستاگرام</a>
+          <a href="https://t.me/GATTENT" target="_blank" rel="noopener">تلگرام</a>
+          <a href="https://wa.me/989118031241" target="_blank" rel="noopener">واتساپ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © ۲۰۲۶ چادردوزی جزیره J.A.T<br>
+      کلیه حقوق این وب‌سایت محفوظ است.
+    </div>
   </div>
 </footer>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lightbox-close" id="lbClose" aria-label="بستن">×</button>
-  <button class="lightbox-arrow lb-prev" id="lbPrev" aria-label="تصویر قبلی">›</button>
   <img id="lbImage" src="" alt="">
-  <button class="lightbox-arrow lb-next" id="lbNext" aria-label="تصویر بعدی">‹</button>
 </div>
 
 <script src="script.js"></script>
 
 <script>
-/* =========================================================
-   اطلاعات اختصاصی محصولات
-   تصاویر عمداً در این قسمت تعریف نشده‌اند.
-   تصویر هر محصول فقط از products.json خوانده می‌شود.
-========================================================= */
-
+/* اطلاعات تکمیلی محصولات؛ تصاویر فقط از products.json خوانده می‌شوند */
 const productDetails = {
-  1:{
-    fullDesc:"چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده نیمه‌دائمی. دوخت مقاوم و پارچه برزنتی با کیفیت.",
-    features:["پارچه برزنتی مقاوم","دوخت کارگاهی","مناسب ۴ نفر و وسایل","قابل سفارش در ابعاد دلخواه","تولید مستقیم در آمل"],
-    specs:[["گنجایش","۴ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت ضخیم"],["تعداد لایه","تک‌جداره"],["تولید","مستقیم در کارگاه آمل"],["امکان سفارشی‌سازی","بله"]]
-  },
-  2:{
-    fullDesc:"چادر برزنتی ۶ نفره با فضای مناسب برای خانواده‌های متوسط. طراحی‌شده برای سفر و استفاده در فضای باز.",
-    features:["فضای جادار برای ۶ نفر","پارچه برزنتی","دوخت کارگاهی","مناسب کمپینگ و باغ","ارسال سراسر ایران"],
-    specs:[["گنجایش","۶ نفره"],["نوع","برزنتی"],["جنس پارچه","برزنت"],["تعداد لایه","تک‌جداره"],["تولید","چادردوزی جزیره"]]
-  },
-  3:{
-    fullDesc:"چادر برزنتی ۸ نفره مدل J.A.T با فضای مناسب برای سفرهای خانوادگی و استفاده در فضای باز.",
-    features:["ظرفیت ۸ نفره","پارچه برزنتی","دوخت کارگاهی","مناسب سفر و کمپینگ","تولید چادردوزی جزیره"],
-    specs:[["گنجایش","۸ نفره"],["مدل","J.A.T"],["نوع","برزنتی"],["جنس پارچه","برزنت"],["تولید","کارگاه آمل"]]
-  },
-  4:{
-    fullDesc:"چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ و استفاده در فضای باز. برای اطلاع از ابعاد و جزئیات سفارش با فروشنده هماهنگ کنید.",
-    features:["فضای جادار","مناسب گروه‌های بزرگ","پارچه برزنتی","امکان سفارش ابعاد دلخواه"],
-    specs:[["گنجایش","۱۰ نفره"],["نوع","برزنتی"],["امکان سفارشی‌سازی","با هماهنگی"]]
-  },
-  5:{
-    fullDesc:"خیمه برزنتی ۱۲ نفره جادار مناسب کمپینگ و سفرهای خانوادگی بزرگ.",
-    features:["ظرفیت معرفی‌شده ۱۲ نفر","فضای جادار","مناسب کمپینگ گروهی","دوخت کارگاهی"],
-    specs:[["گنجایش","۱۲ نفره"],["نوع","خیمه برزنتی"],["کاربرد","کمپینگ و سفر خانوادگی"]]
-  },
-  6:{
-    fullDesc:"چادر مسافرتی ۸ نفره مناسب سفر و طبیعت‌گردی.",
-    features:["ظرفیت ۸ نفر","مناسب سفر و کمپینگ","قابل استفاده در فضای باز"],
-    specs:[["گنجایش","۸ نفره"],["نوع","مسافرتی"],["کاربرد","سفر و طبیعت‌گردی"]]
-  },
-  7:{
-    fullDesc:"پشه‌بند سفارشی برای چادر و فضای باز. امکان هماهنگی برای اندازه و شکل موردنیاز وجود دارد.",
-    features:["دوخت سفارشی","اندازه‌های متنوع با هماهنگی","مناسب چادر و فضای باز"],
-    specs:[["نوع","پشه‌بند"],["سفارشی‌سازی","با هماهنگی"],["کاربرد","چادر و فضای باز"]]
-  },
-  8:{
-    fullDesc:"خدمات تعمیر چادر در کارگاه چادردوزی جزیره. نوع تعمیر و هزینه پس از بررسی چادر مشخص می‌شود.",
-    features:["بررسی پارگی پارچه","بررسی زیپ","بررسی اتصالات و اسکلت","امکان برآورد هزینه پیش از تعمیر"],
-    specs:[["نوع خدمت","تعمیر چادر"],["محل انجام","کارگاه چادردوزی جزیره"],["هزینه","پس از بررسی اعلام می‌شود"]]
-  },
-  9:{
-    fullDesc:"چادر بازی کودک طرح سگ، با ابعاد معرفی‌شده حدود ۱۴۰ در ۱۴۰ سانتی‌متر. مناسب بازی کودکان در منزل.",
-    features:["طرح سگ","ابعاد معرفی‌شده ۱۴۰×۱۴۰","سبک و قابل حمل","مناسب بازی کودک"],
-    specs:[["ابعاد","حدود ۱۴۰ × ۱۴۰ سانتی‌متر"],["طرح","سگ"],["نوع","چادر بازی کودک"]]
-  },
-  10:{
-    fullDesc:"چادر بازی کودک طرح سگ با رنگ‌بندی متفاوت، مناسب بازی و سرگرمی کودکان.",
-    features:["طرح سگ","مناسب بازی کودک","سبک و قابل حمل"],
-    specs:[["طرح","سگ"],["نوع","چادر بازی کودک"]]
-  },
-  11:{
-    fullDesc:"چادر بازی کودک طرح کرومی، مناسب سرگرمی کودکان در منزل.",
-    features:["طرح کرومی","مناسب بازی کودک","سبک و قابل حمل"],
-    specs:[["طرح","کرومی"],["نوع","چادر بازی کودک"]]
-  },
-  12:{
-    fullDesc:"چادر بازی کودک طرح مرد عنکبوتی، مناسب سرگرمی و بازی کودکان.",
-    features:["طرح مرد عنکبوتی","مناسب بازی کودک","سبک و قابل حمل"],
-    specs:[["طرح","مرد عنکبوتی"],["نوع","چادر بازی کودک"]]
-  },
-  13:{
-    fullDesc:"چادر بازی کودک دخترانه با طراحی رنگی، مناسب بازی کودکان در منزل.",
-    features:["طرح دخترانه","مناسب بازی کودک","سبک و قابل حمل"],
-    specs:[["طرح","دخترانه"],["نوع","چادر بازی کودک"]]
-  },
-  14:{
-    fullDesc:"چادر بازی کودک طرح السا، مناسب سرگرمی کودکان.",
-    features:["طرح السا","مناسب بازی کودک","سبک و قابل حمل"],
-    specs:[["طرح","السا"],["نوع","چادر بازی کودک"]]
-  },
-  15:{
-    fullDesc:"چادر بازی کودک طرح کیتی، مناسب سرگرمی کودکان در منزل.",
-    features:["طرح کیتی","مناسب بازی کودک","سبک و قابل حمل"],
-    specs:[["طرح","کیتی"],["نوع","چادر بازی کودک"]]
-  },
-  16:{
-    fullDesc:"چادر بازی کودک طرح سیندرلا با طراحی فانتزی، مناسب بازی کودکان.",
-    features:["طرح سیندرلا","طراحی فانتزی","مناسب بازی کودک"],
-    specs:[["طرح","سیندرلا"],["نوع","چادر بازی کودک"]]
-  },
-  17:{
-    fullDesc:"میز و صندلی مسافرتی مناسب استفاده در سفر، پیک‌نیک و کمپینگ.",
-    features:["مناسب کمپینگ","قابل استفاده در سفر","مناسب فضای باز"],
-    specs:[["نوع","میز و صندلی مسافرتی"],["کاربرد","کمپینگ و سفر"]]
-  },
-  18:{
-    fullDesc:"برزنت مناسب کاربردهای پوششی و استفاده در فضای باز. برای اطلاع از نوع، ابعاد و قیمت روز با فروشنده هماهنگ کنید.",
-    features:["مناسب کاربردهای پوششی","قابل سفارش با هماهنگی","مناسب استفاده در فضای باز"],
-    specs:[["نوع","برزنت"],["کاربرد","پوشش و فضای باز"],["امکان سفارشی‌سازی","با هماهنگی"]]
-  },
-  19:{
-    fullDesc:"سایبان مناسب استفاده در باغ، حیاط و فضای باز. برای اطلاع از ابعاد و نوع نصب با فروشنده تماس بگیرید.",
-    features:["مناسب فضای باز","قابل بررسی برای ابعاد مختلف","امکان هماهنگی سفارش"],
-    specs:[["نوع","سایبان"],["کاربرد","باغ، حیاط و فضای باز"]]
-  },
-  20:{
-    fullDesc:"سرویس بهداشتی مسافرتی مناسب استفاده در کمپینگ و سفر.",
-    features:["مناسب کمپینگ","قابل استفاده در سفر","ایجاد فضای خصوصی"],
-    specs:[["نوع","سرویس بهداشتی مسافرتی"],["کاربرد","کمپینگ و سفر"]]
-  },
-  21:{
-    fullDesc:"چادر برزنتی ۸ نفره طرح درختی، مناسب سفر و استفاده در فضای باز.",
-    features:["طرح درختی","ظرفیت معرفی‌شده ۸ نفر","مناسب کمپینگ","مناسب سفر"],
-    specs:[["گنجایش","۸ نفره"],["طرح","درختی"],["نوع","چادر برزنتی"]]
-  },
-  22:{
-    fullDesc:"چادر مسافرتی ۸ نفره J.A.T مدل دو جداره. ابعاد و مشخصات فنی درج‌شده برای این محصول باید پیش از سفارش با فروشنده تأیید شود.",
-    features:["مدل دو جداره","ظرفیت معرفی‌شده ۸ نفر","چهار پنجره توری‌دار طبق مشخصات ثبت‌شده","دارای کیف حمل طبق مشخصات ثبت‌شده"],
-    specs:[["مدل","J.A.T"],["گنجایش","۸ نفره"],["ابعاد بازشده","۲۵۰ × ۲۵۰ × ۲۱۰ سانتی‌متر"],["تعداد لایه","دو جداره"],["جنس پارچه","آکسفورد طبق مشخصات ثبت‌شده"],["قطر ستون","۰٫۹ سانتی‌متر طبق مشخصات ثبت‌شده"]]
-  },
-  23:{
-    fullDesc:"چادر کوهنوردی دو نفره پکینیو مدل PKN-C2001-B. برای بررسی موجودی و تأیید مشخصات فنی پیش از خرید با فروشنده هماهنگ کنید.",
-    features:["مدل PKN-C2001-B","مناسب کوهنوردی و طبیعت‌گردی","دارای ساختار دوپوش طبق مشخصات ثبت‌شده"],
-    specs:[["مدل","PKN-C2001-B"],["گنجایش ثبت‌شده","۲ تا ۳ نفر"],["نوع","عصایی"],["تعداد لایه","۲ لایه"],["ارتفاع ثبت‌شده","۱۱۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون ثبت‌شده","۸٫۵ میلی‌متر"],["وزن ثبت‌شده","حدود ۲۸۰۰ گرم"]]
-  },
-  24:{
-    fullDesc:"چادر کوهنوردی پکینیو مدل PKN-C2001 مناسب طبیعت‌گردی و سفر. مشخصات فنی و موجودی را پیش از خرید استعلام کنید.",
-    features:["مدل PKN-C2001","مناسب کوهنوردی","ساختار دوپوش طبق مشخصات ثبت‌شده"],
-    specs:[["مدل","PKN-C2001"],["گنجایش ثبت‌شده","۲ تا ۳ نفر"],["نوع","عصایی"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون ثبت‌شده","۸٫۵ میلی‌متر"],["وزن ثبت‌شده","حدود ۲۵۰۰ گرم"]]
-  },
-  25:{
-    fullDesc:"چادر کوهنوردی پکینیو مدل PKN-C2004 مناسب طبیعت‌گردی و سفر. برای اطمینان از مشخصات فنی و موجودی تماس بگیرید.",
-    features:["مدل PKN-C2004","مناسب کوهنوردی و طبیعت‌گردی","ساختار دو لایه طبق مشخصات ثبت‌شده"],
-    specs:[["مدل","PKN-C2004"],["گنجایش ثبت‌شده","۳ تا ۴ نفر"],["تعداد لایه","۲ لایه"],["ارتفاع ثبت‌شده","حدود ۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["وزن ثبت‌شده","حدود ۳٫۳ کیلوگرم"]]
-  },
-  26:{
-    fullDesc:"چادر کوهنوردی پکینیو مدل PKN-C2006 مناسب سفر و طبیعت‌گردی. مشخصات فنی پیش از سفارش بررسی شود.",
-    features:["مدل PKN-C2006","مناسب کوهنوردی","ساختار دوپوش طبق مشخصات ثبت‌شده"],
-    specs:[["مدل","PKN-C2006"],["گنجایش ثبت‌شده","۳ تا ۴ نفر"],["تعداد لایه","۲ لایه"],["ارتفاع ثبت‌شده","۱۳۰ سانتی‌متر"],["جنس ستون","آلومینیوم"],["قطر ستون ثبت‌شده","۸٫۵ میلی‌متر"],["وزن ثبت‌شده","حدود ۲۸۰۰ تا ۳۰۰۰ گرم"]]
-  },
-  27:{
-    fullDesc:"چادر کوهنوردی دو نفره پکینیو مدل PKN-C2009 مناسب سفر و طبیعت‌گردی. مشخصات و موجودی را پیش از خرید استعلام کنید.",
-    features:["مدل PKN-C2009","مناسب کوهنوردی و طبیعت‌گردی","دارای ساختار دو لایه طبق مشخصات ثبت‌شده"],
-    specs:[["مدل","PKN-C2009"],["گنجایش ثبت‌شده","۱ تا ۲ نفر"],["تعداد لایه","۲ لایه"],["جنس ستون","آلومینیوم"],["قطر ستون ثبت‌شده","۸٫۵ میلی‌متر"],["وزن ثبت‌شده","حدود ۲۵۰۰ گرم"]]
-  },
-  28:{
-    fullDesc:"روکش خودرو ضدآب J.A.T برای پوشاندن خودرو و کمک به محافظت از آن در برابر بارندگی، نور خورشید و گردوغبار. برای انتخاب سایز مناسب، مدل خودرو را اعلام کنید.",
-    features:["مناسب پوشش خودرو","کمک به محافظت در برابر بارندگی","کمک به محافظت در برابر نور خورشید و گردوغبار","امکان هماهنگی برای ابعاد خودرو"],
-    specs:[["نوع محصول","روکش خودرو"],["برند","J.A.T"],["کاربرد","پوشش خودرو"],["سفارشی‌سازی","با هماهنگی مدل خودرو"]]
-  },
-  29:{
-    fullDesc:"تارپ برزنتی برای پوشش بار، خودرو و استفاده در فضای باز. برای سفارش ابعاد دلخواه و اطلاع از قیمت روز تماس بگیرید.",
-    features:["مناسب پوشش بار","قابل استفاده در فضای باز","امکان سفارش ابعاد با هماهنگی"],
-    specs:[["نوع","تارپ برزنتی"],["کاربرد","پوشش بار و فضای باز"],["امکان سفارشی‌سازی","با هماهنگی"]]
-  },
-  30:{
-    fullDesc:"صندلی تاشو مسافرتی مناسب کمپینگ، پیک‌نیک و سفرهای طبیعت‌گردی.",
-    features:["طراحی تاشو","قابل حمل","مناسب کمپینگ و سفر"],
-    specs:[["نوع","صندلی تاشو مسافرتی"],["کاربرد","کمپینگ و سفر"]]
-  },
-  31:{
-    fullDesc:"بسته چهارعددی صندلی کمپینگ تاشو J.A.T مناسب سفرهای گروهی، پیک‌نیک و استفاده در فضای باز.",
-    features:["بسته شامل ۴ عدد صندلی طبق عنوان محصول","مناسب سفر و کمپینگ","قابل استفاده در فضای باز","برند J.A.T"],
-    specs:[["نوع محصول","صندلی کمپینگ تاشو"],["تعداد","۴ عدد"],["برند","J.A.T"],["کاربرد","سفر و کمپینگ"]]
-  },
-  32:{
-    fullDesc:"چادر مسافرتی ۸ نفره J.A.T مدل خانوادگی، مناسب سفرهای خانوادگی و اقامت موقت در طبیعت.",
-    features:["ظرفیت معرفی‌شده ۸ نفر","مناسب سفرهای خانوادگی","مناسب کمپینگ","برند J.A.T"],
-    specs:[["گنجایش","۸ نفره"],["نوع","چادر مسافرتی"],["مدل","خانوادگی"],["برند","J.A.T"]]
-  },
-  33:{
-    fullDesc:"چادر مسافرتی J.A.T مدل S برای سفر و استفاده در فضای باز. برای اطلاع از ظرفیت، ابعاد و جزئیات ساخت با فروشنده هماهنگ کنید.",
-    features:["مدل S","مناسب سفر","مناسب استفاده در فضای باز","امکان استعلام مشخصات و موجودی"],
-    specs:[["نوع","چادر مسافرتی"],["مدل","J.A.T مدل S"],["ظرفیت","برای تأیید با فروشنده تماس بگیرید"]]
-  },
-  34:{
-    fullDesc:"گونی جامبو راه‌راه با مشخصات ضدآب و مقاوم در برابر آفتاب طبق عنوان محصول. برای تأیید جنس، ابعاد و شرایط سفارش با فروشنده هماهنگ کنید.",
-    features:["طرح راه‌راه","کاربرد بسته‌بندی و نگهداری","مشخصات ضدآب طبق عنوان محصول","استعلام مشخصات پیش از سفارش"],
-    specs:[["نوع محصول","گونی جامبو"],["طرح","راه‌راه"],["کاربرد","بسته‌بندی و نگهداری"]]
-  },
-  35:{
-    fullDesc:"پارچه برزنتی برای کاربردهای پوششی و ساخت تجهیزات مختلف. قیمت نهایی می‌تواند با توجه به نوع و مقدار سفارش نیازمند هماهنگی باشد.",
-    features:["مناسب کاربردهای پوششی","قابل استفاده در ساخت تجهیزات","امکان سفارش بر اساس مقدار موردنیاز","استعلام قیمت روز"],
-    specs:[["نوع محصول","پارچه برزنتی"],["دسته‌بندی","برزنتی"],["قیمت درج‌شده در فروشگاه","۲۰۰٬۰۰۰ تومان"],["قیمت نهایی","نیازمند تأیید مقدار و مشخصات"]]
+  1:{fullDesc:"چادر برزنتی ۴ نفره تولید چادردوزی جزیره، مناسب سفرهای خانوادگی کوچک، باغ و استفاده در فضای باز.",features:["پارچه برزنتی","دوخت کارگاهی","مناسب ۴ نفر","قابل سفارش در ابعاد دلخواه"],specs:[["گنجایش","۴ نفره"],["نوع","برزنتی"],["تولید","چادردوزی جزیره"]]},
+  2:{fullDesc:"چادر برزنتی ۶ نفره با فضای مناسب برای سفرهای خانوادگی و استفاده در فضای باز.",features:["فضای مناسب ۶ نفر","پارچه برزنتی","مناسب کمپینگ","قابل سفارش"],specs:[["گنجایش","۶ نفره"],["نوع","برزنتی"]]},
+  3:{fullDesc:"چادر برزنتی ۸ نفره J.A.T مناسب سفر و کمپینگ خانوادگی.",features:["ظرفیت ۸ نفره","پارچه برزنتی","مناسب سفر"],specs:[["گنجایش","۸ نفره"],["مدل","J.A.T"],["نوع","برزنتی"]]},
+  4:{fullDesc:"چادر برزنتی ۱۰ نفره برای گروه‌های بزرگ و استفاده در فضای باز.",features:["فضای بزرگ","مناسب گروه‌ها","قابل سفارش"],specs:[["گنجایش","۱۰ نفره"],["نوع","برزنتی"]]},
+  5:{fullDesc:"خیمه برزنتی ۱۲ نفره جادار مناسب سفر و استفاده گروهی.",features:["ظرفیت ۱۲ نفر","فضای جادار","مناسب سفر گروهی"],specs:[["گنجایش","۱۲ نفره"],["نوع","خیمه برزنتی"]]},
+  6:{fullDesc:"چادر مسافرتی ۸ نفره مناسب سفر و طبیعت‌گردی.",features:["ظرفیت ۸ نفر","مناسب سفر","قابل حمل"],specs:[["گنجایش","۸ نفره"],["نوع","مسافرتی"]]},
+  7:{fullDesc:"پشه‌بند سفارشی برای چادر و فضای باز.",features:["دوخت سفارشی","اندازه‌های متنوع","مناسب فضای باز"],specs:[["نوع","پشه‌بند"],["سفارشی‌سازی","بله"]]},
+  8:{fullDesc:"خدمات تعمیر چادر مسافرتی در کارگاه چادردوزی جزیره.",features:["بررسی پارگی","تعمیر زیپ و بخش‌های آسیب‌دیده","هماهنگی پیش از تعمیر"],specs:[["نوع خدمت","تعمیر چادر"]]},
+  9:{fullDesc:"چادر بازی کودک طرح سگ مناسب بازی در منزل و فضای باز.",features:["طرح سگ","مناسب بازی کودک","قابل حمل"],specs:[["نوع","چادر بازی کودک"],["طرح","سگ"]]},
+  10:{fullDesc:"چادر بازی کودک طرح سگ مناسب سرگرمی کودکان.",features:["طرح سگ","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"]]},
+  11:{fullDesc:"چادر بازی کودک طرح کرومی.",features:["طرح کرومی","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"],["طرح","کرومی"]]},
+  12:{fullDesc:"چادر بازی کودک طرح مرد عنکبوتی.",features:["طرح مرد عنکبوتی","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"],["طرح","مرد عنکبوتی"]]},
+  13:{fullDesc:"چادر بازی کودک دخترانه.",features:["طرح دخترانه","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"]]},
+  14:{fullDesc:"چادر بازی کودک طرح السا.",features:["طرح السا","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"],["طرح","السا"]]},
+  15:{fullDesc:"چادر بازی کودک طرح کیتی.",features:["طرح کیتی","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"],["طرح","کیتی"]]},
+  16:{fullDesc:"چادر بازی کودک طرح سیندرلا.",features:["طرح سیندرلا","مناسب بازی کودک"],specs:[["نوع","چادر بازی کودک"],["طرح","سیندرلا"]]},
+  17:{fullDesc:"میز و صندلی مسافرتی مناسب کمپینگ و سفر.",features:["مناسب سفر","قابل استفاده در کمپینگ"],specs:[["نوع","میز و صندلی مسافرتی"]]},
+  18:{fullDesc:"برزنت مناسب کاربردهای پوششی و سفارش‌های مختلف.",features:["کاربرد پوششی","امکان سفارش"],specs:[["نوع","برزنت"]]},
+  19:{fullDesc:"سایبان مناسب باغ، حیاط و فضای باز.",features:["مناسب فضای باز","قابل سفارش"],specs:[["نوع","سایبان"]]},
+  20:{fullDesc:"سرویس بهداشتی مسافرتی مناسب سفر و کمپینگ.",features:["مناسب کمپینگ","قابل حمل"],specs:[["نوع","سرویس بهداشتی مسافرتی"]]},
+  21:{fullDesc:"چادر برزنتی ۸ نفره طرح درختی مناسب سفر.",features:["طرح درختی","ظرفیت ۸ نفر"],specs:[["گنجایش","۸ نفره"],["طرح","درختی"]]},
+  22:{fullDesc:"چادر مسافرتی ۸ نفره J.A.T دو جداره. ابعاد و جزئیات فنی مطابق اطلاعات ثبت‌شده محصول.",features:["دو جداره","مناسب سفر","مدل J.A.T"],specs:[["گنجایش","۸ نفره"],["مدل","J.A.T"],["تعداد لایه","دو جداره"]]},
+  23:{fullDesc:"چادر کوهنوردی ۲ نفره پکینیو PKN-C2001-B.",features:["مدل PKN-C2001-B","مناسب کوهنوردی"],specs:[["مدل","PKN-C2001-B"],["گنجایش","۲ نفره"]]},
+  24:{fullDesc:"چادر کوهنوردی ۲ نفره پکینیو PKN-C2001.",features:["مدل PKN-C2001","مناسب کوهنوردی"],specs:[["مدل","PKN-C2001"],["گنجایش","۲ نفره"]]},
+  25:{fullDesc:"چادر کوهنوردی ۴ نفره پکینیو PKN-C2004.",features:["مدل PKN-C2004","مناسب کوهنوردی"],specs:[["مدل","PKN-C2004"],["گنجایش","۴ نفره"]]},
+  26:{fullDesc:"چادر کوهنوردی ۴ نفره پکینیو PKN-C2006.",features:["مدل PKN-C2006","مناسب کوهنوردی"],specs:[["مدل","PKN-C2006"],["گنجایش","۴ نفره"]]},
+  27:{fullDesc:"چادر کوهنوردی ۲ نفره پکینیو PKN-C2009.",features:["مدل PKN-C2009","مناسب کوهنوردی"],specs:[["مدل","PKN-C2009"],["گنجایش","۲ نفره"]]},
+  28:{fullDesc:"روکش خودرو ضدآب J.A.T برای محافظت از خودرو در برابر بارندگی، آفتاب و گردوغبار.",features:["روکش خودرو","قابلیت سفارش مطابق خودرو","مناسب فضای باز"],specs:[["نوع","روکش خودرو"],["برند","J.A.T"]]},
+  29:{fullDesc:"تارپ برزنتی مناسب پوشش بار و استفاده در فضای باز.",features:["برزنتی","مناسب پوشش بار","قابل سفارش"],specs:[["نوع","تارپ برزنتی"]]},
+  30:{fullDesc:"صندلی تاشو مسافرتی مناسب کمپینگ و سفر.",features:["تاشو","قابل حمل","مناسب کمپینگ"],specs:[["نوع","صندلی تاشو"]]},
+  31:{fullDesc:"بسته چهارعددی صندلی کمپینگ تاشو J.A.T مناسب سفر و کمپینگ.",features:["بسته شامل ۴ عدد صندلی","مناسب سفر و کمپینگ"],specs:[["نوع","صندلی کمپینگ تاشو"],["تعداد","۴ عدد"],["برند","J.A.T"]]},
+  32:{fullDesc:"چادر مسافرتی ۸ نفره J.A.T مدل خانوادگی.",features:["ظرفیت ۸ نفر","مناسب سفر خانوادگی"],specs:[["نوع","چادر مسافرتی"],["مدل","خانوادگی"],["گنجایش","۸ نفر"]]},
+  33:{fullDesc:"چادر مسافرتی J.A.T مدل S مناسب سفر و استفاده در فضای باز.",features:["مدل S","مناسب سفر"],specs:[["نوع","چادر مسافرتی"],["مدل","J.A.T مدل S"]]},
+  34:{fullDesc:"گونی جامبو راه‌راه با مشخصات ضدآب و مقاوم در برابر آفتاب طبق معرفی محصول.",features:["طرح راه‌راه","مناسب بسته‌بندی و نگهداری"],specs:[["نوع","گونی جامبو"],["طرح","راه‌راه"]]},
+  35:{fullDesc:"پارچه برزنتی مناسب کاربردهای پوششی و سفارش‌های مختلف.",features:["مناسب کاربردهای پوششی","امکان سفارش بر اساس مقدار"],specs:[["نوع","پارچه برزنتی"]]}
+};
+
+const params = new URLSearchParams(location.search);
+const productId = Number.parseInt(params.get("id"),10);
+const content = document.getElementById("content");
+
+function esc(v) {
+  return String(v ?? "").replace(/[&<>"']/g,m=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
+
+function getReviewsForProduct(product) {
+  const name = (product.name || "").toLowerCase();
+  const category = (product.category || "").toLowerCase();
+
+  if(name.includes("کودک") || category.includes("کودک")) {
+    return [{text:"از کیفیت محصول راضی هستم.",name:"نظر مشتری"}];
   }
-};
-
-
-/* ==================== نظرات نمایشی ==================== */
-
-const productReviews = {
-  "برزنتی":[
-    {stars:"★★★★★",text:"چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز کاملاً سالم رسید.",name:"امیر از شیراز"},
-    {stars:"★★★★★",text:"برای باغ استفاده می‌کنم، خیلی مقاوم و باکیفیته. راضی‌ام.",name:"رضا از آمل"},
-    {stars:"★★★★★",text:"پارچه ضخیم و دوخت عالی. پیشنهاد می‌کنم.",name:"مریم از تهران"}
-  ],
-  "مسافرتی":[
-    {stars:"★★★★★",text:"چادر مسافرتی ۸ نفره خریدم. سبک و باکیفیته. در سفر شمال عالی بود.",name:"علی از ساری"},
-    {stars:"★★★★★",text:"نصب آسان و مقاوم در برابر باد. راضی هستم.",name:"سارا از تهران"},
-    {stars:"★★★★★",text:"کیفیت دوخت و پارچه خیلی خوبه. ممنون از تیم جزیره.",name:"ایمان از بابل"}
-  ],
-  "کودک":[
-    {stars:"★★★★★",text:"چادر کودک طرح سگ سفارش دادم. خیلی قشنگ و محکم بود.",name:"آرش از ساری"},
-    {stars:"★★★★★",text:"طرح السا خریدم، کیفیت عالی و رنگ‌ها شاد.",name:"فریبا از تهران"},
-    {stars:"★★★★★",text:"سبک و مناسب بازی بچه‌ها.",name:"مینا از آمل"}
-  ],
-  "تعمیر":[
-    {stars:"★★★★★",text:"چادرم از چند جا پاره شده بود. تعمیر کردن و نتیجه کار رضایت‌بخش بود.",name:"فرحناز از تهران"},
-    {stars:"★★★★★",text:"زیپ و فنر چادر را تعمیر کردند. کار تمیز انجام شد.",name:"محمود از قائمشهر"}
-  ],
-  "پشه‌بند":[
-    {stars:"★★★★★",text:"پشه‌بند سفارشی دوختند. اندازه دقیق و کیفیت خوب بود.",name:"مشتری از آمل"},
-    {stars:"★★★★★",text:"توری محکم و دوخت تمیز.",name:"مشتری از بابل"}
-  ],
-  "default":[
-    {stars:"★★★★★",text:"کیفیت محصول رضایت‌بخش بود.",name:"مشتری چادردوزی جزیره"},
-    {stars:"★★★★★",text:"از خریدم راضی‌ام.",name:"مشتری چادردوزی جزیره"}
-  ]
-};
-
-function getReviewsForProduct(product){
-  const category=(product.category||"").toLowerCase();
-  const name=(product.name||"").toLowerCase();
-
-  if(category.includes("برزنت")||name.includes("برزنت")) return productReviews["برزنتی"];
-  if(category.includes("مسافرت")||name.includes("مسافرت")||name.includes("کوهنوردی")||name.includes("پکینیو")) return productReviews["مسافرتی"];
-  if(category.includes("کودک")||name.includes("کودک")||name.includes("بچ")||name.includes("سگ")||name.includes("السا")||name.includes("کیتی")||name.includes("سیندرلا")||name.includes("عنکبوتی")) return productReviews["کودک"];
-  if(category.includes("تعمیر")||name.includes("تعمیر")) return productReviews["تعمیر"];
-  if(category.includes("پشه‌بند")||name.includes("پشه‌بند")||name.includes("توری")) return productReviews["پشه‌بند"];
-
-  return productReviews["default"];
+  if(name.includes("برزنت") || category.includes("برزنت")) {
+    return [{text:"کیفیت دوخت و محصول خوب بود.",name:"نظر مشتری"}];
+  }
+  return [{text:"از خرید خود رضایت دارم.",name:"نظر مشتری"}];
 }
 
+let currentProduct = null;
 
-/* ==================== تنظیمات صفحه محصول ==================== */
+function renderProductImage(product) {
+  const image = product.image ? String(product.image).trim() : "";
 
-const params=new URLSearchParams(location.search);
-const productId=Number.parseInt(params.get("id"),10);
-const content=document.getElementById("content");
-
-let gallery=[];
-let galleryIndex=0;
-
-function esc(value){
-  return String(value??"").replace(/[&<>"']/g,function(m){
-    return {
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#039;"
-    }[m];
-  });
-}
-
-
-/* تصویر گالری فقط از products.json خوانده می‌شود */
-function getGallery(product){
-  if(!product || !product.image) return [];
-  return [String(product.image).trim()].filter(Boolean);
-}
-
-
-/* ==================== نمایش گالری ==================== */
-
-function renderGallery(product){
-  gallery=getGallery(product);
-  galleryIndex=0;
-
-  const hasImage=gallery.length>0;
+  if(!image) {
+    return `<div class="loading-image">تصویر این محصول ثبت نشده است.</div>`;
+  }
 
   return `
-    <div class="gallery-wrap">
-      <div class="gallery-stage" id="galleryStage" title="${hasImage?"برای بزرگ‌نمایی کلیک کنید":""}">
-        ${
-          hasImage
-          ? `
-            <span class="gallery-count" id="galleryCount">1 / 1</span>
-            <span class="gallery-zoom">🔍 بزرگ‌نمایی</span>
-            <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="قبلی" style="display:none">›</button>
-            <img
-              id="mainProductImage"
-              src="${esc(gallery[0])}"
-              alt="${esc(product.name)}"
-            >
-            <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="بعدی" style="display:none">‹</button>
-          `
-          : `<div class="no-product-image">تصویر این محصول هنوز ثبت نشده است.</div>`
-        }
-      </div>
-
-      <div class="thumbnails" id="thumbnails"></div>
-
-      <div class="gallery-note">
-        ${hasImage?"تصویر اصلی محصول":"برای دریافت تصویر محصول با ما تماس بگیرید."}
-      </div>
-    </div>
-  `;
+    <img id="mainProductImage"
+      src="${esc(image)}"
+      alt="${esc(product.name)}"
+      onerror="this.onerror=null;this.style.display='none';document.getElementById('imageError').style.display='block'">
+    <div id="imageError" class="loading-image" style="display:none">
+      تصویر این محصول در دسترس نیست.
+    </div>`;
 }
 
+function addProductSchema(product, details) {
+  document.querySelector('script[data-schema="product"]')?.remove();
 
-function updateGallery(){
-  const img=document.getElementById("mainProductImage");
-  const count=document.getElementById("galleryCount");
-
-  if(!img || !gallery.length) return;
-
-  img.src=gallery[galleryIndex];
-
-  if(count){
-    count.textContent=`${galleryIndex+1} / ${gallery.length}`;
-  }
-
-  document.querySelectorAll(".thumb").forEach((thumb,index)=>{
-    thumb.classList.toggle("active",index===galleryIndex);
-  });
-
-  const lightboxImage=document.getElementById("lbImage");
-  if(document.getElementById("lightbox").classList.contains("open") && lightboxImage){
-    lightboxImage.src=gallery[galleryIndex];
-  }
-}
-
-
-function buildThumbs(){
-  const box=document.getElementById("thumbnails");
-
-  if(!box) return;
-
-  if(gallery.length<=1){
-    box.innerHTML="";
-    return;
-  }
-
-  box.innerHTML=gallery.map((src,index)=>`
-    <button class="thumb ${index===0?"active":""}" data-index="${index}" type="button">
-      <img src="${esc(src)}" alt="تصویر ${index+1}">
-    </button>
-  `).join("");
-
-  box.querySelectorAll(".thumb").forEach(button=>{
-    button.addEventListener("click",()=>{
-      galleryIndex=Number(button.dataset.index);
-      updateGallery();
-    });
-  });
-}
-
-
-function openLightbox(){
-  if(!gallery.length) return;
-
-  const lightbox=document.getElementById("lightbox");
-  const image=document.getElementById("lbImage");
-
-  image.src=gallery[galleryIndex];
-  image.alt="تصویر محصول";
-
-  lightbox.classList.add("open");
-  lightbox.setAttribute("aria-hidden","false");
-}
-
-
-function closeLightbox(){
-  const lightbox=document.getElementById("lightbox");
-  lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden","true");
-}
-
-
-function moveGallery(step){
-  if(gallery.length<=1) return;
-
-  galleryIndex=(galleryIndex+step+gallery.length)%gallery.length;
-  updateGallery();
-}
-
-
-/* ==================== سبد خرید ==================== */
-
-function addToCartLocal(product){
-  const CART_KEY="chadoor_cart";
-  let cart=[];
-
-  try{
-    cart=JSON.parse(localStorage.getItem(CART_KEY)||"[]");
-    if(!Array.isArray(cart)) cart=[];
-  }catch(error){
-    cart=[];
-  }
-
-  const existing=cart.find(item=>Number(item.id)===Number(product.id));
-
-  if(existing){
-    existing.qty=(Number(existing.qty)||1)+1;
-  }else{
-    cart.push({
-      id:product.id,
-      name:product.name,
-      price:product.price||0,
-      image:product.image||"",
-      qty:1
-    });
-  }
-
-  localStorage.setItem(CART_KEY,JSON.stringify(cart));
-
-  const total=cart.reduce((sum,item)=>sum+(Number(item.qty)||0),0);
-
-  document.querySelectorAll("#cartCount").forEach(element=>{
-    element.textContent=total;
-  });
-
-  alert("«"+product.name+"» به سبد خرید اضافه شد.");
-}
-
-
-/* ==================== اطلاعات ساختاریافته گوگل ==================== */
-
-function addProductSchema(product,details){
-  const existing=document.querySelector('script[data-schema="product"]');
-
-  if(existing) existing.remove();
-
-  const priceToman=Number(product.price)||0;
-
-  const schema={
+  const schema = {
     "@context":"https://schema.org",
     "@type":"Product",
     "name":product.name,
-    "description":details?.fullDesc||product.description||product.name,
+    "description":details.fullDesc || product.description || product.name,
     "sku":String(product.id),
-    "brand":{
-      "@type":"Brand",
-      "name":"چادردوزی جزیره J.A.T"
-    },
-    "url":"https://chadooor.ir/product.html?id="+encodeURIComponent(product.id)
+    "brand":{"@type":"Brand","name":"چادردوزی جزیره J.A.T"}
   };
 
-  if(product.image){
-    schema.image=[new URL(product.image,"https://chadooor.ir/").href];
+  if(product.image) {
+    schema.image = [new URL(product.image,"https://chadooor.ir/").href];
   }
 
-  if(priceToman>0){
-    schema.offers={
+  const price = Number(product.price) || 0;
+  if(price > 0) {
+    schema.offers = {
       "@type":"Offer",
       "url":"https://chadooor.ir/product.html?id="+encodeURIComponent(product.id),
       "priceCurrency":"IRR",
-      "price":String(priceToman*10),
-      "availability":"https://schema.org/InStock",
-      "itemCondition":"https://schema.org/NewCondition",
-      "seller":{
-        "@type":"Organization",
-        "name":"چادردوزی جزیره J.A.T"
-      }
+      "price":String(price * 10),
+      "availability":"https://schema.org/InStock"
     };
   }
 
-  const script=document.createElement("script");
-  script.type="application/ld+json";
-  script.setAttribute("data-schema","product");
-  script.textContent=JSON.stringify(schema);
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.dataset.schema = "product";
+  script.textContent = JSON.stringify(schema);
   document.head.appendChild(script);
 }
 
+function addToCart(product) {
+  if(typeof window.chadoorAddToCart === "function") {
+    window.chadoorAddToCart({
+      id:product.id,
+      name:product.name,
+      price:Number(product.price)||0,
+      image:product.image||""
+    });
+    return;
+  }
 
-/* ==================== بارگذاری محصول ==================== */
+  const key = "chadoor_cart";
+  let cart = [];
+  try {
+    cart = JSON.parse(localStorage.getItem(key)||"[]");
+    if(!Array.isArray(cart)) cart = [];
+  } catch(e) {
+    cart = [];
+  }
+
+  const existing = cart.find(item=>Number(item.id)===Number(product.id));
+  if(existing) existing.qty = (Number(existing.qty)||1)+1;
+  else cart.push({
+    id:product.id,
+    name:product.name,
+    price:Number(product.price)||0,
+    image:product.image||"",
+    qty:1
+  });
+
+  localStorage.setItem(key,JSON.stringify(cart));
+
+  const total = cart.reduce((sum,item)=>sum+(Number(item.qty)||0),0);
+  document.querySelectorAll("#cartCount").forEach(el=>el.textContent=total);
+  alert("محصول به سبد خرید اضافه شد.");
+}
+
+function updateCartCount() {
+  try {
+    const cart = JSON.parse(localStorage.getItem("chadoor_cart")||"[]");
+    const total = Array.isArray(cart)
+      ? cart.reduce((sum,item)=>sum+(Number(item.qty)||0),0)
+      : 0;
+    document.querySelectorAll("#cartCount").forEach(el=>el.textContent=total);
+  } catch(e) {}
+}
+
+function openLightbox() {
+  if(!currentProduct?.image) return;
+  const box = document.getElementById("lightbox");
+  const image = document.getElementById("lbImage");
+  image.src = currentProduct.image;
+  image.alt = currentProduct.name;
+  box.classList.add("open");
+  box.setAttribute("aria-hidden","false");
+}
+
+function closeLightbox() {
+  const box = document.getElementById("lightbox");
+  box.classList.remove("open");
+  box.setAttribute("aria-hidden","true");
+}
 
 fetch("products.json")
   .then(response=>{
-    if(!response.ok){
-      throw new Error("products.json");
-    }
+    if(!response.ok) throw new Error("products.json");
     return response.json();
   })
-
   .then(products=>{
+    if(!Array.isArray(products)) throw new Error("ساختار products.json معتبر نیست.");
 
-    if(!Array.isArray(products)){
-      throw new Error("invalid-products");
-    }
+    const product = products.find(p=>Number(p.id)===productId);
+    if(!product) throw new Error("not-found");
 
-    const product=products.find(item=>Number(item.id)===productId);
+    currentProduct = product;
 
-    if(!product){
-      throw new Error("not-found");
-    }
-
-    const details=productDetails[productId]||{
-      fullDesc:product.description||"اطلاعات این محصول در حال تکمیل است.",
-      features:["برای دریافت اطلاعات بیشتر با فروشنده تماس بگیرید."],
-      specs:[
-        ["نام محصول",product.name],
-        ["دسته‌بندی",product.category||"—"]
-      ]
+    const details = productDetails[productId] || {
+      fullDesc:product.description || "اطلاعات این محصول در حال تکمیل است.",
+      features:["برای اطلاع از مشخصات بیشتر با ما تماس بگیرید."],
+      specs:[["نام محصول",product.name],["دسته‌بندی",product.category||"—"]]
     };
 
-    const specs=details.specs||[];
+    const specs = details.specs || [];
+    const capacity = specs.find(x=>/گنجایش/.test(x[0]))?.[1] || "—";
+    const type = specs.find(x=>/نوع/.test(x[0]))?.[1] || product.category || "—";
+    const material = specs.find(x=>/جنس/.test(x[0]))?.[1] || "—";
+    const price = Number(product.price)||0;
 
-    const capacity=
-      specs.find(item=>/گنجایش/.test(item[0]))?.[1]||"—";
+    const priceHtml = price > 0
+      ? `<div class="price">${price.toLocaleString("fa-IR")} تومان</div>
+         <div class="price-sub">قیمت درج‌شده در فروشگاه</div>`
+      : `<div class="contact-price">برای اطلاع از قیمت تماس بگیرید</div>
+         <div class="price-sub">قیمت نهایی با هماهنگی اعلام می‌شود.</div>`;
 
-    const type=
-      specs.find(item=>/نوع/.test(item[0]))?.[1]||
-      product.category||
-      "—";
+    const wa = "https://wa.me/989118031241?text="+encodeURIComponent(
+      "سلام، درباره محصول «"+product.name+"» اطلاعات و قیمت می‌خواهم."
+    );
 
-    const material=
-      specs.find(item=>/جنس پارچه/.test(item[0]))?.[1]||"—";
+    const reviews = getReviewsForProduct(product);
 
-    const price=Number(product.price)||0;
-
-    const priceHtml=price>0
-      ? `
-        <div class="price">${price.toLocaleString("fa-IR")} تومان</div>
-        <div class="price-sub">قیمت درج‌شده در فروشگاه</div>
-      `
-      : `
-        <div class="contact-price">برای اطلاع از قیمت تماس بگیرید</div>
-        <div class="price-sub">قیمت محصولات سفارشی پس از بررسی اعلام می‌شود.</div>
-      `;
-
-    const whatsappText=
-      "سلام، درباره محصول «"+product.name+"» اطلاعات و قیمت می‌خواهم.";
-
-    const whatsappLink=
-      "https://wa.me/989118031241?text="+encodeURIComponent(whatsappText);
-
-    const reviews=getReviewsForProduct(product);
-
-    content.innerHTML=`
+    content.innerHTML = `
       <section class="product-main">
-
-        ${renderGallery(product)}
+        <div class="gallery-wrap">
+          <div class="gallery-stage" id="galleryStage" title="برای بزرگ‌نمایی کلیک کنید">
+            ${renderProductImage(product)}
+            <span class="gallery-zoom">🔍 بزرگ‌نمایی</span>
+          </div>
+          <div class="gallery-note">تصویر محصول</div>
+        </div>
 
         <div class="summary">
-
           <span class="category">${esc(product.category||"محصولات سفر")}</span>
-
           <h1>${esc(product.name)}</h1>
-
-          <div class="product-code">
-            کد محصول: ${esc(product.id)}
-          </div>
-
+          <div class="product-code">کد محصول: ${esc(product.id)}</div>
           <div class="rating-row">
             <span class="stars">★★★★★</span>
-            <span class="rating-text">محصول چادردوزی جزیره J.A.T</span>
+            <span class="rating-text">چادردوزی جزیره J.A.T</span>
           </div>
 
-          <div class="price-box">
-            ${priceHtml}
-          </div>
+          <div class="price-box">${priceHtml}</div>
 
           <div class="quick-specs">
-            <div class="quick-spec">
-              <small>گنجایش</small>
-              <strong>${esc(capacity)}</strong>
-            </div>
-
-            <div class="quick-spec">
-              <small>نوع</small>
-              <strong>${esc(type)}</strong>
-            </div>
-
-            <div class="quick-spec">
-              <small>جنس پارچه</small>
-              <strong>${esc(material)}</strong>
-            </div>
-
-            <div class="quick-spec">
-              <small>وضعیت سفارش</small>
-              <strong>قابل استعلام</strong>
-            </div>
+            <div class="quick-spec"><small>گنجایش</small><strong>${esc(capacity)}</strong></div>
+            <div class="quick-spec"><small>نوع</small><strong>${esc(type)}</strong></div>
+            <div class="quick-spec"><small>جنس</small><strong>${esc(material)}</strong></div>
+            <div class="quick-spec"><small>وضعیت سفارش</small><strong>استعلام موجودی</strong></div>
           </div>
 
           <div class="order-box">
             <div class="order-title">برای سفارش یا استعلام اطلاعات</div>
-
-            <div class="order-text">
-              اگر درباره ابعاد، رنگ، جنس یا قیمت این محصول سؤال دارید، با ما در تماس باشید.
-            </div>
-
+            <div class="order-text">برای اطلاع از ابعاد، رنگ، جنس، موجودی و قیمت روز با ما در تماس باشید.</div>
             <div class="actions">
-              <a class="action action-wa" href="${whatsappLink}" target="_blank" rel="noopener">
-                سفارش در واتساپ
-              </a>
-
-              <button type="button" class="action action-primary" id="addToCartBtn">
-                افزودن به سبد
-              </button>
+              <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">سفارش در واتساپ</a>
+              <button type="button" class="action action-primary" id="addToCartBtn">افزودن به سبد</button>
             </div>
-
             <div class="actions" style="margin-top:10px">
               <a class="action action-outline" href="contact.html">ثبت سفارش</a>
               <a class="action action-outline" href="shop.html">بازگشت به فروشگاه</a>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -804,204 +483,89 @@ fetch("products.json")
 
       <section class="section" id="features">
         <h2>ویژگی‌های محصول</h2>
-        <ul class="features">
-          ${(details.features||[]).map(item=>`<li>${esc(item)}</li>`).join("")}
-        </ul>
+        <ul class="features">${(details.features||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
       </section>
 
       <section class="section" id="specs">
-        <h2>مشخصات فنی</h2>
+        <h2>مشخصات محصول</h2>
         <table class="specs-table">
-          ${specs.map(item=>`
-            <tr>
-              <th>${esc(item[0])}</th>
-              <td>${esc(item[1])}</td>
-            </tr>
-          `).join("")}
+          ${specs.map(x=>`<tr><th>${esc(x[0])}</th><td>${esc(x[1])}</td></tr>`).join("")}
+          <tr><th>نام محصول</th><td>${esc(product.name)}</td></tr>
+          <tr><th>دسته‌بندی</th><td>${esc(product.category||"—")}</td></tr>
         </table>
       </section>
 
       <section class="section">
         <h2>نکات مهم نگهداری</h2>
         <ul class="tips">
-          <li>پس از استفاده در محیط مرطوب، چادر را کاملاً خشک کنید.</li>
+          <li>پس از استفاده در محیط مرطوب، محصول را کاملاً خشک کنید.</li>
           <li>پارچه را در معرض آتش یا حرارت مستقیم قرار ندهید.</li>
           <li>هنگام جمع‌کردن از فشار و تاخوردگی نامناسب خودداری کنید.</li>
-          <li>برای سفارش سفارشی قبل از ثبت با ما هماهنگ کنید.</li>
+          <li>برای سفارش سفارشی پیش از ثبت با ما هماهنگ کنید.</li>
         </ul>
       </section>
 
-      <section class="section" style="background:#f7f5f0;border-radius:18px;">
-        <h2 style="text-align:center;margin-bottom:22px;font-size:21px;">
-          نظر مشتریان درباره این محصول
-        </h2>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
-          ${reviews.map(review=>`
-            <div style="background:#fff;border-radius:12px;padding:18px;border:1px solid #e5e8e5;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-              <div style="color:#f59e0b;font-size:16px;margin-bottom:8px;letter-spacing:1px;">
-                ${review.stars}
-              </div>
-
-              <p style="font-size:14px;line-height:1.85;color:#444;margin:0 0 14px 0;">
-                «${esc(review.text)}»
-              </p>
-
-              <div style="font-weight:700;color:#155e55;font-size:13px;">
-                — ${esc(review.name)}
-              </div>
-            </div>
-          `).join("")}
+      <section class="section">
+        <h2>راهنمای سفارش</h2>
+        <p>برای دریافت اطلاعات دقیق‌تر، موجودی و قیمت روز این محصول می‌توانید از طریق واتساپ با چادردوزی جزیره J.A.T ارتباط برقرار کنید.</p>
+        <div class="actions">
+          <a class="action action-wa" href="${wa}" target="_blank" rel="noopener">مشاوره در واتساپ</a>
+          <a class="action action-outline" href="shop.html">مشاهده سایر محصولات</a>
         </div>
       </section>
     `;
 
+    document.getElementById("addToCartBtn").addEventListener("click",()=>addToCart(product));
 
-    /* افزودن به سبد خرید */
-    document.getElementById("addToCartBtn")?.addEventListener("click",()=>{
-      if(typeof window.chadoorAddToCart==="function"){
-        window.chadoorAddToCart({
-          id:product.id,
-          name:product.name,
-          price:product.price||0,
-          image:product.image||""
-        });
-      }else{
-        addToCartLocal(product);
+    document.getElementById("galleryStage").addEventListener("click",e=>{
+      if(e.target.id==="mainProductImage" || e.target.closest(".gallery-stage")) {
+        openLightbox();
       }
     });
 
-
-    /* ساخت گالری تصاویر */
-    buildThumbs();
-
-    const galleryPrev=document.getElementById("galleryPrev");
-    const galleryNext=document.getElementById("galleryNext");
-    const galleryStage=document.getElementById("galleryStage");
-
-    if(galleryPrev){
-      galleryPrev.onclick=()=>moveGallery(1);
-    }
-
-    if(galleryNext){
-      galleryNext.onclick=()=>moveGallery(-1);
-    }
-
-    if(galleryStage){
-      galleryStage.onclick=event=>{
-        if(!event.target.closest("button")){
-          openLightbox();
-        }
-      };
-    }
-
-
-    /* کنترل بزرگ‌نمایی */
-    document.getElementById("lbClose").onclick=closeLightbox;
-
-    document.getElementById("lbPrev").onclick=()=>{
-      moveGallery(1);
-    };
-
-    document.getElementById("lbNext").onclick=()=>{
-      moveGallery(-1);
-    };
-
-    document.getElementById("lightbox").onclick=event=>{
-      if(event.target.id==="lightbox"){
-        closeLightbox();
-      }
-    };
-
-    document.addEventListener("keydown",event=>{
-      if(event.key==="Escape"){
-        closeLightbox();
-      }
-
-      if(event.key==="ArrowRight"){
-        moveGallery(1);
-      }
-
-      if(event.key==="ArrowLeft"){
-        moveGallery(-1);
-      }
+    document.getElementById("lbClose").addEventListener("click",closeLightbox);
+    document.getElementById("lightbox").addEventListener("click",e=>{
+      if(e.target.id==="lightbox") closeLightbox();
     });
 
+    document.addEventListener("keydown",e=>{
+      if(e.key==="Escape") closeLightbox();
+    });
 
-    /* کنترل تب‌ها */
     document.querySelectorAll(".tab").forEach(tab=>{
       tab.addEventListener("click",()=>{
-        document.querySelectorAll(".tab").forEach(item=>{
-          item.classList.remove("active");
-        });
-
+        document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
         tab.classList.add("active");
-
         document.getElementById(tab.dataset.target)?.scrollIntoView({
-          behavior:"smooth",
-          block:"start"
+          behavior:"smooth",block:"start"
         });
       });
     });
 
+    document.title = product.name+" | چادردوزی جزیره J.A.T";
 
-    /* عنوان و توضیحات سئو */
-    document.title=product.name+" | چادردوزی جزیره J.A.T";
-
-    const metaDescription=document.querySelector('meta[name="description"]');
-
-    if(metaDescription){
-      const descriptionText=details.fullDesc||product.description||product.name;
-
-      metaDescription.setAttribute(
-        "content",
-        (product.name+" | "+descriptionText).replace(/\s+/g," ").slice(0,155)
-      );
+    const meta = document.querySelector('meta[name="description"]');
+    if(meta) {
+      meta.content = (product.name+" | "+(details.fullDesc||product.description||"")).replace(/\s+/g," ").slice(0,155);
     }
 
-
-    /* آدرس canonical */
-    let canonical=document.querySelector('link[rel="canonical"]');
-
-    if(!canonical){
-      canonical=document.createElement("link");
-      canonical.rel="canonical";
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if(!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
+    canonical.href = "https://chadooor.ir/product.html?id="+encodeURIComponent(product.id);
 
-    canonical.href=
-      "https://chadooor.ir/product.html?id="+encodeURIComponent(product.id);
-
-
-    /* اطلاعات ساختاریافته محصول */
     addProductSchema(product,details);
-
+    updateCartCount();
   })
-
   .catch(error=>{
-    console.error("خطا در بارگذاری جزئیات محصول:",error);
-
-    if(error.message==="not-found"){
-      content.innerHTML=`
-        <div class="error-box">
-          محصول پیدا نشد.
-          <br><br>
-          <a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a>
-        </div>
-      `;
-    }else{
-      content.innerHTML=`
-        <div class="error-box">
-          بارگذاری محصول انجام نشد.
-          <br><br>
-          فایل products.json و معتبر بودن ساختار آن را بررسی کنید.
-          <br>
-          همچنین مسیر فایل را بررسی کنید.
-        </div>
-      `;
-    }
+    console.error("خطا در بارگذاری محصول:",error);
+    content.innerHTML = error.message==="not-found"
+      ? `<div class="error-box">محصول پیدا نشد.<br><br><a href="shop.html" class="btn btn-primary">بازگشت به فروشگاه</a></div>`
+      : `<div class="error-box">بارگذاری محصول انجام نشد. فایل products.json و کنسول مرورگر را بررسی کنید.</div>`;
   });
-
 </script>
 </body>
 </html>
