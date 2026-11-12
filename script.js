@@ -433,12 +433,11 @@ function getFilterCategory(category) {
   const categories = {
     "چادر مسافرتی": "travel",
     "چادر کوهنوردی": "travel",
-
-    "چادر برزنتی": "tarpaulin",
+    "مسافرتی": "travel",
     "برزنتی": "tarpaulin",
-
+    "چادر برزنتی": "tarpaulin",
     "چادر کودک": "kids",
-
+    "کودک": "kids",
     "پشه‌بند": "accessories",
     "تجهیزات کمپینگ": "accessories",
     "روکش خودرو": "accessories",
@@ -447,28 +446,74 @@ function getFilterCategory(category) {
 
   return categories[value] || "accessories";
 }
+
 function initShopFilters() {
   const buttons = document.querySelectorAll(".filter-btn");
   const grid = document.querySelector("#productGrid");
+  const search = document.querySelector("#shopSearch");
+  const resultCount = document.querySelector("#shopResultCount");
 
-  if (!buttons.length || !grid) return;
+  if (!grid) return;
+
+  let activeFilter = "all";
+
+  function applyFilters() {
+    const query = (search?.value || "").trim().toLocaleLowerCase("fa-IR");
+    const cards = grid.querySelectorAll(".product-card");
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const category = card.dataset.category || "accessories";
+      const name = card.querySelector("h3")?.textContent || "";
+      const description = card.querySelector("p")?.textContent || "";
+
+      const text = (name + " " + description).toLocaleLowerCase("fa-IR");
+
+      const categoryMatch =
+        activeFilter === "all" || category === activeFilter;
+
+      const searchMatch =
+        !query || text.includes(query);
+
+      const show = categoryMatch && searchMatch;
+
+      card.hidden = !show;
+
+      if (show) visible++;
+    });
+
+    if (resultCount) {
+      resultCount.textContent =
+        visible.toLocaleString("fa-IR") +
+        " محصول از " +
+        cards.length.toLocaleString("fa-IR") +
+        " محصول";
+    }
+  }
 
   buttons.forEach((button) => {
     if (button.dataset.filterInitialized === "true") return;
+
     button.dataset.filterInitialized = "true";
 
     button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
+      activeFilter = button.dataset.filter || "all";
 
       buttons.forEach((item) => {
         item.classList.toggle("active", item === button);
       });
 
-      grid.querySelectorAll(".product-card").forEach((card) => {
-        const show =
-          filter === "all" ||
-          card.dataset.category === filter;
+      applyFilters();
+    });
+  });
 
+  if (search && search.dataset.searchInitialized !== "true") {
+    search.dataset.searchInitialized = "true";
+    search.addEventListener("input", applyFilters);
+  }
+
+  applyFilters();
+}
         card.hidden = !show;
       });
     });
