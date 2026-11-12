@@ -321,28 +321,26 @@
 
   /* ---------- Shop category mapping ---------- */
 
-  function getFilterCategory(category) {
-    const value = String(category || "").trim();
 
-    const categories = {
-      "چادر مسافرتی": "travel",
-      "چادر کوهنوردی": "travel",
-      "مسافرتی": "travel",
+function getFilterCategory(category) {
+  const categoryMap = {
+    "چادر برزنتی": "tarpaulin",
+    "برزنتی": "tarpaulin",
 
-      "برزنتی": "tarpaulin",
-      "چادر برزنتی": "tarpaulin",
+    "چادر مسافرتی": "travel",
+    "چادر کوهنوردی": "travel",
 
-      "چادر کودک": "kids",
-      "کودک": "kids",
+    "چادر کودک": "kids",
 
-      "پشه‌بند": "accessories",
-      "تجهیزات کمپینگ": "accessories",
-      "روکش خودرو": "accessories",
-      "خدمات": "accessories"
-    };
+    "پشه‌بند": "accessories",
+    "تجهیزات کمپینگ": "accessories",
+    "روکش خودرو": "accessories",
 
-    return categories[value] || "accessories";
-  }
+    "خدمات": "services"
+  };
+
+  return categoryMap[String(category || "").trim()] || "all";
+}
 
   /* ---------- Shop filters and search ---------- */
 
