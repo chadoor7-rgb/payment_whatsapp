@@ -476,6 +476,66 @@
       ">تجربه واقعی کسانی که از چادردوزی جزیره خرید یا تعمیر کرده‌اند</p>
     </div>
 
+<!-- فرم ثبت نظر مشتری -->
+<div class="customer-review-form" style="
+  max-width:750px;
+  margin:0 auto 45px;
+  padding:28px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  box-shadow:0 5px 18px rgba(0,0,0,.05);
+">
+  <h3 style="color:#1a3c34;margin-top:0;">تجربه خرید یا تعمیر خود را ثبت کنید</h3>
+  <p style="color:#64748b;">نظر شما پس از بررسی و تأیید مدیریت در سایت نمایش داده می‌شود.</p>
+
+  <form id="customerReviewForm">
+    <div class="form-group">
+      <label for="reviewCustomerName">نام شما *</label>
+      <input id="reviewCustomerName" type="text" maxlength="80"
+        placeholder="نام خود را وارد کنید" required>
+    </div>
+
+    <div class="form-group">
+      <label for="reviewCity">شهر</label>
+      <input id="reviewCity" type="text" maxlength="60"
+        placeholder="مثلاً آمل">
+    </div>
+
+    <div class="form-group">
+      <label for="reviewProduct">محصول یا خدمت</label>
+      <input id="reviewProduct" type="text" maxlength="100"
+        placeholder="مثلاً چادر مسافرتی یا تعمیر چادر">
+    </div>
+
+    <div class="form-group">
+      <label for="reviewRating">امتیاز شما *</label>
+      <select id="reviewRating" required>
+        <option value="5">★★★★★ عالی - ۵ ستاره</option>
+        <option value="4">★★★★☆ خوب - ۴ ستاره</option>
+        <option value="3">★★★☆☆ متوسط - ۳ ستاره</option>
+        <option value="2">★★☆☆☆ ضعیف - ۲ ستاره</option>
+        <option value="1">★☆☆☆☆ خیلی ضعیف - ۱ ستاره</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="reviewText">متن نظر شما *</label>
+      <textarea id="reviewText" rows="5" maxlength="1500"
+        placeholder="تجربه خود از خرید یا خدمات ما را بنویسید..."
+        required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn" id="reviewSubmitBtn">
+      ثبت نظر برای بررسی
+    </button>
+
+    <p id="reviewResult" role="status"
+      style="margin-top:15px;text-align:center;font-weight:600;"></p>
+  </form>
+</div>
+<!-- پایان فرم ثبت نظر مشتری -->
+
     <!-- کارت‌های نظرات -->
     <div style="
       display: grid;
@@ -897,5 +957,94 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
  </section>
+  
+<!-- اتصال فرم نظرات به Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+(function () {
+  const REVIEW_SUPABASE_URL =
+    "https://mvvatgwuqhmujgvhwxbt.supabase.co";
+
+  const REVIEW_SUPABASE_KEY =
+    "sb_publishable_N3ZsOvSj6MioK-rxNNxh0w_w9Fd6FEC";
+
+  const reviewClient = window.supabase.createClient(
+    REVIEW_SUPABASE_URL,
+    REVIEW_SUPABASE_KEY
+  );
+
+  const reviewForm = document.getElementById("customerReviewForm");
+  const reviewResult = document.getElementById("reviewResult");
+  const reviewButton = document.getElementById("reviewSubmitBtn");
+
+  if (!reviewForm) return;
+
+  reviewForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const customerName =
+      document.getElementById("reviewCustomerName").value.trim();
+
+    const city =
+      document.getElementById("reviewCity").value.trim();
+
+    const productName =
+      document.getElementById("reviewProduct").value.trim();
+
+    const rating =
+      Number(document.getElementById("reviewRating").value);
+
+    const reviewText =
+      document.getElementById("reviewText").value.trim();
+
+    if (customerName.length < 2 || reviewText.length < 5) {
+      reviewResult.style.color = "#dc2626";
+      reviewResult.textContent =
+        "لطفاً نام و متن نظر را کامل وارد کنید.";
+      return;
+    }
+
+    reviewButton.disabled = true;
+    reviewButton.textContent = "در حال ثبت نظر...";
+    reviewResult.textContent = "";
+
+    const reviewData = {
+      customer_name: customerName,
+      review_text: reviewText,
+      rating: rating,
+      status: "pending"
+    };
+
+    if (city) reviewData.city = city;
+    if (productName) reviewData.product_name = productName;
+
+    try {
+      const { error } = await reviewClient
+        .from("customer_reviews")
+        .insert([reviewData]);
+
+      if (error) throw error;
+
+      reviewResult.style.color = "#15803d";
+      reviewResult.textContent =
+        "نظر شما با موفقیت ثبت شد و پس از تأیید مدیریت منتشر می‌شود.";
+
+      reviewForm.reset();
+
+    } catch (error) {
+      console.error("Review submission error:", error);
+
+      reviewResult.style.color = "#dc2626";
+      reviewResult.textContent =
+        "ثبت نظر انجام نشد. لطفاً دوباره تلاش کنید.";
+    } finally {
+      reviewButton.disabled = false;
+      reviewButton.textContent = "ثبت نظر برای بررسی";
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
