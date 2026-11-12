@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ثبت سفارش و تماس با ما | چادردوزی جزیره J.A.T</title>
-
   <meta name="description" content="ثبت سفارش چادر مسافرتی و برزنتی، تماس با چادردوزی جزیره آمل. تولید و توزیع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق و چادر کامیون.">
   <meta name="robots" content="index, follow">
-
   <link rel="canonical" href="https://chadooor.ir/contact.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    body {
+      font-family: Estedad, Tahoma, sans-serif;
+    }
+
     .contact-page {
       max-width: 1000px;
       margin: 0 auto;
@@ -29,7 +30,7 @@
 
     .page-hero h1 {
       font-size: 2rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: .8rem;
     }
 
     .page-hero p {
@@ -50,7 +51,6 @@
       }
     }
 
-    /* اطلاعات تماس */
     .contact-info {
       background: #f8fafc;
       border-radius: 16px;
@@ -78,12 +78,14 @@
 
     .info-item strong {
       display: block;
-      margin-bottom: 0.25rem;
+      margin-bottom: .25rem;
     }
 
     .info-item a {
       color: #0d9488;
       text-decoration: none;
+      display: inline-block;
+      margin-left: 8px;
     }
 
     .info-item a:hover {
@@ -93,7 +95,7 @@
     .social-buttons {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: .75rem;
       margin-top: 2rem;
     }
 
@@ -101,33 +103,34 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      padding: 0.9rem;
+      gap: .6rem;
+      padding: .9rem;
       border-radius: 12px;
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: transform 0.2s, opacity 0.2s;
+      transition: transform .2s, opacity .2s;
     }
 
     .social-btn:hover {
       transform: translateY(-2px);
-      opacity: 0.95;
+      opacity: .95;
     }
 
     .btn-whatsapp { background: #25D366; }
-    .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .btn-instagram {
+      background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    }
     .btn-telegram { background: #0088cc; }
-    .btn-youtube { background: #FF0000; }
+    .btn-youtube { background: #ff0000; }
     .btn-linktree { background: #39E09B; color: #000; }
 
-    /* فرم تماس */
     .contact-form-box {
       background: white;
       border-radius: 16px;
       padding: 2rem;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,.03);
     }
 
     .contact-form-box h2 {
@@ -141,21 +144,22 @@
 
     .form-group label {
       display: block;
-      margin-bottom: 0.4rem;
+      margin-bottom: .4rem;
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: .95rem;
     }
 
     .form-group input,
     .form-group textarea,
     .form-group select {
       width: 100%;
-      padding: 0.8rem 1rem;
+      padding: .8rem 1rem;
       border: 1px solid #d1d5db;
       border-radius: 10px;
       font-family: inherit;
       font-size: 1rem;
-      transition: border-color 0.2s;
+      box-sizing: border-box;
+      transition: border-color .2s;
     }
 
     .form-group input:focus,
@@ -163,7 +167,7 @@
     .form-group select:focus {
       outline: none;
       border-color: #0d9488;
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+      box-shadow: 0 0 0 3px rgba(13,148,136,.15);
     }
 
     .form-group.error input,
@@ -173,8 +177,8 @@
 
     .error-text {
       color: #dc2626;
-      font-size: 0.85rem;
-      margin-top: 0.3rem;
+      font-size: .85rem;
+      margin-top: .3rem;
       display: none;
     }
 
@@ -189,16 +193,21 @@
       color: white;
       border: none;
       border-radius: 12px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       cursor: pointer;
       font-family: inherit;
-      margin-top: 0.5rem;
-      transition: background 0.2s;
+      margin-top: .5rem;
+      transition: background .2s;
     }
 
     .submit-btn:hover {
       background: #0f766e;
+    }
+
+    .submit-btn:disabled {
+      opacity: .65;
+      cursor: wait;
     }
 
     .form-success {
@@ -214,7 +223,6 @@
       display: block;
     }
 
-    /* نقشه گوگل */
     .map-section {
       margin-top: 3.5rem;
     }
@@ -229,7 +237,7 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
     }
 
     .map-container iframe {
@@ -250,504 +258,486 @@
     .map-actions a {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.4rem;
+      gap: .5rem;
+      padding: .75rem 1.4rem;
       background: #0d9488;
       color: white;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s;
+      font-size: .95rem;
     }
 
-    .map-actions a:hover {
-      background: #0f766e;
+    .testimonials-section {
+      padding: 70px 20px;
+      background: #f7f5f0;
+      direction: rtl;
+    }
+
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .testimonials-heading h2 {
+      font-size: 1.9rem;
+      color: #1a3c34;
+      margin: 0 0 12px;
+    }
+
+    .testimonials-heading p {
+      color: #5a6a63;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .approved-reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+      gap: 20px;
+      margin: 0 auto 40px;
+    }
+
+    .review-loading,
+    .review-empty,
+    .review-error {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #64748b;
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      transition: transform .2s, box-shadow .2s;
+      overflow-wrap: anywhere;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.09);
+    }
+
+    .review-stars {
+      color: #e6b800;
+      font-size: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .review-card-text {
+      line-height: 2;
+      color: #334155;
+      white-space: pre-wrap;
+      margin: 0 0 15px;
+    }
+
+    .review-card-name {
+      display: block;
+      color: #1a3c34;
+      margin-top: 12px;
+    }
+
+    .review-card-details {
+      font-size: 12px;
+      color: #78857e;
+      margin-top: 7px;
+      line-height: 2;
+    }
+
+    .customer-review-form {
+      max-width: 750px;
+      margin: 0 auto 45px;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    }
+
+    .customer-review-form h3 {
+      color: #1a3c34;
+      margin-top: 0;
+    }
+
+    .customer-review-form > p {
+      color: #64748b;
+      line-height: 1.8;
+    }
+
+    .static-testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+      gap: 24px;
+    }
+
+    .static-review {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
+      border: 1px solid #eeeae3;
+    }
+
+    .static-review .stars {
+      color: #e6b800;
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .static-review p {
+      line-height: 1.9;
+      color: #2d3740;
+    }
+
+    .static-review strong {
+      color: #1a3c34;
+    }
+
+    .testimonial-featured {
+      background: #fff;
+      border: 1px solid #eeeae3;
+      border-radius: 16px;
+      padding: 26px;
+      line-height: 2;
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    }
+
+    .testimonial-badge {
+      color: #0f766e;
+      font-weight: 700;
+    }
+
+    .testimonial-stars {
+      color: #e6b800;
+      margin-top: 8px;
+    }
+
+    .review-bottom {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .review-bottom p {
+      color: #5a6a63;
+      font-size: .95rem;
+    }
+
+    .review-whatsapp-link {
+      display: inline-block;
+      background: #1a3c34;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
     }
   </style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="چادردوزی جزیره J.A.T">
-      <span class="brand-mark">
-        <img src="favicon.svg" alt="لوگو چادردوزی جزیره J.A.T" width="45" height="45">
-      </span>
-      <span>چادردوزی جزیره J.A.T</span>
-    </a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="چادردوزی جزیره J.A.T">
+    <span class="brand-mark">
+      <img src="favicon.svg" alt="لوگو چادردوزی جزیره J.A.T" width="45" height="45">
+    </span>
+    <span>چادردوزی جزیره J.A.T</span>
+  </a>
 
-    <nav class="main-nav" aria-label="منوی اصلی">
-      <a href="products.html">محصولات</a>
-      <a href="shop.html">🛒 فروشگاه</a>
-      <a href="services.html">خدمات ما</a>
-      <a href="gallery.html">گالری</a>
-      <a href="about.html">درباره J.A.T</a>
-      <a href="blog.html">مجله سفر</a>
-      <a href="privacy.html">حریم خصوصی</a>
-    </nav>
+  <nav class="main-nav" aria-label="منوی اصلی">
+    <a href="products.html">محصولات</a>
+    <a href="shop.html">🛒 فروشگاه</a>
+    <a href="services.html">خدمات ما</a>
+    <a href="gallery.html">گالری</a>
+    <a href="about.html">درباره J.A.T</a>
+    <a href="blog.html">مجله سفر</a>
+    <a href="privacy.html">حریم خصوصی</a>
+  </nav>
 
-    <a class="cart-link" href="cart.html">
-      🛒 سبد خرید
-      <span id="cartCount">0</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">
-      <i data-lucide="menu"></i>
-    </button>
-  </header>
+  <a class="cart-link" href="cart.html">
+    🛒 سبد خرید
+    <span id="cartCount">0</span>
+  </a>
 
-  <main class="contact-page">
+  <button class="menu-toggle" type="button"
+    aria-label="باز کردن منو" aria-expanded="false">
+    <i data-lucide="menu"></i>
+  </button>
+</header>
 
-    <section class="page-hero">
-      <h1>ثبت سفارش و تماس با ما</h1>
-      <p>تولید و توزیع انواع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق و چادر کامیون</p>
-    </section>
+<main class="contact-page">
 
-    <div class="contact-grid">
+  <section class="page-hero">
+    <h1>ثبت سفارش و تماس با ما</h1>
+    <p>تولید و توزیع انواع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق و چادر کامیون</p>
+  </section>
 
-      <!-- اطلاعات تماس -->
-      <div class="contact-info">
-        <h2>راه‌های ارتباطی</h2>
+  <div class="contact-grid">
 
-        <div class="info-item">
-          <div class="icon">📱</div>
-          <div>
-            <strong>واتساپ و تماس</strong>
-            <a href="https://wa.me/989118031241" target="_blank" rel="noopener">989118031241</a>
-            <a href="https://wa.me/989158017134" target="_blank" rel="noopener">989158017134</a>
+    <div class="contact-info">
+      <h2>راه‌های ارتباطی</h2>
 
-          </div>
+      <div class="info-item">
+        <div class="icon">📱</div>
+        <div>
+          <strong>واتساپ و تماس</strong>
+          <a href="https://wa.me/989118031241" target="_blank" rel="noopener">989118031241</a>
+          <br>
+          <a href="https://wa.me/989158017134" target="_blank" rel="noopener">989158017134</a>
         </div>
+      </div>
 
-        <div class="info-item">
-          <div class="icon">📍</div>
-          <div>
-            <strong>آدرس کارگاه</strong>
-            <span>مازندران، آمل، جاده هراز، روبروی پلیس‌راه محمدآباد</span>
-            <br>
-            <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener" style="font-size: 0.9rem; margin-top: 4px; display: inline-block;">
-              مشاهده روی نقشه گوگل
-            </a>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="icon">🏭</div>
-          <div>
-            <strong>فعالیت ما</strong>
-            <span>تولید و توزیع انواع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق، چادر کامیون و نیسان</span>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="icon">⏰</div>
-          <div>
-            <strong>ساعات پاسخگویی</strong>
-            <span>همه‌روزه از 8 صبح تا 22 شب</span>
-          </div>
-        </div>
-
-        <div class="social-buttons">
-          <a href="https://wa.me/989118031241" target="_blank" rel="noopener" class="social-btn btn-whatsapp">
-            گفتگو در واتساپ
-          </a>
-
-          <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener" class="social-btn btn-instagram">
-            اینستاگرام @chadoor_
-          </a>
-
-          <a href="https://instagram.com/chadortent.ir" target="_blank" rel="noopener" class="social-btn btn-instagram">
-            اینستاگرام @chadortent.ir
-          </a>
-        
-          <a href="https://t.me/gattent" target="_blank" rel="noopener" class="social-btn btn-telegram">
-            تلگرام
-          </a>
-
-          <a href="https://youtube.com/@chadoortent" target="_blank" rel="noopener" class="social-btn btn-youtube">
-            یوتیوب
-          </a>
-
-          <a href="https://linktr.ee/chadoor" target="_blank" rel="noopener" class="social-btn btn-linktree">
-            لینک‌تری (همه لینک‌ها)
+      <div class="info-item">
+        <div class="icon">📍</div>
+        <div>
+          <strong>آدرس کارگاه</strong>
+          <span>مازندران، آمل، جاده هراز، روبروی پلیس‌راه محمدآباد</span>
+          <br>
+          <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6"
+             target="_blank" rel="noopener" style="font-size:.9rem;">
+            مشاهده روی نقشه گوگل
           </a>
         </div>
       </div>
 
-      <!-- فرم تماس -->
-      <div class="contact-form-box">
-        <h2>فرم ثبت سفارش / پیام</h2>
-
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">نام و نام خانوادگی *</label>
-            <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required>
-            <div class="error-text">لطفاً نام خود را وارد کنید (حداقل ۳ حرف)</div>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">شماره موبایل *</label>
-            <input type="tel" id="phone" name="phone" placeholder="09118031241" required>
-            <div class="error-text">شماره موبایل معتبر وارد کنید (مثال: 09118031241)</div>
-          </div>
-
-          <div class="form-group">
-            <label for="subject">موضوع</label>
-            <select id="subject" name="subject">
-              <option value="سفارش چادر مسافرتی">سفارش چادر مسافرتی</option>
-              <option value="سفارش چادر برزنتی">سفارش چادر برزنتی</option>
-              <option value="استعلام قیمت">استعلام قیمت</option>
-              <option value="تعمیر چادر">تعمیر چادر</option>
-              <option value="پشه‌بند">سفارش پشه‌بند</option>
-              <option value="چادر کامیون / نیسان">چادر کامیون / نیسان</option>
-              <option value="سایر">سایر موارد</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">پیام شما *</label>
-            <textarea id="message" name="message" rows="5" placeholder="توضیحات سفارش یا سوال خود را بنویسید..." required></textarea>
-            <div class="error-text">لطفاً پیام خود را بنویسید (حداقل ۱۰ حرف)</div>
-          </div>
-
-          <button type="submit" class="submit-btn" id="submitBtn">
-            ارسال پیام از طریق واتساپ
-          </button>
-        </form>
-
-        <div class="form-success" id="formSuccess">
-          <h3>پیام شما آماده ارسال است!</h3>
-          <p>در حال انتقال به واتساپ...</p>
+      <div class="info-item">
+        <div class="icon">🏭</div>
+        <div>
+          <strong>فعالیت ما</strong>
+          <span>تولید و توزیع انواع چادر مسافرتی، برزنت، سایبان، فایبر، آلاچیق، چادر کامیون و نیسان</span>
         </div>
       </div>
 
-    </div>
-
-    <!-- نقشه گوگل تعاملی -->
-    <section class="map-section">
-      <h2>موقعیت کارگاه روی نقشه</h2>
-
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.833919279709!2d52.357197924653825!3d36.37106137237263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8fbf0008b25807%3A0x6723df08267da926!2z2obYp9iv2LHYr9mI2LLbjCDYrNiy24zYsdmH!5e1!3m2!1sfa!2sus!4v1788615803329!5m2!1sfa!2sus" 
-          width="600" 
-          height="450" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="strict-origin-when-cross-origin"
-          title="موقعیت چادردوزی جزیره J.A.T">
-        </iframe>
-      </div>
-
-      <div class="map-actions">
-        <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener">
-          📍 باز کردن در گوگل مپ
-        </a>
-        <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener">
-          🧭 مسیریابی
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ==================== بخش نظرات مشتریان ==================== -->
-<section class="testimonials-section" style="
-  padding: 70px 20px;
-  background-color: #f7f5f0;
-  direction: rtl;
-  font-family: Vazirmatn, Tahoma, sans-serif;
-">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    
-    <!-- عنوان بخش -->
-    <div style="text-align: center; margin-bottom: 50px;">
-      <h2 style="
-        font-size: 1.9rem;
-        font-weight: 700;
-        color: #1a3c34;
-        margin: 0 0 12px 0;
-      ">نظر مشتریان ما</h2>
-      <p style="
-        color: #5a6a63;
-        font-size: 1.05rem;
-        margin: 0;
-      ">تجربه واقعی کسانی که از چادردوزی جزیره خرید یا تعمیر کرده‌اند</p>
-    </div>
-
-<!-- فرم ثبت نظر مشتری -->
-<div class="customer-review-form" style="
-  max-width:750px;
-  margin:0 auto 45px;
-  padding:28px;
-  background:#fff;
-  border:1px solid #e5e7eb;
-  border-radius:16px;
-  box-shadow:0 5px 18px rgba(0,0,0,.05);
-">
-  <h3 style="color:#1a3c34;margin-top:0;">تجربه خرید یا تعمیر خود را ثبت کنید</h3>
-  <p style="color:#64748b;">نظر شما پس از بررسی و تأیید مدیریت در سایت نمایش داده می‌شود.</p>
-
-  <form id="customerReviewForm">
-    <div class="form-group">
-      <label for="reviewCustomerName">نام شما *</label>
-      <input id="reviewCustomerName" type="text" maxlength="80"
-        placeholder="نام خود را وارد کنید" required>
-    </div>
-
-    <div class="form-group">
-      <label for="reviewCity">شهر</label>
-      <input id="reviewCity" type="text" maxlength="60"
-        placeholder="مثلاً آمل">
-    </div>
-
-    <div class="form-group">
-      <label for="reviewProduct">محصول یا خدمت</label>
-      <input id="reviewProduct" type="text" maxlength="100"
-        placeholder="مثلاً چادر مسافرتی یا تعمیر چادر">
-    </div>
-
-    <div class="form-group">
-      <label for="reviewRating">امتیاز شما *</label>
-      <select id="reviewRating" required>
-        <option value="5">★★★★★ عالی - ۵ ستاره</option>
-        <option value="4">★★★★☆ خوب - ۴ ستاره</option>
-        <option value="3">★★★☆☆ متوسط - ۳ ستاره</option>
-        <option value="2">★★☆☆☆ ضعیف - ۲ ستاره</option>
-        <option value="1">★☆☆☆☆ خیلی ضعیف - ۱ ستاره</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="reviewText">متن نظر شما *</label>
-      <textarea id="reviewText" rows="5" maxlength="1500"
-        placeholder="تجربه خود از خرید یا خدمات ما را بنویسید..."
-        required></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn" id="reviewSubmitBtn">
-      ثبت نظر برای بررسی
-    </button>
-
-    <p id="reviewResult" role="status"
-      style="margin-top:15px;text-align:center;font-weight:600;"></p>
-  </form>
-</div>
-<!-- پایان فرم ثبت نظر مشتری -->
-
-    <!-- کارت‌های نظرات -->
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    ">
-
-      <!-- نظر ۱ -->
-      <div style="
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 28px 26px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        border: 1px solid #eeeae3;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      " onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.1)'" 
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.06)'">
-        
-        <div style="color: #e6b800; font-size: 1.15rem; margin-bottom: 14px; letter-spacing: 1px;">
-          ★★★★★
-        </div>
-        
-        <p style="
-          font-size: 0.98rem;
-          line-height: 1.85;
-          color: #2d3740;
-          margin: 0 0 20px 0;
-        ">«چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز کاملاً سالم رسید. کیفیت عالی.»</p>
-        
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="
-            width: 42px;
-            height: 42px;
-            background: #1a3c34;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-          ">a</div>
-          <div>
-            <div style="font-weight: 600; color: #1a3c34; font-size: 0.95rem;">amir 0917***7486از شیراز</div>
-            <div style="font-size: 0.82rem; color: #7a8a83;">خریدار چادر برزنتی</div>
-          </div>
+      <div class="info-item">
+        <div class="icon">⏰</div>
+        <div>
+          <strong>ساعات پاسخگویی</strong>
+          <span>همه‌روزه از 8 صبح تا 22 شب</span>
         </div>
       </div>
 
-      <!-- نظر ۲ -->
-      <div style="
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 28px 26px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        border: 1px solid #eeeae3;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      " onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.1)'" 
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.06)'">
-        
-        <div style="color: #e6b800; font-size: 1.15rem; margin-bottom: 14px; letter-spacing: 1px;">
-          ★★★★★
-        </div>
-        
-        <p style="
-          font-size: 0.98rem;
-          line-height: 1.85;
-          color: #2d3740;
-          margin: 0 0 20px 0;
-        ">«چادرم از چند جا پاره شده بود. تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود. پیشنهاد می‌کنم.»</p>
-        
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="
-            width: 42px;
-            height: 42px;
-            background: #1a3c34;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-          ">f</div>
-          <div>
-            <div style="font-weight: 600; color: #1a3c34; font-size: 0.95rem;">farahnaz - 09300***985 از تهران</div>
-            <div style="font-size: 0.82rem; color: #7a8a83;">خدمات تعمیر چادر</div>
-          </div>
-        </div>
+      <div class="social-buttons">
+        <a href="https://wa.me/989118031241" target="_blank" rel="noopener" class="social-btn btn-whatsapp">گفتگو در واتساپ</a>
+        <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener" class="social-btn btn-instagram">اینستاگرام @chadoor_</a>
+        <a href="https://instagram.com/chadortent.ir" target="_blank" rel="noopener" class="social-btn btn-instagram">اینستاگرام @chadortent.ir</a>
+        <a href="https://t.me/gattent" target="_blank" rel="noopener" class="social-btn btn-telegram">تلگرام</a>
+        <a href="https://youtube.com/@chadoortent" target="_blank" rel="noopener" class="social-btn btn-youtube">یوتیوب</a>
+        <a href="https://linktr.ee/chadoor" target="_blank" rel="noopener" class="social-btn btn-linktree">لینک‌تری (همه لینک‌ها)</a>
       </div>
+    </div>
 
-      <!-- نظر ۳ -->
-      <div style="
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 28px 26px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        border: 1px solid #eeeae3;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      " onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.1)'" 
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.06)'">
-        
-        <div style="color: #e6b800; font-size: 1.15rem; margin-bottom: 14px; letter-spacing: 1px;">
-          ★★★★★
-        </div>
-        
-        <p style="
-          font-size: 0.98rem;
-          line-height: 1.85;
-          color: #2d3740;
-          margin: 0 0 20px 0;
-        ">«چادر کودک طرح سگ سفارش دادم. خیلی قشنگ و محکم بود. دخترم عاشقش شد. ارسال هم سریع انجام شد.»</p>
-        
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="
-            width: 42px;
-            height: 42px;
-            background: #1a3c34;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-          ">a</div>
-          <div>
-            <div style="font-weight: 600; color: #1a3c34; font-size: 0.95rem;">arash - 0993***4106 از ساری</div>
-            <div style="font-size: 0.82rem; color: #7a8a83;">خریدار چادر کودک</div>
-          </div>
-        </div>
-      </div>
+    <div class="contact-form-box">
+      <h2>فرم ثبت سفارش / پیام</h2>
 
-      <!-- نظر ۴ (اختیاری) -->
-      <div style="
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 28px 26px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-        border: 1px solid #eeeae3;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      " onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.1)'" 
-         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.06)'">
-        
-        <div style="color: #e6b800; font-size: 1.15rem; margin-bottom: 14px; letter-spacing: 1px;">
-          ★★★★★
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">نام و نام خانوادگی *</label>
+          <input type="text" id="name" name="name"
+            placeholder="نام خود را وارد کنید" required>
+          <div class="error-text">لطفاً نام خود را وارد کنید (حداقل ۳ حرف)</div>
         </div>
-        
-        <p style="
-          font-size: 0.98rem;
-          line-height: 1.85;
-          color: #2d3740;
-          margin: 0 0 20px 0;
-        ">«برای باغ‌مون چادر برزنتی سفارشی دوختن. دقیقاً همون ابعادی که می‌خواستیم. کار تمیز و حرفه‌ای.»</p>
-        
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="
-            width: 42px;
-            height: 42px;
-            background: #1a3c34;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-          ">k</div>
-          <div>
-            <div style="font-weight: 600; color: #1a3c34; font-size: 0.95rem;">korosh - 0930***2004 از آمل</div>
-            <div style="font-size: 0.82rem; color: #7a8a83;">سفارش سفارشی</div>
-          </div>
+
+        <div class="form-group">
+          <label for="phone">شماره موبایل *</label>
+          <input type="tel" id="phone" name="phone"
+            placeholder="09118031241" required>
+          <div class="error-text">شماره موبایل معتبر وارد کنید (مثال: 09118031241)</div>
         </div>
+
+        <div class="form-group">
+          <label for="subject">موضوع</label>
+          <select id="subject" name="subject">
+            <option value="سفارش چادر مسافرتی">سفارش چادر مسافرتی</option>
+            <option value="سفارش چادر برزنتی">سفارش چادر برزنتی</option>
+            <option value="استعلام قیمت">استعلام قیمت</option>
+            <option value="تعمیر چادر">تعمیر چادر</option>
+            <option value="پشه‌بند">سفارش پشه‌بند</option>
+            <option value="چادر کامیون / نیسان">چادر کامیون / نیسان</option>
+            <option value="سایر">سایر موارد</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">پیام شما *</label>
+          <textarea id="message" name="message" rows="5"
+            placeholder="توضیحات سفارش یا سوال خود را بنویسید..." required></textarea>
+          <div class="error-text">لطفاً پیام خود را بنویسید (حداقل ۱۰ حرف)</div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          ارسال پیام از طریق واتساپ
+        </button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <h3>پیام شما آماده ارسال است!</h3>
+        <p>در حال انتقال به واتساپ...</p>
       </div>
- <blockquote class="testimonial-featured">
+    </div>
+
+  </div>
+
+  <section class="map-section">
+    <h2>موقعیت کارگاه روی نقشه</h2>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.833919279709!2d52.357197924653825!3d36.37106137237263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8fbf0008b25807%3A0x6723df08267da926!2z2obYp9iv2LHYr9mI2LLbjCDYrNiy24zYsdmH!5e1!3m2!1sfa!2sus!4v1788615803329!5m2!1sfa!2sus"
+        width="600" height="450"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="موقعیت چادردوزی جزیره J.A.T">
+      </iframe>
+    </div>
+
+    <div class="map-actions">
+      <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener">📍 باز کردن در گوگل مپ</a>
+      <a href="https://maps.app.goo.gl/tmTA6vygLnNnsPhe6" target="_blank" rel="noopener">🧭 مسیریابی</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- بخش نظرات مشتریان -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+
+    <div class="testimonials-heading">
+      <h2>نظر مشتریان ما</h2>
+      <p>تجربه واقعی کسانی که از چادردوزی جزیره خرید یا تعمیر کرده‌اند</p>
+    </div>
+
+    <!-- نظرات واقعی تأییدشده از پایگاه داده -->
+    <div id="approvedReviews" class="approved-reviews" aria-live="polite">
+      <p class="review-loading">در حال دریافت نظرات مشتریان...</p>
+    </div>
+
+    <!-- فرم ثبت نظر مشتری -->
+    <div class="customer-review-form">
+      <h3>تجربه خرید یا تعمیر خود را ثبت کنید</h3>
+      <p>نظر شما پس از بررسی و تأیید مدیریت در سایت نمایش داده می‌شود.</p>
+
+      <form id="customerReviewForm">
+        <div class="form-group">
+          <label for="reviewCustomerName">نام شما *</label>
+          <input id="reviewCustomerName" type="text"
+            maxlength="80" placeholder="نام خود را وارد کنید" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reviewCity">شهر</label>
+          <input id="reviewCity" type="text"
+            maxlength="60" placeholder="مثلاً آمل">
+        </div>
+
+        <div class="form-group">
+          <label for="reviewProduct">محصول یا خدمت</label>
+          <input id="reviewProduct" type="text"
+            maxlength="100" placeholder="مثلاً چادر مسافرتی یا تعمیر چادر">
+        </div>
+
+        <div class="form-group">
+          <label for="reviewRating">امتیاز شما *</label>
+          <select id="reviewRating" required>
+            <option value="5">★★★★★ عالی - ۵ ستاره</option>
+            <option value="4">★★★★☆ خوب - ۴ ستاره</option>
+            <option value="3">★★★☆☆ متوسط - ۳ ستاره</option>
+            <option value="2">★★☆☆☆ ضعیف - ۲ ستاره</option>
+            <option value="1">★☆☆☆☆ خیلی ضعیف - ۱ ستاره</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reviewText">متن نظر شما *</label>
+          <textarea id="reviewText" rows="5" maxlength="1500"
+            placeholder="تجربه خود از خرید یا خدمات ما را بنویسید..."
+            required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="reviewSubmitBtn">
+          ثبت نظر برای بررسی
+        </button>
+
+        <p id="reviewResult" role="status"
+          aria-live="polite"
+          style="margin-top:15px;text-align:center;font-weight:600;"></p>
+      </form>
+    </div>
+
+    <!-- نظرات ثابت قبلی -->
+    <div class="static-testimonials">
+
+      <article class="static-review">
+        <div class="stars">★★★★★</div>
+        <p>«چادر ۸ نفره برزنتی سفارش دادم. دوخت خیلی تمیز و محکم بود. از آمل تا شیراز کاملاً سالم رسید. کیفیت عالی.»</p>
+        <strong>amir 0917***7486 از شیراز</strong>
+        <div>خریدار چادر برزنتی</div>
+      </article>
+
+      <article class="static-review">
+        <div class="stars">★★★★★</div>
+        <p>«چادرم از چند جا پاره شده بود. تعمیر کردن و مثل روز اول شد. قیمت هم منصفانه بود. پیشنهاد می‌کنم.»</p>
+        <strong>farahnaz - 09300***985 از تهران</strong>
+        <div>خدمات تعمیر چادر</div>
+      </article>
+
+      <article class="static-review">
+        <div class="stars">★★★★★</div>
+        <p>«چادر کودک طرح سگ سفارش دادم. خیلی قشنگ و محکم بود. دخترم عاشقش شد. ارسال هم سریع انجام شد.»</p>
+        <strong>arash - 0993***4106 از ساری</strong>
+        <div>خریدار چادر کودک</div>
+      </article>
+
+      <article class="static-review">
+        <div class="stars">★★★★★</div>
+        <p>«برای باغ‌مون چادر برزنتی سفارشی دوختن. دقیقاً همون ابعادی که می‌خواستیم. کار تمیز و حرفه‌ای.»</p>
+        <strong>korosh - 0930***2004 از آمل</strong>
+        <div>سفارش سفارشی</div>
+      </article>
+
+      <blockquote class="testimonial-featured">
         <div class="testimonial-badge">تجربه خرید عمده</div>
         <div class="testimonial-stars">★★★★★</div>
         <p>
-          «خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف کودک، نوجوان، ۴ نفره، ۶ نفره، ۸ نفره و ۱۲ نفره داشتیم؛
-          در مجموع حدود ۲۷۵ عدد. همه چادرها عالی بودند. از تیم J.A.T چادردوزی جزیره بابت کیفیت محصولات
-          و پیگیری خوبشان تشکر می‌کنیم. این اولین خرید ما بود و حالا مشتری همیشگی این مجموعه شده‌ایم.»
+          «خرید چادر مسافرتی به‌صورت عمده در سایزهای مختلف کودک، نوجوان،
+          ۴ نفره، ۶ نفره، ۸ نفره و ۱۲ نفره داشتیم؛ در مجموع حدود ۲۷۵ عدد.
+          همه چادرها عالی بودند. از تیم J.A.T چادردوزی جزیره بابت کیفیت
+          محصولات و پیگیری خوبشان تشکر می‌کنیم. این اولین خرید ما بود و
+          حالا مشتری همیشگی این مجموعه شده‌ایم.»
         </p>
-        <cite style="display:block; margin-top:14px; font-weight:700; color:var(--primary);">
-          اشکان-094****0430 — ارومیه<br>سفارش عمده حدود ۲۷۵ عدد
+        <cite style="display:block;margin-top:14px;font-weight:700;color:#1a3c34;">
+          اشکان-094****0430 — ارومیه<br>
+          سفارش عمده حدود ۲۷۵ عدد
         </cite>
       </blockquote>
-    </div>
- 
+
     </div>
 
-    <!-- متن پایین بخش -->
-    <div style="text-align: center; margin-top: 45px;">
-      <p style="color: #5a6a63; font-size: 0.95rem; margin-bottom: 18px;">
-        شما هم تجربه خرید یا تعمیر از ما دارید؟ نظرتون برامون ارزشمنده
-      </p>
-      <a href="https://wa.me/989118031241?text=درود، می‌خوام نظرم رو در مورد خرید/تعمیر ثبت کنم" 
-         style="
-           display: inline-block;
-           background: #1a3c34;
-           color: white;
-           padding: 12px 28px;
-           border-radius: 50px;
-           text-decoration: none;
-           font-size: 0.95rem;
-           font-weight: 500;
-           transition: background 0.2s;
-         " 
-         onmouseover="this.style.background='#14302a'" 
-         onmouseout="this.style.background='#1a3c34'">
+    <div class="review-bottom">
+      <p>شما هم تجربه خرید یا تعمیر از ما دارید؟ نظرتون برامون ارزشمنده</p>
+      <a class="review-whatsapp-link"
+        href="https://wa.me/989118031241?text=درود،%20می‌خوام%20نظرم%20رو%20در%20مورد%20خرید%2Fتعمیر%20ثبت%20کنم"
+        target="_blank" rel="noopener">
         ارسال نظر از طریق واتساپ
       </a>
     </div>
+
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-top">
@@ -765,64 +755,16 @@
     <a href="gallery.html">گالری</a>
     <a href="about.html">درباره ما</a>
     <a href="blog.html">مجله سفر</a>
-    <a href="contact.html">تماس </a>
+    <a href="contact.html">تماس</a>
   </nav>
 
   <div class="social-links" aria-label="شبکه‌های اجتماعی">
-    <a href="https://wa.me/989118031241"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="واتساپ" title="واتساپ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.15 1.6 5.96L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.88-5.33 11.88-11.88a11.8 11.8 0 0 0-3.47-8.44ZM12.1 21.78h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 0 1-1.51-5.28c0-5.45 4.43-9.88 9.88-9.88a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
-      </svg>
-    </a>
-
-    <a href="https://instagram.com/chadoor_"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="اینستاگرام" title="اینستاگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-      </svg>
-    </a>
-
-    <a href="https://t.me/GATTENT"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="تلگرام" title="تلگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M22.4 2.6 19 21c-.25 1.3-.95 1.6-1.92 1l-5.3-3.9-2.56 2.46c-.28.28-.52.52-1.06.52l.38-5.4L18.36 6.9c.4-.38-.09-.59-.62-.21L6.1 14.2.9 12.57c-1.13-.36-1.15-1.13.24-1.68L21.48 3c.94-.35 1.76.23.92-.4Z"/>
-      </svg>
-    </a>
-
-    <a href="https://x.com/korosh_ariaie"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="ایکس" title="ایکس">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.35L5.62 22H2.5l7.25-8.29L1.8 2h6.4l4.43 6.77L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.4L17.8 20Z"/>
-      </svg>
-    </a>
-
-    <a href="https://instagram.com/chadortent.ir"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="اینستاگرام" title="اینستاگرام">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-      </svg>
-    </a>
-    <a href="https://facebook.com/travel0tent"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="فیسبوک" title="فیسبوک">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.93.26-1.56 1.6-1.56h1.7V4.14A22 22 0 0 0 14.32 4c-2.46 0-4.14 1.5-4.14 4.26v2.34H7.4v3.2h2.78V22h3.32Z"/>
-      </svg>
-    </a>
-
-    <a href="https://youtube.com/@chadoortent"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="یوتیوب" title="یوتیوب">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.55 3.56 12 3.56 12 3.56s-7.55 0-9.4.52A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12c1.85.52 9.4.52 9.4.52s7.55 0 9.4-.52a3 3 0 0 0 2.1-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
-      </svg>
-    </a>
+    <a href="https://wa.me/989118031241" target="_blank" rel="noopener noreferrer" aria-label="واتساپ" title="واتساپ">واتساپ</a>
+    <a href="https://instagram.com/chadoor_" target="_blank" rel="noopener noreferrer" aria-label="اینستاگرام" title="اینستاگرام">اینستاگرام</a>
+    <a href="https://t.me/GATTENT" target="_blank" rel="noopener noreferrer" aria-label="تلگرام" title="تلگرام">تلگرام</a>
+    <a href="https://x.com/korosh_ariaie" target="_blank" rel="noopener noreferrer" aria-label="ایکس" title="ایکس">X</a>
+    <a href="https://facebook.com/travel0tent" target="_blank" rel="noopener noreferrer" aria-label="فیسبوک" title="فیسبوک">فیسبوک</a>
+    <a href="https://youtube.com/@chadoortent" target="_blank" rel="noopener noreferrer" aria-label="یوتیوب" title="یوتیوب">یوتیوب</a>
   </div>
 
   <div class="copyright">
@@ -831,7 +773,225 @@
   </div>
 </footer>
 
+<!-- دکمه شناور واتساپ -->
+<a
+  href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
+  class="floating-whatsapp"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="مشاوره از طریق واتساپ"
+  title="گفتگو در واتساپ">
+  <span>واتساپ | تیم پشتیبانی</span>
+</a>
+
+<!-- کتابخانه آیکون‌ها -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- فایل اصلی سایت؛ فقط یک بار -->
 <script src="script.js"></script>
+
+<!-- کتابخانه Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  /* اتصال به پروژه Supabase */
+  const REVIEW_SUPABASE_URL =
+    "https://mvvatgwuqhmujgvhwxbt.supabase.co";
+
+  const REVIEW_SUPABASE_KEY =
+    "sb_publishable_N3ZsOvSj6MioK-rxNNxh0w_w9Fd6FEC";
+
+  if (!window.supabase) {
+    console.error("Supabase library was not loaded.");
+    return;
+  }
+
+  const reviewClient = window.supabase.createClient(
+    REVIEW_SUPABASE_URL,
+    REVIEW_SUPABASE_KEY
+  );
+
+  const reviewForm = document.getElementById("customerReviewForm");
+  const reviewResult = document.getElementById("reviewResult");
+  const reviewButton = document.getElementById("reviewSubmitBtn");
+  const approvedReviews = document.getElementById("approvedReviews");
+
+  /* نمایش نظراتی که مدیر تأیید کرده است */
+  async function loadApprovedReviews() {
+    if (!approvedReviews) return;
+
+    approvedReviews.replaceChildren();
+
+    const loading = document.createElement("p");
+    loading.className = "review-loading";
+    loading.textContent = "در حال دریافت نظرات مشتریان...";
+    approvedReviews.appendChild(loading);
+
+    const { data, error } = await reviewClient
+      .from("customer_reviews")
+      .select("customer_name, city, product_name, rating, review_text, created_at")
+      .eq("status", "approved")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Loading reviews error:", error);
+      approvedReviews.replaceChildren();
+
+      const errorMessage = document.createElement("p");
+      errorMessage.className = "review-error";
+      errorMessage.textContent =
+        "دریافت نظرات در حال حاضر امکان‌پذیر نیست.";
+      approvedReviews.appendChild(errorMessage);
+      return;
+    }
+
+    approvedReviews.replaceChildren();
+
+    if (!data || data.length === 0) {
+      const emptyMessage = document.createElement("p");
+      emptyMessage.className = "review-empty";
+      emptyMessage.textContent =
+        "هنوز نظری برای نمایش تأیید نشده است.";
+      approvedReviews.appendChild(emptyMessage);
+      return;
+    }
+
+    data.forEach(function (review) {
+      const card = document.createElement("article");
+      card.className = "review-card";
+
+      const stars = document.createElement("div");
+      stars.className = "review-stars";
+
+      const rating = Math.max(
+        1,
+        Math.min(5, Math.round(Number(review.rating) || 5))
+      );
+
+      stars.textContent =
+        "★".repeat(rating) + "☆".repeat(5 - rating);
+
+      const text = document.createElement("p");
+      text.className = "review-card-text";
+      text.textContent = review.review_text || "";
+
+      const name = document.createElement("strong");
+      name.className = "review-card-name";
+      name.textContent = review.customer_name || "مشتری";
+
+      const details = document.createElement("div");
+      details.className = "review-card-details";
+
+      let dateText = "";
+      if (review.created_at) {
+        const date = new Date(review.created_at);
+        if (!Number.isNaN(date.getTime())) {
+          dateText = date.toLocaleDateString("fa-IR");
+        }
+      }
+
+      const detailParts = [];
+
+      if (review.city) {
+        detailParts.push("شهر: " + review.city);
+      }
+
+      if (review.product_name) {
+        detailParts.push("محصول یا خدمت: " + review.product_name);
+      }
+
+      if (dateText) {
+        detailParts.push("تاریخ: " + dateText);
+      }
+
+      details.textContent = detailParts.join(" | ");
+
+      card.append(stars, text, name, details);
+      approvedReviews.appendChild(card);
+    });
+  }
+
+  /* ثبت نظر مشتری با وضعیت انتظار تأیید */
+  if (reviewForm) {
+    reviewForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const customerName =
+        document.getElementById("reviewCustomerName").value.trim();
+
+      const city =
+        document.getElementById("reviewCity").value.trim();
+
+      const productName =
+        document.getElementById("reviewProduct").value.trim();
+
+      const rating =
+        Number(document.getElementById("reviewRating").value);
+
+      const reviewText =
+        document.getElementById("reviewText").value.trim();
+
+      if (customerName.length < 2 || reviewText.length < 5) {
+        reviewResult.style.color = "#dc2626";
+        reviewResult.textContent =
+          "لطفاً نام و متن نظر را کامل وارد کنید.";
+        return;
+      }
+
+      if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+        reviewResult.style.color = "#dc2626";
+        reviewResult.textContent = "لطفاً امتیاز معتبر انتخاب کنید.";
+        return;
+      }
+
+      reviewButton.disabled = true;
+      reviewButton.textContent = "در حال ثبت نظر...";
+      reviewResult.textContent = "";
+
+      const reviewData = {
+        customer_name: customerName,
+        review_text: reviewText,
+        rating: rating,
+        status: "pending"
+      };
+
+      if (city) reviewData.city = city;
+      if (productName) reviewData.product_name = productName;
+
+      try {
+        const { error } = await reviewClient
+          .from("customer_reviews")
+          .insert([reviewData]);
+
+        if (error) throw error;
+
+        reviewResult.style.color = "#15803d";
+        reviewResult.textContent =
+          "نظر شما با موفقیت ثبت شد و پس از تأیید مدیریت در سایت نمایش داده می‌شود.";
+
+        reviewForm.reset();
+
+      } catch (error) {
+        console.error("Review submission error:", error);
+
+        reviewResult.style.color = "#dc2626";
+        reviewResult.textContent =
+          "ثبت نظر انجام نشد. لطفاً چند دقیقه دیگر دوباره تلاش کنید.";
+      } finally {
+        reviewButton.disabled = false;
+        reviewButton.textContent = "ثبت نظر برای بررسی";
+      }
+    });
+  }
+
+  /* دریافت نظرات هنگام باز شدن صفحه */
+  loadApprovedReviews();
+
+})();
+</script>
 
 <!-- اطلاعات کسب‌وکار برای موتورهای جست‌وجو -->
 <script type="application/ld+json">
@@ -850,200 +1010,6 @@
     "addressCountry": "IR"
   }
 }
-</script>
-
-<!-- دکمه شناور واتساپ -->
-<a
-  href="https://wa.me/989118031241?text=%D8%AF%D8%B1%D9%88%D8%AF%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%DA%86%D8%A7%D8%AF%D8%B1%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B1%D9%85"
-  class="floating-whatsapp"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="مشاوره از طریق واتساپ"
-  title="گفتگو در واتساپ">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-  </svg>
-  <span>تیم پشتیبانی</span>
-</a>
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <script>
-    // شمارنده سبد خرید
-    let cart = [];
-    try {
-      cart = JSON.parse(localStorage.getItem("chadoor_cart")) || [];
-    } catch (e) {}
-
-    function updateCartCount() {
-      const count = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
-      const el = document.getElementById("cartCount");
-      if (el) el.innerText = count;
-    }
-    updateCartCount();
-
-    // اعتبارسنجی و ارسال فرم
-    const form = document.getElementById("contactForm");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      let isValid = true;
-
-      // نام
-      const name = document.getElementById("name");
-      const nameGroup = name.closest(".form-group");
-      if (name.value.trim().length < 3) {
-        nameGroup.classList.add("error");
-        isValid = false;
-      } else {
-        nameGroup.classList.remove("error");
-      }
-
-      // موبایل
-      const phone = document.getElementById("phone");
-      const phoneGroup = phone.closest(".form-group");
-      const phoneRegex = /^09\d{9}$/;
-      if (!phoneRegex.test(phone.value.trim())) {
-        phoneGroup.classList.add("error");
-        isValid = false;
-      } else {
-        phoneGroup.classList.remove("error");
-      }
-
-      // پیام
-      const message = document.getElementById("message");
-      const messageGroup = message.closest(".form-group");
-      if (message.value.trim().length < 10) {
-        messageGroup.classList.add("error");
-        isValid = false;
-      } else {
-        messageGroup.classList.remove("error");
-      }
-
-      if (!isValid) return;
-
-      // ساخت پیام واتساپ
-      const subject = document.getElementById("subject").value;
-      const text = `سلام، از صفحه تماس سایت پیام دارم:\n\n` +
-                   `👤 نام: ${name.value.trim()}\n` +
-                   `📱 موبایل: ${phone.value.trim()}\n` +
-                   `📋 موضوع: ${subject}\n\n` +
-                   `💬 پیام:\n${message.value.trim()}`;
-
-      // نمایش پیام موفقیت
-      form.style.display = "none";
-      document.getElementById("formSuccess").classList.add("show");
-
-      // باز کردن واتساپ
-      setTimeout(() => {
-        window.open(
-          `https://wa.me/989118031241?text=${encodeURIComponent(text)}`,
-          "_blank"
-        );
-      }, 600);
-    });
-
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-  </script>
-
-  <script src="script.js"></script>
-
-  </div>
-</section>
-  </footer>
-
-  <script src="https://unpkg.com/lucide@latest"></script>
-
- </section>
-  
-<!-- اتصال فرم نظرات به Supabase -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-(function () {
-  const REVIEW_SUPABASE_URL =
-    "https://mvvatgwuqhmujgvhwxbt.supabase.co";
-
-  const REVIEW_SUPABASE_KEY =
-    "sb_publishable_N3ZsOvSj6MioK-rxNNxh0w_w9Fd6FEC";
-
-  const reviewClient = window.supabase.createClient(
-    REVIEW_SUPABASE_URL,
-    REVIEW_SUPABASE_KEY
-  );
-
-  const reviewForm = document.getElementById("customerReviewForm");
-  const reviewResult = document.getElementById("reviewResult");
-  const reviewButton = document.getElementById("reviewSubmitBtn");
-
-  if (!reviewForm) return;
-
-  reviewForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const customerName =
-      document.getElementById("reviewCustomerName").value.trim();
-
-    const city =
-      document.getElementById("reviewCity").value.trim();
-
-    const productName =
-      document.getElementById("reviewProduct").value.trim();
-
-    const rating =
-      Number(document.getElementById("reviewRating").value);
-
-    const reviewText =
-      document.getElementById("reviewText").value.trim();
-
-    if (customerName.length < 2 || reviewText.length < 5) {
-      reviewResult.style.color = "#dc2626";
-      reviewResult.textContent =
-        "لطفاً نام و متن نظر را کامل وارد کنید.";
-      return;
-    }
-
-    reviewButton.disabled = true;
-    reviewButton.textContent = "در حال ثبت نظر...";
-    reviewResult.textContent = "";
-
-    const reviewData = {
-      customer_name: customerName,
-      review_text: reviewText,
-      rating: rating,
-      status: "pending"
-    };
-
-    if (city) reviewData.city = city;
-    if (productName) reviewData.product_name = productName;
-
-    try {
-      const { error } = await reviewClient
-        .from("customer_reviews")
-        .insert([reviewData]);
-
-      if (error) throw error;
-
-      reviewResult.style.color = "#15803d";
-      reviewResult.textContent =
-        "نظر شما با موفقیت ثبت شد و پس از تأیید مدیریت منتشر می‌شود.";
-
-      reviewForm.reset();
-
-    } catch (error) {
-      console.error("Review submission error:", error);
-
-      reviewResult.style.color = "#dc2626";
-      reviewResult.textContent =
-        "ثبت نظر انجام نشد. لطفاً دوباره تلاش کنید.";
-    } finally {
-      reviewButton.disabled = false;
-      reviewButton.textContent = "ثبت نظر برای بررسی";
-    }
-  });
-})();
 </script>
 
 </body>
