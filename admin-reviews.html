@@ -107,6 +107,11 @@
       color: #b42318;
     }
 
+    .delete-btn {
+      background: #b42318;
+      color: white;
+    }
+
     .logout {
       background: #e9eeeb;
       color: #24443c;
@@ -230,7 +235,6 @@
     <p>چادردوزی جزیره J.A.T</p>
   </header>
 
-  <!-- ورود مدیر -->
   <section id="loginBox" class="login-box">
     <h2>ورود مدیر سایت</h2>
 
@@ -260,7 +264,6 @@
     <div id="loginMessage" class="message"></div>
   </section>
 
-  <!-- پنل مدیریت -->
   <section id="adminPanel" class="panel hidden">
 
     <div class="topbar">
@@ -289,6 +292,7 @@
     </div>
 
     <div id="reviewMessage" class="message"></div>
+
     <div id="reviewsList">
       <div class="empty">در حال دریافت نظرات...</div>
     </div>
@@ -303,9 +307,8 @@
 (() => {
   "use strict";
 
-  
-  // اطلاعات اتصال عمومی پروژه
-  const SUPABASE_URL = "https://mvvatgwuqhmujgvhwxbt.supabase.co";
+  const SUPABASE_URL =
+    "https://mvvatgwuqhmujgvhwxbt.supabase.co";
 
   const SUPABASE_KEY =
     "sb_publishable_N3ZsOvSj6MioK-rxNNxh0w_w9Fd6FEC";
@@ -362,6 +365,7 @@
     if (session.user.email !== ADMIN_EMAIL) {
       await client.auth.signOut();
       showLogin();
+
       showMessage(
         loginMessage,
         "این حساب اجازه ورود به پنل مدیریت را ندارد.",
@@ -376,6 +380,7 @@
     if (adminError || data !== true) {
       await client.auth.signOut();
       showLogin();
+
       showMessage(
         loginMessage,
         "دسترسی مدیر تأیید نشد. تنظیمات دسترسی Supabase باید بررسی شود.",
@@ -398,26 +403,33 @@
     loginButton.disabled = true;
     loginButton.textContent = "در حال ورود...";
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+    const email =
+      document.getElementById("email").value.trim();
 
-    if (email.toLowerCase() !== ADMIN_EMAIL) {
-      showMessage(
-        loginMessage,
-        "فقط ایمیل مدیر اصلی مجاز به ورود است.",
-        true
-      );
-    } else {
-      const { error } = await client.auth.signInWithPassword({
-        email,
-        password
-      });
+    const password =
+      document.getElementById("password").value;
 
-      if (error) {
-        showMessage(loginMessage, error.message, true);
+    try {
+      if (email.toLowerCase() !== ADMIN_EMAIL) {
+        showMessage(
+          loginMessage,
+          "فقط ایمیل مدیر اصلی مجاز به ورود است.",
+          true
+        );
       } else {
-        await checkAdmin();
+        const { error } = await client.auth.signInWithPassword({
+          email,
+          password
+        });
+
+        if (error) {
+          showMessage(loginMessage, error.message, true);
+        } else {
+          await checkAdmin();
+        }
       }
+    } catch (error) {
+      showMessage(loginMessage, error.message, true);
     }
 
     busy = false;
@@ -439,6 +451,7 @@
 
     if (error) {
       reviewsList.innerHTML = "";
+
       showMessage(
         reviewMessage,
         "خطا در دریافت نظرات: " + error.message,
@@ -464,8 +477,11 @@
 
       const stars = document.createElement("div");
       stars.className = "stars";
-      stars.textContent = "★".repeat(review.rating) +
-        "☆".repeat(5 - review.rating);
+
+      const rating = Math.min(5, Math.max(0, Number(review.rating) || 0));
+
+      stars.textContent =
+        "★".repeat(rating) + "☆".repeat(5 - rating);
 
       const text = document.createElement("div");
       text.className = "review-text";
@@ -485,13 +501,14 @@
 
       card.append(title, stars, text, meta);
 
-      if (currentStatus === "pending") {
-        const actions = document.createElement("div");
-        actions.className = "actions";
+      const actions = document.createElement("div");
+      actions.className = "actions";
 
+      if (currentStatus === "pending") {
         const approve = document.createElement("button");
         approve.className = "primary";
         approve.textContent = "تأیید و انتشار";
+
         approve.addEventListener("click", () => {
           updateStatus(review.id, "approved");
         });
@@ -499,44 +516,49 @@
         const reject = document.createElement("button");
         reject.className = "danger";
         reject.textContent = "رد نظر";
+
         reject.addEventListener("click", () => {
           updateStatus(review.id, "rejected");
         });
 
         actions.append(approve, reject);
-        card.appendChild(actions);
       }
 
       if (currentStatus === "rejected") {
-        const actions = document.createElement("div");
-        actions.className = "actions";
-
         const restore = document.createElement("button");
         restore.className = "primary";
         restore.textContent = "بازگرداندن به انتظار بررسی";
+
         restore.addEventListener("click", () => {
           updateStatus(review.id, "pending");
         });
 
         actions.appendChild(restore);
-        card.appendChild(actions);
       }
 
       if (currentStatus === "approved") {
-        const actions = document.createElement("div");
-        actions.className = "actions";
-
         const unpublish = document.createElement("button");
         unpublish.className = "danger";
         unpublish.textContent = "برداشتن از انتشار";
+
         unpublish.addEventListener("click", () => {
           updateStatus(review.id, "pending");
         });
 
         actions.appendChild(unpublish);
-        card.appendChild(actions);
       }
 
+      // دکمه حذف دائمی در تمام بخش‌ها
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "delete-btn";
+      deleteButton.textContent = "حذف دائمی";
+
+      deleteButton.addEventListener("click", () => {
+        deleteReview(review.id, review.customer_name);
+      });
+
+      actions.appendChild(deleteButton);
+      card.appendChild(actions);
       reviewsList.appendChild(card);
     });
   }
@@ -564,6 +586,49 @@
     await loadReviews();
   }
 
+  // حذف دائمی نظر
+  async function deleteReview(id, customerName) {
+    const confirmed = confirm(
+      "هشدار: این نظر برای همیشه حذف می‌شود و قابل بازگردانی نیست.\n\n" +
+      "نام مشتری: " + (customerName || "مشتری") +
+      "\n\nآیا از حذف دائمی مطمئن هستید؟"
+    );
+
+    if (!confirmed) return;
+
+    const deleteButtons =
+      document.querySelectorAll(".delete-btn");
+
+    deleteButtons.forEach(button => {
+      button.disabled = true;
+    });
+
+    const { error } = await client
+      .from("customer_reviews")
+      .delete()
+      .eq("id", id);
+
+    deleteButtons.forEach(button => {
+      button.disabled = false;
+    });
+
+    if (error) {
+      showMessage(
+        reviewMessage,
+        "حذف نظر انجام نشد: " + error.message,
+        true
+      );
+      return;
+    }
+
+    showMessage(
+      reviewMessage,
+      "نظر مشتری با موفقیت و به‌صورت دائمی حذف شد."
+    );
+
+    await loadReviews();
+  }
+
   document.querySelectorAll(".tab").forEach((button) => {
     button.addEventListener("click", async () => {
       document.querySelectorAll(".tab").forEach((tab) => {
@@ -572,6 +637,7 @@
 
       button.classList.add("active");
       currentStatus = button.dataset.status;
+
       await loadReviews();
     });
   });
@@ -581,10 +647,6 @@
       await client.auth.signOut();
       showLogin();
     });
-
-  client.auth.onAuthStateChange(() => {
-    // وضعیت نشست هنگام بارگذاری اولیه بررسی می‌شود.
-  });
 
   checkAdmin();
 
