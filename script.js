@@ -1,9 +1,9 @@
 
 /* ==================================================
-   CHADOOOR J.A.T - OPTIMIZED SCRIPT + CART
-   نسخه یکپارچه و اصلاح‌شده
-   شامل منوی موبایل، سبد خرید، واتساپ،
-   بارگذاری محصولات، جست‌وجو و فیلتر دسته‌بندی
+   CHADOOOR J.A.T
+   نسخه یکپارچه اصلاح‌شده
+   منوی موبایل، سبد خرید، واتساپ، محصولات،
+   جست‌وجو، فیلتر و قیمت استعلامی
 ================================================== */
 
 (function () {
@@ -13,90 +13,156 @@
   const WA_NUMBER = "989118031241";
   const FALLBACK_IMAGE = "hero-chadoor.webp";
 
-  /* ---------- Cart storage ---------- */
+  /* ---------- ابزارهای عمومی ---------- */
+
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    })[character]);
+  }
+
+  function normalizeText(value) {
+    return String(value ?? "")
+      .toLowerCase()
+      .replace(/ي/g, "ی")
+      .replace(/ك/g, "ک")
+      .replace(/ۀ/g, "ه")
+      .replace(/ة/g, "ه")
+      .replace(/[\u064B-\u065F\u0670]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function formatPrice(price) {
+    const value = Math.max(0, Number(price) || 0);
+
+    return value > 0
+      ? value.toLocaleString("fa-IR") + " تومان"
+      : "جهت استعلام قیمت تماس بگیرید";
+  }
+
+  function safeImagePath(value) {
+    const path = String(value || "").trim();
+
+    if (
+      !path ||
+      /^(?:javascript:|data:|https?:\/\/|\/\/)/i.test(path)
+    ) {
+      return FALLBACK_IMAGE;
+    }
+
+    return path;
+  }
+
+  /* ---------- دسته‌بندی محصولات ---------- */
+
+  function getFilterCategory(category) {
+    const categoryMap = {
+      "چادر برزنتی": "tarpaulin",
+      "برزنتی": "tarpaulin",
+
+      "چادر مسافرتی": "travel",
+      "چادر کوهنوردی": "travel",
+
+      "چادر کودک": "kids",
+
+      "پشه‌بند": "accessories",
+      "پشه بند": "accessories",
+      "تجهیزات کمپینگ": "accessories",
+      "روکش خودرو": "accessories",
+
+      "خدمات": "services"
+    };
+
+    return categoryMap[String(category || "").trim()] || "all";
+  }
+
+  /* ---------- سبد خرید ---------- */
 
   function getCart() {
     try {
-      const raw = window.localStorage.getItem(CART_KEY);
+      const raw = localStorage.getItem(CART_KEY);
       const data = raw ? JSON.parse(raw) : [];
 
       if (!Array.isArray(data)) return [];
 
-      return data.filter((item) =>
-        item &&
-        item.id !== undefined &&
-        item.id !== null &&
-        Number.isFinite(Number(item.id)) &&
-        Number(item.id) > 0
-      ).map((item) => ({
-        id: item.id,
-        name: String(item.name || "محصول"),
-        price: Math.max(0, Number(item.price) || 0),
-        image: String(item.image || ""),
-        qty: Math.max(1, Math.floor(Number(item.qty) || 1))
-      }));
+      return data
+        .filter((item) =>
+          item &&
+          item.id !== undefined &&
+          item.id !== null &&
+          Number.isFinite(Number(item.id)) &&
+          Number(item.id) > 0
+        )
+        .map((item) => ({
+          id: item.id,
+          name: String(item.name || "محصول"),
+          price: Math.max(0, Number(item.price) || 0),
+          image: String(item.image || ""),
+          qty: Math.max(1, Math.floor(Number(item.qty) || 1))
+        }));
 
     } catch (error) {
-      console.warn("خواندن سبد خرید ممکن نشد:", error);
+      console.warn("خطا در خواندن سبد خرید:", error);
       return [];
     }
   }
 
+  function updateCartCount() {
+    const total = getCart().reduce(
+      (sum, item) => sum + item.qty,
+      0
+    );
+
+    document.querySelectorAll("#cartCount").forEach((node) => {
+      node.textContent = total.toLocaleString("fa-IR");
+    });
+  }
+
   function saveCart(cart) {
     try {
-      window.localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
       updateCartCount();
       return true;
 
     } catch (error) {
-      console.error("ذخیره سبد خرید ممکن نشد:", error);
+      console.error("خطا در ذخیره سبد خرید:", error);
 
-      alert(
-        "ذخیره سبد خرید در این مرورگر امکان‌پذیر نیست. لطفاً تنظیمات مرورگر را بررسی کنید."
-      );
+      alert("ذخیره سبد خرید امکان‌پذیر نیست. تنظیمات مرورگر را بررسی کنید.");
 
       return false;
     }
   }
 
-  function updateCartCount() {
-    const total = getCart().reduce((sum, item) => {
-      return sum + Math.max(0, Number(item.qty) || 0);
-    }, 0);
-
-    document.querySelectorAll("#cartCount").forEach((node) => {
-      node.textContent = String(total);
-    });
-  }
-
   function addToCart(product) {
-    if (!product || product.id === undefined || product.id === null) {
-      return;
-    }
+    if (!product || product.id === undefined) return;
 
     const id = Number(product.id);
 
     if (!Number.isFinite(id) || id <= 0) {
-      console.warn("شناسه محصول معتبر نیست:", product.id);
+      console.warn("شناسه محصول نامعتبر است.");
       return;
     }
 
     const cart = getCart();
-    const existing = cart.find((item) => Number(item.id) === id);
+
+    const existing = cart.find(
+      (item) => Number(item.id) === id
+    );
 
     if (existing) {
-      existing.qty = Math.max(1, Number(existing.qty) || 1) + 1;
-
-      if (product.name) existing.name = String(product.name);
-      if (product.image) existing.image = String(product.image);
-
-      if (product.price !== undefined) {
-        existing.price = Math.max(0, Number(product.price) || 0);
-      }
+      existing.qty += 1;
+      existing.name = String(product.name || existing.name);
+      existing.image = String(product.image || existing.image);
+      existing.price = Math.max(0, Number(product.price) || 0);
 
     } else {
       cart.push({
-        id: product.id,
+        id: id,
         name: String(product.name || "محصول"),
         price: Math.max(0, Number(product.price) || 0),
         image: String(product.image || ""),
@@ -105,16 +171,18 @@
     }
 
     if (saveCart(cart)) {
-      alert("«" + String(product.name || "محصول") + "» به سبد خرید اضافه شد.");
+      alert("«" + String(product.name || "محصول") +
+        "» به سبد خرید اضافه شد.");
+
       renderCartPage();
     }
   }
 
   window.chadoorAddToCart = addToCart;
-  window.chadoorUpdateCartCount = updateCartCount;
   window.chadoorGetCart = getCart;
+  window.chadoorUpdateCartCount = updateCartCount;
 
-  /* ---------- Icons ---------- */
+  /* ---------- آیکون‌ها ---------- */
 
   function loadIcons() {
     if (
@@ -125,7 +193,7 @@
     }
   }
 
-  /* ---------- Mobile menu ---------- */
+  /* ---------- منوی موبایل ---------- */
 
   function initMenu() {
     const menuButton = document.querySelector(".menu-toggle");
@@ -183,19 +251,15 @@
       event.preventDefault();
       event.stopPropagation();
 
-      if (nav.classList.contains("open")) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+      nav.classList.contains("open")
+        ? closeMenu()
+        : openMenu();
     });
 
     overlay.addEventListener("click", closeMenu);
 
     nav.addEventListener("click", function (event) {
-      const link = event.target.closest("a");
-
-      if (link) {
+      if (event.target.closest("a")) {
         closeMenu();
       }
     });
@@ -210,7 +274,7 @@
     });
   }
 
-  /* ---------- Contact form → WhatsApp ---------- */
+  /* ---------- فرم تماس با واتساپ ---------- */
 
   function initContactForms() {
     document.querySelectorAll(".contact-form").forEach((form) => {
@@ -234,16 +298,15 @@
           form.querySelector("#request")?.value.trim() || "بدون توضیح";
 
         const message =
-          "سلام چادردوزی جزیره\n\nنام: " + name +
+          "سلام چادردوزی جزیره\n\n" +
+          "نام: " + name +
           "\nشماره تماس: " + phone +
           "\nنوع خدمت: " + service +
           "\nتوضیحات:\n" + request;
 
         const whatsappUrl =
-          "https://wa.me/" +
-          WA_NUMBER +
-          "?text=" +
-          encodeURIComponent(message);
+          "https://wa.me/" + WA_NUMBER +
+          "?text=" + encodeURIComponent(message);
 
         window.open(
           whatsappUrl,
@@ -255,7 +318,7 @@
 
         if (status) {
           status.textContent =
-            "صفحه واتساپ باز می‌شود؛ برای ارسال پیام، آن را در واتساپ تأیید کنید. اگر باز نشد، بازشدن پنجره‌های جدید را در مرورگر بررسی کنید.";
+            "برای ارسال پیام، آن را در واتساپ تأیید کنید.";
 
           status.classList.add("success");
         }
@@ -263,7 +326,7 @@
     });
   }
 
-  /* ---------- Floating WhatsApp ---------- */
+  /* ---------- دکمه شناور واتساپ ---------- */
 
   function initFloatingWhatsApp() {
     if (document.querySelector(".floating-whatsapp")) return;
@@ -273,8 +336,7 @@
     btn.className = "floating-whatsapp";
 
     btn.href =
-      "https://wa.me/" +
-      WA_NUMBER +
+      "https://wa.me/" + WA_NUMBER +
       "?text=" +
       encodeURIComponent("سلام، درباره سفارش چادر مشاوره می‌خواهم.");
 
@@ -292,89 +354,39 @@
     loadIcons();
   }
 
-  /* ---------- Escape HTML ---------- */
-
-  function esc(value) {
-    return String(value ?? "").replace(/[&<>"']/g, (character) => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;"
-    })[character]);
-  }
-
-  /* ---------- Safe image path ---------- */
-
-  function safeImagePath(value) {
-    const path = String(value || FALLBACK_IMAGE).trim();
-
-    if (
-      !path ||
-      /^(?:javascript:|data:|https?:\/\/|\/\/)/i.test(path)
-    ) {
-      return FALLBACK_IMAGE;
-    }
-
-    return path;
-  }
-
-  /* ---------- Shop category mapping ---------- */
-
-
-function getFilterCategory(category) {
-  const categoryMap = {
-    "چادر برزنتی": "tarpaulin",
-    "برزنتی": "tarpaulin",
-
-    "چادر مسافرتی": "travel",
-    "چادر کوهنوردی": "travel",
-
-    "چادر کودک": "kids",
-
-    "پشه‌بند": "accessories",
-    "تجهیزات کمپینگ": "accessories",
-    "روکش خودرو": "accessories",
-
-    "خدمات": "services"
-  };
-
-  return categoryMap[String(category || "").trim()] || "all";
-}
-
-  /* ---------- Shop filters and search ---------- */
+  /* ---------- فیلتر و جست‌وجوی فروشگاه ---------- */
 
   function initShopFilters() {
-    const buttons = document.querySelectorAll(".filter-btn");
     const grid = document.querySelector("#productGrid");
     const search = document.querySelector("#shopSearch");
     const resultCount = document.querySelector("#shopResultCount");
 
     if (!grid) return;
 
-    let activeFilter = "all";
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    if (!grid.dataset.filterInitialized) {
+      grid.dataset.filterInitialized = "true";
+      grid.dataset.activeFilter = "all";
+    }
 
     function applyFilters() {
-      const query = (search?.value || "")
-        .trim()
-        .toLocaleLowerCase("fa-IR");
+      const activeFilter = grid.dataset.activeFilter || "all";
+
+      const query = normalizeText(search?.value || "");
 
       const cards = grid.querySelectorAll(".product-card");
 
       let visible = 0;
 
       cards.forEach((card) => {
-        const category =
-          card.dataset.category || "accessories";
+        const category = card.dataset.category || "all";
 
-        const name =
-          card.querySelector("h3")?.textContent || "";
-
-        const description =
-          card.querySelector("p")?.textContent || "";
-
-        const text =
-          (name + " " + description).toLocaleLowerCase("fa-IR");
+        const text = normalizeText(
+          card.dataset.search ||
+          card.textContent ||
+          ""
+        );
 
         const categoryMatch =
           activeFilter === "all" ||
@@ -405,7 +417,9 @@ function getFilterCategory(category) {
       button.dataset.filterInitialized = "true";
 
       button.addEventListener("click", () => {
-        activeFilter = button.dataset.filter || "all";
+        const filter = button.dataset.filter || "all";
+
+        grid.dataset.activeFilter = filter;
 
         buttons.forEach((item) => {
           item.classList.toggle("active", item === button);
@@ -427,21 +441,100 @@ function getFilterCategory(category) {
     applyFilters();
   }
 
-  /* ---------- Shop products ---------- */
+  /* ---------- ساخت کارت محصول ---------- */
+
+  function createProductCard(product) {
+    const id = encodeURIComponent(String(product.id));
+    const name = String(product.name || "محصول");
+    const price = Math.max(0, Number(product.price) || 0);
+    const image = safeImagePath(product.image);
+    const category = getFilterCategory(product.category);
+
+    const whatsappUrl =
+      "https://wa.me/" + WA_NUMBER +
+      "?text=" +
+      encodeURIComponent(
+        "سلام، درباره «" + name + "» سؤال دارم."
+      );
+
+    const article = document.createElement("article");
+
+    article.className = "shop-card product-card";
+
+    article.dataset.category = category;
+
+    article.dataset.search = normalizeText(
+      name + " " +
+      String(product.description || "") + " " +
+      String(product.category || "")
+    );
+
+    article.innerHTML =
+      '<a href="product.html?id=' + id + '" class="shop-image">' +
+        '<img src="' + esc(image) +
+        '" alt="' + esc(name) +
+        '" loading="lazy" decoding="async" width="400" height="300">' +
+      "</a>" +
+
+      '<div class="product-body" style="padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;">' +
+
+        '<h3 style="font-size:1.05rem;margin:0 0 0.5rem;line-height:1.5;">' +
+          '<a href="product.html?id=' + id +
+          '" style="color:inherit;text-decoration:none;">' +
+            esc(name) +
+          "</a>" +
+        "</h3>" +
+
+        '<p style="font-size:0.88rem;color:#68736f;line-height:1.8;margin:0 0 1rem;flex:1;">' +
+          esc(product.description || "") +
+        "</p>" +
+
+        '<div class="product-price" style="font-weight:800;font-size:1.05rem;color:#d32f2f;margin-bottom:0.9rem;">' +
+          esc(formatPrice(price)) +
+        "</div>" +
+
+        '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">' +
+
+          '<a href="product.html?id=' + id +
+          '" style="display:flex;align-items:center;justify-content:center;background:#155e55;color:#fff;text-decoration:none;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;">جزئیات</a>' +
+
+          '<button type="button" class="add-cart-btn" data-id="' +
+          esc(product.id) +
+          '" data-name="' + esc(name) +
+          '" data-price="' + price +
+          '" data-image="' + esc(image) +
+          '" style="background:#f0f7f5;color:#155e55;border:1px solid #155e55;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;cursor:pointer;font-family:inherit;">+ سبد</button>' +
+
+          '<a href="' + esc(whatsappUrl) +
+          '" target="_blank" rel="noopener noreferrer" ' +
+          'style="display:flex;align-items:center;justify-content:center;background:#20b95a;color:#fff;text-decoration:none;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;">واتساپ</a>' +
+
+        "</div>" +
+      "</div>";
+
+    const img = article.querySelector("img");
+
+    img.addEventListener("error", function () {
+      this.onerror = null;
+      this.src = FALLBACK_IMAGE;
+    });
+
+    return article;
+  }
+
+  /* ---------- بارگذاری محصولات ---------- */
 
   function initShop() {
-    const productGrid =
-      document.querySelector("#productGrid") ||
-      document.querySelector(".shop-grid");
+    const productGrid = document.querySelector("#productGrid");
 
-    if (
-      !productGrid ||
-      productGrid.dataset.shopInitialized === "true"
-    ) {
-      return;
-    }
+    if (!productGrid) return;
+
+    if (productGrid.dataset.shopInitialized === "true") return;
 
     productGrid.dataset.shopInitialized = "true";
+
+    // فیلترها از ابتدا فعال باشند
+    initShopFilters();
 
     fetch("products.json", { cache: "no-cache" })
       .then((response) => {
@@ -457,6 +550,7 @@ function getFilterCategory(category) {
           productGrid.innerHTML =
             "<p style='text-align:center;padding:2rem;color:#68736f;'>محصولی یافت نشد.</p>";
 
+          initShopFilters();
           return;
         }
 
@@ -466,87 +560,13 @@ function getFilterCategory(category) {
           if (
             !product ||
             product.id === undefined ||
+            product.id === null ||
             !product.name
           ) {
             return;
           }
 
-          const id = encodeURIComponent(String(product.id));
-          const name = String(product.name);
-
-          const price = Math.max(
-            0,
-            Number(product.price) || 0
-          );
-
-          const priceText =
-            price > 0
-              ? price.toLocaleString("fa-IR") + " تومان"
-              : "استعلام قیمت";
-
-          const image = safeImagePath(product.image);
-
-          const whatsappUrl =
-            "https://wa.me/" +
-            WA_NUMBER +
-            "?text=" +
-            encodeURIComponent(
-              "سلام، درباره «" + name + "» سوال دارم."
-            );
-
-          const article = document.createElement("article");
-
-          article.className = "shop-card product-card";
-
-          article.dataset.category =
-            getFilterCategory(product.category);
-
-          article.innerHTML =
-            '<a href="product.html?id=' + id + '" class="shop-image">' +
-              '<img src="' + esc(image) +
-              '" alt="' + esc(name) +
-              '" loading="lazy" decoding="async" width="400" height="300" ' +
-              'onerror="this.onerror=null;this.src=\'' +
-              FALLBACK_IMAGE + '\'">' +
-            "</a>" +
-
-            '<div style="padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;">' +
-
-              '<h3 style="font-size:1.05rem;margin:0 0 0.5rem;line-height:1.5;">' +
-                '<a href="product.html?id=' + id +
-                '" style="color:inherit;text-decoration:none;">' +
-                esc(name) +
-                "</a>" +
-              "</h3>" +
-
-              '<p style="font-size:0.88rem;color:#68736f;line-height:1.7;margin:0 0 1rem;flex:1;">' +
-                esc(product.description || "") +
-              "</p>" +
-
-              '<div style="font-weight:800;font-size:1.1rem;color:#d32f2f;margin-bottom:0.9rem;">' +
-                priceText +
-              "</div>" +
-
-              '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">' +
-
-                '<a href="product.html?id=' + id +
-                '" style="display:flex;align-items:center;justify-content:center;background:#155e55;color:#fff;text-decoration:none;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;">جزئیات</a>' +
-
-                '<button type="button" class="add-cart-btn" data-id="' +
-                esc(product.id) +
-                '" data-name="' + esc(name) +
-                '" data-price="' + price +
-                '" data-image="' + esc(image) +
-                '" style="background:#f0f7f5;color:#155e55;border:1px solid #155e55;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;cursor:pointer;font-family:inherit;">+ سبد</button>' +
-
-                '<a href="' + esc(whatsappUrl) +
-                '" target="_blank" rel="noopener noreferrer" ' +
-                'style="display:flex;align-items:center;justify-content:center;background:#20b95a;color:#fff;text-decoration:none;border-radius:10px;padding:0.65rem 0.3rem;font-size:0.8rem;font-weight:700;">واتساپ</a>' +
-
-              "</div>" +
-            "</div>";
-
-          fragment.appendChild(article);
+          fragment.appendChild(createProductCard(product));
         });
 
         if (!fragment.childNodes.length) {
@@ -558,7 +578,14 @@ function getFilterCategory(category) {
 
         productGrid.replaceChildren(fragment);
 
+        // اجرای دوباره فیلترها پس از بارگذاری محصولات
         initShopFilters();
+
+        // فعال‌سازی اسکیما در صورت تعریف آن در shop.html
+        if (typeof window.addShopSchema === "function") {
+          window.addShopSchema(products);
+        }
+
         loadIcons();
       })
 
@@ -566,11 +593,13 @@ function getFilterCategory(category) {
         console.error("خطا در بارگذاری محصولات:", error);
 
         productGrid.innerHTML =
-          "<p style='text-align:center;padding:2rem;color:#b42318;'>بارگذاری محصولات انجام نشد. لطفاً وجود فایل products.json و معتبر بودن محتوای آن را بررسی کنید.</p>";
+          "<p style='text-align:center;padding:2rem;color:#b42318;line-height:2;'>بارگذاری محصولات انجام نشد. وجود فایل products.json و معتبر بودن محتوای آن را بررسی کنید.</p>";
+
+        initShopFilters();
       });
   }
 
-  /* ---------- Shop cart buttons ---------- */
+  /* ---------- دکمه‌های سبد خرید ---------- */
 
   function initShopCartButtons() {
     if (
@@ -595,7 +624,7 @@ function getFilterCategory(category) {
     });
   }
 
-  /* ---------- Cart page ---------- */
+  /* ---------- نمایش سبد خرید ---------- */
 
   function renderCartPage() {
     const box = document.getElementById("cartItems");
@@ -617,7 +646,6 @@ function getFilterCategory(category) {
     const rows = cart.map((item) => {
       const quantity = Math.max(1, Number(item.qty) || 1);
       const price = Math.max(0, Number(item.price) || 0);
-
       const lineTotal = price * quantity;
 
       total += lineTotal;
@@ -634,52 +662,43 @@ function getFilterCategory(category) {
           '<img src="' +
             esc(safeImagePath(item.image)) +
             '" alt="' +
-            esc(item.name || "") +
-            '" width="64" height="64" style="object-fit:cover;border-radius:8px;" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'' +
-            FALLBACK_IMAGE +
-            '\'">' +
+            esc(item.name) +
+            '" width="64" height="64" style="object-fit:cover;border-radius:8px;" loading="lazy" decoding="async">' +
 
           '<div style="flex:1;min-width:0;">' +
             "<strong>" +
-              esc(item.name || "محصول") +
+              esc(item.name) +
             "</strong><br>" +
 
             '<span style="color:#68736f;font-size:0.9rem;">تعداد: ' +
-              quantity +
+              quantity.toLocaleString("fa-IR") +
             "</span>" +
           "</div>" +
 
           '<div style="font-weight:700;white-space:nowrap;">' +
             (
               lineTotal > 0
-                ? lineTotal.toLocaleString("fa-IR") + " تومان"
+                ? formatPrice(lineTotal)
                 : "استعلام قیمت"
             ) +
           "</div>" +
 
           '<button type="button" class="cart-remove" data-id="' +
             esc(item.id) +
-            '" aria-label="حذف ' +
-            esc(item.name || "محصول") +
-            ' از سبد" style="border:0;background:#fee;color:#b42318;border-radius:8px;padding:6px 10px;cursor:pointer;">حذف</button>' +
+            '" aria-label="حذف محصول از سبد" style="border:0;background:#fee;color:#b42318;border-radius:8px;padding:6px 10px;cursor:pointer;">حذف</button>' +
 
         "</div>"
       );
     }).join("");
 
-    const totalText =
-      total > 0
-        ? total.toLocaleString("fa-IR") + " تومان"
-        : "استعلام قیمت";
-
     const quoteNote = hasQuoteItem
-      ? '<p style="color:#68736f;font-size:0.9rem;line-height:1.8;">برای محصولاتی که قیمت مشخص ندارند، مبلغ نهایی پس از استعلام اعلام می‌شود.</p>'
+      ? '<p style="color:#68736f;font-size:0.9rem;line-height:1.8;">مبلغ نهایی محصولاتی که قیمت مشخص ندارند، پس از استعلام اعلام می‌شود.</p>'
       : "";
 
     box.innerHTML =
       rows +
       '<div style="text-align:left;padding:1rem 0;font-weight:800;font-size:1.15rem;">جمع محصولات دارای قیمت: ' +
-      totalText +
+      (total > 0 ? formatPrice(total) : "استعلام قیمت") +
       "</div>" +
       quoteNote;
   }
@@ -687,7 +706,9 @@ function getFilterCategory(category) {
   function initCartPage() {
     const box = document.getElementById("cartItems");
 
-    if (!box || box.dataset.cartPageInitialized === "true") {
+    if (!box) return;
+
+    if (box.dataset.cartPageInitialized === "true") {
       renderCartPage();
       return;
     }
@@ -713,7 +734,7 @@ function getFilterCategory(category) {
     renderCartPage();
   }
 
-  /* ---------- Fix Google Search RTL ---------- */
+  /* ---------- تنظیم راست‌چین جست‌وجوی گوگل ---------- */
 
   function fixGoogleSearchDir() {
     const input = document.querySelector(
@@ -735,7 +756,7 @@ function getFilterCategory(category) {
     }
   }
 
-  /* ---------- Boot ---------- */
+  /* ---------- راه‌اندازی اصلی ---------- */
 
   function boot() {
     updateCartCount();
