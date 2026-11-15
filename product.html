@@ -695,7 +695,20 @@
       }
     }
   </style>
-  <link rel="canonical" href="https://chadooor.ir/product.html">
+ <script>
+(function () {
+  const id = new URLSearchParams(location.search).get("id");
+
+  if (!id || !/^\d+$/.test(id)) return;
+
+  const canonical = document.createElement("link");
+  canonical.rel = "canonical";
+  canonical.href =
+    "https://chadooor.ir/product.html?id=" + encodeURIComponent(id);
+
+  document.head.appendChild(canonical);
+})();
+</script>
 </head>
 
 <body>
@@ -794,7 +807,7 @@
     <p>کلیه حقوق این وب‌سایت محفوظ است.</p>
   </div>
 </footer>
-<script src="script.js" defer></script>
+
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lightbox-close" id="lbClose" aria-label="بستن">×</button>
   <img id="lbImage" src="" alt="">
@@ -1416,16 +1429,6 @@ fetch("products.json")
       ).replace(/\s+/g," ").slice(0,155);
     }
 
-    let canonical = document.querySelector('link[rel="canonical"]');
-
-    if(!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-
-    canonical.href =
-      "https://chadooor.ir/product.html?id="+encodeURIComponent(product.id);
 
     addProductSchema(product,details);
     updateCartCount();
