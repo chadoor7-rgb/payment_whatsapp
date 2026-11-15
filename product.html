@@ -695,20 +695,37 @@
       }
     }
   </style>
- <script>
+
+<script>
 (function () {
-  const id = new URLSearchParams(location.search).get("id");
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-  if (!id || !/^\d+$/.test(id)) return;
+  const canonicalUrl =
+    id && /^\d+$/.test(id)
+      ? "https://chadooor.ir/product.html?id=" + encodeURIComponent(id)
+      : "https://chadooor.ir/product.html";
 
-  const canonical = document.createElement("link");
-  canonical.rel = "canonical";
-  canonical.href =
-    "https://chadooor.ir/product.html?id=" + encodeURIComponent(id);
+  const oldCanonicals = document.querySelectorAll(
+    'link[rel="canonical"]'
+  );
 
-  document.head.appendChild(canonical);
+  let canonical = oldCanonicals[0];
+
+  oldCanonicals.forEach((link, index) => {
+    if (index > 0) link.remove();
+  });
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+
+  canonical.href = canonicalUrl;
 })();
 </script>
+
 </head>
 
 <body>
