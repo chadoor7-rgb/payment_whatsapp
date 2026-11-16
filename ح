@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "چادر کودک طرح قلعه",
+  "description": "چادر کودک طرح قلعه با سقف صورتی و دیوار سنگی. مناسب بازی کودکان در خانه و حیاط. تولید مستقیم کارگاه چادردوزی جزیره آمل.",
+  "image": "https://chadooor.ir/kids-castle-tent-2.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "چادردوزی جزیره J.A.T"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "چادردوزی جزیره J.A.T",
+    "url": "https://chadooor.ir"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "8000000",
+    "priceCurrency": "IRR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://chadooor.ir/product-kids-castle.html"
+  }
+}
+</script>
