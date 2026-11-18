@@ -218,3 +218,12 @@
 <script src="script.js" defer></script>
 </body>
 </html>
+<img 
+  src="hero-main.webp" 
+  alt="چادر مسافرتی و برزنتی تولید چادردوزی جزیره آمل"
+  width="1200"
+  height="700"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+  class="hero-main-img">
